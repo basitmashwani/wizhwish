@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E060B031CC4E311009E1BBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E060B021CC4E311009E1BBC /* main.m */; };
+		1E060B061CC4E311009E1BBC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E060B051CC4E311009E1BBC /* AppDelegate.m */; };
+		1E060B091CC4E311009E1BBC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E060B081CC4E311009E1BBC /* ViewController.m */; };
+		1E060B0C1CC4E311009E1BBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E060B0A1CC4E311009E1BBC /* Main.storyboard */; };
+		1E060B0E1CC4E311009E1BBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E060B0D1CC4E311009E1BBC /* Assets.xcassets */; };
+		1E060B111CC4E311009E1BBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E060B0F1CC4E311009E1BBC /* LaunchScreen.storyboard */; };
+		1E060B1C1CC4E311009E1BBC /* wizhwishTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E060B1B1CC4E311009E1BBC /* wizhwishTests.m */; };
+		1E060B271CC4E311009E1BBC /* wizhwishUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E060B261CC4E311009E1BBC /* wizhwishUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1E060B181CC4E311009E1BBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E060AF61CC4E311009E1BBC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E060AFD1CC4E311009E1BBC;
+			remoteInfo = wizhwish;
+		};
+		1E060B231CC4E311009E1BBC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1E060AF61CC4E311009E1BBC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E060AFD1CC4E311009E1BBC;
+			remoteInfo = wizhwish;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1E060AFE1CC4E311009E1BBC /* wizhwish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wizhwish.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E060B021CC4E311009E1BBC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1E060B041CC4E311009E1BBC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1E060B051CC4E311009E1BBC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1E060B071CC4E311009E1BBC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1E060B081CC4E311009E1BBC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1E060B0B1CC4E311009E1BBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1E060B0D1CC4E311009E1BBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1E060B101CC4E311009E1BBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1E060B121CC4E311009E1BBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E060B171CC4E311009E1BBC /* wizhwishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wizhwishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E060B1B1CC4E311009E1BBC /* wizhwishTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wizhwishTests.m; sourceTree = "<group>"; };
+		1E060B1D1CC4E311009E1BBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E060B221CC4E311009E1BBC /* wizhwishUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wizhwishUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E060B261CC4E311009E1BBC /* wizhwishUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wizhwishUITests.m; sourceTree = "<group>"; };
+		1E060B281CC4E311009E1BBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1E060AFB1CC4E311009E1BBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E060B141CC4E311009E1BBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E060B1F1CC4E311009E1BBC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1E060AF51CC4E311009E1BBC = {
+			isa = PBXGroup;
+			children = (
+				1E060B001CC4E311009E1BBC /* wizhwish */,
+				1E060B1A1CC4E311009E1BBC /* wizhwishTests */,
+				1E060B251CC4E311009E1BBC /* wizhwishUITests */,
+				1E060AFF1CC4E311009E1BBC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1E060AFF1CC4E311009E1BBC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1E060AFE1CC4E311009E1BBC /* wizhwish.app */,
+				1E060B171CC4E311009E1BBC /* wizhwishTests.xctest */,
+				1E060B221CC4E311009E1BBC /* wizhwishUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1E060B001CC4E311009E1BBC /* wizhwish */ = {
+			isa = PBXGroup;
+			children = (
+				1E060B041CC4E311009E1BBC /* AppDelegate.h */,
+				1E060B051CC4E311009E1BBC /* AppDelegate.m */,
+				1E060B071CC4E311009E1BBC /* ViewController.h */,
+				1E060B081CC4E311009E1BBC /* ViewController.m */,
+				1E060B0A1CC4E311009E1BBC /* Main.storyboard */,
+				1E060B0D1CC4E311009E1BBC /* Assets.xcassets */,
+				1E060B0F1CC4E311009E1BBC /* LaunchScreen.storyboard */,
+				1E060B121CC4E311009E1BBC /* Info.plist */,
+				1E060B011CC4E311009E1BBC /* Supporting Files */,
+			);
+			path = wizhwish;
+			sourceTree = "<group>";
+		};
+		1E060B011CC4E311009E1BBC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1E060B021CC4E311009E1BBC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1E060B1A1CC4E311009E1BBC /* wizhwishTests */ = {
+			isa = PBXGroup;
+			children = (
+				1E060B1B1CC4E311009E1BBC /* wizhwishTests.m */,
+				1E060B1D1CC4E311009E1BBC /* Info.plist */,
+			);
+			path = wizhwishTests;
+			sourceTree = "<group>";
+		};
+		1E060B251CC4E311009E1BBC /* wizhwishUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1E060B261CC4E311009E1BBC /* wizhwishUITests.m */,
+				1E060B281CC4E311009E1BBC /* Info.plist */,
+			);
+			path = wizhwishUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1E060AFD1CC4E311009E1BBC /* wizhwish */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E060B2B1CC4E311009E1BBC /* Build configuration list for PBXNativeTarget "wizhwish" */;
+			buildPhases = (
+				1E060AFA1CC4E311009E1BBC /* Sources */,
+				1E060AFB1CC4E311009E1BBC /* Frameworks */,
+				1E060AFC1CC4E311009E1BBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = wizhwish;
+			productName = wizhwish;
+			productReference = 1E060AFE1CC4E311009E1BBC /* wizhwish.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1E060B161CC4E311009E1BBC /* wizhwishTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E060B2E1CC4E311009E1BBC /* Build configuration list for PBXNativeTarget "wizhwishTests" */;
+			buildPhases = (
+				1E060B131CC4E311009E1BBC /* Sources */,
+				1E060B141CC4E311009E1BBC /* Frameworks */,
+				1E060B151CC4E311009E1BBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E060B191CC4E311009E1BBC /* PBXTargetDependency */,
+			);
+			name = wizhwishTests;
+			productName = wizhwishTests;
+			productReference = 1E060B171CC4E311009E1BBC /* wizhwishTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1E060B211CC4E311009E1BBC /* wizhwishUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1E060B311CC4E311009E1BBC /* Build configuration list for PBXNativeTarget "wizhwishUITests" */;
+			buildPhases = (
+				1E060B1E1CC4E311009E1BBC /* Sources */,
+				1E060B1F1CC4E311009E1BBC /* Frameworks */,
+				1E060B201CC4E311009E1BBC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1E060B241CC4E311009E1BBC /* PBXTargetDependency */,
+			);
+			name = wizhwishUITests;
+			productName = wizhwishUITests;
+			productReference = 1E060B221CC4E311009E1BBC /* wizhwishUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1E060AF61CC4E311009E1BBC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Syed Abdul Basit";
+				TargetAttributes = {
+					1E060AFD1CC4E311009E1BBC = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					1E060B161CC4E311009E1BBC = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 1E060AFD1CC4E311009E1BBC;
+					};
+					1E060B211CC4E311009E1BBC = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 1E060AFD1CC4E311009E1BBC;
+					};
+				};
+			};
+			buildConfigurationList = 1E060AF91CC4E311009E1BBC /* Build configuration list for PBXProject "wizhwish" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1E060AF51CC4E311009E1BBC;
+			productRefGroup = 1E060AFF1CC4E311009E1BBC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1E060AFD1CC4E311009E1BBC /* wizhwish */,
+				1E060B161CC4E311009E1BBC /* wizhwishTests */,
+				1E060B211CC4E311009E1BBC /* wizhwishUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1E060AFC1CC4E311009E1BBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E060B111CC4E311009E1BBC /* LaunchScreen.storyboard in Resources */,
+				1E060B0E1CC4E311009E1BBC /* Assets.xcassets in Resources */,
+				1E060B0C1CC4E311009E1BBC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E060B151CC4E311009E1BBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E060B201CC4E311009E1BBC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1E060AFA1CC4E311009E1BBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E060B091CC4E311009E1BBC /* ViewController.m in Sources */,
+				1E060B061CC4E311009E1BBC /* AppDelegate.m in Sources */,
+				1E060B031CC4E311009E1BBC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E060B131CC4E311009E1BBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E060B1C1CC4E311009E1BBC /* wizhwishTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1E060B1E1CC4E311009E1BBC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E060B271CC4E311009E1BBC /* wizhwishUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1E060B191CC4E311009E1BBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E060AFD1CC4E311009E1BBC /* wizhwish */;
+			targetProxy = 1E060B181CC4E311009E1BBC /* PBXContainerItemProxy */;
+		};
+		1E060B241CC4E311009E1BBC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1E060AFD1CC4E311009E1BBC /* wizhwish */;
+			targetProxy = 1E060B231CC4E311009E1BBC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1E060B0A1CC4E311009E1BBC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E060B0B1CC4E311009E1BBC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1E060B0F1CC4E311009E1BBC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E060B101CC4E311009E1BBC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1E060B291CC4E311009E1BBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1E060B2A1CC4E311009E1BBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1E060B2C1CC4E311009E1BBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = wizhwish/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mashwani.wizhwish;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1E060B2D1CC4E311009E1BBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = wizhwish/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mashwani.wizhwish;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1E060B2F1CC4E311009E1BBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = wizhwishTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mashwani.wizhwishTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wizhwish.app/wizhwish";
+			};
+			name = Debug;
+		};
+		1E060B301CC4E311009E1BBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = wizhwishTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mashwani.wizhwishTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/wizhwish.app/wizhwish";
+			};
+			name = Release;
+		};
+		1E060B321CC4E311009E1BBC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = wizhwishUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mashwani.wizhwishUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = wizhwish;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		1E060B331CC4E311009E1BBC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = wizhwishUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.mashwani.wizhwishUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = wizhwish;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1E060AF91CC4E311009E1BBC /* Build configuration list for PBXProject "wizhwish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E060B291CC4E311009E1BBC /* Debug */,
+				1E060B2A1CC4E311009E1BBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1E060B2B1CC4E311009E1BBC /* Build configuration list for PBXNativeTarget "wizhwish" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E060B2C1CC4E311009E1BBC /* Debug */,
+				1E060B2D1CC4E311009E1BBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1E060B2E1CC4E311009E1BBC /* Build configuration list for PBXNativeTarget "wizhwishTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E060B2F1CC4E311009E1BBC /* Debug */,
+				1E060B301CC4E311009E1BBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1E060B311CC4E311009E1BBC /* Build configuration list for PBXNativeTarget "wizhwishUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E060B321CC4E311009E1BBC /* Debug */,
+				1E060B331CC4E311009E1BBC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1E060AF61CC4E311009E1BBC /* Project object */;
+}
