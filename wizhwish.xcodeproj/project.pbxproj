@@ -9,12 +9,47 @@
 /* Begin PBXBuildFile section */
 		1E060B031CC4E311009E1BBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E060B021CC4E311009E1BBC /* main.m */; };
 		1E060B061CC4E311009E1BBC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E060B051CC4E311009E1BBC /* AppDelegate.m */; };
-		1E060B091CC4E311009E1BBC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E060B081CC4E311009E1BBC /* ViewController.m */; };
-		1E060B0C1CC4E311009E1BBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E060B0A1CC4E311009E1BBC /* Main.storyboard */; };
-		1E060B0E1CC4E311009E1BBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E060B0D1CC4E311009E1BBC /* Assets.xcassets */; };
+		1E060B0C1CC4E311009E1BBC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E060B0A1CC4E311009E1BBC /* Login.storyboard */; };
 		1E060B111CC4E311009E1BBC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E060B0F1CC4E311009E1BBC /* LaunchScreen.storyboard */; };
 		1E060B1C1CC4E311009E1BBC /* wizhwishTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E060B1B1CC4E311009E1BBC /* wizhwishTests.m */; };
 		1E060B271CC4E311009E1BBC /* wizhwishUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E060B261CC4E311009E1BBC /* wizhwishUITests.m */; };
+		1E18878B1CE1BF2C00B7F1D5 /* WZMyWishesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E18878A1CE1BF2C00B7F1D5 /* WZMyWishesTableViewCell.m */; };
+		1E271DAF1CE2097E00DB572F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E271DAE1CE2097E00DB572F /* AVFoundation.framework */; };
+		1E271DB31CE2149500DB572F /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E271DB21CE2149500DB572F /* Photos.framework */; };
+		1E4276261CD914B00004A0F8 /* RUUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4276251CD914B00004A0F8 /* RUUtility.m */; };
+		1E42762B1CD914D00004A0F8 /* WZPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4276281CD914D00004A0F8 /* WZPostTableViewCell.m */; };
+		1E42762C1CD914D00004A0F8 /* WZPostTopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E42762A1CD914D00004A0F8 /* WZPostTopTableViewCell.m */; };
+		1E42762F1CD914E20004A0F8 /* WZFriendCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E42762E1CD914E20004A0F8 /* WZFriendCollectionViewCell.m */; };
+		1E4276321CD914F70004A0F8 /* UIViewController+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4276311CD914F70004A0F8 /* UIViewController+Extras.m */; };
+		1E4276351CD915020004A0F8 /* UIView+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4276341CD915020004A0F8 /* UIView+Extras.m */; };
+		1E4276381CD9150D0004A0F8 /* UIStoryboard+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4276371CD9150D0004A0F8 /* UIStoryboard+Extras.m */; };
+		1E42763B1CD9151A0004A0F8 /* UIImage+Extra.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E42763A1CD9151A0004A0F8 /* UIImage+Extra.m */; };
+		1E42763E1CD915270004A0F8 /* UIColor+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E42763D1CD915270004A0F8 /* UIColor+Extras.m */; };
+		1E4276411CD915350004A0F8 /* OLGhostAlertView+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4276401CD915350004A0F8 /* OLGhostAlertView+Extras.m */; };
+		1E4276441CD915430004A0F8 /* NSString+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4276431CD915430004A0F8 /* NSString+Extras.m */; };
+		1E4276471CD915510004A0F8 /* NSError+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4276461CD915510004A0F8 /* NSError+Extras.m */; };
+		1E42764A1CD915650004A0F8 /* WZMyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4276491CD915650004A0F8 /* WZMyProfileViewController.m */; };
+		1E42764D1CD915720004A0F8 /* WZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E42764C1CD915720004A0F8 /* WZHomeViewController.m */; };
+		1E4276501CD915800004A0F8 /* WZRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E42764F1CD915800004A0F8 /* WZRegistrationViewController.m */; };
+		1E4276531CD9158F0004A0F8 /* WZLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4276521CD9158F0004A0F8 /* WZLoginViewController.m */; };
+		1E4276561CD915A20004A0F8 /* home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E4276541CD915A20004A0F8 /* home.storyboard */; };
+		1E4276581CD915B90004A0F8 /* Home.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E4276571CD915B90004A0F8 /* Home.xcassets */; };
+		1E42765B1CD915C10004A0F8 /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E4276591CD915C10004A0F8 /* Login.xcassets */; };
+		1E7208C51CD920780017188F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E7208C31CD920780017188F /* Profile.storyboard */; };
+		1E7208C81CD923740017188F /* WZProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7208C71CD923740017188F /* WZProfileTableViewCell.m */; };
+		1E7208CB1CD924420017188F /* WZFollowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7208CA1CD924420017188F /* WZFollowerViewController.m */; };
+		1E8032921CDE67FD0010D036 /* Profile.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E8032911CDE67FD0010D036 /* Profile.xcassets */; };
+		1E8032961CDF040D0010D036 /* UITextField+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8032951CDF040D0010D036 /* UITextField+Extras.m */; };
+		1E8032991CDF0BE30010D036 /* WZMyWishesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8032981CDF0BE30010D036 /* WZMyWishesViewController.m */; };
+		1E8717E51CE879410062EFE9 /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E8717E31CE879410062EFE9 /* Chat.storyboard */; };
+		1E8717E71CE8A19F0062EFE9 /* Chat.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E8717E61CE8A19F0062EFE9 /* Chat.xcassets */; };
+		1E8717EB1CE8A8BC0062EFE9 /* WZChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8717EA1CE8A8BC0062EFE9 /* WZChatViewController.m */; };
+		1E8717EE1CE8B0B70062EFE9 /* WZEmptySegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8717ED1CE8B0B70062EFE9 /* WZEmptySegue.m */; };
+		1E8717F31CE8B2650062EFE9 /* WZContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8717F21CE8B2650062EFE9 /* WZContainerViewController.m */; };
+		1E8717F81CE8B4B60062EFE9 /* WZChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8717F71CE8B4B60062EFE9 /* WZChatListViewController.m */; };
+		1E8717FE1CE8BDCA0062EFE9 /* WZNewFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8717FD1CE8BDCA0062EFE9 /* WZNewFriendViewController.m */; };
+		1ED6C7241CE4E2630042D3F6 /* WZPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED6C7231CE4E2630042D3F6 /* WZPostsViewController.m */; };
+		5D6C5EC9CB2516C86BC89036 /* libPods-wizhwish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 251AFA9DE825BB7D252F9E69 /* libPods-wizhwish.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,10 +74,7 @@
 		1E060B021CC4E311009E1BBC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1E060B041CC4E311009E1BBC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1E060B051CC4E311009E1BBC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1E060B071CC4E311009E1BBC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1E060B081CC4E311009E1BBC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		1E060B0B1CC4E311009E1BBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1E060B0D1CC4E311009E1BBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1E060B0B1CC4E311009E1BBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		1E060B101CC4E311009E1BBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1E060B121CC4E311009E1BBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1E060B171CC4E311009E1BBC /* wizhwishTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wizhwishTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -51,6 +83,75 @@
 		1E060B221CC4E311009E1BBC /* wizhwishUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = wizhwishUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E060B261CC4E311009E1BBC /* wizhwishUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = wizhwishUITests.m; sourceTree = "<group>"; };
 		1E060B281CC4E311009E1BBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1E060B391CC4F134009E1BBC /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		1E1887891CE1BF2C00B7F1D5 /* WZMyWishesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZMyWishesTableViewCell.h; path = Cells/WZMyWishesTableViewCell.h; sourceTree = "<group>"; };
+		1E18878A1CE1BF2C00B7F1D5 /* WZMyWishesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZMyWishesTableViewCell.m; path = Cells/WZMyWishesTableViewCell.m; sourceTree = "<group>"; };
+		1E271DAE1CE2097E00DB572F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		1E271DB01CE2133900DB572F /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		1E271DB21CE2149500DB572F /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		1E4276241CD914B00004A0F8 /* RUUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RUUtility.h; path = Utilities/RUUtility.h; sourceTree = "<group>"; };
+		1E4276251CD914B00004A0F8 /* RUUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RUUtility.m; path = Utilities/RUUtility.m; sourceTree = "<group>"; };
+		1E4276271CD914D00004A0F8 /* WZPostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZPostTableViewCell.h; path = Cells/WZPostTableViewCell.h; sourceTree = "<group>"; };
+		1E4276281CD914D00004A0F8 /* WZPostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZPostTableViewCell.m; path = Cells/WZPostTableViewCell.m; sourceTree = "<group>"; };
+		1E4276291CD914D00004A0F8 /* WZPostTopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZPostTopTableViewCell.h; path = Cells/WZPostTopTableViewCell.h; sourceTree = "<group>"; };
+		1E42762A1CD914D00004A0F8 /* WZPostTopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZPostTopTableViewCell.m; path = Cells/WZPostTopTableViewCell.m; sourceTree = "<group>"; };
+		1E42762D1CD914E20004A0F8 /* WZFriendCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZFriendCollectionViewCell.h; path = Cells/WZFriendCollectionViewCell.h; sourceTree = "<group>"; };
+		1E42762E1CD914E20004A0F8 /* WZFriendCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZFriendCollectionViewCell.m; path = Cells/WZFriendCollectionViewCell.m; sourceTree = "<group>"; };
+		1E4276301CD914F70004A0F8 /* UIViewController+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+Extras.h"; path = "Utilities/Categories/UIViewController+Extras.h"; sourceTree = "<group>"; };
+		1E4276311CD914F70004A0F8 /* UIViewController+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+Extras.m"; path = "Utilities/Categories/UIViewController+Extras.m"; sourceTree = "<group>"; };
+		1E4276331CD915020004A0F8 /* UIView+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+Extras.h"; path = "Utilities/Categories/UIView+Extras.h"; sourceTree = "<group>"; };
+		1E4276341CD915020004A0F8 /* UIView+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+Extras.m"; path = "Utilities/Categories/UIView+Extras.m"; sourceTree = "<group>"; };
+		1E4276361CD9150D0004A0F8 /* UIStoryboard+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIStoryboard+Extras.h"; path = "Utilities/Categories/UIStoryboard+Extras.h"; sourceTree = "<group>"; };
+		1E4276371CD9150D0004A0F8 /* UIStoryboard+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIStoryboard+Extras.m"; path = "Utilities/Categories/UIStoryboard+Extras.m"; sourceTree = "<group>"; };
+		1E4276391CD9151A0004A0F8 /* UIImage+Extra.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Extra.h"; path = "Utilities/Categories/UIImage+Extra.h"; sourceTree = "<group>"; };
+		1E42763A1CD9151A0004A0F8 /* UIImage+Extra.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Extra.m"; path = "Utilities/Categories/UIImage+Extra.m"; sourceTree = "<group>"; };
+		1E42763C1CD915270004A0F8 /* UIColor+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+Extras.h"; path = "Utilities/Categories/UIColor+Extras.h"; sourceTree = "<group>"; };
+		1E42763D1CD915270004A0F8 /* UIColor+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+Extras.m"; path = "Utilities/Categories/UIColor+Extras.m"; sourceTree = "<group>"; };
+		1E42763F1CD915350004A0F8 /* OLGhostAlertView+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "OLGhostAlertView+Extras.h"; path = "Utilities/Categories/OLGhostAlertView+Extras.h"; sourceTree = "<group>"; };
+		1E4276401CD915350004A0F8 /* OLGhostAlertView+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "OLGhostAlertView+Extras.m"; path = "Utilities/Categories/OLGhostAlertView+Extras.m"; sourceTree = "<group>"; };
+		1E4276421CD915430004A0F8 /* NSString+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Extras.h"; path = "Utilities/Categories/NSString+Extras.h"; sourceTree = "<group>"; };
+		1E4276431CD915430004A0F8 /* NSString+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Extras.m"; path = "Utilities/Categories/NSString+Extras.m"; sourceTree = "<group>"; };
+		1E4276451CD915510004A0F8 /* NSError+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSError+Extras.h"; path = "Utilities/Categories/NSError+Extras.h"; sourceTree = "<group>"; };
+		1E4276461CD915510004A0F8 /* NSError+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSError+Extras.m"; path = "Utilities/Categories/NSError+Extras.m"; sourceTree = "<group>"; };
+		1E4276481CD915650004A0F8 /* WZMyProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZMyProfileViewController.h; path = ViewController/WZMyProfileViewController.h; sourceTree = "<group>"; };
+		1E4276491CD915650004A0F8 /* WZMyProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZMyProfileViewController.m; path = ViewController/WZMyProfileViewController.m; sourceTree = "<group>"; };
+		1E42764B1CD915720004A0F8 /* WZHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZHomeViewController.h; path = ViewController/WZHomeViewController.h; sourceTree = "<group>"; };
+		1E42764C1CD915720004A0F8 /* WZHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZHomeViewController.m; path = ViewController/WZHomeViewController.m; sourceTree = "<group>"; };
+		1E42764E1CD915800004A0F8 /* WZRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZRegistrationViewController.h; path = ViewController/WZRegistrationViewController.h; sourceTree = "<group>"; };
+		1E42764F1CD915800004A0F8 /* WZRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZRegistrationViewController.m; path = ViewController/WZRegistrationViewController.m; sourceTree = "<group>"; };
+		1E4276511CD9158F0004A0F8 /* WZLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZLoginViewController.h; path = /Users/Syed_Abdul_Basit/Desktop/Projects/wizhwish/wizhwish/ViewController/WZLoginViewController.h; sourceTree = "<absolute>"; };
+		1E4276521CD9158F0004A0F8 /* WZLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZLoginViewController.m; path = ViewController/WZLoginViewController.m; sourceTree = "<group>"; };
+		1E4276551CD915A20004A0F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/home.storyboard; sourceTree = "<group>"; };
+		1E4276571CD915B90004A0F8 /* Home.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Home.xcassets; path = Resources/Home.xcassets; sourceTree = "<group>"; };
+		1E4276591CD915C10004A0F8 /* Login.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Login.xcassets; path = Resources/Login.xcassets; sourceTree = "<group>"; };
+		1E42765C1CD917150004A0F8 /* WizWish.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WizWish.pch; path = Resources/WizWish.pch; sourceTree = "<group>"; };
+		1E7208C41CD920780017188F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
+		1E7208C61CD923740017188F /* WZProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZProfileTableViewCell.h; path = Cells/WZProfileTableViewCell.h; sourceTree = "<group>"; };
+		1E7208C71CD923740017188F /* WZProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZProfileTableViewCell.m; path = Cells/WZProfileTableViewCell.m; sourceTree = "<group>"; };
+		1E7208C91CD924420017188F /* WZFollowerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZFollowerViewController.h; path = ViewController/WZFollowerViewController.h; sourceTree = "<group>"; };
+		1E7208CA1CD924420017188F /* WZFollowerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZFollowerViewController.m; path = ViewController/WZFollowerViewController.m; sourceTree = "<group>"; };
+		1E8032911CDE67FD0010D036 /* Profile.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Profile.xcassets; path = Resources/Profile.xcassets; sourceTree = "<group>"; };
+		1E8032941CDF040D0010D036 /* UITextField+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UITextField+Extras.h"; path = "Utilities/Categories/UITextField+Extras.h"; sourceTree = "<group>"; };
+		1E8032951CDF040D0010D036 /* UITextField+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UITextField+Extras.m"; path = "Utilities/Categories/UITextField+Extras.m"; sourceTree = "<group>"; };
+		1E8032971CDF0BE30010D036 /* WZMyWishesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZMyWishesViewController.h; path = ViewController/WZMyWishesViewController.h; sourceTree = "<group>"; };
+		1E8032981CDF0BE30010D036 /* WZMyWishesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZMyWishesViewController.m; path = ViewController/WZMyWishesViewController.m; sourceTree = "<group>"; };
+		1E8717E41CE879410062EFE9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Chat.storyboard; sourceTree = "<group>"; };
+		1E8717E61CE8A19F0062EFE9 /* Chat.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Chat.xcassets; path = Resources/Chat.xcassets; sourceTree = "<group>"; };
+		1E8717E91CE8A8BC0062EFE9 /* WZChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZChatViewController.h; path = ViewController/WZChatViewController.h; sourceTree = "<group>"; };
+		1E8717EA1CE8A8BC0062EFE9 /* WZChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZChatViewController.m; path = ViewController/WZChatViewController.m; sourceTree = "<group>"; };
+		1E8717EC1CE8B0B70062EFE9 /* WZEmptySegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZEmptySegue.h; path = Utilities/Segue/WZEmptySegue.h; sourceTree = "<group>"; };
+		1E8717ED1CE8B0B70062EFE9 /* WZEmptySegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZEmptySegue.m; path = Utilities/Segue/WZEmptySegue.m; sourceTree = "<group>"; };
+		1E8717F11CE8B2650062EFE9 /* WZContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZContainerViewController.h; path = ViewController/WZContainerViewController.h; sourceTree = "<group>"; };
+		1E8717F21CE8B2650062EFE9 /* WZContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZContainerViewController.m; path = ViewController/WZContainerViewController.m; sourceTree = "<group>"; };
+		1E8717F61CE8B4B60062EFE9 /* WZChatListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZChatListViewController.h; path = ViewController/WZChatListViewController.h; sourceTree = "<group>"; };
+		1E8717F71CE8B4B60062EFE9 /* WZChatListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZChatListViewController.m; path = ViewController/WZChatListViewController.m; sourceTree = "<group>"; };
+		1E8717FC1CE8BDCA0062EFE9 /* WZNewFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZNewFriendViewController.h; path = ViewController/WZNewFriendViewController.h; sourceTree = "<group>"; };
+		1E8717FD1CE8BDCA0062EFE9 /* WZNewFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZNewFriendViewController.m; path = ViewController/WZNewFriendViewController.m; sourceTree = "<group>"; };
+		1ED6C7221CE4E2630042D3F6 /* WZPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZPostsViewController.h; path = ViewController/WZPostsViewController.h; sourceTree = "<group>"; };
+		1ED6C7231CE4E2630042D3F6 /* WZPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZPostsViewController.m; path = ViewController/WZPostsViewController.m; sourceTree = "<group>"; };
+		251AFA9DE825BB7D252F9E69 /* libPods-wizhwish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wizhwish.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		25918DA5ECA2450ED2B97948 /* Pods-wizhwish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwish.release.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwish/Pods-wizhwish.release.xcconfig"; sourceTree = "<group>"; };
+		9D04BD9FB6266A9389C4ED76 /* Pods-wizhwish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwish/Pods-wizhwish.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +159,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E271DB31CE2149500DB572F /* Photos.framework in Frameworks */,
+				1E271DAF1CE2097E00DB572F /* AVFoundation.framework in Frameworks */,
+				5D6C5EC9CB2516C86BC89036 /* libPods-wizhwish.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +189,8 @@
 				1E060B1A1CC4E311009E1BBC /* wizhwishTests */,
 				1E060B251CC4E311009E1BBC /* wizhwishUITests */,
 				1E060AFF1CC4E311009E1BBC /* Products */,
+				CE8A51816A1EFB59FA595C40 /* Pods */,
+				B9C0C3AF17009FB9A1BCA61D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,14 +207,13 @@
 		1E060B001CC4E311009E1BBC /* wizhwish */ = {
 			isa = PBXGroup;
 			children = (
+				1E060B391CC4F134009E1BBC /* Constants.h */,
 				1E060B041CC4E311009E1BBC /* AppDelegate.h */,
 				1E060B051CC4E311009E1BBC /* AppDelegate.m */,
-				1E060B071CC4E311009E1BBC /* ViewController.h */,
-				1E060B081CC4E311009E1BBC /* ViewController.m */,
-				1E060B0A1CC4E311009E1BBC /* Main.storyboard */,
-				1E060B0D1CC4E311009E1BBC /* Assets.xcassets */,
+				1E14322D1CC781CC004682B6 /* Utilities */,
+				1E060B341CC4F098009E1BBC /* ViewController */,
+				1E906D871CC7698100A45B9A /* Storyboard */,
 				1E060B0F1CC4E311009E1BBC /* LaunchScreen.storyboard */,
-				1E060B121CC4E311009E1BBC /* Info.plist */,
 				1E060B011CC4E311009E1BBC /* Supporting Files */,
 			);
 			path = wizhwish;
@@ -117,6 +222,12 @@
 		1E060B011CC4E311009E1BBC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1E42765C1CD917150004A0F8 /* WizWish.pch */,
+				1E4276591CD915C10004A0F8 /* Login.xcassets */,
+				1E8032911CDE67FD0010D036 /* Profile.xcassets */,
+				1E8717E61CE8A19F0062EFE9 /* Chat.xcassets */,
+				1E4276571CD915B90004A0F8 /* Home.xcassets */,
+				1E060B121CC4E311009E1BBC /* Info.plist */,
 				1E060B021CC4E311009E1BBC /* main.m */,
 			);
 			name = "Supporting Files";
@@ -140,6 +251,289 @@
 			path = wizhwishUITests;
 			sourceTree = "<group>";
 		};
+		1E060B341CC4F098009E1BBC /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E8717F01CE8B1FD0062EFE9 /* ContainerViewController */,
+				1E8717E81CE8A8970062EFE9 /* ChatViewController */,
+				1ED6C7211CE4E22D0042D3F6 /* PostsViewController */,
+				1ED6C7201CE315100042D3F6 /* MyWishesViewController */,
+				1E8032901CDE61B80010D036 /* FollowerViewController */,
+				1EDF8D151CD87DB700F4B3F1 /* ProfileViewController */,
+				1E1432521CC78898004682B6 /* HomeViewController */,
+				1E906D821CC7653600A45B9A /* RegistrationViewController */,
+				1E060B351CC4F0A7009E1BBC /* LoginViewController */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		1E060B351CC4F0A7009E1BBC /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E4276511CD9158F0004A0F8 /* WZLoginViewController.h */,
+				1E4276521CD9158F0004A0F8 /* WZLoginViewController.m */,
+			);
+			name = LoginViewController;
+			sourceTree = "<group>";
+		};
+		1E14322D1CC781CC004682B6 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				1E8717EF1CE8B0C40062EFE9 /* Segue */,
+				1E4276241CD914B00004A0F8 /* RUUtility.h */,
+				1E4276251CD914B00004A0F8 /* RUUtility.m */,
+				1E9191181CC8AB1500E2B762 /* Custom Cell */,
+				1E1432311CC782B8004682B6 /* Categories */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		1E1432311CC782B8004682B6 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				1E8032931CDF03BE0010D036 /* UITextField */,
+				1E1432511CC78356004682B6 /* UIViewController */,
+				1E1432501CC7834F004682B6 /* UIView */,
+				1E14324F1CC78346004682B6 /* UIStoryBoard */,
+				1E14324E1CC7833E004682B6 /* UIImage */,
+				1E14324D1CC78331004682B6 /* UIColor */,
+				1E14324C1CC78321004682B6 /* OLGhostView */,
+				1E14324B1CC78313004682B6 /* NSString */,
+				1E14324A1CC78305004682B6 /* NSError */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		1E14324A1CC78305004682B6 /* NSError */ = {
+			isa = PBXGroup;
+			children = (
+				1E4276451CD915510004A0F8 /* NSError+Extras.h */,
+				1E4276461CD915510004A0F8 /* NSError+Extras.m */,
+			);
+			name = NSError;
+			sourceTree = "<group>";
+		};
+		1E14324B1CC78313004682B6 /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				1E4276421CD915430004A0F8 /* NSString+Extras.h */,
+				1E4276431CD915430004A0F8 /* NSString+Extras.m */,
+			);
+			name = NSString;
+			sourceTree = "<group>";
+		};
+		1E14324C1CC78321004682B6 /* OLGhostView */ = {
+			isa = PBXGroup;
+			children = (
+				1E42763F1CD915350004A0F8 /* OLGhostAlertView+Extras.h */,
+				1E4276401CD915350004A0F8 /* OLGhostAlertView+Extras.m */,
+			);
+			name = OLGhostView;
+			sourceTree = "<group>";
+		};
+		1E14324D1CC78331004682B6 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				1E42763C1CD915270004A0F8 /* UIColor+Extras.h */,
+				1E42763D1CD915270004A0F8 /* UIColor+Extras.m */,
+			);
+			name = UIColor;
+			sourceTree = "<group>";
+		};
+		1E14324E1CC7833E004682B6 /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				1E4276391CD9151A0004A0F8 /* UIImage+Extra.h */,
+				1E42763A1CD9151A0004A0F8 /* UIImage+Extra.m */,
+			);
+			name = UIImage;
+			sourceTree = "<group>";
+		};
+		1E14324F1CC78346004682B6 /* UIStoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				1E4276361CD9150D0004A0F8 /* UIStoryboard+Extras.h */,
+				1E4276371CD9150D0004A0F8 /* UIStoryboard+Extras.m */,
+			);
+			name = UIStoryBoard;
+			sourceTree = "<group>";
+		};
+		1E1432501CC7834F004682B6 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				1E4276331CD915020004A0F8 /* UIView+Extras.h */,
+				1E4276341CD915020004A0F8 /* UIView+Extras.m */,
+			);
+			name = UIView;
+			sourceTree = "<group>";
+		};
+		1E1432511CC78356004682B6 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E4276301CD914F70004A0F8 /* UIViewController+Extras.h */,
+				1E4276311CD914F70004A0F8 /* UIViewController+Extras.m */,
+			);
+			name = UIViewController;
+			sourceTree = "<group>";
+		};
+		1E1432521CC78898004682B6 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E42764B1CD915720004A0F8 /* WZHomeViewController.h */,
+				1E42764C1CD915720004A0F8 /* WZHomeViewController.m */,
+			);
+			name = HomeViewController;
+			sourceTree = "<group>";
+		};
+		1E8032901CDE61B80010D036 /* FollowerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E7208C91CD924420017188F /* WZFollowerViewController.h */,
+				1E7208CA1CD924420017188F /* WZFollowerViewController.m */,
+			);
+			name = FollowerViewController;
+			sourceTree = "<group>";
+		};
+		1E8032931CDF03BE0010D036 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				1E8032941CDF040D0010D036 /* UITextField+Extras.h */,
+				1E8032951CDF040D0010D036 /* UITextField+Extras.m */,
+			);
+			name = UITextField;
+			sourceTree = "<group>";
+		};
+		1E8717E81CE8A8970062EFE9 /* ChatViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E8717E91CE8A8BC0062EFE9 /* WZChatViewController.h */,
+				1E8717EA1CE8A8BC0062EFE9 /* WZChatViewController.m */,
+				1E8717F61CE8B4B60062EFE9 /* WZChatListViewController.h */,
+				1E8717F71CE8B4B60062EFE9 /* WZChatListViewController.m */,
+				1E8717FC1CE8BDCA0062EFE9 /* WZNewFriendViewController.h */,
+				1E8717FD1CE8BDCA0062EFE9 /* WZNewFriendViewController.m */,
+			);
+			name = ChatViewController;
+			sourceTree = "<group>";
+		};
+		1E8717EF1CE8B0C40062EFE9 /* Segue */ = {
+			isa = PBXGroup;
+			children = (
+				1E8717EC1CE8B0B70062EFE9 /* WZEmptySegue.h */,
+				1E8717ED1CE8B0B70062EFE9 /* WZEmptySegue.m */,
+			);
+			name = Segue;
+			sourceTree = "<group>";
+		};
+		1E8717F01CE8B1FD0062EFE9 /* ContainerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E8717F11CE8B2650062EFE9 /* WZContainerViewController.h */,
+				1E8717F21CE8B2650062EFE9 /* WZContainerViewController.m */,
+			);
+			name = ContainerViewController;
+			sourceTree = "<group>";
+		};
+		1E906D821CC7653600A45B9A /* RegistrationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E42764E1CD915800004A0F8 /* WZRegistrationViewController.h */,
+				1E42764F1CD915800004A0F8 /* WZRegistrationViewController.m */,
+			);
+			name = RegistrationViewController;
+			sourceTree = "<group>";
+		};
+		1E906D871CC7698100A45B9A /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1E4276541CD915A20004A0F8 /* home.storyboard */,
+				1E060B0A1CC4E311009E1BBC /* Login.storyboard */,
+				1E7208C31CD920780017188F /* Profile.storyboard */,
+				1E8717E31CE879410062EFE9 /* Chat.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		1E9191181CC8AB1500E2B762 /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1EA175E51CD50938004BCB32 /* TableViewCell */,
+				1EA175E41CD50926004BCB32 /* CollectionViewCell */,
+			);
+			name = "Custom Cell";
+			sourceTree = "<group>";
+		};
+		1EA175E41CD50926004BCB32 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1E42762D1CD914E20004A0F8 /* WZFriendCollectionViewCell.h */,
+				1E42762E1CD914E20004A0F8 /* WZFriendCollectionViewCell.m */,
+			);
+			name = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		1EA175E51CD50938004BCB32 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				1E4276271CD914D00004A0F8 /* WZPostTableViewCell.h */,
+				1E4276281CD914D00004A0F8 /* WZPostTableViewCell.m */,
+				1E4276291CD914D00004A0F8 /* WZPostTopTableViewCell.h */,
+				1E42762A1CD914D00004A0F8 /* WZPostTopTableViewCell.m */,
+				1E7208C61CD923740017188F /* WZProfileTableViewCell.h */,
+				1E7208C71CD923740017188F /* WZProfileTableViewCell.m */,
+				1E1887891CE1BF2C00B7F1D5 /* WZMyWishesTableViewCell.h */,
+				1E18878A1CE1BF2C00B7F1D5 /* WZMyWishesTableViewCell.m */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		1ED6C7201CE315100042D3F6 /* MyWishesViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E8032971CDF0BE30010D036 /* WZMyWishesViewController.h */,
+				1E8032981CDF0BE30010D036 /* WZMyWishesViewController.m */,
+			);
+			name = MyWishesViewController;
+			sourceTree = "<group>";
+		};
+		1ED6C7211CE4E22D0042D3F6 /* PostsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1ED6C7221CE4E2630042D3F6 /* WZPostsViewController.h */,
+				1ED6C7231CE4E2630042D3F6 /* WZPostsViewController.m */,
+			);
+			name = PostsViewController;
+			sourceTree = "<group>";
+		};
+		1EDF8D151CD87DB700F4B3F1 /* ProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E4276481CD915650004A0F8 /* WZMyProfileViewController.h */,
+				1E4276491CD915650004A0F8 /* WZMyProfileViewController.m */,
+			);
+			name = ProfileViewController;
+			sourceTree = "<group>";
+		};
+		B9C0C3AF17009FB9A1BCA61D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E271DB21CE2149500DB572F /* Photos.framework */,
+				1E271DB01CE2133900DB572F /* AssetsLibrary.framework */,
+				1E271DAE1CE2097E00DB572F /* AVFoundation.framework */,
+				251AFA9DE825BB7D252F9E69 /* libPods-wizhwish.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE8A51816A1EFB59FA595C40 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9D04BD9FB6266A9389C4ED76 /* Pods-wizhwish.debug.xcconfig */,
+				25918DA5ECA2450ED2B97948 /* Pods-wizhwish.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +541,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E060B2B1CC4E311009E1BBC /* Build configuration list for PBXNativeTarget "wizhwish" */;
 			buildPhases = (
+				FD027796C64FF978B84B7ADE /* Check Pods Manifest.lock */,
 				1E060AFA1CC4E311009E1BBC /* Sources */,
 				1E060AFB1CC4E311009E1BBC /* Frameworks */,
 				1E060AFC1CC4E311009E1BBC /* Resources */,
+				FB36E200B0F9A276494DBCE8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,6 +598,7 @@
 		1E060AF61CC4E311009E1BBC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Syed Abdul Basit";
 				TargetAttributes = {
@@ -243,9 +640,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E7208C51CD920780017188F /* Profile.storyboard in Resources */,
+				1E8717E71CE8A19F0062EFE9 /* Chat.xcassets in Resources */,
+				1E4276561CD915A20004A0F8 /* home.storyboard in Resources */,
+				1E8032921CDE67FD0010D036 /* Profile.xcassets in Resources */,
 				1E060B111CC4E311009E1BBC /* LaunchScreen.storyboard in Resources */,
-				1E060B0E1CC4E311009E1BBC /* Assets.xcassets in Resources */,
-				1E060B0C1CC4E311009E1BBC /* Main.storyboard in Resources */,
+				1E4276581CD915B90004A0F8 /* Home.xcassets in Resources */,
+				1E42765B1CD915C10004A0F8 /* Login.xcassets in Resources */,
+				1E8717E51CE879410062EFE9 /* Chat.storyboard in Resources */,
+				1E060B0C1CC4E311009E1BBC /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,12 +668,71 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FB36E200B0F9A276494DBCE8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wizhwish/Pods-wizhwish-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD027796C64FF978B84B7ADE /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1E060AFA1CC4E311009E1BBC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E060B091CC4E311009E1BBC /* ViewController.m in Sources */,
+				1ED6C7241CE4E2630042D3F6 /* WZPostsViewController.m in Sources */,
+				1E42762B1CD914D00004A0F8 /* WZPostTableViewCell.m in Sources */,
+				1E18878B1CE1BF2C00B7F1D5 /* WZMyWishesTableViewCell.m in Sources */,
+				1E4276321CD914F70004A0F8 /* UIViewController+Extras.m in Sources */,
+				1E8032961CDF040D0010D036 /* UITextField+Extras.m in Sources */,
+				1E4276261CD914B00004A0F8 /* RUUtility.m in Sources */,
+				1E8717F31CE8B2650062EFE9 /* WZContainerViewController.m in Sources */,
+				1E8717FE1CE8BDCA0062EFE9 /* WZNewFriendViewController.m in Sources */,
+				1E4276501CD915800004A0F8 /* WZRegistrationViewController.m in Sources */,
+				1E4276411CD915350004A0F8 /* OLGhostAlertView+Extras.m in Sources */,
+				1E7208C81CD923740017188F /* WZProfileTableViewCell.m in Sources */,
+				1E42762C1CD914D00004A0F8 /* WZPostTopTableViewCell.m in Sources */,
+				1E42764A1CD915650004A0F8 /* WZMyProfileViewController.m in Sources */,
+				1E8032991CDF0BE30010D036 /* WZMyWishesViewController.m in Sources */,
+				1E8717F81CE8B4B60062EFE9 /* WZChatListViewController.m in Sources */,
+				1E4276441CD915430004A0F8 /* NSString+Extras.m in Sources */,
+				1E4276531CD9158F0004A0F8 /* WZLoginViewController.m in Sources */,
+				1E42763E1CD915270004A0F8 /* UIColor+Extras.m in Sources */,
+				1E4276471CD915510004A0F8 /* NSError+Extras.m in Sources */,
+				1E7208CB1CD924420017188F /* WZFollowerViewController.m in Sources */,
+				1E42763B1CD9151A0004A0F8 /* UIImage+Extra.m in Sources */,
+				1E8717EB1CE8A8BC0062EFE9 /* WZChatViewController.m in Sources */,
+				1E4276381CD9150D0004A0F8 /* UIStoryboard+Extras.m in Sources */,
+				1E8717EE1CE8B0B70062EFE9 /* WZEmptySegue.m in Sources */,
+				1E4276351CD915020004A0F8 /* UIView+Extras.m in Sources */,
+				1E42762F1CD914E20004A0F8 /* WZFriendCollectionViewCell.m in Sources */,
+				1E42764D1CD915720004A0F8 /* WZHomeViewController.m in Sources */,
 				1E060B061CC4E311009E1BBC /* AppDelegate.m in Sources */,
 				1E060B031CC4E311009E1BBC /* main.m in Sources */,
 			);
@@ -308,12 +770,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1E060B0A1CC4E311009E1BBC /* Main.storyboard */ = {
+		1E060B0A1CC4E311009E1BBC /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1E060B0B1CC4E311009E1BBC /* Base */,
 			);
-			name = Main.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 		1E060B0F1CC4E311009E1BBC /* LaunchScreen.storyboard */ = {
@@ -322,6 +784,30 @@
 				1E060B101CC4E311009E1BBC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1E4276541CD915A20004A0F8 /* home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E4276551CD915A20004A0F8 /* Base */,
+			);
+			name = home.storyboard;
+			sourceTree = "<group>";
+		};
+		1E7208C31CD920780017188F /* Profile.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E7208C41CD920780017188F /* Base */,
+			);
+			name = Profile.storyboard;
+			sourceTree = "<group>";
+		};
+		1E8717E31CE879410062EFE9 /* Chat.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E8717E41CE879410062EFE9 /* Base */,
+			);
+			name = Chat.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -353,6 +839,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = wizhwish/Resources/wizwish.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -394,6 +881,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = wizhwish/Resources/wizwish.pch;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -409,23 +897,52 @@
 		};
 		1E060B2C1CC4E311009E1BBC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D04BD9FB6266A9389C4ED76 /* Pods-wizhwish.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN__ARC_BRIDGE_CAST_NONARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nasser Alameeri (Y966936F3T)";
+				COPY_HEADERS_RUN_UNIFDEF = NO;
+				ENABLE_BITCODE = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = wizhwish/Resources/WizWish.pch;
+				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
 				INFOPLIST_FILE = wizhwish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mashwani.wizhwish;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wiz.wizwish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6848c3bb-d499-4bf6-b617-06504692063d";
+				SWIFT_OBJC_BRIDGING_HEADER = "wizhwish/wizhwish-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		1E060B2D1CC4E311009E1BBC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25918DA5ECA2450ED2B97948 /* Pods-wizhwish.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN__ARC_BRIDGE_CAST_NONARC = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nasser Alameeri (RZ28SZX84Y)";
+				COPY_HEADERS_RUN_UNIFDEF = NO;
+				ENABLE_BITCODE = NO;
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = wizhwish/Resources/WizWish.pch;
+				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
 				INFOPLIST_FILE = wizhwish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mashwani.wizhwish;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wiz.wizwish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2b5736ed-bf91-473a-aeee-9ac6eb65b19d";
+				SWIFT_OBJC_BRIDGING_HEADER = "wizhwish/wizhwish-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -496,6 +1013,7 @@
 				1E060B2D1CC4E311009E1BBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1E060B2E1CC4E311009E1BBC /* Build configuration list for PBXNativeTarget "wizhwishTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +1022,7 @@
 				1E060B301CC4E311009E1BBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1E060B311CC4E311009E1BBC /* Build configuration list for PBXNativeTarget "wizhwishUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +1031,7 @@
 				1E060B331CC4E311009E1BBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

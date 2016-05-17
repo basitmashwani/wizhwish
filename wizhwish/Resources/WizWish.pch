@@ -1,0 +1,49 @@
+//
+//  WizWish.pch
+//  wizhwish
+//
+//  Created by Syed Abdul Basit on 2016-05-03.
+//  Copyright © 2016 Syed Abdul Basit. All rights reserved.
+//
+
+#ifndef WizWish_pch
+#define WizWish_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "WZLoginViewController.h"
+#import "WZRegistrationViewController.h"
+#import "Constants.h"
+#import "UIView+Extras.h"
+#import "UIViewController+Extras.h"
+#import "UIColor+Extras.h"
+#import "UIImage+Extra.h"
+#import "NSString+Extras.h"
+#import "NSError+Extras.h"
+#import "RUUtility.h"
+#import "WZFriendCollectionViewCell.h"
+#import "WZPostTableViewCell.h"
+#import "WZPostTopTableViewCell.h"
+#import <OLGhostAlertView/OLGhostAlertView.h>
+#import "WZMyProfileViewController.h"
+#import "WZHomeViewController.h"
+#import "UIStoryboard+Extras.h"
+#import "WZFollowerViewController.h"
+#import "WZProfileTableViewCell.h"
+#import "UITextfield+Extras.h"
+#import <HMSegmentedControl/HMSegmentedControl.h>
+#import "WZMyWishesViewController.h"
+#import "WZMyWishesTableViewCell.h"
+#import <AVFoundation/AVFoundation.h>
+#import <AssetsLibrary/AssetsLibrary.h>
+#import "WZPostsViewController.h"
+#import "WZChatViewController.h"
+#import "WZEmptySegue.h"
+#import "WZChatListViewController.h"
+#import "WZNewFriendViewController.h"
+@import Photos;
+
+
+
+#endif /* WizWish_pch */
