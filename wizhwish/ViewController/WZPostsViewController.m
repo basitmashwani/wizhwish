@@ -12,12 +12,43 @@
 
 #pragma mark Public Methods
 
+- (void)showSearBarWithColor:(UIColor*)color {
+    
+    JKSearchBar *searchBarCode = [[JKSearchBar alloc]initWithFrame:CGRectMake(10, 10, self.headerView.frame.size.width-20, 35)];
+    //   searchBarCode.inputView = picker;
+    searchBarCode.iconAlign = JKSearchBarIconAlignCenter;
+    searchBarCode.placeholder = @"Search";
+    searchBarCode.placeholderColor = [UIColor darkGrayColor];
+    searchBarCode.layer.cornerRadius = searchBarCode.frame.size.height/2;
+    searchBarCode.backgroundColor = color;
+    searchBarCode._textField.borderStyle = UITextBorderStyleNone;
+    
+    searchBarCode._textField.backgroundColor = [UIColor whiteColor];
+    //searchBarCode.inputAccessoryView =view;
+    //searchBarCode.inputView = picker;
+    // [searchBarCode.cancelButton setTitle:@"X" forState:UIControlStateNormal];
+    [self.headerView addSubview:searchBarCode];
+    
+   // [self.headerView removeFromSuperview];
+   // self.tableView.tableHeaderView = self.headerView;
+    
+    //[self.view addSubview:searchBarCode];
+    
+}
 
 #pragma mark Life Cycle Methods
 
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    [self showSearBarWithColor:[UIColor whiteColor]];
+
+}
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
     
     self.collectionView.backgroundColor = [UIColor whiteColor];
 
@@ -26,6 +57,9 @@
     [self.navigationItem setTitle:@"Discover"];
     
     [self didTappedView:self.view];
+    
+    
+    [self showNavigationBar:YES];
 
 
 }
@@ -71,25 +105,25 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return 10;
+    return 4;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
    
 }
 
-//
-//- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    
-//    return CGSizeMake(collectionView.frame.size.width/2 , collectionView.frame.size.height/2-1);
-//    
-//}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return CGSizeMake(collectionView.frame.size.width/4-4 , collectionView.frame.size.height);
+    
+}
 
 // Layout: Set Edges
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     // return UIEdgeInsetsMake(0,8,0,8);  // top, left, bottom, right
-    return UIEdgeInsetsMake(2,2,2,2);  // top, left, bottom, right
+    return UIEdgeInsetsMake(0,0,0,0);  // top, left, bottom, right
 }
 
 

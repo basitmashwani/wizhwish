@@ -25,6 +25,17 @@
     return [UIColor colorWithRed:34/255.0 green:143/255.0 blue:143/255.0 alpha:1];
 }
 
++ (UIColor*)getLightGrayColor {
+    return [UIColor colorWithRed:235/255.0 green:235/255.0 blue:235/255.0 alpha:1];
+}
+
+
++ (UIColor*)getLightGrayButtonColor {
+    return [UIColor colorWithRed:239/255.0 green:239/255.0 blue:239/255.0 alpha:1];
+}
+
+
+
 
 //+ (UIColor*)zemCarBgColor {
 //    return [UIColor colorWithRed:239/255.0 green:249/255.0 blue:247/255.0 alpha:1];

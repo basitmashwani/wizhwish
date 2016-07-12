@@ -6,7 +6,6 @@
 //  Copyright © 2016 Syed Abdul Basit. All rights reserved.
 //
 
-
 @interface WZFollowerViewController ()
 
 @property(nonatomic ,assign) BOOL isEdit;
@@ -20,14 +19,32 @@
 
 #pragma mark Private Methods
 
+- (void)showSearBarWithColor:(UIColor*)color {
+   
+    JKSearchBar *searchBarCode = [[JKSearchBar alloc]initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, 35)];
+    //   searchBarCode.inputView = picker;
+    searchBarCode.iconAlign = JKSearchBarIconAlignCenter;
+    searchBarCode.placeholder = @"Search";
+    searchBarCode.placeholderColor = [UIColor darkGrayColor];
+    searchBarCode.layer.cornerRadius = searchBarCode.frame.size.height/2;
+    searchBarCode.backgroundColor = color;
+    searchBarCode._textField.borderStyle = UITextBorderStyleNone;
+    
+    searchBarCode._textField.backgroundColor = [UIColor getLightGrayColor];
+    //searchBarCode.inputAccessoryView =view;
+    //searchBarCode.inputView = picker;
+   // [searchBarCode.cancelButton setTitle:@"X" forState:UIControlStateNormal];
+    self.tableView.tableHeaderView = searchBarCode;
+    //[self.view addSubview:searchBarCode];
+
+}
+
 - (void)updateUIforGroup:(WZProfileTableViewCell*)cell {
    
     UIButton *button = cell.buttonFollow;
     
-    [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button setTitle:@"Chat" forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor navigationBarColor] forState:UIControlStateNormal];
-    [button setBackgroundImage:nil forState:UIControlStateNormal];
+    
 }
 - (void)checkPressed:(id)sender {
     
@@ -48,7 +65,8 @@
     }
 }
 - (void)resetViews {
-    self.navigationItem.rightBarButtonItem = nil;
+    self.buttonCreate.hidden = YES;
+    // self.navigationItem.rightBarButtonItem = nil;
     self.viewAddGroup.hidden = YES;
     self.viewCreateList.hidden = NO;
     self.isEdit = NO;
@@ -59,8 +77,8 @@
     
     [button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [button setTitle:title forState:UIControlStateNormal];
-     UIImage *image = [UIImage imageNamed:@"Image_Follow_Bg"];
-    [button setBackgroundImage:image forState:UIControlStateNormal];
+   //  UIImage *image = [UIImage imageNamed:@"Image_Follow_Bg"];
+    //[button setBackgroundImage:image forState:UIControlStateNormal];
     
     
 }
@@ -91,8 +109,15 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    [self showSearBarWithColor:[UIColor getLightGrayColor]];
+
     
+    [self showNavigationBar:YES];
+    
+    self.buttonCreate.hidden = YES;
 //NSLog(@"profile type %d",self.profileType);
+    
+    
     
     if (self.profileType == kWProfileFollowing) {
         
@@ -104,6 +129,9 @@
     }
     else if(self.profileType == kWProfileAlerts|| self.profileType == kWProfileGifts) {
         
+        self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectZero];
+        
+        
         if (self.profileType == kWProfileGifts) {
             
             [self.navigationItem setTitle:@"Gifts"];
@@ -113,33 +141,41 @@
             [self.navigationItem setTitle:@"Alerts"];
         }
         
-        [self.texFieldSearch setHidden:YES];
         
         [self.viewCreateList setHidden:YES];
         
         [self.viewAddGroup setHidden:YES];
         
-        self.tableViewTopConstraint.constant = -90;
+        self.tableViewTopConstraint.constant = -60;
       
     }
     else if(self.profileType == kWProfileGroup) {
- 
+
+        
         [self.navigationItem setTitle:@"Chat"];
-        [self.texFieldName setPlaceholder:@"Enter group name"];
+        [self.texFieldName setPlaceholder:@"Enter Group Name"];
         self.isEdit = YES;
         self.isGroup = YES;
-        [self.texFieldSearch setHidden:NO];
         [self createListPressed:self];
 
     }
     
+   // self.tableView.estimatedRowHeight = 85;
+ //   self.tableView.rowHeight = UITableViewAutomaticDimension;
+    
     [RUUtility setBackButtonForController:self withSelector:@selector(backButtonPressed)];
     
+    if (self.profileType == kWProfileGroup) {
+      
+        [self.texFieldName setTextFieldPlaceHolderColor:[UIColor navigationBarColor]];
+
+    } else {
     [self.texFieldName setTextFieldPlaceHolderColor:[UIColor blackColor]];
     
-    
+    }
     [self didTappedView:self.view];
     // Do any additional setup after loading the view.
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -164,9 +200,10 @@
     if (self.profileType == kWProfileGroup) {
     
         [self.viewAddGroup setHidden:YES];
-        self.searchTopConstraint.constant = -40;
+        self.tableViewTopConstraint.constant = -50;
         self.isGroup = NO;
-        self.navigationItem.rightBarButtonItem = nil;
+        self.buttonCreate.hidden = YES;
+        //self.navigationItem.rightBarButtonItem = nil;
 
         [self.tableView reloadData];
         
@@ -181,11 +218,32 @@
 
 #pragma Mark TableViewDelegate Methods
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (self.profileType == kWProfileGroup) {
+        
+        return 80;
+    }
+    else if (self.profileType == kWProfileGifts || self.profileType == kWProfileAlerts) {
+        
+        return 85;
+    }
+    else {
+        
+        return  85;
+    }
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     WZProfileTableViewCell *profileCell = [tableView dequeueReusableCellWithIdentifier:K_FOLLOWER_CELL];
     
+    
     if (self.profileType == kWProfileFollowing || self.profileType == KWProfileFollower) {
+        
+        
+        
+        [profileCell.labelUserName setTextColor:[UIColor blackColor]];
         
         [profileCell.imageViewPost setHidden:YES];
         
@@ -229,11 +287,23 @@
         
         [profileCell.buttonFollow setHidden:YES];
         
+       
         if (self.profileType == kWProfileGifts) {
 
-            profileCell.labelName.text = @"Pending since 3 days";
     
-            
+            if (indexPath.row <2) {
+                
+                
+                profileCell.backgroundColor = [UIColor whiteColor];
+                profileCell.labelName.text = @"Pending since 3 days";
+
+            }
+            else {
+                
+                profileCell.backgroundColor = [UIColor getLightGrayColor];
+                profileCell.labelName.text = @"Your gift received 10 days ago";
+
+            }
         }
         else {
         
@@ -243,6 +313,8 @@
         if (indexPath.row == 3 && self.profileType == kWProfileAlerts) {
             
             [profileCell.buttonFollow setHidden:NO];
+            
+            profileCell.buttonFollow.frame = CGRectMake(profileCell.buttonFollow.frame.origin.x, profileCell.buttonFollow.frame.origin.y, profileCell.buttonFollow.frame.size.width-30, profileCell.buttonFollow.frame.size.height);
             
             [self setTextToButton:profileCell.buttonFollow withTitle:@"Follow"];
             
@@ -298,13 +370,19 @@
     
 }
 
+
+
+#pragma mark Custom SearchBar Delegate Methods
+
 #pragma mark Public Methods
 
 - (void)createListPressed:(id)sender {
     
     [self.viewAddGroup setHidden:NO];
     [self.viewCreateList setHidden:YES];
-    self.navigationItem.rightBarButtonItem = [RUUtility getBarButtonWithTitle:@"Create" forViewController:self selector:@selector(createPressed)];
+    self.buttonCreate.hidden = NO;
+    [self.buttonCreate addTarget:self action:@selector(createPressed) forControlEvents:UIControlEventTouchUpInside];
+    // self.navigationItem.rightBarButtonItem = [RUUtility getBarButtonWithTitle:@"Create" forViewController:self selector:@selector(createPressed)];
     self.isEdit = YES;
     [self.tableView reloadData];
     

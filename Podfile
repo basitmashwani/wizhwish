@@ -4,6 +4,9 @@
 target 'wizhwish' do
 pod "MBProgressHUD"
 pod 'HMSegmentedControl'
+pod 'NJKScrollFullScreen'
+
+
 
 pod 'OLGhostAlertView', :git =>'https://github.com/ondalabs/OLGhostAlertView.git'
 

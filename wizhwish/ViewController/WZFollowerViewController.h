@@ -9,6 +9,7 @@
 
 
 #import <UIKit/UIKit.h>
+#import "JKSearchBar.h"
 
 typedef enum {
     KWProfileFollower = 0,
@@ -29,13 +30,14 @@ typedef enum {
 
 @property(nonatomic ,retain) IBOutlet UITextField *texFieldName;
 
-@property(nonatomic ,retain) IBOutlet UITextField *texFieldSearch;
-
 @property(nonatomic ,retain) IBOutlet UIButton *buttonProfile;
 
 @property(nonatomic ,retain) IBOutlet UITableView *tableView;
 
+@property(nonatomic ,retain) IBOutlet UIButton *buttonCreate;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewTopConstraint;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *searchTopConstraint;
 
 

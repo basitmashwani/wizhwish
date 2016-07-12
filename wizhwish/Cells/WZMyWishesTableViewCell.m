@@ -21,7 +21,9 @@
 - (void)awakeFromNib {
     // Initialization code
     
-    self.collectionView.backgroundColor = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor getLightGrayColor];
+    [self.collectionView reloadData];
+    
     
 }
 
@@ -36,6 +38,22 @@
     
     WZFriendCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:K_CELL_MY_WISHES forIndexPath:indexPath];
     
+    if (self.collectionType == KWWishesType) {
+
+    if (self.isWishList) {
+        
+        cell.profileImageView.image = [UIImage imageNamed:@"Image_Magic_Stick"];
+        cell.labelName.hidden = YES;
+        cell.labelCaption.center = CGPointMake(cell.labelCaption.center.x-5, cell.labelCaption.center.y-12);
+    }
+    else {
+        
+        cell.profileImageView.image = [UIImage imageNamed:@"Image_Profile-1"];
+        cell.labelName.hidden = NO;
+        
+        cell.labelCaption.center = CGPointMake(cell.labelCaption.center.x+5, cell.labelCaption.center.y+12);
+    }
+    }
     
     // WFriendCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:K_COLLECTION_VIEW_MY_WISHES forIndexPath:indexPath];
     
@@ -50,7 +68,11 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return 16;
+    if (self.collectionType == kWPostType) {
+        
+        return 4;
+    }
+    return 3;
 }
 // Layout: Set cell size
 
@@ -59,32 +81,30 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    
+    CGSize returnSize;
+
     if (self.collectionType == KWWishesType) {
         
+        self.rowWidth = 3;
+        
+        returnSize = CGSizeMake(collectionView.frame.size.width/3-7, collectionView.frame.size.height);
+    }
+    else  if (self.collectionType == KWFollowerType)
+    {
         self.rowWidth = 2;
+        
+       returnSize =  CGSizeMake(collectionView.frame.size.width/2-7 ,collectionView.frame.size.height);
+        
     }
     else {
-        self.rowWidth = 4;
+        returnSize =  CGSizeMake(collectionView.frame.size.width/4-1.7 ,collectionView.frame.size.height);
         
-    }
-    if (IS_IPHONE_5) {
-       // return CGSizeMake(collectionView.frame.size.width/2 , 155);
-        //170;
-         return CGSizeMake(collectionView.frame.size.width/self.rowWidth ,collectionView.frame.size.height);
 
     }
-    else if (IS_IPHONE_6) {
-        return CGSizeMake(collectionView.frame.size.width/self.rowWidth , collectionView.frame.size.height);
-        
-        
-    }
-    else if(IS_IPHONE_6_PLUS) {
-        
-        return CGSizeMake(collectionView.frame.size.width/self.rowWidth , collectionView.frame.size.height);
-        
-    }
-    
-    return CGSizeZero;
+    return returnSize;
     
     // return CGSizeMake(collectionView.frame.size.width/3 , collectionView.frame.size.height/3-1);
     

@@ -19,17 +19,35 @@
 
 #pragma mark Private Methods
 
+
+
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     
-    self.collectionViewWishes.backgroundColor = [UIColor whiteColor];
     
-    self.collectionViewMyWishList.backgroundColor = [UIColor whiteColor];
+    [self showNavigationBar:YES];
     
-    self.collectionViewFollowing.backgroundColor = [UIColor whiteColor];
+    self.collectionViewWishes.backgroundColor = [UIColor blackColor];
     
-    self.collectionViewFollower.backgroundColor = [UIColor whiteColor];
+    self.collectionViewMyWishList.backgroundColor = [UIColor blackColor];
+    
+    self.collectionViewFollowing.backgroundColor = [UIColor blackColor];
+    
+    self.collectionViewFollower.backgroundColor = [UIColor blackColor];
+    
+    self.collectionViewWishes.layer.borderWidth=1.0f;
+    self.collectionViewWishes.layer.borderColor=[UIColor blackColor].CGColor;
+   
+    self.collectionViewMyWishList.layer.borderWidth=1.0f;
+    self.collectionViewMyWishList.layer.borderColor=[UIColor blackColor].CGColor;
+   
+    self.collectionViewFollower.layer.borderWidth=1.0f;
+    self.collectionViewFollower.layer.borderColor=[UIColor blackColor].CGColor;
+   
+    self.collectionViewFollowing.layer.borderWidth=1.0f;
+    self.collectionViewFollowing.layer.borderColor=[UIColor blackColor].CGColor;
     
     [self.imageViewProfile setRoundCornersAsCircle];
     
@@ -92,7 +110,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return 4;
+    return 15;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -139,7 +157,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return CGSizeMake(collectionView.frame.size.width/2 , collectionView.frame.size.height/2-1);
+    return CGSizeMake(collectionView.frame.size.width/3 , collectionView.frame.size.height/4 );
     
 }
 

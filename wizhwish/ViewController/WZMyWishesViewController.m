@@ -12,6 +12,8 @@
 
 @property(nonatomic ,assign) BOOL isMyPost;
 
+@property(nonatomic ,assign) BOOL isWishList;
+
 @end
 
 @implementation WZMyWishesViewController
@@ -33,6 +35,7 @@
     [RUUtility setBackButtonForController:self withSelector:@selector(backPressed)];
     
     
+    [self showNavigationBar:YES];
 
 
         [self.tableView reloadData];
@@ -59,9 +62,16 @@
     
     [self.buttonPost setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
-    [self.buttonMyWishes setBackgroundColor:[UIColor whiteColor]];
+    [self.buttonMyWishes setBackgroundColor:[UIColor getLightGrayButtonColor]];
     
-    [self.buttonMyWishes setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+    [self.buttonMyWishes setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal
+     ];
+    
+    self.buttonPost.layer.borderWidth = 1.0;
+    self.buttonPost.layer.borderColor = [UIColor getTabBarColor].CGColor;
+    
+    self.buttonMyWishes.layer.borderWidth = 1.0;
+    self.buttonMyWishes.layer.borderColor = [UIColor getTabBarColor].CGColor;
 
     // Do any additional setup after loading the view.
 }
@@ -83,8 +93,21 @@
     }
     else {
     WZMyWishesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:K_TABLE_CELL_MY_WISHES];
-        cell.collectionType = KWWishesType;
-    
+        
+        if ([self.buttonPost.titleLabel.text isEqualToString:@"Followers"]) {
+            cell.collectionType = KWFollowerType;
+        }
+        
+        else {
+       
+            cell.collectionType = KWWishesType;
+       
+        }
+        
+            cell.isWishList = self.isWishList;
+        
+        [cell.collectionView reloadData];
+        
     return cell;
     }
 }
@@ -92,6 +115,14 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return 5;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+ 
+    if (self.isMyPost) {
+        return  135 ;
+    }
+    return 150;
 }
 
 #pragma mark Private Methods
@@ -103,13 +134,18 @@
         self.isMyPost = NO;
 
     }
+    else if ([self.buttonPost.titleLabel.text isEqualToString:@"Post"]) {
+        
+        self.isWishList = NO;
+        
+    }
     [self.tableView reloadData];
 
     [self.buttonPost setBackgroundColor:[UIColor getTabBarColor]];
     
     [self.buttonPost setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
   
-    [self.buttonMyWishes setBackgroundColor:[UIColor whiteColor]];
+    [self.buttonMyWishes setBackgroundColor:[UIColor getLightGrayButtonColor]];
     
     [self.buttonMyWishes setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
 
@@ -121,15 +157,23 @@
     if ([self.buttonMyWishes.titleLabel.text isEqualToString:@"You"]) {
         
         self.isMyPost = YES;
+        
+
 
     }
+    else if([self.buttonMyWishes.titleLabel.text isEqualToString:@"WishList"]) {
+        
+        self.isWishList = YES;
+        
+    }
+    
     [self.tableView reloadData];
     
     [self.buttonMyWishes setBackgroundColor:[UIColor getTabBarColor]];
     
     [self.buttonMyWishes setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     
-    [self.buttonPost setBackgroundColor:[UIColor whiteColor]];
+    [self.buttonPost setBackgroundColor:[UIColor getLightGrayButtonColor]];
     
     [self.buttonPost setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
 

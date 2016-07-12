@@ -36,6 +36,7 @@
 //Cell Identifier
 
 #define K_PEOPLE_COLLECTION_CELL                    @"Friend_Cell"
+#define K_CELL_INVITE                               @"K_CELL_INVITE"
 #define K_CELL_POST                                 @"K_CELL_POST"
 #define K_POST_TABLEVIEW_CELL                       @"K_POST_CELL"
 #define K_POST_TOP_CELL                             @"K_POST_TOP_CELL"

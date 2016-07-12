@@ -13,6 +13,8 @@
 + (UIColor*)blackAlertColor;
 + (UIColor*)navigationBarColor;
 + (UIColor*)getTabBarColor;
++ (UIColor*)getLightGrayColor;
++ (UIColor*)getLightGrayButtonColor;
 
 //+ (UIColor*)zemCarBgColor;
 //

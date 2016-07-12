@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>NJKScrollFullScreen.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>OLGhostAlertView.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,22 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>00ACD89BA6C62F1765CF46835A8FB395</key>
+		<key>6D48910EBA2DA38BC12C1DAE524D2BD9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>72FA305C576FA9F8B334844350DC57A1</key>
+		<key>8BBAA7E1F8FBE6D92D4BC6E52990642E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>95F67F8148D52ED8136437BD4E64FF29</key>
+		<key>9A49ADF3D78971935B4F0F98EE4C9365</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AED34D1685CC4AFE835F0AE1713094B2</key>
+		<key>BBED2EE2CB3E2F5454575B8F52180A6B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F01537F305AA27D5DB2726B638829645</key>
 		<dict>
 			<key>primary</key>
 			<true/>

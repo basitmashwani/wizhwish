@@ -19,8 +19,17 @@
 #pragma mark Life Cycle Methods
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
     self.buttonNewFriend.selected = YES;
+    
+    self.buttonNewFriend.backgroundColor = [UIColor whiteColor];
+    
+    [RUUtility setBackButtonForController:self withSelector:@selector(backPressed)];
+    
+    self.navigationItem.title = @"Chat";
+    [self showNavigationBar:YES];
     // Do any additional setup after loading the view.
 }
 
@@ -34,9 +43,16 @@
 - (void)newFriendPressed:(id)sender {
     
     self.buttonNewFriend.selected = YES;
+   
     self.buttonContacts.selected = NO;
+    
     self.buttonFollowers.selected = NO;
   
+    self.buttonNewFriend.backgroundColor = [UIColor whiteColor];
+    
+    self.buttonContacts.backgroundColor = [UIColor getLightGrayColor];
+    
+    self.buttonFollowers.backgroundColor = [UIColor getLightGrayColor];
     
     if ([self.delegate respondsToSelector:@selector(chatViewController:didSelectView:)])
     {
@@ -47,8 +63,17 @@
 - (void)contactsPressed:(id)sender {
     
     self.buttonNewFriend.selected = NO;
+ 
     self.buttonContacts.selected = YES;
+    
     self.buttonFollowers.selected = NO;
+    
+    
+    self.buttonNewFriend.backgroundColor = [UIColor getLightGrayColor];
+    
+    self.buttonContacts.backgroundColor = [UIColor whiteColor];
+    
+    self.buttonFollowers.backgroundColor = [UIColor getLightGrayColor];
     
     if ([self.delegate respondsToSelector:@selector(chatViewController:didSelectView:)])
     {
@@ -60,8 +85,16 @@
     
     
     self.buttonNewFriend.selected = NO;
+   
     self.buttonContacts.selected = NO;
+    
     self.buttonFollowers.selected = YES;
+    
+    self.buttonNewFriend.backgroundColor = [UIColor getLightGrayColor];
+    
+    self.buttonContacts.backgroundColor = [UIColor getLightGrayColor];
+    
+    self.buttonFollowers.backgroundColor = [UIColor whiteColor];
     
     if ([self.delegate respondsToSelector:@selector(chatViewController:didSelectView:)])
     {

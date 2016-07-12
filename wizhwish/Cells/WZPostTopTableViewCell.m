@@ -35,6 +35,14 @@
 }
 
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return CGSizeMake(collectionView.frame.size.width/3 , collectionView.frame.size.height);
+    
+}
+
+
 #pragma Public Methods
 
 

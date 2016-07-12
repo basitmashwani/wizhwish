@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <NJKScrollFullScreen/NJKScrollFullScreen.h>
 
-@interface WZHomeViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+
+@interface WZHomeViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,NJKScrollFullscreenDelegate>
 
 @property(nonatomic ,retain) IBOutlet UICollectionView *collectionView;
 

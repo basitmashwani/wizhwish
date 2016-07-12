@@ -26,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self showNavigationBar:YES];
     //[self performSegueWithIdentifier:K_SEGUE_NEW_FRIENDS sender:self];
     
     // Do any additional setup after loading the view.

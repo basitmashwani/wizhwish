@@ -12,4 +12,8 @@
 
 @property(nonatomic ,weak) IBOutlet UICollectionView *collectionView;
 
+@property(nonatomic ,weak) IBOutlet UITableView *tableView;
+
+
+@property(nonatomic ,weak) IBOutlet UIView *headerView;
 @end

@@ -25,7 +25,6 @@
 #import "WZFriendCollectionViewCell.h"
 #import "WZPostTableViewCell.h"
 #import "WZPostTopTableViewCell.h"
-#import <OLGhostAlertView/OLGhostAlertView.h>
 #import "WZMyProfileViewController.h"
 #import "WZHomeViewController.h"
 #import "UIStoryboard+Extras.h"
@@ -42,6 +41,9 @@
 #import "WZEmptySegue.h"
 #import "WZChatListViewController.h"
 #import "WZNewFriendViewController.h"
+#import "JKSearchBar.h"
+#import <NJKScrollFullScreen/NJKScrollFullScreen.h>
+#import <UIViewController+NJKFullScreenSupport.h>
 @import Photos;
 
 

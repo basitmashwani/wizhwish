@@ -16,6 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self showNavigationBar:YES];
     // Do any additional setup after loading the view.
 }
 

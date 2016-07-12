@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 typedef enum {
     KWWishesType = 0,
-    kWPostType
+    kWPostType,
+    KWFollowerType
 } WCollectionType;
 
 @interface WZMyWishesTableViewCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -17,6 +18,8 @@ typedef enum {
 @property(nonatomic ,retain) IBOutlet UICollectionView *collectionView;
 
 @property(nonatomic ,assign) WCollectionType collectionType;
+
+@property(nonatomic ,assign) BOOL isWishList;
 
 
 @end

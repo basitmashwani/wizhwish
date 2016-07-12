@@ -7,7 +7,17 @@
 //
 
 #import "WZHomeViewController.h"
+#import "UIView+Extras.h"
 
+
+
+@interface WZHomeViewController()
+
+@property(nonatomic ,retain) NJKScrollFullScreen *scrollProxy;
+
+@property(nonatomic) NSInteger *counter;
+
+@end
 @implementation WZHomeViewController
 
 #pragma mark Private Methods
@@ -42,6 +52,13 @@
 
 #pragma Life Cycle Methods
 
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+  //  [(ScrollingNavigationController *)self.navigationController followScrollView:self.tableView delay:50.0f];
+
+}
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -52,8 +69,17 @@
     
     [self.navigationItem setTitle:@"Whizwish"];
     
-   self.navigationItem.rightBarButtonItem =  [RUUtility getBarButtonWithImage:[UIImage imageNamed:@"Image_Setting"] forViewController:self selector:@selector(settingPressed)];
-
+    self.buttonTopScroll.hidden = YES;
+  
+    self.navigationItem.rightBarButtonItem =  [RUUtility getBarButtonWithImage:[UIImage imageNamed:@"Image_Setting"] forViewController:self selector:@selector(settingPressed)];
+    self.tableView.tableHeaderView.frame = CGRectZero;
+    
+    _scrollProxy = [[NJKScrollFullScreen alloc] initWithForwardTarget:self]; // UIScrollViewDelegate and UITableViewDelegate methods proxy to ViewController
+    self.tableView.delegate = (id)_scrollProxy; // cast for surpress incompatible warnings
+    _scrollProxy.delegate = self;
+    
+    
+    self.tableView.contentInset = UIEdgeInsetsZero;
     
     // Do any additional setup after loading the view.
 }
@@ -82,7 +108,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 3;
+    return 5;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -90,7 +116,8 @@
         
         WZPostTopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:K_POST_TOP_CELL];
         
-        [self.buttonTopScroll setHidden:YES];
+        
+
         
         [cell.buttonInMail addTarget:self action:@selector(inMailPressed) forControlEvents:UIControlEventTouchUpInside];
 
@@ -108,10 +135,10 @@
         
     if (cell) {
         
-        if (indexPath.row >1) {
+        if (indexPath.row >2) {
             
-        
-        [self.buttonTopScroll setHidden:NO];
+
+      //   self.navigationItem se
         
         }
     }
@@ -120,7 +147,21 @@
     
     
     
+
 }
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        [self.buttonTopScroll setHidden:YES];
+
+    }
+    else if (indexPath.row > 2)  {
+        [self.buttonTopScroll setHidden:NO];
+
+    }
+}
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -131,7 +172,7 @@
     
     if (indexPath.row == 0) {
         
-        return 250;
+        return 240;
     }
     else  {
         
@@ -145,10 +186,39 @@
 - (void)scrollTopPressed:(id)sender {
   
     [self.tableView setContentOffset:CGPointZero animated:YES];
+    [self showNavigationBar:YES];
 
 }
 
 
+#pragma mark NJKScrollView Delegate Methods
+
+- (void)scrollFullScreen:(NJKScrollFullScreen *)proxy scrollViewDidScrollUp:(CGFloat)deltaY
+{
+    [self moveNavigationBar:deltaY animated:YES];
+    
+    
+}
+
+- (void)scrollFullScreen:(NJKScrollFullScreen *)proxy scrollViewDidScrollDown:(CGFloat)deltaY
+{
+    
+    [self moveNavigationBar:deltaY animated:YES];
+}
+
+- (void)scrollFullScreenScrollViewDidEndDraggingScrollUp:(NJKScrollFullScreen *)proxy
+{
+    self.buttonTopScroll.frame = CGRectMake(self.buttonTopScroll.frame.origin.x, 20, self.buttonTopScroll.frame.size.width, self.buttonTopScroll.frame.size.height);
+    
+    [self hideNavigationBar:YES];
+}
+
+- (void)scrollFullScreenScrollViewDidEndDraggingScrollDown:(NJKScrollFullScreen *)proxy
+{
+    self.buttonTopScroll.frame = CGRectMake(self.buttonTopScroll.frame.origin.x, 64, self.buttonTopScroll.frame.size.width, self.buttonTopScroll.frame.size.height);
+    
+    [self showNavigationBar:YES];
+}
 
 /*
 #pragma mark - Navigation
