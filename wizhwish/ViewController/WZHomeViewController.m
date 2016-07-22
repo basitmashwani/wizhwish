@@ -172,7 +172,7 @@
     
     if (indexPath.row == 0) {
         
-        return 240;
+        return 230;
     }
     else  {
         
