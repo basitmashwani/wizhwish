@@ -15,6 +15,12 @@
 
 @property(nonatomic ,retain) NJKScrollFullScreen *scrollProxy;
 
+@property(nonatomic ,retain) WPostView *myView;
+
+@property(nonatomic) NSInteger offSetValue;
+
+
+
 @property(nonatomic) NSInteger *counter;
 
 @end
@@ -22,6 +28,37 @@
 
 #pragma mark Private Methods
 
+- (void)hidePressed {
+    
+    __weak typeof(self) weakSelf = self;
+   
+    [self.tableView setScrollEnabled:YES];
+    
+    [UIView animateKeyframesWithDuration:1 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
+        
+        weakSelf.myView.center = CGPointMake(weakSelf.myView.center.x, weakSelf.myView.center.y + weakSelf.myView.frame.size.height);
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+}
+- (IBAction)showPostView:(id)sender {
+    
+    __weak typeof(self) weakSelf = self;
+
+    [self.tableView setScrollEnabled:NO];
+    [self scrollTopPressed:self];
+    
+    [UIView animateKeyframesWithDuration:1 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
+        
+        weakSelf.myView.center = CGPointMake(weakSelf.myView.center.x, weakSelf.myView.center.y - weakSelf.myView.frame.size.height);
+        
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+}
 - (void)settingPressed {
     
 }
@@ -63,11 +100,16 @@
     
     [super viewDidLoad];
     
+    self.offSetValue = 30;
+    
     [self.navigationController setNavigationBarHidden:NO];
     
     [self.navigationItem setHidesBackButton:YES];
     
     [self.navigationItem setTitle:@"Whizwish"];
+    
+   // [self.tableView setContentInset:UIEdgeInsetsMake(0, -20, 0, 0)]; // 108 is only example
+
     
     self.buttonTopScroll.hidden = YES;
   
@@ -82,6 +124,35 @@
     self.tableView.contentInset = UIEdgeInsetsZero;
     
     // Do any additional setup after loading the view.
+   
+     self.myView = [WPostView getPostView];
+    if(IS_IPHONE_6_PLUS) {
+   self. myView.frame = CGRectMake(0, 300, self.view.frame.size.width, 450);
+    
+    }
+    else if(IS_IPHONE_6) {
+     
+        self.myView.frame = CGRectMake(0, 280, self.view.frame.size.width, 400);
+
+    }
+    else if(IS_IPHONE_5) {
+       
+        self.myView.frame = CGRectMake(0, 240, self.view.frame.size.width, 380);
+
+        [self.tableView setContentInset:UIEdgeInsetsMake(_offSetValue, 0, 0, 0)]; // 108 is only example
+        self.automaticallyAdjustsScrollViewInsets = NO;
+
+    }
+    
+    [self.myView.buttonHidden addTarget:self action:@selector(hidePressed) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+ //   postView.backgroundColor = [UIColor redColor];
+    
+    [self.view addSubview:_myView];
+    
+    [self.tableView setScrollEnabled:NO];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -185,8 +256,26 @@
 
 - (void)scrollTopPressed:(id)sender {
   
-    [self.tableView setContentOffset:CGPointZero animated:YES];
+  //  [self.tableView setContentOffset:CGPointZero animated:YES];
+  
+    if(IS_IPHONE_5) {
+        
+        _offSetValue = _offSetValue+30;
+        
+        [self.tableView setContentOffset:CGPointMake(0, -30)];
+        //[self.tableView setContentOffset:UIEdgeInsetsMake(_offSetValue, 0, 0, 0)]; // 108 is only example
+        self.automaticallyAdjustsScrollViewInsets = NO;
+        
+    }
+    else {
+       
+        [self.tableView setContentOffset:CGPointMake(0, -30)];
+
+    }
+    
     [self showNavigationBar:YES];
+
+    
 
 }
 

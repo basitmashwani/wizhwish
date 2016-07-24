@@ -20,4 +20,7 @@
 
 
 - (IBAction)scrollTopPressed:(id)sender;
+
+- (IBAction)showPostView:(id)sender;
+
 @end

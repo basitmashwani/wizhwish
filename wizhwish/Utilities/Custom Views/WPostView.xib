@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIViewController"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="WPostView">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wmU-mw-0TF">
+                    <rect key="frame" x="285" y="8" width="30" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="Tqp-TR-NT8"/>
+                        <constraint firstAttribute="height" constant="25" id="U4n-Sg-6ef"/>
+                    </constraints>
+                    <state key="normal" image="Image_Post_Hide"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCv-e2-tAy">
+                    <rect key="frame" x="185" y="37" width="80" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="bRn-eb-qPa"/>
+                        <constraint firstAttribute="height" constant="60" id="r2B-Kw-pN9"/>
+                    </constraints>
+                    <state key="normal" image="Image_Post_Chat"/>
+                    <connections>
+                        <action selector="chatPressed:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="XkJ-JX-y7z"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOc-YN-rI3">
+                    <rect key="frame" x="325" y="71" width="80" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="FUd-i0-kRJ"/>
+                        <constraint firstAttribute="width" constant="80" id="UVy-z6-8TZ"/>
+                    </constraints>
+                    <state key="normal" image="Image_Post_Video"/>
+                    <connections>
+                        <action selector="videoPressed:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="xfe-4K-NK1"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9TI-xU-xJJ">
+                    <rect key="frame" x="185" y="139" width="80" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="iU4-68-jdz"/>
+                        <constraint firstAttribute="height" constant="60" id="q3c-bV-72u"/>
+                    </constraints>
+                    <state key="normal" image="Image_Post_Photo"/>
+                    <connections>
+                        <action selector="photoPressed:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="QXD-Ei-far"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZK-fl-kax">
+                    <rect key="frame" x="325" y="173" width="80" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="bxT-sp-Heu"/>
+                        <constraint firstAttribute="width" constant="80" id="rdb-ZS-8r1"/>
+                    </constraints>
+                    <state key="normal" image="Image_Post_Audio"/>
+                    <connections>
+                        <action selector="audioPressed:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="id9-8i-6cU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCj-sJ-5Ps">
+                    <rect key="frame" x="185" y="241" width="80" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="3vy-58-GLm"/>
+                        <constraint firstAttribute="height" constant="60" id="zi4-JP-jmO"/>
+                    </constraints>
+                    <state key="normal" image="Image_Go_Live"/>
+                    <connections>
+                        <action selector="goOnlinePressed:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="vnp-HN-7pR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C50-bP-mYr">
+                    <rect key="frame" x="325" y="271" width="80" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="7Gp-nw-lNV"/>
+                        <constraint firstAttribute="width" constant="80" id="VYu-ST-F4d"/>
+                    </constraints>
+                    <state key="normal" image="Image_Post_Text"/>
+                    <connections>
+                        <action selector="textPressed:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="Bxc-HS-SHx"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="OZK-fl-kax" firstAttribute="centerY" secondItem="9TI-xU-xJJ" secondAttribute="centerY" multiplier="1.2" id="08g-gA-pp8"/>
+                <constraint firstItem="OZK-fl-kax" firstAttribute="centerX" secondItem="OOc-YN-rI3" secondAttribute="centerX" id="0X7-cp-1ZJ"/>
+                <constraint firstItem="9TI-xU-xJJ" firstAttribute="top" secondItem="OOc-YN-rI3" secondAttribute="bottom" constant="8" id="1Iw-KL-62I"/>
+                <constraint firstItem="wmU-mw-0TF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8K6-u8-rmi"/>
+                <constraint firstItem="OOc-YN-rI3" firstAttribute="centerY" secondItem="qCv-e2-tAy" secondAttribute="centerY" id="JWH-Il-1UO"/>
+                <constraint firstItem="qCv-e2-tAy" firstAttribute="leading" secondItem="wmU-mw-0TF" secondAttribute="leading" constant="-100" id="Q14-92-Z0i"/>
+                <constraint firstItem="qCv-e2-tAy" firstAttribute="trailing" secondItem="wmU-mw-0TF" secondAttribute="trailing" constant="30" id="Tii-Ec-Nsg"/>
+                <constraint firstItem="OOc-YN-rI3" firstAttribute="leading" secondItem="wmU-mw-0TF" secondAttribute="leading" constant="-50" id="Uhu-0b-JWG"/>
+                <constraint firstItem="fCj-sJ-5Ps" firstAttribute="top" secondItem="OZK-fl-kax" secondAttribute="bottom" constant="8" id="XUm-c5-mbn"/>
+                <constraint firstItem="qCv-e2-tAy" firstAttribute="top" secondItem="wmU-mw-0TF" secondAttribute="bottom" constant="4" id="aHz-D8-SoR"/>
+                <constraint firstItem="qCv-e2-tAy" firstAttribute="trailing" secondItem="wmU-mw-0TF" secondAttribute="trailing" constant="-50" id="bwn-wg-dd3"/>
+                <constraint firstItem="wmU-mw-0TF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="8" id="cSK-Ts-yj6"/>
+                <constraint firstItem="9TI-xU-xJJ" firstAttribute="centerX" secondItem="qCv-e2-tAy" secondAttribute="centerX" id="id8-8v-SRw"/>
+                <constraint firstItem="fCj-sJ-5Ps" firstAttribute="centerX" secondItem="9TI-xU-xJJ" secondAttribute="centerX" id="kCh-K6-3Ga"/>
+                <constraint firstItem="OOc-YN-rI3" firstAttribute="trailing" secondItem="wmU-mw-0TF" secondAttribute="trailing" constant="90" id="kGk-A3-PXy"/>
+                <constraint firstItem="C50-bP-mYr" firstAttribute="centerY" secondItem="fCj-sJ-5Ps" secondAttribute="centerY" multiplier="1.11" id="s8v-cp-Bak"/>
+                <constraint firstItem="C50-bP-mYr" firstAttribute="centerX" secondItem="OZK-fl-kax" secondAttribute="centerX" id="xAD-ZE-uZy"/>
+                <constraint firstItem="OOc-YN-rI3" firstAttribute="centerY" secondItem="qCv-e2-tAy" secondAttribute="centerY" multiplier="1.5" id="zVK-Qr-80C"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Q14-92-Z0i"/>
+                    <exclude reference="Tii-Ec-Nsg"/>
+                    <exclude reference="JWH-Il-1UO"/>
+                    <exclude reference="Uhu-0b-JWG"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="buttonAudio" destination="OZK-fl-kax" id="At7-Cq-TKs"/>
+                <outlet property="buttonChat" destination="qCv-e2-tAy" id="3P2-M8-GJ2"/>
+                <outlet property="buttonGoOnline" destination="fCj-sJ-5Ps" id="wPu-Ih-h9S"/>
+                <outlet property="buttonHidden" destination="wmU-mw-0TF" id="gV5-QD-VTe"/>
+                <outlet property="buttonPhoto" destination="9TI-xU-xJJ" id="28g-bJ-Yh7"/>
+                <outlet property="buttonText" destination="C50-bP-mYr" id="kva-Yu-kgA"/>
+                <outlet property="buttonVideo" destination="OOc-YN-rI3" id="dX4-HM-a68"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="Image_Go_Live" width="166" height="134"/>
+        <image name="Image_Post_Audio" width="166" height="134"/>
+        <image name="Image_Post_Chat" width="166" height="134"/>
+        <image name="Image_Post_Hide" width="38" height="29"/>
+        <image name="Image_Post_Photo" width="166" height="134"/>
+        <image name="Image_Post_Text" width="166" height="134"/>
+        <image name="Image_Post_Video" width="166" height="134"/>
+    </resources>
+</document>

@@ -18,10 +18,5 @@
 
 @property(nonatomic ,retain) IBOutlet UIButton *buttonGift;
 
-- (IBAction)alertPressed:(id)sender;
-
-- (IBAction)giftPressed:(id)sender;
-
-- (IBAction)notificationPressed:(id)sender;
 
 @end

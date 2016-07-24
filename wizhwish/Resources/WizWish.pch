@@ -44,6 +44,8 @@
 #import "JKSearchBar.h"
 #import <NJKScrollFullScreen/NJKScrollFullScreen.h>
 #import <UIViewController+NJKFullScreenSupport.h>
+#import "WPostView.h"
+
 @import Photos;
 
 

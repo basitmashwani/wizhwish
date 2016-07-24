@@ -21,7 +21,6 @@
    // NSLog(@"status%hhd",status);
     if (status) {
       
-    CGRect frame = cell.buttonCheckbox.frame;
     
         
         

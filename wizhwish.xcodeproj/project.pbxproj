@@ -52,6 +52,8 @@
 		1E8717F31CE8B2650062EFE9 /* WZContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8717F21CE8B2650062EFE9 /* WZContainerViewController.m */; };
 		1E8717F81CE8B4B60062EFE9 /* WZChatListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8717F71CE8B4B60062EFE9 /* WZChatListViewController.m */; };
 		1E8717FE1CE8BDCA0062EFE9 /* WZNewFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E8717FD1CE8BDCA0062EFE9 /* WZNewFriendViewController.m */; };
+		1E9728BB1D43A611003EA877 /* WPostView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9728B91D43A611003EA877 /* WPostView.m */; };
+		1E9728BC1D43A611003EA877 /* WPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E9728BA1D43A611003EA877 /* WPostView.xib */; };
 		1EA47E341D043C6600794973 /* WZMyPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA47E331D043C6600794973 /* WZMyPostTableViewCell.m */; };
 		1ED6C7241CE4E2630042D3F6 /* WZPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED6C7231CE4E2630042D3F6 /* WZPostsViewController.m */; };
 		686A4812521AB5B0AB82A61C /* libPods-wizhwish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EDA4CEB60A5E42CFDB52C1 /* libPods-wizhwish.a */; };
@@ -158,6 +160,9 @@
 		1E8717F71CE8B4B60062EFE9 /* WZChatListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZChatListViewController.m; path = ViewController/WZChatListViewController.m; sourceTree = "<group>"; };
 		1E8717FC1CE8BDCA0062EFE9 /* WZNewFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZNewFriendViewController.h; path = ViewController/WZNewFriendViewController.h; sourceTree = "<group>"; };
 		1E8717FD1CE8BDCA0062EFE9 /* WZNewFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZNewFriendViewController.m; path = ViewController/WZNewFriendViewController.m; sourceTree = "<group>"; };
+		1E9728B81D43A611003EA877 /* WPostView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WPostView.h; path = "Utilities/Custom Views/WPostView.h"; sourceTree = "<group>"; };
+		1E9728B91D43A611003EA877 /* WPostView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPostView.m; path = "Utilities/Custom Views/WPostView.m"; sourceTree = "<group>"; };
+		1E9728BA1D43A611003EA877 /* WPostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WPostView.xib; path = "Utilities/Custom Views/WPostView.xib"; sourceTree = "<group>"; };
 		1EA47E321D043C6600794973 /* WZMyPostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZMyPostTableViewCell.h; path = Cells/WZMyPostTableViewCell.h; sourceTree = "<group>"; };
 		1EA47E331D043C6600794973 /* WZMyPostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZMyPostTableViewCell.m; path = Cells/WZMyPostTableViewCell.m; sourceTree = "<group>"; };
 		1ED6C7221CE4E2630042D3F6 /* WZPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZPostsViewController.h; path = ViewController/WZPostsViewController.h; sourceTree = "<group>"; };
@@ -294,6 +299,7 @@
 		1E14322D1CC781CC004682B6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				1E9728B71D43A5CE003EA877 /* Views */,
 				1E8717EF1CE8B0C40062EFE9 /* Segue */,
 				1E4276241CD914B00004A0F8 /* RUUtility.h */,
 				1E4276251CD914B00004A0F8 /* RUUtility.m */,
@@ -507,6 +513,16 @@
 			name = "Custom Cell";
 			sourceTree = "<group>";
 		};
+		1E9728B71D43A5CE003EA877 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1E9728B81D43A611003EA877 /* WPostView.h */,
+				1E9728B91D43A611003EA877 /* WPostView.m */,
+				1E9728BA1D43A611003EA877 /* WPostView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		1EA175E41CD50926004BCB32 /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -688,6 +704,7 @@
 			files = (
 				1E7208C51CD920780017188F /* Profile.storyboard in Resources */,
 				1E8717E71CE8A19F0062EFE9 /* Chat.xcassets in Resources */,
+				1E9728BC1D43A611003EA877 /* WPostView.xib in Resources */,
 				1E4276561CD915A20004A0F8 /* home.storyboard in Resources */,
 				1E8032921CDE67FD0010D036 /* Profile.xcassets in Resources */,
 				1E060B111CC4E311009E1BBC /* LaunchScreen.storyboard in Resources */,
@@ -783,6 +800,7 @@
 				1E8717EE1CE8B0B70062EFE9 /* WZEmptySegue.m in Sources */,
 				1E4276351CD915020004A0F8 /* UIView+Extras.m in Sources */,
 				1E42762F1CD914E20004A0F8 /* WZFriendCollectionViewCell.m in Sources */,
+				1E9728BB1D43A611003EA877 /* WPostView.m in Sources */,
 				1E42764D1CD915720004A0F8 /* WZHomeViewController.m in Sources */,
 				1E060B061CC4E311009E1BBC /* AppDelegate.m in Sources */,
 				1E060B031CC4E311009E1BBC /* main.m in Sources */,

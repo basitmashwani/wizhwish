@@ -84,9 +84,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6Gu-Xd-nKj">
-                                                    <rect key="frame" x="10" y="38" width="582" height="80"/>
+                                                    <rect key="frame" x="10" y="38" width="582" height="60"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="80" id="iD2-Wv-kjb"/>
+                                                        <constraint firstAttribute="height" constant="60" id="iD2-Wv-kjb"/>
                                                     </constraints>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="Oa8-XL-Iea">
                                                         <size key="itemSize" width="76" height="69"/>
@@ -96,17 +96,17 @@
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Friend_Cell" id="gk6-jn-kSN" customClass="WZFriendCollectionViewCell">
-                                                            <rect key="frame" x="0.0" y="6" width="76" height="69"/>
+                                                            <rect key="frame" x="0.0" y="-5" width="76" height="69"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                                 <rect key="frame" x="0.0" y="0.0" width="76" height="69"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePE-NA-qRR">
-                                                                        <rect key="frame" x="8" y="5" width="60" height="60"/>
+                                                                        <rect key="frame" x="13" y="10" width="50" height="50"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="60" id="9Iu-Nc-5Ny"/>
-                                                                            <constraint firstAttribute="height" constant="60" id="fsW-sg-jiL"/>
+                                                                            <constraint firstAttribute="width" constant="50" id="9Iu-Nc-5Ny"/>
+                                                                            <constraint firstAttribute="height" constant="50" id="fsW-sg-jiL"/>
                                                                         </constraints>
                                                                         <state key="normal" image="Image_Search"/>
                                                                     </button>
@@ -130,7 +130,7 @@
                                                     </connections>
                                                 </collectionView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jdu-5h-ECR">
-                                                    <rect key="frame" x="8" y="134" width="235" height="2"/>
+                                                    <rect key="frame" x="8" y="114" width="235" height="2"/>
                                                     <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="2" id="jn1-n9-eLM"/>
@@ -140,12 +140,12 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert &amp; Mails" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymi-e0-PXa">
-                                                    <rect key="frame" x="251" y="122" width="98" height="22"/>
+                                                    <rect key="frame" x="251" y="102" width="98" height="22"/>
                                                     <fontDescription key="fontDescription" name="MicrosoftPhagsPa" family="Microsoft PhagsPa" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hmu-am-e2i">
-                                                    <rect key="frame" x="357" y="134" width="235" height="2"/>
+                                                    <rect key="frame" x="357" y="114" width="235" height="2"/>
                                                     <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="2" id="OR9-54-eZA"/>
@@ -155,26 +155,26 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CTG-DP-rDh">
-                                                    <rect key="frame" x="270" y="150" width="60" height="60"/>
+                                                    <rect key="frame" x="275" y="130" width="50" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="PDK-hI-3Vt"/>
-                                                        <constraint firstAttribute="width" constant="60" id="XYq-dk-wHh"/>
+                                                        <constraint firstAttribute="height" constant="50" id="PDK-hI-3Vt"/>
+                                                        <constraint firstAttribute="width" constant="50" id="XYq-dk-wHh"/>
                                                     </constraints>
                                                     <state key="normal" image="Image_Mail"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5cn-6U-A3p">
-                                                    <rect key="frame" x="84" y="150" width="60" height="60"/>
+                                                    <rect key="frame" x="89" y="130" width="50" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="AYb-zr-ZTx"/>
-                                                        <constraint firstAttribute="width" constant="60" id="L1b-4S-oqv"/>
+                                                        <constraint firstAttribute="height" constant="50" id="AYb-zr-ZTx"/>
+                                                        <constraint firstAttribute="width" constant="50" id="L1b-4S-oqv"/>
                                                     </constraints>
                                                     <state key="normal" image="Image_Bell"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMX-5D-Rk0">
-                                                    <rect key="frame" x="468" y="150" width="60" height="60"/>
+                                                    <rect key="frame" x="473" y="130" width="50" height="50"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="Lav-NP-brW"/>
-                                                        <constraint firstAttribute="width" constant="60" id="t3v-Kf-9KK"/>
+                                                        <constraint firstAttribute="height" constant="50" id="Lav-NP-brW"/>
+                                                        <constraint firstAttribute="width" constant="50" id="t3v-Kf-9KK"/>
                                                     </constraints>
                                                     <state key="normal" image="Image_Gift"/>
                                                 </button>
@@ -304,13 +304,13 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VoT-3E-gaP">
                                                             <rect key="frame" x="120" y="9" width="17" height="13"/>
                                                             <fontDescription key="fontDescription" name="MicrosoftPhagsPa" family="Microsoft PhagsPa" pointSize="10"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eHT-kF-hiB">
                                                             <rect key="frame" x="360" y="9" width="17" height="13"/>
                                                             <fontDescription key="fontDescription" name="MicrosoftPhagsPa" family="Microsoft PhagsPa" pointSize="10"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -477,6 +477,9 @@
                                             <constraint firstAttribute="width" constant="40" id="L6r-G6-xBw"/>
                                         </constraints>
                                         <state key="normal" image="Image_Lamp"/>
+                                        <connections>
+                                            <action selector="showPostView:" destination="RdR-qW-EXB" eventType="touchUpInside" id="zWK-Bl-wfq"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFL-Y4-1hy">
                                         <rect key="frame" x="215" y="8" width="35" height="35"/>
