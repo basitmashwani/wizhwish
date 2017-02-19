@@ -45,6 +45,29 @@
 #import <NJKScrollFullScreen/NJKScrollFullScreen.h>
 #import <UIViewController+NJKFullScreenSupport.h>
 #import "WPostView.h"
+#import "WVideoRecordViewController.h"
+#import "WSetting.h"
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <ACEDrawingView/ACEDrawingView.h>
+#import <ACEDrawingView/ACEDrawingTools.h>
+#import <Color-Picker-for-iOS/HRColorPickerView.h>
+#import <Color-Picker-for-iOS/HRColorMapView.h>
+#import "WPhotoEditViewController.h"
+#import <SCFilter.h>
+#import <SCSwipeableFilterView.h>
+#import <SCFilterImageView.h>
+#import "WPhotoViewController.h"
+#import "WRecordAudioViewController.h"
+#import "WTextViewController.h"
+#import "WWizhViewController.h"
+#import "WWishBoardViewController.h"
+#import "WWishListViewController.h"
+#import "WCommentsViewController.h"
+#import "WProfileViewController.h"
+#import "WEditProfileTableViewCell.h"
+
+
+
 
 @import Photos;
 

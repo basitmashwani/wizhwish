@@ -30,4 +30,14 @@
     
     return [UIStoryboard storyboardWithName:@"Chat" bundle:nil];
 }
++ (UIStoryboard*)getMediaStoryBoard {
+    
+    return [UIStoryboard storyboardWithName:@"Media" bundle:nil];
+}
+
++ (UIStoryboard*)getWhizStoryBoard {
+    
+    return [UIStoryboard storyboardWithName:@"whiz" bundle:nil];
+}
+
 @end

@@ -4,6 +4,41 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>ACEDrawingView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>CocoaLumberjack.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Color-Picker-for-iOS.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>DTCoreText.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>DTFoundation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FXImageView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GPUImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>HMSegmentedControl.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -24,7 +59,32 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PBJVision.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-wizhwish.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Reachability.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SCRecorder.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>VKFoundation.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>VKVideoPlayer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -32,27 +92,87 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>6D48910EBA2DA38BC12C1DAE524D2BD9</key>
+		<key>00BAF9FAE63DF2C0468CD2BD73101E0A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8BBAA7E1F8FBE6D92D4BC6E52990642E</key>
+		<key>0962AB063767FFE4FDBA243D1060DF40</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9A49ADF3D78971935B4F0F98EE4C9365</key>
+		<key>14A4BC170478BF096255EBE4DF2F7D20</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BBED2EE2CB3E2F5454575B8F52180A6B</key>
+		<key>1D80DF47BB3682C606C619D007C0033B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F01537F305AA27D5DB2726B638829645</key>
+		<key>24804F2458FBD318999B54A0F183B246</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>291BAE1E5CB3290912F07567263B989E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4B13E8FC9DBCBC849A05C5E9125F5AED</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5B5454258CD6FE32001A995418A9E765</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>78196E23F90510E5920AD49E881F0DBC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>874F91179FC0F39687C47CDC1D1A8788</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8A300F0D3D548ECA81FECC3A6BB9671B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8BA31AC19519D7382527769139E1A268</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8EE7AA786E6CCB3336610B7DF46946ED</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BD5389DC6CF2248B89C54CE43CC1953F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D69FB731B05101DBC9BA02B7909917FD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F04C851280D24D2DB30C00CBCBA5A1AF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FE5E1882A3695A678DE2E1DEF447F790</key>
 		<dict>
 			<key>primary</key>
 			<true/>

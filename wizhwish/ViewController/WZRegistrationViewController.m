@@ -82,10 +82,11 @@
 
 - (void)registerPressed:(id)sender {
 
- WZHomeViewController *homeViewController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_HOME_VIEW_CONTROLLER];
+    WProfileViewController *profileViewController = [[UIStoryboard getProfileStoryBoard] instantiateViewControllerWithIdentifier:@"K_SB_PROFILE_VC"];
+ //WZHomeViewController *homeViewController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_HOME_VIEW_CONTROLLER];
     
     
-    [RUUtility setMainRootController:homeViewController];
+    [RUUtility setMainRootController:profileViewController];
     //[self.navigationController pushViewController:homeViewController animated:YES];
     
  //   [self performSegueWithIdentifier:K_SEGUE_HOME sender:self];

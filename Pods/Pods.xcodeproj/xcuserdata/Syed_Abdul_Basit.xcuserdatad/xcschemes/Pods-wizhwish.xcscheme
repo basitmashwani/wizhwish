@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1512CB4E71D781DBC4C567AE"
+               BlueprintIdentifier = "D3712406C35CEA8BC0CBF3FB"
                BuildableName = "libPods-wizhwish.a"
                BlueprintName = "Pods-wizhwish"
                ReferencedContainer = "container:Pods.xcodeproj">

@@ -19,7 +19,7 @@
 
 @property(nonatomic) NSInteger offSetValue;
 
-
+@property(nonatomic) BOOL canScrollTop;
 
 @property(nonatomic) NSInteger *counter;
 
@@ -46,7 +46,9 @@
 - (IBAction)showPostView:(id)sender {
     
     __weak typeof(self) weakSelf = self;
-
+    if (self.canScrollTop) {
+        
+    
     [self.tableView setScrollEnabled:NO];
     [self scrollTopPressed:self];
     
@@ -57,6 +59,8 @@
     } completion:^(BOOL finished) {
         
     }];
+    
+     }
     
 }
 - (void)settingPressed {
@@ -102,6 +106,8 @@
     
     self.offSetValue = 30;
     
+    self.canScrollTop = YES;
+    
     [self.navigationController setNavigationBarHidden:NO];
     
     [self.navigationItem setHidesBackButton:YES];
@@ -126,6 +132,7 @@
     // Do any additional setup after loading the view.
    
      self.myView = [WPostView getPostView];
+    self.myView.parentController = self;
     if(IS_IPHONE_6_PLUS) {
    self. myView.frame = CGRectMake(0, 300, self.view.frame.size.width, 450);
     
@@ -243,7 +250,7 @@
     
     if (indexPath.row == 0) {
         
-        return 230;
+        return 210;
     }
     else  {
         
@@ -252,8 +259,35 @@
 }
 
 
+#pragma mark UIScrollView Delegate Methods 
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+ 
+    self.canScrollTop = NO;
+}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    if (!decelerate) {
+        [self scrollingFinish];
+    }
+}
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self scrollingFinish];
+}
+- (void)scrollingFinish {
+    //enter code here
+    NSLog(@"Scroll Finish");
+    self.canScrollTop = YES;
+}
+
 #pragma mark Public Methods
 
+- (void)commentPressed:(id)sender {
+    
+    WCommentsViewController *commentController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_COMMENTS_VIEW_CONTROLLER];
+    [self.navigationController pushViewController:commentController animated:YES];
+}
 - (void)scrollTopPressed:(id)sender {
   
   //  [self.tableView setContentOffset:CGPointZero animated:YES];
@@ -274,7 +308,8 @@
     }
     
     [self showNavigationBar:YES];
-
+    
+    
     
 
 }

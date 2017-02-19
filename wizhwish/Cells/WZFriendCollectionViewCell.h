@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <GPUImageView.h>
 @interface WZFriendCollectionViewCell : UICollectionViewCell
 
 @property(nonatomic ,retain) IBOutlet UIImageView *imageView;
@@ -19,6 +19,8 @@
 @property(nonatomic ,retain) IBOutlet UILabel *labelCaption;
 
 @property(nonatomic ,retain) IBOutlet UIButton *buttonPeople;
+
+@property(nonatomic ,retain) IBOutlet GPUImageView *gpuImageView;
 
 
 

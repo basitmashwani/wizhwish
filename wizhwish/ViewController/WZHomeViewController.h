@@ -23,4 +23,6 @@
 
 - (IBAction)showPostView:(id)sender;
 
+- (IBAction)commentPressed:(id)sender;
+
 @end

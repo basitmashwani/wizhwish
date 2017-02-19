@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E00D5491E598B5100AC3E95 /* WWishBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E00D5481E598B5100AC3E95 /* WWishBoardViewController.m */; };
+		1E00D54C1E599AF900AC3E95 /* WGiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E00D54B1E599AF900AC3E95 /* WGiftViewController.m */; };
+		1E00D54F1E59CEA300AC3E95 /* WWishListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E00D54E1E59CEA300AC3E95 /* WWishListViewController.m */; };
+		1E00D5521E59D6B400AC3E95 /* WWishToViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E00D5511E59D6B400AC3E95 /* WWishToViewController.m */; };
+		1E00D5551E59DB8700AC3E95 /* WCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E00D5541E59DB8700AC3E95 /* WCommentsViewController.m */; };
+		1E00D5581E59E43E00AC3E95 /* WProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E00D5571E59E43E00AC3E95 /* WProfileViewController.m */; };
+		1E00D55B1E59E4E800AC3E95 /* WEditProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E00D55A1E59E4E800AC3E95 /* WEditProfileTableViewCell.m */; };
+		1E010B211E508A07004AF3B9 /* whiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E010B1F1E508A07004AF3B9 /* whiz.storyboard */; };
+		1E010B251E509277004AF3B9 /* WWizhViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E010B241E509277004AF3B9 /* WWizhViewController.m */; };
 		1E060B031CC4E311009E1BBC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E060B021CC4E311009E1BBC /* main.m */; };
 		1E060B061CC4E311009E1BBC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E060B051CC4E311009E1BBC /* AppDelegate.m */; };
 		1E060B0C1CC4E311009E1BBC /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E060B0A1CC4E311009E1BBC /* Login.storyboard */; };
@@ -14,8 +23,12 @@
 		1E060B1C1CC4E311009E1BBC /* wizhwishTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E060B1B1CC4E311009E1BBC /* wizhwishTests.m */; };
 		1E060B271CC4E311009E1BBC /* wizhwishUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E060B261CC4E311009E1BBC /* wizhwishUITests.m */; };
 		1E18878B1CE1BF2C00B7F1D5 /* WZMyWishesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E18878A1CE1BF2C00B7F1D5 /* WZMyWishesTableViewCell.m */; };
+		1E1CCB1C1D855EB600423904 /* Media.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CCB1A1D855EB600423904 /* Media.storyboard */; };
+		1E1CCB1E1D85602E00423904 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CCB1D1D85602E00423904 /* Media.xcassets */; };
+		1E1CCB221D85629900423904 /* WVideoRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1CCB211D85629900423904 /* WVideoRecordViewController.m */; };
 		1E271DAF1CE2097E00DB572F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E271DAE1CE2097E00DB572F /* AVFoundation.framework */; };
 		1E271DB31CE2149500DB572F /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E271DB21CE2149500DB572F /* Photos.framework */; };
+		1E2F0C131DB24E50002CF9AA /* WSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2F0C121DB24E50002CF9AA /* WSetting.m */; };
 		1E4276261CD914B00004A0F8 /* RUUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4276251CD914B00004A0F8 /* RUUtility.m */; };
 		1E42762B1CD914D00004A0F8 /* WZPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4276281CD914D00004A0F8 /* WZPostTableViewCell.m */; };
 		1E42762C1CD914D00004A0F8 /* WZPostTopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E42762A1CD914D00004A0F8 /* WZPostTopTableViewCell.m */; };
@@ -55,7 +68,15 @@
 		1E9728BB1D43A611003EA877 /* WPostView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9728B91D43A611003EA877 /* WPostView.m */; };
 		1E9728BC1D43A611003EA877 /* WPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E9728BA1D43A611003EA877 /* WPostView.xib */; };
 		1EA47E341D043C6600794973 /* WZMyPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA47E331D043C6600794973 /* WZMyPostTableViewCell.m */; };
+		1EAE52411E4F701C007DC15D /* WTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAE52401E4F701C007DC15D /* WTextViewController.m */; };
+		1ED143141E41EE9C008045CA /* WPhotoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED143131E41EE9C008045CA /* WPhotoEditViewController.m */; };
 		1ED6C7241CE4E2630042D3F6 /* WZPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED6C7231CE4E2630042D3F6 /* WZPostsViewController.m */; };
+		1ED942A31DFC682000BEF8AC /* WPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED942A21DFC682000BEF8AC /* WPhotoViewController.m */; };
+		1EEDCCB11DB507F300DBB363 /* UIImage+Filtrr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDCCAC1DB507F300DBB363 /* UIImage+Filtrr.m */; };
+		1EEDCCB21DB507F300DBB363 /* UIImage+FiltrrCompositions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDCCAE1DB507F300DBB363 /* UIImage+FiltrrCompositions.m */; };
+		1EEDCCB31DB507F300DBB363 /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDCCB01DB507F300DBB363 /* UIImage+Scale.m */; };
+		1EFC87231E4C94630045C801 /* WRecordAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC87221E4C94630045C801 /* WRecordAudioViewController.m */; };
+		1EFD83E11DB908AB00E119F3 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EFD83E01DB908AB00E119F3 /* MobileCoreServices.framework */; };
 		686A4812521AB5B0AB82A61C /* libPods-wizhwish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EDA4CEB60A5E42CFDB52C1 /* libPods-wizhwish.a */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +98,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E00D5471E598B5100AC3E95 /* WWishBoardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WWishBoardViewController.h; path = ViewController/WWishBoardViewController.h; sourceTree = "<group>"; };
+		1E00D5481E598B5100AC3E95 /* WWishBoardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WWishBoardViewController.m; path = ViewController/WWishBoardViewController.m; sourceTree = "<group>"; };
+		1E00D54A1E599AF900AC3E95 /* WGiftViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WGiftViewController.h; path = ViewController/WGiftViewController.h; sourceTree = "<group>"; };
+		1E00D54B1E599AF900AC3E95 /* WGiftViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WGiftViewController.m; path = ViewController/WGiftViewController.m; sourceTree = "<group>"; };
+		1E00D54D1E59CEA300AC3E95 /* WWishListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WWishListViewController.h; path = ViewController/WWishListViewController.h; sourceTree = "<group>"; };
+		1E00D54E1E59CEA300AC3E95 /* WWishListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WWishListViewController.m; path = ViewController/WWishListViewController.m; sourceTree = "<group>"; };
+		1E00D5501E59D6B400AC3E95 /* WWishToViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WWishToViewController.h; path = ViewController/WWishToViewController.h; sourceTree = "<group>"; };
+		1E00D5511E59D6B400AC3E95 /* WWishToViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WWishToViewController.m; path = ViewController/WWishToViewController.m; sourceTree = "<group>"; };
+		1E00D5531E59DB8700AC3E95 /* WCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WCommentsViewController.h; path = ViewController/WCommentsViewController.h; sourceTree = "<group>"; };
+		1E00D5541E59DB8700AC3E95 /* WCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WCommentsViewController.m; path = ViewController/WCommentsViewController.m; sourceTree = "<group>"; };
+		1E00D5561E59E43E00AC3E95 /* WProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WProfileViewController.h; path = ViewController/WProfileViewController.h; sourceTree = "<group>"; };
+		1E00D5571E59E43E00AC3E95 /* WProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WProfileViewController.m; path = ViewController/WProfileViewController.m; sourceTree = "<group>"; };
+		1E00D5591E59E4E800AC3E95 /* WEditProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WEditProfileTableViewCell.h; path = Cells/WEditProfileTableViewCell.h; sourceTree = "<group>"; };
+		1E00D55A1E59E4E800AC3E95 /* WEditProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WEditProfileTableViewCell.m; path = Cells/WEditProfileTableViewCell.m; sourceTree = "<group>"; };
+		1E010B201E508A07004AF3B9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/whiz.storyboard; sourceTree = "<group>"; };
+		1E010B231E509277004AF3B9 /* WWizhViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WWizhViewController.h; path = ViewController/WWizhViewController.h; sourceTree = "<group>"; };
+		1E010B241E509277004AF3B9 /* WWizhViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WWizhViewController.m; path = ViewController/WWizhViewController.m; sourceTree = "<group>"; };
 		1E060AFE1CC4E311009E1BBC /* wizhwish.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wizhwish.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E060B021CC4E311009E1BBC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1E060B041CC4E311009E1BBC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -93,9 +131,15 @@
 		1E060B391CC4F134009E1BBC /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		1E1887891CE1BF2C00B7F1D5 /* WZMyWishesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZMyWishesTableViewCell.h; path = Cells/WZMyWishesTableViewCell.h; sourceTree = "<group>"; };
 		1E18878A1CE1BF2C00B7F1D5 /* WZMyWishesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZMyWishesTableViewCell.m; path = Cells/WZMyWishesTableViewCell.m; sourceTree = "<group>"; };
+		1E1CCB1B1D855EB600423904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Media.storyboard; sourceTree = "<group>"; };
+		1E1CCB1D1D85602E00423904 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Resources/Media.xcassets; sourceTree = "<group>"; };
+		1E1CCB201D85629900423904 /* WVideoRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WVideoRecordViewController.h; path = ViewController/WVideoRecordViewController.h; sourceTree = "<group>"; };
+		1E1CCB211D85629900423904 /* WVideoRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WVideoRecordViewController.m; path = ViewController/WVideoRecordViewController.m; sourceTree = "<group>"; };
 		1E271DAE1CE2097E00DB572F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1E271DB01CE2133900DB572F /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		1E271DB21CE2149500DB572F /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		1E2F0C111DB24E50002CF9AA /* WSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSetting.h; path = Utilities/WSetting.h; sourceTree = "<group>"; };
+		1E2F0C121DB24E50002CF9AA /* WSetting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSetting.m; path = Utilities/WSetting.m; sourceTree = "<group>"; };
 		1E4276241CD914B00004A0F8 /* RUUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RUUtility.h; path = Utilities/RUUtility.h; sourceTree = "<group>"; };
 		1E4276251CD914B00004A0F8 /* RUUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RUUtility.m; path = Utilities/RUUtility.m; sourceTree = "<group>"; };
 		1E4276271CD914D00004A0F8 /* WZPostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZPostTableViewCell.h; path = Cells/WZPostTableViewCell.h; sourceTree = "<group>"; };
@@ -165,8 +209,23 @@
 		1E9728BA1D43A611003EA877 /* WPostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WPostView.xib; path = "Utilities/Custom Views/WPostView.xib"; sourceTree = "<group>"; };
 		1EA47E321D043C6600794973 /* WZMyPostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZMyPostTableViewCell.h; path = Cells/WZMyPostTableViewCell.h; sourceTree = "<group>"; };
 		1EA47E331D043C6600794973 /* WZMyPostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZMyPostTableViewCell.m; path = Cells/WZMyPostTableViewCell.m; sourceTree = "<group>"; };
+		1EAE523F1E4F701C007DC15D /* WTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTextViewController.h; path = ViewController/WTextViewController.h; sourceTree = "<group>"; };
+		1EAE52401E4F701C007DC15D /* WTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTextViewController.m; path = ViewController/WTextViewController.m; sourceTree = "<group>"; };
+		1ED143121E41EE9C008045CA /* WPhotoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WPhotoEditViewController.h; path = ViewController/WPhotoEditViewController.h; sourceTree = "<group>"; };
+		1ED143131E41EE9C008045CA /* WPhotoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPhotoEditViewController.m; path = ViewController/WPhotoEditViewController.m; sourceTree = "<group>"; };
 		1ED6C7221CE4E2630042D3F6 /* WZPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZPostsViewController.h; path = ViewController/WZPostsViewController.h; sourceTree = "<group>"; };
 		1ED6C7231CE4E2630042D3F6 /* WZPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZPostsViewController.m; path = ViewController/WZPostsViewController.m; sourceTree = "<group>"; };
+		1ED942A11DFC682000BEF8AC /* WPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WPhotoViewController.h; path = ViewController/WPhotoViewController.h; sourceTree = "<group>"; };
+		1ED942A21DFC682000BEF8AC /* WPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPhotoViewController.m; path = ViewController/WPhotoViewController.m; sourceTree = "<group>"; };
+		1EEDCCAB1DB507F300DBB363 /* UIImage+Filtrr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Filtrr.h"; sourceTree = "<group>"; };
+		1EEDCCAC1DB507F300DBB363 /* UIImage+Filtrr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Filtrr.m"; sourceTree = "<group>"; };
+		1EEDCCAD1DB507F300DBB363 /* UIImage+FiltrrCompositions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FiltrrCompositions.h"; sourceTree = "<group>"; };
+		1EEDCCAE1DB507F300DBB363 /* UIImage+FiltrrCompositions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FiltrrCompositions.m"; sourceTree = "<group>"; };
+		1EEDCCAF1DB507F300DBB363 /* UIImage+Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scale.h"; sourceTree = "<group>"; };
+		1EEDCCB01DB507F300DBB363 /* UIImage+Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scale.m"; sourceTree = "<group>"; };
+		1EFC87211E4C94630045C801 /* WRecordAudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRecordAudioViewController.h; path = ViewController/WRecordAudioViewController.h; sourceTree = "<group>"; };
+		1EFC87221E4C94630045C801 /* WRecordAudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRecordAudioViewController.m; path = ViewController/WRecordAudioViewController.m; sourceTree = "<group>"; };
+		1EFD83E01DB908AB00E119F3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		25918DA5ECA2450ED2B97948 /* Pods-wizhwish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwish.release.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwish/Pods-wizhwish.release.xcconfig"; sourceTree = "<group>"; };
 		40EDA4CEB60A5E42CFDB52C1 /* libPods-wizhwish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wizhwish.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D04BD9FB6266A9389C4ED76 /* Pods-wizhwish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwish/Pods-wizhwish.debug.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +236,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EFD83E11DB908AB00E119F3 /* MobileCoreServices.framework in Frameworks */,
 				1E271DB31CE2149500DB572F /* Photos.framework in Frameworks */,
 				1E271DAF1CE2097E00DB572F /* AVFoundation.framework in Frameworks */,
 				686A4812521AB5B0AB82A61C /* libPods-wizhwish.a in Frameworks */,
@@ -200,6 +260,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E00D5461E598B2800AC3E95 /* WishViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E00D5471E598B5100AC3E95 /* WWishBoardViewController.h */,
+				1E00D5481E598B5100AC3E95 /* WWishBoardViewController.m */,
+				1E00D54A1E599AF900AC3E95 /* WGiftViewController.h */,
+				1E00D54B1E599AF900AC3E95 /* WGiftViewController.m */,
+				1E00D54D1E59CEA300AC3E95 /* WWishListViewController.h */,
+				1E00D54E1E59CEA300AC3E95 /* WWishListViewController.m */,
+				1E00D5501E59D6B400AC3E95 /* WWishToViewController.h */,
+				1E00D5511E59D6B400AC3E95 /* WWishToViewController.m */,
+			);
+			name = WishViewController;
+			sourceTree = "<group>";
+		};
+		1E010B221E509258004AF3B9 /* WhizViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E010B231E509277004AF3B9 /* WWizhViewController.h */,
+				1E010B241E509277004AF3B9 /* WWizhViewController.m */,
+			);
+			name = WhizViewController;
+			sourceTree = "<group>";
+		};
 		1E060AF51CC4E311009E1BBC = {
 			isa = PBXGroup;
 			children = (
@@ -247,8 +331,9 @@
 				1E8032911CDE67FD0010D036 /* Profile.xcassets */,
 				1E8717E61CE8A19F0062EFE9 /* Chat.xcassets */,
 				1E4276571CD915B90004A0F8 /* Home.xcassets */,
-				1E060B121CC4E311009E1BBC /* Info.plist */,
+				1E1CCB1D1D85602E00423904 /* Media.xcassets */,
 				1E060B021CC4E311009E1BBC /* main.m */,
+				1E060B121CC4E311009E1BBC /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -274,6 +359,12 @@
 		1E060B341CC4F098009E1BBC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1E00D5461E598B2800AC3E95 /* WishViewController */,
+				1E010B221E509258004AF3B9 /* WhizViewController */,
+				1EAE52421E4F70FB007DC15D /* TextViewController */,
+				1EFC87201E4C941F0045C801 /* RecordViewController */,
+				1ED942A01DFC67FF00BEF8AC /* PhotoViewController */,
+				1E1CCB1F1D85627700423904 /* VideoRecordingController */,
 				1E8717F01CE8B1FD0062EFE9 /* ContainerViewController */,
 				1E8717E81CE8A8970062EFE9 /* ChatViewController */,
 				1ED6C7211CE4E22D0042D3F6 /* PostsViewController */,
@@ -299,6 +390,8 @@
 		1E14322D1CC781CC004682B6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				1EEDCCAA1DB507E600DBB363 /* Filter */,
+				1E2F0C101DB24E1D002CF9AA /* Settings */,
 				1E9728B71D43A5CE003EA877 /* Views */,
 				1E8717EF1CE8B0C40062EFE9 /* Segue */,
 				1E4276241CD914B00004A0F8 /* RUUtility.h */,
@@ -402,8 +495,30 @@
 			children = (
 				1E42764B1CD915720004A0F8 /* WZHomeViewController.h */,
 				1E42764C1CD915720004A0F8 /* WZHomeViewController.m */,
+				1E00D5531E59DB8700AC3E95 /* WCommentsViewController.h */,
+				1E00D5541E59DB8700AC3E95 /* WCommentsViewController.m */,
+				1E00D5561E59E43E00AC3E95 /* WProfileViewController.h */,
+				1E00D5571E59E43E00AC3E95 /* WProfileViewController.m */,
 			);
 			name = HomeViewController;
+			sourceTree = "<group>";
+		};
+		1E1CCB1F1D85627700423904 /* VideoRecordingController */ = {
+			isa = PBXGroup;
+			children = (
+				1E1CCB201D85629900423904 /* WVideoRecordViewController.h */,
+				1E1CCB211D85629900423904 /* WVideoRecordViewController.m */,
+			);
+			name = VideoRecordingController;
+			sourceTree = "<group>";
+		};
+		1E2F0C101DB24E1D002CF9AA /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				1E2F0C111DB24E50002CF9AA /* WSetting.h */,
+				1E2F0C121DB24E50002CF9AA /* WSetting.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		1E4FD2131CFAE32900612466 /* Fonts */ = {
@@ -500,6 +615,8 @@
 				1E060B0A1CC4E311009E1BBC /* Login.storyboard */,
 				1E7208C31CD920780017188F /* Profile.storyboard */,
 				1E8717E31CE879410062EFE9 /* Chat.storyboard */,
+				1E1CCB1A1D855EB600423904 /* Media.storyboard */,
+				1E010B1F1E508A07004AF3B9 /* whiz.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -545,8 +662,19 @@
 				1E18878A1CE1BF2C00B7F1D5 /* WZMyWishesTableViewCell.m */,
 				1EA47E321D043C6600794973 /* WZMyPostTableViewCell.h */,
 				1EA47E331D043C6600794973 /* WZMyPostTableViewCell.m */,
+				1E00D5591E59E4E800AC3E95 /* WEditProfileTableViewCell.h */,
+				1E00D55A1E59E4E800AC3E95 /* WEditProfileTableViewCell.m */,
 			);
 			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		1EAE52421E4F70FB007DC15D /* TextViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1EAE523F1E4F701C007DC15D /* WTextViewController.h */,
+				1EAE52401E4F701C007DC15D /* WTextViewController.m */,
+			);
+			name = TextViewController;
 			sourceTree = "<group>";
 		};
 		1ED6C7201CE315100042D3F6 /* MyWishesViewController */ = {
@@ -567,6 +695,17 @@
 			name = PostsViewController;
 			sourceTree = "<group>";
 		};
+		1ED942A01DFC67FF00BEF8AC /* PhotoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1ED942A11DFC682000BEF8AC /* WPhotoViewController.h */,
+				1ED942A21DFC682000BEF8AC /* WPhotoViewController.m */,
+				1ED143121E41EE9C008045CA /* WPhotoEditViewController.h */,
+				1ED143131E41EE9C008045CA /* WPhotoEditViewController.m */,
+			);
+			name = PhotoViewController;
+			sourceTree = "<group>";
+		};
 		1EDF8D151CD87DB700F4B3F1 /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -576,9 +715,32 @@
 			name = ProfileViewController;
 			sourceTree = "<group>";
 		};
+		1EEDCCAA1DB507E600DBB363 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				1EEDCCAB1DB507F300DBB363 /* UIImage+Filtrr.h */,
+				1EEDCCAC1DB507F300DBB363 /* UIImage+Filtrr.m */,
+				1EEDCCAD1DB507F300DBB363 /* UIImage+FiltrrCompositions.h */,
+				1EEDCCAE1DB507F300DBB363 /* UIImage+FiltrrCompositions.m */,
+				1EEDCCAF1DB507F300DBB363 /* UIImage+Scale.h */,
+				1EEDCCB01DB507F300DBB363 /* UIImage+Scale.m */,
+			);
+			name = Filter;
+			sourceTree = "<group>";
+		};
+		1EFC87201E4C941F0045C801 /* RecordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1EFC87211E4C94630045C801 /* WRecordAudioViewController.h */,
+				1EFC87221E4C94630045C801 /* WRecordAudioViewController.m */,
+			);
+			name = RecordViewController;
+			sourceTree = "<group>";
+		};
 		B9C0C3AF17009FB9A1BCA61D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1EFD83E01DB908AB00E119F3 /* MobileCoreServices.framework */,
 				1E271DB21CE2149500DB572F /* Photos.framework */,
 				1E271DB01CE2133900DB572F /* AssetsLibrary.framework */,
 				1E271DAE1CE2097E00DB572F /* AVFoundation.framework */,
@@ -704,8 +866,11 @@
 			files = (
 				1E7208C51CD920780017188F /* Profile.storyboard in Resources */,
 				1E8717E71CE8A19F0062EFE9 /* Chat.xcassets in Resources */,
+				1E1CCB1E1D85602E00423904 /* Media.xcassets in Resources */,
 				1E9728BC1D43A611003EA877 /* WPostView.xib in Resources */,
 				1E4276561CD915A20004A0F8 /* home.storyboard in Resources */,
+				1E1CCB1C1D855EB600423904 /* Media.storyboard in Resources */,
+				1E010B211E508A07004AF3B9 /* whiz.storyboard in Resources */,
 				1E8032921CDE67FD0010D036 /* Profile.xcassets in Resources */,
 				1E060B111CC4E311009E1BBC /* LaunchScreen.storyboard in Resources */,
 				1E4FD21A1CFB183600612466 /* PHAGSPA.TTF in Resources */,
@@ -771,35 +936,52 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E00D5491E598B5100AC3E95 /* WWishBoardViewController.m in Sources */,
 				1ED6C7241CE4E2630042D3F6 /* WZPostsViewController.m in Sources */,
+				1ED942A31DFC682000BEF8AC /* WPhotoViewController.m in Sources */,
+				1E00D54C1E599AF900AC3E95 /* WGiftViewController.m in Sources */,
+				1E2F0C131DB24E50002CF9AA /* WSetting.m in Sources */,
+				1E00D5521E59D6B400AC3E95 /* WWishToViewController.m in Sources */,
 				1E42762B1CD914D00004A0F8 /* WZPostTableViewCell.m in Sources */,
 				1E18878B1CE1BF2C00B7F1D5 /* WZMyWishesTableViewCell.m in Sources */,
 				1E4276321CD914F70004A0F8 /* UIViewController+Extras.m in Sources */,
 				1E8032961CDF040D0010D036 /* UITextField+Extras.m in Sources */,
+				1EEDCCB11DB507F300DBB363 /* UIImage+Filtrr.m in Sources */,
 				1E4276261CD914B00004A0F8 /* RUUtility.m in Sources */,
 				1E8717F31CE8B2650062EFE9 /* WZContainerViewController.m in Sources */,
 				1E8717FE1CE8BDCA0062EFE9 /* WZNewFriendViewController.m in Sources */,
+				1E00D54F1E59CEA300AC3E95 /* WWishListViewController.m in Sources */,
 				1E4FD22F1CFB311500612466 /* JKSearchBar.m in Sources */,
+				1E00D5551E59DB8700AC3E95 /* WCommentsViewController.m in Sources */,
 				1E4276501CD915800004A0F8 /* WZRegistrationViewController.m in Sources */,
 				1E4FD2331CFB318500612466 /* JKPickerView.m in Sources */,
+				1E010B251E509277004AF3B9 /* WWizhViewController.m in Sources */,
 				1E4276411CD915350004A0F8 /* OLGhostAlertView+Extras.m in Sources */,
+				1E00D5581E59E43E00AC3E95 /* WProfileViewController.m in Sources */,
+				1EAE52411E4F701C007DC15D /* WTextViewController.m in Sources */,
+				1E00D55B1E59E4E800AC3E95 /* WEditProfileTableViewCell.m in Sources */,
 				1E7208C81CD923740017188F /* WZProfileTableViewCell.m in Sources */,
 				1E42762C1CD914D00004A0F8 /* WZPostTopTableViewCell.m in Sources */,
 				1E42764A1CD915650004A0F8 /* WZMyProfileViewController.m in Sources */,
 				1E8032991CDF0BE30010D036 /* WZMyWishesViewController.m in Sources */,
+				1EEDCCB31DB507F300DBB363 /* UIImage+Scale.m in Sources */,
 				1E8717F81CE8B4B60062EFE9 /* WZChatListViewController.m in Sources */,
 				1E4276441CD915430004A0F8 /* NSString+Extras.m in Sources */,
 				1EA47E341D043C6600794973 /* WZMyPostTableViewCell.m in Sources */,
 				1E4276531CD9158F0004A0F8 /* WZLoginViewController.m in Sources */,
+				1EEDCCB21DB507F300DBB363 /* UIImage+FiltrrCompositions.m in Sources */,
 				1E42763E1CD915270004A0F8 /* UIColor+Extras.m in Sources */,
 				1E4276471CD915510004A0F8 /* NSError+Extras.m in Sources */,
 				1E7208CB1CD924420017188F /* WZFollowerViewController.m in Sources */,
+				1E1CCB221D85629900423904 /* WVideoRecordViewController.m in Sources */,
 				1E42763B1CD9151A0004A0F8 /* UIImage+Extra.m in Sources */,
 				1E8717EB1CE8A8BC0062EFE9 /* WZChatViewController.m in Sources */,
 				1E4276381CD9150D0004A0F8 /* UIStoryboard+Extras.m in Sources */,
 				1E8717EE1CE8B0B70062EFE9 /* WZEmptySegue.m in Sources */,
 				1E4276351CD915020004A0F8 /* UIView+Extras.m in Sources */,
+				1EFC87231E4C94630045C801 /* WRecordAudioViewController.m in Sources */,
 				1E42762F1CD914E20004A0F8 /* WZFriendCollectionViewCell.m in Sources */,
+				1ED143141E41EE9C008045CA /* WPhotoEditViewController.m in Sources */,
 				1E9728BB1D43A611003EA877 /* WPostView.m in Sources */,
 				1E42764D1CD915720004A0F8 /* WZHomeViewController.m in Sources */,
 				1E060B061CC4E311009E1BBC /* AppDelegate.m in Sources */,
@@ -839,6 +1021,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		1E010B1F1E508A07004AF3B9 /* whiz.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E010B201E508A07004AF3B9 /* Base */,
+			);
+			name = whiz.storyboard;
+			sourceTree = "<group>";
+		};
 		1E060B0A1CC4E311009E1BBC /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -853,6 +1043,14 @@
 				1E060B101CC4E311009E1BBC /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1E1CCB1A1D855EB600423904 /* Media.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1E1CCB1B1D855EB600423904 /* Base */,
+			);
+			name = Media.storyboard;
 			sourceTree = "<group>";
 		};
 		1E4276541CD915A20004A0F8 /* home.storyboard */ = {

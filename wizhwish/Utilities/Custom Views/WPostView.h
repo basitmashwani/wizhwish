@@ -25,6 +25,8 @@
 
 @property(nonatomic ,retain) IBOutlet UIButton *buttonHidden;
 
+@property(nonatomic ,retain) IBOutlet UIViewController *parentController;
+
 
 + (WPostView *)getPostView;
 

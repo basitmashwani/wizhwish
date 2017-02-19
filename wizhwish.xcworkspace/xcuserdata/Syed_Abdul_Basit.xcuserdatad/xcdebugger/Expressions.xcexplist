@@ -3,10 +3,145 @@
    version = "1.0">
    <ContextStates>
       <ContextState
+         contextName = "-[WVideoRecordViewController addPencilWorkToView]:WVideoRecordViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.pencilImageView">
+            </PersistentString>
+            <PersistentString
+               value = "self.imagePencilCapture">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WPhotoViewController drawingView:didEndDrawUsingTool:]:WPhotoViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.imagePencilCapture">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WPhotoViewController textPressed:]:WPhotoViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.drawingView.backgroundImage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WVideoRecordViewController pencilPressed:]:WVideoRecordViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.drawingView.image">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WVideoRecordViewController drawingView:didEndDrawUsingTool:]:WVideoRecordViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.imagePencilCapture">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WPhotoViewController getFilterImageWithIndex:]:WPhotoViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = " [[UIImage alloc] initWithCIImage:filteredImageData]&#10;">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[SCImageView setImageByUIImage:]:SCImageView.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.CIImage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WPhotoViewController getFilterImageWithIndex:withImage:]:WPhotoViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[UIImage alloc ] initWithCIImage:filteredImageData]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[WMyWishesViewController setupSegmentControl]:WMyWishesViewController.m">
          <PersistentStrings>
             <PersistentString
                value = "self.wishType">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WPhotoViewController saveCurrentDrawingImageAtIndex:]:WPhotoViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.imagePencilCapture">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WPhotoViewController saveCurrentDrawingImageWithText:atIndex:]:WPhotoViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[self.textLabel getScreenshotImage]">
+            </PersistentString>
+            <PersistentString
+               value = "self.textLabel.text">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WVideoRecordViewController updateViewForPlayerMode]:WVideoRecordViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "_scPlayer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WVideoRecordViewController collectionView:didSelectItemAtIndexPath:]:WVideoRecordViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.filterParentView">
+            </PersistentString>
+            <PersistentString
+               value = "self.filterView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WPhotoViewController filterPressed:]:WPhotoViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.imagesArray">
+            </PersistentString>
+            <PersistentString
+               value = "[self.imagesArray objectAtIndex:self.selectedIndex]">
+            </PersistentString>
+            <PersistentString
+               value = "self.mainImageView">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WPhotoViewController collectionView:didSelectItemAtIndexPath:]:WPhotoViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.imagesArray">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WVideoRecordViewController viewDidAppear:]:WVideoRecordViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.filterParentView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

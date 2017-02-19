@@ -18,4 +18,9 @@
 
 + (UIStoryboard*)getChatStoryBoard;
 
++ (UIStoryboard*)getMediaStoryBoard;
+
++ (UIStoryboard*)getWhizStoryBoard;
+
+
 @end

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B8E14B35280B251F5668A976"
+               BlueprintIdentifier = "6FCBD897EC9FBECD55ECC8B8"
                BuildableName = "libOLGhostAlertView.a"
                BlueprintName = "OLGhostAlertView"
                ReferencedContainer = "container:Pods.xcodeproj">
