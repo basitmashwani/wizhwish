@@ -16,6 +16,10 @@
 @property(nonatomic ,retain) IBOutlet UITextField *textFieldPassword;
 
 @property(nonatomic ,retain) IBOutlet UITextField *textFieldRePassword;
+
+@property(nonatomic ,retain) IBOutlet UIImageView *mImageView;
+
+
 - (IBAction)signInPressed:(id)sender;
 - (IBAction)registerPressed:(id)sender;
 

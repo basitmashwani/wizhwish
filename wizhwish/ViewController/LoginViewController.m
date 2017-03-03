@@ -1,13 +1,15 @@
 //
-//  WRegistrationViewController.m
+//  LoginViewController.m
 //  wizhwish
 //
-//  Created by Syed Abdul Basit on 2016-04-20.
-//  Copyright © 2016 Syed Abdul Basit. All rights reserved.
+//  Created by Syed Abdul Basit on 2017-02-25.
+//  Copyright © 2017 Syed Abdul Basit. All rights reserved.
 //
 
-#import "WZRegistrationViewController.h"
-@implementation WZRegistrationViewController
+#import "LoginViewController.h"
+
+
+@implementation LoginViewController
 
 #pragma mark Private Methods
 - (void)playerItemDidReachEnd:(NSNotification *)notification {
@@ -28,7 +30,7 @@
     layer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     layer.player = player;
     layer.frame = self.view.frame;
-      [self.mImageView.layer addSublayer:layer];
+    [self.mView.layer addSublayer:layer];
     // [self.view bringSubviewToFront:self.textFieldPassword];
     //[self.view bringSubviewToFront:self.textFieldUsername];
     // [self.view.layer insertSublayer:layer below:self.ima.layer];
@@ -43,17 +45,17 @@
                                                  name:AVPlayerItemDidPlayToEndTimeNotification
                                                object:[player currentItem]];
     
-
+    
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self.navigationController setNavigationBarHidden:YES];
+    [RUUtility setUpNavigationBar:self.navigationController];
     [self didTappedView:self.view];
+    [self.textFieldUsername setTextFieldPlaceHolderColor:[UIColor whiteColor]];
     [self.textFieldPassword setTextFieldPlaceHolderColor:[UIColor whiteColor]];
-    [self.textFieldRePassword setTextFieldPlaceHolderColor:[UIColor whiteColor]];
-    [self.textFieldEmail setTextFieldPlaceHolderColor:[UIColor whiteColor]];
-    [self.textFieldUserName setTextFieldPlaceHolderColor:[UIColor whiteColor]];
+    
+    
     
     // Do any additional setup after loading the view.
 }
@@ -61,10 +63,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- 
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -76,52 +74,44 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
-    if (textField == self.textFieldEmail) {
-        
-        [self.textFieldUserName becomeFirstResponder];
-       
-        return NO;
-        
-    } else if(textField == self.textFieldUserName) {
+    if (textField == self.textFieldUsername) {
         
         [self.textFieldPassword becomeFirstResponder];
-        
         return NO;
-
-    } else if(textField == self.textFieldPassword) {
-       
-        [self.textFieldRePassword becomeFirstResponder];
         
-        return NO;
     }
-    
-    [textField resignFirstResponder];
+    [self.textFieldPassword resignFirstResponder];
     
     return YES;
     
 }
 
-
 #pragma mark Public Methods
+
+- (void)signUpPressed:(id)sender {
+    
+    WZRegistrationViewController *registrationVC = [self.storyboard instantiateViewControllerWithIdentifier:K_SB_REGISTER_VIEW_CONTROLLER];
+    [self.navigationController pushViewController:registrationVC animated:YES];
+    
+}
 
 - (void)signInPressed:(id)sender {
     
-    [self.navigationController popViewControllerAnimated:YES];
-    //[self dismissViewControllerAnimated:YES completion:nil];
+    WZHomeViewController *homeViewController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_HOME_VIEW_CONTROLLER];
     
-}
-
-- (void)registerPressed:(id)sender {
-
-    WProfileViewController *profileViewController = [[UIStoryboard getProfileStoryBoard] instantiateViewControllerWithIdentifier:@"K_SB_PROFILE_VC"];
- //WZHomeViewController *homeViewController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_HOME_VIEW_CONTROLLER];
+    [RUUtility setMainRootController:homeViewController];
     
-    
-    [RUUtility setMainRootController:profileViewController];
     //[self.navigationController pushViewController:homeViewController animated:YES];
-    
- //   [self performSegueWithIdentifier:K_SEGUE_HOME sender:self];
 }
 
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 @end

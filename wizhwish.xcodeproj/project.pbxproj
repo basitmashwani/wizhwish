@@ -44,7 +44,6 @@
 		1E42764A1CD915650004A0F8 /* WZMyProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4276491CD915650004A0F8 /* WZMyProfileViewController.m */; };
 		1E42764D1CD915720004A0F8 /* WZHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E42764C1CD915720004A0F8 /* WZHomeViewController.m */; };
 		1E4276501CD915800004A0F8 /* WZRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E42764F1CD915800004A0F8 /* WZRegistrationViewController.m */; };
-		1E4276531CD9158F0004A0F8 /* WZLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4276521CD9158F0004A0F8 /* WZLoginViewController.m */; };
 		1E4276561CD915A20004A0F8 /* home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E4276541CD915A20004A0F8 /* home.storyboard */; };
 		1E4276581CD915B90004A0F8 /* Home.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E4276571CD915B90004A0F8 /* Home.xcassets */; };
 		1E42765B1CD915C10004A0F8 /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E4276591CD915C10004A0F8 /* Login.xcassets */; };
@@ -68,7 +67,9 @@
 		1E9728BB1D43A611003EA877 /* WPostView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E9728B91D43A611003EA877 /* WPostView.m */; };
 		1E9728BC1D43A611003EA877 /* WPostView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E9728BA1D43A611003EA877 /* WPostView.xib */; };
 		1EA47E341D043C6600794973 /* WZMyPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA47E331D043C6600794973 /* WZMyPostTableViewCell.m */; };
+		1EAC13B51E618BE8002A6FDE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAC13B41E618BE8002A6FDE /* LoginViewController.m */; };
 		1EAE52411E4F701C007DC15D /* WTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAE52401E4F701C007DC15D /* WTextViewController.m */; };
+		1EC05A031E60A508007026C3 /* Background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1EC05A021E60A0BF007026C3 /* Background.mp4 */; };
 		1ED143141E41EE9C008045CA /* WPhotoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED143131E41EE9C008045CA /* WPhotoEditViewController.m */; };
 		1ED6C7241CE4E2630042D3F6 /* WZPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED6C7231CE4E2630042D3F6 /* WZPostsViewController.m */; };
 		1ED942A31DFC682000BEF8AC /* WPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED942A21DFC682000BEF8AC /* WPhotoViewController.m */; };
@@ -170,8 +171,6 @@
 		1E42764C1CD915720004A0F8 /* WZHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZHomeViewController.m; path = ViewController/WZHomeViewController.m; sourceTree = "<group>"; };
 		1E42764E1CD915800004A0F8 /* WZRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZRegistrationViewController.h; path = ViewController/WZRegistrationViewController.h; sourceTree = "<group>"; };
 		1E42764F1CD915800004A0F8 /* WZRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZRegistrationViewController.m; path = ViewController/WZRegistrationViewController.m; sourceTree = "<group>"; };
-		1E4276511CD9158F0004A0F8 /* WZLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZLoginViewController.h; path = /Users/Syed_Abdul_Basit/Desktop/Projects/wizhwish/wizhwish/ViewController/WZLoginViewController.h; sourceTree = "<absolute>"; };
-		1E4276521CD9158F0004A0F8 /* WZLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZLoginViewController.m; path = ViewController/WZLoginViewController.m; sourceTree = "<group>"; };
 		1E4276551CD915A20004A0F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/home.storyboard; sourceTree = "<group>"; };
 		1E4276571CD915B90004A0F8 /* Home.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Home.xcassets; path = Resources/Home.xcassets; sourceTree = "<group>"; };
 		1E4276591CD915C10004A0F8 /* Login.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Login.xcassets; path = Resources/Login.xcassets; sourceTree = "<group>"; };
@@ -209,8 +208,11 @@
 		1E9728BA1D43A611003EA877 /* WPostView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WPostView.xib; path = "Utilities/Custom Views/WPostView.xib"; sourceTree = "<group>"; };
 		1EA47E321D043C6600794973 /* WZMyPostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZMyPostTableViewCell.h; path = Cells/WZMyPostTableViewCell.h; sourceTree = "<group>"; };
 		1EA47E331D043C6600794973 /* WZMyPostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZMyPostTableViewCell.m; path = Cells/WZMyPostTableViewCell.m; sourceTree = "<group>"; };
+		1EAC13B31E618BE8002A6FDE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ViewController/LoginViewController.h; sourceTree = "<group>"; };
+		1EAC13B41E618BE8002A6FDE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ViewController/LoginViewController.m; sourceTree = "<group>"; };
 		1EAE523F1E4F701C007DC15D /* WTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTextViewController.h; path = ViewController/WTextViewController.h; sourceTree = "<group>"; };
 		1EAE52401E4F701C007DC15D /* WTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTextViewController.m; path = ViewController/WTextViewController.m; sourceTree = "<group>"; };
+		1EC05A021E60A0BF007026C3 /* Background.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Background.mp4; sourceTree = "<group>"; };
 		1ED143121E41EE9C008045CA /* WPhotoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WPhotoEditViewController.h; path = ViewController/WPhotoEditViewController.h; sourceTree = "<group>"; };
 		1ED143131E41EE9C008045CA /* WPhotoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPhotoEditViewController.m; path = ViewController/WPhotoEditViewController.m; sourceTree = "<group>"; };
 		1ED6C7221CE4E2630042D3F6 /* WZPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZPostsViewController.h; path = ViewController/WZPostsViewController.h; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 		1E060B001CC4E311009E1BBC /* wizhwish */ = {
 			isa = PBXGroup;
 			children = (
+				1EC05A011E60A0AF007026C3 /* Video */,
 				1E4FD21C1CFB2E9600612466 /* Custom Search View */,
 				1E060B391CC4F134009E1BBC /* Constants.h */,
 				1E060B041CC4E311009E1BBC /* AppDelegate.h */,
@@ -381,8 +384,8 @@
 		1E060B351CC4F0A7009E1BBC /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
-				1E4276511CD9158F0004A0F8 /* WZLoginViewController.h */,
-				1E4276521CD9158F0004A0F8 /* WZLoginViewController.m */,
+				1EAC13B31E618BE8002A6FDE /* LoginViewController.h */,
+				1EAC13B41E618BE8002A6FDE /* LoginViewController.m */,
 			);
 			name = LoginViewController;
 			sourceTree = "<group>";
@@ -677,6 +680,14 @@
 			name = TextViewController;
 			sourceTree = "<group>";
 		};
+		1EC05A011E60A0AF007026C3 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				1EC05A021E60A0BF007026C3 /* Background.mp4 */,
+			);
+			name = Video;
+			sourceTree = "<group>";
+		};
 		1ED6C7201CE315100042D3F6 /* MyWishesViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -877,6 +888,7 @@
 				1E4276581CD915B90004A0F8 /* Home.xcassets in Resources */,
 				1E4FD21B1CFB183B00612466 /* PHAGSPAB.TTF in Resources */,
 				1E42765B1CD915C10004A0F8 /* Login.xcassets in Resources */,
+				1EC05A031E60A508007026C3 /* Background.mp4 in Resources */,
 				1E8717E51CE879410062EFE9 /* Chat.storyboard in Resources */,
 				1E060B0C1CC4E311009E1BBC /* Login.storyboard in Resources */,
 			);
@@ -940,6 +952,7 @@
 				1ED6C7241CE4E2630042D3F6 /* WZPostsViewController.m in Sources */,
 				1ED942A31DFC682000BEF8AC /* WPhotoViewController.m in Sources */,
 				1E00D54C1E599AF900AC3E95 /* WGiftViewController.m in Sources */,
+				1EAC13B51E618BE8002A6FDE /* LoginViewController.m in Sources */,
 				1E2F0C131DB24E50002CF9AA /* WSetting.m in Sources */,
 				1E00D5521E59D6B400AC3E95 /* WWishToViewController.m in Sources */,
 				1E42762B1CD914D00004A0F8 /* WZPostTableViewCell.m in Sources */,
@@ -968,7 +981,6 @@
 				1E8717F81CE8B4B60062EFE9 /* WZChatListViewController.m in Sources */,
 				1E4276441CD915430004A0F8 /* NSString+Extras.m in Sources */,
 				1EA47E341D043C6600794973 /* WZMyPostTableViewCell.m in Sources */,
-				1E4276531CD9158F0004A0F8 /* WZLoginViewController.m in Sources */,
 				1EEDCCB21DB507F300DBB363 /* UIImage+FiltrrCompositions.m in Sources */,
 				1E42763E1CD915270004A0F8 /* UIColor+Extras.m in Sources */,
 				1E4276471CD915510004A0F8 /* NSError+Extras.m in Sources */,

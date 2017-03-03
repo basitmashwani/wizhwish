@@ -44,19 +44,19 @@
     
     WTextViewController *controller = [[UIStoryboard getMediaStoryBoard] instantiateViewControllerWithIdentifier:K_SB_TEXT_VIEW_CONTROLLER];
     
-    [self.parentController.navigationController pushViewController:controller animated:YES];
+    [self.parentViewController.navigationController pushViewController:controller animated:YES];
 }
 
 - (IBAction)audioPressed:(id)sender {
     
     WRecordAudioViewController *controller = [[UIStoryboard getMediaStoryBoard] instantiateViewControllerWithIdentifier:K_SB_RECORD_VIEW_CONTROLLER];
     
-    [self.parentController.navigationController pushViewController:controller animated:YES];
+    [self.parentViewController.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)videoPressed:(id)sender {
     WVideoRecordViewController *controller = [[UIStoryboard getMediaStoryBoard] instantiateViewControllerWithIdentifier:K_SB_VIDEO_RECORD_VIEW_CONTROLLER];
     
-    [self.parentController.navigationController pushViewController:controller animated:YES];
+    [self.parentViewController.navigationController pushViewController:controller animated:YES];
     
 }
 - (IBAction)goOnlinePressed:(id)sender {
@@ -66,7 +66,7 @@
     
     WPhotoViewController *controller = [[UIStoryboard getMediaStoryBoard] instantiateViewControllerWithIdentifier:K_SB_PHOTO_VIEW_CONTROLLER];
     
-    [self.parentController.navigationController pushViewController:controller animated:YES];
+    [self.parentViewController.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)chatPressed:(id)sender {
     

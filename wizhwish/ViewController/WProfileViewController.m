@@ -14,8 +14,15 @@
 
 @implementation WProfileViewController
 
+
+#pragma mark - Private Methods
+- (void)donePressed:(id)sender {
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.rightBarButtonItem = [RUUtility getBarButtonWithTitle:@"Done" forViewController:self selector:@selector(donePressed:)];
     // Do any additional setup after loading the view.
 }
 
@@ -34,11 +41,14 @@
         
         if (indexPath.row == 0) {
             cell.textField.placeholder = @"Username";
+            cell.imageView.image = [UIImage imageNamed:@"Image_Profile_Icon"];
 
         }
         else if (indexPath.row == 1 ) {
             
             cell.textField.placeholder = @"Bio";
+            cell.imageView.image = [UIImage imageNamed:@"Image_Bio"];
+
 
         }
     }
@@ -46,17 +56,23 @@
      
         if (indexPath.row == 0) {
             cell.textField.placeholder = @"Email";
+            cell.imageView.image = [UIImage imageNamed:@"Image_Email"];
+
             
         }
         else if (indexPath.row == 1 ) {
             
             cell.textField.placeholder = @"Phone";
+            cell.imageView.image = [UIImage imageNamed:@"Image_Phone"];
+
             
         }
         
         else if (indexPath.row == 2 ) {
             
             cell.textField.placeholder = @"Gender";
+            cell.imageView.image = [UIImage imageNamed:@"Image_Gender"];
+
             
         }
 

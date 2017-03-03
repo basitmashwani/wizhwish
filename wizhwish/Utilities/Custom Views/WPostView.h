@@ -25,8 +25,20 @@
 
 @property(nonatomic ,retain) IBOutlet UIButton *buttonHidden;
 
-@property(nonatomic ,retain) IBOutlet UIViewController *parentController;
+@property(nonatomic ,retain) IBOutlet UIButton *buttonMessage;
 
+@property(nonatomic ,retain) IBOutlet UIButton *buttonNotification;
+
+@property(nonatomic ,retain) IBOutlet UIButton *buttonMenu;
+
+@property(nonatomic ,retain) IBOutlet UIButton *buttonGift;
+
+@property(nonatomic ,retain) IBOutlet UIButton *buttonWhatOn;
+
+@property(nonatomic ,retain) UIViewController *parentViewController;
+
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *topSpace;
 
 + (WPostView *)getPostView;
 

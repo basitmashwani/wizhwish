@@ -20,6 +20,8 @@
     
     
     [self setValue:[UIColor colorWithRed:red green:green blue:blue alpha:alpha] forKeyPath:@"_placeholderLabel.textColor"];
+    
+    
 
 }
 @end

@@ -23,6 +23,8 @@
 
 @property(nonatomic) NSInteger *counter;
 
+@property(nonatomic) BOOL isHide;
+
 @end
 @implementation WZHomeViewController
 
@@ -33,14 +35,60 @@
     __weak typeof(self) weakSelf = self;
    
     [self.tableView setScrollEnabled:YES];
+   
+    if (!self.isHide) {
+        
     
-    [UIView animateKeyframesWithDuration:1 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
+    self.myView.buttonWhatOn.alpha = 0;
+    self.myView.buttonMessage.alpha = 0;
+    [self.myView.buttonNotification setImage:[UIImage imageNamed:@"Image_Profile"] forState:UIControlStateNormal];
+    [self.myView.buttonGift setImage:[UIImage imageNamed:@"Image_SearchBar"] forState:UIControlStateNormal];
+    [self.myView.buttonMenu setImage:[UIImage imageNamed:@"Image_Lamp"] forState:UIControlStateNormal];
+        self.isHide = YES;
         
-        weakSelf.myView.center = CGPointMake(weakSelf.myView.center.x, weakSelf.myView.center.y + weakSelf.myView.frame.size.height);
+        CGRect frame = self.myView.buttonMenu.frame;
+        NSLog(@"Frame %ld",(long)frame.origin.y);
+      //  self.myView.buttonMenu.frame = CGRectMake(frame.origin.x, 0, frame.size.width, frame.size.height);
+        self.myView.topSpace.constant = -20;
+        NSLog(@"Frame %ld",(long)self.myView.frame.origin.y);
+
+        [UIView animateKeyframesWithDuration:2 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
+            
+            weakSelf.myView.center = CGPointMake(weakSelf.myView.center.x, weakSelf.myView.center.y + weakSelf.myView.frame.size.height - 60);
+            
+        } completion:^(BOOL finished) {
+            
+        }];
+
+    }
+    else {
         
-    } completion:^(BOOL finished) {
+        if (self.canScrollTop) {
+            
+            
+            [self.tableView setScrollEnabled:NO];
+            [self scrollTopPressed:self];
+        }
+        self.myView.buttonWhatOn.alpha = 1;
+        self.myView.buttonMessage.alpha = 1;
+        [self.myView.buttonNotification setImage:[UIImage imageNamed:@"Image_Alerts"] forState:UIControlStateNormal];
+        [self.myView.buttonGift setImage:[UIImage imageNamed:@"Image_Gifts"] forState:UIControlStateNormal];
+        [self.myView.buttonMenu setImage:[UIImage imageNamed:@"Image_Lamp2"] forState:UIControlStateNormal];
+        self.isHide = NO;
         
-    }];
+        self.myView.topSpace.constant = 10;
+
+        [UIView animateKeyframesWithDuration:2 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
+            
+            weakSelf.myView.center = CGPointMake(weakSelf.myView.center.x, weakSelf.myView.center.y - weakSelf.myView.frame.size.height+60);
+            
+        } completion:^(BOOL finished) {
+            
+        }];
+
+    }
+    
+    
     
 }
 - (IBAction)showPostView:(id)sender {
@@ -132,7 +180,7 @@
     // Do any additional setup after loading the view.
    
      self.myView = [WPostView getPostView];
-    self.myView.parentController = self;
+    self.myView.parentViewController = self;
     if(IS_IPHONE_6_PLUS) {
    self. myView.frame = CGRectMake(0, 300, self.view.frame.size.width, 450);
     
@@ -144,7 +192,7 @@
     }
     else if(IS_IPHONE_5) {
        
-        self.myView.frame = CGRectMake(0, 240, self.view.frame.size.width, 380);
+        self.myView.frame = CGRectMake(0, 160, self.view.frame.size.width, 420);
 
         [self.tableView setContentInset:UIEdgeInsetsMake(_offSetValue, 0, 0, 0)]; // 108 is only example
         self.automaticallyAdjustsScrollViewInsets = NO;
@@ -250,7 +298,7 @@
     
     if (indexPath.row == 0) {
         
-        return 210;
+        return 110;
     }
     else  {
         
