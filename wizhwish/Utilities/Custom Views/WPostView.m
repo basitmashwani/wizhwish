@@ -72,6 +72,56 @@
     
 }
 
+- (void)livePressed:(id)sender {
+    
+   // WZChatViewController *chatController = [[UIStoryboard getChatStoryBoard] instantiateViewControllerWithIdentifier:K_SB_CHAT_VIEW_CONTROLLER];
+   // [self.parentViewController.navigationController pushViewController:chatController animated:YES];
+}
+
+- (void)giftPressed:(id)sender {
+
+    if (self.topSpace.constant == -15) {
+        
+        //show Profile
+       
+        
+        WZPostsViewController *postViewController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_POST_VIEW_CONTROLLER];
+        [self.parentViewController.navigationController pushViewController:postViewController animated:YES];
+    }
+    else {
+    WZFollowerViewController *controller = [[UIStoryboard getProfileStoryBoard] instantiateViewControllerWithIdentifier:K_SB_FOLLOWER_VIEW_CONROLLER];
+    
+    controller.profileType = kWProfileGifts;
+    
+    [self.parentViewController.navigationController pushViewController:controller animated:YES];
+        
+    }
+}
+
+- (void)notificationPressed:(id)sender {
+    
+    if (self.topSpace.constant == -15) {
+     
+        WZMyProfileViewController *profileViewController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_PROFILE_VIEW_CONTROLLER];
+        [self.parentViewController.navigationController pushViewController:profileViewController animated:YES];
+    }
+    else {
+    WZFollowerViewController *controller = [[UIStoryboard getProfileStoryBoard] instantiateViewControllerWithIdentifier:K_SB_FOLLOWER_VIEW_CONROLLER];
+    
+    controller.profileType = kWProfileAlerts;
+    
+    [self.parentViewController.navigationController pushViewController:controller animated:YES];
+    }
+}
+
+- (void)messagePressed:(id)sender {
+    
+}
+
+
+
+
+
 /*
 #pragma mark - Navigation
 

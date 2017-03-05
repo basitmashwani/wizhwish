@@ -156,11 +156,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wizhwish/ViewController/WVideoRecordViewController.m"
-            timestampString = "508515023.64606"
+            timestampString = "510423531.46778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "785"
-            endingLineNumber = "785"
+            startingLineNumber = "804"
+            endingLineNumber = "804"
             landmarkName = "-labelChange:"
             landmarkType = "7">
          </BreakpointContent>
@@ -172,11 +172,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wizhwish/ViewController/WVideoRecordViewController.m"
-            timestampString = "508515023.64606"
+            timestampString = "510418963.960657"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "-textPressed:"
             landmarkType = "7">
          </BreakpointContent>
@@ -188,11 +188,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wizhwish/ViewController/WVideoRecordViewController.m"
-            timestampString = "508515023.64606"
+            timestampString = "510423531.46778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "760"
-            endingLineNumber = "760"
+            startingLineNumber = "779"
+            endingLineNumber = "779"
             landmarkName = "-addPencilWorkToView"
             landmarkType = "7">
          </BreakpointContent>
@@ -204,11 +204,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wizhwish/ViewController/WVideoRecordViewController.m"
-            timestampString = "508515023.64606"
+            timestampString = "510423531.46778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "777"
-            endingLineNumber = "777"
+            startingLineNumber = "796"
+            endingLineNumber = "796"
             landmarkName = "-labelChange:"
             landmarkType = "7">
          </BreakpointContent>
@@ -220,11 +220,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wizhwish/ViewController/WVideoRecordViewController.m"
-            timestampString = "508515023.64606"
+            timestampString = "510423531.46778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1057"
-            endingLineNumber = "1057">
+            startingLineNumber = "1076"
+            endingLineNumber = "1076">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -250,11 +250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wizhwish/ViewController/WVideoRecordViewController.m"
-            timestampString = "508515023.64606"
+            timestampString = "510423531.46778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "478"
-            endingLineNumber = "478"
+            startingLineNumber = "496"
+            endingLineNumber = "496"
             landmarkName = "-initWithCoder:"
             landmarkType = "7">
          </BreakpointContent>
@@ -278,31 +278,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "wizhwish/ViewController/WPhotoViewController.m"
-            timestampString = "508232683.733808"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "675"
-            endingLineNumber = "675"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wizhwish/ViewController/WPhotoViewController.m"
-            timestampString = "508232743.971476"
+            timestampString = "510419174.075398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "-getFilterImageWithIndex:withImage:"
             landmarkType = "7">
          </BreakpointContent>

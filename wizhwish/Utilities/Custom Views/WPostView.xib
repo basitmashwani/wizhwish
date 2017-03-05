@@ -26,6 +26,9 @@
                                 <constraint firstAttribute="width" constant="35" id="wLb-zj-wrF"/>
                             </constraints>
                             <state key="normal" image="Image_whatOn"/>
+                            <connections>
+                                <action selector="livePressed:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="7UK-6f-ht6"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybs-jl-THC">
                             <rect key="frame" x="86" y="13" width="35" height="35"/>
@@ -34,6 +37,9 @@
                                 <constraint firstAttribute="width" constant="35" id="Ag4-S9-E9v"/>
                             </constraints>
                             <state key="normal" image="Image_Gifts"/>
+                            <connections>
+                                <action selector="giftPressed:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="wen-HV-sfG"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PxX-RG-2Tc">
                             <rect key="frame" x="255" y="13" width="35" height="35"/>
@@ -42,6 +48,9 @@
                                 <constraint firstAttribute="height" constant="35" id="hh2-AY-7j5"/>
                             </constraints>
                             <state key="normal" image="Image_Alerts"/>
+                            <connections>
+                                <action selector="notificationPressed:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="nMd-DU-9K9"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CAv-OK-Lx7">
                             <rect key="frame" x="320" y="13" width="35" height="35"/>
@@ -50,6 +59,9 @@
                                 <constraint firstAttribute="height" constant="35" id="km3-kQ-L1U"/>
                             </constraints>
                             <state key="normal" image="Image_Message"/>
+                            <connections>
+                                <action selector="messagePressed:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="zAx-IC-oDu"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.94893664121627808" green="0.94907277822494507" blue="0.94890671968460083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -181,6 +193,13 @@
                 <outlet property="buttonText" destination="C50-bP-mYr" id="kva-Yu-kgA"/>
                 <outlet property="buttonVideo" destination="OOc-YN-rI3" id="dX4-HM-a68"/>
                 <outlet property="buttonWhatOn" destination="Tr5-PA-wmA" id="pOq-3G-NfE"/>
+                <outlet property="centerbuttonyAxis" destination="a34-gu-J8T" id="gJS-AI-DgI"/>
+                <outlet property="leftButtonHeight" destination="7am-xh-hD9" id="Pz9-g4-HWM"/>
+                <outlet property="leftButtonWidth" destination="Ag4-S9-E9v" id="6Ry-3s-7OY"/>
+                <outlet property="leftButtonyAxis" destination="uOf-PK-OmP" id="Led-5d-p5m"/>
+                <outlet property="rightButtonHeight" destination="hh2-AY-7j5" id="mvi-kv-l4H"/>
+                <outlet property="rightButtonWidth" destination="3Ow-kk-Jhb" id="AnB-pG-wSH"/>
+                <outlet property="rightButtonyAxis" destination="aEa-ld-Slr" id="XKE-xR-JRt"/>
                 <outlet property="topSpace" destination="8O1-Gq-5aZ" id="yNA-XB-PQe"/>
             </connections>
             <point key="canvasLocation" x="78.5" y="110.5"/>

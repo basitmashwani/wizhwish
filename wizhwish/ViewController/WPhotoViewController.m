@@ -70,6 +70,13 @@
 #pragma mark Private Methods
 
 
+- (void)nextPressed {
+    
+    WWizhViewController *controller =  [[UIStoryboard getWhizStoryBoard] instantiateViewControllerWithIdentifier:K_SB_WIZH_VIEW_CONTROLLER];
+    
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
 - (void)updateCameraViewWithImage:(UIImage*)image {
  
     [self.imagesArray addObject:image];
@@ -115,6 +122,8 @@
         }
         
     }
+    
+     self.navigationItem.rightBarButtonItem =  [RUUtility getBarButtonWithImage:[UIImage imageNamed:@"Image_Next"] forViewController:self selector:@selector(nextPressed)];
     self.viewContainer.hidden = NO;
     self.buttonFlash.hidden = YES;
     [self.mainImageView setHidden:NO];
@@ -255,7 +264,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    [RUUtility setBackButtonForController:self withSelector:@selector(backPressed:)];
     
     // Do any additional setup after loading the view.
 }
@@ -289,6 +298,10 @@
 
 #pragma mark Public Methods
 
+- (void)backPressed:(id)sender {
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void)flashPressed:(id)sender {
  
     UIButton *button = (UIButton*)sender;

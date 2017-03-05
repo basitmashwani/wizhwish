@@ -50,6 +50,10 @@
 
 @property(nonatomic ,retain) IBOutlet UILabel *textLabel;
 
+@property(nonatomic ,retain) IBOutlet UIButton *buttonTemporary;
+
+@property(nonatomic ,retain) IBOutlet NSLayoutConstraint *cameraConstraint;
+
 
 
 - (IBAction)switchCameraPressed:(id)sender;
@@ -68,5 +72,8 @@
 
 - (IBAction)erasePressed:(id)sender;
 
+- (IBAction)tempButtonPressed:(id)sender;
+
 
 @end
+

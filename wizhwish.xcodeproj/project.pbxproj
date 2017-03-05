@@ -51,6 +51,7 @@
 		1E4FD21B1CFB183B00612466 /* PHAGSPAB.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 1E4FD2181CFB170400612466 /* PHAGSPAB.TTF */; };
 		1E4FD22F1CFB311500612466 /* JKSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4FD22D1CFB311500612466 /* JKSearchBar.m */; };
 		1E4FD2331CFB318500612466 /* JKPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4FD2321CFB318500612466 /* JKPickerView.m */; };
+		1E5A1A441E6C6FFD003226A8 /* WTempVideoRecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A1A431E6C6FFD003226A8 /* WTempVideoRecorderViewController.m */; };
 		1E7208C51CD920780017188F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E7208C31CD920780017188F /* Profile.storyboard */; };
 		1E7208C81CD923740017188F /* WZProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7208C71CD923740017188F /* WZProfileTableViewCell.m */; };
 		1E7208CB1CD924420017188F /* WZFollowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7208CA1CD924420017188F /* WZFollowerViewController.m */; };
@@ -181,6 +182,8 @@
 		1E4FD22D1CFB311500612466 /* JKSearchBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKSearchBar.m; sourceTree = "<group>"; };
 		1E4FD2311CFB318500612466 /* JKPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKPickerView.h; sourceTree = "<group>"; };
 		1E4FD2321CFB318500612466 /* JKPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPickerView.m; sourceTree = "<group>"; };
+		1E5A1A421E6C6FFD003226A8 /* WTempVideoRecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTempVideoRecorderViewController.h; path = ViewController/WTempVideoRecorderViewController.h; sourceTree = "<group>"; };
+		1E5A1A431E6C6FFD003226A8 /* WTempVideoRecorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTempVideoRecorderViewController.m; path = ViewController/WTempVideoRecorderViewController.m; sourceTree = "<group>"; };
 		1E7208C41CD920780017188F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		1E7208C61CD923740017188F /* WZProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZProfileTableViewCell.h; path = Cells/WZProfileTableViewCell.h; sourceTree = "<group>"; };
 		1E7208C71CD923740017188F /* WZProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZProfileTableViewCell.m; path = Cells/WZProfileTableViewCell.m; sourceTree = "<group>"; };
@@ -511,6 +514,8 @@
 			children = (
 				1E1CCB201D85629900423904 /* WVideoRecordViewController.h */,
 				1E1CCB211D85629900423904 /* WVideoRecordViewController.m */,
+				1E5A1A421E6C6FFD003226A8 /* WTempVideoRecorderViewController.h */,
+				1E5A1A431E6C6FFD003226A8 /* WTempVideoRecorderViewController.m */,
 			);
 			name = VideoRecordingController;
 			sourceTree = "<group>";
@@ -839,6 +844,7 @@
 				TargetAttributes = {
 					1E060AFD1CC4E311009E1BBC = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = RZ28SZX84Y;
 					};
 					1E060B161CC4E311009E1BBC = {
 						CreatedOnToolsVersion = 7.2;
@@ -956,6 +962,7 @@
 				1E2F0C131DB24E50002CF9AA /* WSetting.m in Sources */,
 				1E00D5521E59D6B400AC3E95 /* WWishToViewController.m in Sources */,
 				1E42762B1CD914D00004A0F8 /* WZPostTableViewCell.m in Sources */,
+				1E5A1A441E6C6FFD003226A8 /* WTempVideoRecorderViewController.m in Sources */,
 				1E18878B1CE1BF2C00B7F1D5 /* WZMyWishesTableViewCell.m in Sources */,
 				1E4276321CD914F70004A0F8 /* UIViewController+Extras.m in Sources */,
 				1E8032961CDF040D0010D036 /* UITextField+Extras.m in Sources */,
@@ -1185,6 +1192,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Nasser Alameeri (Y966936F3T)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nasser Alameeri (Y966936F3T)";
 				COPY_HEADERS_RUN_UNIFDEF = NO;
+				DEVELOPMENT_TEAM = RZ28SZX84Y;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1194,7 +1202,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wiz.wizwish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "dca64886-daf0-4fab-81cf-354a1e36abd6";
+				PROVISIONING_PROFILE = "a48315b1-3e11-48a2-a0bb-bd6dba44928c";
+				PROVISIONING_PROFILE_SPECIFIER = Wiz_Dev_profile;
 				SWIFT_OBJC_BRIDGING_HEADER = "wizhwish/wizhwish-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};

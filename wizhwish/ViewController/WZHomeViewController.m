@@ -49,8 +49,19 @@
         CGRect frame = self.myView.buttonMenu.frame;
         NSLog(@"Frame %ld",(long)frame.origin.y);
       //  self.myView.buttonMenu.frame = CGRectMake(frame.origin.x, 0, frame.size.width, frame.size.height);
-        self.myView.topSpace.constant = -20;
+        self.myView.topSpace.constant = -15;
         NSLog(@"Frame %ld",(long)self.myView.frame.origin.y);
+       
+        //Update button Frames for View
+        
+        self.myView.leftButtonWidth.constant = 36;
+        self.myView.leftButtonHeight.constant = 36;
+        self.myView.leftButtonyAxis.constant = -5;
+        
+        
+        self.myView.rightButtonWidth.constant = 36;
+        self.myView.rightButtonHeight.constant = 36;
+        self.myView.rightButtonyAxis.constant = -5;
 
         [UIView animateKeyframesWithDuration:2 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
             
@@ -77,6 +88,15 @@
         self.isHide = NO;
         
         self.myView.topSpace.constant = 10;
+        self.myView.leftButtonWidth.constant = 35;
+        self.myView.leftButtonHeight.constant = 35;
+        self.myView.leftButtonyAxis.constant = 0;
+        
+        
+        self.myView.rightButtonWidth.constant = 35;
+        self.myView.rightButtonHeight.constant = 35;
+        self.myView.rightButtonyAxis.constant = 0;
+
 
         [UIView animateKeyframesWithDuration:2 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
             
@@ -115,29 +135,6 @@
     
 }
 
-- (void)alertPressed {
-    
-    WZFollowerViewController *controller = [[UIStoryboard getProfileStoryBoard] instantiateViewControllerWithIdentifier:K_SB_FOLLOWER_VIEW_CONROLLER];
-    
-    controller.profileType = kWProfileAlerts;
-    
-    [self.navigationController pushViewController:controller animated:YES];
-}
-
-- (void)giftPressed {
-    
-    WZFollowerViewController *controller = [[UIStoryboard getProfileStoryBoard] instantiateViewControllerWithIdentifier:K_SB_FOLLOWER_VIEW_CONROLLER];
-    
-    controller.profileType = kWProfileGifts;
-    
-    [self.navigationController pushViewController:controller animated:YES];
-}
-
-- (void)inMailPressed {
- 
-    WZChatViewController *chatController = [[UIStoryboard getChatStoryBoard] instantiateViewControllerWithIdentifier:K_SB_CHAT_VIEW_CONTROLLER];
-    [self.navigationController pushViewController:chatController animated:YES];
-}
 
 #pragma Life Cycle Methods
 
@@ -245,11 +242,7 @@
         
 
         
-        [cell.buttonInMail addTarget:self action:@selector(inMailPressed) forControlEvents:UIControlEventTouchUpInside];
-
-        [cell.buttonGift addTarget:self action:@selector(giftPressed) forControlEvents:UIControlEventTouchUpInside];
-        
-        [cell.buttonNotification addTarget:self action:@selector(alertPressed) forControlEvents:UIControlEventTouchUpInside];
+       
 
 
        
@@ -258,6 +251,8 @@
     else  {
    
         WZPostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:K_POST_TABLEVIEW_CELL];
+        
+        [cell.buttonComment addTarget:self action:@selector(commentPressed:) forControlEvents:UIControlEventTouchUpInside];
         
     if (cell) {
         

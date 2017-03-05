@@ -31,6 +31,9 @@
 @property(nonatomic ,retain) AVAudioPlayer *audioPlayer;
 
 @property(nonatomic ,retain) UIImagePickerController *imageController;
+
+@property(nonatomic ,assign) BOOL isNextPressed;
+
 @end
 
 @implementation WRecordAudioViewController
@@ -39,6 +42,17 @@
 #pragma mark - Private Methods
 
 - (void)nextPressed {
+    
+    if (self.isNextPressed) {
+        
+        WWizhViewController *controller =  [[UIStoryboard getWhizStoryBoard] instantiateViewControllerWithIdentifier:K_SB_WIZH_VIEW_CONTROLLER];
+        
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+  
+    else {
+        
+    
     [self.recorder stop];
     self.labelTime.hidden = YES;
     self.labelImport.hidden = NO;
@@ -46,8 +60,9 @@
     self.imageConstraint.constant = 50;
     self.bottomView.hidden = NO;
     self.mainView.hidden = YES;
+    self.isNextPressed = YES;
   //  self.bottomViewHeight.constant = 50;
-    
+    }
     
 
 
@@ -151,7 +166,8 @@ default:
  }
 
 - (void)crossPressed {
-    
+ 
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)startRecording {

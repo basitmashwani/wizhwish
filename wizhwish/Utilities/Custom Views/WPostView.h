@@ -40,6 +40,33 @@
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *topSpace;
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerButtonWidth;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerButtonHeight;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightButtonWidth;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightButtonHeight;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftButtonWidth;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftButtonHeight;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *centerbuttonyAxis;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftButtonyAxis;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *rightButtonyAxis;
+
+
+
+
+
+
+
+
+
+
 + (WPostView *)getPostView;
 
 - (IBAction)textPressed:(id)sender;
@@ -53,6 +80,14 @@
 - (IBAction)photoPressed:(id)sender;
 
 - (IBAction)chatPressed:(id)sender;
+
+- (IBAction)livePressed:(id)sender;
+
+- (IBAction)giftPressed:(id)sender;
+
+- (IBAction)notificationPressed:(id)sender;
+
+- (IBAction)messagePressed:(id)sender;
 
 
 @end

@@ -71,7 +71,9 @@
 
 @property(nonatomic ,retain) UIButton *playButton;
 
-@property(nonatomic) BOOL *isPause;
+@property(nonatomic) BOOL isPause;
+
+@property(nonatomic) BOOL isnextPressed;
 
 
 
@@ -187,6 +189,12 @@
     self.textLabel.hidden = YES;
     [self.textLabel setUserInteractionEnabled:YES];
 }
+
+- (void)tempButtonPressed:(id)sender {
+    
+    WTempVideoRecorderViewController *tempController = [[UIStoryboard getMediaStoryBoard] instantiateViewControllerWithIdentifier:K_SB_TEMP_VIDEO_VIEW_CONTROLLER];
+    [self.navigationController pushViewController:tempController animated:YES];
+    }
 
 - (void)startTimer {
     
@@ -368,11 +376,21 @@
 
 - (void)nextPressed {
     
-    [[PBJVision sharedInstance] endVideoCapture];
-    self.isRecording = NO;
-    self.libraryButton.enabled = YES;
-    self.switchButton.enabled = YES;
-    [self updateViewForPlayerMode];
+    if (self.isnextPressed) {
+        
+        WWizhViewController *controller =  [[UIStoryboard getWhizStoryBoard] instantiateViewControllerWithIdentifier:K_SB_WIZH_VIEW_CONTROLLER];
+        
+        [self.navigationController pushViewController:controller animated:YES];
+    }
+    else {
+    
+        [[PBJVision sharedInstance] endVideoCapture];
+        self.isRecording = NO;
+        self.libraryButton.enabled = YES;
+        self.switchButton.enabled = YES;
+        [self updateViewForPlayerMode];
+        self.isnextPressed = YES;
+    }
     
 }
 
@@ -592,6 +610,7 @@
     [self.cameraView.layer addSublayer:_previewLayer];
     [self setup];
     [self.buttonAddVideo setHidden:YES];
+        [self.view bringSubviewToFront:self.buttonTemporary];
     
   //  UIImage *image = [UIImage imageWithImage:self.sliderSmallScreen.currentThumbImage scaledToSize:CGSizeMake(30, 30)];
     
