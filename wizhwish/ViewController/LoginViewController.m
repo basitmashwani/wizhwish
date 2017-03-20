@@ -22,7 +22,7 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+       
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"mp4"];
     NSURL *url = [NSURL fileURLWithPath:path];
     AVPlayer *player = [[AVPlayer alloc] initWithURL:url];
@@ -97,13 +97,42 @@
 
 - (void)signInPressed:(id)sender {
     
-    WZHomeViewController *homeViewController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_HOME_VIEW_CONTROLLER];
+    if (![NSString validateStringForEmail:self.textFieldUsername.text]) {
+        
+        [OLGhostAlertView showAlertAtBottomWithTitle:@"Error" message:@"Please enter valid email address"];
+    }
+   
+    else if (self.textFieldPassword.text.length <8) {
+        
+        [OLGhostAlertView showAlertAtBottomWithTitle:@"Error" message:@"Password must be 8 characters long"];
+        
+    }   else {
     
-    [RUUtility setMainRootController:homeViewController];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    __weak typeof(self) weakSelf = self;
+    
+    [[WZServiceParser sharedParser] processLoginUserWithEmail:self.textFieldUsername.text password:self.textFieldPassword.text success:^(NSString *response) {
+        
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        [[NSUserDefaults standardUserDefaults] setObject:response forKey:k_ACCESS_TOKEN];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        WZHomeViewController *homeViewController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_HOME_VIEW_CONTROLLER];
+        
+        [RUUtility setMainRootController:homeViewController];
+    } failure:^(NSError *error) {
+        
+        
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        [OLGhostAlertView showAlertAtBottomWithTitle:@"Error" message:error.localizedDescription];
+    }];
+    
+   ;
     
     //[self.navigationController pushViewController:homeViewController animated:YES];
 }
-
+}
 /*
  #pragma mark - Navigation
  

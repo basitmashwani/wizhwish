@@ -30,6 +30,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[WPhotoViewController getFilterImageWithIndex:withImage:]:WPhotoViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[UIImage alloc ] initWithCIImage:filteredImageData]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[WVideoRecordViewController pencilPressed:]:WVideoRecordViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -62,10 +70,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[WPhotoViewController getFilterImageWithIndex:withImage:]:WPhotoViewController.m">
+         contextName = "-[AWSSignatureV4Signer interceptRequest:]:AWSSignature.m">
          <PersistentStrings>
             <PersistentString
-               value = "[[UIImage alloc ] initWithCIImage:filteredImageData]">
+               value = "self.credentialsProvider">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -101,6 +109,17 @@
          <PersistentStrings>
             <PersistentString
                value = "_scPlayer">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__82-[WZServiceParser processRegisterUserWithEmail:userName:password:success:failure:]_block_invoke:WZServiceParser.m">
+      </ContextState>
+      <ContextState
+         contextName = "__70-[WZServiceParser processLoginUserWithEmail:password:success:failure:]_block_invoke:WZServiceParser.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[responseDict valueForKey:@&quot;access_token&quot;]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

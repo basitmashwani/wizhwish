@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <PBJVision/PBJVision.h>
+#import "SCustomProgressView.h"
 
 @interface WVideoRecordViewController : UIViewController
 
@@ -53,6 +54,9 @@
 @property(nonatomic ,retain) IBOutlet UIButton *buttonTemporary;
 
 @property(nonatomic ,retain) IBOutlet NSLayoutConstraint *cameraConstraint;
+
+@property(nonatomic ,retain)  IBOutlet SCustomProgressView *progressView;
+
 
 
 

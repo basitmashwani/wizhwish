@@ -65,8 +65,7 @@
     UIWindow *appKeyWindow = [UIApplication sharedApplication].keyWindow;
     UIView *appBaseView = appKeyWindow.rootViewController.view;
     CGRect viewControllerFrame =  [appBaseView convertRect:appBaseView.bounds toView:appKeyWindow];
-    
-    
+
     CGFloat overwrapStatusBarHeight = statusBarHeight - viewControllerFrame.origin.y;
 
     CGRect frame = self.navigationController.navigationBar.frame;

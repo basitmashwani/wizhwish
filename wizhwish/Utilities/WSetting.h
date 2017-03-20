@@ -16,7 +16,9 @@
 
 @property(nonatomic ,retain) NSString *audioUrlPath;
 
+@property(nonatomic ,retain) NSString *firstOutputUrl;
 
+@property(nonatomic ,retain) NSString *secondOutputUrl;
 + (WSetting*)getSharedSetting;
 
 

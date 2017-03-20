@@ -18,5 +18,8 @@
 
 @property(nonatomic ,retain) IBOutlet UIButton *buttonGift;
 
+@property(nonatomic ,retain) IBOutlet NSLayoutConstraint *liveConstant;
+
+
 
 @end

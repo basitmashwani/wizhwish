@@ -432,7 +432,8 @@
     }
 
 - (void)pencilPressed:(id)sender {
-//    
+//
+    self.isLibrary = YES;
     WPhotoEditViewController *controller = [[WPhotoEditViewController alloc] init];
     controller.delegate = self;
     controller.selectedImage = [self.imagesArray objectAtIndex:self.selectedIndex];
@@ -469,6 +470,8 @@
 }
 
 - (void)textPressed:(id)sender {
+    self.isLibrary = YES;
+
     WPhotoEditViewController *controller = [[WPhotoEditViewController alloc] init];
     controller.delegate = self;
     controller.isDrawing = NO;

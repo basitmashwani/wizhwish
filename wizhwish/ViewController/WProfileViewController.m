@@ -18,10 +18,13 @@
 #pragma mark - Private Methods
 - (void)donePressed:(id)sender {
     
+    WZHomeViewController *homeViewController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_HOME_VIEW_CONTROLLER];
+    
+    [RUUtility setMainRootController:homeViewController];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.navigationItem setTitle:@"Profile Setup"];
     self.navigationItem.rightBarButtonItem = [RUUtility getBarButtonWithTitle:@"Done" forViewController:self selector:@selector(donePressed:)];
     // Do any additional setup after loading the view.
 }

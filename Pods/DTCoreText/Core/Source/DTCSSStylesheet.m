@@ -547,7 +547,9 @@ extern unsigned int default_css_len;
 
 - (void)parseStyleBlock:(NSString*)css
 {
-	NSUInteger braceLevel = 0, braceMarker = 0;
+	NSUInteger braceMarker = 0;
+	
+	NSInteger braceLevel = 0;
 	
 	NSString* selector;
 	
@@ -636,8 +638,12 @@ extern unsigned int default_css_len;
 				
 				braceMarker = i + 1;
 			}
+			// Skip unpaired closing brace
+			else if (braceLevel < 1) {
+				braceMarker += 1;	
+			}
 			
-			braceLevel = MAX(braceLevel-1, 0ul);
+			braceLevel = MAX(braceLevel-1, 0);
 		}
 	}
 }
@@ -825,9 +831,13 @@ extern unsigned int default_css_len;
 	
 	for (NSString *selector in _orderedSelectors)
 	{
+		// We only process the selector if our selector has more than 1 part to it (e.g. ".foo" would be skipped and ".foo .bar" would not)
+	        if (![selector rangeOfString:@" "].length) {
+        	    continue;
+	        }
+	        
 		NSArray *selectorParts = [selector componentsSeparatedByString:@" "];
 		
-		// We only process the selector if our selector has more than 1 part to it (e.g. ".foo" would be skipped and ".foo .bar" would not)
 		if (selectorParts.count < 2)
 		{
 			continue;

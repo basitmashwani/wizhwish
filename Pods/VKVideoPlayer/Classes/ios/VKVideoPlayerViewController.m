@@ -55,8 +55,7 @@
   self.player = [[VKVideoPlayer alloc] init];
   self.player.delegate = self;
   self.player.view.frame = self.view.bounds;
-  self.player.forceRotate = NO;
-
+  self.player.forceRotate = YES;
   [self.view addSubview:self.player.view];
   
   if (VKSharedAirplay.isConnected) {

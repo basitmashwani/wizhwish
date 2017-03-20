@@ -318,12 +318,12 @@ typedef enum {
     [self.view.scrubber setValue:([self.player currentItemDuration] > 0) ? lastWatchedTime / [self.player currentItemDuration] : 0.0f animated:NO];
     
     [self.player seekToTimeInSeconds:lastWatchedTime completionHandler:^(BOOL finished) {
-      if (finished) //[self playContent];
+      if (finished) [self playContent];
       [self.view setPlayButtonsEnabled:YES];
       
-//      if ([self.delegate respondsToSelector:@selector(videoPlayer:didStartVideo:)]) {
-//        [self.delegate videoPlayer:self didStartVideo:self.track];
-//      }
+      if ([self.delegate respondsToSelector:@selector(videoPlayer:didStartVideo:)]) {
+        [self.delegate videoPlayer:self didStartVideo:self.track];
+      }
     }];
     
   });
@@ -777,8 +777,6 @@ typedef enum {
         self.view.messageLabel.hidden = YES;
         self.view.externalDeviceView.hidden = ![self isPlayingOnExternalDevice];
         [self.player play];
-         
-          
       } break;
       case VKVideoPlayerStateContentPaused:
         self.playerControlsEnabled = YES;
@@ -824,19 +822,7 @@ typedef enum {
 - (void)playContent {
   RUN_ON_UI_THREAD(^{
     if (self.state == VKVideoPlayerStateContentPaused) {
-        
-        Float64 dur = CMTimeGetSeconds([self.playerItem duration]);
-
-        if (self.currentTime == dur) {
-         
-            [self rewindButtonPressed];
-        }
-        else {
       self.state = VKVideoPlayerStateContentPlaying;
-          //  if ([self.delegate respondsToSelector:@selector(videoPlayer:didStartVideo:)]) {
-            //    [self.delegate videoPlayer:self didStartVideo:self.track];
-            //}
-        }
     }
   });
 }
@@ -976,9 +962,6 @@ typedef enum {
 
 - (void)playButtonPressed {
   [self playContent];
-    if ([self.delegate respondsToSelector:@selector(videoPlayer:didStartVideo:)]) {
-        [self.delegate videoPlayer:self didStartVideo:self.track];
-    }
 }
 
 - (void)pauseButtonPressed {
@@ -1025,7 +1008,7 @@ typedef enum {
 
 - (void)rewindButtonPressed {
   
-  float seekToTime = [self currentTime] - [self currentTime];
+  float seekToTime = [self currentTime] - 30;
   [self seekToTimeInSecond:seekToTime userAction:YES completionHandler:^(BOOL finished) {
     if (finished) [self playContent];
   }];

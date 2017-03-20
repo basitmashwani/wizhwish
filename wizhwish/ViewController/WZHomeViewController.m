@@ -38,7 +38,8 @@
    
     if (!self.isHide) {
         
-    
+        self.topConstant.constant = -150;
+        self.collectionView.hidden = YES;
     self.myView.buttonWhatOn.alpha = 0;
     self.myView.buttonMessage.alpha = 0;
     [self.myView.buttonNotification setImage:[UIImage imageNamed:@"Image_Profile"] forState:UIControlStateNormal];
@@ -80,6 +81,8 @@
             [self.tableView setScrollEnabled:NO];
             [self scrollTopPressed:self];
         }
+        self.topConstant.constant = 0;
+        self.collectionView.hidden = NO;
         self.myView.buttonWhatOn.alpha = 1;
         self.myView.buttonMessage.alpha = 1;
         [self.myView.buttonNotification setImage:[UIImage imageNamed:@"Image_Alerts"] forState:UIControlStateNormal];
@@ -235,20 +238,20 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == 0) {
-        
-        WZPostTopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:K_POST_TOP_CELL];
-        
-        
-
-        
-       
-
-
-       
-        return cell;
-    }
-    else  {
+//    if (indexPath.row == 0) {
+//        
+//        WZPostTopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:K_POST_TOP_CELL];
+//        
+//        
+//
+//        
+//       
+//
+//
+//       
+//        return cell;
+//    }
+//    else  {
    
         WZPostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:K_POST_TABLEVIEW_CELL];
         
@@ -264,7 +267,7 @@
         }
     }
         return cell;
-    }
+    //}
     
     
     
@@ -293,7 +296,7 @@
     
     if (indexPath.row == 0) {
         
-        return 110;
+        return 370;
     }
     else  {
         
@@ -322,6 +325,28 @@
     //enter code here
     NSLog(@"Scroll Finish");
     self.canScrollTop = YES;
+}
+
+
+#pragma mark UICollectionView Delegate Methods
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    WZFriendCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:K_PEOPLE_COLLECTION_CELL forIndexPath:indexPath];
+    return cell;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
+    return 4;
+}
+
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return CGSizeMake(collectionView.frame.size.width/4.5 , collectionView.frame.size.height);
+    
 }
 
 #pragma mark Public Methods

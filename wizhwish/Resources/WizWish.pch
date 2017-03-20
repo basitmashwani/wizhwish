@@ -66,6 +66,13 @@
 #import "WProfileViewController.h"
 #import "WEditProfileTableViewCell.h"
 #import "WTempVideoRecorderViewController.h"
+#import "SCustomProgressView.h"
+#import "WZServiceParser.h"
+#import "RUWebServiceParser.h"
+#import <Kickflip.h>
+#import "NSString+Extras.h"
+#import "OLGhostAlertView+Extras.h"
+
 
 
 

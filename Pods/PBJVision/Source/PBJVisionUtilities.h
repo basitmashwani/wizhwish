@@ -28,10 +28,6 @@
 
 @interface PBJVisionUtilities : NSObject
 
-// coordinate conversion
-
-+ (CGPoint)convertToPointOfInterestFromViewCoordinates:(CGPoint)viewCoordinates inFrame:(CGRect)frame;
-
 // devices and connections
 
 + (AVCaptureDevice *)captureDeviceForPosition:(AVCaptureDevicePosition)position;
@@ -48,7 +44,7 @@
 
 // storage
 
-+ (uint64_t)availableDiskSpaceInBytes;
++ (uint64_t)availableStorageSpaceInBytes;
 
 @end
 

@@ -10,13 +10,16 @@
 #import <NJKScrollFullScreen/NJKScrollFullScreen.h>
 
 
-@interface WZHomeViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,NJKScrollFullscreenDelegate>
+@interface WZHomeViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,NJKScrollFullscreenDelegate >
 
 @property(nonatomic ,retain) IBOutlet UICollectionView *collectionView;
 
 @property(nonatomic ,retain) IBOutlet UITableView *tableView;
 
 @property(nonatomic ,retain) IBOutlet UIButton *buttonTopScroll;
+
+@property(nonatomic ,retain) IBOutlet NSLayoutConstraint *topConstant;
+
 
 
 - (IBAction)scrollTopPressed:(id)sender;

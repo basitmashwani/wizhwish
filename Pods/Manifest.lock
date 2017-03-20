@@ -1,5 +1,31 @@
 PODS:
-  - ACEDrawingView (1.3.7)
+  - ACEDrawingView (2.1.0)
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - AFOAuth2Manager (2.2.0):
+    - AFNetworking/NSURLConnection (~> 2.2)
+  - AWSCore (2.5.2)
+  - AWSS3 (2.5.2):
+    - AWSCore (= 2.5.2)
   - CocoaLumberjack (1.7.0):
     - CocoaLumberjack/Core (= 1.7.0)
     - CocoaLumberjack/Extensions (= 1.7.0)
@@ -7,26 +33,58 @@ PODS:
   - CocoaLumberjack/Extensions (1.7.0):
     - CocoaLumberjack/Core
   - Color-Picker-for-iOS (2.0.2)
-  - DTCoreText (1.6.17):
+  - DTCoreText (1.6.20):
+    - DTCoreText/Core (= 1.6.20)
     - DTFoundation/Core (~> 1.7.5)
     - DTFoundation/DTAnimatedGIF (~> 1.7.5)
     - DTFoundation/DTHTMLParser (~> 1.7.5)
     - DTFoundation/UIKit (~> 1.7.5)
-  - DTFoundation/Core (1.7.10)
-  - DTFoundation/DTAnimatedGIF (1.7.10)
-  - DTFoundation/DTHTMLParser (1.7.10):
+  - DTCoreText/Core (1.6.20):
+    - DTFoundation/Core (~> 1.7.5)
+    - DTFoundation/DTAnimatedGIF (~> 1.7.5)
+    - DTFoundation/DTHTMLParser (~> 1.7.5)
+    - DTFoundation/UIKit (~> 1.7.5)
+  - DTFoundation/Core (1.7.12)
+  - DTFoundation/DTAnimatedGIF (1.7.12)
+  - DTFoundation/DTHTMLParser (1.7.12):
     - DTFoundation/Core
-  - DTFoundation/UIKit (1.7.10):
+  - DTFoundation/UIKit (1.7.12):
     - DTFoundation/Core
+  - FFmpeg (2.8.3):
+    - FFmpeg/precompiled (= 2.8.3)
+  - FFmpeg/precompiled (2.8.3)
+  - FFmpegWrapper (1.0):
+    - FFmpeg (~> 2.2)
+  - FormatterKit/Resources (1.8.2)
+  - FormatterKit/TimeIntervalFormatter (1.8.2):
+    - FormatterKit/Resources
   - FXImageView (1.3.5)
-  - GPUImage (0.1.7)
-  - HMSegmentedControl (1.5.2)
-  - MBProgressHUD (0.9.2)
+  - HMSegmentedControl (1.5.3)
+  - Kickflip (1.3):
+    - AFNetworking (~> 2.2)
+    - AFOAuth2Manager (~> 2.0)
+    - AWSS3 (~> 2.1)
+    - CocoaLumberjack (~> 1.0)
+    - FFmpegWrapper (~> 1.0)
+    - FormatterKit/TimeIntervalFormatter (~> 1.4)
+    - Mantle (~> 1.4)
+    - PureLayout (~> 2.0)
+    - SDWebImage (~> 3.6)
+    - SSKeychain (~> 1.2)
+  - Mantle (1.5.8):
+    - Mantle/extobjc (= 1.5.8)
+  - Mantle/extobjc (1.5.8)
+  - MBProgressHUD (1.0.0)
   - NJKScrollFullScreen (0.2.6)
   - OLGhostAlertView (1.8.1)
-  - PBJVision (0.4.2)
+  - PBJVision (0.5.1)
+  - PureLayout (2.0.6)
   - Reachability (3.1.1)
   - SCRecorder (2.7.0)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - SSKeychain (1.4.1)
   - VKFoundation (0.1.1):
     - CocoaLumberjack (~> 1.7.0)
     - DTCoreText (~> 1.6.11)
@@ -40,8 +98,8 @@ PODS:
 DEPENDENCIES:
   - ACEDrawingView
   - Color-Picker-for-iOS (~> 2.0)
-  - GPUImage
   - HMSegmentedControl
+  - Kickflip (from `Submodules/kickflip-ios-sdk/Kickflip.podspec`)
   - MBProgressHUD
   - NJKScrollFullScreen
   - OLGhostAlertView (from `https://github.com/ondalabs/OLGhostAlertView.git`)
@@ -50,6 +108,8 @@ DEPENDENCIES:
   - VKVideoPlayer (~> 0.1.1)
 
 EXTERNAL SOURCES:
+  Kickflip:
+    :path: Submodules/kickflip-ios-sdk/Kickflip.podspec
   OLGhostAlertView:
     :git: https://github.com/ondalabs/OLGhostAlertView.git
 
@@ -59,21 +119,34 @@ CHECKOUT OPTIONS:
     :git: https://github.com/ondalabs/OLGhostAlertView.git
 
 SPEC CHECKSUMS:
-  ACEDrawingView: 325b5cd00125766c6df9b30aa3a7b68866d2ce16
+  ACEDrawingView: 39f36ed8c73d63ea1664ecf1ca7150a700fff513
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  AFOAuth2Manager: 952eb62e8fd8022971e64c6e8fe28b9e999224af
+  AWSCore: b2fe455c2c7d6653521238c5b0b0ddb67ec4f063
+  AWSS3: 1f53d780bae0a5949f11da99520c14684bc90af0
   CocoaLumberjack: a2213b8410917a1a5ecfc5c63a4206edc24d3a5b
   Color-Picker-for-iOS: 4980589b3e3cfe7198f227dd50be9adb02d8bc0b
-  DTCoreText: 3ea8bba23dd2141ba18adb227a7dd33a822df1c4
-  DTFoundation: 3b6b1b817d2a7fb02e7eaf2596c922a68145bd43
+  DTCoreText: 51904f2374af443e0d270d6fdc76035ab6f9ef8a
+  DTFoundation: 26a164ef510877387906fb92bff524a792db4bf8
+  FFmpeg: f1428c3b60b5f9e349fcd5d7878705cd7f9a26f6
+  FFmpegWrapper: 9a932581137d17203e842ce942e171158336ae16
+  FormatterKit: 4b8f29acc9b872d5d12a63efb560661e8f2e1b98
   FXImageView: 7d84722b37f0afea9a64f12fdd4a6c7f9ecc4b16
-  GPUImage: 733a5f0fab92df9de1c37ba9df520a833ccb406d
-  HMSegmentedControl: 83b9686022d2176fb6457d2bdb61e5d6393fed7d
-  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  HMSegmentedControl: 7c6145afb50f26cec5f3243082f6f12b9f41318f
+  Kickflip: 18b5cbec453592576185efe570e228eee7190387
+  Mantle: f03b2b606c3f0cabd80214ad8a2fed6b464a7359
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   NJKScrollFullScreen: 13e370f935da7385b92779644b31df8d83a91447
   OLGhostAlertView: 3eb3179a2be9c3a764831d0f958c36bb8ea38b53
-  PBJVision: fe43c9a58bb1c1277d16fd802fa836d25e034a45
+  PBJVision: 907b7281967e26b12610b80c3602f3a455911aa1
+  PureLayout: f25f0bb904d5ccfe6e31da3cb869185259f02e0d
   Reachability: dd9aa4fb6667b9f787690a74f53cb7634ce99893
   SCRecorder: bbb521dbc222908876ec9cd9156bbc8a893bed44
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  SSKeychain: 55cc80f66f5c73da827e3077f02e43528897db41
   VKFoundation: a3d26de016870f705a256c5c6dbab57865c4e99a
   VKVideoPlayer: 75d0c44d8cd208dd01ae397d2e75c52cfc51dd19
 
-COCOAPODS: 0.38.2
+PODFILE CHECKSUM: a407b853d06dd44477a6bd9ab3087690d33870ef
+
+COCOAPODS: 1.2.0

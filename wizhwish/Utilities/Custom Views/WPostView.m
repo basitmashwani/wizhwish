@@ -74,8 +74,17 @@
 
 - (void)livePressed:(id)sender {
     
-   // WZChatViewController *chatController = [[UIStoryboard getChatStoryBoard] instantiateViewControllerWithIdentifier:K_SB_CHAT_VIEW_CONTROLLER];
-   // [self.parentViewController.navigationController pushViewController:chatController animated:YES];
+    [Kickflip presentBroadcasterFromViewController:self.parentViewController ready:^(KFStream *stream) {
+        if (stream.streamURL) {
+            NSLog(@"Stream is ready at URL: %@", stream.streamURL);
+        }
+    } completion:^(BOOL success, NSError* error){
+        if (!success) {
+            NSLog(@"Error setting up stream: %@", error);
+        } else {
+            NSLog(@"Done broadcasting");
+        }
+    }];
 }
 
 - (void)giftPressed:(id)sender {
@@ -116,6 +125,8 @@
 
 - (void)messagePressed:(id)sender {
     
+    WZChatViewController *chatViewController = [[UIStoryboard getChatStoryBoard] instantiateViewControllerWithIdentifier:K_SB_CHAT_VIEW_CONTROLLER];
+    [self.parentViewController.navigationController pushViewController:chatViewController animated:YES];
 }
 
 

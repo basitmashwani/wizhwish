@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+//#import <Kickf>
 
 @interface AppDelegate ()
 
@@ -17,6 +18,21 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    NSString *secret = @"bNT4?7:RJsJNrOEffRxFDQ:umBFl9@_B:X=1Mm!E_onDhDX1qqDaQDE:u@syWC;2mKtLu3q-GfN7JKm6R:Z1JXtMo2k3PaE3uFkcl-xcYotXDL_IXAcP1_i8xr0wdQ6i";
+
+    [Kickflip setupWithAPIKey:k_KICKFLIP_API_KEY secret:secret];
+  //  [Kickflip setMaxBitrate:2000*1000]; // 2 Mbps
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:k_ACCESS_TOKEN];
+    if (accessToken) {
+        
+        WZHomeViewController *profileViewController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_HOME_VIEW_CONTROLLER];
+        [RUUtility setMainRootController:profileViewController];
+    }
+
+ //   [NSLog addLogger:[DDTTYLogger sharedInstance]];
+    
+
     return YES;
 }
 

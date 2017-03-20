@@ -107,7 +107,7 @@ typedef struct timeval timeval;
     if (!_colorInfoView) {
         _colorInfoView = [[HRColorInfoView alloc] init];
         _colorInfoView.color = self.color;
-        //[self addSubview:self.colorInfoView];
+        [self addSubview:self.colorInfoView];
     }
     return _colorInfoView;
 }
@@ -125,7 +125,7 @@ typedef struct timeval timeval;
         [_brightnessSlider addTarget:self
                               action:@selector(brightnessChanged:)
                     forControlEvents:UIControlEventValueChanged];
-      //  [self addSubview:_brightnessSlider];
+        [self addSubview:_brightnessSlider];
     }
     return _brightnessSlider;
 }
@@ -202,8 +202,7 @@ typedef struct timeval timeval;
         return;
     }
 
-    
-    CGFloat headerHeight =  (20 + 44) * 1.625;
+    CGFloat headerHeight = (20 + 44) * 1.625;
     self.colorMapView.frame = CGRectMake(
             0, headerHeight,
             CGRectGetWidth(self.frame),
@@ -231,9 +230,6 @@ typedef struct timeval timeval;
             sliderHeight);
 
     self.brightnessSlider.frame = [self.brightnessSlider frameForAlignmentRect:brightnessPickerFrame];
-    [self.colorMapView setFrame:CGRectMake(self.colorMapView.frame.origin.x, -130, self.colorMapView.frame.size.width, self.colorMapView.frame.size.height-250)];
-    
-   // self.frame = self.colorMapView.frame;
 }
 
 @end

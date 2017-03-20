@@ -31,7 +31,8 @@
 }
 
 - (void)crossPressed {
-    
+
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)nextPressed {

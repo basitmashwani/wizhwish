@@ -113,15 +113,64 @@
 
 - (void)registerPressed:(id)sender {
 
-    WProfileViewController *profileViewController = [[UIStoryboard getProfileStoryBoard] instantiateViewControllerWithIdentifier:@"K_SB_PROFILE_VC"];
- //WZHomeViewController *homeViewController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_HOME_VIEW_CONTROLLER];
+   // WProfileViewController *profileViewController = [[UIStoryboard getProfileStoryBoard] instantiateViewControllerWithIdentifier:@"K_SB_PROFILE_VC"];
+ //    [RUUtility setMainRootController:profileViewController];
     
-    
-    [RUUtility setMainRootController:profileViewController];
-    //[self.navigationController pushViewController:homeViewController animated:YES];
-    
- //   [self performSegueWithIdentifier:K_SEGUE_HOME sender:self];
-}
+    if (![NSString validateStringForEmail:self.textFieldEmail.text]) {
+        
+        [OLGhostAlertView showAlertAtBottomWithTitle:@"Error" message:@"Please enter valid email address"];
+    }
+    else if (self.textFieldUserName.text.length <6) {
+        
+        [OLGhostAlertView showAlertAtBottomWithTitle:@"Error" message:@"Username must be 6 characters long"];
 
+    }
+    else if (self.textFieldPassword.text.length <8) {
+        
+        [OLGhostAlertView showAlertAtBottomWithTitle:@"Error" message:@"Password must be 8 characters long"];
+
+    }
+    else if (![self.textFieldPassword.text isEqualToString:self.textFieldRePassword.text]) {
+        
+        [OLGhostAlertView showAlertAtBottomWithTitle:@"Error" message:@"Password and re-Password does not match"];
+
+    }
+    else {
+    
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        __weak typeof(self) weakSelf = self;
+    [[WZServiceParser sharedParser] processRegisterUserWithEmail:self.textFieldEmail.text userName:self.textFieldUserName.text password:self.textFieldPassword.text success:^(NSString *response) {
+        
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        NSLog(@"Success %@",response);
+        if ([response isEqualToString:@"success"]) {
+            
+            [[WZServiceParser sharedParser] processLoginUserWithEmail:weakSelf.textFieldEmail.text password:weakSelf.textFieldPassword.text success:^(NSString *response) {
+                
+                [[NSUserDefaults standardUserDefaults] setObject:response forKey:k_ACCESS_TOKEN];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+                WProfileViewController *profileViewController = [[UIStoryboard getProfileStoryBoard] instantiateViewControllerWithIdentifier:@"K_SB_PROFILE_VC"];
+                [RUUtility setMainRootController:profileViewController];
+            } failure:^(NSError *error) {
+                
+            }];
+            
+            
+        }
+
+    } failure:^(NSError *error) {
+       
+        NSLog(@"Error %@",error.localizedDescription);
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        [OLGhostAlertView showAlertAtBottomWithTitle:@"Error" message:@"Unable to process request"];
+
+        
+        
+
+
+    }];
+    
+    }
+}
 
 @end

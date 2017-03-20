@@ -9,16 +9,10 @@ pod 'PBJVision'
 pod "VKVideoPlayer" , "~> 0.1.1"
 pod 'ACEDrawingView'
 pod "Color-Picker-for-iOS", "~> 2.0"
-pod "GPUImage"
 pod 'SCRecorder'
-
-
-
-
-
+#pod 'AFNetworking'#, '~> 3.0'
 pod 'OLGhostAlertView', :git =>'https://github.com/ondalabs/OLGhostAlertView.git'
-
-
+pod 'Kickflip', :path => 'Submodules/kickflip-ios-sdk/Kickflip.podspec'
 
 end
 

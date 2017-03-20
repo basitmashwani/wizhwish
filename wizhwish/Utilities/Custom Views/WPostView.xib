@@ -139,7 +139,7 @@
                     </constraints>
                     <state key="normal" image="Image_Go_Live"/>
                     <connections>
-                        <action selector="goOnlinePressed:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="vnp-HN-7pR"/>
+                        <action selector="livePressed:" destination="i5M-Pr-FkT" eventType="touchUpInside" id="oDZ-vv-u0B"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C50-bP-mYr">

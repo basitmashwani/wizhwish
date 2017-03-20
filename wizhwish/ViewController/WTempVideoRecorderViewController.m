@@ -66,7 +66,7 @@ NSString *outputFile = [NSString stringWithFormat:@"video_%@.mp4", @"Rear"];
 
 NSString *outputDirectory =  NSTemporaryDirectory();
 NSString *outputPath = [outputDirectory stringByAppendingPathComponent:outputFile];
-vision.outputPath = outputPath;
+//vision.outputPath = outputPath;
     [[WSetting getSharedSetting] setFrontVideoUrlPath:outputPath];
     
 

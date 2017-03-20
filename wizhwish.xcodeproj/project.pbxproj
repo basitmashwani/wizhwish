@@ -47,6 +47,9 @@
 		1E4276561CD915A20004A0F8 /* home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E4276541CD915A20004A0F8 /* home.storyboard */; };
 		1E4276581CD915B90004A0F8 /* Home.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E4276571CD915B90004A0F8 /* Home.xcassets */; };
 		1E42765B1CD915C10004A0F8 /* Login.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E4276591CD915C10004A0F8 /* Login.xcassets */; };
+		1E4C57491E771C6F00687BF7 /* SCustomProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4C57481E771C6F00687BF7 /* SCustomProgressView.m */; };
+		1E4C578B1E791B0300687BF7 /* RUWebServiceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4C578A1E791B0300687BF7 /* RUWebServiceParser.m */; };
+		1E4C578F1E791EC400687BF7 /* WZServiceParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4C578E1E791EC400687BF7 /* WZServiceParser.m */; };
 		1E4FD21A1CFB183600612466 /* PHAGSPA.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 1E4FD2191CFB171800612466 /* PHAGSPA.TTF */; };
 		1E4FD21B1CFB183B00612466 /* PHAGSPAB.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 1E4FD2181CFB170400612466 /* PHAGSPAB.TTF */; };
 		1E4FD22F1CFB311500612466 /* JKSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4FD22D1CFB311500612466 /* JKSearchBar.m */; };
@@ -74,12 +77,15 @@
 		1ED143141E41EE9C008045CA /* WPhotoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED143131E41EE9C008045CA /* WPhotoEditViewController.m */; };
 		1ED6C7241CE4E2630042D3F6 /* WZPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED6C7231CE4E2630042D3F6 /* WZPostsViewController.m */; };
 		1ED942A31DFC682000BEF8AC /* WPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED942A21DFC682000BEF8AC /* WPhotoViewController.m */; };
+		1EE33E981E6F44390012248A /* NSURL+SCSaveToCameraRoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE33E971E6F44390012248A /* NSURL+SCSaveToCameraRoll.m */; };
 		1EEDCCB11DB507F300DBB363 /* UIImage+Filtrr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDCCAC1DB507F300DBB363 /* UIImage+Filtrr.m */; };
 		1EEDCCB21DB507F300DBB363 /* UIImage+FiltrrCompositions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDCCAE1DB507F300DBB363 /* UIImage+FiltrrCompositions.m */; };
 		1EEDCCB31DB507F300DBB363 /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDCCB01DB507F300DBB363 /* UIImage+Scale.m */; };
 		1EFC87231E4C94630045C801 /* WRecordAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC87221E4C94630045C801 /* WRecordAudioViewController.m */; };
 		1EFD83E11DB908AB00E119F3 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EFD83E01DB908AB00E119F3 /* MobileCoreServices.framework */; };
-		686A4812521AB5B0AB82A61C /* libPods-wizhwish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 40EDA4CEB60A5E42CFDB52C1 /* libPods-wizhwish.a */; };
+		4605804C1CB8D499EF70D28D /* libPods-wizhwishTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FABF292CDED638013DF25DF6 /* libPods-wizhwishTests.a */; };
+		7080276E80C0C097FF8CACF7 /* libPods-wizhwishUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC095F7D0EE119FB8A0B7F8C /* libPods-wizhwishUITests.a */; };
+		7286E6EE93A8F26B6561CD26 /* libPods-wizhwish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE259F91320EACE61E495C4 /* libPods-wizhwish.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +182,12 @@
 		1E4276571CD915B90004A0F8 /* Home.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Home.xcassets; path = Resources/Home.xcassets; sourceTree = "<group>"; };
 		1E4276591CD915C10004A0F8 /* Login.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Login.xcassets; path = Resources/Login.xcassets; sourceTree = "<group>"; };
 		1E42765C1CD917150004A0F8 /* WizWish.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WizWish.pch; path = Resources/WizWish.pch; sourceTree = "<group>"; };
+		1E4C57471E771C6F00687BF7 /* SCustomProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SCustomProgressView.h; path = "Utilities/Custom Views/SCustomProgressView.h"; sourceTree = "<group>"; };
+		1E4C57481E771C6F00687BF7 /* SCustomProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SCustomProgressView.m; path = "Utilities/Custom Views/SCustomProgressView.m"; sourceTree = "<group>"; };
+		1E4C57891E791B0300687BF7 /* RUWebServiceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RUWebServiceParser.h; path = Utilities/RUWebServiceParser.h; sourceTree = "<group>"; };
+		1E4C578A1E791B0300687BF7 /* RUWebServiceParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RUWebServiceParser.m; path = Utilities/RUWebServiceParser.m; sourceTree = "<group>"; };
+		1E4C578D1E791EC400687BF7 /* WZServiceParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZServiceParser.h; path = Utilities/ServicesParser/WZServiceParser.h; sourceTree = "<group>"; };
+		1E4C578E1E791EC400687BF7 /* WZServiceParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZServiceParser.m; path = Utilities/ServicesParser/WZServiceParser.m; sourceTree = "<group>"; };
 		1E4FD2181CFB170400612466 /* PHAGSPAB.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = PHAGSPAB.TTF; sourceTree = "<group>"; };
 		1E4FD2191CFB171800612466 /* PHAGSPA.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = PHAGSPA.TTF; sourceTree = "<group>"; };
 		1E4FD22C1CFB311500612466 /* JKSearchBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKSearchBar.h; sourceTree = "<group>"; };
@@ -222,6 +234,8 @@
 		1ED6C7231CE4E2630042D3F6 /* WZPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZPostsViewController.m; path = ViewController/WZPostsViewController.m; sourceTree = "<group>"; };
 		1ED942A11DFC682000BEF8AC /* WPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WPhotoViewController.h; path = ViewController/WPhotoViewController.h; sourceTree = "<group>"; };
 		1ED942A21DFC682000BEF8AC /* WPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPhotoViewController.m; path = ViewController/WPhotoViewController.m; sourceTree = "<group>"; };
+		1EE33E961E6F44390012248A /* NSURL+SCSaveToCameraRoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+SCSaveToCameraRoll.h"; sourceTree = "<group>"; };
+		1EE33E971E6F44390012248A /* NSURL+SCSaveToCameraRoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+SCSaveToCameraRoll.m"; sourceTree = "<group>"; };
 		1EEDCCAB1DB507F300DBB363 /* UIImage+Filtrr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Filtrr.h"; sourceTree = "<group>"; };
 		1EEDCCAC1DB507F300DBB363 /* UIImage+Filtrr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Filtrr.m"; sourceTree = "<group>"; };
 		1EEDCCAD1DB507F300DBB363 /* UIImage+FiltrrCompositions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FiltrrCompositions.h"; sourceTree = "<group>"; };
@@ -231,9 +245,15 @@
 		1EFC87211E4C94630045C801 /* WRecordAudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRecordAudioViewController.h; path = ViewController/WRecordAudioViewController.h; sourceTree = "<group>"; };
 		1EFC87221E4C94630045C801 /* WRecordAudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRecordAudioViewController.m; path = ViewController/WRecordAudioViewController.m; sourceTree = "<group>"; };
 		1EFD83E01DB908AB00E119F3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		25918DA5ECA2450ED2B97948 /* Pods-wizhwish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwish.release.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwish/Pods-wizhwish.release.xcconfig"; sourceTree = "<group>"; };
-		40EDA4CEB60A5E42CFDB52C1 /* libPods-wizhwish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wizhwish.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9D04BD9FB6266A9389C4ED76 /* Pods-wizhwish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwish/Pods-wizhwish.debug.xcconfig"; sourceTree = "<group>"; };
+		554DF7009B71954A51CB9DDB /* Pods-wizhwish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwish/Pods-wizhwish.debug.xcconfig"; sourceTree = "<group>"; };
+		563F3FCFC300ECDE76957AE1 /* Pods-wizhwishUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwishUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwishUITests/Pods-wizhwishUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		667A28FAD5B6F09A608861CC /* Pods-wizhwishUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwishUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwishUITests/Pods-wizhwishUITests.release.xcconfig"; sourceTree = "<group>"; };
+		66DC7C9BE2CC4D5C8692AB89 /* Pods-wizhwish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwish.release.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwish/Pods-wizhwish.release.xcconfig"; sourceTree = "<group>"; };
+		A9707B569995A241F8132BD0 /* Pods-wizhwishTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwishTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwishTests/Pods-wizhwishTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AC095F7D0EE119FB8A0B7F8C /* libPods-wizhwishUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wizhwishUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA6D9722E13F80BB42ACA090 /* Pods-wizhwishTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwishTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwishTests/Pods-wizhwishTests.release.xcconfig"; sourceTree = "<group>"; };
+		CEE259F91320EACE61E495C4 /* libPods-wizhwish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wizhwish.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FABF292CDED638013DF25DF6 /* libPods-wizhwishTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wizhwishTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,7 +264,7 @@
 				1EFD83E11DB908AB00E119F3 /* MobileCoreServices.framework in Frameworks */,
 				1E271DB31CE2149500DB572F /* Photos.framework in Frameworks */,
 				1E271DAF1CE2097E00DB572F /* AVFoundation.framework in Frameworks */,
-				686A4812521AB5B0AB82A61C /* libPods-wizhwish.a in Frameworks */,
+				7286E6EE93A8F26B6561CD26 /* libPods-wizhwish.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +272,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4605804C1CB8D499EF70D28D /* libPods-wizhwishTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +280,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7080276E80C0C097FF8CACF7 /* libPods-wizhwishUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,8 +318,8 @@
 				1E060B1A1CC4E311009E1BBC /* wizhwishTests */,
 				1E060B251CC4E311009E1BBC /* wizhwishUITests */,
 				1E060AFF1CC4E311009E1BBC /* Products */,
-				CE8A51816A1EFB59FA595C40 /* Pods */,
 				B9C0C3AF17009FB9A1BCA61D /* Frameworks */,
+				26E33D2ADAF34A36C4127475 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -396,6 +418,8 @@
 		1E14322D1CC781CC004682B6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				1E4C578C1E791E9E00687BF7 /* ServiceParser */,
+				1E4C57881E791AA800687BF7 /* WebCalls */,
 				1EEDCCAA1DB507E600DBB363 /* Filter */,
 				1E2F0C101DB24E1D002CF9AA /* Settings */,
 				1E9728B71D43A5CE003EA877 /* Views */,
@@ -411,6 +435,7 @@
 		1E1432311CC782B8004682B6 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				1EE33E951E6F44290012248A /* NSURL */,
 				1E8032931CDF03BE0010D036 /* UITextField */,
 				1E1432511CC78356004682B6 /* UIViewController */,
 				1E1432501CC7834F004682B6 /* UIView */,
@@ -529,6 +554,24 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		1E4C57881E791AA800687BF7 /* WebCalls */ = {
+			isa = PBXGroup;
+			children = (
+				1E4C57891E791B0300687BF7 /* RUWebServiceParser.h */,
+				1E4C578A1E791B0300687BF7 /* RUWebServiceParser.m */,
+			);
+			name = WebCalls;
+			sourceTree = "<group>";
+		};
+		1E4C578C1E791E9E00687BF7 /* ServiceParser */ = {
+			isa = PBXGroup;
+			children = (
+				1E4C578D1E791EC400687BF7 /* WZServiceParser.h */,
+				1E4C578E1E791EC400687BF7 /* WZServiceParser.m */,
+			);
+			name = ServiceParser;
+			sourceTree = "<group>";
+		};
 		1E4FD2131CFAE32900612466 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -641,6 +684,8 @@
 		1E9728B71D43A5CE003EA877 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1E4C57471E771C6F00687BF7 /* SCustomProgressView.h */,
+				1E4C57481E771C6F00687BF7 /* SCustomProgressView.m */,
 				1E9728B81D43A611003EA877 /* WPostView.h */,
 				1E9728B91D43A611003EA877 /* WPostView.m */,
 				1E9728BA1D43A611003EA877 /* WPostView.xib */,
@@ -731,6 +776,15 @@
 			name = ProfileViewController;
 			sourceTree = "<group>";
 		};
+		1EE33E951E6F44290012248A /* NSURL */ = {
+			isa = PBXGroup;
+			children = (
+				1EE33E961E6F44390012248A /* NSURL+SCSaveToCameraRoll.h */,
+				1EE33E971E6F44390012248A /* NSURL+SCSaveToCameraRoll.m */,
+			);
+			name = NSURL;
+			sourceTree = "<group>";
+		};
 		1EEDCCAA1DB507E600DBB363 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
@@ -753,6 +807,19 @@
 			name = RecordViewController;
 			sourceTree = "<group>";
 		};
+		26E33D2ADAF34A36C4127475 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				554DF7009B71954A51CB9DDB /* Pods-wizhwish.debug.xcconfig */,
+				66DC7C9BE2CC4D5C8692AB89 /* Pods-wizhwish.release.xcconfig */,
+				A9707B569995A241F8132BD0 /* Pods-wizhwishTests.debug.xcconfig */,
+				BA6D9722E13F80BB42ACA090 /* Pods-wizhwishTests.release.xcconfig */,
+				563F3FCFC300ECDE76957AE1 /* Pods-wizhwishUITests.debug.xcconfig */,
+				667A28FAD5B6F09A608861CC /* Pods-wizhwishUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B9C0C3AF17009FB9A1BCA61D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -760,18 +827,11 @@
 				1E271DB21CE2149500DB572F /* Photos.framework */,
 				1E271DB01CE2133900DB572F /* AssetsLibrary.framework */,
 				1E271DAE1CE2097E00DB572F /* AVFoundation.framework */,
-				40EDA4CEB60A5E42CFDB52C1 /* libPods-wizhwish.a */,
+				CEE259F91320EACE61E495C4 /* libPods-wizhwish.a */,
+				FABF292CDED638013DF25DF6 /* libPods-wizhwishTests.a */,
+				AC095F7D0EE119FB8A0B7F8C /* libPods-wizhwishUITests.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CE8A51816A1EFB59FA595C40 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9D04BD9FB6266A9389C4ED76 /* Pods-wizhwish.debug.xcconfig */,
-				25918DA5ECA2450ED2B97948 /* Pods-wizhwish.release.xcconfig */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -781,11 +841,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E060B2B1CC4E311009E1BBC /* Build configuration list for PBXNativeTarget "wizhwish" */;
 			buildPhases = (
-				FD027796C64FF978B84B7ADE /* Check Pods Manifest.lock */,
+				9808B635A61D65690578EED8 /* [CP] Check Pods Manifest.lock */,
 				1E060AFA1CC4E311009E1BBC /* Sources */,
 				1E060AFB1CC4E311009E1BBC /* Frameworks */,
 				1E060AFC1CC4E311009E1BBC /* Resources */,
-				FB36E200B0F9A276494DBCE8 /* Copy Pods Resources */,
+				760F74AB3D5E716391DEF031 /* [CP] Embed Pods Frameworks */,
+				3257BAF305DA4953569E5B42 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -800,9 +861,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E060B2E1CC4E311009E1BBC /* Build configuration list for PBXNativeTarget "wizhwishTests" */;
 			buildPhases = (
+				41A6321459F4A11CEB77D2E6 /* [CP] Check Pods Manifest.lock */,
 				1E060B131CC4E311009E1BBC /* Sources */,
 				1E060B141CC4E311009E1BBC /* Frameworks */,
 				1E060B151CC4E311009E1BBC /* Resources */,
+				A0446A68C23C63AB9984E986 /* [CP] Embed Pods Frameworks */,
+				374AB839F6954B91F4D7B371 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -818,9 +882,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1E060B311CC4E311009E1BBC /* Build configuration list for PBXNativeTarget "wizhwishUITests" */;
 			buildPhases = (
+				585F9B3F28B39B4C75BED02C /* [CP] Check Pods Manifest.lock */,
 				1E060B1E1CC4E311009E1BBC /* Sources */,
 				1E060B1F1CC4E311009E1BBC /* Frameworks */,
 				1E060B201CC4E311009E1BBC /* Resources */,
+				2BF20C03C3608317E44372D6 /* [CP] Embed Pods Frameworks */,
+				D2E7EDD07FEC6F0CA7E1C13E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -917,14 +984,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		FB36E200B0F9A276494DBCE8 /* Copy Pods Resources */ = {
+		2BF20C03C3608317E44372D6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wizhwishUITests/Pods-wizhwishUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3257BAF305DA4953569E5B42 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -932,19 +1014,109 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wizhwish/Pods-wizhwish-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FD027796C64FF978B84B7ADE /* Check Pods Manifest.lock */ = {
+		374AB839F6954B91F4D7B371 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wizhwishTests/Pods-wizhwishTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		41A6321459F4A11CEB77D2E6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		585F9B3F28B39B4C75BED02C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		760F74AB3D5E716391DEF031 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wizhwish/Pods-wizhwish-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9808B635A61D65690578EED8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A0446A68C23C63AB9984E986 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wizhwishTests/Pods-wizhwishTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2E7EDD07FEC6F0CA7E1C13E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-wizhwishUITests/Pods-wizhwishUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -968,6 +1140,7 @@
 				1E8032961CDF040D0010D036 /* UITextField+Extras.m in Sources */,
 				1EEDCCB11DB507F300DBB363 /* UIImage+Filtrr.m in Sources */,
 				1E4276261CD914B00004A0F8 /* RUUtility.m in Sources */,
+				1E4C57491E771C6F00687BF7 /* SCustomProgressView.m in Sources */,
 				1E8717F31CE8B2650062EFE9 /* WZContainerViewController.m in Sources */,
 				1E8717FE1CE8BDCA0062EFE9 /* WZNewFriendViewController.m in Sources */,
 				1E00D54F1E59CEA300AC3E95 /* WWishListViewController.m in Sources */,
@@ -983,15 +1156,18 @@
 				1E7208C81CD923740017188F /* WZProfileTableViewCell.m in Sources */,
 				1E42762C1CD914D00004A0F8 /* WZPostTopTableViewCell.m in Sources */,
 				1E42764A1CD915650004A0F8 /* WZMyProfileViewController.m in Sources */,
+				1E4C578F1E791EC400687BF7 /* WZServiceParser.m in Sources */,
 				1E8032991CDF0BE30010D036 /* WZMyWishesViewController.m in Sources */,
 				1EEDCCB31DB507F300DBB363 /* UIImage+Scale.m in Sources */,
 				1E8717F81CE8B4B60062EFE9 /* WZChatListViewController.m in Sources */,
 				1E4276441CD915430004A0F8 /* NSString+Extras.m in Sources */,
 				1EA47E341D043C6600794973 /* WZMyPostTableViewCell.m in Sources */,
+				1EE33E981E6F44390012248A /* NSURL+SCSaveToCameraRoll.m in Sources */,
 				1EEDCCB21DB507F300DBB363 /* UIImage+FiltrrCompositions.m in Sources */,
 				1E42763E1CD915270004A0F8 /* UIColor+Extras.m in Sources */,
 				1E4276471CD915510004A0F8 /* NSError+Extras.m in Sources */,
 				1E7208CB1CD924420017188F /* WZFollowerViewController.m in Sources */,
+				1E4C578B1E791B0300687BF7 /* RUWebServiceParser.m in Sources */,
 				1E1CCB221D85629900423904 /* WVideoRecordViewController.m in Sources */,
 				1E42763B1CD9151A0004A0F8 /* UIImage+Extra.m in Sources */,
 				1E8717EB1CE8A8BC0062EFE9 /* WZChatViewController.m in Sources */,
@@ -1183,7 +1359,7 @@
 		};
 		1E060B2C1CC4E311009E1BBC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9D04BD9FB6266A9389C4ED76 /* Pods-wizhwish.debug.xcconfig */;
+			baseConfigurationReference = 554DF7009B71954A51CB9DDB /* Pods-wizhwish.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1211,7 +1387,7 @@
 		};
 		1E060B2D1CC4E311009E1BBC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25918DA5ECA2450ED2B97948 /* Pods-wizhwish.release.xcconfig */;
+			baseConfigurationReference = 66DC7C9BE2CC4D5C8692AB89 /* Pods-wizhwish.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1236,6 +1412,7 @@
 		};
 		1E060B2F1CC4E311009E1BBC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9707B569995A241F8132BD0 /* Pods-wizhwishTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = wizhwishTests/Info.plist;
@@ -1248,6 +1425,7 @@
 		};
 		1E060B301CC4E311009E1BBC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA6D9722E13F80BB42ACA090 /* Pods-wizhwishTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = wizhwishTests/Info.plist;
@@ -1260,6 +1438,7 @@
 		};
 		1E060B321CC4E311009E1BBC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 563F3FCFC300ECDE76957AE1 /* Pods-wizhwishUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = wizhwishUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1272,6 +1451,7 @@
 		};
 		1E060B331CC4E311009E1BBC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 667A28FAD5B6F09A608861CC /* Pods-wizhwishUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = wizhwishUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

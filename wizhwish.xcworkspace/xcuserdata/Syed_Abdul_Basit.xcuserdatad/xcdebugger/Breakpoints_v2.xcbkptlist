@@ -34,7 +34,7 @@
             startingLineNumber = "22"
             endingLineNumber = "22"
             landmarkName = "-updateCellContentForInvite:showChecked:"
-            landmarkType = "5">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -65,7 +65,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1774"
             endingLineNumber = "1774"
-            landmarkName = "-startVideoCapture"
+            landmarkName = "-_processImageWithPhotoSampleBuffer:previewSampleBuffer:error:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -81,7 +81,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1760"
             endingLineNumber = "1760"
-            landmarkName = "-startVideoCapture"
+            landmarkName = "-_processImageWithPhotoSampleBuffer:previewSampleBuffer:error:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -97,7 +97,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "1761"
             endingLineNumber = "1761"
-            landmarkName = "-startVideoCapture"
+            landmarkName = "-_processImageWithPhotoSampleBuffer:previewSampleBuffer:error:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -156,11 +156,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wizhwish/ViewController/WVideoRecordViewController.m"
-            timestampString = "510423531.46778"
+            timestampString = "511209097.25315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "804"
-            endingLineNumber = "804"
+            startingLineNumber = "992"
+            endingLineNumber = "992"
             landmarkName = "-labelChange:"
             landmarkType = "7">
          </BreakpointContent>
@@ -172,27 +172,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wizhwish/ViewController/WVideoRecordViewController.m"
-            timestampString = "510418963.960657"
+            timestampString = "511209097.25315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "-textPressed:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "wizhwish/ViewController/WVideoRecordViewController.m"
-            timestampString = "510423531.46778"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "779"
-            endingLineNumber = "779"
+            startingLineNumber = "967"
+            endingLineNumber = "967"
             landmarkName = "-addPencilWorkToView"
             landmarkType = "7">
          </BreakpointContent>
@@ -204,12 +188,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wizhwish/ViewController/WVideoRecordViewController.m"
-            timestampString = "510423531.46778"
+            timestampString = "511209097.25315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "796"
-            endingLineNumber = "796"
-            landmarkName = "-labelChange:"
+            startingLineNumber = "984"
+            endingLineNumber = "984"
+            landmarkName = "-labelPressed:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -220,11 +204,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wizhwish/ViewController/WVideoRecordViewController.m"
-            timestampString = "510423531.46778"
+            timestampString = "511209097.25315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1076"
-            endingLineNumber = "1076">
+            startingLineNumber = "1264"
+            endingLineNumber = "1264"
+            landmarkName = "@implementation WVideoRecordViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -250,11 +236,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wizhwish/ViewController/WVideoRecordViewController.m"
-            timestampString = "510423531.46778"
+            timestampString = "511209097.25315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "496"
-            endingLineNumber = "496"
+            startingLineNumber = "517"
+            endingLineNumber = "517"
             landmarkName = "-initWithCoder:"
             landmarkType = "7">
          </BreakpointContent>
@@ -395,6 +381,134 @@
             continueAfterRunningActions = "No"
             scope = "0"
             stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wizhwish/Utilities/Custom Views/WPostView.m"
+            timestampString = "511343870.607337"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "-livePressed:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/AWSCore/AWSCore/Authentication/AWSSignature.m"
+            timestampString = "511434631.874874"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "-interceptRequest:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[AWSSignatureV4Signer interceptRequest:]"
+                  moduleName = "wizhwish"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/AWSCore/AWSCore/Authentication/AWSSignature.m"
+                  timestampString = "511697798.703545"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "126">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__41-[AWSSignatureV4Signer interceptRequest:]_block_invoke"
+                  moduleName = "wizhwish"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/AWSCore/AWSCore/Authentication/AWSSignature.m"
+                  timestampString = "511697798.707666"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "146"
+                  endingLineNumber = "146"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wizhwish/ViewController/WZRegistrationViewController.m"
+            timestampString = "511697796.379954"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "-registerPressed:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wizhwish/Utilities/ServicesParser/WZServiceParser.m"
+            timestampString = "511691965.867399"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "-processLoginUserWithEmail:password:success:failure:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wizhwish/Utilities/ServicesParser/WZServiceParser.m"
+            timestampString = "511691971.707526"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "-processRegisterUserWithEmail:userName:password:success:failure:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wizhwish/Utilities/ServicesParser/WZServiceParser.m"
+            timestampString = "511692193.306589"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-processLoginUserWithEmail:password:success:failure:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

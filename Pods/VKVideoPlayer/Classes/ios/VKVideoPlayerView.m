@@ -102,10 +102,7 @@
     button.layer.cornerRadius = 4.0f;
     button.clipsToBounds = YES;
   }
-  //BY Syed :hide buttons
-    self.topPortraitCloseButton.hidden = YES;
-    self.rewindButton.hidden = YES;
-    self.nextButton.hidden = YES;
+  
   [self.topPortraitCloseButton addTarget:self action:@selector(doneButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
   
   self.playerControlsAutoHideTime = @5;

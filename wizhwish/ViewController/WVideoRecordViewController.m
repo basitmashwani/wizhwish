@@ -13,6 +13,8 @@
 #import "UIImage+Scale.h"
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <SCVideoPlayerView.h>
+#import <SCAssetExportSession.h>
+#import "NSURL+SCSaveToCameraRoll.h"
 
 
 @import AVKit;
@@ -74,6 +76,7 @@
 @property(nonatomic) BOOL isPause;
 
 @property(nonatomic) BOOL isnextPressed;
+
 
 
 
@@ -192,6 +195,7 @@
 
 - (void)tempButtonPressed:(id)sender {
     
+    self.timerView.hidden = YES;
     WTempVideoRecorderViewController *tempController = [[UIStoryboard getMediaStoryBoard] instantiateViewControllerWithIdentifier:K_SB_TEMP_VIDEO_VIEW_CONTROLLER];
     [self.navigationController pushViewController:tempController animated:YES];
     }
@@ -380,7 +384,22 @@
         
         WWizhViewController *controller =  [[UIStoryboard getWhizStoryBoard] instantiateViewControllerWithIdentifier:K_SB_WIZH_VIEW_CONTROLLER];
         
-        [self.navigationController pushViewController:controller animated:YES];
+     //   [self.navigationController pushViewController:controller animated:YES];
+        
+       // [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        //Save video
+        
+        NSString *firstFilePath = [[WSetting getSharedSetting] rearVideoUrlPath];
+        NSString *firstOutputPath = [self getOutputPathfor:@"Rear"];
+
+        
+            
+        NSURL *url = [NSURL fileURLWithPath:firstFilePath];
+        [self addTextToVideoWithVideoURL:url withText:self.textLabel.text];
+        
+        //End
+        
+        
     }
     else {
     
@@ -436,6 +455,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
+    self.labelPoint = self.textLabel.center;
+    self.timerView.hidden = NO;
     
     
     self.soundButton.selected = YES;
@@ -634,6 +655,9 @@
                                                  name: UIKeyboardDidHideNotification
                                                object:nil];
 
+   // [self.progressView animateViewWithduration:5000 initialValue:1];
+
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -706,6 +730,175 @@
 }
 
 #pragma mark Private Methods
+
+- (void)exportVideoToRollwithUrlPath:(NSString*)urlPath Filter:(SCFilter*)filter outPutPath:(NSString*)outputPath {
+    
+    
+    NSURL *firstUrl = [NSURL fileURLWithPath:urlPath];
+    AVURLAsset *asset = [AVURLAsset URLAssetWithURL:firstUrl options:nil];
+    SCAssetExportSession *exportSession = [[SCAssetExportSession alloc] initWithAsset:asset];
+    exportSession.videoConfiguration.filter = filter;
+    exportSession.videoConfiguration.preset = SCPresetHighestQuality;
+    exportSession.audioConfiguration.preset = SCPresetHighestQuality;
+    exportSession.videoConfiguration.maxFrameRate = 35;
+    exportSession.outputUrl = [NSURL fileURLWithPath:outputPath];
+    exportSession.outputFileType = AVFileTypeMPEG4;
+    exportSession.delegate = self;
+    exportSession.contextType = SCContextTypeAuto;
+    
+    CFTimeInterval time = CACurrentMediaTime();
+    __weak typeof(self) wSelf = self;
+    [exportSession exportAsynchronouslyWithCompletionHandler:^{
+        
+        if (!exportSession.cancelled) {
+            NSLog(@"Completed compression in %fs", CACurrentMediaTime() - time);
+        }
+        
+        
+        NSError *error = exportSession.error;
+        if (exportSession.cancelled) {
+            NSLog(@"Export was cancelled");
+        } else if (error == nil) {
+            
+            [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+            [exportSession.outputUrl saveToCameraRollWithCompletion:^(NSString * _Nullable path, NSError * _Nullable error) {
+                [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+                
+                if (error == nil) {
+                    
+                    
+                    NSLog(@"Save to roll");
+                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                } else {
+                    
+                    NSLog(@"Failed");
+                }
+            }];
+        } else {
+            if (!exportSession.cancelled) {
+                
+                NSLog(@"Failed");
+            }
+        }
+    }];
+}
+
+
+-(void)addTextToVideoWithVideoURL:(NSURL*)url withText:(NSString*)text
+{
+    AVURLAsset* videoAsset = [[AVURLAsset alloc]initWithURL:url options:nil];
+    
+    AVMutableComposition* mixComposition = [AVMutableComposition composition];
+    
+    AVMutableCompositionTrack *compositionVideoTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
+    
+    AVAssetTrack *clipVideoTrack = [[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
+    
+    AVMutableCompositionTrack *compositionAudioTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
+    
+    AVAssetTrack *clipAudioTrack = [[videoAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0];
+    //If you need audio as well add the Asset Track for audio here
+    
+    [compositionVideoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:clipVideoTrack atTime:kCMTimeZero error:nil];
+    
+    [compositionAudioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:clipAudioTrack atTime:kCMTimeZero error:nil];
+    
+    [compositionVideoTrack setPreferredTransform:[[[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0] preferredTransform]];
+    
+    CGSize sizeOfVideo = [videoAsset naturalSize];
+    //NSLog(@"sizeOfVideo.width is %f",sizeOfVideo.width);
+    //NSLog(@"sizeOfVideo.height is %f",sizeOfVideo.height);
+    //TextLayer defines the text they want to add in Video
+    
+    CATextLayer *textOfvideo = [[CATextLayer alloc] init];
+    textOfvideo.string=[NSString stringWithFormat:@"%@",text];//text is shows the text that you want add in video.
+    
+    [textOfvideo setFont:(__bridge CFTypeRef)([UIFont fontWithName:[NSString stringWithFormat:@"%s","MicrosoftPhagsPa"] size:23])];//fontUsed is the name of font
+    [textOfvideo setFrame:CGRectMake(self.labelPoint.x , self.labelPoint.y , sizeOfVideo.width, 60)];
+   // [textOfvideo setAlignmentMode:kCAAlignmentCenter];
+    [textOfvideo setForegroundColor:[[self.textLabel textColor] CGColor]];
+    
+    
+    CALayer *optionalLayer = [CALayer layer];
+    [optionalLayer addSublayer:textOfvideo];
+    optionalLayer.frame=CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height);
+    [optionalLayer setMasksToBounds:YES];
+    
+    CALayer *parentLayer=[CALayer layer];
+    CALayer *videoLayer=[CALayer layer];
+    parentLayer.frame=CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height);
+    videoLayer.frame=CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height);
+    [parentLayer addSublayer:videoLayer];
+    [parentLayer addSublayer:optionalLayer];
+    
+    AVMutableVideoComposition *videoComposition=[AVMutableVideoComposition videoComposition] ;
+    videoComposition.frameDuration=CMTimeMake(1, 10);
+    videoComposition.renderSize=sizeOfVideo;
+    videoComposition.animationTool=[AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:videoLayer inLayer:parentLayer];
+    
+    AVMutableVideoCompositionInstruction *instruction = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
+    instruction.timeRange = CMTimeRangeMake(kCMTimeZero, [mixComposition duration]);
+    AVAssetTrack *videoTrack = [[mixComposition tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
+    AVMutableVideoCompositionLayerInstruction* layerInstruction = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:videoTrack];
+    instruction.layerInstructions = [NSArray arrayWithObject:layerInstruction];
+    videoComposition.instructions = [NSArray arrayWithObject: instruction];
+    
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd_HH-mm-ss"];
+    NSString *destinationPath = [documentsDirectory stringByAppendingFormat:@"/utput_%@.mov", [dateFormatter stringFromDate:[NSDate date]]];
+    
+    AVAssetExportSession *exportSession = [[AVAssetExportSession alloc] initWithAsset:mixComposition presetName:AVAssetExportPresetMediumQuality];
+    exportSession.videoComposition=videoComposition;
+    
+    exportSession.outputURL = [NSURL fileURLWithPath:destinationPath];
+    exportSession.outputFileType = AVFileTypeQuickTimeMovie;
+    [exportSession exportAsynchronouslyWithCompletionHandler:^{
+        switch (exportSession.status)
+        {
+            case AVAssetExportSessionStatusCompleted:
+                NSLog(@"Export OK");
+                if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(destinationPath)) {
+                    UISaveVideoAtPathToSavedPhotosAlbum(destinationPath, self, @selector(video:didFinishSavingWithError:contextInfo:), nil);
+                }
+                break;
+            case AVAssetExportSessionStatusFailed:
+                NSLog (@"AVAssetExportSessionStatusFailed: %@", exportSession.error);
+                break;
+            case AVAssetExportSessionStatusCancelled:
+                NSLog(@"Export Cancelled");
+                break;
+        }
+    }];
+}
+
+
+-(void) video: (NSString *) videoPath didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo
+{
+    if(error)
+        NSLog(@"Finished saving video with error: %@", error);
+}
+
+- (NSString*)getOutputPathfor:(NSString*)videoType {
+    
+    if ([videoType isEqualToString:@"Front"]) {
+        
+        NSString *outputFile = [NSString stringWithFormat:@"video_%@.mp4", @"Front-Output"];
+        
+        NSString *outputDirectory =  NSTemporaryDirectory();
+        NSString *outputPath = [outputDirectory stringByAppendingPathComponent:outputFile];
+        return outputPath;
+    }
+    else {
+        
+        NSString *outputFile = [NSString stringWithFormat:@"video_%@.mp4", @"Rear-Output"];
+        
+        NSString *outputDirectory =  NSTemporaryDirectory();
+        NSString *outputPath = [outputDirectory stringByAppendingPathComponent:outputFile];
+        return outputPath;
+
+    }
+}
 
 - (void)playPressed:(id)sender {
     
@@ -848,7 +1041,7 @@
     self.viewContainer.hidden = YES;
     [self rightButtonCanShow:NO];
     
-
+    _isnextPressed = NO;
     PBJVision *vision = [PBJVision sharedInstance];
     //vision.captureSessionPreset = AVCaptureSessionPresetHigh;
     vision.delegate = self;
@@ -865,7 +1058,7 @@
 
     NSString *outputDirectory =  NSTemporaryDirectory();
     NSString *outputPath = [outputDirectory stringByAppendingPathComponent:outputFile];
-    vision.outputPath = outputPath;
+ //   vision.outputPath = outputPath;
     if (self.secondVideo) {
         
         [[WSetting getSharedSetting] setFrontVideoUrlPath:outputPath];
