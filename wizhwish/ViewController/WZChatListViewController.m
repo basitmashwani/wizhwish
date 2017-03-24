@@ -10,11 +10,15 @@
 
 @interface WZChatListViewController ()
 
+@property(nonatomic ,retain) NSArray *followerArray;
+
 @end
 
 @implementation WZChatListViewController
 
 #pragma mark Private Methods
+
+
 
 - (void)updateCellContentForInvite:(WZProfileTableViewCell*)cell showChecked:(BOOL)status {
     
@@ -52,12 +56,24 @@
     }
 }
 
+
 #pragma mark Life Cycle Methods
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    
+    self = [super initWithCoder:aDecoder];
+    self.followerArray = [[NSArray alloc] init];
+    
+    return self;
+}
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     
+    if (self.viewType == kWTypeContact) {
+        
+        NSLog(@"Contact");
+    }
     
     [self showNavigationBar:YES];
     // Do any additional setup after loading the view.
@@ -66,8 +82,9 @@
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
+    
+       [self.tableView reloadData];
 
-    [self.tableView reloadData];
 
 }
 
@@ -80,35 +97,65 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == 2) {
-     
-        WZProfileTableViewCell *profileCell = [tableView dequeueReusableCellWithIdentifier:K_CELL_INVITE];
-        
-        return  profileCell;
-
-        
-    }
-    else {
-        
-    WZProfileTableViewCell *profileCell = [tableView dequeueReusableCellWithIdentifier:K_FOLLOWER_CELL];
     
-        if (indexPath.row >2) {
+    WZProfileTableViewCell *profileCell;
+    
+    if (self.viewType == KWTypeFollower) {
+        
+        
+         profileCell = [tableView dequeueReusableCellWithIdentifier:K_FOLLOWER_CELL];
+        
+        
+          //  [self updateCellContentForInvite:profileCell showChecked:NO];
             
-            [self updateCellContentForInvite:profileCell showChecked:YES];
-        }
-        else  {
-                 
-            [self updateCellContentForInvite:profileCell showChecked:NO];
-
-             }
+        
+        
+        return profileCell;
+        
+       
+    }
     
-    return profileCell;
+       else {
+        
+            profileCell = [tableView dequeueReusableCellWithIdentifier:K_FOLLOWER_CELL];
+           
+           if (indexPath.row ==2) {
+               
+               profileCell = [tableView dequeueReusableCellWithIdentifier:K_CELL_INVITE];
+               
+
+           }
+           else if (indexPath.row > 2) {
+               
+               profileCell = [tableView dequeueReusableCellWithIdentifier:K_FOLLOWER_CELL];
+               
+               [self updateCellContentForInvite:profileCell showChecked:YES];
+
+           }
+           else  {
+
+               [self updateCellContentForInvite:profileCell showChecked:NO];
+
+           }
+           
+           
+           
+           return  profileCell;
     }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 8;
+    if (self.viewType == KWTypeFollower) {
+        
+        return 8;
+
+    }
+    else {
+    
+        return 8;
+    
+    }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {

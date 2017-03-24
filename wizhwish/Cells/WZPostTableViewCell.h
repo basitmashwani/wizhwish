@@ -30,6 +30,9 @@
 
 @property(nonatomic ,retain) IBOutlet UILabel *labelPostTitle;
 
+@property(nonatomic ,retain) IBOutlet UILabel *labelPostText;
+
+@property(nonatomic)  BOOL isText;
 
 @property(nonatomic ,retain) IBOutlet UILabel *labelOtherComment;
 @end

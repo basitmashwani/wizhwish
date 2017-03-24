@@ -26,6 +26,7 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     WZFriendCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:K_PEOPLE_COLLECTION_CELL forIndexPath:indexPath];
+    [cell.buttonPeople setUserInteractionEnabled:NO];
     return cell;
 }
 
@@ -40,6 +41,11 @@
     
     return CGSizeMake(collectionView.frame.size.width/3 , collectionView.frame.size.height);
     
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSLog(@"Sedas");
 }
 
 

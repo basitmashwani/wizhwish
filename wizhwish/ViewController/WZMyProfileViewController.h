@@ -10,7 +10,8 @@
 
 typedef enum {
     KWPofileTypeSelf = 0,
-    kWProfileTypeOther
+    kWProfileTypeOther ,
+    KWProfileTypeFollow
 } WProfileViewType;
 
 @interface WZMyProfileViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -25,9 +26,16 @@ typedef enum {
 
 @property(nonatomic ,retain) IBOutlet UIButton *buttonFollow;
 
+@property(nonatomic ,retain) IBOutlet UIButton *followButton;
+
 @property(nonatomic ,retain) IBOutlet UIButton *buttonOption;
 
 @property(nonatomic ,retain) IBOutlet UIImageView *imageViewProfile;
+
+@property(nonatomic ,retain) IBOutlet NSString *stringName;
+
+@property (weak, nonatomic) IBOutlet UILabel *profileName;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
 
 @property(nonatomic ,assign) WProfileViewType profileType;
 

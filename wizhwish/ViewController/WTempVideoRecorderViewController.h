@@ -17,4 +17,5 @@
 @property(nonatomic ,retain) IBOutlet UIButton *switchButton;
 
 @property(nonatomic ,retain) IBOutlet UIView *timerView;
+
 @end

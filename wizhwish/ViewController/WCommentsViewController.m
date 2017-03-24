@@ -19,6 +19,8 @@
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.estimatedRowHeight = 84.0;
     self.automaticallyAdjustsScrollViewInsets = NO;
+   // [self.sendButton setEnabled:NO];
+
 // set to whatever your "average" cell height is
 
     // Do any additional setup after loading the view.
@@ -60,6 +62,43 @@
 }
 
 
+#pragma mark - UITextfield Delegate Methods
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    
+    if (textField.text.length>0) {
+        
+       // [self.sendButton setEnabled:YES];
+    }
+    else {
+       // [self.sendButton setEnabled:NO];
+
+    }
+}
+
+- (void)commentPressed:(id)sender {
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    __weak typeof(self) weakSelf = self;
+    [[WZServiceParser sharedParser] processCommentOnPost:self.postId commentText:self.textField.text success:^(NSDictionary *dict) {
+       
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        weakSelf.textField.text = @"";
+
+    } failure:^(NSError *error) {
+       
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+
+    }];
+    
+    
+}
 /*
 #pragma mark - Navigation
 

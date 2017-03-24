@@ -59,6 +59,8 @@
 #define K_CELL_INVITE                               @"K_CELL_INVITE"
 #define K_CELL_POST                                 @"K_CELL_POST"
 #define K_POST_TABLEVIEW_CELL                       @"K_POST_CELL"
+#define K_POST_TABLEVIEW_CELL_TEXT                  @"K_POST_CELL_TEXT"
+
 #define K_POST_TOP_CELL                             @"K_POST_TOP_CELL"
 
 #define K_COLLECTION_VIEW_FOLLOWING                 @"K_FOLLOWING_COLLECTION_CELL"

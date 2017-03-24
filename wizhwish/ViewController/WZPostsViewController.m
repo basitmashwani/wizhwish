@@ -8,6 +8,12 @@
 
 #import "WZPostsViewController.h"
 
+@interface WZPostsViewController()
+
+@property(nonatomic ,retain) NSMutableArray *array;
+
+@end
+
 @implementation WZPostsViewController
 
 #pragma mark Public Methods
@@ -60,7 +66,9 @@
     
     
     [self showNavigationBar:YES];
-
+    
+    
+    [self getRecommendedList];
 
 }
 
@@ -70,7 +78,23 @@
 }
 
 #pragma mark Private Methods
+- (void)getRecommendedList {
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    __weak typeof(self) weakSelf = self;
+    [[WZServiceParser sharedParser] processGetRecommendedFriendWithSuccess:^(NSDictionary *dict) {
+        
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        weakSelf.array = [dict valueForKey:@"data"];
+        [weakSelf.collectionView reloadData];
+    } failure:^(NSError *error) {
+       
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        [OLGhostAlertView showAlertAtBottomWithTitle:@"Message" message:@"Unable to proceed request"];
 
+        
+    }];
+}
 
 #pragma mark UITableView Delegate Methods
 
@@ -79,6 +103,8 @@
 
     WZMyWishesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:K_CELL_POST];
     cell.collectionType =  kWPostType;
+    
+    
     
     return cell;
 }
@@ -100,19 +126,31 @@
     WZFriendCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:K_PEOPLE_COLLECTION_CELL forIndexPath:indexPath];
     [cell.buttonPeople setRoundCornersAsCircle];
     
+    cell.buttonPeople.tag = indexPath.row;
+    [cell.buttonPeople addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+   
+    
     return cell;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return 4;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-   
+    return self.array.count;
 }
 
 
+- (void)buttonPressed:(id)sender {
+
+    UIButton *button = (UIButton*)sender;
+    
+    NSString *profileName = [[self.array objectAtIndex:button.tag] valueForKey:@"userDisplayName"];
+    WZMyProfileViewController *profileVC = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_PROFILE_VIEW_CONTROLLER];
+    profileVC.profileType = KWProfileTypeFollow;
+    profileVC.stringName = profileName;
+    [self.navigationController pushViewController:profileVC animated:YES];
+
+
+}
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     

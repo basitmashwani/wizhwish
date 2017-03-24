@@ -149,7 +149,8 @@
 }
 
 - (void)filterPressed:(id)sender {
- 
+    
+   
     self.soundButton.selected = NO;
     self.pencilButton.selected = NO;
     self.textPencil.selected = NO;
@@ -382,9 +383,9 @@
     
     if (self.isnextPressed) {
         
-        WWizhViewController *controller =  [[UIStoryboard getWhizStoryBoard] instantiateViewControllerWithIdentifier:K_SB_WIZH_VIEW_CONTROLLER];
-        
-     //   [self.navigationController pushViewController:controller animated:YES];
+//        WWizhViewController *controller =  [[UIStoryboard getWhizStoryBoard] instantiateViewControllerWithIdentifier:K_SB_WIZH_VIEW_CONTROLLER];
+//        
+//        [self.navigationController pushViewController:controller animated:YES];
         
        // [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         //Save video
@@ -407,7 +408,7 @@
         self.isRecording = NO;
         self.libraryButton.enabled = YES;
         self.switchButton.enabled = YES;
-        [self updateViewForPlayerMode];
+       // [self updateViewForPlayerMode];
         self.isnextPressed = YES;
     }
     
@@ -457,7 +458,8 @@
   
     self.labelPoint = self.textLabel.center;
     self.timerView.hidden = NO;
-    
+    [self.recordButton setRoundCornersAsCircle];
+//    [self.progressView setRoundCornersAsCircle];
     
     self.soundButton.selected = YES;
     self.time = 0;
@@ -491,7 +493,7 @@
     
     if (!CGPointEqualToPoint(self.labelPoint, CGPointZero)) {
         
-    self.textLabel.center = self.labelPoint;
+   // self.textLabel.center = self.labelPoint;
     }
 }
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
@@ -684,7 +686,8 @@
 - (IBAction)smallScreenSliderValueChanged:(UISlider *)sender {
 
     UISlider *slider = (UISlider*)sender;
-    self.videoPlayer.player.volume = slider.value;
+   // self.scMiniPlayer.plplayer.volume = slider.value;
+    self.scMiniPlayer.volume = slider.value;
 }
 
 
@@ -692,7 +695,7 @@
     
     
     UISlider *slider = (UISlider*)sender;
-    self.vkMediaPlayer.player.avPlayer.volume = slider.value;
+    self.scPlayer.volume = slider.value;
 }
 
 #pragma mark UITextField Delegate Methods
@@ -731,6 +734,16 @@
 
 #pragma mark Private Methods
 
+- (void)buttonPressed:(id)sender {
+    
+    UIButton *button = (UIButton*)sender;
+    NSInteger index = button.tag;
+    
+    
+    [self.swipeFilterView setSelectedFilter: [self.swipeFilterView.filters objectAtIndex:index]];
+    
+    [self.miniSwipeFilterView setSelectedFilter: [self.miniSwipeFilterView.filters objectAtIndex:index]];
+}
 - (void)exportVideoToRollwithUrlPath:(NSString*)urlPath Filter:(SCFilter*)filter outPutPath:(NSString*)outputPath {
     
     
@@ -1012,9 +1025,16 @@
                // NSLog(@"start recording");
                 _isRecording = YES;
                 [self startTimer];
+                [self.progressView animateViewWithduration:60 initialValue:0];
+                
+               
+
+                
             }
             else
                 [[PBJVision sharedInstance] resumeVideoCapture];
+            [self.progressView resumeAnimation];
+
             //NSLog(@"resume recording");
             
             self.isPause = NO;
@@ -1025,7 +1045,8 @@
         case UIGestureRecognizerStateFailed:
         {
             [[PBJVision sharedInstance] pauseVideoCapture];
-            self.isPause = YES;
+            [self.progressView pauseAnimation];
+             self.isPause = YES;
        //     NSLog(@"pause recording");
            // _isRecording = NO;
             break;
@@ -1058,7 +1079,7 @@
 
     NSString *outputDirectory =  NSTemporaryDirectory();
     NSString *outputPath = [outputDirectory stringByAppendingPathComponent:outputFile];
- //   vision.outputPath = outputPath;
+    vision.outputPath = outputPath;
     if (self.secondVideo) {
         
         [[WSetting getSharedSetting] setFrontVideoUrlPath:outputPath];
@@ -1070,7 +1091,7 @@
 
     }
     [vision startPreview];
-    [[PBJVision sharedInstance] setMaximumCaptureDuration:CMTimeMakeWithSeconds(5, 600)]; // ~ 5 seconds
+    //[[PBJVision sharedInstance] setMaximumCaptureDuration:CMTimeMakeWithSeconds(5, 600)]; // ~ 5 seconds
     
     
 }
@@ -1084,6 +1105,8 @@
     UIImage *image = [[UIImage alloc] initWithCIImage:filterImage];
 
     [cell.buttonPeople setImage:image forState:UIControlStateNormal];
+    [cell.buttonPeople setTag:indexPath.row];
+    [cell.buttonPeople addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
   
    
     return cell;
@@ -1096,12 +1119,12 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
  
-    NSInteger index = indexPath.row;
-  
-    
-    [self.swipeFilterView setSelectedFilter: [self.swipeFilterView.filters objectAtIndex:index]];
-    
-    [self.miniSwipeFilterView setSelectedFilter: [self.miniSwipeFilterView.filters objectAtIndex:index]];
+//    NSInteger index = indexPath.row;
+//  
+//    
+//    [self.swipeFilterView setSelectedFilter: [self.swipeFilterView.filters objectAtIndex:index]];
+//    
+//    [self.miniSwipeFilterView setSelectedFilter: [self.miniSwipeFilterView.filters objectAtIndex:index]];
   
 }
 
@@ -1175,6 +1198,7 @@
     self.libraryButton.enabled = YES;
     self.switchButton.enabled = YES;
     [self updateViewForPlayerMode];
+    self.isnextPressed = YES;
     
 
 //    [_assetLibrary writeVideoAtPathToSavedPhotosAlbum:[NSURL URLWithString:videoPath] completionBlock:^(NSURL *assetURL, NSError *error1) {

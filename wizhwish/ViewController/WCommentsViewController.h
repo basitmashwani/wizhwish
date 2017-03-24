@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WCommentsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface WCommentsViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 
 @property(nonatomic ,retain) IBOutlet UITableView *tableView;
 
+@property(nonatomic ,retain) IBOutlet UITextField *textField;
+
+@property(nonatomic ,retain) IBOutlet UIButton *sendButton;
+
+@property(nonatomic ,retain)  NSString *postId;
+
+
+- (IBAction)commentPressed:(id)sender;
 @end
+

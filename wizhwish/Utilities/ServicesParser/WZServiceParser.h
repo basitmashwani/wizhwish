@@ -18,5 +18,21 @@
 - (void)processLoginUserWithEmail:(NSString*)email password:(NSString*)password success:(void(^)(NSString* accessToken))success
                              failure:(void(^)(NSError *error))failure;
 
+- (void)processPostText:(NSString*)text success:(void(^)(NSString* accessToken))success
+                          failure:(void(^)(NSError *error))failure;
+
+- (void)processGetRecommendedFriendWithSuccess:(void(^)(NSDictionary* dict))success
+                failure:(void(^)(NSError *error))failure;
+
+- (void)processFollowUser:(NSString*)Username success:(void(^)(NSDictionary* dict))success
+                                       failure:(void(^)(NSError *error))failure;
+
+- (void)processGetWhizPostWithLimit:(NSInteger)limit success:(void(^)(NSDictionary* dict))success failure:(void(^)(NSError *error))failure;
+
+- (void)processCommentOnPost:(NSString*)postId commentText:(NSString*)text success:(void(^)(NSDictionary* dict))success failure:(void(^)(NSError *error))failure;
+
+- (void)processGetFollowerWithSuccess:(void(^)(NSDictionary* dict))success failure:(void(^)(NSError *error))failure;
+
+
 
 @end

@@ -19,8 +19,33 @@
 
 #pragma mark Private Methods
 
+- (void)followButtonPressed:(id)sender {
+    
+    NSLog(@"Follwing user %@",self.stringName);
+    if(self.profileType == KWProfileTypeFollow) {
+        
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
+        __weak typeof(self) weakSelf = self;
+        [[WZServiceParser sharedParser] processFollowUser:self.stringName success:^(NSDictionary *dict) {
+            
+            [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+            
+            [weakSelf.buttonFollow setTitle:@"Following" forState:UIControlStateNormal];
+            [weakSelf.buttonFollow setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+            [weakSelf.buttonFollow setBackgroundImage:[UIImage imageNamed:@"Image_Button_bg"] forState:UIControlStateNormal];
+            
+        } failure:^(NSError *error) {
+           
+            [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+            [OLGhostAlertView showAlertAtCenterWithTitle:@"Message" message:@"Unable to proceed request"];
 
+        }];
 
+        
+}
+
+}
 
 - (void)viewDidLoad {
     
@@ -53,10 +78,39 @@
     
     if(self.profileType == KWPofileTypeSelf) {
         
-        self.buttonFollow.hidden = YES;
+      //  self.buttonFollow.hidden = YES;
         
-        self.buttonOption.hidden = YES;
+       // self.buttonOption.hidden = YES;
+        
+        [self.buttonFollow setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
+        [self.buttonFollow setTitle:@"Edit" forState:UIControlStateNormal];
+        
+        [self.buttonFollow setBackgroundImage:[UIImage imageNamed:@"Image_Edit_button"] forState:UIControlStateNormal];
     }
+    else if(self.profileType == kWProfileTypeOther) {
+        
+        //  self.buttonFollow.hidden = YES;
+        
+        // self.buttonOption.hidden = YES;
+        
+        
+        [self.buttonFollow setTitle:@"Following" forState:UIControlStateNormal];
+        [self.buttonFollow setTitleColor:[UIColor getLightGrayColor] forState:UIControlStateNormal];
+        [self.buttonFollow setBackgroundImage:[UIImage imageNamed:@"Image_Button_bg"] forState:UIControlStateNormal];
+    }
+    
+    else {
+    
+        //follow
+        
+        [self.buttonFollow setTitle:@"Follow" forState:UIControlStateNormal];
+        [self.buttonFollow setTitleColor:[UIColor navigationBarColor] forState:UIControlStateNormal];
+        [self.buttonFollow setBackgroundImage:[UIImage imageNamed:@"Image_Follow"] forState:UIControlStateNormal];
+         self.profileName.text = self.stringName;
+
+    }
+    
+    [self.buttonFollow addTarget:self action:@selector(followButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     
     [self.navigationItem setTitle:@"Username"];
     

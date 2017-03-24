@@ -54,6 +54,12 @@
     [self.parentViewController.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)videoPressed:(id)sender {
+    
+    [[WSetting getSharedSetting] setAudioUrlPath:nil];
+    [[WSetting getSharedSetting] setFirstOutputUrl:nil];
+    [[WSetting getSharedSetting] setSecondOutputUrl:nil];
+    [[WSetting getSharedSetting] setFrontVideoUrlPath:nil];
+    [[WSetting getSharedSetting] setRearVideoUrlPath:nil];
     WVideoRecordViewController *controller = [[UIStoryboard getMediaStoryBoard] instantiateViewControllerWithIdentifier:K_SB_VIDEO_RECORD_VIEW_CONTROLLER];
     
     [self.parentViewController.navigationController pushViewController:controller animated:YES];
@@ -74,17 +80,6 @@
 
 - (void)livePressed:(id)sender {
     
-    [Kickflip presentBroadcasterFromViewController:self.parentViewController ready:^(KFStream *stream) {
-        if (stream.streamURL) {
-            NSLog(@"Stream is ready at URL: %@", stream.streamURL);
-        }
-    } completion:^(BOOL success, NSError* error){
-        if (!success) {
-            NSLog(@"Error setting up stream: %@", error);
-        } else {
-            NSLog(@"Done broadcasting");
-        }
-    }];
 }
 
 - (void)giftPressed:(id)sender {
@@ -95,6 +90,7 @@
        
         
         WZPostsViewController *postViewController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_POST_VIEW_CONTROLLER];
+        
         [self.parentViewController.navigationController pushViewController:postViewController animated:YES];
     }
     else {
@@ -112,6 +108,7 @@
     if (self.topSpace.constant == -15) {
      
         WZMyProfileViewController *profileViewController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_PROFILE_VIEW_CONTROLLER];
+        profileViewController.profileType = KWPofileTypeSelf;
         [self.parentViewController.navigationController pushViewController:profileViewController animated:YES];
     }
     else {

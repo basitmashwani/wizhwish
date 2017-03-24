@@ -97,12 +97,12 @@
 
 - (void)signInPressed:(id)sender {
     
-    if (![NSString validateStringForEmail:self.textFieldUsername.text]) {
+    if ([NSString validateStringForEmail:self.textFieldUsername.text]) {
         
         [OLGhostAlertView showAlertAtBottomWithTitle:@"Error" message:@"Please enter valid email address"];
     }
    
-    else if (self.textFieldPassword.text.length <8) {
+    else if (self.textFieldPassword.text.length >8) {
         
         [OLGhostAlertView showAlertAtBottomWithTitle:@"Error" message:@"Password must be 8 characters long"];
         

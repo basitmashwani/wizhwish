@@ -19,6 +19,10 @@
 @property(nonatomic ,retain) NSString *firstOutputUrl;
 
 @property(nonatomic ,retain) NSString *secondOutputUrl;
+
+@property(nonatomic ,retain) NSString *postText;
+
+
 + (WSetting*)getSharedSetting;
 
 

@@ -1862,11 +1862,11 @@ typedef void (^PBJVisionBlock)();
         }
         
         NSString *outputDirectory = (_captureDirectory == nil ? NSTemporaryDirectory() : _captureDirectory);
-        NSString *outputPath = [outputDirectory stringByAppendingPathComponent:outputFile];
-        NSURL *outputURL = [NSURL fileURLWithPath:outputPath];
-        if ([[NSFileManager defaultManager] fileExistsAtPath:outputPath]) {
+       //  self.outputPath = [outputDirectory stringByAppendingPathComponent:outputFile];
+        NSURL *outputURL = [NSURL fileURLWithPath:_outputPath];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:_outputPath]) {
             NSError *error = nil;
-            if (![[NSFileManager defaultManager] removeItemAtPath:outputPath error:&error]) {
+            if (![[NSFileManager defaultManager] removeItemAtPath:_outputPath error:&error]) {
                 [self _failVideoCaptureWithErrorCode:PBJVisionErrorOutputFileExists];
 
                 DLog(@"could not setup an output file (file exists)");
@@ -1874,7 +1874,7 @@ typedef void (^PBJVisionBlock)();
             }
         }
 
-        if (!outputPath || [outputPath length] == 0) {
+        if (!_outputPath || [_outputPath length] == 0) {
             [self _failVideoCaptureWithErrorCode:PBJVisionErrorBadOutputFile];
             
             DLog(@"could not setup an output file");

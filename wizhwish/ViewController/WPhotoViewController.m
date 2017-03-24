@@ -47,6 +47,8 @@
 
 @property(nonatomic ,retain) NSMutableArray *imagesArray;
 
+@property(nonatomic ,retain) NSMutableArray *tempImagesArray;
+
 @property(nonatomic) BOOL isLibrary;
 
 @property(nonatomic) BOOL isFlashOn;
@@ -80,6 +82,7 @@
 - (void)updateCameraViewWithImage:(UIImage*)image {
  
     [self.imagesArray addObject:image];
+    [self.tempImagesArray addObject:image];
 
     self.selectedIndex = self.imagesArray.count-1;
     
@@ -248,6 +251,7 @@
         
         self.filterImageArray = [[NSMutableArray alloc] init];
         self.imagesArray = [[NSMutableArray alloc] init];
+        self.tempImagesArray = [[NSMutableArray alloc] init];
         
     }
     
@@ -306,32 +310,37 @@
  
     UIButton *button = (UIButton*)sender;
     
-    if (self.isFlashOn) {
-        
-        button.imageView.image = [UIImage imageNamed:@"Image_Flash_Off"];
-        self.isFlashOn = NO;
-    }
-    else {
-        button.imageView.image = [UIImage imageNamed:@"Image_Flash_On"];
-        self.isFlashOn = YES;
-    }
+   
+        AVCaptureInput* currentCameraInput = [self.session.inputs firstObject];
+    
+        if(((AVCaptureDeviceInput*)currentCameraInput).device.position == AVCaptureDevicePositionBack)
+        {
+            
     Class captureDeviceClass = NSClassFromString(@"AVCaptureDevice");
     if (captureDeviceClass != nil) {
+        
        /// AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
         if ([self.device hasTorch] && [self.device hasFlash]){
             
             [self.device lockForConfiguration:nil];
-            if (true) {
-                [self.device setTorchMode:AVCaptureTorchModeOn];
-                [self.device setFlashMode:AVCaptureFlashModeOn];
-            //    torchIsOn = YES;
-            } else {
+            
+            if (self.isFlashOn) {
+                
+                [button setImage:[UIImage imageNamed:@"Image_Flash_Off"] forState:UIControlStateNormal];
+                self.isFlashOn = NO;
                 [self.device setTorchMode:AVCaptureTorchModeOff];
                 [self.device setFlashMode:AVCaptureFlashModeOff];
-                //torchIsOn = NO;
+                
+            }
+            else {
+                [button setImage:[UIImage imageNamed:@"Image_Flash_On"] forState:UIControlStateNormal];
+                self.isFlashOn = YES;
+                [self.device setTorchMode:AVCaptureTorchModeOn];
+                [self.device setFlashMode:AVCaptureFlashModeOn];
             }
             [self.device unlockForConfiguration];
         }
+    }
     }
    
 }
@@ -396,10 +405,12 @@
         if(((AVCaptureDeviceInput*)currentCameraInput).device.position == AVCaptureDevicePositionBack)
         {
             newCamera = [self cameraWithPosition:AVCaptureDevicePositionFront];
+            [self.buttonFlash setHidden:YES];
         }
         else
         {
             newCamera = [self cameraWithPosition:AVCaptureDevicePositionBack];
+            [self.buttonFlash setHidden:NO];
         }
         
         //Add input to session
@@ -586,6 +597,7 @@
 - (void)PhotoEditViewController:(WPhotoEditViewController *)viewController didSaveImage:(UIImage *)image withIndex:(NSInteger)index {
     
     [self.imagesArray replaceObjectAtIndex:index withObject:image];
+    [self.tempImagesArray replaceObjectAtIndex:index withObject:image];
     self.mainImageView.image = image;
     [self updateImageArrayWithImage:image atIndex:index];
     self.selectedIndex = index;
@@ -702,8 +714,9 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     self.addButton.hidden = YES;
-    UIImage *image = [self.imagesArray objectAtIndex:self.selectedIndex];
+    UIImage *image = [self.tempImagesArray objectAtIndex:self.selectedIndex];
     
+    image =  [self getFilterImageWithIndex:0 withImage:image];
    UIImage *filteredImage =  [self getFilterImageWithIndex:indexPath.row withImage:image];
     self.mainImageView.image = filteredImage;
 

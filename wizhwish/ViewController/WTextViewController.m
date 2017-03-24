@@ -37,9 +37,16 @@
 
 - (void)nextPressed {
     
+    if ([self.textView.text isEqualToString:@"Enter Text"]) {
+        [OLGhostAlertView showAlertAtBottomWithTitle:@"Message" message:@"Please enter text to post"];
+    }
+    else {
+        
+        [[WSetting getSharedSetting] setPostText:self.textView.text];
    WWizhViewController *controller =  [[UIStoryboard getWhizStoryBoard] instantiateViewControllerWithIdentifier:K_SB_WIZH_VIEW_CONTROLLER];
     
     [self.navigationController pushViewController:controller animated:YES];
+    }
 }
 
 #pragma mark UITextView Delegate Methods

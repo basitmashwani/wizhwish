@@ -13,8 +13,8 @@
 @implementation RUWebServiceParser
 
 
-+ (void)postWebServiceWithURL:(NSString*)url parameter:(NSDictionary*)param success:(void(^)(NSDictionary* responseDict))success
-                      failure:(void(^)(NSError *error))failure
++ (void)postWebServiceWithURL:(NSString*)url parameter:(NSDictionary*)param  header:(NSString*)header success:(void(^)(NSDictionary* responseDict))success
+                      failure:(void(^)(NSError *error))failure;
 {
     
   //    NSLog(@"Sent parameter to server 1 : %@",param);
@@ -36,7 +36,7 @@
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/plain",nil];
     
-    [manager.requestSerializer setValue:k_AUTHORIZATION_BASIC forHTTPHeaderField:@"Authorization"];
+    [manager.requestSerializer setValue:header forHTTPHeaderField:@"Authorization"];
     
 
     
@@ -61,8 +61,8 @@
 }
 
 
-+ (void)getWebServiceWithURL:(NSString*)url parameter:(NSDictionary*)param success:(void(^)(NSDictionary* responseDict))success
-                             failure:(void(^)(NSError *error))failure
++ (void)getWebServiceWithURL:(NSString*)url header:(NSString*)header parameter:(NSDictionary*)param success:(void(^)(NSDictionary* responseDict))success
+                     failure:(void(^)(NSError *error))failure
 {
     
     
@@ -85,7 +85,8 @@
     
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/plain",nil];
     
-    
+    [manager.requestSerializer setValue:header forHTTPHeaderField:@"Authorization"];
+
     
     [manager GET:url parameters:param success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         

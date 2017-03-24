@@ -10,7 +10,12 @@
 
 @interface SCustomProgressView : UIView
 
+
+@property(nonatomic ,retain) IBOutlet  CAShapeLayer *circle;
 - (void)animateViewWithduration:(NSTimeInterval)duration initialValue:(NSTimeInterval)value;
 
+- (void)pauseAnimation;
+
+- (void)resumeAnimation;
 
 @end

@@ -13,6 +13,7 @@ typedef enum {
 } KMediaType;
 
 #import <Foundation/Foundation.h>
+#import "WZPost.h"
 
 
 @interface RUUtility : NSObject
@@ -77,6 +78,8 @@ get UIBarButton Instance
  **/
 
 + (UIImagePickerController*)getImagePickerFor:(KMediaType)mediaType;
+
++ (WZPost*)getPostFromDictionary:(NSDictionary*)dict;
 
 
 

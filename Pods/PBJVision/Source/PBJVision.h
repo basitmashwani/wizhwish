@@ -154,6 +154,8 @@ static CGFloat const PBJVideoBitRate1280x750 = 5000000 * 8;
 @property (nonatomic) BOOL usesApplicationAudioSession;
 @property (nonatomic) BOOL automaticallyConfiguresApplicationAudioSession;
 - (BOOL)isCameraDeviceAvailable:(PBJCameraDevice)cameraDevice;
+@property (nonatomic ,retain) NSString *outputPath;
+
 
 @property (nonatomic) PBJFlashMode flashMode; // flash and torch
 @property (nonatomic, readonly, getter=isFlashAvailable) BOOL flashAvailable;

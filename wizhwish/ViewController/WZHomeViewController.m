@@ -6,6 +6,7 @@
 //  Copyright © 2016 Syed Abdul Basit. All rights reserved.
 //
 
+
 #import "WZHomeViewController.h"
 #import "UIView+Extras.h"
 
@@ -18,6 +19,10 @@
 @property(nonatomic ,retain) WPostView *myView;
 
 @property(nonatomic) NSInteger offSetValue;
+
+@property(nonatomic ,retain) NSMutableArray *postArray;
+
+@property(nonatomic) NSInteger viewHeight;
 
 @property(nonatomic) BOOL canScrollTop;
 
@@ -38,8 +43,10 @@
    
     if (!self.isHide) {
         
-        self.topConstant.constant = -150;
-        self.collectionView.hidden = YES;
+      //  self.topConstant.constant = -150;
+       // self.collectionView.hidden = YES;
+        
+        
     self.myView.buttonWhatOn.alpha = 0;
     self.myView.buttonMessage.alpha = 0;
     [self.myView.buttonNotification setImage:[UIImage imageNamed:@"Image_Profile"] forState:UIControlStateNormal];
@@ -47,12 +54,10 @@
     [self.myView.buttonMenu setImage:[UIImage imageNamed:@"Image_Lamp"] forState:UIControlStateNormal];
         self.isHide = YES;
         
-        CGRect frame = self.myView.buttonMenu.frame;
-        NSLog(@"Frame %ld",(long)frame.origin.y);
-      //  self.myView.buttonMenu.frame = CGRectMake(frame.origin.x, 0, frame.size.width, frame.size.height);
+        //CGRect frame = self.myView.buttonMenu.frame;
         self.myView.topSpace.constant = -15;
-        NSLog(@"Frame %ld",(long)self.myView.frame.origin.y);
-       
+      //  NSLog(@"Frame %ld",(long)self.myView.frame.origin.y);
+       //
         //Update button Frames for View
         
         self.myView.leftButtonWidth.constant = 36;
@@ -63,10 +68,16 @@
         self.myView.rightButtonWidth.constant = 36;
         self.myView.rightButtonHeight.constant = 36;
         self.myView.rightButtonyAxis.constant = -5;
+        
+     //   [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+       
 
         [UIView animateKeyframesWithDuration:2 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
             
-            weakSelf.myView.center = CGPointMake(weakSelf.myView.center.x, weakSelf.myView.center.y + weakSelf.myView.frame.size.height - 60);
+             weakSelf.myView.center = CGPointMake(weakSelf.myView.center.x, weakSelf.myView.center.y + weakSelf.myView.frame.size.height - self.viewHeight);
+            
+            _tableView.contentInset = UIEdgeInsetsMake(-80, 0, 0, 0);
+
             
         } completion:^(BOOL finished) {
             
@@ -79,7 +90,8 @@
             
             
             [self.tableView setScrollEnabled:NO];
-            [self scrollTopPressed:self];
+            //[self scrollTopPressed:self];
+           
         }
         self.topConstant.constant = 0;
         self.collectionView.hidden = NO;
@@ -103,7 +115,27 @@
 
         [UIView animateKeyframesWithDuration:2 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
             
-            weakSelf.myView.center = CGPointMake(weakSelf.myView.center.x, weakSelf.myView.center.y - weakSelf.myView.frame.size.height+60);
+            weakSelf.myView.center = CGPointMake(weakSelf.myView.center.x, weakSelf.myView.center.y - weakSelf.myView.frame.size.height+self.viewHeight);
+            _tableView.contentInset = UIEdgeInsetsMake(_offSetValue, 0, 0, 0);
+            if(IS_IPHONE_5) {
+                
+                _offSetValue = _offSetValue+30;
+                
+                [self.tableView setContentOffset:CGPointMake(0, -30)];
+
+                //[self.tableView setContentOffset:UIEdgeInsetsMake(_offSetValue, 0, 0, 0)]; // 108 is only example
+                self.automaticallyAdjustsScrollViewInsets = NO;
+                
+            }
+            else {
+                
+                [self.tableView setContentOffset:CGPointMake(0, -30)];
+                
+            }
+            
+            [self showNavigationBar:YES];
+
+
             
         } completion:^(BOOL finished) {
             
@@ -138,20 +170,7 @@
     
 }
 
-
-#pragma Life Cycle Methods
-
-
-- (void)viewWillAppear:(BOOL)animated {
-    
-    [super viewWillAppear:animated];
-  //  [(ScrollingNavigationController *)self.navigationController followScrollView:self.tableView delay:50.0f];
-
-}
-- (void)viewDidLoad {
-    
-    [super viewDidLoad];
-    
+- (void)intialSetup {
     self.offSetValue = 30;
     
     self.canScrollTop = YES;
@@ -162,11 +181,11 @@
     
     [self.navigationItem setTitle:@"Whizwish"];
     
-   // [self.tableView setContentInset:UIEdgeInsetsMake(0, -20, 0, 0)]; // 108 is only example
-
+    // [self.tableView setContentInset:UIEdgeInsetsMake(0, -20, 0, 0)]; // 108 is only example
+    
     
     self.buttonTopScroll.hidden = YES;
-  
+    
     self.navigationItem.rightBarButtonItem =  [RUUtility getBarButtonWithImage:[UIImage imageNamed:@"Image_Setting"] forViewController:self selector:@selector(settingPressed)];
     self.tableView.tableHeaderView.frame = CGRectZero;
     
@@ -178,36 +197,87 @@
     self.tableView.contentInset = UIEdgeInsetsZero;
     
     // Do any additional setup after loading the view.
-   
-     self.myView = [WPostView getPostView];
+    
+    [self.tableView setContentInset:UIEdgeInsetsMake(_offSetValue, 0, 0, 0)]; // 108 is only example
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.myView = [WPostView getPostView];
     self.myView.parentViewController = self;
     if(IS_IPHONE_6_PLUS) {
-   self. myView.frame = CGRectMake(0, 300, self.view.frame.size.width, 450);
-    
+        self. myView.frame = CGRectMake(0, 300, self.view.frame.size.width, 450);
+        
+        self.viewHeight = 100;
     }
     else if(IS_IPHONE_6) {
-     
-        self.myView.frame = CGRectMake(0, 280, self.view.frame.size.width, 400);
-
+        
+        self.myView.frame = CGRectMake(0, 160, self.view.frame.size.width, 520);
+        
+        
+        self.viewHeight = 60;
+        
     }
     else if(IS_IPHONE_5) {
-       
+        
         self.myView.frame = CGRectMake(0, 160, self.view.frame.size.width, 420);
-
-        [self.tableView setContentInset:UIEdgeInsetsMake(_offSetValue, 0, 0, 0)]; // 108 is only example
-        self.automaticallyAdjustsScrollViewInsets = NO;
-
+        
+        
+        self.viewHeight = 60;
+        //   [self.tableView setContentInset:UIEdgeInsetsMake(_offSetValue, 0, 0, 0)]; // 108 is only example
+        //  self.automaticallyAdjustsScrollViewInsets = NO;
+        
     }
     
     [self.myView.buttonHidden addTarget:self action:@selector(hidePressed) forControlEvents:UIControlEventTouchUpInside];
     
     
- //   postView.backgroundColor = [UIColor redColor];
+    //   postView.backgroundColor = [UIColor redColor];
     
     [self.view addSubview:_myView];
     
     [self.tableView setScrollEnabled:NO];
+
+}
+
+#pragma Life Cycle Methods
+
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
     
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        
+    self.postArray = [[NSMutableArray alloc] init];
+    
+    }
+    return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+  //  [(ScrollingNavigationController *)self.navigationController followScrollView:self.tableView delay:50.0f];
+
+}
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+    
+    [self intialSetup];
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    __weak typeof(self) weakSelf = self;
+    [[WZServiceParser sharedParser] processGetWhizPostWithLimit:5 success:^(NSDictionary *dict) {
+        
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        weakSelf.postArray =  [dict valueForKey:@"data"];
+        [weakSelf.tableView reloadData];
+        
+    } failure:^(NSError *error) {
+        
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        [OLGhostAlertView showAlertAtBottomWithTitle:@"Message" message:@"Unable to proceed request"];
+
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -234,40 +304,63 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 5;
+    return self.postArray.count+1;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-//    if (indexPath.row == 0) {
-//        
-//        WZPostTopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:K_POST_TOP_CELL];
-//        
-//        
-//
-//        
-//       
-//
-//
-//       
-//        return cell;
-//    }
-//    else  {
+    if (indexPath.row == 0) {
+        
+        WZPostTopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:K_POST_TOP_CELL];
+        
+       
+        return cell;
+    }
+    else  {
    
         WZPostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:K_POST_TABLEVIEW_CELL];
         
+        NSUInteger index = indexPath.row-1;
+       NSDictionary *postDict = [self.postArray objectAtIndex:index];
+        WZPost *post = [RUUtility getPostFromDictionary:postDict];
+        
+        if (post.postText.length > 0) {
+            cell = [tableView dequeueReusableCellWithIdentifier:K_POST_TABLEVIEW_CELL_TEXT];
+            cell.isText = YES;
+            cell.labelPostText.text = post.postText;
+        }
+        else {
+            cell.imageViewPost.hidden = NO;
+            cell.isText = NO;
+        }
+        cell.labelProfileName.text = post.displayName;
+        cell.labelPostDate.text = post.createdDate;
+        cell.labelPostTitle.text = @"Post";
+        
+        if (post.postComment != nil) {
+            
+            cell.labelCommentTitle.text = post.postComment.displayName;
+            cell.labelComment.text = post.postComment.commentText;
+            
+        }
+        else {
+            cell.labelComment.hidden = YES;
+            
+            cell.labelCommentTitle.hidden = YES;
+            
+            cell.labelOtherComment.hidden = YES;
+        }
+        
+        
+      //  cell.imageViewProfile.image ;
+        
+        
+        
+        cell.buttonComment.tag = [post.postId integerValue];
         [cell.buttonComment addTarget:self action:@selector(commentPressed:) forControlEvents:UIControlEventTouchUpInside];
         
-    if (cell) {
         
-        if (indexPath.row >2) {
-            
-
-      //   self.navigationItem se
-        
-        }
-    }
         return cell;
-    //}
+    }
     
     
     
@@ -296,11 +389,27 @@
     
     if (indexPath.row == 0) {
         
-        return 370;
+          return 110;
+
     }
     else  {
         
+        NSInteger index = indexPath.row-1;
+       NSDictionary *postDict = [self.postArray objectAtIndex:index];
+        WZPost *post = [RUUtility getPostFromDictionary:postDict];
+        
+        if (post.postText.length > 0) {
+        
+            if (post.postComment!=nil) {
+                
+                return 200;
+            }
+        
+            return 170;
+        }
+        else {
         return  370;
+    }
     }
 }
 
@@ -338,7 +447,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return 4;
+    return 3;
 }
 
 
@@ -353,7 +462,9 @@
 
 - (void)commentPressed:(id)sender {
     
+    UIButton *button = (UIButton*)sender;
     WCommentsViewController *commentController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_COMMENTS_VIEW_CONTROLLER];
+    commentController.postId = [NSString stringWithFormat:@"%ld",(long)button.tag];
     [self.navigationController pushViewController:commentController animated:YES];
 }
 - (void)scrollTopPressed:(id)sender {

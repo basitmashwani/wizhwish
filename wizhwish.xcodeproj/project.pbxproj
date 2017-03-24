@@ -73,10 +73,15 @@
 		1EA47E341D043C6600794973 /* WZMyPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA47E331D043C6600794973 /* WZMyPostTableViewCell.m */; };
 		1EAC13B51E618BE8002A6FDE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAC13B41E618BE8002A6FDE /* LoginViewController.m */; };
 		1EAE52411E4F701C007DC15D /* WTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAE52401E4F701C007DC15D /* WTextViewController.m */; };
+		1EB5F3F91E813BC600352A36 /* MBCircularProgressBarLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5F3F61E813BC600352A36 /* MBCircularProgressBarLayer.m */; };
+		1EB5F3FA1E813BC600352A36 /* MBCircularProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5F3F81E813BC600352A36 /* MBCircularProgressBarView.m */; };
 		1EC05A031E60A508007026C3 /* Background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1EC05A021E60A0BF007026C3 /* Background.mp4 */; };
 		1ED143141E41EE9C008045CA /* WPhotoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED143131E41EE9C008045CA /* WPhotoEditViewController.m */; };
 		1ED6C7241CE4E2630042D3F6 /* WZPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED6C7231CE4E2630042D3F6 /* WZPostsViewController.m */; };
 		1ED942A31DFC682000BEF8AC /* WPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED942A21DFC682000BEF8AC /* WPhotoViewController.m */; };
+		1EE266711E85324300ECE867 /* WZPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE266701E85324300ECE867 /* WZPost.m */; };
+		1EE266751E85331E00ECE867 /* WZComments.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE266741E85331E00ECE867 /* WZComments.m */; };
+		1EE266791E8538B000ECE867 /* NSDate+Extras.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE266781E8538B000ECE867 /* NSDate+Extras.m */; };
 		1EE33E981E6F44390012248A /* NSURL+SCSaveToCameraRoll.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EE33E971E6F44390012248A /* NSURL+SCSaveToCameraRoll.m */; };
 		1EEDCCB11DB507F300DBB363 /* UIImage+Filtrr.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDCCAC1DB507F300DBB363 /* UIImage+Filtrr.m */; };
 		1EEDCCB21DB507F300DBB363 /* UIImage+FiltrrCompositions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDCCAE1DB507F300DBB363 /* UIImage+FiltrrCompositions.m */; };
@@ -227,6 +232,10 @@
 		1EAC13B41E618BE8002A6FDE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ViewController/LoginViewController.m; sourceTree = "<group>"; };
 		1EAE523F1E4F701C007DC15D /* WTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTextViewController.h; path = ViewController/WTextViewController.h; sourceTree = "<group>"; };
 		1EAE52401E4F701C007DC15D /* WTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTextViewController.m; path = ViewController/WTextViewController.m; sourceTree = "<group>"; };
+		1EB5F3F51E813BC600352A36 /* MBCircularProgressBarLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCircularProgressBarLayer.h; sourceTree = "<group>"; };
+		1EB5F3F61E813BC600352A36 /* MBCircularProgressBarLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCircularProgressBarLayer.m; sourceTree = "<group>"; };
+		1EB5F3F71E813BC600352A36 /* MBCircularProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCircularProgressBarView.h; sourceTree = "<group>"; };
+		1EB5F3F81E813BC600352A36 /* MBCircularProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCircularProgressBarView.m; sourceTree = "<group>"; };
 		1EC05A021E60A0BF007026C3 /* Background.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Background.mp4; sourceTree = "<group>"; };
 		1ED143121E41EE9C008045CA /* WPhotoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WPhotoEditViewController.h; path = ViewController/WPhotoEditViewController.h; sourceTree = "<group>"; };
 		1ED143131E41EE9C008045CA /* WPhotoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPhotoEditViewController.m; path = ViewController/WPhotoEditViewController.m; sourceTree = "<group>"; };
@@ -234,6 +243,12 @@
 		1ED6C7231CE4E2630042D3F6 /* WZPostsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZPostsViewController.m; path = ViewController/WZPostsViewController.m; sourceTree = "<group>"; };
 		1ED942A11DFC682000BEF8AC /* WPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WPhotoViewController.h; path = ViewController/WPhotoViewController.h; sourceTree = "<group>"; };
 		1ED942A21DFC682000BEF8AC /* WPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPhotoViewController.m; path = ViewController/WPhotoViewController.m; sourceTree = "<group>"; };
+		1EE2666F1E85324300ECE867 /* WZPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZPost.h; path = Models/WZPost.h; sourceTree = "<group>"; };
+		1EE266701E85324300ECE867 /* WZPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZPost.m; path = Models/WZPost.m; sourceTree = "<group>"; };
+		1EE266731E85331E00ECE867 /* WZComments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZComments.h; path = Models/WZComments.h; sourceTree = "<group>"; };
+		1EE266741E85331E00ECE867 /* WZComments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZComments.m; path = Models/WZComments.m; sourceTree = "<group>"; };
+		1EE266771E8538B000ECE867 /* NSDate+Extras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+Extras.h"; path = "Utilities/Categories/NSDate+Extras.h"; sourceTree = "<group>"; };
+		1EE266781E8538B000ECE867 /* NSDate+Extras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+Extras.m"; path = "Utilities/Categories/NSDate+Extras.m"; sourceTree = "<group>"; };
 		1EE33E961E6F44390012248A /* NSURL+SCSaveToCameraRoll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+SCSaveToCameraRoll.h"; sourceTree = "<group>"; };
 		1EE33E971E6F44390012248A /* NSURL+SCSaveToCameraRoll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+SCSaveToCameraRoll.m"; sourceTree = "<group>"; };
 		1EEDCCAB1DB507F300DBB363 /* UIImage+Filtrr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Filtrr.h"; sourceTree = "<group>"; };
@@ -336,6 +351,7 @@
 		1E060B001CC4E311009E1BBC /* wizhwish */ = {
 			isa = PBXGroup;
 			children = (
+				1EE2666E1E85321600ECE867 /* Models */,
 				1EC05A011E60A0AF007026C3 /* Video */,
 				1E4FD21C1CFB2E9600612466 /* Custom Search View */,
 				1E060B391CC4F134009E1BBC /* Constants.h */,
@@ -435,6 +451,7 @@
 		1E1432311CC782B8004682B6 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				1EE266761E85385E00ECE867 /* NSDate */,
 				1EE33E951E6F44290012248A /* NSURL */,
 				1E8032931CDF03BE0010D036 /* UITextField */,
 				1E1432511CC78356004682B6 /* UIViewController */,
@@ -684,6 +701,7 @@
 		1E9728B71D43A5CE003EA877 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				1EB5F3F41E813BC600352A36 /* MBCircularProgressView */,
 				1E4C57471E771C6F00687BF7 /* SCustomProgressView.h */,
 				1E4C57481E771C6F00687BF7 /* SCustomProgressView.m */,
 				1E9728B81D43A611003EA877 /* WPostView.h */,
@@ -730,6 +748,17 @@
 			name = TextViewController;
 			sourceTree = "<group>";
 		};
+		1EB5F3F41E813BC600352A36 /* MBCircularProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				1EB5F3F51E813BC600352A36 /* MBCircularProgressBarLayer.h */,
+				1EB5F3F61E813BC600352A36 /* MBCircularProgressBarLayer.m */,
+				1EB5F3F71E813BC600352A36 /* MBCircularProgressBarView.h */,
+				1EB5F3F81E813BC600352A36 /* MBCircularProgressBarView.m */,
+			);
+			path = MBCircularProgressView;
+			sourceTree = "<group>";
+		};
 		1EC05A011E60A0AF007026C3 /* Video */ = {
 			isa = PBXGroup;
 			children = (
@@ -774,6 +803,34 @@
 				1E4276491CD915650004A0F8 /* WZMyProfileViewController.m */,
 			);
 			name = ProfileViewController;
+			sourceTree = "<group>";
+		};
+		1EE2666E1E85321600ECE867 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1EE266721E8532D800ECE867 /* New Group */,
+				1EE2666F1E85324300ECE867 /* WZPost.h */,
+				1EE266701E85324300ECE867 /* WZPost.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		1EE266721E8532D800ECE867 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				1EE266731E85331E00ECE867 /* WZComments.h */,
+				1EE266741E85331E00ECE867 /* WZComments.m */,
+			);
+			name = "New Group";
+			sourceTree = "<group>";
+		};
+		1EE266761E85385E00ECE867 /* NSDate */ = {
+			isa = PBXGroup;
+			children = (
+				1EE266771E8538B000ECE867 /* NSDate+Extras.h */,
+				1EE266781E8538B000ECE867 /* NSDate+Extras.m */,
+			);
+			name = NSDate;
 			sourceTree = "<group>";
 		};
 		1EE33E951E6F44290012248A /* NSURL */ = {
@@ -1128,6 +1185,7 @@
 			files = (
 				1E00D5491E598B5100AC3E95 /* WWishBoardViewController.m in Sources */,
 				1ED6C7241CE4E2630042D3F6 /* WZPostsViewController.m in Sources */,
+				1EB5F3F91E813BC600352A36 /* MBCircularProgressBarLayer.m in Sources */,
 				1ED942A31DFC682000BEF8AC /* WPhotoViewController.m in Sources */,
 				1E00D54C1E599AF900AC3E95 /* WGiftViewController.m in Sources */,
 				1EAC13B51E618BE8002A6FDE /* LoginViewController.m in Sources */,
@@ -1136,6 +1194,7 @@
 				1E42762B1CD914D00004A0F8 /* WZPostTableViewCell.m in Sources */,
 				1E5A1A441E6C6FFD003226A8 /* WTempVideoRecorderViewController.m in Sources */,
 				1E18878B1CE1BF2C00B7F1D5 /* WZMyWishesTableViewCell.m in Sources */,
+				1EE266791E8538B000ECE867 /* NSDate+Extras.m in Sources */,
 				1E4276321CD914F70004A0F8 /* UIViewController+Extras.m in Sources */,
 				1E8032961CDF040D0010D036 /* UITextField+Extras.m in Sources */,
 				1EEDCCB11DB507F300DBB363 /* UIImage+Filtrr.m in Sources */,
@@ -1149,6 +1208,7 @@
 				1E4276501CD915800004A0F8 /* WZRegistrationViewController.m in Sources */,
 				1E4FD2331CFB318500612466 /* JKPickerView.m in Sources */,
 				1E010B251E509277004AF3B9 /* WWizhViewController.m in Sources */,
+				1EE266751E85331E00ECE867 /* WZComments.m in Sources */,
 				1E4276411CD915350004A0F8 /* OLGhostAlertView+Extras.m in Sources */,
 				1E00D5581E59E43E00AC3E95 /* WProfileViewController.m in Sources */,
 				1EAE52411E4F701C007DC15D /* WTextViewController.m in Sources */,
@@ -1175,9 +1235,11 @@
 				1E8717EE1CE8B0B70062EFE9 /* WZEmptySegue.m in Sources */,
 				1E4276351CD915020004A0F8 /* UIView+Extras.m in Sources */,
 				1EFC87231E4C94630045C801 /* WRecordAudioViewController.m in Sources */,
+				1EE266711E85324300ECE867 /* WZPost.m in Sources */,
 				1E42762F1CD914E20004A0F8 /* WZFriendCollectionViewCell.m in Sources */,
 				1ED143141E41EE9C008045CA /* WPhotoEditViewController.m in Sources */,
 				1E9728BB1D43A611003EA877 /* WPostView.m in Sources */,
+				1EB5F3FA1E813BC600352A36 /* MBCircularProgressBarView.m in Sources */,
 				1E42764D1CD915720004A0F8 /* WZHomeViewController.m in Sources */,
 				1E060B061CC4E311009E1BBC /* AppDelegate.m in Sources */,
 				1E060B031CC4E311009E1BBC /* main.m in Sources */,

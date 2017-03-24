@@ -10,10 +10,10 @@
 
 @interface RUWebServiceParser : NSObject
 
-+ (void)postWebServiceWithURL:(NSString*)url parameter:(NSDictionary*)param success:(void(^)(NSDictionary* responseDict))success
++ (void)postWebServiceWithURL:(NSString*)url parameter:(NSDictionary*)param  header:(NSString*)header success:(void(^)(NSDictionary* responseDict))success
                       failure:(void(^)(NSError *error))failure;
 
-+ (void)getWebServiceWithURL:(NSString*)url parameter:(NSDictionary*)param success:(void(^)(NSDictionary* responseDict))success
++ (void)getWebServiceWithURL:(NSString*)url header:(NSString*)header parameter:(NSDictionary*)param success:(void(^)(NSDictionary* responseDict))success
                      failure:(void(^)(NSError *error))failure;
 
 

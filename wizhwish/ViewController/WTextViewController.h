@@ -10,4 +10,7 @@
 
 @interface WTextViewController : UIViewController<UITextViewDelegate>
 
+@property(nonatomic ,retain) IBOutlet UITextView *textView;
+
+
 @end
