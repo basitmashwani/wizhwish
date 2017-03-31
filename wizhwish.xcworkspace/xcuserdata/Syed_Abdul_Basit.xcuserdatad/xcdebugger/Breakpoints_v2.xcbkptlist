@@ -19,13 +19,109 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "wizhwish/Utilities/ServicesParser/WZServiceParser.m"
-            timestampString = "512070507.416258"
+            filePath = "wizhwish/ViewController/WZMyProfileViewController.m"
+            timestampString = "512385475.824743"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
-            landmarkName = "-processCommentOnPost:commentText:success:failure:"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "-followButtonPressed:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[WZMyProfileViewController followButtonPressed:]"
+                  moduleName = "wizhwish"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZMyProfileViewController.m"
+                  timestampString = "512646873.998606"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "30"
+                  endingLineNumber = "30"
+                  offsetFromSymbolStart = "358">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__49-[WZMyProfileViewController followButtonPressed:]_block_invoke"
+                  moduleName = "wizhwish"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZMyProfileViewController.m"
+                  timestampString = "512646874.000826"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wizhwish/ViewController/WCommentsViewController.m"
+            timestampString = "512417949.989796"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "233"
+            endingLineNumber = "233"
+            landmarkName = "-commentPressed:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[WCommentsViewController commentPressed:]"
+                  moduleName = "wizhwish"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WCommentsViewController.m"
+                  timestampString = "512646874.005273"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "233"
+                  endingLineNumber = "233"
+                  offsetFromSymbolStart = "474">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__42-[WCommentsViewController commentPressed:]_block_invoke"
+                  moduleName = "wizhwish"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WCommentsViewController.m"
+                  timestampString = "512646874.007447"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "233"
+                  endingLineNumber = "233"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "wizhwish/ViewController/WCommentsViewController.m"
+            timestampString = "512417983.805159"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "-getCommentListWithlimit:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -35,13 +131,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "wizhwish/ViewController/WZHomeViewController.m"
-            timestampString = "512070742.535767"
+            filePath = "wizhwish/Utilities/Categories/UIImage+Extra.m"
+            timestampString = "512646230.160151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "340"
-            endingLineNumber = "340"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "252"
+            endingLineNumber = "252"
+            landmarkName = "+getFilterImageWithIndex:withImage:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -51,13 +147,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "wizhwish/Utilities/RUUtility.m"
-            timestampString = "512071349.954596"
+            filePath = "wizhwish/Utilities/Categories/UIImage+Extra.m"
+            timestampString = "512646852.540462"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
-            landmarkName = "+getPostFromDictionary:"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
+            landmarkName = "+getFilterImageWithIndex:withImage:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

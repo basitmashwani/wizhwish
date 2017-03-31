@@ -10,6 +10,10 @@
 
 @interface WZServiceParser : NSObject
 
+/**
+ Get WZServiceParser shared Instance
+ **/
+
 + (WZServiceParser*)sharedParser;
 
 - (void)processRegisterUserWithEmail:(NSString*)email userName:(NSString*)username password:(NSString*)password success:(void(^)(NSString* response))success failure:(void(^)(NSError *error))failure;
@@ -32,6 +36,11 @@
 - (void)processCommentOnPost:(NSString*)postId commentText:(NSString*)text success:(void(^)(NSDictionary* dict))success failure:(void(^)(NSError *error))failure;
 
 - (void)processGetFollowerWithSuccess:(void(^)(NSDictionary* dict))success failure:(void(^)(NSError *error))failure;
+
++ (WZPost *)getDataFromDictionary:(NSDictionary *)dict haveComments:(BOOL)isComments;
+
+- (void)processGetCommentsForPost:(NSString*)postId withLimit:(NSInteger)limit success:(void(^)(NSDictionary* dict))success failure:(void(^)(NSError *error))failure;
+
 
 
 

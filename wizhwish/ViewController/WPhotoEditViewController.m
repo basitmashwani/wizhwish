@@ -44,33 +44,53 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    
+    
+    
+
+    
     CGRect rect = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height - 80);
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:rect];
-    imageView.image = self.selectedImage;
+    
+    //[_selectedImage fixOrientation];
+    //UIImage *filterImage = [UIImage getFilterImageWithIndex:_selectedFilterIndex withImage:_selectedImage];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:_selectedImage];
+    imageView.frame = rect;
     [self.view addSubview:imageView];
     
+    
+    
+    
+    
+    
     if(self.isDrawing) {
-    _drawingView = [[ACEDrawingView alloc] initWithFrame:rect];
-  
-    [self.view addSubview:self.drawingView];
-    
-    
-    self.drawingView.delegate = self;
-    self.drawingView.lineWidth  = 3.0;
-    self.drawingView.lineColor = [UIColor whiteColor];
-    
-    if (!self.colorPicker) {
+        _drawingView = [[ACEDrawingView alloc] initWithFrame:rect];
         
-        CGRect colorPickerRect = CGRectMake(self.drawingView.frame.origin.x, self.drawingView.frame.size.height, self.drawingView.frame.size.width, 80);
-        self.colorPicker = [HRColorMapView colorMapWithFrame:colorPickerRect saturationUpperLimit:0.95];
-        self.colorPicker.tileSize = [NSNumber numberWithInt:16];
-        [self.view addSubview:self.colorPicker];
-    }
-    [self.drawingView loadImage:[[UIImage alloc] init]];
-    self.colorPicker.hidden = NO;
-    [self.colorPicker setFrameHeight:80];
-    self.colorPicker.color = [UIColor whiteColor];
-    [self.colorPicker addTarget:self action:@selector(colorChanged:) forControlEvents:UIControlEventValueChanged];
+        [self.view addSubview:self.drawingView];
+        
+        
+        self.drawingView.delegate = self;
+        self.drawingView.lineWidth  = 3.0;
+        self.drawingView.lineColor = [UIColor whiteColor];
+        
+        if (!self.colorPicker) {
+            
+            CGRect colorPickerRect = CGRectMake(self.drawingView.frame.origin.x, self.drawingView.frame.size.height, self.drawingView.frame.size.width, 80);
+            self.colorPicker = [HRColorMapView colorMapWithFrame:colorPickerRect saturationUpperLimit:0.95];
+            self.colorPicker.tileSize = [NSNumber numberWithInt:16];
+            [self.view addSubview:self.colorPicker];
+        }
+        [self.drawingView loadImage:[[UIImage alloc] init]];
+        self.colorPicker.hidden = NO;
+        [self.colorPicker setFrameHeight:80];
+        self.colorPicker.color = [UIColor whiteColor];
+        [self.colorPicker addTarget:self action:@selector(colorChanged:) forControlEvents:UIControlEventValueChanged];
         
     }
     else {
@@ -135,16 +155,16 @@
     
     [RUUtility setBackButtonForController:self withSelector:@selector(backBtnPressed)];
     
-   self.navigationItem.rightBarButtonItem = [RUUtility getBarButtonWithTitle:@"Save" forViewController:self selector:@selector(savePressed)];
+    self.navigationItem.rightBarButtonItem = [RUUtility getBarButtonWithTitle:@"Save" forViewController:self selector:@selector(savePressed)];
     
-   
+    
+    
+    
     
     
 
-    
     
 }
-
 
 - (void)savePressed {
     

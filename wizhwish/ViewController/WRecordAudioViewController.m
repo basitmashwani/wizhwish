@@ -109,7 +109,7 @@
     
     WPhotoEditViewController *controller = [[WPhotoEditViewController alloc] init];
     controller.delegate = self;
-    controller.selectedImage = self.mainImageView.image;
+   // controller.selectedImage = self.mainImageView.image;
     controller.selectedIndex = 0;
     controller.isDrawing = YES;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
@@ -124,7 +124,7 @@
 
     WPhotoEditViewController *controller = [[WPhotoEditViewController alloc] init];
     controller.delegate = self;
-    controller.selectedImage = self.mainImageView.image;
+   // controller.selectedImage = self.mainImageView.image;
     controller.selectedIndex = 0;
     controller.isDrawing = NO;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];

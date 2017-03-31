@@ -97,7 +97,7 @@
 
 - (void)signInPressed:(id)sender {
     
-    if ([NSString validateStringForEmail:self.textFieldUsername.text]) {
+    if (![NSString validateStringForEmail:self.textFieldUsername.text]) {
         
         [OLGhostAlertView showAlertAtBottomWithTitle:@"Error" message:@"Please enter valid email address"];
     }

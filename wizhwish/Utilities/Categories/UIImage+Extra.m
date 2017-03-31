@@ -8,7 +8,17 @@
 
 #import "UIImage+Extra.h"
 
+
 @implementation UIImage (Extra)
+
+- (instancetype)init {
+    
+    self = [super init];
+    
+   
+
+    return self;
+}
 
 - (UIImage *)imageWithOverlayColor:(UIColor *)color
 {
@@ -153,5 +163,139 @@
     UIGraphicsEndImageContext();
     return newImage;
 }
+
+- (UIImage *)fixOrientation {
+    
+    // No-op if the orientation is already correct
+    
+    if (self.imageOrientation == UIImageOrientationUp) return self;
+    
+    // We need to calculate the proper transformation to make the image upright.
+    // We do it in 2 steps: Rotate if Left/Right/Down, and then flip if Mirrored.
+    CGAffineTransform transform = CGAffineTransformIdentity;
+    switch (self.imageOrientation) {
+        case UIImageOrientationDown:
+        case UIImageOrientationDownMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.width, self.size.height);
+            transform = CGAffineTransformRotate(transform, M_PI);
+            break;
+            
+        case UIImageOrientationLeft:
+        case UIImageOrientationLeftMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.width, 0);
+            transform = CGAffineTransformRotate(transform, M_PI_2);
+            break;
+            
+        case UIImageOrientationRight:
+        case UIImageOrientationRightMirrored:
+            transform = CGAffineTransformTranslate(transform, 0, self.size.height);
+            transform = CGAffineTransformRotate(transform, -M_PI_2);
+            break;
+        case UIImageOrientationUp:
+        case UIImageOrientationUpMirrored:
+            break;
+    }
+    
+    switch (self.imageOrientation) {
+        case UIImageOrientationUpMirrored:
+        case UIImageOrientationDownMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.width, 0);
+            transform = CGAffineTransformScale(transform, -1, 1);
+            break;
+            
+        case UIImageOrientationLeftMirrored:
+        case UIImageOrientationRightMirrored:
+            transform = CGAffineTransformTranslate(transform, self.size.height, 0);
+            transform = CGAffineTransformScale(transform, -1, 1);
+            break;
+        case UIImageOrientationUp:
+        case UIImageOrientationDown:
+        case UIImageOrientationLeft:
+        case UIImageOrientationRight:
+            break;
+    }
+    
+    // Now we draw the underlying CGImage into a new context, applying the transform
+    // calculated above.
+    CGContextRef ctx = CGBitmapContextCreate(NULL, self.size.width, self.size.height,
+                                             CGImageGetBitsPerComponent(self.CGImage), 0,
+                                             CGImageGetColorSpace(self.CGImage),
+                                             CGImageGetBitmapInfo(self.CGImage));
+    CGContextConcatCTM(ctx, transform);
+    switch (self.imageOrientation) {
+        case UIImageOrientationLeft:
+        case UIImageOrientationLeftMirrored:
+        case UIImageOrientationRight:
+        case UIImageOrientationRightMirrored:
+            // Grr...
+            CGContextDrawImage(ctx, CGRectMake(0,0,self.size.height,self.size.width), self.CGImage);
+            break;
+            
+        default:
+            CGContextDrawImage(ctx, CGRectMake(0,0,self.size.width,self.size.height), self.CGImage);
+            break;
+    }
+    
+    CGContextDrawImage(ctx, CGRectMake(0,0,self.size.height,self.size.width), self.CGImage);
+
+    // And now we just create a new UIImage from the drawing context
+    CGImageRef cgimg = CGBitmapContextCreateImage(ctx);
+    UIImage *img = [UIImage imageWithCGImage:cgimg];
+    CGContextRelease(ctx);
+    CGImageRelease(cgimg);
+    return img;
+}
+    
+    
+    + (UIImage*)getFilterImageWithIndex:(NSInteger)filterIndex withImage:(UIImage*)image {
+        
+       NSArray  *filteredArray = [[NSArray alloc] initWithObjects:@"No Filter" ,@"CIPhotoEffectChrome", @"CIPhotoEffectFade", @"CIPhotoEffectInstant", @"CIPhotoEffectMono", @"CIPhotoEffectNoir", @"CIPhotoEffectProcess", @"CIPhotoEffectTonal", @"CIPhotoEffectTransfer" , nil];
+        
+        if (filterIndex == 0) {
+            
+            return image;
+        }
+        
+        
+        
+        // Create and apply filter
+        // 1 - create source image
+        
+        NSData *data = UIImageJPEGRepresentation(image, 0.8);
+        CIImage *ciImage = [CIImage imageWithData:data];
+        
+        // 2 - create filter using name
+        
+        CIFilter *filter = [CIFilter filterWithName:filteredArray[filterIndex]];
+        [filter setDefaults];
+        
+        // 3 - set source image
+        [filter setValue:ciImage forKey:kCIInputImageKey];
+        
+        // 4 - create core image context
+        // CIContext *context = [[CIContext alloc] init];
+        // 5 - output filtered image as cgImage with dimension.
+        //CIImage *filterImage = (CIImage*)[context createCGImage:filter.outputImage fromRect:filter.outputImage.extent];
+        
+        CIImage *filteredImageData = [filter valueForKey:@"outputImage"];
+        
+        CIContext *context = [[CIContext alloc] init];
+        CGImageRef cgiimg = [context createCGImage:filteredImageData fromRect:filteredImageData.extent];
+        UIImageOrientation originalOrientation = image.imageOrientation;
+        CGFloat originalScale = image.scale;
+        
+    
+        return [UIImage imageWithCGImage: cgiimg scale:originalScale orientation:originalOrientation];
+
+        
+        // 6 - convert filtered CGImage to UIImage
+        //let filteredImage = UIImage(cgImage: outputCGImage!)
+        return  [[UIImage alloc] initWithCIImage:filteredImageData];
+        
+        // if No filter selected then apply default image and return.
+        
+        
+    }
+
 
 @end

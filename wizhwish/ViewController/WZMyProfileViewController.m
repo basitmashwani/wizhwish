@@ -27,7 +27,7 @@
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         
         __weak typeof(self) weakSelf = self;
-        [[WZServiceParser sharedParser] processFollowUser:self.stringName success:^(NSDictionary *dict) {
+        [[WZServiceParser sharedParser] processFollowUser:self.userName success:^(NSDictionary *dict) {
             
             [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
             

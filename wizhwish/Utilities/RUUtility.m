@@ -160,39 +160,6 @@
     
 }
 
-+ (WZPost *)getPostFromDictionary:(NSDictionary *)dict {
-    
-    WZPost *post = [[WZPost alloc] init];
-    post.displayName = [dict valueForKey:@"userDisplayName"];
-    post.userProfileURL = [dict valueForKey:@"userProfileImage"];
-    post.postText = [dict valueForKey:@"text"];
-    NSTimeInterval timeInterval = [[dict valueForKey:@"createdDate"] doubleValue];
-    post.createdDate = [NSDate getMinitesDifferenceFromDate:[NSDate dateWithTimeIntervalSince1970:timeInterval] toDate:[NSDate date]];
-    post.postId = [dict valueForKey:@"id"];
-    
-    
-    
-    [NSDate dateWithTimeIntervalSince1970:timeInterval];
-    
-    NSDictionary *commentsDict = [dict valueForKey:@"comments"];
-  
-    
-    if ([commentsDict count] >0) {
-      
-        WZComments *comments = [[WZComments alloc] init];
-        comments.displayName = [[commentsDict valueForKey:@"userDisplayName"] firstObject];
-        comments.profileImageURL = [commentsDict valueForKey:@"userProfileImage"];
-        comments.commentText = [[commentsDict valueForKey:@"text"] firstObject];
-        
-        NSTimeInterval timeInterval = [[dict valueForKey:@"createdDate"] doubleValue];
-        comments.createdDate =  [NSDate getMinitesDifferenceFromDate:[NSDate dateWithTimeIntervalSince1970:timeInterval] toDate:[NSDate date]];
-        post.postComment = comments;
-
-    }
-    
-    
-    return  post;
-}
 
 
 

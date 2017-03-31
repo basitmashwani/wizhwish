@@ -23,6 +23,8 @@
 
 @property(nonatomic ,retain) WZComments *postComment;
 
+@property(nonatomic ,retain) NSString *commentCount;
+
 
 
 

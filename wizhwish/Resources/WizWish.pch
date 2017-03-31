@@ -43,7 +43,7 @@
 #import "WZNewFriendViewController.h"
 #import "JKSearchBar.h"
 #import <NJKScrollFullScreen/NJKScrollFullScreen.h>
-#import <UIViewController+NJKFullScreenSupport.h>
+#import "UIViewController+NJKFullScreenSupport.h"
 #import "WPostView.h"
 #import "WVideoRecordViewController.h"
 #import "WSetting.h"
@@ -69,13 +69,13 @@
 #import "SCustomProgressView.h"
 #import "WZServiceParser.h"
 #import "RUWebServiceParser.h"
-#import <Kickflip.h>
 #import "NSString+Extras.h"
 #import "OLGhostAlertView+Extras.h"
 #import "WZPost.h"
 #import "WZComments.h"
 #import "NSDate+Extras.h"
 #import "RUUtility.h"
+#import "RUReachabilityManager.h"
 
 
 

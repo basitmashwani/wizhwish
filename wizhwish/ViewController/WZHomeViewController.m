@@ -9,6 +9,7 @@
 
 #import "WZHomeViewController.h"
 #import "UIView+Extras.h"
+#import "RUReachability.h"
 
 
 
@@ -20,21 +21,66 @@
 
 @property(nonatomic) NSInteger offSetValue;
 
-@property(nonatomic ,retain) NSMutableArray *postArray;
+@property(nonatomic ,retain) NSArray *postArray;
 
 @property(nonatomic) NSInteger viewHeight;
 
 @property(nonatomic) BOOL canScrollTop;
 
-@property(nonatomic) NSInteger *counter;
+@property(nonatomic) NSInteger counter;
 
 @property(nonatomic) BOOL isHide;
+
+@property(nonatomic) BOOL canFetch;
+
+@property(nonatomic ,retain) AVAudioPlayer *audioPlayer;
 
 @end
 @implementation WZHomeViewController
 
 #pragma mark Private Methods
 
+- (void)getPostWithLimit:(NSInteger)limit {
+    
+    __weak typeof(self) weakSelf = self;
+    [[WZServiceParser sharedParser] processGetWhizPostWithLimit:limit success:^(NSDictionary *dict) {
+        
+        //  [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        
+        NSArray *array = [dict valueForKey:@"data"];
+        if (array.count != 0) {
+            
+            weakSelf.postArray =  [weakSelf.postArray arrayByAddingObjectsFromArray:array];
+        [weakSelf.tableView reloadData];
+        }
+        
+    } failure:^(NSError *error) {
+        
+        // [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        [OLGhostAlertView showAlertAtBottomWithTitle:@"Message" message:@"Unable to load posts"];
+        
+    }];
+}
+- (void)playViewAnimateSound:(BOOL)up {
+    
+    NSString *soundFileName;
+    if (up) {
+        soundFileName = @"1";
+    }
+    else {
+        soundFileName = @"2";
+    }
+    
+    // Build URL to the sound file we are going to play
+    NSString *bundlePath = [[NSBundle mainBundle] pathForResource:soundFileName ofType:@"wav"];
+
+    NSURL *soundFile = [[NSURL alloc] initFileURLWithPath:bundlePath];
+
+    
+    // Play it
+   _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundFile error:nil];
+    //[_audioPlayer play];
+}
 - (void)hidePressed {
     
     __weak typeof(self) weakSelf = self;
@@ -43,6 +89,7 @@
    
     if (!self.isHide) {
         
+        [self playViewAnimateSound:YES];
       //  self.topConstant.constant = -150;
        // self.collectionView.hidden = YES;
         
@@ -89,6 +136,7 @@
         if (self.canScrollTop) {
             
             
+            [self playViewAnimateSound:NO];
             [self.tableView setScrollEnabled:NO];
             //[self scrollTopPressed:self];
            
@@ -246,7 +294,7 @@
     
     if (self) {
         
-    self.postArray = [[NSMutableArray alloc] init];
+    self.postArray = [[NSArray alloc] init];
     
     }
     return self;
@@ -256,29 +304,23 @@
     
     [super viewWillAppear:animated];
   //  [(ScrollingNavigationController *)self.navigationController followScrollView:self.tableView delay:50.0f];
-
+   
+    if (_counter == 0) {
+        _counter = 5;
+    }
+    [self getPostWithLimit:_counter];
 }
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     
+    
+    [[RUReachabilityManager sharedManager] addControllerToShowNetworkStatus:self];
+
     [self intialSetup];
     
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    __weak typeof(self) weakSelf = self;
-    [[WZServiceParser sharedParser] processGetWhizPostWithLimit:5 success:^(NSDictionary *dict) {
-        
-        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
-        weakSelf.postArray =  [dict valueForKey:@"data"];
-        [weakSelf.tableView reloadData];
-        
-    } failure:^(NSError *error) {
-        
-        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
-        [OLGhostAlertView showAlertAtBottomWithTitle:@"Message" message:@"Unable to proceed request"];
-
-    }];
-}
+   // [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+   }
 
 - (void)didReceiveMemoryWarning {
     
@@ -300,11 +342,36 @@
     
 }
 
+
+
 #pragma mark UITableView Delegate Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
     return self.postArray.count+1;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row > 0) {
+    if(indexPath.row == self.postArray.count)
+    {
+      //  NSLog(@"last row %ld with post last index %ld",(long)indexPath.row,self.postArray.count-1);
+        self.counter = self.counter+5;
+        [self getPostWithLimit:_counter];
+        
+        
+    }
+    }
+    
+    if (indexPath.row == 0) {
+        [self.buttonTopScroll setHidden:YES];
+        
+    }
+    else if (indexPath.row > 2)  {
+        // [self.buttonTopScroll setHidden:NO];
+        
+    }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -321,7 +388,7 @@
         
         NSUInteger index = indexPath.row-1;
        NSDictionary *postDict = [self.postArray objectAtIndex:index];
-        WZPost *post = [RUUtility getPostFromDictionary:postDict];
+        WZPost *post = [WZServiceParser getDataFromDictionary:postDict haveComments:YES];
         
         if (post.postText.length > 0) {
             cell = [tableView dequeueReusableCellWithIdentifier:K_POST_TABLEVIEW_CELL_TEXT];
@@ -335,6 +402,7 @@
         cell.labelProfileName.text = post.displayName;
         cell.labelPostDate.text = post.createdDate;
         cell.labelPostTitle.text = @"Post";
+        cell.labelOtherComment.text = [NSString stringWithFormat:@"%@ more",post.commentCount];
         
         if (post.postComment != nil) {
             
@@ -354,8 +422,12 @@
       //  cell.imageViewProfile.image ;
         
         
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(commentPressed:)];
+        [tap setNumberOfTapsRequired:1];
+        [cell.labelOtherComment addGestureRecognizer:tap];
         
         cell.buttonComment.tag = [post.postId integerValue];
+        
         [cell.buttonComment addTarget:self action:@selector(commentPressed:) forControlEvents:UIControlEventTouchUpInside];
         
         
@@ -365,18 +437,6 @@
     
     
 
-}
-
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.row == 0) {
-        [self.buttonTopScroll setHidden:YES];
-
-    }
-    else if (indexPath.row > 2)  {
-        [self.buttonTopScroll setHidden:NO];
-
-    }
 }
 
 
@@ -396,7 +456,7 @@
         
         NSInteger index = indexPath.row-1;
        NSDictionary *postDict = [self.postArray objectAtIndex:index];
-        WZPost *post = [RUUtility getPostFromDictionary:postDict];
+        WZPost *post = [WZServiceParser getDataFromDictionary:postDict haveComments:YES];
         
         if (post.postText.length > 0) {
         
@@ -462,9 +522,21 @@
 
 - (void)commentPressed:(id)sender {
     
-    UIButton *button = (UIButton*)sender;
+    NSInteger buttonTag = -1;
+    if ([sender isKindOfClass:[UIButton class]]) {
+        
+        UIButton *button = (UIButton*)sender;
+        buttonTag = button.tag;
+
+    }
+    else {
+       
+        UILabel *label = (UILabel*)sender;
+        buttonTag = label.tag;
+    }
+    
     WCommentsViewController *commentController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_COMMENTS_VIEW_CONTROLLER];
-    commentController.postId = [NSString stringWithFormat:@"%ld",(long)button.tag];
+    commentController.postId = [NSString stringWithFormat:@"%ld",(long)buttonTag];
     [self.navigationController pushViewController:commentController animated:YES];
 }
 - (void)scrollTopPressed:(id)sender {

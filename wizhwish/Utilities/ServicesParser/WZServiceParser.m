@@ -162,6 +162,69 @@ static WZServiceParser *_sharedInstance = nil;
     }];
 }
 
+- (void)processGetCommentsForPost:(NSString*)postId withLimit:(NSInteger)limit success:(void(^)(NSDictionary* dict))success failure:(void(^)(NSError *error))failure {
+    
+    NSInteger prevLimit = limit - 5;
+    NSString *url = [NSString stringWithFormat:@"%@%@%d%@%d%@%@",k_BASE_SOCIAL_SERVER_URL,@"/networks/comments?j_skip=",prevLimit,@"&j_limit=",limit,@"&j_postId=",postId];
+    
+    NSString *header = [[NSUserDefaults standardUserDefaults] valueForKey:k_ACCESS_TOKEN];
+    header = [NSString stringWithFormat:@"%@%@",@"Bearer ",header];
+    
+    [RUWebServiceParser getWebServiceWithURL:url header:header parameter:nil success:^
+     
+     (NSDictionary *responseDict) {
+         
+         success(responseDict);
+         
+     } failure:^(NSError *error) {
+         
+         failure(error);
+         
+     }];
+
+}
+
+
+
++ (WZPost *)getDataFromDictionary:(NSDictionary *)dict haveComments:(BOOL)isComments {
+    
+    WZPost *post = [[WZPost alloc] init];
+    post.displayName = [dict valueForKey:@"userDisplayName"];
+    post.userProfileURL = [dict valueForKey:@"userProfileImage"];
+    post.postText = [dict valueForKey:@"text"];
+    NSTimeInterval timeInterval = [[dict valueForKey:@"createdDate"] doubleValue];
+    post.commentCount = [dict valueForKey:@"totalComments"];
+    NSDate *fromDate = [NSDate getDateFromEpochValue:timeInterval];
+    NSDate *toDate = [NSDate getDateFromEpochValue:[[NSDate date] timeIntervalSince1970]];
+    post.createdDate = [NSDate getMinutesDifferenceFromDate:fromDate toDate:toDate];
+    post.postId = [dict valueForKey:@"id"];
+    
+    
+    
+    //[NSDate dateWithTimeIntervalSince1970:timeInterval];
+    
+    if (isComments) {
+    
+    NSDictionary *commentsDict = [dict valueForKey:@"comments"];
+    
+    
+    if ([commentsDict count] >0) {
+        
+        WZComments *comments = [[WZComments alloc] init];
+        comments.displayName = [[commentsDict valueForKey:@"userDisplayName"] firstObject];
+        comments.profileImageURL = [commentsDict valueForKey:@"userProfileImage"];
+        comments.commentText = [[commentsDict valueForKey:@"text"] firstObject];
+        
+        NSTimeInterval timeInterval = [[dict valueForKey:@"createdDate"] doubleValue];
+        comments.createdDate =  [NSDate getMinutesDifferenceFromDate:[NSDate dateWithTimeIntervalSince1970:timeInterval] toDate:[NSDate date]];
+        post.postComment = comments;
+        
+    }
+    }
+    
+    
+    return  post;
+}
 
 
 

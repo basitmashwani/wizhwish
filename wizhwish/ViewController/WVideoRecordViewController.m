@@ -7,8 +7,6 @@
 //
 
 #import "WVideoRecordViewController.h"
-#import <VKVideoPlayer.h>
-#import <VKVideoPlayerViewController.h>
 #import "UIImage+FiltrrCompositions.h"
 #import "UIImage+Scale.h"
 #import <MobileCoreServices/MobileCoreServices.h>
@@ -19,7 +17,7 @@
 
 @import AVKit;
 
-@interface WVideoRecordViewController ()<PBJVisionDelegate,VKVideoPlayerDelegate,UICollectionViewDelegate,UICollectionViewDataSource,ACEDrawingViewDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,SCPlayerDelegate>
+@interface WVideoRecordViewController ()<PBJVisionDelegate,UICollectionViewDelegate,UICollectionViewDataSource,ACEDrawingViewDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,SCPlayerDelegate>
 
 @property(nonatomic ,retain) UILongPressGestureRecognizer *longPressGestureRecognizer;
 
@@ -34,8 +32,6 @@
 @property(nonatomic) BOOL secondVideo;
 
 @property(nonatomic ,retain) NSString *firstVideoPath;
-
-@property(nonatomic ,retain) VKVideoPlayerViewController *vkMediaPlayer ;
 
 @property(nonatomic ,retain) AVPlayerViewController *videoPlayer;
 
@@ -363,8 +359,8 @@
 - (IBAction)addSecondVideoPressed:(id)sender {
     
     self.secondVideo = YES;
-    [self.vkMediaPlayer.view removeFromSuperview];
-    [self.vkMediaPlayer removeFromParentViewController];
+  //  [self.vkMediaPlayer.view removeFromSuperview];
+   // [self.vkMediaPlayer removeFromParentViewController];
     _previewLayer.frame = self.cameraView.bounds;
     _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
     [_previewLayer addSublayer:self.timerView.layer];
@@ -704,32 +700,6 @@
     
     [textField resignFirstResponder];
     return YES;
-}
-#pragma mark VKPlayer Delegate Methods
-
-- (void)videoPlayer:(VKVideoPlayer *)videoPlayer didStartVideo:(id<VKVideoPlayerTrackProtocol>)track {
-    if (self.secondVideo) {
-        
-    
-    [self.videoPlayer.player seekToTime:kCMTimeZero];
-    [self.videoPlayer.player play];
-        
-         }
-    
-}
-- (void)videoPlayer:(VKVideoPlayer *)videoPlayer willChangeStateTo:(VKVideoPlayerState)toState {
-    
-    if (toState == VKVideoPlayerStateContentPaused) {
-        if (self.secondVideo) {
-        
-            [self.videoPlayer.player pause];
-        }
-    }
-}
-
-- (void)videoPlayer:(VKVideoPlayer *)videoPlayer didPlayToEnd:(id<VKVideoPlayerTrackProtocol>)track {
- 
-    
 }
 
 #pragma mark Private Methods

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		15B570EBE29B305219A27BCB /* libPods-wizhwishTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBFA7184F66AB3133BDB9F5 /* libPods-wizhwishTests.a */; };
 		1E00D5491E598B5100AC3E95 /* WWishBoardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E00D5481E598B5100AC3E95 /* WWishBoardViewController.m */; };
 		1E00D54C1E599AF900AC3E95 /* WGiftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E00D54B1E599AF900AC3E95 /* WGiftViewController.m */; };
 		1E00D54F1E59CEA300AC3E95 /* WWishListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E00D54E1E59CEA300AC3E95 /* WWishListViewController.m */; };
@@ -26,6 +27,13 @@
 		1E1CCB1C1D855EB600423904 /* Media.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CCB1A1D855EB600423904 /* Media.storyboard */; };
 		1E1CCB1E1D85602E00423904 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CCB1D1D85602E00423904 /* Media.xcassets */; };
 		1E1CCB221D85629900423904 /* WVideoRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1CCB211D85629900423904 /* WVideoRecordViewController.m */; };
+		1E22EBEE1E87A31400B983AC /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1E22EBED1E87A31400B983AC /* 2.wav */; };
+		1E22EBF01E87A33A00B983AC /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1E22EBEF1E87A33A00B983AC /* 1.wav */; };
+		1E22EBFB1E87CF7100B983AC /* RUNavigationActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E22EBF31E87CF7100B983AC /* RUNavigationActivityView.m */; };
+		1E22EBFC1E87CF7100B983AC /* RUNavigationActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E22EBF41E87CF7100B983AC /* RUNavigationActivityView.xib */; };
+		1E22EBFD1E87CF7100B983AC /* RUOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E22EBF61E87CF7100B983AC /* RUOverlayView.m */; };
+		1E22EBFE1E87CF7100B983AC /* RUReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E22EBF81E87CF7100B983AC /* RUReachability.m */; };
+		1E22EBFF1E87CF7100B983AC /* RUReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E22EBFA1E87CF7100B983AC /* RUReachabilityManager.m */; };
 		1E271DAF1CE2097E00DB572F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E271DAE1CE2097E00DB572F /* AVFoundation.framework */; };
 		1E271DB31CE2149500DB572F /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E271DB21CE2149500DB572F /* Photos.framework */; };
 		1E2F0C131DB24E50002CF9AA /* WSetting.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2F0C121DB24E50002CF9AA /* WSetting.m */; };
@@ -88,9 +96,8 @@
 		1EEDCCB31DB507F300DBB363 /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDCCB01DB507F300DBB363 /* UIImage+Scale.m */; };
 		1EFC87231E4C94630045C801 /* WRecordAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC87221E4C94630045C801 /* WRecordAudioViewController.m */; };
 		1EFD83E11DB908AB00E119F3 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EFD83E01DB908AB00E119F3 /* MobileCoreServices.framework */; };
-		4605804C1CB8D499EF70D28D /* libPods-wizhwishTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FABF292CDED638013DF25DF6 /* libPods-wizhwishTests.a */; };
-		7080276E80C0C097FF8CACF7 /* libPods-wizhwishUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC095F7D0EE119FB8A0B7F8C /* libPods-wizhwishUITests.a */; };
-		7286E6EE93A8F26B6561CD26 /* libPods-wizhwish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEE259F91320EACE61E495C4 /* libPods-wizhwish.a */; };
+		67BB58A25F4D4377B11C90F6 /* libPods-wizhwishUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20DACEC584D332FFFE1D3E79 /* libPods-wizhwishUITests.a */; };
+		D5DFD667449BD12B93B9BE3D /* libPods-wizhwish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99605CE7299F6CC9A15540E4 /* libPods-wizhwish.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +155,17 @@
 		1E1CCB1D1D85602E00423904 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Resources/Media.xcassets; sourceTree = "<group>"; };
 		1E1CCB201D85629900423904 /* WVideoRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WVideoRecordViewController.h; path = ViewController/WVideoRecordViewController.h; sourceTree = "<group>"; };
 		1E1CCB211D85629900423904 /* WVideoRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WVideoRecordViewController.m; path = ViewController/WVideoRecordViewController.m; sourceTree = "<group>"; };
+		1E22EBED1E87A31400B983AC /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
+		1E22EBEF1E87A33A00B983AC /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
+		1E22EBF21E87CF7100B983AC /* RUNavigationActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RUNavigationActivityView.h; sourceTree = "<group>"; };
+		1E22EBF31E87CF7100B983AC /* RUNavigationActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RUNavigationActivityView.m; sourceTree = "<group>"; };
+		1E22EBF41E87CF7100B983AC /* RUNavigationActivityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RUNavigationActivityView.xib; sourceTree = "<group>"; };
+		1E22EBF51E87CF7100B983AC /* RUOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RUOverlayView.h; sourceTree = "<group>"; };
+		1E22EBF61E87CF7100B983AC /* RUOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RUOverlayView.m; sourceTree = "<group>"; };
+		1E22EBF71E87CF7100B983AC /* RUReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RUReachability.h; sourceTree = "<group>"; };
+		1E22EBF81E87CF7100B983AC /* RUReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RUReachability.m; sourceTree = "<group>"; };
+		1E22EBF91E87CF7100B983AC /* RUReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RUReachabilityManager.h; sourceTree = "<group>"; };
+		1E22EBFA1E87CF7100B983AC /* RUReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RUReachabilityManager.m; sourceTree = "<group>"; };
 		1E271DAE1CE2097E00DB572F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		1E271DB01CE2133900DB572F /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		1E271DB21CE2149500DB572F /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
@@ -260,15 +278,15 @@
 		1EFC87211E4C94630045C801 /* WRecordAudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WRecordAudioViewController.h; path = ViewController/WRecordAudioViewController.h; sourceTree = "<group>"; };
 		1EFC87221E4C94630045C801 /* WRecordAudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WRecordAudioViewController.m; path = ViewController/WRecordAudioViewController.m; sourceTree = "<group>"; };
 		1EFD83E01DB908AB00E119F3 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		20DACEC584D332FFFE1D3E79 /* libPods-wizhwishUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wizhwishUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3BBFA7184F66AB3133BDB9F5 /* libPods-wizhwishTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wizhwishTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		554DF7009B71954A51CB9DDB /* Pods-wizhwish.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwish.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwish/Pods-wizhwish.debug.xcconfig"; sourceTree = "<group>"; };
 		563F3FCFC300ECDE76957AE1 /* Pods-wizhwishUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwishUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwishUITests/Pods-wizhwishUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		667A28FAD5B6F09A608861CC /* Pods-wizhwishUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwishUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwishUITests/Pods-wizhwishUITests.release.xcconfig"; sourceTree = "<group>"; };
 		66DC7C9BE2CC4D5C8692AB89 /* Pods-wizhwish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwish.release.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwish/Pods-wizhwish.release.xcconfig"; sourceTree = "<group>"; };
+		99605CE7299F6CC9A15540E4 /* libPods-wizhwish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wizhwish.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9707B569995A241F8132BD0 /* Pods-wizhwishTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwishTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwishTests/Pods-wizhwishTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AC095F7D0EE119FB8A0B7F8C /* libPods-wizhwishUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wizhwishUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6D9722E13F80BB42ACA090 /* Pods-wizhwishTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwishTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwishTests/Pods-wizhwishTests.release.xcconfig"; sourceTree = "<group>"; };
-		CEE259F91320EACE61E495C4 /* libPods-wizhwish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wizhwish.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FABF292CDED638013DF25DF6 /* libPods-wizhwishTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wizhwishTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,7 +297,7 @@
 				1EFD83E11DB908AB00E119F3 /* MobileCoreServices.framework in Frameworks */,
 				1E271DB31CE2149500DB572F /* Photos.framework in Frameworks */,
 				1E271DAF1CE2097E00DB572F /* AVFoundation.framework in Frameworks */,
-				7286E6EE93A8F26B6561CD26 /* libPods-wizhwish.a in Frameworks */,
+				D5DFD667449BD12B93B9BE3D /* libPods-wizhwish.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +305,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4605804C1CB8D499EF70D28D /* libPods-wizhwishTests.a in Frameworks */,
+				15B570EBE29B305219A27BCB /* libPods-wizhwishTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,7 +313,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7080276E80C0C097FF8CACF7 /* libPods-wizhwishUITests.a in Frameworks */,
+				67BB58A25F4D4377B11C90F6 /* libPods-wizhwishUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,7 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				1EE2666E1E85321600ECE867 /* Models */,
-				1EC05A011E60A0AF007026C3 /* Video */,
+				1EC05A011E60A0AF007026C3 /* Media Files */,
 				1E4FD21C1CFB2E9600612466 /* Custom Search View */,
 				1E060B391CC4F134009E1BBC /* Constants.h */,
 				1E060B041CC4E311009E1BBC /* AppDelegate.h */,
@@ -434,6 +452,7 @@
 		1E14322D1CC781CC004682B6 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				1E22EBF11E87CF7100B983AC /* RUReachability */,
 				1E4C578C1E791E9E00687BF7 /* ServiceParser */,
 				1E4C57881E791AA800687BF7 /* WebCalls */,
 				1EEDCCAA1DB507E600DBB363 /* Filter */,
@@ -560,6 +579,22 @@
 				1E5A1A431E6C6FFD003226A8 /* WTempVideoRecorderViewController.m */,
 			);
 			name = VideoRecordingController;
+			sourceTree = "<group>";
+		};
+		1E22EBF11E87CF7100B983AC /* RUReachability */ = {
+			isa = PBXGroup;
+			children = (
+				1E22EBF21E87CF7100B983AC /* RUNavigationActivityView.h */,
+				1E22EBF31E87CF7100B983AC /* RUNavigationActivityView.m */,
+				1E22EBF41E87CF7100B983AC /* RUNavigationActivityView.xib */,
+				1E22EBF51E87CF7100B983AC /* RUOverlayView.h */,
+				1E22EBF61E87CF7100B983AC /* RUOverlayView.m */,
+				1E22EBF71E87CF7100B983AC /* RUReachability.h */,
+				1E22EBF81E87CF7100B983AC /* RUReachability.m */,
+				1E22EBF91E87CF7100B983AC /* RUReachabilityManager.h */,
+				1E22EBFA1E87CF7100B983AC /* RUReachabilityManager.m */,
+			);
+			path = RUReachability;
 			sourceTree = "<group>";
 		};
 		1E2F0C101DB24E1D002CF9AA /* Settings */ = {
@@ -759,12 +794,14 @@
 			path = MBCircularProgressView;
 			sourceTree = "<group>";
 		};
-		1EC05A011E60A0AF007026C3 /* Video */ = {
+		1EC05A011E60A0AF007026C3 /* Media Files */ = {
 			isa = PBXGroup;
 			children = (
+				1E22EBEF1E87A33A00B983AC /* 1.wav */,
+				1E22EBED1E87A31400B983AC /* 2.wav */,
 				1EC05A021E60A0BF007026C3 /* Background.mp4 */,
 			);
-			name = Video;
+			name = "Media Files";
 			sourceTree = "<group>";
 		};
 		1ED6C7201CE315100042D3F6 /* MyWishesViewController */ = {
@@ -808,20 +845,20 @@
 		1EE2666E1E85321600ECE867 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1EE266721E8532D800ECE867 /* New Group */,
+				1EE266721E8532D800ECE867 /* Comment */,
 				1EE2666F1E85324300ECE867 /* WZPost.h */,
 				1EE266701E85324300ECE867 /* WZPost.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
 		};
-		1EE266721E8532D800ECE867 /* New Group */ = {
+		1EE266721E8532D800ECE867 /* Comment */ = {
 			isa = PBXGroup;
 			children = (
 				1EE266731E85331E00ECE867 /* WZComments.h */,
 				1EE266741E85331E00ECE867 /* WZComments.m */,
 			);
-			name = "New Group";
+			name = Comment;
 			sourceTree = "<group>";
 		};
 		1EE266761E85385E00ECE867 /* NSDate */ = {
@@ -884,9 +921,9 @@
 				1E271DB21CE2149500DB572F /* Photos.framework */,
 				1E271DB01CE2133900DB572F /* AssetsLibrary.framework */,
 				1E271DAE1CE2097E00DB572F /* AVFoundation.framework */,
-				CEE259F91320EACE61E495C4 /* libPods-wizhwish.a */,
-				FABF292CDED638013DF25DF6 /* libPods-wizhwishTests.a */,
-				AC095F7D0EE119FB8A0B7F8C /* libPods-wizhwishUITests.a */,
+				99605CE7299F6CC9A15540E4 /* libPods-wizhwish.a */,
+				3BBFA7184F66AB3133BDB9F5 /* libPods-wizhwishTests.a */,
+				20DACEC584D332FFFE1D3E79 /* libPods-wizhwishUITests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -968,7 +1005,7 @@
 				TargetAttributes = {
 					1E060AFD1CC4E311009E1BBC = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = RZ28SZX84Y;
+						DevelopmentTeam = 877ZNSB63X;
 					};
 					1E060B161CC4E311009E1BBC = {
 						CreatedOnToolsVersion = 7.2;
@@ -1007,8 +1044,10 @@
 			files = (
 				1E7208C51CD920780017188F /* Profile.storyboard in Resources */,
 				1E8717E71CE8A19F0062EFE9 /* Chat.xcassets in Resources */,
+				1E22EBEE1E87A31400B983AC /* 2.wav in Resources */,
 				1E1CCB1E1D85602E00423904 /* Media.xcassets in Resources */,
 				1E9728BC1D43A611003EA877 /* WPostView.xib in Resources */,
+				1E22EBFC1E87CF7100B983AC /* RUNavigationActivityView.xib in Resources */,
 				1E4276561CD915A20004A0F8 /* home.storyboard in Resources */,
 				1E1CCB1C1D855EB600423904 /* Media.storyboard in Resources */,
 				1E010B211E508A07004AF3B9 /* whiz.storyboard in Resources */,
@@ -1016,6 +1055,7 @@
 				1E060B111CC4E311009E1BBC /* LaunchScreen.storyboard in Resources */,
 				1E4FD21A1CFB183600612466 /* PHAGSPA.TTF in Resources */,
 				1E4276581CD915B90004A0F8 /* Home.xcassets in Resources */,
+				1E22EBF01E87A33A00B983AC /* 1.wav in Resources */,
 				1E4FD21B1CFB183B00612466 /* PHAGSPAB.TTF in Resources */,
 				1E42765B1CD915C10004A0F8 /* Login.xcassets in Resources */,
 				1EC05A031E60A508007026C3 /* Background.mp4 in Resources */,
@@ -1183,6 +1223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1E22EBFE1E87CF7100B983AC /* RUReachability.m in Sources */,
 				1E00D5491E598B5100AC3E95 /* WWishBoardViewController.m in Sources */,
 				1ED6C7241CE4E2630042D3F6 /* WZPostsViewController.m in Sources */,
 				1EB5F3F91E813BC600352A36 /* MBCircularProgressBarLayer.m in Sources */,
@@ -1219,6 +1260,7 @@
 				1E4C578F1E791EC400687BF7 /* WZServiceParser.m in Sources */,
 				1E8032991CDF0BE30010D036 /* WZMyWishesViewController.m in Sources */,
 				1EEDCCB31DB507F300DBB363 /* UIImage+Scale.m in Sources */,
+				1E22EBFF1E87CF7100B983AC /* RUReachabilityManager.m in Sources */,
 				1E8717F81CE8B4B60062EFE9 /* WZChatListViewController.m in Sources */,
 				1E4276441CD915430004A0F8 /* NSString+Extras.m in Sources */,
 				1EA47E341D043C6600794973 /* WZMyPostTableViewCell.m in Sources */,
@@ -1227,6 +1269,7 @@
 				1E42763E1CD915270004A0F8 /* UIColor+Extras.m in Sources */,
 				1E4276471CD915510004A0F8 /* NSError+Extras.m in Sources */,
 				1E7208CB1CD924420017188F /* WZFollowerViewController.m in Sources */,
+				1E22EBFB1E87CF7100B983AC /* RUNavigationActivityView.m in Sources */,
 				1E4C578B1E791B0300687BF7 /* RUWebServiceParser.m in Sources */,
 				1E1CCB221D85629900423904 /* WVideoRecordViewController.m in Sources */,
 				1E42763B1CD9151A0004A0F8 /* UIImage+Extra.m in Sources */,
@@ -1234,6 +1277,7 @@
 				1E4276381CD9150D0004A0F8 /* UIStoryboard+Extras.m in Sources */,
 				1E8717EE1CE8B0B70062EFE9 /* WZEmptySegue.m in Sources */,
 				1E4276351CD915020004A0F8 /* UIView+Extras.m in Sources */,
+				1E22EBFD1E87CF7100B983AC /* RUOverlayView.m in Sources */,
 				1EFC87231E4C94630045C801 /* WRecordAudioViewController.m in Sources */,
 				1EE266711E85324300ECE867 /* WZPost.m in Sources */,
 				1E42762F1CD914E20004A0F8 /* WZFriendCollectionViewCell.m in Sources */,
@@ -1427,10 +1471,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN__ARC_BRIDGE_CAST_NONARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Nasser Alameeri (Y966936F3T)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nasser Alameeri (Y966936F3T)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Nasser Abdulaziz (63TNN5MQHS)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Nasser Abdulaziz (63TNN5MQHS)";
 				COPY_HEADERS_RUN_UNIFDEF = NO;
-				DEVELOPMENT_TEAM = RZ28SZX84Y;
+				DEVELOPMENT_TEAM = 877ZNSB63X;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1438,10 +1482,9 @@
 				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
 				INFOPLIST_FILE = wizhwish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wiz.wizwish;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.wizhwish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "a48315b1-3e11-48a2-a0bb-bd6dba44928c";
-				PROVISIONING_PROFILE_SPECIFIER = Wiz_Dev_profile;
+				PROVISIONING_PROFILE_SPECIFIER = whiz_Dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "wizhwish/wizhwish-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -1455,9 +1498,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN__ARC_BRIDGE_CAST_NONARC = NO;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Nasser Alameeri (RZ28SZX84Y)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nasser Alameeri (RZ28SZX84Y)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nasser Abdulaziz (877ZNSB63X)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Nasser Abdulaziz (877ZNSB63X)";
 				COPY_HEADERS_RUN_UNIFDEF = NO;
+				DEVELOPMENT_TEAM = 877ZNSB63X;
 				ENABLE_BITCODE = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1465,9 +1509,9 @@
 				GCC_USE_STANDARD_INCLUDE_SEARCHING = YES;
 				INFOPLIST_FILE = wizhwish/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.wiz.wizwish;
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.wizhwish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "fe37c903-a313-40e7-a2c1-f42e4bec69b6";
+				PROVISIONING_PROFILE_SPECIFIER = whiz;
 				SWIFT_OBJC_BRIDGING_HEADER = "wizhwish/wizhwish-Bridging-Header.h";
 			};
 			name = Release;

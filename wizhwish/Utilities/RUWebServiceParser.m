@@ -7,8 +7,8 @@
 //
 
 #import "RUWebServiceParser.h"
-//#import <AFNetworking.h>
-//#import <AFHTTPSessionManager.h>
+#import <AFNetworking.h>
+#import <AFHTTPSessionManager.h>
 
 @implementation RUWebServiceParser
 
@@ -25,6 +25,7 @@
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     
     AFSecurityPolicy* policy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+   
     
     [policy setValidatesDomainName:NO];
     

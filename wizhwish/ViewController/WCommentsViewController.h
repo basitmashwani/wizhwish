@@ -14,6 +14,8 @@
 
 @property(nonatomic ,retain) IBOutlet UITextField *textField;
 
+@property(nonatomic ,retain) IBOutlet UIView *commentView;
+
 @property(nonatomic ,retain) IBOutlet UIButton *sendButton;
 
 @property(nonatomic ,retain)  NSString *postId;

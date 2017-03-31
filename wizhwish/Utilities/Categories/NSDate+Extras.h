@@ -10,5 +10,7 @@
 
 @interface NSDate (Extras)
 
-+ (NSString*)getMinitesDifferenceFromDate:(NSDate*)fromDate toDate:(NSDate*)toDate;
++ (NSString*)getMinutesDifferenceFromDate:(NSDate*)fromDate toDate:(NSDate*)toDate;
+
++ (NSDate*)getDateFromEpochValue:(NSTimeInterval)epoch;
 @end

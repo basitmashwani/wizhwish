@@ -79,8 +79,6 @@ get UIBarButton Instance
 
 + (UIImagePickerController*)getImagePickerFor:(KMediaType)mediaType;
 
-+ (WZPost*)getPostFromDictionary:(NSDictionary*)dict;
-
 
 
 

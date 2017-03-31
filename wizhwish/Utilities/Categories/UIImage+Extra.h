@@ -10,6 +10,7 @@
 
 @interface UIImage (Extra)
 
+    
 - (UIImage *)imageWithOverlayColor:(UIColor *)color;
 
 + (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
@@ -23,5 +24,8 @@
 
 + (UIImage*)image:(UIImage*)image withText:(NSString*)text atPoint:(CGPoint)point;
 
+- (UIImage *)fixOrientation;
+    
++ (UIImage *)getFilterImageWithIndex:(NSInteger)filterIndex withImage:(UIImage*)image;
 
 @end

@@ -125,7 +125,8 @@
     
     WZFriendCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:K_PEOPLE_COLLECTION_CELL forIndexPath:indexPath];
     [cell.buttonPeople setRoundCornersAsCircle];
-    
+
+    cell.labelName.text = [[self.array objectAtIndex:indexPath.row] valueForKey:@"userDisplayName"];
     cell.buttonPeople.tag = indexPath.row;
     [cell.buttonPeople addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
    
@@ -144,9 +145,12 @@
     UIButton *button = (UIButton*)sender;
     
     NSString *profileName = [[self.array objectAtIndex:button.tag] valueForKey:@"userDisplayName"];
+    NSString *userName = [[self.array objectAtIndex:button.tag] valueForKey:@"userName"];
+
     WZMyProfileViewController *profileVC = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_PROFILE_VIEW_CONTROLLER];
     profileVC.profileType = KWProfileTypeFollow;
     profileVC.stringName = profileName;
+    profileVC.userName = userName;
     [self.navigationController pushViewController:profileVC animated:YES];
 
 

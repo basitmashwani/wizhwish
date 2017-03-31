@@ -22,6 +22,8 @@
 
 @property(nonatomic ,retain) IBOutlet UIImageView *imageViewPost;
 
+@property(nonatomic ,retain) IBOutlet UILabel *timeLabel;
+
 
 
 

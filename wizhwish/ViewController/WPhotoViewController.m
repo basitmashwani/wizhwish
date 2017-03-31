@@ -152,44 +152,6 @@
     return nil;
 }
 
-- (UIImage*)getFilterImageWithIndex:(NSInteger)filterIndex withImage:(UIImage*)image {
-
-        if (filterIndex == 0) {
-            
-            return image;
-        }
-        
-        
-        // Create and apply filter
-        // 1 - create source image
-        
-        NSData *data = UIImageJPEGRepresentation(image, 0.8);
-        CIImage *ciImage = [CIImage imageWithData:data];
-        
-        // 2 - create filter using name
-        
-        CIFilter *filter = [CIFilter filterWithName:self.filterArray[filterIndex]];
-        [filter setDefaults];
-        
-        // 3 - set source image
-        [filter setValue:ciImage forKey:kCIInputImageKey];
-        
-        // 4 - create core image context
-        // CIContext *context = [[CIContext alloc] init];
-        // 5 - output filtered image as cgImage with dimension.
-        //CIImage *filterImage = (CIImage*)[context createCGImage:filter.outputImage fromRect:filter.outputImage.extent];
-        
-        CIImage *filteredImageData = [filter valueForKey:@"outputImage"];
-        
-        
-        // 6 - convert filtered CGImage to UIImage
-        //let filteredImage = UIImage(cgImage: outputCGImage!)
-        return  [[UIImage alloc] initWithCIImage:filteredImageData];
-
-// if No filter selected then apply default image and return.
-  
-    
-}
 
 
 - (void)setUpCamera {
@@ -259,7 +221,7 @@
     
     for (int  i = 0; i<self.filterArray.count; i++) {
     
-        UIImage *image = [self getFilterImageWithIndex:i withImage:sampleImage];
+        UIImage *image = [UIImage getFilterImageWithIndex:i withImage:sampleImage];
         [self.filterImageArray addObject:image];
         
     }
@@ -655,6 +617,13 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     
     self.capturedImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    NSData *data = UIImagePNGRepresentation(self.capturedImage);
+    UIImage *tmpImage = [UIImage imageWithData:data];
+    UIImage *afterFixingOrientation = [UIImage imageWithCGImage:tmpImage.CGImage
+                                                          scale:self.capturedImage.scale
+                                                    orientation:self.capturedImage.imageOrientation];
+    self.capturedImage = afterFixingOrientation;
+    
     [self updateCameraViewWithImage:self.capturedImage];
 }
 
@@ -715,10 +684,11 @@
     
     self.addButton.hidden = YES;
     UIImage *image = [self.tempImagesArray objectAtIndex:self.selectedIndex];
+  //  image =  [UIImage getFilterImageWithIndex:0 withImage:image];
+   UIImage *filteredImage =  [UIImage getFilterImageWithIndex:indexPath.row withImage:image];
     
-    image =  [self getFilterImageWithIndex:0 withImage:image];
-   UIImage *filteredImage =  [self getFilterImageWithIndex:indexPath.row withImage:image];
     self.mainImageView.image = filteredImage;
+    //self.mainImageView.image =[filteredImage fixOrientation];
 
     [self updateImageArrayWithImage:filteredImage atIndex:self.selectedIndex];
     [self.imagesArray replaceObjectAtIndex:self.selectedIndex withObject:filteredImage];

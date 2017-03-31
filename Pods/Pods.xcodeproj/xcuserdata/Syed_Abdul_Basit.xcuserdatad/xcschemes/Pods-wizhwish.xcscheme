@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '56696F5DC2EA6BEECD4CA871530F9000'
+               BlueprintIdentifier = 'D3C3929D90751230ABF28650AC3E3657'
                BlueprintName = 'Pods-wizhwish'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-wizhwish.a'>

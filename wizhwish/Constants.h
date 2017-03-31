@@ -55,6 +55,7 @@
 
 //Cell Identifier
 
+#define k_COMMENTS_CELL                             @"k_COMMENT_CELL"
 #define K_PEOPLE_COLLECTION_CELL                    @"Friend_Cell"
 #define K_CELL_INVITE                               @"K_CELL_INVITE"
 #define K_CELL_POST                                 @"K_CELL_POST"
