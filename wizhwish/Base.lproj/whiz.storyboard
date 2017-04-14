@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -123,7 +123,7 @@
                                 <rect key="frame" x="141" y="335" width="94" height="80"/>
                                 <state key="normal" image="Image_WhizList"/>
                                 <connections>
-                                    <segue destination="BIa-bv-7M4" kind="show" id="1AR-eK-Yu0"/>
+                                    <segue destination="Eib-kJ-X7x" kind="show" identifier="K_SEGUE_WISHLIST" id="lyW-yB-IIe"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FP-3w-UxT">
@@ -155,7 +155,7 @@
                                 <rect key="frame" x="141" y="453" width="94" height="80"/>
                                 <state key="normal" image="Image_ShareGift"/>
                                 <connections>
-                                    <segue destination="Eib-kJ-X7x" kind="show" identifier="K_SEGUE_WISHLIST" id="ZxF-Nk-jn1"/>
+                                    <segue destination="BIa-bv-7M4" kind="show" id="QDh-oE-UEB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -211,6 +211,10 @@
                             <constraint firstItem="kqT-ZJ-TOg" firstAttribute="centerY" secondItem="X46-FA-KbS" secondAttribute="centerY" id="wgn-Dv-VOl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonGift" destination="3hO-7W-soP" id="Szx-VR-M1K"/>
+                        <outlet property="whizList" destination="3Eu-MF-vLe" id="EwO-P8-hSG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vph-d1-EKJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -425,10 +429,10 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="K_FOLLOWER_CELL" rowHeight="85" id="akO-Xk-hJa" customClass="WZProfileTableViewCell">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="85"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="akO-Xk-hJa" id="p9n-31-im6">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="84.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_Profile-1" translatesAutoresizingMaskIntoConstraints="NO" id="wJw-oW-KSt">
@@ -647,7 +651,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Friend_Cell" id="ADA-1f-55t" customClass="WZFriendCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="6" width="76" height="69"/>
+                                        <rect key="frame" x="0.0" y="5.5" width="76" height="69"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="76" height="69"/>
@@ -750,10 +754,10 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="K_FOLLOWER_CELL" rowHeight="85" id="jNL-30-ejG" customClass="WZProfileTableViewCell">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="85"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="85"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jNL-30-ejG" id="bjS-yN-qEN">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="84"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="84.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image_Profile-1" translatesAutoresizingMaskIntoConstraints="NO" id="iFb-cG-bQX">
@@ -850,6 +854,6 @@
         <image name="Image_WhizList" width="148" height="148"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZxF-Nk-jn1"/>
+        <segue reference="lyW-yB-IIe"/>
     </inferredMetricsTieBreakers>
 </document>

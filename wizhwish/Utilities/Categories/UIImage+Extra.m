@@ -119,7 +119,7 @@
 //    return newImage;
 //}
 
-+ (UIImage *)drawToImage:(UIImage *)img withText:(NSString *)text withFrame:(CGRect)textRect
++ (UIImage *)drawToImage:(UIImage *)img withText:(NSString *)text withFrame:(CGRect)textRect fontSize:(NSInteger)fontSize textColor:(UIColor*)textColor
 {
     CGRect rect = [[UIScreen mainScreen] bounds];
     
@@ -130,7 +130,7 @@
     [img drawInRect:rect];
     
     
-    UIFont* font = [UIFont fontWithName:@"MicrosoftPhagsPa" size:25];
+    UIFont* font = [UIFont fontWithName:@"MicrosoftPhagsPa" size:fontSize];
     
     /// Make a copy of the default paragraph style
     NSMutableParagraphStyle* paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
@@ -141,7 +141,7 @@
     
     NSDictionary *attributes = @{ NSFontAttributeName: font,
                                   NSParagraphStyleAttributeName: paragraphStyle,
-                                  NSForegroundColorAttributeName: [UIColor whiteColor]};
+                                  NSForegroundColorAttributeName: textColor};
     
     textRect = CGRectMake(textRect.origin.x, textRect.origin.y, textRect.size.width , textRect.size.height);
     
@@ -162,6 +162,25 @@
     UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return newImage;
+    
+}
+
++(NSData*)getImageCompressedData:(UIImage*)image {
+    
+    
+    CGSize newSize = CGSizeMake(image.size.width,image.size.height);
+    
+    // - (UIImage *)resizeImage:(UIImage*)image newSize:(CGSize)newSize {
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    NSData *imageData = UIImageJPEGRepresentation(newImage, 0.2);
+    
+    
+    return imageData;
+
 }
 
 - (UIImage *)fixOrientation {
@@ -296,6 +315,21 @@
         
         
     }
+
++ (UIImage *)resizeImage:(UIImage *)image toResolution:(int)resolution
+{
+    NSData *imageData = UIImagePNGRepresentation(image);
+    CGImageSourceRef src = CGImageSourceCreateWithData((__bridge    CFDataRef)imageData, NULL);
+    CFDictionaryRef options = (__bridge CFDictionaryRef) @{
+                                                           (id) kCGImageSourceCreateThumbnailWithTransform : @YES,
+                                                           (id) kCGImageSourceCreateThumbnailFromImageAlways : @YES,
+                                                           (id) kCGImageSourceThumbnailMaxPixelSize : @(resolution)
+                                                           };
+    CGImageRef thumbnail = CGImageSourceCreateThumbnailAtIndex(src, 0, options);
+    CFRelease(src);
+    UIImage *img = [[UIImage alloc]initWithCGImage:thumbnail];
+    return img;
+}
 
 
 @end

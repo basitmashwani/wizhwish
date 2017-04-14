@@ -27,6 +27,11 @@
 		1E1CCB1C1D855EB600423904 /* Media.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CCB1A1D855EB600423904 /* Media.storyboard */; };
 		1E1CCB1E1D85602E00423904 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E1CCB1D1D85602E00423904 /* Media.xcassets */; };
 		1E1CCB221D85629900423904 /* WVideoRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E1CCB211D85629900423904 /* WVideoRecordViewController.m */; };
+		1E20C6D11E9D0B0E0083702C /* WProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E20C6D01E9D0B0E0083702C /* WProfile.m */; };
+		1E2168031E9B979F00647B40 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2167FC1E9B979E00647B40 /* TPKeyboardAvoidingCollectionView.m */; };
+		1E2168041E9B979F00647B40 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2167FE1E9B979E00647B40 /* TPKeyboardAvoidingScrollView.m */; };
+		1E2168051E9B979F00647B40 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2168001E9B979E00647B40 /* TPKeyboardAvoidingTableView.m */; };
+		1E2168061E9B979F00647B40 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E2168021E9B979E00647B40 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		1E22EBEE1E87A31400B983AC /* 2.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1E22EBED1E87A31400B983AC /* 2.wav */; };
 		1E22EBF01E87A33A00B983AC /* 1.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1E22EBEF1E87A33A00B983AC /* 1.wav */; };
 		1E22EBFB1E87CF7100B983AC /* RUNavigationActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E22EBF31E87CF7100B983AC /* RUNavigationActivityView.m */; };
@@ -83,7 +88,31 @@
 		1EAE52411E4F701C007DC15D /* WTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EAE52401E4F701C007DC15D /* WTextViewController.m */; };
 		1EB5F3F91E813BC600352A36 /* MBCircularProgressBarLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5F3F61E813BC600352A36 /* MBCircularProgressBarLayer.m */; };
 		1EB5F3FA1E813BC600352A36 /* MBCircularProgressBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB5F3F81E813BC600352A36 /* MBCircularProgressBarView.m */; };
+		1EBFEAF91E9F57D6000F739C /* CSLayerStealingBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBFEAEC1E9F57D6000F739C /* CSLayerStealingBlurView.m */; };
+		1EBFEAFA1E9F57D6000F739C /* CSNativeBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBFEAEE1E9F57D6000F739C /* CSNativeBlurView.m */; };
+		1EBFEAFB1E9F57D6000F739C /* CSNotificationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBFEAF01E9F57D6000F739C /* CSNotificationView.m */; };
+		1EBFEAFC1E9F57D6000F739C /* checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EBFEAF31E9F57D6000F739C /* checkmark.png */; };
+		1EBFEAFD1E9F57D6000F739C /* checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EBFEAF41E9F57D6000F739C /* checkmark@2x.png */; };
+		1EBFEAFE1E9F57D6000F739C /* checkmark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EBFEAF51E9F57D6000F739C /* checkmark@3x.png */; };
+		1EBFEAFF1E9F57D6000F739C /* exclamationMark.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EBFEAF61E9F57D6000F739C /* exclamationMark.png */; };
+		1EBFEB001E9F57D6000F739C /* exclamationMark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EBFEAF71E9F57D6000F739C /* exclamationMark@2x.png */; };
+		1EBFEB011E9F57D6000F739C /* exclamationMark@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EBFEAF81E9F57D6000F739C /* exclamationMark@3x.png */; };
+		1EBFEB071E9F8380000F739C /* KICamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EBFEB031E9F8380000F739C /* KICamera.png */; };
+		1EBFEB081E9F8380000F739C /* KICamera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EBFEB041E9F8380000F739C /* KICamera@2x.png */; };
+		1EBFEB091E9F8380000F739C /* KIImagePager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBFEB061E9F8380000F739C /* KIImagePager.m */; };
 		1EC05A031E60A508007026C3 /* Background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1EC05A021E60A0BF007026C3 /* Background.mp4 */; };
+		1ECF9F3F1E9910EE00EB38E9 /* colorPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1ECF9F2C1E9910EE00EB38E9 /* colorPicker.bundle */; };
+		1ECF9F401E9910EE00EB38E9 /* NEOColorPickerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECF9F2E1E9910EE00EB38E9 /* NEOColorPickerBaseViewController.m */; };
+		1ECF9F411E9910EE00EB38E9 /* NEOColorPickerFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECF9F301E9910EE00EB38E9 /* NEOColorPickerFavoritesViewController.m */; };
+		1ECF9F421E9910EE00EB38E9 /* NEOColorPickerFavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ECF9F311E9910EE00EB38E9 /* NEOColorPickerFavoritesViewController.xib */; };
+		1ECF9F431E9910EE00EB38E9 /* NEOColorPickerGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECF9F331E9910EE00EB38E9 /* NEOColorPickerGradientView.m */; };
+		1ECF9F441E9910EE00EB38E9 /* NEOColorPickerHSLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECF9F351E9910EE00EB38E9 /* NEOColorPickerHSLViewController.m */; };
+		1ECF9F451E9910EE00EB38E9 /* NEOColorPickerHSLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ECF9F361E9910EE00EB38E9 /* NEOColorPickerHSLViewController.xib */; };
+		1ECF9F461E9910EE00EB38E9 /* NEOColorPickerHueGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECF9F381E9910EE00EB38E9 /* NEOColorPickerHueGridViewController.m */; };
+		1ECF9F471E9910EE00EB38E9 /* NEOColorPickerHueGridViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ECF9F391E9910EE00EB38E9 /* NEOColorPickerHueGridViewController.xib */; };
+		1ECF9F481E9910EE00EB38E9 /* NEOColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECF9F3B1E9910EE00EB38E9 /* NEOColorPickerViewController.m */; };
+		1ECF9F491E9910EE00EB38E9 /* NEOColorPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1ECF9F3C1E9910EE00EB38E9 /* NEOColorPickerViewController.xib */; };
+		1ECF9F4A1E9910EE00EB38E9 /* UIColor+NEOColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECF9F3E1E9910EE00EB38E9 /* UIColor+NEOColor.m */; };
 		1ED143141E41EE9C008045CA /* WPhotoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED143131E41EE9C008045CA /* WPhotoEditViewController.m */; };
 		1ED6C7241CE4E2630042D3F6 /* WZPostsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED6C7231CE4E2630042D3F6 /* WZPostsViewController.m */; };
 		1ED942A31DFC682000BEF8AC /* WPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ED942A21DFC682000BEF8AC /* WPhotoViewController.m */; };
@@ -96,8 +125,8 @@
 		1EEDCCB31DB507F300DBB363 /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDCCB01DB507F300DBB363 /* UIImage+Scale.m */; };
 		1EFC87231E4C94630045C801 /* WRecordAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC87221E4C94630045C801 /* WRecordAudioViewController.m */; };
 		1EFD83E11DB908AB00E119F3 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EFD83E01DB908AB00E119F3 /* MobileCoreServices.framework */; };
+		40B9A770625250EF8D5A5259 /* libPods-wizhwish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A1E61BF69F55E716003DE /* libPods-wizhwish.a */; };
 		67BB58A25F4D4377B11C90F6 /* libPods-wizhwishUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20DACEC584D332FFFE1D3E79 /* libPods-wizhwishUITests.a */; };
-		D5DFD667449BD12B93B9BE3D /* libPods-wizhwish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99605CE7299F6CC9A15540E4 /* libPods-wizhwish.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -155,6 +184,16 @@
 		1E1CCB1D1D85602E00423904 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = Resources/Media.xcassets; sourceTree = "<group>"; };
 		1E1CCB201D85629900423904 /* WVideoRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WVideoRecordViewController.h; path = ViewController/WVideoRecordViewController.h; sourceTree = "<group>"; };
 		1E1CCB211D85629900423904 /* WVideoRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WVideoRecordViewController.m; path = ViewController/WVideoRecordViewController.m; sourceTree = "<group>"; };
+		1E20C6CF1E9D0B0E0083702C /* WProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WProfile.h; path = Models/WProfile.h; sourceTree = "<group>"; };
+		1E20C6D01E9D0B0E0083702C /* WProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WProfile.m; path = Models/WProfile.m; sourceTree = "<group>"; };
+		1E2167FB1E9B979E00647B40 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		1E2167FC1E9B979E00647B40 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		1E2167FD1E9B979E00647B40 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		1E2167FE1E9B979E00647B40 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		1E2167FF1E9B979E00647B40 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		1E2168001E9B979E00647B40 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
+		1E2168011E9B979E00647B40 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		1E2168021E9B979E00647B40 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		1E22EBED1E87A31400B983AC /* 2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2.wav; sourceTree = "<group>"; };
 		1E22EBEF1E87A33A00B983AC /* 1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1.wav; sourceTree = "<group>"; };
 		1E22EBF21E87CF7100B983AC /* RUNavigationActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RUNavigationActivityView.h; sourceTree = "<group>"; };
@@ -254,7 +293,43 @@
 		1EB5F3F61E813BC600352A36 /* MBCircularProgressBarLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCircularProgressBarLayer.m; sourceTree = "<group>"; };
 		1EB5F3F71E813BC600352A36 /* MBCircularProgressBarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBCircularProgressBarView.h; sourceTree = "<group>"; };
 		1EB5F3F81E813BC600352A36 /* MBCircularProgressBarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBCircularProgressBarView.m; sourceTree = "<group>"; };
+		1EBFEAEB1E9F57D6000F739C /* CSLayerStealingBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSLayerStealingBlurView.h; sourceTree = "<group>"; };
+		1EBFEAEC1E9F57D6000F739C /* CSLayerStealingBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSLayerStealingBlurView.m; sourceTree = "<group>"; };
+		1EBFEAED1E9F57D6000F739C /* CSNativeBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSNativeBlurView.h; sourceTree = "<group>"; };
+		1EBFEAEE1E9F57D6000F739C /* CSNativeBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSNativeBlurView.m; sourceTree = "<group>"; };
+		1EBFEAEF1E9F57D6000F739C /* CSNotificationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSNotificationView.h; sourceTree = "<group>"; };
+		1EBFEAF01E9F57D6000F739C /* CSNotificationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSNotificationView.m; sourceTree = "<group>"; };
+		1EBFEAF11E9F57D6000F739C /* CSNotificationView_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSNotificationView_Private.h; sourceTree = "<group>"; };
+		1EBFEAF31E9F57D6000F739C /* checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkmark.png; sourceTree = "<group>"; };
+		1EBFEAF41E9F57D6000F739C /* checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark@2x.png"; sourceTree = "<group>"; };
+		1EBFEAF51E9F57D6000F739C /* checkmark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark@3x.png"; sourceTree = "<group>"; };
+		1EBFEAF61E9F57D6000F739C /* exclamationMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exclamationMark.png; sourceTree = "<group>"; };
+		1EBFEAF71E9F57D6000F739C /* exclamationMark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exclamationMark@2x.png"; sourceTree = "<group>"; };
+		1EBFEAF81E9F57D6000F739C /* exclamationMark@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exclamationMark@3x.png"; sourceTree = "<group>"; };
+		1EBFEB031E9F8380000F739C /* KICamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KICamera.png; sourceTree = "<group>"; };
+		1EBFEB041E9F8380000F739C /* KICamera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KICamera@2x.png"; sourceTree = "<group>"; };
+		1EBFEB051E9F8380000F739C /* KIImagePager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIImagePager.h; sourceTree = "<group>"; };
+		1EBFEB061E9F8380000F739C /* KIImagePager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIImagePager.m; sourceTree = "<group>"; };
 		1EC05A021E60A0BF007026C3 /* Background.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Background.mp4; sourceTree = "<group>"; };
+		1ECF9F2C1E9910EE00EB38E9 /* colorPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = colorPicker.bundle; sourceTree = "<group>"; };
+		1ECF9F2D1E9910EE00EB38E9 /* NEOColorPickerBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEOColorPickerBaseViewController.h; sourceTree = "<group>"; };
+		1ECF9F2E1E9910EE00EB38E9 /* NEOColorPickerBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEOColorPickerBaseViewController.m; sourceTree = "<group>"; };
+		1ECF9F2F1E9910EE00EB38E9 /* NEOColorPickerFavoritesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEOColorPickerFavoritesViewController.h; sourceTree = "<group>"; };
+		1ECF9F301E9910EE00EB38E9 /* NEOColorPickerFavoritesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEOColorPickerFavoritesViewController.m; sourceTree = "<group>"; };
+		1ECF9F311E9910EE00EB38E9 /* NEOColorPickerFavoritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NEOColorPickerFavoritesViewController.xib; sourceTree = "<group>"; };
+		1ECF9F321E9910EE00EB38E9 /* NEOColorPickerGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEOColorPickerGradientView.h; sourceTree = "<group>"; };
+		1ECF9F331E9910EE00EB38E9 /* NEOColorPickerGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEOColorPickerGradientView.m; sourceTree = "<group>"; };
+		1ECF9F341E9910EE00EB38E9 /* NEOColorPickerHSLViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEOColorPickerHSLViewController.h; sourceTree = "<group>"; };
+		1ECF9F351E9910EE00EB38E9 /* NEOColorPickerHSLViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEOColorPickerHSLViewController.m; sourceTree = "<group>"; };
+		1ECF9F361E9910EE00EB38E9 /* NEOColorPickerHSLViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NEOColorPickerHSLViewController.xib; sourceTree = "<group>"; };
+		1ECF9F371E9910EE00EB38E9 /* NEOColorPickerHueGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEOColorPickerHueGridViewController.h; sourceTree = "<group>"; };
+		1ECF9F381E9910EE00EB38E9 /* NEOColorPickerHueGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEOColorPickerHueGridViewController.m; sourceTree = "<group>"; };
+		1ECF9F391E9910EE00EB38E9 /* NEOColorPickerHueGridViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NEOColorPickerHueGridViewController.xib; sourceTree = "<group>"; };
+		1ECF9F3A1E9910EE00EB38E9 /* NEOColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEOColorPickerViewController.h; sourceTree = "<group>"; };
+		1ECF9F3B1E9910EE00EB38E9 /* NEOColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEOColorPickerViewController.m; sourceTree = "<group>"; };
+		1ECF9F3C1E9910EE00EB38E9 /* NEOColorPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NEOColorPickerViewController.xib; sourceTree = "<group>"; };
+		1ECF9F3D1E9910EE00EB38E9 /* UIColor+NEOColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+NEOColor.h"; sourceTree = "<group>"; };
+		1ECF9F3E1E9910EE00EB38E9 /* UIColor+NEOColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+NEOColor.m"; sourceTree = "<group>"; };
 		1ED143121E41EE9C008045CA /* WPhotoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WPhotoEditViewController.h; path = ViewController/WPhotoEditViewController.h; sourceTree = "<group>"; };
 		1ED143131E41EE9C008045CA /* WPhotoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WPhotoEditViewController.m; path = ViewController/WPhotoEditViewController.m; sourceTree = "<group>"; };
 		1ED6C7221CE4E2630042D3F6 /* WZPostsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZPostsViewController.h; path = ViewController/WZPostsViewController.h; sourceTree = "<group>"; };
@@ -284,8 +359,8 @@
 		563F3FCFC300ECDE76957AE1 /* Pods-wizhwishUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwishUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwishUITests/Pods-wizhwishUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		667A28FAD5B6F09A608861CC /* Pods-wizhwishUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwishUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwishUITests/Pods-wizhwishUITests.release.xcconfig"; sourceTree = "<group>"; };
 		66DC7C9BE2CC4D5C8692AB89 /* Pods-wizhwish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwish.release.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwish/Pods-wizhwish.release.xcconfig"; sourceTree = "<group>"; };
-		99605CE7299F6CC9A15540E4 /* libPods-wizhwish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wizhwish.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9707B569995A241F8132BD0 /* Pods-wizhwishTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwishTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwishTests/Pods-wizhwishTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AF8A1E61BF69F55E716003DE /* libPods-wizhwish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wizhwish.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6D9722E13F80BB42ACA090 /* Pods-wizhwishTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwishTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwishTests/Pods-wizhwishTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -297,7 +372,7 @@
 				1EFD83E11DB908AB00E119F3 /* MobileCoreServices.framework in Frameworks */,
 				1E271DB31CE2149500DB572F /* Photos.framework in Frameworks */,
 				1E271DAF1CE2097E00DB572F /* AVFoundation.framework in Frameworks */,
-				D5DFD667449BD12B93B9BE3D /* libPods-wizhwish.a in Frameworks */,
+				40B9A770625250EF8D5A5259 /* libPods-wizhwish.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +444,10 @@
 		1E060B001CC4E311009E1BBC /* wizhwish */ = {
 			isa = PBXGroup;
 			children = (
+				1EBFEB021E9F8380000F739C /* KIImagePager */,
+				1EBFEAEA1E9F57D6000F739C /* CSNotificationView */,
+				1E2167FA1E9B977600647B40 /* TPKeyboardAvoiding */,
+				1ECF9F2A1E9910D500EB38E9 /* Color Picker */,
 				1EE2666E1E85321600ECE867 /* Models */,
 				1EC05A011E60A0AF007026C3 /* Media Files */,
 				1E4FD21C1CFB2E9600612466 /* Custom Search View */,
@@ -579,6 +658,21 @@
 				1E5A1A431E6C6FFD003226A8 /* WTempVideoRecorderViewController.m */,
 			);
 			name = VideoRecordingController;
+			sourceTree = "<group>";
+		};
+		1E2167FA1E9B977600647B40 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				1E2167FB1E9B979E00647B40 /* TPKeyboardAvoidingCollectionView.h */,
+				1E2167FC1E9B979E00647B40 /* TPKeyboardAvoidingCollectionView.m */,
+				1E2167FD1E9B979E00647B40 /* TPKeyboardAvoidingScrollView.h */,
+				1E2167FE1E9B979E00647B40 /* TPKeyboardAvoidingScrollView.m */,
+				1E2167FF1E9B979E00647B40 /* TPKeyboardAvoidingTableView.h */,
+				1E2168001E9B979E00647B40 /* TPKeyboardAvoidingTableView.m */,
+				1E2168011E9B979E00647B40 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				1E2168021E9B979E00647B40 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+			);
+			name = TPKeyboardAvoiding;
 			sourceTree = "<group>";
 		};
 		1E22EBF11E87CF7100B983AC /* RUReachability */ = {
@@ -794,6 +888,45 @@
 			path = MBCircularProgressView;
 			sourceTree = "<group>";
 		};
+		1EBFEAEA1E9F57D6000F739C /* CSNotificationView */ = {
+			isa = PBXGroup;
+			children = (
+				1EBFEAEB1E9F57D6000F739C /* CSLayerStealingBlurView.h */,
+				1EBFEAEC1E9F57D6000F739C /* CSLayerStealingBlurView.m */,
+				1EBFEAED1E9F57D6000F739C /* CSNativeBlurView.h */,
+				1EBFEAEE1E9F57D6000F739C /* CSNativeBlurView.m */,
+				1EBFEAEF1E9F57D6000F739C /* CSNotificationView.h */,
+				1EBFEAF01E9F57D6000F739C /* CSNotificationView.m */,
+				1EBFEAF11E9F57D6000F739C /* CSNotificationView_Private.h */,
+				1EBFEAF21E9F57D6000F739C /* Resources */,
+			);
+			path = CSNotificationView;
+			sourceTree = "<group>";
+		};
+		1EBFEAF21E9F57D6000F739C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1EBFEAF31E9F57D6000F739C /* checkmark.png */,
+				1EBFEAF41E9F57D6000F739C /* checkmark@2x.png */,
+				1EBFEAF51E9F57D6000F739C /* checkmark@3x.png */,
+				1EBFEAF61E9F57D6000F739C /* exclamationMark.png */,
+				1EBFEAF71E9F57D6000F739C /* exclamationMark@2x.png */,
+				1EBFEAF81E9F57D6000F739C /* exclamationMark@3x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1EBFEB021E9F8380000F739C /* KIImagePager */ = {
+			isa = PBXGroup;
+			children = (
+				1EBFEB031E9F8380000F739C /* KICamera.png */,
+				1EBFEB041E9F8380000F739C /* KICamera@2x.png */,
+				1EBFEB051E9F8380000F739C /* KIImagePager.h */,
+				1EBFEB061E9F8380000F739C /* KIImagePager.m */,
+			);
+			path = KIImagePager;
+			sourceTree = "<group>";
+		};
 		1EC05A011E60A0AF007026C3 /* Media Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -802,6 +935,40 @@
 				1EC05A021E60A0BF007026C3 /* Background.mp4 */,
 			);
 			name = "Media Files";
+			sourceTree = "<group>";
+		};
+		1ECF9F2A1E9910D500EB38E9 /* Color Picker */ = {
+			isa = PBXGroup;
+			children = (
+				1ECF9F2B1E9910EE00EB38E9 /* Source */,
+			);
+			name = "Color Picker";
+			sourceTree = "<group>";
+		};
+		1ECF9F2B1E9910EE00EB38E9 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				1ECF9F2C1E9910EE00EB38E9 /* colorPicker.bundle */,
+				1ECF9F2D1E9910EE00EB38E9 /* NEOColorPickerBaseViewController.h */,
+				1ECF9F2E1E9910EE00EB38E9 /* NEOColorPickerBaseViewController.m */,
+				1ECF9F2F1E9910EE00EB38E9 /* NEOColorPickerFavoritesViewController.h */,
+				1ECF9F301E9910EE00EB38E9 /* NEOColorPickerFavoritesViewController.m */,
+				1ECF9F311E9910EE00EB38E9 /* NEOColorPickerFavoritesViewController.xib */,
+				1ECF9F321E9910EE00EB38E9 /* NEOColorPickerGradientView.h */,
+				1ECF9F331E9910EE00EB38E9 /* NEOColorPickerGradientView.m */,
+				1ECF9F341E9910EE00EB38E9 /* NEOColorPickerHSLViewController.h */,
+				1ECF9F351E9910EE00EB38E9 /* NEOColorPickerHSLViewController.m */,
+				1ECF9F361E9910EE00EB38E9 /* NEOColorPickerHSLViewController.xib */,
+				1ECF9F371E9910EE00EB38E9 /* NEOColorPickerHueGridViewController.h */,
+				1ECF9F381E9910EE00EB38E9 /* NEOColorPickerHueGridViewController.m */,
+				1ECF9F391E9910EE00EB38E9 /* NEOColorPickerHueGridViewController.xib */,
+				1ECF9F3A1E9910EE00EB38E9 /* NEOColorPickerViewController.h */,
+				1ECF9F3B1E9910EE00EB38E9 /* NEOColorPickerViewController.m */,
+				1ECF9F3C1E9910EE00EB38E9 /* NEOColorPickerViewController.xib */,
+				1ECF9F3D1E9910EE00EB38E9 /* UIColor+NEOColor.h */,
+				1ECF9F3E1E9910EE00EB38E9 /* UIColor+NEOColor.m */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		1ED6C7201CE315100042D3F6 /* MyWishesViewController */ = {
@@ -848,6 +1015,8 @@
 				1EE266721E8532D800ECE867 /* Comment */,
 				1EE2666F1E85324300ECE867 /* WZPost.h */,
 				1EE266701E85324300ECE867 /* WZPost.m */,
+				1E20C6CF1E9D0B0E0083702C /* WProfile.h */,
+				1E20C6D01E9D0B0E0083702C /* WProfile.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -921,9 +1090,9 @@
 				1E271DB21CE2149500DB572F /* Photos.framework */,
 				1E271DB01CE2133900DB572F /* AssetsLibrary.framework */,
 				1E271DAE1CE2097E00DB572F /* AVFoundation.framework */,
-				99605CE7299F6CC9A15540E4 /* libPods-wizhwish.a */,
 				3BBFA7184F66AB3133BDB9F5 /* libPods-wizhwishTests.a */,
 				20DACEC584D332FFFE1D3E79 /* libPods-wizhwishUITests.a */,
+				AF8A1E61BF69F55E716003DE /* libPods-wizhwish.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1043,24 +1212,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E7208C51CD920780017188F /* Profile.storyboard in Resources */,
+				1EBFEAFE1E9F57D6000F739C /* checkmark@3x.png in Resources */,
+				1EBFEAFF1E9F57D6000F739C /* exclamationMark.png in Resources */,
 				1E8717E71CE8A19F0062EFE9 /* Chat.xcassets in Resources */,
 				1E22EBEE1E87A31400B983AC /* 2.wav in Resources */,
+				1ECF9F3F1E9910EE00EB38E9 /* colorPicker.bundle in Resources */,
+				1EBFEB011E9F57D6000F739C /* exclamationMark@3x.png in Resources */,
 				1E1CCB1E1D85602E00423904 /* Media.xcassets in Resources */,
 				1E9728BC1D43A611003EA877 /* WPostView.xib in Resources */,
+				1EBFEB081E9F8380000F739C /* KICamera@2x.png in Resources */,
 				1E22EBFC1E87CF7100B983AC /* RUNavigationActivityView.xib in Resources */,
 				1E4276561CD915A20004A0F8 /* home.storyboard in Resources */,
+				1EBFEAFD1E9F57D6000F739C /* checkmark@2x.png in Resources */,
+				1EBFEB001E9F57D6000F739C /* exclamationMark@2x.png in Resources */,
 				1E1CCB1C1D855EB600423904 /* Media.storyboard in Resources */,
+				1ECF9F471E9910EE00EB38E9 /* NEOColorPickerHueGridViewController.xib in Resources */,
 				1E010B211E508A07004AF3B9 /* whiz.storyboard in Resources */,
 				1E8032921CDE67FD0010D036 /* Profile.xcassets in Resources */,
 				1E060B111CC4E311009E1BBC /* LaunchScreen.storyboard in Resources */,
 				1E4FD21A1CFB183600612466 /* PHAGSPA.TTF in Resources */,
 				1E4276581CD915B90004A0F8 /* Home.xcassets in Resources */,
 				1E22EBF01E87A33A00B983AC /* 1.wav in Resources */,
+				1EBFEB071E9F8380000F739C /* KICamera.png in Resources */,
+				1EBFEAFC1E9F57D6000F739C /* checkmark.png in Resources */,
 				1E4FD21B1CFB183B00612466 /* PHAGSPAB.TTF in Resources */,
 				1E42765B1CD915C10004A0F8 /* Login.xcassets in Resources */,
+				1ECF9F451E9910EE00EB38E9 /* NEOColorPickerHSLViewController.xib in Resources */,
 				1EC05A031E60A508007026C3 /* Background.mp4 in Resources */,
 				1E8717E51CE879410062EFE9 /* Chat.storyboard in Resources */,
 				1E060B0C1CC4E311009E1BBC /* Login.storyboard in Resources */,
+				1ECF9F491E9910EE00EB38E9 /* NEOColorPickerViewController.xib in Resources */,
+				1ECF9F421E9910EE00EB38E9 /* NEOColorPickerFavoritesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1227,18 +1409,27 @@
 				1E00D5491E598B5100AC3E95 /* WWishBoardViewController.m in Sources */,
 				1ED6C7241CE4E2630042D3F6 /* WZPostsViewController.m in Sources */,
 				1EB5F3F91E813BC600352A36 /* MBCircularProgressBarLayer.m in Sources */,
+				1E2168061E9B979F00647B40 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				1ED942A31DFC682000BEF8AC /* WPhotoViewController.m in Sources */,
+				1EBFEAF91E9F57D6000F739C /* CSLayerStealingBlurView.m in Sources */,
 				1E00D54C1E599AF900AC3E95 /* WGiftViewController.m in Sources */,
 				1EAC13B51E618BE8002A6FDE /* LoginViewController.m in Sources */,
+				1EBFEAFB1E9F57D6000F739C /* CSNotificationView.m in Sources */,
 				1E2F0C131DB24E50002CF9AA /* WSetting.m in Sources */,
 				1E00D5521E59D6B400AC3E95 /* WWishToViewController.m in Sources */,
 				1E42762B1CD914D00004A0F8 /* WZPostTableViewCell.m in Sources */,
+				1E2168031E9B979F00647B40 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				1E5A1A441E6C6FFD003226A8 /* WTempVideoRecorderViewController.m in Sources */,
+				1EBFEB091E9F8380000F739C /* KIImagePager.m in Sources */,
+				1ECF9F441E9910EE00EB38E9 /* NEOColorPickerHSLViewController.m in Sources */,
+				1E2168051E9B979F00647B40 /* TPKeyboardAvoidingTableView.m in Sources */,
 				1E18878B1CE1BF2C00B7F1D5 /* WZMyWishesTableViewCell.m in Sources */,
 				1EE266791E8538B000ECE867 /* NSDate+Extras.m in Sources */,
+				1E2168041E9B979F00647B40 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				1E4276321CD914F70004A0F8 /* UIViewController+Extras.m in Sources */,
 				1E8032961CDF040D0010D036 /* UITextField+Extras.m in Sources */,
 				1EEDCCB11DB507F300DBB363 /* UIImage+Filtrr.m in Sources */,
+				1ECF9F481E9910EE00EB38E9 /* NEOColorPickerViewController.m in Sources */,
 				1E4276261CD914B00004A0F8 /* RUUtility.m in Sources */,
 				1E4C57491E771C6F00687BF7 /* SCustomProgressView.m in Sources */,
 				1E8717F31CE8B2650062EFE9 /* WZContainerViewController.m in Sources */,
@@ -1258,14 +1449,20 @@
 				1E42762C1CD914D00004A0F8 /* WZPostTopTableViewCell.m in Sources */,
 				1E42764A1CD915650004A0F8 /* WZMyProfileViewController.m in Sources */,
 				1E4C578F1E791EC400687BF7 /* WZServiceParser.m in Sources */,
+				1E20C6D11E9D0B0E0083702C /* WProfile.m in Sources */,
+				1ECF9F4A1E9910EE00EB38E9 /* UIColor+NEOColor.m in Sources */,
 				1E8032991CDF0BE30010D036 /* WZMyWishesViewController.m in Sources */,
 				1EEDCCB31DB507F300DBB363 /* UIImage+Scale.m in Sources */,
+				1ECF9F461E9910EE00EB38E9 /* NEOColorPickerHueGridViewController.m in Sources */,
+				1ECF9F411E9910EE00EB38E9 /* NEOColorPickerFavoritesViewController.m in Sources */,
 				1E22EBFF1E87CF7100B983AC /* RUReachabilityManager.m in Sources */,
 				1E8717F81CE8B4B60062EFE9 /* WZChatListViewController.m in Sources */,
 				1E4276441CD915430004A0F8 /* NSString+Extras.m in Sources */,
 				1EA47E341D043C6600794973 /* WZMyPostTableViewCell.m in Sources */,
+				1EBFEAFA1E9F57D6000F739C /* CSNativeBlurView.m in Sources */,
 				1EE33E981E6F44390012248A /* NSURL+SCSaveToCameraRoll.m in Sources */,
 				1EEDCCB21DB507F300DBB363 /* UIImage+FiltrrCompositions.m in Sources */,
+				1ECF9F431E9910EE00EB38E9 /* NEOColorPickerGradientView.m in Sources */,
 				1E42763E1CD915270004A0F8 /* UIColor+Extras.m in Sources */,
 				1E4276471CD915510004A0F8 /* NSError+Extras.m in Sources */,
 				1E7208CB1CD924420017188F /* WZFollowerViewController.m in Sources */,
@@ -1286,6 +1483,7 @@
 				1EB5F3FA1E813BC600352A36 /* MBCircularProgressBarView.m in Sources */,
 				1E42764D1CD915720004A0F8 /* WZHomeViewController.m in Sources */,
 				1E060B061CC4E311009E1BBC /* AppDelegate.m in Sources */,
+				1ECF9F401E9910EE00EB38E9 /* NEOColorPickerBaseViewController.m in Sources */,
 				1E060B031CC4E311009E1BBC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

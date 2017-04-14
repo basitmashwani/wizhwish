@@ -379,21 +379,23 @@
     
     if (self.isnextPressed) {
         
-//        WWizhViewController *controller =  [[UIStoryboard getWhizStoryBoard] instantiateViewControllerWithIdentifier:K_SB_WIZH_VIEW_CONTROLLER];
+        WWizhViewController *controller =  [[UIStoryboard getWhizStoryBoard] instantiateViewControllerWithIdentifier:K_SB_WIZH_VIEW_CONTROLLER];
+        
+        controller.showWhiz = YES;
 //        
-//        [self.navigationController pushViewController:controller animated:YES];
+        [self.navigationController pushViewController:controller animated:YES];
         
        // [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         //Save video
         
-        NSString *firstFilePath = [[WSetting getSharedSetting] rearVideoUrlPath];
-        NSString *firstOutputPath = [self getOutputPathfor:@"Rear"];
-
-        
-            
-        NSURL *url = [NSURL fileURLWithPath:firstFilePath];
-        [self addTextToVideoWithVideoURL:url withText:self.textLabel.text];
-        
+//        NSString *firstFilePath = [[WSetting getSharedSetting] rearVideoUrlPath];
+//        NSString *firstOutputPath = [self getOutputPathfor:@"Rear"];
+//
+//        
+//            
+//        NSURL *url = [NSURL fileURLWithPath:firstFilePath];
+//        [self addTextToVideoWithVideoURL:url withText:self.textLabel.text];
+//        
         //End
         
         

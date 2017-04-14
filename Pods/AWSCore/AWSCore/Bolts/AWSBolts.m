@@ -10,8 +10,10 @@
 
 #import "AWSBolts.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@implementation AWSBolts
 
-NSString *const AWSBoltsFrameworkVersionString = @"1.8.4";
++ (NSString *)version {
+    return AWS_BOLTS_VERSION;
+}
 
-NS_ASSUME_NONNULL_END
+@end

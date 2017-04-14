@@ -19,6 +19,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>AWSCore.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AWSS3.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Color-Picker-for-iOS.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,7 +82,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>06185C635B722425EE420AFCDEF35984</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2755AE42901315D17AD036F6B85DA681</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3E6DBEF5AE1D1610D320D65A6DD49C50</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>41AB2D1657942846DDCA1B6ADD810759</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>52AE5716616CA781E7544CE55345372B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -88,11 +118,6 @@
 			<true/>
 		</dict>
 		<key>6E66B362AE57238557E51E1B585B5C93</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>76E5FC8CCC8E504D79C9B40291FBC973</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -128,11 +153,6 @@
 			<true/>
 		</dict>
 		<key>C6D966B1EE67D8C83EEDCF82848C8552</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D3C3929D90751230ABF28650AC3E3657</key>
 		<dict>
 			<key>primary</key>
 			<true/>

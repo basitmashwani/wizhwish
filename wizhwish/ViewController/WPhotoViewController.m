@@ -76,11 +76,14 @@
     
     WWizhViewController *controller =  [[UIStoryboard getWhizStoryBoard] instantiateViewControllerWithIdentifier:K_SB_WIZH_VIEW_CONTROLLER];
     
+    controller.showWhiz = YES;
+    controller.imgArray = self.imagesArray;
     [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)updateCameraViewWithImage:(UIImage*)image {
  
+  //  image = [UIImage resizeImage:image toResolution:480];
     [self.imagesArray addObject:image];
     [self.tempImagesArray addObject:image];
 
@@ -418,8 +421,9 @@
 
 }
 - (void)colorChanged:(id)sender {
-    HRColorMapView *colorMap = (HRColorMapView*)sender;
-    self.drawingView.lineColor = colorMap.color;
+  //  HRColorMapView *colorMap = (HRColorMapView*)sender;
+    //self.drawingView.lineColor = colorMap.color;
+    
 }
 
 - (void)filterPressed:(id)sender {
@@ -556,7 +560,7 @@
 
 #pragma mark PhotoEditController Delegate Methods
 
-- (void)PhotoEditViewController:(WPhotoEditViewController *)viewController didSaveImage:(UIImage *)image withIndex:(NSInteger)index {
+- (void)PhotoEditViewController:(WPhotoEditViewController *)viewController didSaveImage:(UIImage *)image withIndex:(NSInteger)index  {
     
     [self.imagesArray replaceObjectAtIndex:index withObject:image];
     [self.tempImagesArray replaceObjectAtIndex:index withObject:image];
@@ -617,12 +621,7 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     
     self.capturedImage = [info objectForKey:UIImagePickerControllerOriginalImage];
-    NSData *data = UIImagePNGRepresentation(self.capturedImage);
-    UIImage *tmpImage = [UIImage imageWithData:data];
-    UIImage *afterFixingOrientation = [UIImage imageWithCGImage:tmpImage.CGImage
-                                                          scale:self.capturedImage.scale
-                                                    orientation:self.capturedImage.imageOrientation];
-    self.capturedImage = afterFixingOrientation;
+    
     
     [self updateCameraViewWithImage:self.capturedImage];
 }
@@ -682,7 +681,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    self.addButton.hidden = YES;
+   // self.addButton.hidden = YES;
     UIImage *image = [self.tempImagesArray objectAtIndex:self.selectedIndex];
   //  image =  [UIImage getFilterImageWithIndex:0 withImage:image];
    UIImage *filteredImage =  [UIImage getFilterImageWithIndex:indexPath.row withImage:image];

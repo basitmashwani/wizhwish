@@ -22,6 +22,11 @@
 
 @property(nonatomic ,retain) NSString *postText;
 
+@property(nonatomic ,retain) NSMutableArray *imageArray;
+
+@property(nonatomic ,assign) NSString *uploadedCount;
+
+
 
 + (WSetting*)getSharedSetting;
 

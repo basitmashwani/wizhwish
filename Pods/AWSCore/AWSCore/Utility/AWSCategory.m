@@ -1,5 +1,5 @@
 //
-// Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
@@ -490,11 +490,6 @@ static NSTimeInterval _clockskew = 0.0;
         || [self isEqualToString:@"us-east-1"]) {
         return AWSRegionUSEast1;
     }
-    if ([self isEqualToString:@"AWSRegionUSEast2"]
-        || [self isEqualToString:@"USEast2"]
-        || [self isEqualToString:@"us-east-2"]) {
-        return AWSRegionUSEast2;
-    }
     if ([self isEqualToString:@"AWSRegionUSWest1"]
         || [self isEqualToString:@"USWest1"]
         || [self isEqualToString:@"us-west-1"]) {
@@ -509,11 +504,6 @@ static NSTimeInterval _clockskew = 0.0;
         || [self isEqualToString:@"EUWest1"]
         || [self isEqualToString:@"eu-west-1"]) {
         return AWSRegionEUWest1;
-    }
-    if ([self isEqualToString:@"AWSRegionEUWest2"]
-        || [self isEqualToString:@"EUWest2"]
-        || [self isEqualToString:@"eu-west-2"]) {
-        return AWSRegionEUWest2;
     }
     if ([self isEqualToString:@"AWSRegionEUCentral1"]
         || [self isEqualToString:@"EUCentral1"]
@@ -550,11 +540,7 @@ static NSTimeInterval _clockskew = 0.0;
         || [self isEqualToString:@"sa-east-1"]) {
         return AWSRegionSAEast1;
     }
-    if ([self isEqualToString:@"AWSRegionCACentral1"]
-        || [self isEqualToString:@"CACentral1"]
-        || [self isEqualToString:@"ca-central-1"]) {
-        return AWSRegionCACentral1;
-    }
+
     if ([self isEqualToString:@"AWSRegionUSGovWest1"]
         || [self isEqualToString:@"USGovWest1"]
         || [self isEqualToString:@"us-gov-west-1"]) {

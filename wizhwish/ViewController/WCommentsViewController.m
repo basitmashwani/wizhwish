@@ -14,8 +14,6 @@
 
 @property(nonatomic ,retain) NSArray *array;
 
-@property(nonatomic ) NSInteger counter;
-
 @property(nonatomic ) BOOL canFetch;
 
 @end
@@ -49,11 +47,7 @@
     
     [super viewDidAppear:animated];
     
-    if (_counter == 0) {
-        _counter = 5;
-    }
-
-    [self getCommentListWithlimit:_counter];
+    [self getCommentListWithlimit:self.array.count];
     
    
 }
@@ -97,17 +91,19 @@
        // [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         
         NSArray *commentArray = [dict valueForKey:@"data"];
+
         if (commentArray.count >0) {
         
             weakSelf.canFetch = YES;
         weakSelf.array =  [weakSelf.array arrayByAddingObjectsFromArray:commentArray];
+       // weakSelf.array = [[weakSelf.array reverseObjectEnumerator] allObjects];
+
         [weakSelf.tableView reloadData];
         
         }
         else {
             
             weakSelf.canFetch = NO;
-            weakSelf.counter  = weakSelf.counter - 5;
         }
         
         
@@ -149,15 +145,24 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
+    NSInteger index = (self.array.count-1) - indexPath.row;
+   
     WZProfileTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:K_FOLLOWER_CELL];
     
-    NSDictionary *postDict = [self.array objectAtIndex:indexPath.row];
+    NSDictionary *postDict = [self.array objectAtIndex:index];
 
     WZPost *post = [WZServiceParser getDataFromDictionary:postDict haveComments:NO];
     
     cell.labelName.text = post.postText;
+    
     cell.labelUserName.text = post.displayName;
+    
     cell.timeLabel.text = post.createdDate;
+    
+    NSURL *url = [NSURL URLWithString:post.userProfileURL];
+    
+    [cell.imageViewProfile setImageWithURL:url placeholderImage:[UIImage imageNamed:@"Image_Profile-1"]];
+    
     
 
     return cell;
@@ -186,9 +191,7 @@
         if(indexPath.row == self.array.count - 1 && self.canFetch)
         {
             //  NSLog(@"last row %ld with post last index %ld",(long)indexPath.row,self.postArray.count-1);
-            self.counter = self.counter+5;
-            NSLog(@"couner %d",_counter);
-            [self getCommentListWithlimit:_counter];
+            [self getCommentListWithlimit:self.array.count];
             
             
         }
@@ -235,7 +238,7 @@
        // [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         weakSelf.textField.text = @"";
         weakSelf.canFetch = YES;
-        [weakSelf getCommentListWithlimit:_counter];
+        [weakSelf getCommentListWithlimit:self.array.count];
 
     } failure:^(NSError *error) {
        

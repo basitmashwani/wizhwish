@@ -10,6 +10,7 @@
 #import "WZHomeViewController.h"
 #import "UIView+Extras.h"
 #import "RUReachability.h"
+#import <UIImageView+AFNetworking.h>
 
 
 
@@ -27,11 +28,11 @@
 
 @property(nonatomic) BOOL canScrollTop;
 
-@property(nonatomic) NSInteger counter;
-
 @property(nonatomic) BOOL isHide;
 
 @property(nonatomic) BOOL canFetch;
+
+@property(nonatomic ,retain) NSArray *imagesArray;
 
 @property(nonatomic ,retain) AVAudioPlayer *audioPlayer;
 
@@ -40,6 +41,13 @@
 
 #pragma mark Private Methods
 
+
+- (void)fileUploaded:(id)sender {
+    
+  //  [CSNotificationView showInViewController:self
+       //                                style:CSNotificationViewStyleSuccess
+     //                                message:@"Post successfully published."];
+}
 - (void)getPostWithLimit:(NSInteger)limit {
     
     __weak typeof(self) weakSelf = self;
@@ -48,10 +56,11 @@
         //  [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         
         NSArray *array = [dict valueForKey:@"data"];
-        if (array.count != 0) {
+        if (array.count > 0) {
             
             weakSelf.postArray =  [weakSelf.postArray arrayByAddingObjectsFromArray:array];
-        [weakSelf.tableView reloadData];
+       
+            [weakSelf.tableView reloadData];
         }
         
     } failure:^(NSError *error) {
@@ -215,7 +224,13 @@
     
 }
 - (void)settingPressed {
+ 
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:k_ACCESS_TOKEN];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     
+    LoginViewController *loginController = [[UIStoryboard getLoginStoryBoard] instantiateViewControllerWithIdentifier:K_SB_LOGIN_VIEW_CONTROLLER];
+    
+    [RUUtility setMainRootController:loginController];
 }
 
 - (void)intialSetup {
@@ -305,10 +320,15 @@
     [super viewWillAppear:animated];
   //  [(ScrollingNavigationController *)self.navigationController followScrollView:self.tableView delay:50.0f];
    
-    if (_counter == 0) {
-        _counter = 5;
-    }
-    [self getPostWithLimit:_counter];
+    
+    [self getPostWithLimit:self.postArray.count];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fileUploaded:) name:k_FILE_UPLOADED_NOTIFICATION object:nil];
 }
 - (void)viewDidLoad {
     
@@ -336,6 +356,7 @@
        WZMyProfileViewController *profileController = (WZMyProfileViewController*)segue.destinationViewController;
     
        profileController.profileType = KWPofileTypeSelf;
+       
     //    KWPofileTypeSelf = 0,
       //  kWProfileTypeOther
     }
@@ -357,8 +378,7 @@
     if(indexPath.row == self.postArray.count)
     {
       //  NSLog(@"last row %ld with post last index %ld",(long)indexPath.row,self.postArray.count-1);
-        self.counter = self.counter+5;
-        [self getPostWithLimit:_counter];
+        [self getPostWithLimit:indexPath.row];
         
         
     }
@@ -390,6 +410,11 @@
        NSDictionary *postDict = [self.postArray objectAtIndex:index];
         WZPost *post = [WZServiceParser getDataFromDictionary:postDict haveComments:YES];
         
+        NSURL *url = [NSURL URLWithString:post.userProfileURL];
+        
+        [cell.imageViewProfile setImageWithURL:url placeholderImage:[UIImage imageNamed:@"Image_Profile-1"]];
+        
+        
         if (post.postText.length > 0) {
             cell = [tableView dequeueReusableCellWithIdentifier:K_POST_TABLEVIEW_CELL_TEXT];
             cell.isText = YES;
@@ -397,6 +422,17 @@
         }
         else {
             cell.imageViewPost.hidden = NO;
+           NSArray *imagesArray = [post.mediaDictionary valueForKey:@"images"];
+           
+            
+            cell.imageArray = [[NSArray alloc] initWithArray:imagesArray];
+            [cell setUpImagePager];
+            [cell.imageViewPost reloadData];
+            
+              
+
+          //  [cell.imageViewPost setImageWithURL:[NSURL URLWithString:imagesArray.firstObject]];
+            
             cell.isText = NO;
         }
         cell.labelProfileName.text = post.displayName;
@@ -468,13 +504,14 @@
             return 170;
         }
         else {
-        return  370;
+        return  500;
     }
     }
 }
 
 
-#pragma mark UIScrollView Delegate Methods 
+
+#pragma mark - UIScrollView Delegate Methods
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
  
@@ -535,6 +572,7 @@
         buttonTag = label.tag;
     }
     
+    [self showNavigationBar:YES];
     WCommentsViewController *commentController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_COMMENTS_VIEW_CONTROLLER];
     commentController.postId = [NSString stringWithFormat:@"%ld",(long)buttonTag];
     [self.navigationController pushViewController:commentController animated:YES];

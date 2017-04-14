@@ -80,6 +80,10 @@ get UIBarButton Instance
 + (UIImagePickerController*)getImagePickerFor:(KMediaType)mediaType;
 
 
++ (NSString*)getFileURLPathforFileName:(NSString*)fileName withData:(NSData*)data;
+
+
++ (void)removeBaseDirectory;
 
 
 @end

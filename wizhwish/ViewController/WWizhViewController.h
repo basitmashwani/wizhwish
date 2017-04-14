@@ -10,12 +10,19 @@
 
 @interface WWizhViewController : UIViewController
 
+@property(nonatomic ,retain) IBOutlet UIButton *buttonGift;
 
-- (IBAction)whizWishPressed:(id)sender;
+@property(nonatomic ,retain) IBOutlet UIButton *whizList;
 
-- (IBAction)giftPressed:(id)sender;
+@property(nonatomic ,retain) NSMutableArray *imgArray;
 
-- (IBAction)whizBoardPressed:(id)sender;
+@property(nonatomic ,assign) BOOL showWhiz;
 
-- (IBAction)whizListPressed:(id)sender;
+//- (IBAction)whizWishPressed:(id)sender;
+//
+//- (IBAction)giftPressed:(id)sender;
+//
+//- (IBAction)whizBoardPressed:(id)sender;
+//
+//- (IBAction)whizListPressed:(id)sender;
 @end

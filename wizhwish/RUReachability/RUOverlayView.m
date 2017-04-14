@@ -47,7 +47,7 @@
     RUOverlayView *overlay = [[RUOverlayView alloc] initWithFrame:CGRectMake(0, 0, parentView.frame.size.width, parentView.frame.size.height)];
     if (overlay) {
         
-        [parentView addSubview:overlay];
+       // [parentView addSubview:overlay];
     }
     return overlay;
 }

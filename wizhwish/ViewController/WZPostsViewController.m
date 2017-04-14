@@ -128,6 +128,10 @@
 
     cell.labelName.text = [[self.array objectAtIndex:indexPath.row] valueForKey:@"userDisplayName"];
     cell.buttonPeople.tag = indexPath.row;
+    NSURL *url = [NSURL URLWithString:@"userProfileImage"];
+    
+    [cell.profileImageView setImageWithURL:url placeholderImage:[UIImage imageNamed:@"Image_Profile-1"]];
+    
     [cell.buttonPeople addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
    
     

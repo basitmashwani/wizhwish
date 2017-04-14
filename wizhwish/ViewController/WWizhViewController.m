@@ -28,12 +28,64 @@
     [self.navigationItem setTitle:@"WhizWish"];
     
     [RUUtility setBackButtonForController:self withSelector:@selector(backPressed:)];
+    
+    if (!self.showWhiz) {
+        self.buttonGift.alpha = 0.5;
+        [self.buttonGift setEnabled:NO];
+        
+        self.whizList.alpha = 0.5;
+        [self.whizList setEnabled:NO];
+    }
+    
+    
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    NSMutableArray *array = [[NSMutableArray alloc] init];
+    
+    for(UIImage *image in self.imgArray) {
+        
+        NSString *fileName = [[[NSProcessInfo processInfo] globallyUniqueString] stringByAppendingString:@".png"];
+        
+        NSString  *imageURL = [NSString stringWithFormat:@"%@%@%@%@",k_AMAZON_S3_SERVER_URL,k_BUCKET_NAME,@"/",fileName];
+        
+        [array addObject:imageURL];
+        
+        NSData * imageData = [UIImage getImageCompressedData:image];//UIImagePNGRepresentation(image);
+        
+        NSLog(@"image size %u kb",imageData.length/1024);
+        
+        NSString  *filePath = [RUUtility getFileURLPathforFileName:fileName withData:imageData];
+        
+        [[WZServiceParser sharedParser] processUploadFileAWSWithfilePath:filePath fileName:fileName success:^(NSString *fileName) {
+            
+            NSString *count = [[WSetting getSharedSetting] uploadedCount];
+           
+            NSInteger mCount = [count integerValue]+1;
+            NSString *increment = [NSString stringWithFormat:@"%d",mCount];
+            [[WSetting getSharedSetting] setUploadedCount:increment];
+            
+            NSLog(@"file uploaded");
+            
+        }];
+        
+        
+        
+        
+    }
+    
+    [WSetting getSharedSetting].imageArray = array;
+    
+
 }
 
 

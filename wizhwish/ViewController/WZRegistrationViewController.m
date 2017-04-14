@@ -150,6 +150,7 @@
                 [[NSUserDefaults standardUserDefaults] setObject:response forKey:k_ACCESS_TOKEN];
                 [[NSUserDefaults standardUserDefaults] synchronize];
                 WProfileViewController *profileViewController = [[UIStoryboard getProfileStoryBoard] instantiateViewControllerWithIdentifier:@"K_SB_PROFILE_VC"];
+                profileViewController.isFromRegistration = YES;
                 [RUUtility setMainRootController:profileViewController];
             } failure:^(NSError *error) {
                 

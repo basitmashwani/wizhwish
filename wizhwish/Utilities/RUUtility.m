@@ -161,6 +161,45 @@
 }
 
 
++ (void)removeBaseDirectory {
+   
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSArray *appSupportDir = [fm URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
+    NSURL* dirPath = [[appSupportDir objectAtIndex:0] URLByAppendingPathComponent:@"WhizWish"];
+    
+    NSError *error;
+    BOOL isRemoved = [fm removeItemAtPath:dirPath.path error:&error];
+    
+    if (isRemoved) {
+        NSLog(@"Directory Removed");
+    }
+    
+}
++ (NSString*)getFileURLPathforFileName:(NSString*)fileName withData:(NSData*)data {
+    
+    NSFileManager *fm = [NSFileManager defaultManager];
+    NSArray *appSupportDir = [fm URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
+    NSURL* dirPath = [[appSupportDir objectAtIndex:0] URLByAppendingPathComponent:@"WhizWish"];
+    
+    NSError*    theError = nil; //error setting
+    if (![fm createDirectoryAtURL:dirPath withIntermediateDirectories:YES
+                       attributes:nil error:&theError])
+    {
+        NSLog(@"not created");
+        
+    }
+    
+     NSString *filePath = [dirPath.path stringByAppendingPathComponent:fileName];
+    
+  BOOL status =  [[NSFileManager defaultManager] createFileAtPath:filePath contents:data attributes:nil];
+    
+    if(status) {
+        NSLog(@"write file");
+    }
+    return filePath;
+
+}
+
 
 
 @end

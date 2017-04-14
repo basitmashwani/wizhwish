@@ -8,8 +8,11 @@
 
 #import "WZMyProfileViewController.h"
 #import "WZFollowerViewController.h"
+#import <UIImageView+AFNetworking.h>
 
 @interface WZMyProfileViewController ()
+
+@property(nonatomic ,retain) WProfile *profile;
 
 @end
 
@@ -44,9 +47,97 @@
 
         
 }
+    else if(self.profileType == KWPofileTypeSelf) {
+        
+        WProfileViewController *profileViewController = [[UIStoryboard getProfileStoryBoard] instantiateViewControllerWithIdentifier:k_SB_PROFILE_EDIT_VC];
+        profileViewController.isFromRegistration = NO;
+        profileViewController.profile = self.profile;
+        profileViewController.profileImg = self.imageViewProfile.image;
+        profileViewController.bannerImg = self.bannerImageView.image;
+        [self.navigationController pushViewController:profileViewController animated:YES];
+    }
+    
 
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+        NSString *profileURL = nil;
+    
+     if(self.profileType == KWPofileTypeSelf) {
+        
+         profileURL = @"/users/myProfile";
+       
+     }
+    
+    else {
+        
+        profileURL = [NSString stringWithFormat:@"%@%@",@"/users/userProfile?j_username=",self.userName];
+    }
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    __weak typeof(self) weakSelf = self;
+    [[WZServiceParser sharedParser] processGetProfileFor:profileURL success:^(NSDictionary *dict) {
+        
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        NSLog(@"Dictionary %@",dict);
+        
+        weakSelf.profile = [[WProfile alloc] init];
+        
+        weakSelf.profileName.text = [dict valueForKey:@"name"];
+        
+        weakSelf.profile.fullName = [dict valueForKey:@"name"];
+        
+        weakSelf.profile.bio = [dict valueForKey:@"bio"];
+        
+        if ([weakSelf.profile.bio isEqual:[NSNull null]]) {
+     
+             weakSelf.profileBio.text = @"";
+       
+        }
+        else {
+       //
+            weakSelf.profileBio.text = weakSelf.profile.bio;
+        
+        }
+        
+        
+        weakSelf.profile.phoneNumber = [dict valueForKey:@"phone"];
+        
+        weakSelf.profile.bannerURL = [dict valueForKey:@"bannerImageUrl"];
+        
+        weakSelf.profile.profileURL = [dict valueForKey:@"standardImageUrl"];
+        
+        weakSelf.profile.profileThumbURL = [dict valueForKey:@"thumbnailImageUrl"];
+        
+        weakSelf.profile.gender = [dict valueForKey:@"gender"];
+        
+
+        NSString *urlPath = [dict valueForKey:@"standardImageUrl"];
+        
+        if (![urlPath isEqual:[NSNull null]]) {
+        NSURL *url = [NSURL URLWithString:urlPath];
+        
+        [weakSelf.imageViewProfile setImageWithURL:url placeholderImage:[UIImage imageNamed:@"Image_Profile-1"]];
+        //weakSelf.bio
+        }
+        
+        NSString *bannerUrlPath = [dict valueForKey:@"bannerImageUrl"];
+        
+        if (![bannerUrlPath isEqual:[NSNull null]]) {
+            NSURL *url = [NSURL URLWithString:bannerUrlPath];
+            
+            [weakSelf.bannerImageView setImageWithURL:url];
+        }
+        
+    } failure:^(NSError *error) {
+       
+        NSLog(@"unable to get ");
+    }];
+    
+}
 - (void)viewDidLoad {
     
     [super viewDidLoad];
@@ -81,6 +172,7 @@
       //  self.buttonFollow.hidden = YES;
         
        // self.buttonOption.hidden = YES;
+        
         
         [self.buttonFollow setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
         [self.buttonFollow setTitle:@"Edit" forState:UIControlStateNormal];

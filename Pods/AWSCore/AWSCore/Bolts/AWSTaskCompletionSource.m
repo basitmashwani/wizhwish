@@ -12,12 +12,17 @@
 
 #import "AWSTask.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@interface AWSTaskCompletionSource ()
+
+@property (nonatomic, strong, readwrite) AWSTask *task;
+
+@end
 
 @interface AWSTask (AWSTaskCompletionSource)
 
-- (BOOL)trySetResult:(nullable id)result;
+- (BOOL)trySetResult:(id)result;
 - (BOOL)trySetError:(NSError *)error;
+- (BOOL)trySetException:(NSException *)exception;
 - (BOOL)trySetCancelled;
 
 @end
@@ -32,7 +37,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)init {
     self = [super init];
-    if (!self) return self;
+    if (!self) return nil;
 
     _task = [[AWSTask alloc] init];
 
@@ -41,7 +46,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - Custom Setters/Getters
 
-- (void)setResult:(nullable id)result {
+- (void)setResult:(id)result {
     if (![self.task trySetResult:result]) {
         [NSException raise:NSInternalInconsistencyException
                     format:@"Cannot set the result on a completed task."];
@@ -55,6 +60,13 @@ NS_ASSUME_NONNULL_BEGIN
     }
 }
 
+- (void)setException:(NSException *)exception {
+    if (![self.task trySetException:exception]) {
+        [NSException raise:NSInternalInconsistencyException
+                    format:@"Cannot set the exception on a completed task."];
+    }
+}
+
 - (void)cancel {
     if (![self.task trySetCancelled]) {
         [NSException raise:NSInternalInconsistencyException
@@ -62,7 +74,7 @@ NS_ASSUME_NONNULL_BEGIN
     }
 }
 
-- (BOOL)trySetResult:(nullable id)result {
+- (BOOL)trySetResult:(id)result {
     return [self.task trySetResult:result];
 }
 
@@ -70,10 +82,12 @@ NS_ASSUME_NONNULL_BEGIN
     return [self.task trySetError:error];
 }
 
+- (BOOL)trySetException:(NSException *)exception {
+    return [self.task trySetException:exception];
+}
+
 - (BOOL)trySetCancelled {
     return [self.task trySetCancelled];
 }
 
 @end
-
-NS_ASSUME_NONNULL_END

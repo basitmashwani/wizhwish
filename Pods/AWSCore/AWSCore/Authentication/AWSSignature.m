@@ -1,5 +1,5 @@
 //
-// Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+// Copyright 2010-2016 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License").
 // You may not use this file except in compliance with the License.
@@ -778,12 +778,6 @@ static NSString *const emptyStringSha256 = @"e3b0c44298fc1c149afbf4c8996fb92427a
 
     // mark end of stream if no data is read
     self.endOfStream = (read <= 0);
-
-    // return NO if stream read failed
-    if (read < 0) {
-        AWSLogError(@"stream read failed streamStatus: %lu streamError: %@", (unsigned long)[self.stream streamStatus], [self.stream streamError].description);
-        return NO;
-    }
 
     NSData *data = [NSData dataWithBytesNoCopy:chunkBuffer length:read];
     [self.chunkData appendData:[self getSignedChunk:data]];

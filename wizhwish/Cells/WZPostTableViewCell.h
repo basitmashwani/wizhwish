@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KIImagePager.h"
 
 @interface WZPostTableViewCell : UITableViewCell
-
 @property(nonatomic ,retain) IBOutlet UIImageView *imageViewProfile;
 
-@property(nonatomic ,retain) IBOutlet UIImageView *imageViewPost;
+@property(nonatomic ,retain) IBOutlet KIImagePager *imageViewPost;
 
 @property(nonatomic ,retain) IBOutlet UILabel *labelProfileName;
 
@@ -32,7 +32,13 @@
 
 @property(nonatomic ,retain) IBOutlet UILabel *labelPostText;
 
+@property(nonatomic ,retain)  NSArray *imageArray;
+
 @property(nonatomic)  BOOL isText;
 
 @property(nonatomic ,retain) IBOutlet UILabel *labelOtherComment;
+
+- (void)setUpImagePager;
+
+
 @end

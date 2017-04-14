@@ -20,12 +20,17 @@
 
 +(UIImage*) drawImage:(UIImage*)fgImage inImage:(UIImage*)bgImage atPoint:(CGPoint)point;
 
-+ (UIImage *)drawToImage:(UIImage *)img withText:(NSString *)text withFrame:(CGRect)textRec;
++ (UIImage *)drawToImage:(UIImage *)img withText:(NSString *)text withFrame:(CGRect)textRec fontSize:(NSInteger)fontSize textColor:(UIColor*)textColor;
 
 + (UIImage*)image:(UIImage*)image withText:(NSString*)text atPoint:(CGPoint)point;
 
 - (UIImage *)fixOrientation;
     
 + (UIImage *)getFilterImageWithIndex:(NSInteger)filterIndex withImage:(UIImage*)image;
+
++ (UIImage *)resizeImage:(UIImage *)image toResolution:(int)resolution;
+
++(NSData*)getImageCompressedData:(UIImage*)image;
+
 
 @end

@@ -8,20 +8,24 @@
  *
  */
 
+#import "AWSBoltsVersion.h"
 #import "AWSCancellationToken.h"
 #import "AWSCancellationTokenRegistration.h"
 #import "AWSCancellationTokenSource.h"
 #import "AWSExecutor.h"
-#import "AWSGeneric.h"
 #import "AWSTask.h"
 #import "AWSTaskCompletionSource.h"
 
-
 NS_ASSUME_NONNULL_BEGIN
 
-/**
- A string containing the version of the Bolts Framework used by the current application.
+@interface AWSBolts : NSObject
+
+/*!
+ Returns the version of the Bolts Framework as an NSString.
+ @returns The NSString representation of the current version.
  */
-extern NSString *const AWSBoltsFrameworkVersionString;
++ (NSString *)version;
+
+@end
 
 NS_ASSUME_NONNULL_END

@@ -19,4 +19,6 @@ static WSetting *_sharedInstance = nil;
     return _sharedInstance;
 }
 
+
+
 @end

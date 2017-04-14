@@ -47,6 +47,8 @@
         
         WWizhViewController *controller =  [[UIStoryboard getWhizStoryBoard] instantiateViewControllerWithIdentifier:K_SB_WIZH_VIEW_CONTROLLER];
         
+        controller.showWhiz = NO;
+        
         [self.navigationController pushViewController:controller animated:YES];
     }
   
@@ -167,7 +169,27 @@ default:
 
 - (void)crossPressed {
  
-    [self.navigationController popViewControllerAnimated:YES];
+    if (_isImported) {
+        
+        self.navigationItem.leftBarButtonItem =  [RUUtility getBarButtonWithImage:[UIImage imageNamed:@"Image_Cross"] forViewController:self selector:@selector(crossPressed)];
+        
+        self.labelImport.hidden = NO;
+        
+        self.isImported = NO;
+        
+        self.bottomViewHeight.constant = 0;
+        
+        self.buttonImport.hidden = NO;
+        
+        self.mainImageView.image = [UIImage imageNamed:@"Image_Recording_Backgroud"];
+
+    }
+    else {
+        
+        [self.navigationController popViewControllerAnimated:YES];
+
+    }
+    
 }
 
 - (void)startRecording {
@@ -286,6 +308,11 @@ default:
     self.isImported = YES;
     
     self.bottomViewHeight.constant = 50;
+    
+    self.buttonImport.hidden = YES;
+
+    self.navigationItem.leftBarButtonItem =  [RUUtility getBarButtonWithImage:[UIImage imageNamed:@"Image_Nav_Back"] forViewController:self selector:@selector(crossPressed)];
+
 
     
 }

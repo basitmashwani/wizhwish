@@ -37,7 +37,12 @@ typedef enum {
 @property(nonatomic ,retain) IBOutlet NSString *userName;
 
 @property (weak, nonatomic) IBOutlet UILabel *profileName;
+
+@property (weak, nonatomic) IBOutlet UILabel *profileBio;
+
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
+
+@property (weak, nonatomic) IBOutlet UIImageView *bannerImageView;
 
 @property(nonatomic ,assign) WProfileViewType profileType;
 

@@ -27,7 +27,12 @@ static WZServiceParser *_sharedInstance = nil;
     
     [RUWebServiceParser postWebServiceWithURL:url parameter:nil header:nil success:^(NSDictionary *responseDict) {
         
+        if ([[responseDict valueForKey:@"status"] boolValue]) {
         success(@"success");
+        }
+        else {
+            failure([NSError createErrorWithDomain:@"Error" localizedDescription:@"Email already in use" ]);
+        }
     } failure:^(NSError *error) {
         
         failure(error);
@@ -42,7 +47,10 @@ static WZServiceParser *_sharedInstance = nil;
     
     [RUWebServiceParser postWebServiceWithURL:url parameter:nil header:k_AUTHORIZATION_BASIC success:^(NSDictionary *responseDict) {
         
-        success([responseDict valueForKey:@"access_token"]);
+        NSLog(@"response %@",responseDict);
+        
+            success([responseDict valueForKey:@"access_token"]);
+        
     } failure:^(NSError *error) {
         
         failure(error);
@@ -51,19 +59,38 @@ static WZServiceParser *_sharedInstance = nil;
     
 }
 
-- (void)processPostText:(NSString*)text success:(void(^)(NSString* accessToken))success
+- (void)processPostText:(NSString*)text tags:(NSString*)tags imagesArray:(NSArray*)imageArray videoArray:(NSArray*)videoArray audioArray:(NSArray*)audioArray success:(void(^)(NSString* accessToken))success
                 failure:(void(^)(NSError *error))failure {
    // networks/createPost?j_text=mypost&j_images=image,image2&j_privacy=public
-
-    text = [text stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     
-    NSString *url = [NSString stringWithFormat:@"%@%@%@%@",k_BASE_SOCIAL_SERVER_URL,@"/networks/createPost?j_text=",text,@"&j_images=image&j_privacy=public"];
+    tags = @"";
+
+   // text = [text stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@%@%@%@%@",k_BASE_SOCIAL_SERVER_URL,@"/networks/createPost?j_text=",@"",@"&j_tags=",@"AB",@"&j_privacy=public"];
     
     NSString *header = [[NSUserDefaults standardUserDefaults] valueForKey:k_ACCESS_TOKEN];
+
     header = [NSString stringWithFormat:@"%@%@",@"Bearer ",header];
-    [RUWebServiceParser postWebServiceWithURL:url parameter:nil header:header success:^(NSDictionary *responseDict) {
+    
+    NSDictionary *parameters = @{@"images":imageArray,
+                                 @"backendVideo":@"",
+                                 @"fronendVideo":@"",
+                                 @"audio":@"",
+                                 @"audioImage":@""
+                                 };
+    
+    ;    [RUWebServiceParser postWebServiceWithURL:url parameter:parameters header:header success:^(NSDictionary *responseDict) {
         
-        success([responseDict valueForKey:@"status"]);
+        
+        if ([[responseDict valueForKey:@"status"] boolValue]) {
+            
+            success([responseDict valueForKey:@"status"]);
+        }
+        else {
+            NSError *error = [NSError createErrorWithDomain:@"Error" localizedDescription:@"Webcall not succeed"];
+            failure(error);
+        }
     } failure:^(NSError *error) {
         
         failure(error);
@@ -107,8 +134,8 @@ static WZServiceParser *_sharedInstance = nil;
 
 - (void)processGetWhizPostWithLimit:(NSInteger)limit success:(void(^)(NSDictionary* dict))success failure:(void(^)(NSError *error))failure {
     
-    NSInteger prevLimit = limit - 5;
-    NSString *url = [NSString stringWithFormat:@"%@%@%ld%s%ld",k_BASE_SOCIAL_SERVER_URL,@"/networks/post?j_skip=",(long)prevLimit,"&&j_limit=",(long)limit];
+    NSInteger maxLimit = limit + 5;
+    NSString *url = [NSString stringWithFormat:@"%@%@%ld%s%ld",k_BASE_SOCIAL_SERVER_URL,@"/networks/post?j_skip=",(long)limit,"&&j_limit=",(long)maxLimit];
     
     NSString *header = [[NSUserDefaults standardUserDefaults] valueForKey:k_ACCESS_TOKEN];
     header = [NSString stringWithFormat:@"%@%@",@"Bearer ",header];
@@ -164,8 +191,8 @@ static WZServiceParser *_sharedInstance = nil;
 
 - (void)processGetCommentsForPost:(NSString*)postId withLimit:(NSInteger)limit success:(void(^)(NSDictionary* dict))success failure:(void(^)(NSError *error))failure {
     
-    NSInteger prevLimit = limit - 5;
-    NSString *url = [NSString stringWithFormat:@"%@%@%d%@%d%@%@",k_BASE_SOCIAL_SERVER_URL,@"/networks/comments?j_skip=",prevLimit,@"&j_limit=",limit,@"&j_postId=",postId];
+    NSInteger maxLimit = limit + 5;
+    NSString *url = [NSString stringWithFormat:@"%@%@%ld%@%ld%@%@",k_BASE_SOCIAL_SERVER_URL,@"/networks/comments?j_skip=",(long)limit,@"&j_limit=",(long)maxLimit,@"&j_postId=",postId];
     
     NSString *header = [[NSUserDefaults standardUserDefaults] valueForKey:k_ACCESS_TOKEN];
     header = [NSString stringWithFormat:@"%@%@",@"Bearer ",header];
@@ -185,6 +212,52 @@ static WZServiceParser *_sharedInstance = nil;
 }
 
 
+- (void)processProfileWithName:(NSString*)name bio:(NSString*)bio phoneNumber:(NSString*)phoneNumber gender:(NSString*)gender profileImageURL:(NSString*)standardURL profileThumbnailURL:(NSString*)thumbnailURL bannerImageURL:(NSString*)bannerURL success:(void(^)(NSString* success))success failure:(void(^)(NSError *error))failure {
+    
+    name = [name stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+
+    bio = [bio stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    
+  phoneNumber = [phoneNumber stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+
+
+    NSString *url = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@%@%@%@%@%@%@%@",k_BASE_SOCIAL_SERVER_URL,
+                     @"/users/profile?j_name=",name,@"&j_email=""&j_bio=",bio,@"&j_phone=",phoneNumber,@"&j_gender=",gender,@"&&j_standardImageUrl=",standardURL,@"&j_thumbnailImageUrl=",thumbnailURL,@"&j_bannerImageUrl=",bannerURL];
+    
+    NSString *header = [[NSUserDefaults standardUserDefaults] valueForKey:k_ACCESS_TOKEN];
+    header = [NSString stringWithFormat:@"%@%@",@"Bearer ",header];
+    [RUWebServiceParser postWebServiceWithURL:url parameter:nil header:header success:^(NSDictionary *responseDict) {
+        
+        success([responseDict valueForKey:@"status"]);
+    } failure:^(NSError *error) {
+        
+        failure(error);
+    }];
+    
+
+}
+
+- (void)processGetProfileFor:(NSString*)profileURL success:(void(^)(NSDictionary* dict))success failure:(void(^)(NSError *error))failure {
+    
+    
+    NSString *url = [NSString stringWithFormat:@"%@%@",k_BASE_SOCIAL_SERVER_URL,profileURL];
+    
+    NSString *header = [[NSUserDefaults standardUserDefaults] valueForKey:k_ACCESS_TOKEN];
+    header = [NSString stringWithFormat:@"%@%@",@"Bearer ",header];
+    
+    [RUWebServiceParser getWebServiceWithURL:url header:header parameter:nil success:^
+     
+     (NSDictionary *responseDict) {
+         
+         success([responseDict valueForKey:@"data"]);
+         
+     } failure:^(NSError *error) {
+         
+         failure(error);
+         
+     }];
+    
+}
 
 + (WZPost *)getDataFromDictionary:(NSDictionary *)dict haveComments:(BOOL)isComments {
     
@@ -194,6 +267,7 @@ static WZServiceParser *_sharedInstance = nil;
     post.postText = [dict valueForKey:@"text"];
     NSTimeInterval timeInterval = [[dict valueForKey:@"createdDate"] doubleValue];
     post.commentCount = [dict valueForKey:@"totalComments"];
+    post.mediaDictionary = [dict valueForKey:@"media"];
     NSDate *fromDate = [NSDate getDateFromEpochValue:timeInterval];
     NSDate *toDate = [NSDate getDateFromEpochValue:[[NSDate date] timeIntervalSince1970]];
     post.createdDate = [NSDate getMinutesDifferenceFromDate:fromDate toDate:toDate];
@@ -220,14 +294,71 @@ static WZServiceParser *_sharedInstance = nil;
         post.postComment = comments;
         
     }
-    }
+    
+        }
     
     
     return  post;
 }
 
 
+- (void)processUploadFileAWSWithfilePath:(NSString*)filePath fileName:(NSString*)fileName success:(void(^)(NSString* fileName))success {
+    
+    AWSS3TransferManagerUploadRequest *uploadRequest = [AWSS3TransferManagerUploadRequest new];
+    uploadRequest.body = [NSURL fileURLWithPath:filePath];
+    uploadRequest.key = fileName;
+    uploadRequest.bucket = k_BUCKET_NAME;
+   // self.bucketKey = fileName;
+    NSLog(@"Budcket key %@",fileName);
+    
+    
+    
+    [self upload:uploadRequest success:^{
+        
+        NSString *filePath = fileName;
+        success(filePath);
+    }];
+    
+}
 
+- (void)upload:(AWSS3TransferManagerUploadRequest *)uploadRequest success:(void(^)(void))success {
+    AWSS3TransferManager *transferManager = [AWSS3TransferManager defaultS3TransferManager];
+    
+    
+    [[transferManager upload:uploadRequest] continueWithBlock:^id(AWSTask *task) {
+        if (task.error) {
+            if ([task.error.domain isEqualToString:AWSS3TransferManagerErrorDomain]) {
+                switch (task.error.code) {
+                    case AWSS3TransferManagerErrorCancelled:
+                    case AWSS3TransferManagerErrorPaused:
+                    {
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            
+                        });
+                    }
+                        break;
+                        
+                    default:
+                        NSLog(@"Upload failed: [%@]", task.error);
+                        break;
+                }
+            } else {
+                NSLog(@"Upload failed: [%@]", task.error);
+            }
+        }
+        
+        if (task.result) {
+            
+            NSLog(@"uploaded %@",task.result);
+            success();
+          //  NSString *downloadingFilePath = [[NSTemporaryDirectory() stringByAppendingPathComponent:@"download"] stringByAppendingPathComponent:self.bucketKey];
+          //  NSURL *downloadingFileURL = [NSURL fileURLWithPath:downloadingFilePath];
+           // NSLog(@"Download Url %@",downloadingFileURL.absoluteString);
+        }
+        
+        return nil;
+    }];
+}
 
 
 

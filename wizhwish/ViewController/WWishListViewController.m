@@ -10,10 +10,25 @@
 
 @interface WWishListViewController ()
 
+@property(nonatomic ,retain) NSMutableArray *standardLinkArray;
+
+@property(nonatomic ,retain) NSTimer *timer;
+
 @end
 
 @implementation WWishListViewController
 
+#pragma mark - Life Cycle Methods
+
+
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    
+    self  = [super initWithCoder:aDecoder];
+    
+    self.standardLinkArray = [[NSMutableArray alloc] init];
+  
+    return self;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -21,31 +36,128 @@
     // Do any additional setup after loading the view.
 }
 
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Private Methods
+
 - (void)nextPressed {
     
-    NSString *text = [[WSetting getSharedSetting] postText];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    __weak typeof(self) weakSelf = self;
-    [[WZServiceParser sharedParser] processPostText:text success:^(NSString *accessToken) {
-       
-        NSLog(@"msg:%@",accessToken);
-        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
-        [self.navigationController popToRootViewControllerAnimated:YES];
+    
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(postToServer) userInfo:nil repeats:YES];
+//    if ([[WSetting getSharedSetting] imageArray] != nil) {
+//        
+//        // Post Images
+//        [self postImagesToServer];
+//    }
+//    else if ([[WSetting getSharedSetting] postText].length > 0) {
+//        
+//        // Post Text;
+    
+       // [self postToServer];
+  //
+  //  }
+    
 
-    } failure:^(NSError *error) {
-       
-        [OLGhostAlertView showAlertAtBottomWithTitle:@"Message" message:@"Unable to proceed request"];
-        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
-
-        
-    }];
     
 }
+
+- (void)postToServer {
+    
+    
+    NSString *text = [[WSetting getSharedSetting] postText];
+    
+    
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    __weak typeof(self) weakSelf = self;
+    
+    
+    
+    self.standardLinkArray = [[WSetting getSharedSetting] imageArray];
+    
+    
+    NSInteger count = [[[WSetting getSharedSetting] uploadedCount] integerValue];
+    if (_standardLinkArray.count > 0 && count < _standardLinkArray.count) {
+        
+        NSLog(@"Not uploaded");
+        
+        return;
+        
+    }
+    [_timer invalidate];
+    _timer = nil;
+    
+    NSLog(@"Uploaded");
+    
+    [[WZServiceParser sharedParser] processPostText:text tags:nil imagesArray:self.standardLinkArray videoArray:nil audioArray:nil  success:^(NSString *accessToken) {
+        
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        [CSNotificationView showInViewController:weakSelf style:CSNotificationViewStyleSuccess message:@"Post publish successfully."];
+        [weakSelf.navigationController popToRootViewControllerAnimated:YES];
+
+        
+        
+    } failure:^(NSError *error) {
+        
+        [OLGhostAlertView showAlertAtBottomWithTitle:@"Message" message:@"Unable to proceed request"];
+        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        
+        
+    }];
+}
+
+//- (void)postImagesToServer {
+//   
+//    NSArray *array = [[WSetting getSharedSetting] imageArray];
+//    
+//    __weak typeof(self) weakSelf = self;
+//    for (UIImage *image in array) {
+//        
+//            [weakSelf uploadPhotos:image];
+//
+//    }
+//    
+//    [self.navigationController popToRootViewControllerAnimated:YES];
+//
+//    
+//}
+
+//- (void)uploadPhotos:(UIImage*)image {
+//    
+//    
+//    __weak typeof(self) weakSelf = self;
+//    
+//    NSInteger imageCount = [[[WSetting getSharedSetting] imageArray] count];
+//    
+//    NSString *fileName = [[[NSProcessInfo processInfo] globallyUniqueString] stringByAppendingString:@".png"];
+//    
+//    NSData * imageData = [UIImage getImageCompressedData:image];//UIImagePNGRepresentation(image);
+//        
+//        NSString  *filePath = [RUUtility getFileURLPathforFileName:fileName withData:imageData];
+//        
+//        [[WZServiceParser sharedParser] processUploadFileAWSWithfilePath:filePath fileName:fileName success:^(NSString *fileName) {
+//            
+//            
+//            
+//            NSString  *imageURL = [NSString stringWithFormat:@"%@%@%@%@",k_AMAZON_S3_SERVER_URL,k_BUCKET_NAME,@"/",fileName];
+//            
+//            
+//            [weakSelf.standardLinkArray addObject:imageURL];
+//            
+//            if (weakSelf.standardLinkArray.count == imageCount) {
+//                
+//                [weakSelf postToServer];
+//            }
+//
+//            
+//    }];
+//
+//    
+//}
+
 /*
 #pragma mark - Navigation
 

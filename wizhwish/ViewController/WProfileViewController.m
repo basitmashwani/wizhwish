@@ -8,7 +8,34 @@
 
 #import "WProfileViewController.h"
 
-@interface WProfileViewController ()
+@interface WProfileViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
+
+@property(nonatomic ,assign) BOOL isBanner;
+
+@property(nonatomic ,retain) NSArray *genderArray;
+
+@property(nonatomic ,retain) UIPickerView *pickerView;
+
+@property(nonatomic ,retain) NSString *stringFullName;
+
+@property(nonatomic ,retain) NSString *stringBio;
+
+@property(nonatomic ,retain) NSString *stringGender;
+
+@property(nonatomic ,retain) NSString *stringPhone;
+
+@property(nonatomic ,retain) NSString *profileThumbnailURL;
+
+@property(nonatomic ,retain) NSString *profileImageURL;
+
+@property(nonatomic ,retain) NSString *bannerThumbnailURL;
+
+@property(nonatomic ,retain) NSString *bannerImageURL;
+
+
+@property(nonatomic ,assign) BOOL isProfileUploading;
+
+@property(nonatomic ,assign) BOOL isBannerUploading;
 
 @end
 
@@ -16,17 +43,197 @@
 
 
 #pragma mark - Private Methods
+
+
+- (void)uploadProfileImage:(UIImage*)image {
+    
+    __weak typeof(self) weakSelf = self;
+    
+    
+    
+        NSString *fileName = [[[NSProcessInfo processInfo] globallyUniqueString] stringByAppendingString:@".png"];
+       NSString *thumbFileName = [NSString stringWithFormat:@"%@%@",@"thumb_",fileName];
+    
+        UIImage *thumbImage = [UIImage resizeImage:image toResolution:80];
+        NSData * imageData = [UIImage getImageCompressedData:thumbImage];
+    //UIImagePNGRepresentation(thumbImage);
+        
+        NSString  *filePath = [RUUtility getFileURLPathforFileName:thumbFileName withData:imageData];
+        
+        [[WZServiceParser sharedParser] processUploadFileAWSWithfilePath:filePath fileName:thumbFileName success:^(NSString *fileName) {
+            
+            NSLog(@"thumb uploaded");
+            weakSelf.profileThumbnailURL = [NSString stringWithFormat:@"%@%@%@%@",k_AMAZON_S3_SERVER_URL,k_BUCKET_NAME,@"/",thumbFileName];
+            
+            
+            weakSelf.profileImageURL = [NSString stringWithFormat:@"%@%@%@%@",k_AMAZON_S3_SERVER_URL,k_BUCKET_NAME,@"/",fileName];
+
+            
+            weakSelf.isProfileUploading = NO;
+            [weakSelf processPostProfile];
+            NSString *fName = thumbFileName;
+            NSData * imageData = UIImagePNGRepresentation(image);
+            
+            NSString  *filePath = [RUUtility getFileURLPathforFileName:fName withData:imageData];
+            
+            [[WZServiceParser sharedParser] processUploadFileAWSWithfilePath:filePath fileName:fileName success:^(NSString *fileName) {
+                
+                NSLog(@"File standard uploaded at url %@",fileName);
+                
+            }];
+       
+        }];
+        
+
+}
+
+
+- (void)processPostProfile {
+    
+    if (!self.isProfileUploading && !self.isBannerUploading) {
+     
+                __weak typeof(self) weakSelf = self;
+        
+                [[WZServiceParser sharedParser] processProfileWithName:self.stringFullName bio:self.stringBio phoneNumber:self.stringPhone gender:self.stringGender profileImageURL:self.profileImageURL profileThumbnailURL:self.profileThumbnailURL bannerImageURL:self.bannerImageURL success:^(NSString *success) {
+        
+                    if ([success boolValue]) {
+        
+                        [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+                        if (weakSelf.isFromRegistration) {
+        
+                                WZHomeViewController *homeViewController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_HOME_VIEW_CONTROLLER];
+        
+                                [RUUtility setMainRootController:homeViewController];
+        
+                        }
+                        else {
+        
+                            [weakSelf.navigationController popViewControllerAnimated:YES];
+                        }
+        
+                    }
+                } failure:^(NSError *error) {
+                    
+                    NSLog(@"Failure");
+                }];
+    }
+    
+    
+    
+}
+- (void)uploadBannerImage:(UIImage*)image {
+    
+    __weak typeof(self) weakSelf = self;
+    
+    
+    NSString *standardFileName = [[[NSProcessInfo processInfo] globallyUniqueString] stringByAppendingString:@".png"];
+   
+    NSData * imageData = [UIImage getImageCompressedData:image]; //UIImagePNGRepresentation(image);
+        
+        NSString  *filePath = [RUUtility getFileURLPathforFileName:standardFileName withData:imageData];
+    
+        [[WZServiceParser sharedParser] processUploadFileAWSWithfilePath:filePath fileName:standardFileName success:^(NSString *fileName) {
+            
+            NSLog(@"File standard uploaded at url %@",fileName);
+            
+            weakSelf.isBannerUploading = NO;
+            
+            weakSelf.bannerImageURL =   [NSString stringWithFormat:@"%@%@%@%@",k_AMAZON_S3_SERVER_URL,k_BUCKET_NAME,@"/",standardFileName];
+            
+            
+            [weakSelf processPostProfile];
+            
+        
+        
+    }];
+    
+    
+}
+
+- (UITextField*)getCellTextFieldForIndex:(NSInteger)index inSection:(NSInteger)section {
+    
+    WEditProfileTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:index inSection:section]];
+    return cell.textField;
+
+}
 - (void)donePressed:(id)sender {
     
-    WZHomeViewController *homeViewController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_HOME_VIEW_CONTROLLER];
+    if (self.stringFullName.length == 0) {
+        
+        [OLGhostAlertView showAlertAtTopWithTitle:@"Message" message:@"Please enter your full name"];
+    }
+   
+    else if (self.stringPhone.length == 0) {
+        
+        [OLGhostAlertView showAlertAtTopWithTitle:@"Message" message:@"Please enter phone number"];
+        
+    }
     
-    [RUUtility setMainRootController:homeViewController];
+    else {
+        
+        
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        //First upload images
+        
+        if (!self.isProfileUploading && !self.isBannerUploading) {
+            
+            [self processPostProfile];
+        }
+        
+        else {
+        
+            if (self.isProfileUploading) {
+            
+            [self uploadProfileImage:self.profileImg];
+            
+        }
+        
+        if (self.isBannerUploading) {
+            
+            [self uploadBannerImage:self.bannerImg];
+            
+        }
+        
+        }
+        
+
+    }
 }
+
+#pragma mark - Life Cycle Methods
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
     [self.navigationItem setTitle:@"Profile Setup"];
+    
     self.navigationItem.rightBarButtonItem = [RUUtility getBarButtonWithTitle:@"Done" forViewController:self selector:@selector(donePressed:)];
+    
+    self.genderArray = [[NSArray alloc] initWithObjects:@"Male",@"Female", nil];
+    [self didTappedView:self.tableView];
+    
+    self.pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 216, 320, 216)];
+    self.pickerView.delegate = self;
+    [self.profileImage setRoundCornersAsCircle];
     // Do any additional setup after loading the view.
+    
+   }
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+   
+            self.profileThumbnailURL = self.profile.profileThumbURL;
+            self.profileImageURL = self.profile.profileURL;
+            self.bannerImageURL = self.profile.bannerURL;
+            self.profileImage.image = self.profileImg;
+            self.bannerImage.image = self.bannerImg;
+
+    
+    
+   
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,43 +250,57 @@
     if (indexPath.section == 0) {
         
         if (indexPath.row == 0) {
-            cell.textField.placeholder = @"Username";
+            cell.textField.placeholder = @"Name";
             cell.imageView.image = [UIImage imageNamed:@"Image_Profile_Icon"];
+            cell.textField.text = self.profile.fullName?self.profile.fullName:@"";
+            self.stringFullName = cell.textField.text;
 
         }
         else if (indexPath.row == 1 ) {
             
             cell.textField.placeholder = @"Bio";
             cell.imageView.image = [UIImage imageNamed:@"Image_Bio"];
+            if ([self.profile.bio isEqualToString:@"(null)"]) {
+                
+                cell.textField.text = @"";
+            }
+            else {
+                cell.textField.text = self.profile.bio;
+            }
+            self.stringBio = cell.textField.text;
 
 
         }
     }
     else {
      
-        if (indexPath.row == 0) {
-            cell.textField.placeholder = @"Email";
-            cell.imageView.image = [UIImage imageNamed:@"Image_Email"];
-
-            
-        }
-        else if (indexPath.row == 1 ) {
+            if (indexPath.row == 0 ) {
             
             cell.textField.placeholder = @"Phone";
             cell.imageView.image = [UIImage imageNamed:@"Image_Phone"];
+                cell.textField.text = self.profile.phoneNumber?self.profile.phoneNumber:@"";
+                self.stringPhone = cell.textField.text;
+                cell.textField.keyboardType = UIKeyboardTypePhonePad;
 
             
         }
         
-        else if (indexPath.row == 2 ) {
+        else if (indexPath.row == 1 ) {
             
             cell.textField.placeholder = @"Gender";
             cell.imageView.image = [UIImage imageNamed:@"Image_Gender"];
+            cell.textField.inputView = self.pickerView;
+            cell.textField.text = self.profile.gender?self.profile.gender:@"Male";
+            self.stringGender = cell.textField.text;
 
             
         }
 
     }
+    
+    [cell.textField addTarget:self
+                  action:@selector(textFieldDidChange:)
+        forControlEvents:UIControlEventEditingChanged];
     return cell;
     
 }
@@ -90,7 +311,7 @@
         return 2;
     }
     else {
-    return 3;
+    return 2;
     }
 }
 
@@ -135,8 +356,163 @@
     return headerView;
 }
 
+#pragma mark - Textfield Delegate Methods
+
+// returns the number of 'columns' to display.
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    
+    return 1;
+}
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    
+    return self.genderArray.count;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    
+    return self.genderArray[row];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    
+    [self getCellTextFieldForIndex:1 inSection:1].text = self.genderArray[row];
+    
+    self.stringGender = self.genderArray[row];
+   
+    [[self getCellTextFieldForIndex:1 inSection:1] resignFirstResponder];
+    
+    
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    
+    self.pickerView.hidden = NO;
+
+    return NO;
+}
 
 
+
+
+#pragma mark - Public Methods
+
+- (void)textFieldDidChange:(id)sender {
+    
+    UITextField *textField = (UITextField*)sender;
+    
+    
+  if ([textField.placeholder isEqualToString:@"Name"]) {
+            
+            self.stringFullName = textField.text;
+            
+        }
+  else  if ([textField.placeholder isEqualToString:@"Bio"]) {
+        
+        self.stringBio = textField.text;
+        
+    }
+   
+  else if ([textField.placeholder isEqualToString:@"Phone"]) {
+        
+        self.stringPhone = textField.text;
+        
+    }
+    
+   else if ([textField.placeholder isEqualToString:@"Gender"]) {
+        
+        self.stringGender = textField.text;
+        
+    }
+    
+}
+
+- (void)bannerPressed:(id)sender {
+    
+    self.isBanner = YES;
+    __weak typeof(self) weakSelf = self;
+    
+    __block UIImagePickerController *pickerController = nil;
+    
+    [RUUtility openMediaActionSheetFor:self cameraOption:^{
+        
+        pickerController = [RUUtility getImagePickerFor:KMediaCamera];
+        
+        pickerController.delegate = weakSelf;
+        
+        [weakSelf presentViewController:pickerController animated:YES completion:nil];
+        
+    } libraryOption:^{
+        
+        pickerController = [RUUtility getImagePickerFor:KMediaLibrary];
+        
+        pickerController.delegate = weakSelf;
+        
+        [weakSelf presentViewController:pickerController animated:YES completion:nil];
+        
+    }];
+    
+    
+}
+
+#pragma mark UIImagePickerView Delegate Methods
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    
+   image =  [image fixOrientation];
+    // AND no doing some other kind of assignment
+    
+    if (self.isBanner) {
+        
+        self.bannerImage.image = image;
+        
+        self.bannerImg = image;
+        
+        self.isBannerUploading = YES;
+    }
+    else {
+
+        self.profileImage.image = image;
+        
+        self.profileImg = image;
+        
+        self.isProfileUploading = YES;
+    }
+    
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+
+
+}
+
+- (void)profilePressed:(id)sender {
+    
+    __weak typeof(self) weakSelf = self;
+    
+    __block UIImagePickerController *pickerController = nil;
+    
+    [RUUtility openMediaActionSheetFor:self cameraOption:^{
+        
+        pickerController = [RUUtility getImagePickerFor:KMediaCamera];
+        
+        pickerController.delegate = weakSelf;
+        
+        [weakSelf presentViewController:pickerController animated:YES completion:nil];
+        
+    } libraryOption:^{
+        
+        pickerController = [RUUtility getImagePickerFor:KMediaLibrary];
+        
+        pickerController.delegate = weakSelf;
+        
+        [weakSelf presentViewController:pickerController animated:YES completion:nil];
+        
+    }];
+    
+}
 /*
 #pragma mark - Navigation
 
@@ -148,3 +524,4 @@
 */
 
 @end
+
