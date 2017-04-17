@@ -44,7 +44,17 @@ typedef enum {
 
 @property (weak, nonatomic) IBOutlet UIImageView *bannerImageView;
 
+
+@property (weak, nonatomic) IBOutlet UILabel *followerLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *followingLabel;
+
 @property(nonatomic ,assign) WProfileViewType profileType;
 
 - (IBAction)editPressed:(id)sender;
+
+- (IBAction)followingPressed:(id)sender;
+
+- (IBAction)followerPressed:(id)sender;
+
 @end

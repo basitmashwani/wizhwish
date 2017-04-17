@@ -22,6 +22,19 @@
 
 #pragma mark Private Methods
 
+- (void)followingPressed:(id)sender {
+
+   
+}
+
+
+- (void)followerPressed:(id)sender {
+    
+    WZFollowerViewController *followingController = [[UIStoryboard getProfileStoryBoard] instantiateViewControllerWithIdentifier:K_SB_FOLLOWER_VIEW_CONROLLER];
+    followingController.profileType = KWProfileFollower;
+    
+    [self.navigationController pushViewController:followingController animated:YES];
+}
 - (void)followButtonPressed:(id)sender {
     
     NSLog(@"Follwing user %@",self.stringName);
@@ -209,7 +222,20 @@
     [RUUtility setBackButtonForController:self withSelector:@selector(backPressed)];
     
     // Do any additional setup after loading the view.
+ 
     
+    self.followingLabel.userInteractionEnabled = YES;
+    UITapGestureRecognizer *followerGesture =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(followingPressed:)];
+    [self.followingLabel addGestureRecognizer:followerGesture];
+    
+    
+    self.followerLabel.userInteractionEnabled = YES;
+    UITapGestureRecognizer *followingGesture =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(followerPressed:)];
+    [self.followerLabel addGestureRecognizer:followingGesture];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

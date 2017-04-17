@@ -428,12 +428,12 @@
  
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.delegate = self;
-    imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    imagePicker.allowsEditing = YES;
-    imagePicker.videoQuality = UIImagePickerControllerQualityTypeMedium;
+    imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    imagePicker.allowsEditing = NO;
+    imagePicker.videoQuality = UIImagePickerControllerQualityType640x480;
     imagePicker.videoMaximumDuration = 60.0f; // 30 seconds
     //temporary duation of 30 seconds for testing
-    imagePicker.mediaTypes = [[NSArray alloc] initWithObjects:(NSString *)kUTTypeMovie, nil];
+    imagePicker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];//[[NSArray alloc] initWithObjects:(NSString *)kUTTypeMovie, nil];
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 - (void)rightButtonCanShow:(BOOL)show {
@@ -642,7 +642,7 @@
    
       }  else {
    
-          [self updateViewForPlayerMode];
+        //  [self updateViewForPlayerMode];
     }
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -1119,20 +1119,23 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
   
     self.isUsingLibrary = YES;
-    [picker dismissViewControllerAnimated:YES completion:nil];
 
     NSURL *videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
+    
+    
     NSData *videoData = [NSData dataWithContentsOfURL:videoURL];
 
     NSString *outputFile = [NSString stringWithFormat:@"video_%@.mp4", @"Rear"];
-
+//
     NSString *outputDirectory =  NSTemporaryDirectory();
-    
+//    
     if (self.secondVideo) {
         outputFile =  [NSString stringWithFormat:@"video_%@.mp4", @"Front"];
     }
-
+//
     NSString *outputPath = [outputDirectory stringByAppendingPathComponent:outputFile];
+//    
+    
     
     if (self.secondVideo) {
         [[WSetting getSharedSetting] setFrontVideoUrlPath:outputPath];
@@ -1140,17 +1143,87 @@
     else {
         [[WSetting getSharedSetting] setRearVideoUrlPath:outputPath];
     }
-
+//
     BOOL success = [videoData writeToFile:outputPath atomically:NO];
     if (success) {
         NSLog(@"Video uploaded");
-    }
-    
+        
+        [picker dismissViewControllerAnimated:YES completion:nil];
+        
+        
+        [self updateViewForPlayerMode];
+//
+  }
+//    
     [self rightButtonCanShow:YES];
-
+//    
+    
 }
 
-#pragma mark PBJVison Delegate Methods 
+
+- (BOOL)encodeVideo:(NSURL *)videoURL exportPath:(NSString*)path
+{
+    AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:videoURL options:nil];
+    
+    // Create the composition and tracks
+    AVMutableComposition *composition = [AVMutableComposition composition];
+    AVMutableCompositionTrack *videoTrack = [composition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
+    AVMutableCompositionTrack *audioTrack = [composition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
+    NSArray *assetVideoTracks = [asset tracksWithMediaType:AVMediaTypeVideo];
+    if (assetVideoTracks.count <= 0)
+    {
+        NSLog(@"Error reading the transformed video track");
+        return NO;
+    }
+    
+    // Insert the tracks in the composition's tracks
+    AVAssetTrack *assetVideoTrack = [assetVideoTracks firstObject];
+    [videoTrack insertTimeRange:assetVideoTrack.timeRange ofTrack:assetVideoTrack atTime:CMTimeMake(0, 1) error:nil];
+    [videoTrack setPreferredTransform:assetVideoTrack.preferredTransform];
+    
+    AVAssetTrack *assetAudioTrack = [[asset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0];
+    [audioTrack insertTimeRange:assetAudioTrack.timeRange ofTrack:assetAudioTrack atTime:CMTimeMake(0, 1) error:nil];
+    
+    // Export to mp4
+    NSString *mp4Quality = AVAssetExportPresetMediumQuality ;
+    
+   // NSString *exportPath = [NSString stringWithFormat:@"%@/%@.mp4",
+     //                       [NSHomeDirectory() stringByAppendingString:@"/tmp"],
+       //                     @"asdasdsa"];
+    NSURL *exportUrl = [NSURL fileURLWithPath:path];
+    AVAssetExportSession *exportSession = [[AVAssetExportSession alloc] initWithAsset:composition presetName:mp4Quality];
+    exportSession.outputURL = exportUrl;
+    CMTime start = CMTimeMakeWithSeconds(0.0, 0);
+    CMTimeRange range = CMTimeRangeMake(start, [asset duration]);
+    exportSession.timeRange = range;
+    exportSession.outputFileType = AVFileTypeMPEG4;
+    [exportSession exportAsynchronouslyWithCompletionHandler:^{
+        switch ([exportSession status])
+        {
+            case AVAssetExportSessionStatusCompleted:
+                NSLog(@"MP4 Successful!");
+                if (self.secondVideo) {
+                    [[WSetting getSharedSetting] setFrontVideoUrlPath:path];
+                }
+                else {
+                    [[WSetting getSharedSetting] setRearVideoUrlPath:path];
+                }
+                break;
+            case AVAssetExportSessionStatusFailed:
+                NSLog(@"Export failed: %@", [[exportSession error] localizedDescription]);
+                break;
+            case AVAssetExportSessionStatusCancelled:
+                NSLog(@"Export canceled");
+                break;
+            default:
+                break;
+        }
+    }];
+    
+    return YES;
+}
+
+#pragma mark PBJVison Delegate Methods
 - (void)vision:(PBJVision *)vision capturedVideo:(NSDictionary *)videoDict error:(NSError *)error
 {
     if (error && [error.domain isEqual:PBJVisionErrorDomain] && error.code == PBJVisionErrorCancelled) {

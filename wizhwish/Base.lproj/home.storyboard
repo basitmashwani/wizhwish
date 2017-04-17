@@ -190,37 +190,37 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Robin Roy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4T-3n-cuq">
-                                                    <rect key="frame" x="72" y="480" width="64" height="16"/>
+                                                    <rect key="frame" x="72" y="480" width="63.5" height="16"/>
                                                     <fontDescription key="fontDescription" name="MicrosoftPhagsPa-Bold" family="Microsoft PhagsPa" pointSize="13"/>
                                                     <color key="textColor" red="0.1215686275" green="0.53333333329999999" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5By-pk-56v">
-                                                    <rect key="frame" x="325" y="478" width="42" height="18"/>
+                                                    <rect key="frame" x="325.5" y="478" width="41.5" height="18"/>
                                                     <fontDescription key="fontDescription" name="MicrosoftPhagsPa" family="Microsoft PhagsPa" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is first comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5Z-WR-3Ja">
-                                                    <rect key="frame" x="72" y="528" width="110" height="16"/>
+                                                    <rect key="frame" x="72" y="528" width="109.5" height="15.5"/>
                                                     <fontDescription key="fontDescription" name="MicrosoftPhagsPa" family="Microsoft PhagsPa" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7 more" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEX-cy-gGe">
-                                                    <rect key="frame" x="164" y="592" width="47" height="20"/>
+                                                    <rect key="frame" x="164" y="592.5" width="47" height="19.5"/>
                                                     <fontDescription key="fontDescription" name="MicrosoftPhagsPa" family="Microsoft PhagsPa" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Syed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ef-q8-KFq">
-                                                    <rect key="frame" x="82" y="552" width="29" height="16"/>
+                                                    <rect key="frame" x="82" y="551.5" width="28.5" height="15.5"/>
                                                     <fontDescription key="fontDescription" name="MicrosoftPhagsPa" family="Microsoft PhagsPa" pointSize="12"/>
                                                     <color key="textColor" red="0.1215686275" green="0.53333333329999999" blue="0.53725490200000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nice post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xM5-XP-HwH">
-                                                    <rect key="frame" x="119" y="552" width="49" height="16"/>
+                                                    <rect key="frame" x="118.5" y="551.5" width="49" height="15.5"/>
                                                     <fontDescription key="fontDescription" name="MicrosoftPhagsPa" family="Microsoft PhagsPa" pointSize="12"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -800,6 +800,8 @@
                         <outlet property="buttonFollow" destination="U16-BV-F9t" id="dkS-Lp-ffk"/>
                         <outlet property="collectionViewMyWishList" destination="4sN-dD-i51" id="lWo-Re-SFA"/>
                         <outlet property="collectionViewWishes" destination="lS4-4L-Kp8" id="IYG-rO-bh8"/>
+                        <outlet property="followerLabel" destination="mhd-wi-leE" id="920-Me-lFZ"/>
+                        <outlet property="followingLabel" destination="64k-k3-h94" id="bEf-D0-bMk"/>
                         <outlet property="imageViewProfile" destination="TXV-kA-7yA" id="MF0-gz-vJQ"/>
                         <outlet property="profileBio" destination="oIU-pk-koT" id="5q6-vE-qrV"/>
                         <outlet property="profileName" destination="5kh-Dl-pA5" id="pjF-fs-409"/>
@@ -1197,7 +1199,7 @@
         <image name="Image_Comment" width="27" height="27"/>
         <image name="Image_Follow" width="151" height="41"/>
         <image name="Image_Like" width="27" height="27"/>
-        <image name="Image_Profile-1" width="149" height="150"/>
+        <image name="Image_Profile-1" width="107" height="107"/>
         <image name="Image_Rewiz" width="30" height="25"/>
         <image name="Image_Search" width="122" height="122"/>
         <image name="Image_Side_Icon" width="8" height="23"/>

@@ -169,9 +169,10 @@ static WZServiceParser *_sharedInstance = nil;
     
 }
 
-- (void)processGetFollowerWithSuccess:(void(^)(NSDictionary* dict))success failure:(void(^)(NSError *error))failure {
+- (void)processGetFollowerWithLimit:(NSInteger)limit success:(void(^)(NSDictionary* dict))success failure:(void(^)(NSError *error))failure {
  
-    NSString *url = [NSString stringWithFormat:@"%@%@",k_BASE_SOCIAL_SERVER_URL,@"/networks/following"];
+    NSInteger finalLimit = limit+5;
+    NSString *url = [NSString stringWithFormat:@"%@%@%ld%@%ld",k_BASE_SOCIAL_SERVER_URL,@"/networks/follower?j_skip=",(long)limit,@"&j_limit=",(long)finalLimit];
     
     NSString *header = [[NSUserDefaults standardUserDefaults] valueForKey:k_ACCESS_TOKEN];
     header = [NSString stringWithFormat:@"%@%@",@"Bearer ",header];

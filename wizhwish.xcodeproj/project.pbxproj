@@ -101,6 +101,7 @@
 		1EBFEB081E9F8380000F739C /* KICamera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1EBFEB041E9F8380000F739C /* KICamera@2x.png */; };
 		1EBFEB091E9F8380000F739C /* KIImagePager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EBFEB061E9F8380000F739C /* KIImagePager.m */; };
 		1EC05A031E60A508007026C3 /* Background.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 1EC05A021E60A0BF007026C3 /* Background.mp4 */; };
+		1ECE8A001EA4D6FE00C5567E /* IMG_0912.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 1ECE89FF1EA4D6FE00C5567E /* IMG_0912.MOV */; };
 		1ECF9F3F1E9910EE00EB38E9 /* colorPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1ECF9F2C1E9910EE00EB38E9 /* colorPicker.bundle */; };
 		1ECF9F401E9910EE00EB38E9 /* NEOColorPickerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECF9F2E1E9910EE00EB38E9 /* NEOColorPickerBaseViewController.m */; };
 		1ECF9F411E9910EE00EB38E9 /* NEOColorPickerFavoritesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECF9F301E9910EE00EB38E9 /* NEOColorPickerFavoritesViewController.m */; };
@@ -311,6 +312,7 @@
 		1EBFEB051E9F8380000F739C /* KIImagePager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KIImagePager.h; sourceTree = "<group>"; };
 		1EBFEB061E9F8380000F739C /* KIImagePager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KIImagePager.m; sourceTree = "<group>"; };
 		1EC05A021E60A0BF007026C3 /* Background.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Background.mp4; sourceTree = "<group>"; };
+		1ECE89FF1EA4D6FE00C5567E /* IMG_0912.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IMG_0912.MOV; sourceTree = "<group>"; };
 		1ECF9F2C1E9910EE00EB38E9 /* colorPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = colorPicker.bundle; sourceTree = "<group>"; };
 		1ECF9F2D1E9910EE00EB38E9 /* NEOColorPickerBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEOColorPickerBaseViewController.h; sourceTree = "<group>"; };
 		1ECF9F2E1E9910EE00EB38E9 /* NEOColorPickerBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NEOColorPickerBaseViewController.m; sourceTree = "<group>"; };
@@ -930,6 +932,7 @@
 		1EC05A011E60A0AF007026C3 /* Media Files */ = {
 			isa = PBXGroup;
 			children = (
+				1ECE89FF1EA4D6FE00C5567E /* IMG_0912.MOV */,
 				1E22EBEF1E87A33A00B983AC /* 1.wav */,
 				1E22EBED1E87A31400B983AC /* 2.wav */,
 				1EC05A021E60A0BF007026C3 /* Background.mp4 */,
@@ -1213,6 +1216,7 @@
 			files = (
 				1E7208C51CD920780017188F /* Profile.storyboard in Resources */,
 				1EBFEAFE1E9F57D6000F739C /* checkmark@3x.png in Resources */,
+				1ECE8A001EA4D6FE00C5567E /* IMG_0912.MOV in Resources */,
 				1EBFEAFF1E9F57D6000F739C /* exclamationMark.png in Resources */,
 				1E8717E71CE8A19F0062EFE9 /* Chat.xcassets in Resources */,
 				1E22EBEE1E87A31400B983AC /* 2.wav in Resources */,

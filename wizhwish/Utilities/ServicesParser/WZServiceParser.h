@@ -35,7 +35,7 @@
 
 - (void)processCommentOnPost:(NSString*)postId commentText:(NSString*)text success:(void(^)(NSDictionary* dict))success failure:(void(^)(NSError *error))failure;
 
-- (void)processGetFollowerWithSuccess:(void(^)(NSDictionary* dict))success failure:(void(^)(NSError *error))failure;
+- (void)processGetFollowerWithLimit:(NSInteger)limit success:(void(^)(NSDictionary* dict))success failure:(void(^)(NSError *error))failure;
 
 + (WZPost *)getDataFromDictionary:(NSDictionary *)dict haveComments:(BOOL)isComments;
 

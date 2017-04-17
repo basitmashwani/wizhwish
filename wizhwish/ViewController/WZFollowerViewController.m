@@ -13,6 +13,9 @@
 @property(nonatomic ,assign) BOOL isGroup;
 
 @property(nonatomic ,retain) NSMutableArray *checkedArray;
+
+@property(nonatomic ,retain) NSMutableArray *array;
+
 @end
 
 @implementation WZFollowerViewController
@@ -102,6 +105,7 @@
     if (self) {
         
         self.checkedArray = [[NSMutableArray alloc] init];
+        self.array = [[NSMutableArray alloc] init];
     }
     
     return self;
@@ -118,14 +122,28 @@
 //NSLog(@"profile type %d",self.profileType);
     
     
+  
     
     if (self.profileType == kWProfileFollowing) {
         
         [self.navigationItem setTitle:@"Following"];
+        
+        
+        
     }
+    
     else if(self.profileType == KWProfileFollower) {
         
         [self.navigationItem setTitle:@"Followers"];
+        
+        [[WZServiceParser sharedParser] processGetFollowerWithLimit:self.array.count success:^(NSDictionary *dict) {
+            
+            self.array = [dict valueForKey:@"data"];
+            [self.tableView reloadData];
+            
+        } failure:^(NSError *error) {
+            
+        }];
     }
     else if(self.profileType == kWProfileAlerts|| self.profileType == kWProfileGifts) {
         
@@ -241,7 +259,18 @@
     
     if (self.profileType == kWProfileFollowing || self.profileType == KWProfileFollower) {
         
+        NSDictionary *postDict = [self.array objectAtIndex:indexPath.row];
+
         
+        NSString *fullName = [postDict objectForKey:@"userDisplayName"];
+        
+        NSString *urlPath = [postDict objectForKey:@"userProfileImage"];
+        profileCell.labelUserName.text = fullName;
+        
+        profileCell.labelName.hidden = YES;
+        
+        
+       [profileCell.imageViewProfile setImageWithURL:[NSURL URLWithString:urlPath]];
         
         [profileCell.labelUserName setTextColor:[UIColor blackColor]];
         
@@ -358,7 +387,13 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 8;
+    
+    if (self.profileType == kWProfileGifts || self.profileType == kWProfileAlerts) {
+        
+        return 8;
+    }
+    else
+    return self.array.count;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
