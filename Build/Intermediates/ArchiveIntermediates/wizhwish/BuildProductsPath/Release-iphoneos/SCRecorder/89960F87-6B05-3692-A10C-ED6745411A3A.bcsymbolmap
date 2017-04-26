@@ -1,0 +1,1456 @@
+BCSymbolMap Version: 2.0
+-[NSURL(SCSaveToCameraRoll) saveToCameraRollWithCompletion:]
+Apple LLVM version 8.1.0 (clang-802.0.41)
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/NSURL+SCSaveToCameraRoll.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods
+-[SCAssetExportSession init]
+-[SCAssetExportSession initWithAsset:]
+-[SCAssetExportSession dealloc]
+-[SCAssetExportSession addWriter:withSettings:]
+-[SCAssetExportSession encodePixelBuffer:presentationTime:]
+-[SCAssetExportSession createIOPixelBuffers:]
+-[SCAssetExportSession renderIOPixelBuffersWithCI:]
+-[SCAssetExportSession CGRenderWithInputPixelBuffer:toOutputPixelBuffer:atTimeInterval:]
+_SCCreateContextFromPixelBuffer
+-[SCAssetExportSession markInputComplete:error:]
+-[SCAssetExportSession _didAppendToInput:atTime:]
+-[SCAssetExportSession beginReadWriteOnVideo]
+___45-[SCAssetExportSession beginReadWriteOnVideo]_block_invoke
+___copy_helper_block_
+___destroy_helper_block_
+___45-[SCAssetExportSession beginReadWriteOnVideo]_block_invoke.80
+___copy_helper_block_.89
+___destroy_helper_block_.90
+___45-[SCAssetExportSession beginReadWriteOnVideo]_block_invoke.92
+___copy_helper_block_.95
+___destroy_helper_block_.96
+___45-[SCAssetExportSession beginReadWriteOnVideo]_block_invoke.98
+___copy_helper_block_.127
+___destroy_helper_block_.128
+-[SCAssetExportSession beginReadWriteOnAudio]
+___45-[SCAssetExportSession beginReadWriteOnAudio]_block_invoke
+___copy_helper_block_.141
+___destroy_helper_block_.142
+-[SCAssetExportSession _setProgress:]
+-[SCAssetExportSession callCompletionHandler:]
+___46-[SCAssetExportSession callCompletionHandler:]_block_invoke
+___copy_helper_block_.154
+___destroy_helper_block_.155
+-[SCAssetExportSession _setupContextIfNeeded]
++[SCAssetExportSession createError:]
+-[SCAssetExportSession _setupPixelBufferAdaptorIfNeeded:]
+-[SCAssetExportSession cancelExport]
+___36-[SCAssetExportSession cancelExport]_block_invoke
+___36-[SCAssetExportSession cancelExport]_block_invoke_2
+___copy_helper_block_.187
+___destroy_helper_block_.188
+___copy_helper_block_.194
+___destroy_helper_block_.195
+-[SCAssetExportSession _generateRenderingFilterForVideoSize:]
+-[SCAssetExportSession _buildWatermarkFilterForVideoSize:]
+-[SCAssetExportSession _setupAudioUsingTracks:]
+-[SCAssetExportSession _setupVideoUsingTracks:]
+-[SCAssetExportSession exportAsynchronouslyWithCompletionHandler:]
+___66-[SCAssetExportSession exportAsynchronouslyWithCompletionHandler:]_block_invoke
+___66-[SCAssetExportSession exportAsynchronouslyWithCompletionHandler:]_block_invoke_2
+___copy_helper_block_.341
+___destroy_helper_block_.342
+___copy_helper_block_.346
+___destroy_helper_block_.347
+-[SCAssetExportSession dispatchQueue]
+-[SCAssetExportSession dispatchGroup]
+-[SCAssetExportSession videoInput]
+-[SCAssetExportSession audioInput]
+-[SCAssetExportSession reader]
+-[SCAssetExportSession inputAsset]
+-[SCAssetExportSession setInputAsset:]
+-[SCAssetExportSession outputUrl]
+-[SCAssetExportSession setOutputUrl:]
+-[SCAssetExportSession outputFileType]
+-[SCAssetExportSession setOutputFileType:]
+-[SCAssetExportSession contextType]
+-[SCAssetExportSession setContextType:]
+-[SCAssetExportSession videoConfiguration]
+-[SCAssetExportSession audioConfiguration]
+-[SCAssetExportSession error]
+-[SCAssetExportSession cancelled]
+-[SCAssetExportSession timeRange]
+-[SCAssetExportSession setTimeRange:]
+-[SCAssetExportSession translatesFilterIntoComposition]
+-[SCAssetExportSession setTranslatesFilterIntoComposition:]
+-[SCAssetExportSession shouldOptimizeForNetworkUse]
+-[SCAssetExportSession setShouldOptimizeForNetworkUse:]
+-[SCAssetExportSession progress]
+-[SCAssetExportSession delegate]
+-[SCAssetExportSession setDelegate:]
+-[SCAssetExportSession videoOutput]
+-[SCAssetExportSession setVideoOutput:]
+-[SCAssetExportSession audioOutput]
+-[SCAssetExportSession setAudioOutput:]
+-[SCAssetExportSession setVideoInput:]
+-[SCAssetExportSession setAudioInput:]
+-[SCAssetExportSession needsLeaveAudio]
+-[SCAssetExportSession setNeedsLeaveAudio:]
+-[SCAssetExportSession needsLeaveVideo]
+-[SCAssetExportSession setNeedsLeaveVideo:]
+-[SCAssetExportSession nextAllowedVideoFrame]
+-[SCAssetExportSession setNextAllowedVideoFrame:]
+-[SCAssetExportSession .cxx_destruct]
+_OBJC_IVAR_$_SCAssetExportSession._audioQueue
+_OBJC_IVAR_$_SCAssetExportSession._videoQueue
+_OBJC_IVAR_$_SCAssetExportSession._dispatchGroup
+_OBJC_IVAR_$_SCAssetExportSession._contextType
+_OBJC_IVAR_$_SCAssetExportSession._audioConfiguration
+_OBJC_IVAR_$_SCAssetExportSession._videoConfiguration
+_OBJC_IVAR_$_SCAssetExportSession._timeRange
+_OBJC_IVAR_$_SCAssetExportSession._translatesFilterIntoComposition
+_OBJC_IVAR_$_SCAssetExportSession._shouldOptimizeForNetworkUse
+_OBJC_IVAR_$_SCAssetExportSession._contextPixelBuffer
+_OBJC_IVAR_$_SCAssetExportSession._writer
+_OBJC_IVAR_$_SCAssetExportSession._videoPixelAdaptor
+_OBJC_IVAR_$_SCAssetExportSession._outputBufferDiffersFromInput
+_OBJC_IVAR_$_SCAssetExportSession._context
+_OBJC_IVAR_$_SCAssetExportSession._filter
+_OBJC_IVAR_$_SCAssetExportSession._outputBufferSize
+_OBJC_IVAR_$_SCAssetExportSession._reader
+_OBJC_IVAR_$_SCAssetExportSession._error
+_OBJC_IVAR_$_SCAssetExportSession._videoInput
+_OBJC_IVAR_$_SCAssetExportSession._totalDuration
+___block_descriptor_tmp
+___block_descriptor_tmp.91
+___block_descriptor_tmp.97
+_OBJC_IVAR_$_SCAssetExportSession._needsLeaveVideo
+___block_descriptor_tmp.130
+_OBJC_IVAR_$_SCAssetExportSession._audioInput
+_OBJC_IVAR_$_SCAssetExportSession._needsLeaveAudio
+___block_descriptor_tmp.143
+_OBJC_IVAR_$_SCAssetExportSession._progress
+_OBJC_IVAR_$_SCAssetExportSession._cancelled
+___block_descriptor_tmp.156
+___block_descriptor_tmp.189
+___block_descriptor_tmp.196
+_OBJC_IVAR_$_SCAssetExportSession._audioOutput
+_OBJC_IVAR_$_SCAssetExportSession._inputBufferSize
+_OBJC_IVAR_$_SCAssetExportSession._inputAsset
+_OBJC_IVAR_$_SCAssetExportSession._videoOutput
+_OBJC_IVAR_$_SCAssetExportSession._nextAllowedVideoFrame
+___block_descriptor_tmp.343
+___block_descriptor_tmp.348
+_OBJC_IVAR_$_SCAssetExportSession._outputUrl
+_OBJC_IVAR_$_SCAssetExportSession._outputFileType
+_OBJC_IVAR_$_SCAssetExportSession._delegate
+_OBJC_IVAR_$_SCAssetExportSession._animationsWereEnabled
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCAssetExportSession.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCAssetExportSession.h
+__destroy_helper_block_
+__copy_helper_block_
+__66-[SCAssetExportSession exportAsynchronouslyWithCompletionHandler:]_block_invoke_2
+__66-[SCAssetExportSession exportAsynchronouslyWithCompletionHandler:]_block_invoke
+__CGSizeEqualToSize
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CGGeometry.h
+__36-[SCAssetExportSession cancelExport]_block_invoke_2
+__36-[SCAssetExportSession cancelExport]_block_invoke
+__46-[SCAssetExportSession callCompletionHandler:]_block_invoke
+__45-[SCAssetExportSession beginReadWriteOnAudio]_block_invoke
+__45-[SCAssetExportSession beginReadWriteOnVideo]_block_invoke.98
+__45-[SCAssetExportSession beginReadWriteOnVideo]_block_invoke.92
+__45-[SCAssetExportSession beginReadWriteOnVideo]_block_invoke.80
+__45-[SCAssetExportSession beginReadWriteOnVideo]_block_invoke
+SCCreateContextFromPixelBuffer
+-[SCAudioConfiguration init]
+-[SCAudioConfiguration createAssetWriterOptionsUsingSampleBuffer:]
+-[SCAudioConfiguration sampleRate]
+-[SCAudioConfiguration setSampleRate:]
+-[SCAudioConfiguration channelsCount]
+-[SCAudioConfiguration setChannelsCount:]
+-[SCAudioConfiguration format]
+-[SCAudioConfiguration setFormat:]
+-[SCAudioConfiguration audioMix]
+-[SCAudioConfiguration setAudioMix:]
+-[SCAudioConfiguration .cxx_destruct]
+_OBJC_IVAR_$_SCAudioConfiguration._format
+_OBJC_IVAR_$_SCAudioConfiguration._sampleRate
+_OBJC_IVAR_$_SCAudioConfiguration._channelsCount
+_OBJC_IVAR_$_SCAudioConfiguration._audioMix
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCAudioConfiguration.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCAudioConfiguration.h
++[SCAudioTools overrideCategoryMixWithOthers]
++[SCAudioTools mixAudio:startTime:withVideo:affineTransform:toUrl:outputFileType:withMaxDuration:withCompletionBlock:]
+___118+[SCAudioTools mixAudio:startTime:withVideo:affineTransform:toUrl:outputFileType:withMaxDuration:withCompletionBlock:]_block_invoke
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCAudioTools.m
+__118+[SCAudioTools mixAudio:startTime:withVideo:affineTransform:toUrl:outputFileType:withMaxDuration:withCompletionBlock:]_block_invoke
+-[SCContext initWithSoftwareRenderer:]
+-[SCContext initWithCGContextRef:]
+-[SCContext initWithEAGLContext:]
+-[SCContext initWithMTLDevice:]
++[SCContext supportsType:]
++[SCContext suggestedContextType]
++[SCContext contextWithType:options:]
+___37+[SCContext contextWithType:options:]_block_invoke
+-[SCContext CIContext]
+-[SCContext type]
+-[SCContext EAGLContext]
+-[SCContext MTLDevice]
+-[SCContext CGContext]
+-[SCContext .cxx_destruct]
+_SCContextCreateCIContextOptions
+_OBJC_IVAR_$_SCContext._CIContext
+_OBJC_IVAR_$_SCContext._type
+_OBJC_IVAR_$_SCContext._EAGLContext
+_OBJC_IVAR_$_SCContext._MTLDevice
+_contextWithType:options:.onceToken
+_contextWithType:options:.shareGroup
+___block_literal_global
+_OBJC_IVAR_$_SCContext._CGContext
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCContext.m
+SCContextCreateCIContextOptions
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCContext.h
+__37+[SCContext contextWithType:options:]_block_invoke
+_dispatch_once
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/include/dispatch/once.h
+-[SCFilter(UIImage) UIImageByProcessingUIImage:]
+-[SCFilter(UIImage) UIImageByProcessingUIImage:atTime:]
+___55-[SCFilter(UIImage) UIImageByProcessingUIImage:atTime:]_block_invoke
+_UIImageByProcessingUIImage:atTime:.context
+_UIImageByProcessingUIImage:atTime:.onceToken
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCFilter+UIImage.m
+__55-[SCFilter(UIImage) UIImageByProcessingUIImage:atTime:]_block_invoke
+-[SCFilter(VideoComposition) videoCompositionWithAsset:]
+___56-[SCFilter(VideoComposition) videoCompositionWithAsset:]_block_invoke
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCFilter+VideoComposition.m
+__56-[SCFilter(VideoComposition) videoCompositionWithAsset:]_block_invoke
+-[SCFilter initWithCoder:]
+-[SCFilter init]
+-[SCFilter initWithCIFilter:]
+-[SCFilter copyWithZone:]
+-[SCFilter _unwrappedValue:forKey:]
+-[SCFilter _wrappedValue:forKey:]
+-[SCFilter _didChangeParameter:]
+-[SCFilter parameterValueForKey:]
+-[SCFilter setParameterValue:forKey:]
+-[SCFilter encodeWithCoder:]
+-[SCFilter resetToDefaults]
+-[SCFilter addSubFilter:]
+-[SCFilter removeSubFilter:]
+-[SCFilter insertSubFilter:atIndex:]
+-[SCFilter removeSubFilterAtIndex:]
+-[SCFilter addAnimationForParameterKey:startValue:endValue:startTime:duration:]
+-[SCFilter addAnimation:]
+-[SCFilter removeAnimation:]
+-[SCFilter removeAllAnimations]
+-[SCFilter subFilters]
+-[SCFilter imageByProcessingImage:]
+-[SCFilter imageByProcessingImage:atTime:]
+-[SCFilter writeToFile:error:]
+-[SCFilter isEmpty]
+-[SCFilter animations]
++[SCFilter emptyFilter]
++[SCFilter filterWithAffineTransform:]
++[SCFilter filterWithCIFilter:]
++[SCFilter filterWithCIFilterName:]
++[SCFilter filterWithData:error:]
++[SCFilter filterWithData:]
++[SCFilter filterWithContentsOfURL:]
++[SCFilter filterWithFilters:]
++[SCFilter filterWithCIImage:]
++[SCFilter data:hasMagic:]
++[SCFilter colorCubeDataWithCGImage:dimension:]
++[SCFilter createRGBABitmapFromImage:]
+-[SCFilter CIFilter]
+-[SCFilter name]
+-[SCFilter setName:]
+-[SCFilter enabled]
+-[SCFilter setEnabled:]
+-[SCFilter delegate]
+-[SCFilter setDelegate:]
+-[SCFilter overlayImage]
+-[SCFilter setOverlayImage:]
+-[SCFilter .cxx_destruct]
+_OBJC_IVAR_$_SCFilter._CIFilter
+_OBJC_IVAR_$_SCFilter._subFilters
+_OBJC_IVAR_$_SCFilter._name
+_OBJC_IVAR_$_SCFilter._animations
+_OBJC_IVAR_$_SCFilter._unwrappedValues
+_OBJC_IVAR_$_SCFilter._overlayImage
+_OBJC_IVAR_$_SCFilter._enabled
+_OBJC_IVAR_$_SCFilter._delegate
+l_OBJC_PROTOCOL_$_NSCoding
+l_OBJC_LABEL_PROTOCOL_$_NSCoding
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCFilter.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCFilter.h
+-[SCFilterAnimation encodeWithCoder:]
+-[SCFilterAnimation initWithCoder:]
+-[SCFilterAnimation initWithKey:startValue:endValue:startTime:duration:]
+-[SCFilterAnimation valueAtTime:]
+-[SCFilterAnimation hasValueAtTime:]
++[SCFilterAnimation filterAnimationForParameterKey:startValue:endValue:startTime:duration:]
+-[SCFilterAnimation key]
+-[SCFilterAnimation startValue]
+-[SCFilterAnimation endValue]
+-[SCFilterAnimation startTime]
+-[SCFilterAnimation duration]
+-[SCFilterAnimation .cxx_destruct]
+_OBJC_IVAR_$_SCFilterAnimation._key
+_OBJC_IVAR_$_SCFilterAnimation._startValue
+_OBJC_IVAR_$_SCFilterAnimation._endValue
+_OBJC_IVAR_$_SCFilterAnimation._startTime
+_OBJC_IVAR_$_SCFilterAnimation._duration
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCFilterAnimation.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCFilterAnimation.h
+-[SCFilterImageView renderedCIImageInRect:]
+-[SCFilterImageView setFilter:]
+-[SCFilterImageView filter]
+-[SCFilterImageView .cxx_destruct]
+_OBJC_IVAR_$_SCFilterImageView._filter
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCFilterImageView.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCFilterImageView.h
+-[SCImageView initWithFrame:]
+-[SCImageView initWithCoder:]
+-[SCImageView _imageViewCommonInit]
+-[SCImageView loadContextIfNeeded]
+-[SCImageView layoutSubviews]
+-[SCImageView unloadContext]
+-[SCImageView setContext:]
+-[SCImageView setNeedsDisplay]
+-[SCImageView renderedUIImageInRect:]
+-[SCImageView renderedCIImageInRect:]
+-[SCImageView renderedCIImage]
+-[SCImageView renderedUIImage]
+-[SCImageView scaleAndResizeCIImage:forRect:]
+-[SCImageView drawRect:]
+-[SCImageView setImageBySampleBuffer:]
++[SCImageView preferredCIImageTransformFromUIImage:]
+-[SCImageView setImageByUIImage:]
+-[SCImageView setCIImage:]
+-[SCImageView setContextType:]
+-[SCImageView glkView:drawInRect:]
+-[SCImageView drawInMTKView:]
+-[SCImageView mtkView:drawableSizeWillChange:]
+-[SCImageView contextType]
+-[SCImageView context]
+-[SCImageView CIImage]
+-[SCImageView CIImageTime]
+-[SCImageView setCIImageTime:]
+-[SCImageView preferredCIImageTransform]
+-[SCImageView setPreferredCIImageTransform:]
+-[SCImageView scaleAndResizeCIImageAutomatically]
+-[SCImageView setScaleAndResizeCIImageAutomatically:]
+-[SCImageView MTKView]
+-[SCImageView setMTKView:]
+-[SCImageView GLKView]
+-[SCImageView setGLKView:]
+-[SCImageView MTLCommandQueue]
+-[SCImageView setMTLCommandQueue:]
+-[SCImageView sampleBufferHolder]
+-[SCImageView setSampleBufferHolder:]
+-[SCImageView .cxx_destruct]
+_OBJC_IVAR_$_SCImageView._scaleAndResizeCIImageAutomatically
+_OBJC_IVAR_$_SCImageView._sampleBufferHolder
+_OBJC_IVAR_$_SCImageView._context
+_OBJC_IVAR_$_SCImageView._contextType
+_OBJC_IVAR_$_SCImageView._GLKView
+_OBJC_IVAR_$_SCImageView._MTKView
+_OBJC_IVAR_$_SCImageView._MTLCommandQueue
+_OBJC_IVAR_$_SCImageView._CIImage
+_OBJC_IVAR_$_SCImageView._CIImageTime
+_OBJC_IVAR_$_SCImageView._preferredCIImageTransform
+l_OBJC_PROTOCOL_$_NSObject
+l_OBJC_LABEL_PROTOCOL_$_NSObject
+l_OBJC_PROTOCOL_$_GLKViewDelegate
+l_OBJC_LABEL_PROTOCOL_$_GLKViewDelegate
+l_OBJC_PROTOCOL_$_MTKViewDelegate
+l_OBJC_LABEL_PROTOCOL_$_MTKViewDelegate
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCImageView.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCImageView.h
+CGRectMultiply
+-[SCIOPixelBuffers initWithInputPixelBuffer:outputPixelBuffer:time:]
+-[SCIOPixelBuffers dealloc]
++[SCIOPixelBuffers IOPixelBuffersWithInputPixelBuffer:outputPixelBuffer:time:]
+-[SCIOPixelBuffers time]
+-[SCIOPixelBuffers inputPixelBuffer]
+-[SCIOPixelBuffers outputPixelBuffer]
+_OBJC_IVAR_$_SCIOPixelBuffers._inputPixelBuffer
+_OBJC_IVAR_$_SCIOPixelBuffers._outputPixelBuffer
+_OBJC_IVAR_$_SCIOPixelBuffers._time
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCIOPixelBuffers.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCIOPixelBuffers.h
+-[SCMediaTypeConfiguration init]
+-[SCMediaTypeConfiguration createAssetWriterOptionsUsingSampleBuffer:]
+-[SCMediaTypeConfiguration setEnabled:]
+-[SCMediaTypeConfiguration enabled]
+-[SCMediaTypeConfiguration shouldIgnore]
+-[SCMediaTypeConfiguration setShouldIgnore:]
+-[SCMediaTypeConfiguration bitrate]
+-[SCMediaTypeConfiguration setBitrate:]
+-[SCMediaTypeConfiguration options]
+-[SCMediaTypeConfiguration setOptions:]
+-[SCMediaTypeConfiguration preset]
+-[SCMediaTypeConfiguration setPreset:]
+-[SCMediaTypeConfiguration .cxx_destruct]
+_OBJC_IVAR_$_SCMediaTypeConfiguration._enabled
+_OBJC_IVAR_$_SCMediaTypeConfiguration._shouldIgnore
+_OBJC_IVAR_$_SCMediaTypeConfiguration._bitrate
+_OBJC_IVAR_$_SCMediaTypeConfiguration._options
+_OBJC_IVAR_$_SCMediaTypeConfiguration._preset
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCMediaTypeConfiguration.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCMediaTypeConfiguration.h
+-[SCPhotoConfiguration init]
+-[SCPhotoConfiguration setOptions:]
+-[SCPhotoConfiguration createOutputSettings]
+-[SCPhotoConfiguration enabled]
+-[SCPhotoConfiguration setEnabled:]
+-[SCPhotoConfiguration options]
+-[SCPhotoConfiguration .cxx_destruct]
+_OBJC_IVAR_$_SCPhotoConfiguration._enabled
+_OBJC_IVAR_$_SCPhotoConfiguration._options
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCPhotoConfiguration.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCPhotoConfiguration.h
+-[SCPlayer init]
+-[SCPlayer dealloc]
+-[SCPlayer beginSendingPlayMessages]
+___36-[SCPlayer beginSendingPlayMessages]_block_invoke
+-[SCPlayer endSendingPlayMessages]
+-[SCPlayer playReachedEnd:]
+-[SCPlayer observeValueForKeyPath:ofObject:change:context:]
+___59-[SCPlayer observeValueForKeyPath:ofObject:change:context:]_block_invoke
+___copy_helper_block_.46
+___destroy_helper_block_.47
+-[SCPlayer removeOldObservers]
+-[SCPlayer outputMediaDataWillChange:]
+-[SCPlayer renderVideo:]
+-[SCPlayer replaceCurrentItemWithPlayerItem:]
+-[SCPlayer willRenderFrame:]
+-[SCPlayer suspendDisplay]
+-[SCPlayer setupDisplayLink]
+-[SCPlayer unsetupDisplayLink]
+-[SCPlayer setupVideoOutputToItem:]
+-[SCPlayer unsetupVideoOutputToItem:]
+-[SCPlayer initObserver]
+-[SCPlayer playableDuration]
+-[SCPlayer setShouldSuppressPlayerRendering:]
+-[SCPlayer setItemByStringPath:]
+-[SCPlayer setItemByUrl:]
+-[SCPlayer setItemByAsset:]
+-[SCPlayer setItem:]
+-[SCPlayer setSmoothLoopItemByStringPath:smoothLoopCount:]
+-[SCPlayer setSmoothLoopItemByUrl:smoothLoopCount:]
+-[SCPlayer setSmoothLoopItemByAsset:smoothLoopCount:]
+-[SCPlayer isPlaying]
+-[SCPlayer setLoopEnabled:]
+-[SCPlayer setSCImageView:]
+-[SCPlayer itemDuration]
+-[SCPlayer isSendingPlayMessages]
+-[SCPlayer setAutoRotate:]
++[SCPlayer player]
+-[SCPlayer delegate]
+-[SCPlayer setDelegate:]
+-[SCPlayer loopEnabled]
+-[SCPlayer shouldSuppressPlayerRendering]
+-[SCPlayer autoRotate]
+-[SCPlayer SCImageView]
+-[SCPlayer .cxx_destruct]
+_OBJC_IVAR_$_SCPlayer._shouldSuppressPlayerRendering
+_OBJC_IVAR_$_SCPlayer._itemsLoopLength
+_OBJC_IVAR_$_SCPlayer._timeObserver
+_OBJC_IVAR_$_SCPlayer._loopEnabled
+___block_descriptor_tmp.49
+_OBJC_IVAR_$_SCPlayer._oldItem
+_OBJC_IVAR_$_SCPlayer._displayLink
+_OBJC_IVAR_$_SCPlayer._videoOutput
+_OBJC_IVAR_$_SCPlayer._rendererWasSetup
+_OBJC_IVAR_$_SCPlayer._rendererTransform
+_OBJC_IVAR_$_SCPlayer._SCImageView
+_OBJC_IVAR_$_SCPlayer._autoRotate
+_OBJC_IVAR_$_SCPlayer._delegate
+l_OBJC_PROTOCOL_$_AVPlayerItemOutputPullDelegate
+l_OBJC_LABEL_PROTOCOL_$_AVPlayerItemOutputPullDelegate
+l_OBJC_PROTOCOL_$_AVPlayerItemOutputPushDelegate
+l_OBJC_LABEL_PROTOCOL_$_AVPlayerItemOutputPushDelegate
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCPlayer.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCPlayer.h
+__59-[SCPlayer observeValueForKeyPath:ofObject:change:context:]_block_invoke
+__36-[SCPlayer beginSendingPlayMessages]_block_invoke
+-[SCProcessingQueue init]
+-[SCProcessingQueue dealloc]
+-[SCProcessingQueue setMaxQueueSize:]
+-[SCProcessingQueue _process:]
+-[SCProcessingQueue startProcessingWithBlock:]
+-[SCProcessingQueue stopProcessing]
+-[SCProcessingQueue dequeue]
+-[SCProcessingQueue maxQueueSize]
+-[SCProcessingQueue .cxx_destruct]
+_OBJC_IVAR_$_SCProcessingQueue._queue
+_OBJC_IVAR_$_SCProcessingQueue._completed
+_OBJC_IVAR_$_SCProcessingQueue._maxQueueSize
+_OBJC_IVAR_$_SCProcessingQueue._availableItemsToDequeue
+_OBJC_IVAR_$_SCProcessingQueue._accessQueue
+_OBJC_IVAR_$_SCProcessingQueue._availableItemsToEnqueue
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCProcessingQueue.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCProcessingQueue.h
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/Target Support Files/SCRecorder/SCRecorder-dummy.m
+-[SCRecorder init]
+-[SCRecorder dealloc]
++[SCRecorder recorder]
+-[SCRecorder applicationDidEnterBackground:]
+-[SCRecorder applicationDidBecomeActive:]
+-[SCRecorder deviceOrientationChanged:]
+___39-[SCRecorder deviceOrientationChanged:]_block_invoke
+-[SCRecorder sessionRuntimeError:]
+-[SCRecorder updateVideoOrientation]
+-[SCRecorder beginConfiguration]
+-[SCRecorder commitConfiguration]
+-[SCRecorder _reconfigureSession]
+-[SCRecorder prepare:]
+-[SCRecorder startRunning]
+-[SCRecorder stopRunning]
+-[SCRecorder _subjectAreaDidChange]
+-[SCRecorder _imageFromSampleBufferHolder:]
+___43-[SCRecorder _imageFromSampleBufferHolder:]_block_invoke
+___copy_helper_block_.166
+___destroy_helper_block_.167
+-[SCRecorder snapshotOfLastVideoBuffer]
+-[SCRecorder capturePhoto:]
+___27-[SCRecorder capturePhoto:]_block_invoke
+___copy_helper_block_.185
+___destroy_helper_block_.186
+-[SCRecorder unprepare]
+-[SCRecorder _progressTimerFired:]
+___34-[SCRecorder _progressTimerFired:]_block_invoke
+___copy_helper_block_.209
+___destroy_helper_block_.210
+___34-[SCRecorder _progressTimerFired:]_block_invoke.214
+___copy_helper_block_.215
+___destroy_helper_block_.216
+-[SCRecorder record]
+___20-[SCRecorder record]_block_invoke
+___copy_helper_block_.229
+___destroy_helper_block_.230
+-[SCRecorder pause]
+-[SCRecorder pause:]
+___20-[SCRecorder pause:]_block_invoke
+___20-[SCRecorder pause:]_block_invoke_2
+___copy_helper_block_.248
+___destroy_helper_block_.249
+___copy_helper_block_.252
+___destroy_helper_block_.253
++[SCRecorder createError:]
+-[SCRecorder beginRecordSegmentIfNeeded:]
+___41-[SCRecorder beginRecordSegmentIfNeeded:]_block_invoke
+___copy_helper_block_.271
+___destroy_helper_block_.272
+-[SCRecorder checkRecordSessionDuration:]
+___41-[SCRecorder checkRecordSessionDuration:]_block_invoke
+___41-[SCRecorder checkRecordSessionDuration:]_block_invoke_2
+___copy_helper_block_.278
+___destroy_helper_block_.279
+___copy_helper_block_.281
+___destroy_helper_block_.282
+-[SCRecorder frameDurationFromConnection:]
+-[SCRecorder _transformFilterUsingBufferWidth:bufferHeight:mirrored:]
+-[SCRecorder appendVideoSampleBuffer:toRecordSession:duration:connection:completion:]
+___85-[SCRecorder appendVideoSampleBuffer:toRecordSession:duration:connection:completion:]_block_invoke
+___copy_helper_block_.307
+___destroy_helper_block_.308
+-[SCRecorder captureOutput:didStartRecordingToOutputFileAtURL:fromConnections:]
+___79-[SCRecorder captureOutput:didStartRecordingToOutputFileAtURL:fromConnections:]_block_invoke
+___copy_helper_block_.313
+___destroy_helper_block_.314
+-[SCRecorder captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error:]
+___86-[SCRecorder captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error:]_block_invoke
+___86-[SCRecorder captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error:]_block_invoke_2
+___copy_helper_block_.320
+___destroy_helper_block_.321
+___copy_helper_block_.325
+___destroy_helper_block_.326
+-[SCRecorder _handleVideoSampleBuffer:withSession:connection:]
+___62-[SCRecorder _handleVideoSampleBuffer:withSession:connection:]_block_invoke
+___copy_helper_block_.340
+___destroy_helper_block_.341
+___62-[SCRecorder _handleVideoSampleBuffer:withSession:connection:]_block_invoke.354
+___62-[SCRecorder _handleVideoSampleBuffer:withSession:connection:]_block_invoke_2
+___copy_helper_block_.355
+___destroy_helper_block_.356
+___62-[SCRecorder _handleVideoSampleBuffer:withSession:connection:]_block_invoke.362
+___copy_helper_block_.363
+___destroy_helper_block_.364
+___copy_helper_block_.366
+___destroy_helper_block_.367
+-[SCRecorder _handleAudioSampleBuffer:withSession:]
+___51-[SCRecorder _handleAudioSampleBuffer:withSession:]_block_invoke
+___copy_helper_block_.377
+___destroy_helper_block_.378
+___51-[SCRecorder _handleAudioSampleBuffer:withSession:]_block_invoke.382
+___51-[SCRecorder _handleAudioSampleBuffer:withSession:]_block_invoke_2
+___copy_helper_block_.383
+___destroy_helper_block_.384
+___51-[SCRecorder _handleAudioSampleBuffer:withSession:]_block_invoke.388
+___copy_helper_block_.389
+___destroy_helper_block_.390
+___copy_helper_block_.392
+___destroy_helper_block_.393
+-[SCRecorder captureOutput:didOutputSampleBuffer:fromConnection:]
+___65-[SCRecorder captureOutput:didOutputSampleBuffer:fromConnection:]_block_invoke
+___copy_helper_block_.401
+___destroy_helper_block_.402
+-[SCRecorder _createSegmentInfo]
+-[SCRecorder _focusDidComplete]
+-[SCRecorder observeValueForKeyPath:ofObject:change:context:]
+___61-[SCRecorder observeValueForKeyPath:ofObject:change:context:]_block_invoke
+___copy_helper_block_.432
+___destroy_helper_block_.433
+___61-[SCRecorder observeValueForKeyPath:ofObject:change:context:]_block_invoke.435
+___copy_helper_block_.436
+___destroy_helper_block_.437
+-[SCRecorder addVideoObservers:]
+-[SCRecorder removeVideoObservers:]
+-[SCRecorder _configureVideoStabilization]
+-[SCRecorder _configureFrontCameraMirroring:]
+-[SCRecorder configureDevice:mediaType:error:]
+-[SCRecorder reconfigureVideoInput:audioInput:]
+___47-[SCRecorder reconfigureVideoInput:audioInput:]_block_invoke
+___copy_helper_block_.492
+___destroy_helper_block_.493
+-[SCRecorder switchCaptureDevices]
+-[SCRecorder previewViewFrameChanged]
+-[SCRecorder convertToPointOfInterestFromViewCoordinates:]
+-[SCRecorder convertPointOfInterestToViewCoordinates:]
+-[SCRecorder mediaServicesWereReset:]
+-[SCRecorder mediaServicesWereLost:]
+-[SCRecorder sessionInterrupted:]
+-[SCRecorder lockFocus]
+-[SCRecorder _applyPointOfInterest:continuousMode:]
+-[SCRecorder autoFocusAtPoint:]
+-[SCRecorder continuousFocusAtPoint:]
+-[SCRecorder focusCenter]
+-[SCRecorder refocus]
+-[SCRecorder exposurePointOfInterest]
+-[SCRecorder exposureSupported]
+-[SCRecorder focusPointOfInterest]
+-[SCRecorder focusSupported]
+-[SCRecorder currentAudioDeviceInput]
+-[SCRecorder currentVideoDeviceInput]
+-[SCRecorder currentDeviceInputForMediaType:]
+-[SCRecorder audioDevice]
+-[SCRecorder videoDevice]
+-[SCRecorder actualVideoOrientation]
+-[SCRecorder captureSession]
+-[SCRecorder setPreviewView:]
+-[SCRecorder previewView]
+-[SCRecorder photoOutputSettings]
+-[SCRecorder setPhotoOutputSettings:]
+-[SCRecorder setDevice:]
+-[SCRecorder setFlashMode:]
+-[SCRecorder deviceHasFlash]
+-[SCRecorder previewLayer]
+-[SCRecorder isPrepared]
+-[SCRecorder setCaptureSessionPreset:]
+-[SCRecorder setVideoOrientation:]
+-[SCRecorder setSession:]
+___25-[SCRecorder setSession:]_block_invoke
+___copy_helper_block_.596
+___destroy_helper_block_.597
+-[SCRecorder focusMode]
+-[SCRecorder isAdjustingFocus]
+-[SCRecorder setAdjustingExposure:]
+-[SCRecorder setAdjustingFocus:]
+-[SCRecorder videoConnection]
+-[SCRecorder frameRate]
+-[SCRecorder setFrameRate:]
+-[SCRecorder setActiveFormatWithFrameRate:error:]
+-[SCRecorder setActiveFormatWithFrameRate:width:andHeight:error:]
+-[SCRecorder ratioRecorded]
+-[SCRecorder videoOutput]
+-[SCRecorder audioOutput]
+-[SCRecorder photoOutput]
+-[SCRecorder audioEnabledAndReady]
+-[SCRecorder videoEnabledAndReady]
+-[SCRecorder setKeepMirroringOnWrite:]
+___38-[SCRecorder setKeepMirroringOnWrite:]_block_invoke
+___copy_helper_block_.660
+___destroy_helper_block_.661
+-[SCRecorder videoZoomFactor]
+-[SCRecorder maxVideoZoomFactor]
+-[SCRecorder maxVideoZoomFactorForDevice:]
+-[SCRecorder setVideoZoomFactor:]
+-[SCRecorder setFastRecordMethodEnabled:]
+-[SCRecorder setVideoStabilizationMode:]
++[SCRecorder sharedRecorder]
+___28+[SCRecorder sharedRecorder]_block_invoke
++[SCRecorder isSessionQueue]
+-[SCRecorder videoConfiguration]
+-[SCRecorder audioConfiguration]
+-[SCRecorder photoConfiguration]
+-[SCRecorder isRecording]
+-[SCRecorder flashMode]
+-[SCRecorder device]
+-[SCRecorder setMaxVideoZoomFactor:]
+-[SCRecorder resetZoomOnChangeDevice]
+-[SCRecorder setResetZoomOnChangeDevice:]
+-[SCRecorder isAdjustingExposure]
+-[SCRecorder captureSessionPreset]
+-[SCRecorder SCImageView]
+-[SCRecorder setSCImageView:]
+-[SCRecorder delegate]
+-[SCRecorder setDelegate:]
+-[SCRecorder session]
+-[SCRecorder videoOrientation]
+-[SCRecorder videoStabilizationMode]
+-[SCRecorder autoSetVideoOrientation]
+-[SCRecorder setAutoSetVideoOrientation:]
+-[SCRecorder maxRecordDuration]
+-[SCRecorder setMaxRecordDuration:]
+-[SCRecorder fastRecordMethodEnabled]
+-[SCRecorder initializeSessionLazily]
+-[SCRecorder setInitializeSessionLazily:]
+-[SCRecorder mirrorOnFrontCamera]
+-[SCRecorder setMirrorOnFrontCamera:]
+-[SCRecorder keepMirroringOnWrite]
+-[SCRecorder subjectAreaChanged]
+-[SCRecorder error]
+-[SCRecorder sessionQueue]
+-[SCRecorder .cxx_destruct]
+_OBJC_IVAR_$_SCRecorder._sessionQueue
+_OBJC_IVAR_$_SCRecorder._captureSessionPreset
+_OBJC_IVAR_$_SCRecorder._previewLayer
+_OBJC_IVAR_$_SCRecorder._initializeSessionLazily
+_OBJC_IVAR_$_SCRecorder._videoOrientation
+_OBJC_IVAR_$_SCRecorder._videoStabilizationMode
+_OBJC_IVAR_$_SCRecorder._lastVideoBuffer
+_OBJC_IVAR_$_SCRecorder._lastAudioBuffer
+_OBJC_IVAR_$_SCRecorder._maxRecordDuration
+_OBJC_IVAR_$_SCRecorder._resetZoomOnChangeDevice
+_OBJC_IVAR_$_SCRecorder._mirrorOnFrontCamera
+_OBJC_IVAR_$_SCRecorder._videoConfiguration
+_OBJC_IVAR_$_SCRecorder._audioConfiguration
+_OBJC_IVAR_$_SCRecorder._photoConfiguration
+_OBJC_IVAR_$_SCRecorder._context
+_OBJC_IVAR_$_SCRecorder._isRecording
+_OBJC_IVAR_$_SCRecorder._shouldAutoresumeRecording
+_OBJC_IVAR_$_SCRecorder._autoSetVideoOrientation
+_OBJC_IVAR_$_SCRecorder._session
+_OBJC_IVAR_$_SCRecorder._videoOutput
+_OBJC_IVAR_$_SCRecorder._photoOutput
+_OBJC_IVAR_$_SCRecorder._movieOutput
+_OBJC_IVAR_$_SCRecorder._captureSession
+_OBJC_IVAR_$_SCRecorder._beginSessionConfigurationCount
+_OBJC_IVAR_$_SCRecorder._audioOutput
+_OBJC_IVAR_$_SCRecorder._videoOutputAdded
+_OBJC_IVAR_$_SCRecorder._audioOutputAdded
+_OBJC_IVAR_$_SCRecorder._error
+___block_descriptor_tmp.168
+___block_descriptor_tmp.188
+_OBJC_IVAR_$_SCRecorder._lastMovieFileOutputTime
+___block_descriptor_tmp.211
+___block_descriptor_tmp.217
+_OBJC_IVAR_$_SCRecorder._movieOutputProgressTimer
+___block_descriptor_tmp.231
+_OBJC_IVAR_$_SCRecorder._pauseCompletionHandler
+___block_descriptor_tmp.251
+___block_descriptor_tmp.254
+___block_descriptor_tmp.273
+___block_descriptor_tmp.280
+___block_descriptor_tmp.283
+_OBJC_IVAR_$_SCRecorder._transformFilter
+_OBJC_IVAR_$_SCRecorder._transformFilterBufferWidth
+_OBJC_IVAR_$_SCRecorder._transformFilterBufferHeight
+_OBJC_IVAR_$_SCRecorder._keepMirroringOnWrite
+_OBJC_IVAR_$_SCRecorder._device
+___block_descriptor_tmp.310
+___block_descriptor_tmp.315
+___block_descriptor_tmp.322
+___block_descriptor_tmp.327
+___block_descriptor_tmp.342
+_OBJC_IVAR_$_SCRecorder._lastAppendedVideoTime
+___block_descriptor_tmp.357
+___block_descriptor_tmp.365
+___block_descriptor_tmp.368
+___block_descriptor_tmp.379
+___block_descriptor_tmp.385
+___block_descriptor_tmp.391
+___block_descriptor_tmp.394
+_OBJC_IVAR_$_SCRecorder._SCImageView
+___block_descriptor_tmp.403
+_OBJC_IVAR_$_SCRecorder._needsSwitchBackToContinuousFocus
+___block_descriptor_tmp.434
+___block_descriptor_tmp.438
+_OBJC_IVAR_$_SCRecorder._videoInputAdded
+_OBJC_IVAR_$_SCRecorder._audioInputAdded
+___block_descriptor_tmp.494
+_OBJC_IVAR_$_SCRecorder._previewView
+_OBJC_IVAR_$_SCRecorder._flashMode
+___block_descriptor_tmp.598
+_OBJC_IVAR_$_SCRecorder._adjustingFocus
+_OBJC_IVAR_$_SCRecorder._isAdjustingExposure
+___block_descriptor_tmp.662
+_OBJC_IVAR_$_SCRecorder._fastRecordMethodEnabled
+_sharedRecorder._sharedRecorder
+_sharedRecorder.onceToken
+___block_descriptor_tmp.673
+_OBJC_IVAR_$_SCRecorder._maxVideoZoomFactor
+_OBJC_IVAR_$_SCRecorder._delegate
+_OBJC_IVAR_$_SCRecorder._subjectAreaChanged
+l_OBJC_PROTOCOL_$_AVCaptureAudioDataOutputSampleBufferDelegate
+l_OBJC_LABEL_PROTOCOL_$_AVCaptureAudioDataOutputSampleBufferDelegate
+l_OBJC_PROTOCOL_$_AVCaptureVideoDataOutputSampleBufferDelegate
+l_OBJC_LABEL_PROTOCOL_$_AVCaptureVideoDataOutputSampleBufferDelegate
+l_OBJC_PROTOCOL_$_AVCaptureFileOutputRecordingDelegate
+l_OBJC_LABEL_PROTOCOL_$_AVCaptureFileOutputRecordingDelegate
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCRecorder.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCRecorder.h
+__28+[SCRecorder sharedRecorder]_block_invoke
+__38-[SCRecorder setKeepMirroringOnWrite:]_block_invoke
+__25-[SCRecorder setSession:]_block_invoke
+__47-[SCRecorder reconfigureVideoInput:audioInput:]_block_invoke
+__61-[SCRecorder observeValueForKeyPath:ofObject:change:context:]_block_invoke.435
+__61-[SCRecorder observeValueForKeyPath:ofObject:change:context:]_block_invoke
+__65-[SCRecorder captureOutput:didOutputSampleBuffer:fromConnection:]_block_invoke
+__51-[SCRecorder _handleAudioSampleBuffer:withSession:]_block_invoke.388
+__51-[SCRecorder _handleAudioSampleBuffer:withSession:]_block_invoke_2
+__51-[SCRecorder _handleAudioSampleBuffer:withSession:]_block_invoke.382
+__51-[SCRecorder _handleAudioSampleBuffer:withSession:]_block_invoke
+__62-[SCRecorder _handleVideoSampleBuffer:withSession:connection:]_block_invoke.362
+__62-[SCRecorder _handleVideoSampleBuffer:withSession:connection:]_block_invoke_2
+__62-[SCRecorder _handleVideoSampleBuffer:withSession:connection:]_block_invoke.354
+__62-[SCRecorder _handleVideoSampleBuffer:withSession:connection:]_block_invoke
+__86-[SCRecorder captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error:]_block_invoke_2
+__86-[SCRecorder captureOutput:didFinishRecordingToOutputFileAtURL:fromConnections:error:]_block_invoke
+__79-[SCRecorder captureOutput:didStartRecordingToOutputFileAtURL:fromConnections:]_block_invoke
+__85-[SCRecorder appendVideoSampleBuffer:toRecordSession:duration:connection:completion:]_block_invoke
+__41-[SCRecorder checkRecordSessionDuration:]_block_invoke_2
+__41-[SCRecorder checkRecordSessionDuration:]_block_invoke
+__41-[SCRecorder beginRecordSegmentIfNeeded:]_block_invoke
+__20-[SCRecorder pause:]_block_invoke_2
+__20-[SCRecorder pause:]_block_invoke
+__20-[SCRecorder record]_block_invoke
+__34-[SCRecorder _progressTimerFired:]_block_invoke.214
+__34-[SCRecorder _progressTimerFired:]_block_invoke
+__27-[SCRecorder capturePhoto:]_block_invoke
+__43-[SCRecorder _imageFromSampleBufferHolder:]_block_invoke
+__39-[SCRecorder deviceOrientationChanged:]_block_invoke
+-[SCRecorderFocusTargetView initWithFrame:]
+-[SCRecorderFocusTargetView setup]
+-[SCRecorderFocusTargetView startTargeting]
+-[SCRecorderFocusTargetView stopTargeting]
+-[SCRecorderFocusTargetView layoutSubviews]
+-[SCRecorderFocusTargetView insideFocusTargetImage]
+-[SCRecorderFocusTargetView setInsideFocusTargetImage:]
+-[SCRecorderFocusTargetView outsideFocusTargetImage]
+-[SCRecorderFocusTargetView setOutsideFocusTargetImage:]
+-[SCRecorderFocusTargetView insideFocusTargetImageSizeRatio]
+-[SCRecorderFocusTargetView setInsideFocusTargetImageSizeRatio:]
+-[SCRecorderFocusTargetView outsideCircle]
+-[SCRecorderFocusTargetView setOutsideCircle:]
+-[SCRecorderFocusTargetView insideCircle]
+-[SCRecorderFocusTargetView setInsideCircle:]
+-[SCRecorderFocusTargetView .cxx_destruct]
+_OBJC_IVAR_$_SCRecorderFocusTargetView._insideFocusTargetImageSizeRatio
+_OBJC_IVAR_$_SCRecorderFocusTargetView._outsideCircle
+_OBJC_IVAR_$_SCRecorderFocusTargetView._insideCircle
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCRecorderFocusTargetView.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCRecorderFocusTargetView.h
++[SCRecorderTools formatInRange:frameRate:]
++[SCRecorderTools formatInRange:frameRate:dimensions:]
++[SCRecorderTools maxFrameRateForFormat:minFrameRate:]
++[SCRecorderTools videoDeviceForPosition:]
++[SCRecorderTools captureSessionPresetForDimension:]
++[SCRecorderTools bestCaptureSessionPresetForDevicePosition:withMaxSize:]
++[SCRecorderTools bestCaptureSessionPresetForDevice:withMaxSize:]
++[SCRecorderTools bestCaptureSessionPresetCompatibleWithAllDevices]
++[SCRecorderTools assetWriterMetadata]
++[NSDate(SCRecorderTools) _getFormatter]
+___40+[NSDate(SCRecorderTools) _getFormatter]_block_invoke
+-[NSDate(SCRecorderTools) toISO8601]
++[NSDate(SCRecorderTools) fromISO8601:]
+__getFormatter.dateFormatter
+__getFormatter.onceToken
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCRecorderTools.m
+__40+[NSDate(SCRecorderTools) _getFormatter]_block_invoke
+-[SCRecorderToolsView initWithFrame:]
+-[SCRecorderToolsView initWithCoder:]
+-[SCRecorderToolsView dealloc]
+-[SCRecorderToolsView commonInit]
+-[SCRecorderToolsView showFocusAnimation]
+-[SCRecorderToolsView hideFocusAnimation]
+-[SCRecorderToolsView layoutSubviews]
+-[SCRecorderToolsView adjustFocusView]
+-[SCRecorderToolsView observeValueForKeyPath:ofObject:change:context:]
+-[SCRecorderToolsView tapToAutoFocus:]
+-[SCRecorderToolsView tapToContinouslyAutoFocus:]
+-[SCRecorderToolsView pinchToZoom:]
+-[SCRecorderToolsView setFocusTargetSize:]
+-[SCRecorderToolsView focusTargetSize]
+-[SCRecorderToolsView outsideFocusTargetImage]
+-[SCRecorderToolsView setOutsideFocusTargetImage:]
+-[SCRecorderToolsView insideFocusTargetImage]
+-[SCRecorderToolsView setInsideFocusTargetImage:]
+-[SCRecorderToolsView tapToFocusEnabled]
+-[SCRecorderToolsView setTapToFocusEnabled:]
+-[SCRecorderToolsView doubleTapToResetFocusEnabled]
+-[SCRecorderToolsView setDoubleTapToResetFocusEnabled:]
+-[SCRecorderToolsView pinchToZoomEnabled]
+-[SCRecorderToolsView setPinchToZoomEnabled:]
+-[SCRecorderToolsView setRecorder:]
+-[SCRecorderToolsView delegate]
+-[SCRecorderToolsView setDelegate:]
+-[SCRecorderToolsView recorder]
+-[SCRecorderToolsView minZoomFactor]
+-[SCRecorderToolsView setMinZoomFactor:]
+-[SCRecorderToolsView maxZoomFactor]
+-[SCRecorderToolsView setMaxZoomFactor:]
+-[SCRecorderToolsView showsFocusAnimationAutomatically]
+-[SCRecorderToolsView setShowsFocusAnimationAutomatically:]
+-[SCRecorderToolsView cameraFocusTargetView]
+-[SCRecorderToolsView setCameraFocusTargetView:]
+-[SCRecorderToolsView .cxx_destruct]
+_OBJC_IVAR_$_SCRecorderToolsView._minZoomFactor
+_OBJC_IVAR_$_SCRecorderToolsView._maxZoomFactor
+_OBJC_IVAR_$_SCRecorderToolsView._tapToFocusGesture
+_OBJC_IVAR_$_SCRecorderToolsView._doubleTapToResetFocusGesture
+_OBJC_IVAR_$_SCRecorderToolsView._pinchZoomGesture
+_OBJC_IVAR_$_SCRecorderToolsView._zoomAtStart
+_OBJC_IVAR_$_SCRecorderToolsView._recorder
+_OBJC_IVAR_$_SCRecorderToolsView._delegate
+_OBJC_IVAR_$_SCRecorderToolsView._showsFocusAnimationAutomatically
+_OBJC_IVAR_$_SCRecorderToolsView._cameraFocusTargetView
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCRecorderToolsView.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCRecorderToolsView.h
+-[SCRecordSession initWithDictionaryRepresentation:]
+-[SCRecordSession init]
++[SCRecordSession newIdentifier:]
++[SCRecordSession recordSession]
++[SCRecordSession recordSession:]
++[SCRecordSession createError:]
+-[SCRecordSession dispatchSyncOnSessionQueue:]
+-[SCRecordSession removeFile:]
+-[SCRecordSession removeSegment:]
+___33-[SCRecordSession removeSegment:]_block_invoke
+-[SCRecordSession removeSegmentAtIndex:deleteFile:]
+___51-[SCRecordSession removeSegmentAtIndex:deleteFile:]_block_invoke
+___copy_helper_block_.124
+___destroy_helper_block_.125
+-[SCRecordSession removeLastSegment]
+___36-[SCRecordSession removeLastSegment]_block_invoke
+-[SCRecordSession removeAllSegments]
+-[SCRecordSession removeAllSegments:]
+___37-[SCRecordSession removeAllSegments:]_block_invoke
+___copy_helper_block_.132
+___destroy_helper_block_.133
+-[SCRecordSession _suggestedFileType]
+-[SCRecordSession _suggestedFileExtension]
+-[SCRecordSession nextFileURL:]
+-[SCRecordSession createWriter:]
+-[SCRecordSession deinitialize]
+___31-[SCRecordSession deinitialize]_block_invoke
+___copy_helper_block_.199
+___destroy_helper_block_.200
+-[SCRecordSession initializeVideo:formatDescription:error:]
+-[SCRecordSession initializeAudio:formatDescription:error:]
+-[SCRecordSession addSegment:]
+___30-[SCRecordSession addSegment:]_block_invoke
+___copy_helper_block_.223
+___destroy_helper_block_.224
+-[SCRecordSession insertSegment:atIndex:]
+___41-[SCRecordSession insertSegment:atIndex:]_block_invoke
+___copy_helper_block_.228
+___destroy_helper_block_.229
+-[SCRecordSession adjustBuffer:withTimeOffset:andDuration:]
+-[SCRecordSession beginSegment:]
+___32-[SCRecordSession beginSegment:]_block_invoke
+___copy_helper_block_.235
+___destroy_helper_block_.236
+-[SCRecordSession _destroyAssetWriter]
+-[SCRecordSession appendRecordSegmentUrl:info:error:completionHandler:]
+___71-[SCRecordSession appendRecordSegmentUrl:info:error:completionHandler:]_block_invoke
+___71-[SCRecordSession appendRecordSegmentUrl:info:error:completionHandler:]_block_invoke_2
+___copy_helper_block_.242
+___destroy_helper_block_.243
+___copy_helper_block_.245
+___destroy_helper_block_.246
+-[SCRecordSession endSegmentWithInfo:completionHandler:]
+___56-[SCRecordSession endSegmentWithInfo:completionHandler:]_block_invoke
+___56-[SCRecordSession endSegmentWithInfo:completionHandler:]_block_invoke_2
+___56-[SCRecordSession endSegmentWithInfo:completionHandler:]_block_invoke_3
+___56-[SCRecordSession endSegmentWithInfo:completionHandler:]_block_invoke.257
+___copy_helper_block_.260
+___destroy_helper_block_.261
+___56-[SCRecordSession endSegmentWithInfo:completionHandler:]_block_invoke.267
+___copy_helper_block_.270
+___destroy_helper_block_.271
+___copy_helper_block_.273
+___destroy_helper_block_.274
+___copy_helper_block_.276
+___destroy_helper_block_.277
+-[SCRecordSession notifyMovieFileOutputIsReady]
+-[SCRecordSession beginRecordSegmentUsingMovieFileOutput:error:delegate:]
+-[SCRecordSession mergeSegmentsUsingPreset:completionHandler:]
+___Block_byref_object_copy_
+___Block_byref_object_dispose_
+___62-[SCRecordSession mergeSegmentsUsingPreset:completionHandler:]_block_invoke
+___copy_helper_block_.298
+___destroy_helper_block_.299
+___62-[SCRecordSession mergeSegmentsUsingPreset:completionHandler:]_block_invoke.308
+___62-[SCRecordSession mergeSegmentsUsingPreset:completionHandler:]_block_invoke_2
+___copy_helper_block_.309
+___destroy_helper_block_.310
+___copy_helper_block_.312
+___destroy_helper_block_.313
+-[SCRecordSession finishEndSession:completionHandler:]
+-[SCRecordSession cancelSession:]
+___33-[SCRecordSession cancelSession:]_block_invoke
+___33-[SCRecordSession cancelSession:]_block_invoke_2
+___copy_helper_block_.319
+___destroy_helper_block_.320
+___copy_helper_block_.323
+___destroy_helper_block_.324
+-[SCRecordSession createPixelBuffer]
+-[SCRecordSession appendAudioSampleBuffer:completion:]
+___54-[SCRecordSession appendAudioSampleBuffer:completion:]_block_invoke
+___copy_helper_block_.338
+___destroy_helper_block_.339
+-[SCRecordSession _startSessionIfNeededAtTime:]
+-[SCRecordSession appendVideoPixelBuffer:atTime:duration:completion:]
+-[SCRecordSession _appendTrack:toCompositionTrack:atTime:withBounds:]
+-[SCRecordSession appendSegmentsToComposition:]
+-[SCRecordSession appendSegmentsToComposition:audioMix:]
+___56-[SCRecordSession appendSegmentsToComposition:audioMix:]_block_invoke
+___copy_helper_block_.373
+___destroy_helper_block_.374
+-[SCRecordSession playerItemRepresentingSegments]
+___49-[SCRecordSession playerItemRepresentingSegments]_block_invoke
+___copy_helper_block_.384
+___destroy_helper_block_.385
+-[SCRecordSession assetRepresentingSegments]
+___44-[SCRecordSession assetRepresentingSegments]_block_invoke
+___copy_helper_block_.387
+___destroy_helper_block_.388
+-[SCRecordSession videoInitialized]
+-[SCRecordSession audioInitialized]
+-[SCRecordSession recordSegmentBegan]
+-[SCRecordSession recordSegmentReady]
+-[SCRecordSession currentSegmentHasVideo]
+-[SCRecordSession currentSegmentHasAudio]
+-[SCRecordSession currentSegmentDuration]
+-[SCRecordSession duration]
+-[SCRecordSession dictionaryRepresentation]
+-[SCRecordSession outputUrl]
+-[SCRecordSession setSegmentsDirectory:]
+___40-[SCRecordSession setSegmentsDirectory:]_block_invoke
+___copy_helper_block_.416
+___destroy_helper_block_.417
+-[SCRecordSession isUsingMovieFileOutput]
+-[SCRecordSession identifier]
+-[SCRecordSession date]
+-[SCRecordSession segmentsDirectory]
+-[SCRecordSession fileType]
+-[SCRecordSession setFileType:]
+-[SCRecordSession fileExtension]
+-[SCRecordSession setFileExtension:]
+-[SCRecordSession segments]
+-[SCRecordSession segmentsDuration]
+-[SCRecordSession recorder]
+-[SCRecordSession setRecorder:]
+-[SCRecordSession videoInitializationFailed]
+-[SCRecordSession audioInitializationFailed]
+-[SCRecordSession .cxx_destruct]
+_OBJC_IVAR_$_SCRecordSession._segmentsDirectory
+_OBJC_IVAR_$_SCRecordSession._segments
+_OBJC_IVAR_$_SCRecordSession._currentSegmentCount
+_OBJC_IVAR_$_SCRecordSession._segmentsDuration
+_OBJC_IVAR_$_SCRecordSession._identifier
+_OBJC_IVAR_$_SCRecordSession._date
+_OBJC_IVAR_$_SCRecordSession._assetWriter
+_OBJC_IVAR_$_SCRecordSession._videoInput
+_OBJC_IVAR_$_SCRecordSession._audioInput
+_OBJC_IVAR_$_SCRecordSession._audioInitializationFailed
+_OBJC_IVAR_$_SCRecordSession._videoInitializationFailed
+_OBJC_IVAR_$_SCRecordSession._timeOffset
+_OBJC_IVAR_$_SCRecordSession._lastTimeAudio
+_OBJC_IVAR_$_SCRecordSession._currentSegmentDuration
+_OBJC_IVAR_$_SCRecordSession._audioQueue
+___block_descriptor_tmp.126
+___block_descriptor_tmp.129
+___block_descriptor_tmp.134
+_OBJC_IVAR_$_SCRecordSession._sessionStartTime
+_OBJC_IVAR_$_SCRecordSession._recordSegmentReady
+_OBJC_IVAR_$_SCRecordSession._audioConfiguration
+_OBJC_IVAR_$_SCRecordSession._videoConfiguration
+_OBJC_IVAR_$_SCRecordSession._videoPixelBufferAdaptor
+___block_descriptor_tmp.201
+___block_descriptor_tmp.225
+___block_descriptor_tmp.230
+_OBJC_IVAR_$_SCRecordSession._currentSegmentHasAudio
+_OBJC_IVAR_$_SCRecordSession._currentSegmentHasVideo
+___block_descriptor_tmp.237
+_OBJC_IVAR_$_SCRecordSession._lastTimeVideo
+_OBJC_IVAR_$_SCRecordSession._movieFileOutput
+___block_descriptor_tmp.244
+___block_descriptor_tmp.247
+___block_descriptor_tmp.262
+___block_descriptor_tmp.272
+___block_descriptor_tmp.275
+___block_descriptor_tmp.278
+___block_descriptor_tmp.300
+___block_descriptor_tmp.311
+___block_descriptor_tmp.314
+___block_descriptor_tmp.325
+___block_descriptor_tmp.340
+___block_descriptor_tmp.375
+___block_descriptor_tmp.386
+___block_descriptor_tmp.389
+___block_descriptor_tmp.418
+_OBJC_IVAR_$_SCRecordSession._fileType
+_OBJC_IVAR_$_SCRecordSession._fileExtension
+_OBJC_IVAR_$_SCRecordSession._recorder
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCRecordSession.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCRecordSession_Internal.h
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCRecordSession.h
+__40-[SCRecordSession setSegmentsDirectory:]_block_invoke
+__44-[SCRecordSession assetRepresentingSegments]_block_invoke
+__49-[SCRecordSession playerItemRepresentingSegments]_block_invoke
+__56-[SCRecordSession appendSegmentsToComposition:audioMix:]_block_invoke
+__54-[SCRecordSession appendAudioSampleBuffer:completion:]_block_invoke
+__33-[SCRecordSession cancelSession:]_block_invoke_2
+__33-[SCRecordSession cancelSession:]_block_invoke
+__62-[SCRecordSession mergeSegmentsUsingPreset:completionHandler:]_block_invoke_2
+__62-[SCRecordSession mergeSegmentsUsingPreset:completionHandler:]_block_invoke.308
+__62-[SCRecordSession mergeSegmentsUsingPreset:completionHandler:]_block_invoke
+__Block_byref_object_dispose_
+__Block_byref_object_copy_
+__56-[SCRecordSession endSegmentWithInfo:completionHandler:]_block_invoke.267
+__56-[SCRecordSession endSegmentWithInfo:completionHandler:]_block_invoke.257
+__56-[SCRecordSession endSegmentWithInfo:completionHandler:]_block_invoke_3
+__56-[SCRecordSession endSegmentWithInfo:completionHandler:]_block_invoke_2
+__56-[SCRecordSession endSegmentWithInfo:completionHandler:]_block_invoke
+__71-[SCRecordSession appendRecordSegmentUrl:info:error:completionHandler:]_block_invoke_2
+__71-[SCRecordSession appendRecordSegmentUrl:info:error:completionHandler:]_block_invoke
+__32-[SCRecordSession beginSegment:]_block_invoke
+__41-[SCRecordSession insertSegment:atIndex:]_block_invoke
+__30-[SCRecordSession addSegment:]_block_invoke
+__31-[SCRecordSession deinitialize]_block_invoke
+__37-[SCRecordSession removeAllSegments:]_block_invoke
+__36-[SCRecordSession removeLastSegment]_block_invoke
+__51-[SCRecordSession removeSegmentAtIndex:deleteFile:]_block_invoke
+__33-[SCRecordSession removeSegment:]_block_invoke
+-[SCRecordSessionSegment initWithDictionaryRepresentation:directory:]
+-[SCRecordSessionSegment initWithURL:info:]
+-[SCRecordSessionSegment deleteFile]
+-[SCRecordSessionSegment asset]
+-[SCRecordSessionSegment duration]
+-[SCRecordSessionSegment thumbnail]
+-[SCRecordSessionSegment lastImage]
+-[SCRecordSessionSegment frameRate]
+-[SCRecordSessionSegment setUrl:]
+-[SCRecordSessionSegment dictionaryRepresentation]
+-[SCRecordSessionSegment fileUrlExists]
++[SCRecordSessionSegment segmentURLForFilename:andDirectory:]
++[SCRecordSessionSegment segmentWithURL:info:]
+-[SCRecordSessionSegment url]
+-[SCRecordSessionSegment info]
+-[SCRecordSessionSegment .cxx_destruct]
+_OBJC_IVAR_$_SCRecordSessionSegment._url
+_OBJC_IVAR_$_SCRecordSessionSegment._info
+_OBJC_IVAR_$_SCRecordSessionSegment._asset
+_OBJC_IVAR_$_SCRecordSessionSegment._thumbnail
+_OBJC_IVAR_$_SCRecordSessionSegment._lastImage
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCRecordSessionSegment.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCRecordSessionSegment.h
+-[SCSampleBufferHolder dealloc]
+-[SCSampleBufferHolder setSampleBuffer:]
++[SCSampleBufferHolder sampleBufferHolderWithSampleBuffer:]
+-[SCSampleBufferHolder sampleBuffer]
+_OBJC_IVAR_$_SCSampleBufferHolder._sampleBuffer
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCSampleBufferHolder.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCSampleBufferHolder.h
+-[SCSaveToCameraRollOperation saveVideoURL:completion:]
+-[SCSaveToCameraRollOperation saveImage:completion:]
+-[SCSaveToCameraRollOperation video:didFinishSavingWithError:contextInfo:]
+-[SCSaveToCameraRollOperation image:didFinishSavingWithError:contextInfo:]
+-[SCSaveToCameraRollOperation _didStart]
+___40-[SCSaveToCameraRollOperation _didStart]_block_invoke
+-[SCSaveToCameraRollOperation _didEnd]
+-[SCSaveToCameraRollOperation videoCompletion]
+-[SCSaveToCameraRollOperation setVideoCompletion:]
+-[SCSaveToCameraRollOperation imageCompletion]
+-[SCSaveToCameraRollOperation setImageCompletion:]
+-[SCSaveToCameraRollOperation .cxx_destruct]
+_pendingOperations
+__didStart.onceToken
+_OBJC_IVAR_$_SCSaveToCameraRollOperation._videoCompletion
+_OBJC_IVAR_$_SCSaveToCameraRollOperation._imageCompletion
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCSaveToCameraRollOperation.m
+__40-[SCSaveToCameraRollOperation _didStart]_block_invoke
+-[SCSwipeableFilterView initWithFrame:]
+-[SCSwipeableFilterView initWithCoder:]
+-[SCSwipeableFilterView dealloc]
+-[SCSwipeableFilterView _swipeableCommonInit]
+-[SCSwipeableFilterView layoutSubviews]
+-[SCSwipeableFilterView updateScrollViewContentSize]
+-[SCSwipeableFilterView scrollToFilter:animated:]
+-[SCSwipeableFilterView updateCurrentSelected:]
+-[SCSwipeableFilterView scrollViewDidScrollToTop:]
+-[SCSwipeableFilterView scrollViewDidEndScrollingAnimation:]
+-[SCSwipeableFilterView scrollViewDidEndDecelerating:]
+-[SCSwipeableFilterView scrollViewDidEndDragging:willDecelerate:]
+-[SCSwipeableFilterView scrollViewDidScroll:]
+-[SCSwipeableFilterView renderedCIImageInRect:]
+-[SCSwipeableFilterView setFilters:]
+-[SCSwipeableFilterView setSelectedFilter:]
+-[SCSwipeableFilterView filters]
+-[SCSwipeableFilterView selectedFilter]
+-[SCSwipeableFilterView preprocessingFilter]
+-[SCSwipeableFilterView setPreprocessingFilter:]
+-[SCSwipeableFilterView delegate]
+-[SCSwipeableFilterView setDelegate:]
+-[SCSwipeableFilterView selectFilterScrollView]
+-[SCSwipeableFilterView refreshAutomaticallyWhenScrolling]
+-[SCSwipeableFilterView setRefreshAutomaticallyWhenScrolling:]
+-[SCSwipeableFilterView .cxx_destruct]
+_OBJC_IVAR_$_SCSwipeableFilterView._refreshAutomaticallyWhenScrolling
+_OBJC_IVAR_$_SCSwipeableFilterView._selectFilterScrollView
+_OBJC_IVAR_$_SCSwipeableFilterView._filters
+_OBJC_IVAR_$_SCSwipeableFilterView._selectedFilter
+_OBJC_IVAR_$_SCSwipeableFilterView._preprocessingFilter
+_OBJC_IVAR_$_SCSwipeableFilterView._delegate
+l_OBJC_PROTOCOL_$_UIScrollViewDelegate
+l_OBJC_LABEL_PROTOCOL_$_UIScrollViewDelegate
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCSwipeableFilterView.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCSwipeableFilterView.h
+-[SCVideoConfiguration init]
+-[SCVideoConfiguration createAssetWriterOptionsWithVideoSize:]
+-[SCVideoConfiguration createAssetWriterOptionsUsingSampleBuffer:]
+-[SCVideoConfiguration size]
+-[SCVideoConfiguration setSize:]
+-[SCVideoConfiguration affineTransform]
+-[SCVideoConfiguration setAffineTransform:]
+-[SCVideoConfiguration codec]
+-[SCVideoConfiguration setCodec:]
+-[SCVideoConfiguration scalingMode]
+-[SCVideoConfiguration setScalingMode:]
+-[SCVideoConfiguration maxFrameRate]
+-[SCVideoConfiguration setMaxFrameRate:]
+-[SCVideoConfiguration timeScale]
+-[SCVideoConfiguration setTimeScale:]
+-[SCVideoConfiguration sizeAsSquare]
+-[SCVideoConfiguration setSizeAsSquare:]
+-[SCVideoConfiguration shouldKeepOnlyKeyFrames]
+-[SCVideoConfiguration setShouldKeepOnlyKeyFrames:]
+-[SCVideoConfiguration filter]
+-[SCVideoConfiguration setFilter:]
+-[SCVideoConfiguration keepInputAffineTransform]
+-[SCVideoConfiguration setKeepInputAffineTransform:]
+-[SCVideoConfiguration composition]
+-[SCVideoConfiguration setComposition:]
+-[SCVideoConfiguration watermarkImage]
+-[SCVideoConfiguration setWatermarkImage:]
+-[SCVideoConfiguration watermarkFrame]
+-[SCVideoConfiguration setWatermarkFrame:]
+-[SCVideoConfiguration bufferSize]
+-[SCVideoConfiguration setBufferSize:]
+-[SCVideoConfiguration profileLevel]
+-[SCVideoConfiguration setProfileLevel:]
+-[SCVideoConfiguration overlay]
+-[SCVideoConfiguration setOverlay:]
+-[SCVideoConfiguration watermarkAnchorLocation]
+-[SCVideoConfiguration setWatermarkAnchorLocation:]
+-[SCVideoConfiguration .cxx_destruct]
+_OBJC_IVAR_$_SCVideoConfiguration._size
+_OBJC_IVAR_$_SCVideoConfiguration._codec
+_OBJC_IVAR_$_SCVideoConfiguration._scalingMode
+_OBJC_IVAR_$_SCVideoConfiguration._affineTransform
+_OBJC_IVAR_$_SCVideoConfiguration._timeScale
+_OBJC_IVAR_$_SCVideoConfiguration._keepInputAffineTransform
+_OBJC_IVAR_$_SCVideoConfiguration._maxFrameRate
+_OBJC_IVAR_$_SCVideoConfiguration._sizeAsSquare
+_OBJC_IVAR_$_SCVideoConfiguration._shouldKeepOnlyKeyFrames
+_OBJC_IVAR_$_SCVideoConfiguration._filter
+_OBJC_IVAR_$_SCVideoConfiguration._composition
+_OBJC_IVAR_$_SCVideoConfiguration._watermarkImage
+_OBJC_IVAR_$_SCVideoConfiguration._watermarkFrame
+_OBJC_IVAR_$_SCVideoConfiguration._bufferSize
+_OBJC_IVAR_$_SCVideoConfiguration._profileLevel
+_OBJC_IVAR_$_SCVideoConfiguration._overlay
+_OBJC_IVAR_$_SCVideoConfiguration._watermarkAnchorLocation
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCVideoConfiguration.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCVideoConfiguration.h
+MakeVideoSize
+-[SCVideoPlayerView init]
+-[SCVideoPlayerView initWithPlayer:]
+-[SCVideoPlayerView dealloc]
+-[SCVideoPlayerView initWithCoder:]
+-[SCVideoPlayerView _commonInit:]
+-[SCVideoPlayerView tapOrPause]
+-[SCVideoPlayerView layoutSubviews]
+-[SCVideoPlayerView tapToPauseEnabled]
+-[SCVideoPlayerView setTapToPauseEnabled:]
+-[SCVideoPlayerView setPlayer:]
++[SCVideoPlayerView autoCreatePlayerWhenNeeded]
++[SCVideoPlayerView setAutoCreatePlayerWhenNeeded:]
+-[SCVideoPlayerView delegate]
+-[SCVideoPlayerView setDelegate:]
+-[SCVideoPlayerView player]
+-[SCVideoPlayerView playerLayer]
+-[SCVideoPlayerView .cxx_destruct]
+_OBJC_IVAR_$_SCVideoPlayerView._holdPlayer
+_OBJC_IVAR_$_SCVideoPlayerView._playerLayer
+_OBJC_IVAR_$_SCVideoPlayerView._tapToPauseGesture
+_OBJC_IVAR_$_SCVideoPlayerView._player
+__autoCreatePlayerWhenNeeded
+_OBJC_IVAR_$_SCVideoPlayerView._delegate
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCVideoPlayerView.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCVideoPlayerView.h
+-[SCWeakSelectorTarget initWithTarget:targetSelector:]
+-[SCWeakSelectorTarget sendMessageToTarget:]
+-[SCWeakSelectorTarget handleSelector]
+-[SCWeakSelectorTarget target]
+-[SCWeakSelectorTarget targetSelector]
+-[SCWeakSelectorTarget .cxx_destruct]
+_OBJC_IVAR_$_SCWeakSelectorTarget._target
+_OBJC_IVAR_$_SCWeakSelectorTarget._targetSelector
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCWeakSelectorTarget.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/SCWeakSelectorTarget.h
+-[UIImage(SCSaveToCameraRoll) saveToCameraRollWithCompletion:]
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/SCRecorder/Library/Sources/UIImage+SCSaveToCameraRoll.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/ArchiveIntermediates/wizhwish/IntermediateBuildFilesPath/Pods.build/Release-iphoneos/SCRecorder.build/DerivedSources/SCRecorder_vers.c
+__ZL15__ARCLite__loadv
+__ZL58__arclite_NSMutableDictionary__setObject_forKeyedSubscriptP19NSMutableDictionaryP13objc_selectorP11objc_objectS4_
+__ZL22add_image_hook_swiftV1PK11mach_headerl
+__ZL42__arclite_NSUndoManagerProxy_isKindOfClassP11objc_objectP13objc_selectorP10objc_class
+__ZL13replaceMethodP10objc_classP13objc_selectorPFP11objc_objectS4_S2_zEPS6_
+__ZL30__arclite_NSManagedObject_initP11objc_objectP13objc_selector
+__ZL41__arclite_NSManagedObject_allocWithEntityP11objc_objectP13objc_selectorS0_
+__ZL36__arclite_NSManagedObject_allocBatchP11objc_objectP13objc_selectorPS0_S0_j
+__ZL37__arclite_NSKKMS_fastIndexForKnownKeyP11objc_objectP13objc_selectorS0_
+__ZL28__arclite_NSKKMS_indexForKeyP11objc_objectP13objc_selectorS0_
+__ZL29__arclite_NSKKsD_objectForKeyP11objc_objectP13objc_selectorS0_
+__ZL35__arclite_NSKKsD_removeObjectForKeyP11objc_objectP13objc_selectorS0_
+__ZL33__arclite_NSKKsD_setObject_forKeyP11objc_objectP13objc_selectorS0_S0_
+__ZL41__arclite_NSKKsD_addEntriesFromDictionaryP11objc_objectP13objc_selectorP12NSDictionary
+__ZL28__arclite_objc_readClassPairP10objc_classPK15objc_image_info
+__ZL32__arclite_objc_allocateClassPairP10objc_classPKcm
+__ZL32__arclite_object_getIndexedIvarsP11objc_object
+__ZL23__arclite_objc_getClassPKc
+__ZL27__arclite_objc_getMetaClassPKc
+__ZL31__arclite_objc_getRequiredClassPKc
+__ZL26__arclite_objc_lookUpClassPKc
+__ZL26__arclite_objc_getProtocolPKc
+__ZL23__arclite_class_getNameP10objc_class
+__ZL26__arclite_protocol_getNameP8Protocol
+__ZL37__arclite_objc_copyClassNamesForImagePKcPj
+__ZL17transcribeMethodsP10objc_classP15glue_class_ro_t
+__ZL19transcribeProtocolsP10objc_classP15glue_class_ro_t
+__ZL20transcribePropertiesP10objc_classP15glue_class_ro_t
+__ZL14initialize_impP11objc_objectP13objc_selector
+__ZL18allocateMaybeSwiftP18glue_swift_class_tm
+__ZL22copySwiftV1MangledNamePKcb
+__ZL13demangledNamePKcb
+__ZL16scanMangledFieldRPKcS0_S1_Ri
+__ZL30arclite_uninitialized_functionv
+__ZL12cxxConstructP11objc_object
+__ZL20fixStringForCoreDataP11objc_object
+_OBJC_METACLASS_$___ARCLite__
+__ZL24OBJC_CLASS_$___ARCLite__
+__ZL31OBJC_METACLASS_RO_$___ARCLite__
+__non_lazy_classes
+__ZL27OBJC_CLASS_RO_$___ARCLite__
+__ZL11_class_name
+__ZL32OBJC_$_CLASS_METHODS___ARCLite__
+__ZL17_load_method_name
+__ZL17_load_method_type
+l_OBJC_PROTOCOL_$___ARCLiteKeyedSubscripting__
+l_OBJC_LABEL_PROTOCOL_$___ARCLiteKeyedSubscripting__
+l_OBJC_PROTOCOL_REFERENCE_$___ARCLiteKeyedSubscripting__
+__ZL30NSUndoManagerProxy_targetClass
+__ZL29original_NSManagedObject_init
+__ZL40original_NSManagedObject_allocWithEntity
+__ZL35original_NSManagedObject_allocBatch
+__ZL25NSMutableDictionary_class
+__ZL22NSConstantString_class
+__ZL14NSString_class
+__ZL36original_NSKKMS_fastIndexForKnownKey
+__ZL27original_NSKKMS_indexForKey
+__ZL28original_NSKKsD_objectForKey
+__ZL34original_NSKKsD_removeObjectForKey
+__ZL32original_NSKKsD_setObject_forKey
+__ZL40original_NSKKsD_addEntriesFromDictionary
+__ZZL22add_image_hook_swiftV1PK11mach_headerlE7patches
+__ZGVZL22add_image_hook_swiftV1PK11mach_headerlE7patches
+__ZL31original_objc_allocateClassPair
+__ZL31original_object_getIndexedIvars
+__ZL22original_objc_getClass
+__ZL26original_objc_getMetaClass
+__ZL30original_objc_getRequiredClass
+__ZL25original_objc_lookUpClass
+__ZL25original_objc_getProtocol
+__ZL22original_class_getName
+__ZL25original_protocol_getName
+__ZL36original_objc_copyClassNamesForImage
+__ZL12demangleLock
+__ZL9Demangled
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++ -arch arm64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c++11 -Wno-trigraphs -fno-exceptions -fno-rtti -mpascal-strings -Os -Wno-missing-field-initializers -Wmissing-prototypes -Wno-implicit-atomic-properties -Wno-arc-repeated-use-of-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -D NDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.Internal.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -miphoneos-version-min=4.3 -g -fno-threadsafe-statics -Wno-sign-conversion -Wno-infinite-recursion -Wno-move -fembed-bitcode=all -iquote /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-generated-files.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-own-target-headers.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-all-target-headers.hmap -iquote /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-project-headers.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/Symbols/BuiltProducts/include -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/TempContent/Objects/arclite.build/arclite_iOS.build/DerivedSources/arm64 -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/TempContent/Objects/arclite.build/arclite_iOS.build/DerivedSources -F/Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/Symbols/BuiltProducts -F/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.Internal.sdk/System/Library/PrivateFrameworks -Wall -Wextra -Wno-gcc-compat -Wno-error=incomplete-umbrella -Wno-error=incomplete-umbrella -MMD -MT dependencies -MF /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/TempContent/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.d --serialize-diagnostics /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/TempContent/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.dia -c /Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-66/source/arclite.mm -o /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/TempContent/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.o -mlinker-version=278.4
+/Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-66/source/arclite.mm
+/Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-66
+fixStringForCoreData
+cxxConstruct
+arclite_uninitialized_function
+scanMangledField
+isdigit
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.Internal.sdk/usr/include/ctype.h
+__isctype
+demangledName
+copySwiftV1DemangledName
+copySwiftV1MangledName
+allocateMaybeSwift
+word_align
+isSwift
+initialize_imp
+transcribeProperties
+property_list_nth
+transcribeProtocols
+transcribeMethods
+data
+method_list_nth
+__arclite_objc_copyClassNamesForImage
+__arclite_protocol_getName
+__arclite_class_getName
+__arclite_objc_getProtocol
+__arclite_objc_lookUpClass
+__arclite_objc_getRequiredClass
+__arclite_objc_getMetaClass
+__arclite_objc_getClass
+__arclite_object_getIndexedIvars
+__arclite_objc_allocateClassPair
+metaclass
+__arclite_objc_readClassPair
+transcribeIvars
+ivar_list_nth
+max
+alignment
+ro
+fastFlags
+__arclite_NSKKsD_addEntriesFromDictionary
+__arclite_NSKKsD_setObject_forKey
+__arclite_NSKKsD_removeObjectForKey
+__arclite_NSKKsD_objectForKey
+__arclite_NSKKMS_indexForKey
+__arclite_NSKKMS_fastIndexForKnownKey
+__arclite_NSManagedObject_allocBatch
+__arclite_NSManagedObject_allocWithEntity
+__arclite_NSManagedObject_init
+replaceMethod
+__arclite_NSUndoManagerProxy_isKindOfClass
+add_image_hook_swiftV1
+patch_lazy_pointers
+patch_t<const char **(const char *, unsigned int *)>
+patch_t<const char *(Protocol *)>
+patch_t<const char *(Class)>
+patch_t<Protocol *(const char *)>
+patch_t<Class (const char *)>
+patch_t<void *(id)>
+patch_t<Class (Class, const char *, unsigned long)>
+patch_t<Class (Class, const objc_image_info *)>
+__arclite_NSMutableDictionary__setObject_forKeyedSubscript
+__ARCLite__load
+install_swiftV1
+install_dict_nil_value
+addOrReplaceMethod
+keyedGetter

@@ -39,6 +39,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>HockeySDK-HockeySDKResources.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>IGColorPicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -82,17 +92,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>06185C635B722425EE420AFCDEF35984</key>
+		<key>0249F1CCD6CA272BB3BF7B840F509A3D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2755AE42901315D17AD036F6B85DA681</key>
+		<key>0F328EFAA6F166BB1273CF52DA2C059F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3E6DBEF5AE1D1610D320D65A6DD49C50</key>
+		<key>1ED8BE8BD6A53853974A60E1AC8B1019</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>23A023F25C712D8E8E534A6AE0FA6631</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3B25E1601C445A6A75E55543DB48D091</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -102,32 +122,37 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>52AE5716616CA781E7544CE55345372B</key>
+		<key>41FA54D12162DAD51D02FC58A2CD5034</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>586F2DFA9BDCC6675C2546793A69E5CC</key>
+		<key>46E15656C90425D2C106D2D3627A94E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6090063EF7B7DC85270A78955968E186</key>
+		<key>4CD49CCEC8FC1E29B670A1A8AA660DE7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6E66B362AE57238557E51E1B585B5C93</key>
+		<key>4F0A3B28518DCB2F5E6382A9419C47AF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>790E356BE3826A734CB7E012C5B22979</key>
+		<key>5ACFCBB5C36270A9DF9A2D2D11708867</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7C3085ED4C6B66E4848EFC7993C6B045</key>
+		<key>77067B4D2FE0093332E2CB7080D7484E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7891E2B724C54EF58FB1692B34F1455C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -137,22 +162,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9508706C8EF63016A651AC34EF4BD23C</key>
+		<key>9F7098779713B711F6C591B62A41F242</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AFAFB55453D161D2BB5CFB30C68A54D5</key>
+		<key>EB9AD825427F216B54E693242E671FA1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B526EF7C9CF26F61CA9F56936B0051A8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C6D966B1EE67D8C83EEDCF82848C8552</key>
+		<key>EFDBC7A61758CF267FA5F8D82DFF542F</key>
 		<dict>
 			<key>primary</key>
 			<true/>

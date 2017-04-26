@@ -6,12 +6,18 @@
 //  Copyright © 2016 Syed Abdul Basit. All rights reserved.
 //
 
+#define k_TABLEVIEW_HEIGHT_TEXT                 170;
+
+#define k_TABLEVIEW_HEIGHT_IMAGE                500;
+
+#define k_TABLEVIEW_HEIGHT_TEXT_COMMENT          200;
+
+#define k_TABLEVIEW_HEIGHT_IMAGE_COMMENT          550;
 
 #import "WZHomeViewController.h"
 #import "UIView+Extras.h"
 #import "RUReachability.h"
-#import <UIImageView+AFNetworking.h>
-
+#import "UIImageView+AFNetworking.h"
 
 
 @interface WZHomeViewController()
@@ -60,8 +66,9 @@
             
             weakSelf.postArray =  [weakSelf.postArray arrayByAddingObjectsFromArray:array];
        
-            [weakSelf.tableView reloadData];
         }
+        [weakSelf.tableView reloadData];
+
         
     } failure:^(NSError *error) {
         
@@ -224,14 +231,27 @@
     
 }
 - (void)settingPressed {
- 
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:k_ACCESS_TOKEN];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+
+    UIAlertController *alertController = [UIAlertController  alertControllerWithTitle:@"Are you want to logout?"  message:nil  preferredStyle:UIAlertControllerStyleAlert];
+   
+    [alertController addAction:[UIAlertAction actionWithTitle:@"YES" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:k_ACCESS_TOKEN];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        LoginViewController *loginController = [[UIStoryboard getLoginStoryBoard] instantiateViewControllerWithIdentifier:K_SB_LOGIN_VIEW_CONTROLLER];
+        
+        [RUUtility setMainRootController:loginController];
+
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }]];
+    [alertController addAction:[UIAlertAction actionWithTitle:@"NO" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }]];
+    [self presentViewController:alertController animated:YES completion:nil];
     
-    LoginViewController *loginController = [[UIStoryboard getLoginStoryBoard] instantiateViewControllerWithIdentifier:K_SB_LOGIN_VIEW_CONTROLLER];
     
-    [RUUtility setMainRootController:loginController];
-}
+   }
 
 - (void)intialSetup {
     self.offSetValue = 30;
@@ -410,17 +430,26 @@
        NSDictionary *postDict = [self.postArray objectAtIndex:index];
         WZPost *post = [WZServiceParser getDataFromDictionary:postDict haveComments:YES];
         
-        NSURL *url = [NSURL URLWithString:post.userProfileURL];
+        
+        
+        if (![NSString isStringNull:post.userProfileURL]) {
+      
+            NSURL *url = [NSURL URLWithString:post.userProfileURL];
         
         [cell.imageViewProfile setImageWithURL:url placeholderImage:[UIImage imageNamed:@"Image_Profile-1"]];
         
+        }
+        else {
+            
+            [cell.imageViewProfile setImage:[UIImage imageNamed:@"Image_Profile-1"]];
+        }
         
-        if (post.postText.length > 0) {
+         if ([post.postType isEqualToString:k_TEXT_TYPE]) {
             cell = [tableView dequeueReusableCellWithIdentifier:K_POST_TABLEVIEW_CELL_TEXT];
             cell.isText = YES;
             cell.labelPostText.text = post.postText;
         }
-        else {
+        else if ([post.postType isEqualToString:k_IMAGE_TYPE]) {
             cell.imageViewPost.hidden = NO;
            NSArray *imagesArray = [post.mediaDictionary valueForKey:@"images"];
            
@@ -440,7 +469,7 @@
         cell.labelPostTitle.text = @"Post";
         cell.labelOtherComment.text = [NSString stringWithFormat:@"%@ more",post.commentCount];
         
-        if (post.postComment != nil) {
+        if (post.commentCount.integerValue>0) {
             
             cell.labelCommentTitle.text = post.postComment.displayName;
             cell.labelComment.text = post.postComment.commentText;
@@ -451,9 +480,17 @@
             
             cell.labelCommentTitle.hidden = YES;
             
-            cell.labelOtherComment.hidden = YES;
         }
         
+        if (post.commentCount.integerValue>1) {
+            
+            cell.labelOtherComment.hidden = NO;
+        }
+        else {
+            cell.labelOtherComment.hidden = YES;
+            
+        }
+
         
       //  cell.imageViewProfile.image ;
         
@@ -494,18 +531,28 @@
        NSDictionary *postDict = [self.postArray objectAtIndex:index];
         WZPost *post = [WZServiceParser getDataFromDictionary:postDict haveComments:YES];
         
-        if (post.postText.length > 0) {
+        if ([post.postType isEqualToString:k_TEXT_TYPE]) {
         
-            if (post.postComment!=nil) {
+            
+            if (post.commentCount.integerValue > 1) {
                 
-                return 200;
+                return k_TABLEVIEW_HEIGHT_TEXT;
             }
-        
-            return 170;
+            return k_TABLEVIEW_HEIGHT_TEXT_COMMENT;
         }
-        else {
-        return  500;
+        else if ([post.postType isEqualToString:k_IMAGE_TYPE]) {
+       
+            if (post.commentCount.integerValue > 0) {
+                
+                return k_TABLEVIEW_HEIGHT_IMAGE_COMMENT;
+            }
+
+            
+            return  k_TABLEVIEW_HEIGHT_IMAGE;
     }
+        
+        
+        return tableView.estimatedRowHeight;
     }
 }
 

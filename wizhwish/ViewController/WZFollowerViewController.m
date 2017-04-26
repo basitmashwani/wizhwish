@@ -269,9 +269,10 @@
         
         profileCell.labelName.hidden = YES;
         
-        
-       [profileCell.imageViewProfile setImageWithURL:[NSURL URLWithString:urlPath]];
-        
+        if (![NSString isStringNull:urlPath]) {
+      
+            [profileCell.imageViewProfile setImageWithURL:[NSURL URLWithString:urlPath]];
+        }
         [profileCell.labelUserName setTextColor:[UIColor blackColor]];
         
         [profileCell.imageViewPost setHidden:YES];

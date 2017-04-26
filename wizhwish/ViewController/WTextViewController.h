@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WTextViewController : UIViewController<UITextViewDelegate>
+@interface WTextViewController : UIViewController
 
 @property(nonatomic ,retain) IBOutlet UITextView *textView;
 

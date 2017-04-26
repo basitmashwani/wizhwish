@@ -7,7 +7,7 @@
 //
 
 #import "WPhotoViewController.h"
-#import <UIImage+Extra.h>
+#import "UIImage+Extra.h"
 
 @interface WPhotoViewController ()
 
@@ -233,8 +233,11 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [RUUtility setBackButtonForController:self withSelector:@selector(backPressed:)];
+    //[RUUtility setBackButtonForController:self withSelector:@selector(backPressed:)];
     
+    self.navigationItem.leftBarButtonItem =  [RUUtility getBarButtonWithImage:[UIImage imageNamed:@"Image_Cross"] forViewController:self selector:@selector(backPressed:)];
+    
+    self.filterPencil.selected = YES;
     // Do any additional setup after loading the view.
 }
 
@@ -269,7 +272,17 @@
 
 - (void)backPressed:(id)sender {
     
-    [self.navigationController popViewControllerAnimated:YES];
+    if (self.imagesArray.count > 0) {
+        
+        [self setUpCamera];
+        [self.imagesArray removeAllObjects];
+        [self.tempImagesArray removeAllObjects];
+
+    }
+    else {
+    
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 - (void)flashPressed:(id)sender {
  
@@ -415,6 +428,7 @@
     controller.selectedImage = [self.imagesArray objectAtIndex:self.selectedIndex];
     controller.selectedIndex = self.selectedIndex;
     controller.isDrawing = YES;
+    controller.titleName = @"photo";
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
     [RUUtility setUpNavigationBar:navController];
     [self presentViewController:navController animated:YES completion:nil];
@@ -452,6 +466,7 @@
     WPhotoEditViewController *controller = [[WPhotoEditViewController alloc] init];
     controller.delegate = self;
     controller.isDrawing = NO;
+    controller.titleName = @"photo";
     controller.selectedImage = [self.imagesArray objectAtIndex:self.selectedIndex];
     controller.selectedIndex = self.selectedIndex;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
@@ -489,6 +504,7 @@
     UIImage *image = [self.imagesArray objectAtIndex:self.selectedIndex];
     self.capturedImage = image;
     self.mainImageView.image = self.capturedImage;
+        [self.collectionView reloadData];
     
     }
 }
@@ -502,6 +518,8 @@
     self.capturedImage = image;
 
     self.mainImageView.image = self.capturedImage;
+        [self.collectionView reloadData];
+
 
     }
 }
@@ -514,6 +532,8 @@
     UIImage *image = [self.imagesArray objectAtIndex:self.selectedIndex];
     self.capturedImage = image;
     self.mainImageView.image = self.capturedImage;
+        [self.collectionView reloadData];
+
 
     }
 }
@@ -526,6 +546,8 @@
     UIImage *image = [self.imagesArray objectAtIndex:self.selectedIndex];
     self.capturedImage = image;
     self.mainImageView.image = self.capturedImage;
+        [self.collectionView reloadData];
+
 
     }
 }
@@ -537,6 +559,8 @@
     UIImage *image = [self.imagesArray objectAtIndex:self.selectedIndex];
     self.capturedImage = image;
     self.mainImageView.image = self.capturedImage;
+        [self.collectionView reloadData];
+
 
     }
 }
@@ -548,6 +572,8 @@
     UIImage *image = [self.imagesArray objectAtIndex:self.selectedIndex];
     self.capturedImage = image;
     self.mainImageView.image = self.capturedImage;
+        [self.collectionView reloadData];
+
 
     }
 }
@@ -666,10 +692,20 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     WZFriendCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionViewFilter" forIndexPath:indexPath];
+    
+    if (self.imagesArray.count > 0) {
+       
+        UIImage *image = [self.imagesArray objectAtIndex:self.selectedIndex];
+        image  = [UIImage getFilterImageWithIndex:indexPath.row withImage:image];
+        [cell.buttonPeople setImage:image forState:UIControlStateNormal];
 
+
+    }
+    else {
     UIImage *image = [self.filterImageArray objectAtIndex:indexPath.row];
     [cell.buttonPeople setImage:image forState:UIControlStateNormal];
     
+    }
     
     return cell;
 }

@@ -86,4 +86,10 @@ get UIBarButton Instance
 + (void)removeBaseDirectory;
 
 
++ (void)addTextToVideoWithVideoURL:(NSURL*)url withText:(NSString*)text labelPoint:(CGPoint)labelPoint label:(UILabel*)textLabel success:(void(^)(void))success;
+
+
+
++ (void)addImageToVideoWithVideoURL:(NSURL*)url withImage:(UIImage*)image success:(void(^)(void))success;
+
 @end

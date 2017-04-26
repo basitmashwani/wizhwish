@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'C6D966B1EE67D8C83EEDCF82848C8552'
+               BlueprintIdentifier = '0F328EFAA6F166BB1273CF52DA2C059F'
                BlueprintName = 'OLGhostAlertView'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libOLGhostAlertView.a'>
+               BuildableName = 'OLGhostAlertView.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

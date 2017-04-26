@@ -11,7 +11,7 @@
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
-
+@import IGColorPicker;
 #import "LoginViewController.h"
 #import "WZRegistrationViewController.h"
 #import "Constants.h"
@@ -50,12 +50,13 @@
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <ACEDrawingView/ACEDrawingView.h>
 #import <ACEDrawingView/ACEDrawingTools.h>
-#import <Color-Picker-for-iOS/HRColorPickerView.h>
-#import <Color-Picker-for-iOS/HRColorMapView.h>
+#import <Color_Picker_for_iOS/HRColorMapView.h>
+#import <Color_Picker_for_iOS/HRColorPickerView.h>
+//#import <Color-Picker-for-iOS/HRColorPickerView.h>
 #import "WPhotoEditViewController.h"
-#import <SCFilter.h>
-#import <SCSwipeableFilterView.h>
-#import <SCFilterImageView.h>
+#import "SCFilter.h"
+#import "SCSwipeableFilterView.h"
+#import "SCFilterImageView.h"
 #import "WPhotoViewController.h"
 #import "WRecordAudioViewController.h"
 #import "WTextViewController.h"
@@ -76,12 +77,12 @@
 #import "NSDate+Extras.h"
 #import "RUUtility.h"
 #import "RUReachabilityManager.h"
-#import <AWSS3.h>
-#import <AWSCore.h>
+#import "AWSS3.h"
+#import "AWSCore.h"
 #import "WProfile.h"
 #import "WProfileViewController.h"
 #import "CSNotificationView.h"
-#import <UIImageView+AFNetworking.h>
+#import "UIImageView+AFNetworking.h"
 
 
 @import Photos;

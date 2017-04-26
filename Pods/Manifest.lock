@@ -25,7 +25,14 @@ PODS:
   - AWSS3 (2.4.16):
     - AWSCore (= 2.4.16)
   - Color-Picker-for-iOS (2.0.2)
+  - Crashlytics (3.8.4):
+    - Fabric (~> 1.6.3)
+  - Fabric (1.6.11)
   - HMSegmentedControl (1.5.3)
+  - HockeySDK (4.1.4):
+    - HockeySDK/DefaultLib (= 4.1.4)
+  - HockeySDK/DefaultLib (4.1.4)
+  - IGColorPicker (0.2.1)
   - MBProgressHUD (1.0.0)
   - NJKScrollFullScreen (0.2.6)
   - OLGhostAlertView (1.8.1)
@@ -37,7 +44,11 @@ DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - AWSS3 (~> 2.4.1)
   - Color-Picker-for-iOS (~> 2.0)
+  - Crashlytics
+  - Fabric
   - HMSegmentedControl
+  - HockeySDK
+  - IGColorPicker (from `./`)
   - MBProgressHUD
   - NJKScrollFullScreen
   - OLGhostAlertView (from `https://github.com/ondalabs/OLGhostAlertView.git`)
@@ -45,6 +56,8 @@ DEPENDENCIES:
   - SCRecorder
 
 EXTERNAL SOURCES:
+  IGColorPicker:
+    :path: ./
   OLGhostAlertView:
     :git: https://github.com/ondalabs/OLGhostAlertView.git
 
@@ -59,13 +72,17 @@ SPEC CHECKSUMS:
   AWSCore: 7c3c129991e6387bcbad7132bc3661e7135754db
   AWSS3: fef6aa8f8f625df8f67f1b6574fe761f3a4ddc99
   Color-Picker-for-iOS: 4980589b3e3cfe7198f227dd50be9adb02d8bc0b
+  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   HMSegmentedControl: 7c6145afb50f26cec5f3243082f6f12b9f41318f
+  HockeySDK: 78a3f8bb9100277b531defc56c970369a3ca267a
+  IGColorPicker: 1aa1becb8fccfe59e8e3640065d23defe0480101
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   NJKScrollFullScreen: 13e370f935da7385b92779644b31df8d83a91447
   OLGhostAlertView: 3eb3179a2be9c3a764831d0f958c36bb8ea38b53
   PBJVision: 907b7281967e26b12610b80c3602f3a455911aa1
   SCRecorder: bbb521dbc222908876ec9cd9156bbc8a893bed44
 
-PODFILE CHECKSUM: da63c62249306fa916283467aa95b272cb9cc4e9
+PODFILE CHECKSUM: 99899cb5776fc6f6cef9162d5ed28aa65b43a172
 
 COCOAPODS: 1.2.0

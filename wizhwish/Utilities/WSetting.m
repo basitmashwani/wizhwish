@@ -19,6 +19,10 @@ static WSetting *_sharedInstance = nil;
     return _sharedInstance;
 }
 
++ (void)distroySetting {
+ 
+    _sharedInstance = nil;
+}
 
 
 @end

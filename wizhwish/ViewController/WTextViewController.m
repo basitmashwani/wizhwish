@@ -7,11 +7,13 @@
 //
 
 #import "WTextViewController.h"
-#import <NEOColorPickerViewController.h>
+#import "NEOColorPickerViewController.h"
 
-@interface WTextViewController ()<NEOColorPickerViewControllerDelegate>
+@interface WTextViewController ()<ColorPickerViewDelegateFlowLayout,ColorPickerViewDelegate,UITextViewDelegate>
 
 @property(nonatomic ,assign) NSInteger count;
+
+@property(nonatomic ,retain) ColorPickerView *textColorPickerView;
 
 @end
 
@@ -29,53 +31,46 @@
     
    // CGRect rect = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y +120, self.view.frame.size.width, self.view.frame.size.height);
     
+    self.view.tag = 100;
+    
     
     UIView *tempView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 120)];
     
-    tempView.backgroundColor = [UIColor blackColor];
+    tempView.backgroundColor = [UIColor clearColor];
     [self.view addSubview:tempView];
     
-    [self didTappedView:self.view];
+    //[self didTappedView:self.view];
     
-    UIButton *colorPicker = [UIButton buttonWithType:UIButtonTypeCustom];
-    colorPicker.frame = CGRectMake(10, 80, 30, 30);
-    [colorPicker setImage:[UIImage imageNamed:@"Image_Pencil_Disable"] forState:UIControlStateNormal];
-    [tempView addSubview:colorPicker];
+    
     
     UIButton *plusButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    plusButton.frame = CGRectMake(self.view.frame.size.width/2-40, 80, 30, 30);
-    [plusButton setImage:[UIImage imageNamed:@"Image_Plus"] forState:UIControlStateNormal];
+    plusButton.frame = CGRectMake(self.view.frame.size.width-40, 80, 30, 30);
+    [plusButton setImage:[UIImage imageNamed:@"Image_Plus_Grey"] forState:UIControlStateNormal];
     [tempView addSubview:plusButton];
     [plusButton addTarget:self action:@selector(plusPressed) forControlEvents:UIControlEventTouchDown];
     
     
     
     UIButton *minusButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    minusButton.frame = CGRectMake(self.view.frame.size.width/1.5-30, 80, 30, 30);
-    [minusButton setImage:[UIImage imageNamed:@"Image_Minus"] forState:UIControlStateNormal];
+    minusButton.frame = CGRectMake(self.view.frame.size.width-80, 80, 30, 30);
+    [minusButton setImage:[UIImage imageNamed:@"Image_Minus_Grey"] forState:UIControlStateNormal];
     [tempView addSubview:minusButton];
     [minusButton addTarget:self action:@selector(minusPressed) forControlEvents:UIControlEventTouchDown];
-    
-    
-    
-    
-    [colorPicker addTarget:self action:@selector(colorChanged) forControlEvents:UIControlEventTouchDown];
-
-    
 
     // Do any additional setup after loading the view.
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector (keyBoardDidShow:)
+                                                 name: UIKeyboardDidShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector (keyBoardDidHide:)
+                                                 name: UIKeyboardDidHideNotification
+                                               object:nil];
 }
 
-- (void)colorChanged {
-    NEOColorPickerViewController *controller = [[NEOColorPickerViewController alloc] init];
-    controller.delegate = self;
-    controller.selectedColor =  [UIColor redColor];//self.currentColor;
-    controller.title = @"Whizwish";
-    UINavigationController *navCon = [[UINavigationController alloc] initWithRootViewController:controller];
-    [RUUtility setUpNavigationBar:navCon];
-    [self presentViewController:navCon animated:YES completion:nil];
-    
-}
 
 - (void)plusPressed {
     
@@ -98,25 +93,52 @@
     
 }
 
+#pragma KeyBoard Delegate Methods
+- (void)keyBoardDidShow:(id)sender {
+    
+    NSLog(@"Keyboard did show");
+    
+    CGSize keyboardSize = [[[sender userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    if (!_textColorPickerView) {
+        self.textColorPickerView  = [[ColorPickerView alloc] init];
+        
+        _textColorPickerView.delegate = self;
+        _textColorPickerView.layoutDelegate = self;
+        _textColorPickerView.scrollToPreselectedIndex = YES;
+        _textColorPickerView.tag = 120;
+        [self.view addSubview:_textColorPickerView];
+        
+    }
+    _textColorPickerView.frame = CGRectMake(0, keyboardSize.height, self.view.frame.size.width, 60);
+}
+- (void)keyBoardDidHide:(id)sender {
+
+    _textColorPickerView.frame = CGRectMake(0, self.view.frame.size.height - 70, self.view.frame.size.width, 60);
+    }
+
+
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    CGPoint location = [[touches anyObject] locationInView:self.view];
+    UIView *view = [self.view hitTest:location withEvent:nil];
+    
+    if (view.tag == 100) {
+        
+        [self.textView resignFirstResponder];
+    }
+    
+}
 #pragma mark - Color Picker Delegate Methods
-- (void) colorPickerViewController:(NEOColorPickerBaseViewController *) controller didSelectColor:(UIColor *)color {
+
+- (CGSize)colorPickerView:(ColorPickerView *)colorPickerView sizeForItemAt:(NSIndexPath *)indexPath {
     
-    NSLog(@"selected color");
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
-    
-    self.textView.textColor = color;
-}
-- (void) colorPickerViewControllerDidCancel:(NEOColorPickerBaseViewController *)controller {
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
+    return CGSizeMake(30, 30);
 }
 
-- (void) colorPickerViewController:(NEOColorPickerBaseViewController *) controller didChangeColor:(UIColor *)color {
+- (void)colorPickerView:(ColorPickerView *)colorPickerView didSelectItemAt:(NSIndexPath *)indexPath {
     
-    NSLog(@"changed color");
+    _textView.textColor = [colorPickerView.colors objectAtIndex:indexPath.row];
 }
-
 
 
 
@@ -134,7 +156,7 @@
 
 - (void)nextPressed {
     
-    if ([self.textView.text isEqualToString:@"Enter Text"]) {
+    if ([self.textView.text isEqualToString:@"Text"]) {
         [OLGhostAlertView showAlertAtBottomWithTitle:@"Message" message:@"Please enter text to post"];
     }
     else {
@@ -150,16 +172,8 @@
 
 #pragma mark UITextView Delegate Methods
 - (void)textViewDidChange:(UITextView *)textView {
-    
-}
+    textView.text = [textView.text stringByReplacingOccurrencesOfString:@"Text" withString:@""];
 
-- (void)textViewDidBeginEditing:(UITextView *)textView {
-   
-    if ([textView.text isEqualToString:@"Enter Text"]) {
-    
-     textView.text = @"";
-    
-    }
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
@@ -186,3 +200,4 @@
 */
 
 @end
+

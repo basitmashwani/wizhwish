@@ -16,22 +16,6 @@
 
 @property(nonatomic ,retain) UIPickerView *pickerView;
 
-@property(nonatomic ,retain) NSString *stringFullName;
-
-@property(nonatomic ,retain) NSString *stringBio;
-
-@property(nonatomic ,retain) NSString *stringGender;
-
-@property(nonatomic ,retain) NSString *stringPhone;
-
-@property(nonatomic ,retain) NSString *profileThumbnailURL;
-
-@property(nonatomic ,retain) NSString *profileImageURL;
-
-@property(nonatomic ,retain) NSString *bannerThumbnailURL;
-
-@property(nonatomic ,retain) NSString *bannerImageURL;
-
 
 @property(nonatomic ,assign) BOOL isProfileUploading;
 
@@ -213,8 +197,13 @@
     [self didTappedView:self.tableView];
     
     self.pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 216, 320, 216)];
+    
     self.pickerView.delegate = self;
+   
     [self.profileImage setRoundCornersAsCircle];
+    
+    self.profileImage.image = self.profileImg;
+    
     // Do any additional setup after loading the view.
     
    }
@@ -222,15 +211,6 @@
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
-    
-   
-            self.profileThumbnailURL = self.profile.profileThumbURL;
-            self.profileImageURL = self.profile.profileURL;
-            self.bannerImageURL = self.profile.bannerURL;
-            self.profileImage.image = self.profileImg;
-            self.bannerImage.image = self.bannerImg;
-
-    
     
    
     
@@ -252,22 +232,23 @@
         if (indexPath.row == 0) {
             cell.textField.placeholder = @"Name";
             cell.imageView.image = [UIImage imageNamed:@"Image_Profile_Icon"];
-            cell.textField.text = self.profile.fullName?self.profile.fullName:@"";
-            self.stringFullName = cell.textField.text;
+            cell.textField.text = self.stringFullName;
+            //self.stringFullName = cell.textField.text;
+            
 
         }
         else if (indexPath.row == 1 ) {
             
             cell.textField.placeholder = @"Bio";
             cell.imageView.image = [UIImage imageNamed:@"Image_Bio"];
-            if ([self.profile.bio isEqualToString:@"(null)"]) {
+            if ([self.stringBio isEqual:[NSNull null]]) {
                 
                 cell.textField.text = @"";
             }
             else {
-                cell.textField.text = self.profile.bio;
+                cell.textField.text = self.stringBio;
             }
-            self.stringBio = cell.textField.text;
+            //self.stringBio = cell.textField.text;
 
 
         }
@@ -277,10 +258,12 @@
             if (indexPath.row == 0 ) {
             
             cell.textField.placeholder = @"Phone";
+            
             cell.imageView.image = [UIImage imageNamed:@"Image_Phone"];
-                cell.textField.text = self.profile.phoneNumber?self.profile.phoneNumber:@"";
-                self.stringPhone = cell.textField.text;
-                cell.textField.keyboardType = UIKeyboardTypePhonePad;
+            
+            cell.textField.text = self.stringPhone;
+            
+            cell.textField.keyboardType = UIKeyboardTypePhonePad;
 
             
         }
@@ -288,10 +271,12 @@
         else if (indexPath.row == 1 ) {
             
             cell.textField.placeholder = @"Gender";
+            
             cell.imageView.image = [UIImage imageNamed:@"Image_Gender"];
+            
             cell.textField.inputView = self.pickerView;
-            cell.textField.text = self.profile.gender?self.profile.gender:@"Male";
-            self.stringGender = cell.textField.text;
+            
+            cell.textField.text = self.stringGender;;
 
             
         }

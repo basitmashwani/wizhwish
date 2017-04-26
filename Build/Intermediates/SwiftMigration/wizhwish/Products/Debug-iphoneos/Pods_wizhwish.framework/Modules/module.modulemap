@@ -1,0 +1,6 @@
+framework module Pods_wizhwish {
+  umbrella header "Pods-wizhwish-umbrella.h"
+
+  export *
+  module * { export * }
+}

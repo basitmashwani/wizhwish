@@ -126,7 +126,7 @@
 		1EEDCCB31DB507F300DBB363 /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EEDCCB01DB507F300DBB363 /* UIImage+Scale.m */; };
 		1EFC87231E4C94630045C801 /* WRecordAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EFC87221E4C94630045C801 /* WRecordAudioViewController.m */; };
 		1EFD83E11DB908AB00E119F3 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EFD83E01DB908AB00E119F3 /* MobileCoreServices.framework */; };
-		40B9A770625250EF8D5A5259 /* libPods-wizhwish.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8A1E61BF69F55E716003DE /* libPods-wizhwish.a */; };
+		65CBADFBB02495BDFA8FE1F8 /* Pods_wizhwish.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F846E3C35AF6A4019F8B2E49 /* Pods_wizhwish.framework */; };
 		67BB58A25F4D4377B11C90F6 /* libPods-wizhwishUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20DACEC584D332FFFE1D3E79 /* libPods-wizhwishUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -362,8 +362,8 @@
 		667A28FAD5B6F09A608861CC /* Pods-wizhwishUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwishUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwishUITests/Pods-wizhwishUITests.release.xcconfig"; sourceTree = "<group>"; };
 		66DC7C9BE2CC4D5C8692AB89 /* Pods-wizhwish.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwish.release.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwish/Pods-wizhwish.release.xcconfig"; sourceTree = "<group>"; };
 		A9707B569995A241F8132BD0 /* Pods-wizhwishTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwishTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwishTests/Pods-wizhwishTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AF8A1E61BF69F55E716003DE /* libPods-wizhwish.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-wizhwish.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6D9722E13F80BB42ACA090 /* Pods-wizhwishTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-wizhwishTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-wizhwishTests/Pods-wizhwishTests.release.xcconfig"; sourceTree = "<group>"; };
+		F846E3C35AF6A4019F8B2E49 /* Pods_wizhwish.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_wizhwish.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,7 +374,7 @@
 				1EFD83E11DB908AB00E119F3 /* MobileCoreServices.framework in Frameworks */,
 				1E271DB31CE2149500DB572F /* Photos.framework in Frameworks */,
 				1E271DAF1CE2097E00DB572F /* AVFoundation.framework in Frameworks */,
-				40B9A770625250EF8D5A5259 /* libPods-wizhwish.a in Frameworks */,
+				65CBADFBB02495BDFA8FE1F8 /* Pods_wizhwish.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1095,7 +1095,7 @@
 				1E271DAE1CE2097E00DB572F /* AVFoundation.framework */,
 				3BBFA7184F66AB3133BDB9F5 /* libPods-wizhwishTests.a */,
 				20DACEC584D332FFFE1D3E79 /* libPods-wizhwishUITests.a */,
-				AF8A1E61BF69F55E716003DE /* libPods-wizhwish.a */,
+				F846E3C35AF6A4019F8B2E49 /* Pods_wizhwish.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1113,6 +1113,7 @@
 				1E060AFC1CC4E311009E1BBC /* Resources */,
 				760F74AB3D5E716391DEF031 /* [CP] Embed Pods Frameworks */,
 				3257BAF305DA4953569E5B42 /* [CP] Copy Pods Resources */,
+				1E44F61B1EA756620076306F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1178,6 +1179,7 @@
 					1E060AFD1CC4E311009E1BBC = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 877ZNSB63X;
+						LastSwiftMigration = 0830;
 					};
 					1E060B161CC4E311009E1BBC = {
 						CreatedOnToolsVersion = 7.2;
@@ -1267,6 +1269,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1E44F61B1EA756620076306F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" e3b937e4f8bdc781aade4505c372301fae8fb7b8 35fa1c95e88a06cc2a4853790d8551173983e30e3726870d2ce236c976b341df";
+		};
 		2BF20C03C3608317E44372D6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1669,7 +1684,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 554DF7009B71954A51CB9DDB /* Pods-wizhwish.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN__ARC_BRIDGE_CAST_NONARC = NO;
@@ -1689,6 +1704,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = whiz_Dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "wizhwish/wizhwish-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -1696,7 +1712,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 66DC7C9BE2CC4D5C8692AB89 /* Pods-wizhwish.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN__ARC_BRIDGE_CAST_NONARC = NO;
@@ -1715,6 +1731,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = whiz;
 				SWIFT_OBJC_BRIDGING_HEADER = "wizhwish/wizhwish-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

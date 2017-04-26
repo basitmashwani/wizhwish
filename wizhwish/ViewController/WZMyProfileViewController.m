@@ -8,7 +8,7 @@
 
 #import "WZMyProfileViewController.h"
 #import "WZFollowerViewController.h"
-#import <UIImageView+AFNetworking.h>
+#import "UIImageView+AFNetworking.h"
 
 @interface WZMyProfileViewController ()
 
@@ -63,10 +63,27 @@
     else if(self.profileType == KWPofileTypeSelf) {
         
         WProfileViewController *profileViewController = [[UIStoryboard getProfileStoryBoard] instantiateViewControllerWithIdentifier:k_SB_PROFILE_EDIT_VC];
+       
         profileViewController.isFromRegistration = NO;
-        profileViewController.profile = self.profile;
+        
+        profileViewController.stringFullName = _profile.fullName?_profile.fullName:@"";
+        
+        profileViewController.stringBio = self.profile.bio;
+        
+        profileViewController.stringGender = self.profile.gender;
+        
+        profileViewController.stringPhone = self.profile.phoneNumber;
+        
+        profileViewController.profileThumbnailURL = self.profile.profileThumbURL;
+        
+        profileViewController.profileImageURL = self.profile.profileURL;
+        
+        profileViewController.bannerImageURL = self.profile.bannerURL;
+        
         profileViewController.profileImg = self.imageViewProfile.image;
+        
         profileViewController.bannerImg = self.bannerImageView.image;
+        
         [self.navigationController pushViewController:profileViewController animated:YES];
     }
     
@@ -130,16 +147,21 @@
 
         NSString *urlPath = [dict valueForKey:@"standardImageUrl"];
         
-        if (![urlPath isEqual:[NSNull null]]) {
+        if (![NSString isStringNull:urlPath]) {
         NSURL *url = [NSURL URLWithString:urlPath];
         
+            NSString *thumbUrl = [dict valueForKey:@"thumbnailImageUrl"];
+
+        [weakSelf.imageViewProfile setImageWithURL:[NSURL URLWithString:thumbUrl] placeholderImage:[UIImage imageNamed:@"Image_Profile-1"]];
+            
         [weakSelf.imageViewProfile setImageWithURL:url placeholderImage:[UIImage imageNamed:@"Image_Profile-1"]];
+
         //weakSelf.bio
         }
         
         NSString *bannerUrlPath = [dict valueForKey:@"bannerImageUrl"];
         
-        if (![bannerUrlPath isEqual:[NSNull null]]) {
+        if (![NSString isStringNull:bannerUrlPath]) {
             NSURL *url = [NSURL URLWithString:bannerUrlPath];
             
             [weakSelf.bannerImageView setImageWithURL:url];

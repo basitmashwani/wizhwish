@@ -1,0 +1,520 @@
+BCSymbolMap Version: 2.0
+-[PBJGLProgram initWithVertexShaderName:fragmentShaderName:]
+-[PBJGLProgram dealloc]
+-[PBJGLProgram _compileShader:type:file:]
+-[PBJGLProgram addAttribute:]
+-[PBJGLProgram attributeLocation:]
+-[PBJGLProgram uniformLocation:]
+-[PBJGLProgram link]
+-[PBJGLProgram use]
+-[PBJGLProgram .cxx_destruct]
+_OBJC_IVAR_$_PBJGLProgram._program
+_OBJC_IVAR_$_PBJGLProgram._vertexShaderName
+_OBJC_IVAR_$_PBJGLProgram._vertShader
+_OBJC_IVAR_$_PBJGLProgram._fragmentShaderName
+_OBJC_IVAR_$_PBJGLProgram._fragShader
+_OBJC_IVAR_$_PBJGLProgram._attributes
+Apple LLVM version 8.1.0 (clang-802.0.41)
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/PBJVision/Source/PBJGLProgram.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods
+-[PBJMediaWriter isAudioReady]
+-[PBJMediaWriter isVideoReady]
+-[PBJMediaWriter error]
+-[PBJMediaWriter initWithOutputURL:]
+-[PBJMediaWriter _metadataArray]
+-[PBJMediaWriter setupAudioWithSettings:]
+-[PBJMediaWriter setupVideoWithSettings:withAdditional:]
+-[PBJMediaWriter writeSampleBuffer:withMediaTypeVideo:]
+-[PBJMediaWriter finishWritingWithCompletionHandler:]
+-[PBJMediaWriter delegate]
+-[PBJMediaWriter setDelegate:]
+-[PBJMediaWriter outputURL]
+-[PBJMediaWriter audioTimestamp]
+-[PBJMediaWriter videoTimestamp]
+-[PBJMediaWriter .cxx_destruct]
+_OBJC_IVAR_$_PBJMediaWriter._assetWriterAudioInput
+_OBJC_IVAR_$_PBJMediaWriter._assetWriterVideoInput
+_OBJC_IVAR_$_PBJMediaWriter._assetWriter
+_OBJC_IVAR_$_PBJMediaWriter._outputURL
+_OBJC_IVAR_$_PBJMediaWriter._audioTimestamp
+_OBJC_IVAR_$_PBJMediaWriter._videoTimestamp
+_OBJC_IVAR_$_PBJMediaWriter._delegate
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/PBJVision/Source/PBJMediaWriter.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/PBJVision/Source/PBJMediaWriter.h
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/Target Support Files/PBJVision/PBJVision-dummy.m
++[PBJVision sharedInstance]
+___27+[PBJVision sharedInstance]_block_invoke
+-[PBJVision isVideoWritten]
+-[PBJVision isCaptureSessionActive]
+-[PBJVision isRecording]
+-[PBJVision isPaused]
+-[PBJVision setVideoRenderingEnabled:]
+-[PBJVision isVideoRenderingEnabled]
+-[PBJVision setAudioCaptureEnabled:]
+-[PBJVision isAudioCaptureEnabled]
+-[PBJVision setThumbnailEnabled:]
+-[PBJVision thumbnailEnabled]
+-[PBJVision setDefaultVideoThumbnails:]
+-[PBJVision defaultVideoThumbnails]
+-[PBJVision capturedAudioSeconds]
+-[PBJVision capturedVideoSeconds]
+-[PBJVision setCameraOrientation:]
+-[PBJVision setPreviewOrientation:]
+-[PBJVision _setOrientationForConnection:]
+-[PBJVision _setCameraMode:cameraDevice:outputFormat:]
+___54-[PBJVision _setCameraMode:cameraDevice:outputFormat:]_block_invoke
+___copy_helper_block_
+___destroy_helper_block_
+___54-[PBJVision _setCameraMode:cameraDevice:outputFormat:]_block_invoke.75
+___copy_helper_block_.82
+___destroy_helper_block_.83
+-[PBJVision setCameraDevice:]
+-[PBJVision setCaptureSessionPreset:]
+___37-[PBJVision setCaptureSessionPreset:]_block_invoke
+___copy_helper_block_.93
+___destroy_helper_block_.94
+-[PBJVision setCameraMode:]
+-[PBJVision setOutputFormat:]
+-[PBJVision isCameraDeviceAvailable:]
+-[PBJVision isFocusPointOfInterestSupported]
+-[PBJVision isFocusLockSupported]
+-[PBJVision setFocusMode:]
+-[PBJVision isExposureLockSupported]
+-[PBJVision setExposureMode:]
+-[PBJVision _setCurrentDevice:]
+-[PBJVision isFlashAvailable]
+-[PBJVision setFlashMode:]
+-[PBJVision setVideoFrameRate:]
+___31-[PBJVision setVideoFrameRate:]_block_invoke
+___copy_helper_block_.167
+___destroy_helper_block_.168
+-[PBJVision videoFrameRate]
+-[PBJVision supportsVideoFrameRate:]
+-[PBJVision init]
+-[PBJVision dealloc]
+-[PBJVision _enqueueBlockOnCaptureSessionQueue:]
+___48-[PBJVision _enqueueBlockOnCaptureSessionQueue:]_block_invoke
+___copy_helper_block_.224
+___destroy_helper_block_.225
+-[PBJVision _enqueueBlockOnCaptureVideoQueue:]
+___46-[PBJVision _enqueueBlockOnCaptureVideoQueue:]_block_invoke
+___copy_helper_block_.227
+___destroy_helper_block_.228
+-[PBJVision _enqueueBlockOnMainQueue:]
+___38-[PBJVision _enqueueBlockOnMainQueue:]_block_invoke
+___copy_helper_block_.230
+___destroy_helper_block_.231
+-[PBJVision _executeBlockOnMainQueue:]
+___38-[PBJVision _executeBlockOnMainQueue:]_block_invoke
+___copy_helper_block_.233
+___destroy_helper_block_.234
+-[PBJVision _commitBlock:]
+-[PBJVision _setupCamera]
+-[PBJVision _destroyCamera]
+-[PBJVision _canSessionCaptureWithOutput:]
+-[PBJVision _setupSession]
+-[PBJVision startPreview]
+___25-[PBJVision startPreview]_block_invoke
+___25-[PBJVision startPreview]_block_invoke_2
+___copy_helper_block_.387
+___destroy_helper_block_.388
+___copy_helper_block_.392
+___destroy_helper_block_.393
+-[PBJVision stopPreview]
+___24-[PBJVision stopPreview]_block_invoke
+___24-[PBJVision stopPreview]_block_invoke_2
+___copy_helper_block_.399
+___destroy_helper_block_.400
+___copy_helper_block_.406
+___destroy_helper_block_.407
+-[PBJVision freezePreview]
+-[PBJVision unfreezePreview]
+-[PBJVision _focusStarted]
+-[PBJVision _focusEnded]
+-[PBJVision _exposureChangeStarted]
+-[PBJVision _exposureChangeEnded]
+-[PBJVision _whiteBalanceChangeStarted]
+-[PBJVision _whiteBalanceChangeEnded]
+-[PBJVision focusAtAdjustedPointOfInterest:]
+-[PBJVision isAdjustingFocus]
+-[PBJVision exposeAtAdjustedPointOfInterest:]
+-[PBJVision isAdjustingExposure]
+-[PBJVision _adjustFocusExposureAndWhiteBalance]
+-[PBJVision focusExposeAndAdjustWhiteBalanceAtAdjustedPoint:]
+-[PBJVision setMirroringMode:]
+-[PBJVision canCapturePhoto]
+-[PBJVision _uiimageFromJPEGData:]
+-[PBJVision _thumbnailJPEGData:]
+-[PBJVision _squareImageWithImage:scaledToSize:]
+-[PBJVision _imageOrientationFromExifOrientation:]
+-[PBJVision _willCapturePhoto]
+-[PBJVision _didCapturePhoto]
+-[PBJVision _capturePhotoFromSampleBuffer:]
+___43-[PBJVision _capturePhotoFromSampleBuffer:]_block_invoke
+___copy_helper_block_.516
+___destroy_helper_block_.517
+-[PBJVision _processImageWithPhotoSampleBuffer:previewSampleBuffer:error:]
+-[PBJVision capturePhoto]
+___25-[PBJVision capturePhoto]_block_invoke
+___copy_helper_block_.546
+___destroy_helper_block_.547
+-[PBJVision supportsVideoCapture]
+-[PBJVision canCaptureVideo]
+-[PBJVision startVideoCapture]
+___30-[PBJVision startVideoCapture]_block_invoke
+___30-[PBJVision startVideoCapture]_block_invoke_2
+___copy_helper_block_.597
+___destroy_helper_block_.598
+___copy_helper_block_.600
+___destroy_helper_block_.601
+-[PBJVision pauseVideoCapture]
+___30-[PBJVision pauseVideoCapture]_block_invoke
+___30-[PBJVision pauseVideoCapture]_block_invoke_2
+___copy_helper_block_.611
+___destroy_helper_block_.612
+___copy_helper_block_.614
+___destroy_helper_block_.615
+-[PBJVision resumeVideoCapture]
+___31-[PBJVision resumeVideoCapture]_block_invoke
+___31-[PBJVision resumeVideoCapture]_block_invoke_2
+___copy_helper_block_.623
+___destroy_helper_block_.624
+___copy_helper_block_.626
+___destroy_helper_block_.627
+-[PBJVision endVideoCapture]
+___28-[PBJVision endVideoCapture]_block_invoke
+___28-[PBJVision endVideoCapture]_block_invoke_2
+___28-[PBJVision endVideoCapture]_block_invoke_3
+___copy_helper_block_.649
+___destroy_helper_block_.650
+___copy_helper_block_.652
+___destroy_helper_block_.653
+___copy_helper_block_.657
+___destroy_helper_block_.658
+-[PBJVision cancelVideoCapture]
+___31-[PBJVision cancelVideoCapture]_block_invoke
+___31-[PBJVision cancelVideoCapture]_block_invoke_2
+___31-[PBJVision cancelVideoCapture]_block_invoke_3
+___copy_helper_block_.664
+___destroy_helper_block_.665
+___copy_helper_block_.667
+___destroy_helper_block_.668
+___copy_helper_block_.670
+___destroy_helper_block_.671
+-[PBJVision captureVideoFrameAsPhoto]
+-[PBJVision captureCurrentVideoThumbnail]
+-[PBJVision captureVideoThumbnailAtTime:]
+-[PBJVision captureVideoThumbnailAtFrame:]
+-[PBJVision _generateThumbnailsForVideoWithURL:inDictionary:]
+-[PBJVision _failVideoCaptureWithErrorCode:]
+-[PBJVision _failPhotoCaptureWithErrorCode:]
+-[PBJVision _setupMediaWriterAudioInputWithSampleBuffer:]
+-[PBJVision _setupMediaWriterVideoInputWithSampleBuffer:]
+-[PBJVision _automaticallyEndCaptureIfMaximumDurationReachedWithSampleBuffer:]
+___78-[PBJVision _automaticallyEndCaptureIfMaximumDurationReachedWithSampleBuffer:]_block_invoke
+___copy_helper_block_.732
+___destroy_helper_block_.733
+-[PBJVision captureOutput:willBeginCaptureForResolvedSettings:]
+-[PBJVision captureOutput:didFinishCaptureForResolvedSettings:error:]
+-[PBJVision captureOutput:didFinishProcessingPhotoSampleBuffer:previewPhotoSampleBuffer:resolvedSettings:bracketSettings:error:]
+-[PBJVision captureOutput:didOutputSampleBuffer:fromConnection:]
+___64-[PBJVision captureOutput:didOutputSampleBuffer:fromConnection:]_block_invoke
+___copy_helper_block_.765
+___destroy_helper_block_.766
+___64-[PBJVision captureOutput:didOutputSampleBuffer:fromConnection:]_block_invoke.770
+___copy_helper_block_.771
+___destroy_helper_block_.772
+___64-[PBJVision captureOutput:didOutputSampleBuffer:fromConnection:]_block_invoke.774
+___copy_helper_block_.777
+___destroy_helper_block_.778
+-[PBJVision _applicationWillEnterForeground:]
+___45-[PBJVision _applicationWillEnterForeground:]_block_invoke
+___45-[PBJVision _applicationWillEnterForeground:]_block_invoke_2
+___copy_helper_block_.786
+___destroy_helper_block_.787
+___copy_helper_block_.789
+___destroy_helper_block_.790
+-[PBJVision _applicationDidEnterBackground:]
+___44-[PBJVision _applicationDidEnterBackground:]_block_invoke
+___copy_helper_block_.796
+___destroy_helper_block_.797
+-[PBJVision _sessionRuntimeErrored:]
+___36-[PBJVision _sessionRuntimeErrored:]_block_invoke
+___copy_helper_block_.813
+___destroy_helper_block_.814
+-[PBJVision _sessionStarted:]
+___29-[PBJVision _sessionStarted:]_block_invoke
+___copy_helper_block_.820
+___destroy_helper_block_.821
+-[PBJVision _sessionStopped:]
+___29-[PBJVision _sessionStopped:]_block_invoke
+___29-[PBJVision _sessionStopped:]_block_invoke_2
+___copy_helper_block_.827
+___destroy_helper_block_.828
+___copy_helper_block_.830
+___destroy_helper_block_.831
+-[PBJVision _sessionWasInterrupted:]
+___36-[PBJVision _sessionWasInterrupted:]_block_invoke
+___36-[PBJVision _sessionWasInterrupted:]_block_invoke_2
+___copy_helper_block_.835
+___destroy_helper_block_.836
+___36-[PBJVision _sessionWasInterrupted:]_block_invoke.838
+___copy_helper_block_.841
+___destroy_helper_block_.842
+___copy_helper_block_.844
+___destroy_helper_block_.845
+-[PBJVision _sessionInterruptionEnded:]
+___39-[PBJVision _sessionInterruptionEnded:]_block_invoke
+___39-[PBJVision _sessionInterruptionEnded:]_block_invoke_2
+___copy_helper_block_.851
+___destroy_helper_block_.852
+___copy_helper_block_.854
+___destroy_helper_block_.855
+-[PBJVision _inputPortFormatDescriptionDidChange:]
+-[PBJVision _deviceSubjectAreaDidChange:]
+-[PBJVision observeValueForKeyPath:ofObject:change:context:]
+___60-[PBJVision observeValueForKeyPath:ofObject:change:context:]_block_invoke
+___copy_helper_block_.875
+___destroy_helper_block_.876
+___60-[PBJVision observeValueForKeyPath:ofObject:change:context:]_block_invoke.878
+___copy_helper_block_.881
+___destroy_helper_block_.882
+-[PBJVision mediaWriterDidObserveAudioAuthorizationStatusDenied:]
+___65-[PBJVision mediaWriterDidObserveAudioAuthorizationStatusDenied:]_block_invoke
+___copy_helper_block_.888
+___destroy_helper_block_.889
+-[PBJVision mediaWriterDidObserveVideoAuthorizationStatusDenied:]
+-[PBJVision _processSampleBuffer:]
+-[PBJVision _cleanUpTextures]
+-[PBJVision _setupBuffers]
+-[PBJVision _setupGL]
+-[PBJVision _destroyGL]
+-[PBJVision delegate]
+-[PBJVision setDelegate:]
+-[PBJVision currentDevice]
+-[PBJVision setCurrentDevice:]
+-[PBJVision previewLayer]
+-[PBJVision cleanAperture]
+-[PBJVision cameraOrientation]
+-[PBJVision previewOrientation]
+-[PBJVision autoUpdatePreviewOrientation]
+-[PBJVision setAutoUpdatePreviewOrientation:]
+-[PBJVision autoFreezePreviewDuringCapture]
+-[PBJVision setAutoFreezePreviewDuringCapture:]
+-[PBJVision usesApplicationAudioSession]
+-[PBJVision setUsesApplicationAudioSession:]
+-[PBJVision automaticallyConfiguresApplicationAudioSession]
+-[PBJVision setAutomaticallyConfiguresApplicationAudioSession:]
+-[PBJVision cameraDevice]
+-[PBJVision cameraMode]
+-[PBJVision focusMode]
+-[PBJVision exposureMode]
+-[PBJVision flashMode]
+-[PBJVision mirroringMode]
+-[PBJVision outputFormat]
+-[PBJVision context]
+-[PBJVision presentationFrame]
+-[PBJVision setPresentationFrame:]
+-[PBJVision captureSessionPreset]
+-[PBJVision captureDirectory]
+-[PBJVision setCaptureDirectory:]
+-[PBJVision audioBitRate]
+-[PBJVision setAudioBitRate:]
+-[PBJVision videoBitRate]
+-[PBJVision setVideoBitRate:]
+-[PBJVision additionalCompressionProperties]
+-[PBJVision setAdditionalCompressionProperties:]
+-[PBJVision additionalVideoProperties]
+-[PBJVision setAdditionalVideoProperties:]
+-[PBJVision maximumCaptureDuration]
+-[PBJVision setMaximumCaptureDuration:]
+-[PBJVision outputPath]
+-[PBJVision setOutputPath:]
+-[PBJVision .cxx_destruct]
+_sharedInstance.singleton
+_sharedInstance.once
+___block_descriptor_tmp
+___block_literal_global
+_OBJC_IVAR_$_PBJVision._flags
+_OBJC_IVAR_$_PBJVision._captureSession
+_OBJC_IVAR_$_PBJVision._mediaWriter
+_OBJC_IVAR_$_PBJVision._startTimestamp
+_OBJC_IVAR_$_PBJVision._cameraOrientation
+_OBJC_IVAR_$_PBJVision._previewOrientation
+_OBJC_IVAR_$_PBJVision._previewLayer
+_OBJC_IVAR_$_PBJVision._cameraDevice
+_OBJC_IVAR_$_PBJVision._cameraMode
+_OBJC_IVAR_$_PBJVision._outputFormat
+_OBJC_IVAR_$_PBJVision._delegate
+___block_descriptor_tmp.74
+_OBJC_IVAR_$_PBJVision._mirroringMode
+___block_descriptor_tmp.84
+_OBJC_IVAR_$_PBJVision._captureSessionPreset
+___block_descriptor_tmp.95
+_OBJC_IVAR_$_PBJVision._currentDevice
+_OBJC_IVAR_$_PBJVision._focusMode
+_OBJC_IVAR_$_PBJVision._exposureMode
+_OBJC_IVAR_$_PBJVision._flashMode
+_OBJC_IVAR_$_PBJVision._videoFrameRate
+___block_descriptor_tmp.169
+_OBJC_IVAR_$_PBJVision._context
+_OBJC_IVAR_$_PBJVision._captureDirectory
+_OBJC_IVAR_$_PBJVision._autoUpdatePreviewOrientation
+_OBJC_IVAR_$_PBJVision._autoFreezePreviewDuringCapture
+_OBJC_IVAR_$_PBJVision._usesApplicationAudioSession
+_OBJC_IVAR_$_PBJVision._automaticallyConfiguresApplicationAudioSession
+_OBJC_IVAR_$_PBJVision._videoBitRate
+_OBJC_IVAR_$_PBJVision._audioBitRate
+_OBJC_IVAR_$_PBJVision._captureSessionDispatchQueue
+_OBJC_IVAR_$_PBJVision._captureCaptureDispatchQueue
+_OBJC_IVAR_$_PBJVision._maximumCaptureDuration
+_OBJC_IVAR_$_PBJVision._videoTextureCache
+___block_descriptor_tmp.226
+___block_descriptor_tmp.229
+___block_descriptor_tmp.232
+___block_descriptor_tmp.235
+_OBJC_IVAR_$_PBJVision._captureDeviceFront
+_OBJC_IVAR_$_PBJVision._captureDeviceBack
+_OBJC_IVAR_$_PBJVision._captureDeviceInputFront
+_OBJC_IVAR_$_PBJVision._captureDeviceInputBack
+_OBJC_IVAR_$_PBJVision._captureDeviceAudio
+_OBJC_IVAR_$_PBJVision._captureDeviceInputAudio
+_OBJC_IVAR_$_PBJVision._captureOutputPhoto
+_OBJC_IVAR_$_PBJVision._captureOutputImage
+_OBJC_IVAR_$_PBJVision._captureOutputAudio
+_OBJC_IVAR_$_PBJVision._captureOutputVideo
+_OBJC_IVAR_$_PBJVision._currentInput
+_OBJC_IVAR_$_PBJVision._currentOutput
+___block_descriptor_tmp.389
+___block_descriptor_tmp.394
+___block_descriptor_tmp.401
+___block_descriptor_tmp.408
+_OBJC_IVAR_$_PBJVision._ciContext
+___block_descriptor_tmp.518
+___block_descriptor_tmp.549
+_OBJC_IVAR_$_PBJVision._outputPath
+_OBJC_IVAR_$_PBJVision._timeOffset
+_OBJC_IVAR_$_PBJVision._captureThumbnailTimes
+_OBJC_IVAR_$_PBJVision._captureThumbnailFrames
+___block_descriptor_tmp.599
+___block_descriptor_tmp.602
+___block_descriptor_tmp.613
+___block_descriptor_tmp.616
+___block_descriptor_tmp.625
+___block_descriptor_tmp.628
+___block_descriptor_tmp.651
+___block_descriptor_tmp.654
+___block_descriptor_tmp.659
+___block_descriptor_tmp.666
+___block_descriptor_tmp.669
+___block_descriptor_tmp.672
+_OBJC_IVAR_$_PBJVision._additionalCompressionProperties
+___block_descriptor_tmp.734
+___block_descriptor_tmp.767
+___block_descriptor_tmp.773
+___block_descriptor_tmp.779
+___block_descriptor_tmp.788
+___block_descriptor_tmp.791
+___block_descriptor_tmp.798
+___block_descriptor_tmp.815
+___block_descriptor_tmp.822
+___block_descriptor_tmp.829
+___block_descriptor_tmp.832
+___block_descriptor_tmp.837
+___block_descriptor_tmp.843
+___block_descriptor_tmp.846
+___block_descriptor_tmp.853
+___block_descriptor_tmp.856
+_OBJC_IVAR_$_PBJVision._cleanAperture
+___block_descriptor_tmp.877
+___block_descriptor_tmp.883
+___block_descriptor_tmp.890
+_OBJC_IVAR_$_PBJVision._bufferWidth
+_OBJC_IVAR_$_PBJVision._bufferHeight
+_OBJC_IVAR_$_PBJVision._bufferDevice
+_OBJC_IVAR_$_PBJVision._bufferOrientation
+_OBJC_IVAR_$_PBJVision._lumaTexture
+_OBJC_IVAR_$_PBJVision._chromaTexture
+_OBJC_IVAR_$_PBJVision._presentationFrame
+__setupBuffers.vertices
+__setupBuffers.textureCoordinates
+__setupBuffers.textureCoordinatesVerticalFlip
+_OBJC_IVAR_$_PBJVision._program
+_OBJC_IVAR_$_PBJVision._additionalVideoProperties
+l_OBJC_PROTOCOL_$_NSObject
+l_OBJC_LABEL_PROTOCOL_$_NSObject
+l_OBJC_PROTOCOL_$_AVCaptureAudioDataOutputSampleBufferDelegate
+l_OBJC_LABEL_PROTOCOL_$_AVCaptureAudioDataOutputSampleBufferDelegate
+l_OBJC_PROTOCOL_$_AVCaptureVideoDataOutputSampleBufferDelegate
+l_OBJC_LABEL_PROTOCOL_$_AVCaptureVideoDataOutputSampleBufferDelegate
+l_OBJC_PROTOCOL_$_AVCapturePhotoCaptureDelegate
+l_OBJC_LABEL_PROTOCOL_$_AVCapturePhotoCaptureDelegate
+l_OBJC_PROTOCOL_$_PBJMediaWriterDelegate
+l_OBJC_LABEL_PROTOCOL_$_PBJMediaWriterDelegate
+__setupGL.uniforms.0
+__setupGL.uniforms.1
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/PBJVision/Source/PBJVision.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/PBJVision/Source/PBJVision.h
+__destroy_helper_block_
+__copy_helper_block_
+__65-[PBJVision mediaWriterDidObserveAudioAuthorizationStatusDenied:]_block_invoke
+__60-[PBJVision observeValueForKeyPath:ofObject:change:context:]_block_invoke.878
+__60-[PBJVision observeValueForKeyPath:ofObject:change:context:]_block_invoke
+__39-[PBJVision _sessionInterruptionEnded:]_block_invoke_2
+__39-[PBJVision _sessionInterruptionEnded:]_block_invoke
+__36-[PBJVision _sessionWasInterrupted:]_block_invoke.838
+__36-[PBJVision _sessionWasInterrupted:]_block_invoke_2
+__36-[PBJVision _sessionWasInterrupted:]_block_invoke
+__29-[PBJVision _sessionStopped:]_block_invoke_2
+__29-[PBJVision _sessionStopped:]_block_invoke
+__29-[PBJVision _sessionStarted:]_block_invoke
+__36-[PBJVision _sessionRuntimeErrored:]_block_invoke
+__44-[PBJVision _applicationDidEnterBackground:]_block_invoke
+__45-[PBJVision _applicationWillEnterForeground:]_block_invoke_2
+__45-[PBJVision _applicationWillEnterForeground:]_block_invoke
+__64-[PBJVision captureOutput:didOutputSampleBuffer:fromConnection:]_block_invoke.774
+__64-[PBJVision captureOutput:didOutputSampleBuffer:fromConnection:]_block_invoke.770
+__64-[PBJVision captureOutput:didOutputSampleBuffer:fromConnection:]_block_invoke
+__78-[PBJVision _automaticallyEndCaptureIfMaximumDurationReachedWithSampleBuffer:]_block_invoke
+__31-[PBJVision cancelVideoCapture]_block_invoke_3
+__31-[PBJVision cancelVideoCapture]_block_invoke_2
+__31-[PBJVision cancelVideoCapture]_block_invoke
+__28-[PBJVision endVideoCapture]_block_invoke_3
+__28-[PBJVision endVideoCapture]_block_invoke_2
+__28-[PBJVision endVideoCapture]_block_invoke
+__31-[PBJVision resumeVideoCapture]_block_invoke_2
+__31-[PBJVision resumeVideoCapture]_block_invoke
+__30-[PBJVision pauseVideoCapture]_block_invoke_2
+__30-[PBJVision pauseVideoCapture]_block_invoke
+__30-[PBJVision startVideoCapture]_block_invoke_2
+__30-[PBJVision startVideoCapture]_block_invoke
+__25-[PBJVision capturePhoto]_block_invoke
+__43-[PBJVision _capturePhotoFromSampleBuffer:]_block_invoke
+__24-[PBJVision stopPreview]_block_invoke_2
+__24-[PBJVision stopPreview]_block_invoke
+__25-[PBJVision startPreview]_block_invoke_2
+__25-[PBJVision startPreview]_block_invoke
+__38-[PBJVision _executeBlockOnMainQueue:]_block_invoke
+__38-[PBJVision _enqueueBlockOnMainQueue:]_block_invoke
+__46-[PBJVision _enqueueBlockOnCaptureVideoQueue:]_block_invoke
+__48-[PBJVision _enqueueBlockOnCaptureSessionQueue:]_block_invoke
+__31-[PBJVision setVideoFrameRate:]_block_invoke
+__37-[PBJVision setCaptureSessionPreset:]_block_invoke
+__54-[PBJVision _setCameraMode:cameraDevice:outputFormat:]_block_invoke.75
+__54-[PBJVision _setCameraMode:cameraDevice:outputFormat:]_block_invoke
+__27+[PBJVision sharedInstance]_block_invoke
+_dispatch_once
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/usr/include/dispatch/once.h
++[PBJVisionUtilities captureDeviceForPosition:]
++[PBJVisionUtilities audioDevice]
++[PBJVisionUtilities connectionWithMediaType:fromConnections:]
++[PBJVisionUtilities createOffsetSampleBufferWithSampleBuffer:withTimeOffset:]
++[PBJVisionUtilities angleOffsetFromPortraitOrientationToOrientation:]
++[PBJVisionUtilities availableStorageSpaceInBytes]
++[NSString(PBJExtras) PBJformattedTimestampStringFromDate:]
+___59+[NSString(PBJExtras) PBJformattedTimestampStringFromDate:]_block_invoke
+_PBJformattedTimestampStringFromDate:.dateFormatter
+_PBJformattedTimestampStringFromDate:.onceToken
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/PBJVision/Source/PBJVisionUtilities.m
+__59+[NSString(PBJExtras) PBJformattedTimestampStringFromDate:]_block_invoke
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/ArchiveIntermediates/wizhwish/IntermediateBuildFilesPath/Pods.build/Release-iphoneos/PBJVision.build/DerivedSources/PBJVision_vers.c

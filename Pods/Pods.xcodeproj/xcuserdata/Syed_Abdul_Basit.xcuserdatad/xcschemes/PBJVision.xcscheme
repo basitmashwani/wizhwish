@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '9508706C8EF63016A651AC34EF4BD23C'
+               BlueprintIdentifier = '0249F1CCD6CA272BB3BF7B840F509A3D'
                BlueprintName = 'PBJVision'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPBJVision.a'>
+               BuildableName = 'PBJVision.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

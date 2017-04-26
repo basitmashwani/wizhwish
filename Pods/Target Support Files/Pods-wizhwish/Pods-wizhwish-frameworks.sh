@@ -87,6 +87,35 @@ strip_invalid_archs() {
   fi
 }
 
+
+if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/ACEDrawingView/ACEDrawingView.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSCore/AWSCore.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSS3/AWSS3.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Color-Picker-for-iOS/Color_Picker_for_iOS.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/HMSegmentedControl/HMSegmentedControl.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/IGColorPicker/IGColorPicker.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MBProgressHUD/MBProgressHUD.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/NJKScrollFullScreen/NJKScrollFullScreen.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/OLGhostAlertView/OLGhostAlertView.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/PBJVision/PBJVision.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SCRecorder/SCRecorder.framework"
+fi
+if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "$BUILT_PRODUCTS_DIR/ACEDrawingView/ACEDrawingView.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AFNetworking/AFNetworking.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSCore/AWSCore.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/AWSS3/AWSS3.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Color-Picker-for-iOS/Color_Picker_for_iOS.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/HMSegmentedControl/HMSegmentedControl.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/IGColorPicker/IGColorPicker.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/MBProgressHUD/MBProgressHUD.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/NJKScrollFullScreen/NJKScrollFullScreen.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/OLGhostAlertView/OLGhostAlertView.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/PBJVision/PBJVision.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/SCRecorder/SCRecorder.framework"
+fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
 fi

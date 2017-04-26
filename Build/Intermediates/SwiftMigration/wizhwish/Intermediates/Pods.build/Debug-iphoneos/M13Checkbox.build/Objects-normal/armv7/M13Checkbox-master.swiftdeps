@@ -1,0 +1,20 @@
+version: "Apple Swift version 3.1 (swiftlang-802.0.51 clang-802.0.41)"
+options: "d0d08e846f38f58078ede8e2ca74c022"
+build_time: [546356094, 536302000]
+inputs:
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/M13Checkbox/Sources/M13Checkbox+IB.swift": [546355769, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/M13Checkbox/Sources/M13Checkbox.swift": [546355769, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/M13Checkbox/Sources/M13CheckboxAnimationPresets.swift": [546355769, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/M13Checkbox/Sources/Managers/M13CheckboxBounceManager.swift": [546355769, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/M13Checkbox/Sources/Managers/M13CheckboxDotManager.swift": [546355769, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/M13Checkbox/Sources/Presets/M13CheckboxDotPathPresets.swift": [546355769, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/M13Checkbox/Sources/Managers/M13CheckboxExpandManager.swift": [546355769, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/M13Checkbox/Sources/Managers/M13CheckboxFadeManager.swift": [546355769, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/M13Checkbox/Sources/Managers/M13CheckboxFillManager.swift": [546355769, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/M13Checkbox/Sources/Managers/M13CheckboxFlatManager.swift": [546355769, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/M13Checkbox/Sources/M13CheckboxGestureRecognizer.swift": [546355769, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/M13Checkbox/Sources/M13CheckboxManager.swift": [546355769, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/M13Checkbox/Sources/M13CheckboxPathPresets.swift": [546355769, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/M13Checkbox/Sources/Managers/M13CheckboxSpiralManager.swift": [546355769, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/M13Checkbox/Sources/Presets/M13CheckboxSpiralPathPresets.swift": [546355769, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/M13Checkbox/Sources/Managers/M13CheckboxStrokeManager.swift": [546355769, 0]

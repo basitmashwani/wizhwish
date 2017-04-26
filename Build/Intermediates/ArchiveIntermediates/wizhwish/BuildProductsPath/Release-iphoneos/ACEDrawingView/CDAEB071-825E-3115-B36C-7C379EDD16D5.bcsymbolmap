@@ -1,0 +1,540 @@
+BCSymbolMap Version: 2.0
+-[ACEDrawingLabelView refresh]
+-[ACEDrawingLabelView didMoveToSuperview]
+-[ACEDrawingLabelView setFrame:]
+-[ACEDrawingLabelView initWithFrame:]
+-[ACEDrawingLabelView layoutSubviews]
+-[ACEDrawingLabelView setEnableClose:]
+-[ACEDrawingLabelView setEnableRotate:]
+-[ACEDrawingLabelView setShowsContentShadow:]
+-[ACEDrawingLabelView setCloseImage:]
+-[ACEDrawingLabelView setRotateImage:]
+-[ACEDrawingLabelView setFontName:]
+-[ACEDrawingLabelView setFontSize:]
+-[ACEDrawingLabelView setTextColor:]
+-[ACEDrawingLabelView setBorderColor:]
+-[ACEDrawingLabelView setTextAlpha:]
+-[ACEDrawingLabelView textAlpha]
+-[ACEDrawingLabelView setAttributedPlaceholder:]
+-[ACEDrawingLabelView hideEditingHandles]
+-[ACEDrawingLabelView showEditingHandles]
+-[ACEDrawingLabelView resizeInRect:]
+-[ACEDrawingLabelView contentTapped:]
+-[ACEDrawingLabelView closeTap:]
+-[ACEDrawingLabelView moveGesture:]
+-[ACEDrawingLabelView estimatedCenter]
+-[ACEDrawingLabelView rotateViewPanGesture:]
+-[ACEDrawingLabelView textFieldShouldBeginEditing:]
+-[ACEDrawingLabelView textFieldDidBeginEditing:]
+-[ACEDrawingLabelView textField:shouldChangeCharactersInRange:replacementString:]
+-[ACEDrawingLabelView isEditing]
+-[ACEDrawingLabelView textValue]
+-[ACEDrawingLabelView textColor]
+-[ACEDrawingLabelView borderColor]
+-[ACEDrawingLabelView fontName]
+-[ACEDrawingLabelView fontSize]
+-[ACEDrawingLabelView closeImage]
+-[ACEDrawingLabelView rotateImage]
+-[ACEDrawingLabelView attributedPlaceholder]
+-[ACEDrawingLabelView delegate]
+-[ACEDrawingLabelView setDelegate:]
+-[ACEDrawingLabelView showsContentShadow]
+-[ACEDrawingLabelView isEnableClose]
+-[ACEDrawingLabelView isEnableRotate]
+-[ACEDrawingLabelView isEnableMoveRestriction]
+-[ACEDrawingLabelView setEnableMoveRestriction:]
+-[ACEDrawingLabelView globalInset]
+-[ACEDrawingLabelView setGlobalInset:]
+-[ACEDrawingLabelView initialBounds]
+-[ACEDrawingLabelView setInitialBounds:]
+-[ACEDrawingLabelView initialDistance]
+-[ACEDrawingLabelView setInitialDistance:]
+-[ACEDrawingLabelView beginningPoint]
+-[ACEDrawingLabelView setBeginningPoint:]
+-[ACEDrawingLabelView beginningCenter]
+-[ACEDrawingLabelView setBeginningCenter:]
+-[ACEDrawingLabelView touchLocation]
+-[ACEDrawingLabelView setTouchLocation:]
+-[ACEDrawingLabelView deltaAngle]
+-[ACEDrawingLabelView setDeltaAngle:]
+-[ACEDrawingLabelView beginBounds]
+-[ACEDrawingLabelView setBeginBounds:]
+-[ACEDrawingLabelView border]
+-[ACEDrawingLabelView setBorder:]
+-[ACEDrawingLabelView labelTextField]
+-[ACEDrawingLabelView setLabelTextField:]
+-[ACEDrawingLabelView rotateButton]
+-[ACEDrawingLabelView setRotateButton:]
+-[ACEDrawingLabelView closeButton]
+-[ACEDrawingLabelView setCloseButton:]
+-[ACEDrawingLabelView isShowingEditingHandles]
+-[ACEDrawingLabelView setShowEditingHandles:]
+-[ACEDrawingLabelView .cxx_destruct]
+-[UITextField(DynamicFontSize) adjustsFontSizeToFillRect:]
+-[UITextField(DynamicFontSize) adjustsWidthToFillItsContents]
++[ACEDrawingLabelViewTransform transform:atCenter:withBounds:]
+-[ACEDrawingLabelViewTransform transform]
+-[ACEDrawingLabelViewTransform setTransform:]
+-[ACEDrawingLabelViewTransform center]
+-[ACEDrawingLabelViewTransform setCenter:]
+-[ACEDrawingLabelViewTransform bounds]
+-[ACEDrawingLabelViewTransform setBounds:]
+_OBJC_IVAR_$_ACEDrawingLabelView._enableClose
+_OBJC_IVAR_$_ACEDrawingLabelView._enableRotate
+_OBJC_IVAR_$_ACEDrawingLabelView._showsContentShadow
+_OBJC_IVAR_$_ACEDrawingLabelView._closeImage
+_OBJC_IVAR_$_ACEDrawingLabelView._rotateImage
+_OBJC_IVAR_$_ACEDrawingLabelView._fontName
+_OBJC_IVAR_$_ACEDrawingLabelView._fontSize
+_OBJC_IVAR_$_ACEDrawingLabelView._textColor
+_OBJC_IVAR_$_ACEDrawingLabelView._borderColor
+_OBJC_IVAR_$_ACEDrawingLabelView._attributedPlaceholder
+_OBJC_IVAR_$_ACEDrawingLabelView._delegate
+_OBJC_IVAR_$_ACEDrawingLabelView._enableMoveRestriction
+_OBJC_IVAR_$_ACEDrawingLabelView._globalInset
+_OBJC_IVAR_$_ACEDrawingLabelView._initialBounds
+_OBJC_IVAR_$_ACEDrawingLabelView._initialDistance
+_OBJC_IVAR_$_ACEDrawingLabelView._beginningPoint
+_OBJC_IVAR_$_ACEDrawingLabelView._beginningCenter
+_OBJC_IVAR_$_ACEDrawingLabelView._touchLocation
+_OBJC_IVAR_$_ACEDrawingLabelView._deltaAngle
+_OBJC_IVAR_$_ACEDrawingLabelView._beginBounds
+_OBJC_IVAR_$_ACEDrawingLabelView._border
+_OBJC_IVAR_$_ACEDrawingLabelView._labelTextField
+_OBJC_IVAR_$_ACEDrawingLabelView._rotateButton
+_OBJC_IVAR_$_ACEDrawingLabelView._closeButton
+_OBJC_IVAR_$_ACEDrawingLabelView._showEditingHandles
+l_OBJC_PROTOCOL_$_NSObject
+l_OBJC_LABEL_PROTOCOL_$_NSObject
+l_OBJC_PROTOCOL_$_UIGestureRecognizerDelegate
+l_OBJC_LABEL_PROTOCOL_$_UIGestureRecognizerDelegate
+l_OBJC_PROTOCOL_$_UITextFieldDelegate
+l_OBJC_LABEL_PROTOCOL_$_UITextFieldDelegate
+_OBJC_IVAR_$_ACEDrawingLabelViewTransform._transform
+_OBJC_IVAR_$_ACEDrawingLabelViewTransform._center
+_OBJC_IVAR_$_ACEDrawingLabelViewTransform._bounds
+Apple LLVM version 8.1.0 (clang-802.0.41)
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/ACEDrawingView/ACEDrawingView/ACEDrawingLabelView.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/ACEDrawingView/ACEDrawingView/ACEDrawingLabelView.h
+CGRectScale
+CGPointGetDistance
+CGAffineTransformGetAngle
+CGRectGetCenter
+CGAffineTransformGetScale
+-[ACEDrawingPenTool init]
+-[ACEDrawingPenTool setInitialPoint:]
+-[ACEDrawingPenTool moveFromPoint:toPoint:]
+-[ACEDrawingPenTool addPathPreviousPreviousPoint:withPreviousPoint:withCurrentPoint:]
+-[ACEDrawingPenTool draw]
+-[ACEDrawingPenTool captureToolState]
+-[ACEDrawingPenTool dealloc]
+-[ACEDrawingPenTool lineColor]
+-[ACEDrawingPenTool setLineColor:]
+-[ACEDrawingPenTool lineAlpha]
+-[ACEDrawingPenTool setLineAlpha:]
+-[ACEDrawingPenTool .cxx_destruct]
+-[ACEDrawingEraserTool draw]
+-[ACEDrawingEraserTool captureToolState]
+-[ACEDrawingLineTool setInitialPoint:]
+-[ACEDrawingLineTool moveFromPoint:toPoint:]
+-[ACEDrawingLineTool draw]
+-[ACEDrawingLineTool captureToolState]
+-[ACEDrawingLineTool dealloc]
+-[ACEDrawingLineTool lineColor]
+-[ACEDrawingLineTool setLineColor:]
+-[ACEDrawingLineTool lineAlpha]
+-[ACEDrawingLineTool setLineAlpha:]
+-[ACEDrawingLineTool lineWidth]
+-[ACEDrawingLineTool setLineWidth:]
+-[ACEDrawingLineTool firstPoint]
+-[ACEDrawingLineTool setFirstPoint:]
+-[ACEDrawingLineTool lastPoint]
+-[ACEDrawingLineTool setLastPoint:]
+-[ACEDrawingLineTool .cxx_destruct]
+-[ACEDrawingDraggableTextTool setInitialPoint:]
+-[ACEDrawingDraggableTextTool moveFromPoint:toPoint:]
+-[ACEDrawingDraggableTextTool draw]
+-[ACEDrawingDraggableTextTool applyToolState:]
+-[ACEDrawingDraggableTextTool captureToolState]
+-[ACEDrawingDraggableTextTool capturePositionObject]
+-[ACEDrawingDraggableTextTool hideHandle]
+-[ACEDrawingDraggableTextTool redoPositions]
+-[ACEDrawingDraggableTextTool undoPositions]
+-[ACEDrawingDraggableTextTool applyTransform:]
+___46-[ACEDrawingDraggableTextTool applyTransform:]_block_invoke
+___copy_helper_block_
+___destroy_helper_block_
+-[ACEDrawingDraggableTextTool capturePosition]
+-[ACEDrawingDraggableTextTool undraw]
+-[ACEDrawingDraggableTextTool canRedo]
+-[ACEDrawingDraggableTextTool redo]
+-[ACEDrawingDraggableTextTool canUndo]
+-[ACEDrawingDraggableTextTool undo]
+-[ACEDrawingDraggableTextTool lineColor]
+-[ACEDrawingDraggableTextTool setLineColor:]
+-[ACEDrawingDraggableTextTool lineAlpha]
+-[ACEDrawingDraggableTextTool setLineAlpha:]
+-[ACEDrawingDraggableTextTool lineWidth]
+-[ACEDrawingDraggableTextTool setLineWidth:]
+-[ACEDrawingDraggableTextTool drawingView]
+-[ACEDrawingDraggableTextTool setDrawingView:]
+-[ACEDrawingDraggableTextTool labelView]
+-[ACEDrawingDraggableTextTool setRedoPositions:]
+-[ACEDrawingDraggableTextTool setUndoPositions:]
+-[ACEDrawingDraggableTextTool .cxx_destruct]
+-[ACEDrawingRectangleTool setInitialPoint:]
+-[ACEDrawingRectangleTool moveFromPoint:toPoint:]
+-[ACEDrawingRectangleTool draw]
+-[ACEDrawingRectangleTool captureToolState]
+-[ACEDrawingRectangleTool dealloc]
+-[ACEDrawingRectangleTool lineColor]
+-[ACEDrawingRectangleTool setLineColor:]
+-[ACEDrawingRectangleTool lineAlpha]
+-[ACEDrawingRectangleTool setLineAlpha:]
+-[ACEDrawingRectangleTool lineWidth]
+-[ACEDrawingRectangleTool setLineWidth:]
+-[ACEDrawingRectangleTool fill]
+-[ACEDrawingRectangleTool setFill:]
+-[ACEDrawingRectangleTool firstPoint]
+-[ACEDrawingRectangleTool setFirstPoint:]
+-[ACEDrawingRectangleTool lastPoint]
+-[ACEDrawingRectangleTool setLastPoint:]
+-[ACEDrawingRectangleTool .cxx_destruct]
+-[ACEDrawingEllipseTool setInitialPoint:]
+-[ACEDrawingEllipseTool moveFromPoint:toPoint:]
+-[ACEDrawingEllipseTool draw]
+-[ACEDrawingEllipseTool captureToolState]
+-[ACEDrawingEllipseTool dealloc]
+-[ACEDrawingEllipseTool lineColor]
+-[ACEDrawingEllipseTool setLineColor:]
+-[ACEDrawingEllipseTool lineAlpha]
+-[ACEDrawingEllipseTool setLineAlpha:]
+-[ACEDrawingEllipseTool lineWidth]
+-[ACEDrawingEllipseTool setLineWidth:]
+-[ACEDrawingEllipseTool fill]
+-[ACEDrawingEllipseTool setFill:]
+-[ACEDrawingEllipseTool firstPoint]
+-[ACEDrawingEllipseTool setFirstPoint:]
+-[ACEDrawingEllipseTool lastPoint]
+-[ACEDrawingEllipseTool setLastPoint:]
+-[ACEDrawingEllipseTool .cxx_destruct]
+-[ACEDrawingArrowTool setInitialPoint:]
+-[ACEDrawingArrowTool moveFromPoint:toPoint:]
+-[ACEDrawingArrowTool draw]
+-[ACEDrawingArrowTool captureToolState]
+-[ACEDrawingArrowTool angleWithFirstPoint:secondPoint:]
+-[ACEDrawingArrowTool pointWithAngle:distance:]
+-[ACEDrawingArrowTool dealloc]
+-[ACEDrawingArrowTool lineColor]
+-[ACEDrawingArrowTool setLineColor:]
+-[ACEDrawingArrowTool lineAlpha]
+-[ACEDrawingArrowTool setLineAlpha:]
+-[ACEDrawingArrowTool lineWidth]
+-[ACEDrawingArrowTool setLineWidth:]
+-[ACEDrawingArrowTool firstPoint]
+-[ACEDrawingArrowTool setFirstPoint:]
+-[ACEDrawingArrowTool lastPoint]
+-[ACEDrawingArrowTool setLastPoint:]
+-[ACEDrawingArrowTool .cxx_destruct]
+_OBJC_IVAR_$_ACEDrawingPenTool._lineColor
+_OBJC_IVAR_$_ACEDrawingPenTool._lineAlpha
+l_OBJC_PROTOCOL_$_ACEDrawingTool
+l_OBJC_LABEL_PROTOCOL_$_ACEDrawingTool
+_OBJC_IVAR_$_ACEDrawingLineTool._lineColor
+_OBJC_IVAR_$_ACEDrawingLineTool._lineAlpha
+_OBJC_IVAR_$_ACEDrawingLineTool._lineWidth
+_OBJC_IVAR_$_ACEDrawingLineTool._firstPoint
+_OBJC_IVAR_$_ACEDrawingLineTool._lastPoint
+_OBJC_IVAR_$_ACEDrawingDraggableTextTool._labelView
+_OBJC_IVAR_$_ACEDrawingDraggableTextTool._redoPositions
+_OBJC_IVAR_$_ACEDrawingDraggableTextTool._undoPositions
+___block_descriptor_tmp
+_OBJC_IVAR_$_ACEDrawingDraggableTextTool._lineColor
+_OBJC_IVAR_$_ACEDrawingDraggableTextTool._lineAlpha
+_OBJC_IVAR_$_ACEDrawingDraggableTextTool._lineWidth
+_OBJC_IVAR_$_ACEDrawingDraggableTextTool._drawingView
+_OBJC_IVAR_$_ACEDrawingRectangleTool._lineColor
+_OBJC_IVAR_$_ACEDrawingRectangleTool._lineAlpha
+_OBJC_IVAR_$_ACEDrawingRectangleTool._lineWidth
+_OBJC_IVAR_$_ACEDrawingRectangleTool._fill
+_OBJC_IVAR_$_ACEDrawingRectangleTool._firstPoint
+_OBJC_IVAR_$_ACEDrawingRectangleTool._lastPoint
+_OBJC_IVAR_$_ACEDrawingEllipseTool._lineColor
+_OBJC_IVAR_$_ACEDrawingEllipseTool._lineAlpha
+_OBJC_IVAR_$_ACEDrawingEllipseTool._lineWidth
+_OBJC_IVAR_$_ACEDrawingEllipseTool._fill
+_OBJC_IVAR_$_ACEDrawingEllipseTool._firstPoint
+_OBJC_IVAR_$_ACEDrawingEllipseTool._lastPoint
+_OBJC_IVAR_$_ACEDrawingArrowTool._lineColor
+_OBJC_IVAR_$_ACEDrawingArrowTool._lineAlpha
+_OBJC_IVAR_$_ACEDrawingArrowTool._lineWidth
+_OBJC_IVAR_$_ACEDrawingArrowTool._firstPoint
+_OBJC_IVAR_$_ACEDrawingArrowTool._lastPoint
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/ACEDrawingView/ACEDrawingView/ACEDrawingTools.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/ACEDrawingView/ACEDrawingView/ACEDrawingTools.h
+__destroy_helper_block_
+__copy_helper_block_
+__46-[ACEDrawingDraggableTextTool applyTransform:]_block_invoke
+midPoint
++[ACEDrawingToolState stateForTool:]
++[ACEDrawingToolState stateForTool:capturePosition:]
+-[ACEDrawingToolState hasPositionObject]
+-[ACEDrawingToolState tool]
+-[ACEDrawingToolState setTool:]
+-[ACEDrawingToolState positionObject]
+-[ACEDrawingToolState setPositionObject:]
+-[ACEDrawingToolState .cxx_destruct]
+_OBJC_IVAR_$_ACEDrawingToolState._tool
+_OBJC_IVAR_$_ACEDrawingToolState._positionObject
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/ACEDrawingView/ACEDrawingView/ACEDrawingToolState.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/ACEDrawingView/ACEDrawingView/ACEDrawingToolState.h
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/Target Support Files/ACEDrawingView/ACEDrawingView-dummy.m
+-[ACEDrawingView initWithFrame:]
+-[ACEDrawingView initWithCoder:]
+-[ACEDrawingView configure]
+-[ACEDrawingView prev_image]
+-[ACEDrawingView setPrev_image:]
+-[ACEDrawingView drawRect:]
+-[ACEDrawingView commitAndDiscardToolStack]
+-[ACEDrawingView updateCacheImage:]
+-[ACEDrawingView drawings]
+-[ACEDrawingView applyDrawToImage:]
+-[ACEDrawingView finishDrawing]
+-[ACEDrawingView setCustomDrawTool:]
+-[ACEDrawingView toolWithCurrentSettings]
+-[ACEDrawingView touchesBegan:withEvent:]
+-[ACEDrawingView touchesMoved:withEvent:]
+-[ACEDrawingView touchesEnded:withEvent:]
+-[ACEDrawingView touchesCancelled:withEvent:]
+-[ACEDrawingView snapCurrentPointToEdges]
+-[ACEDrawingView loadImage:]
+-[ACEDrawingView loadImageData:]
+-[ACEDrawingView resetTool]
+-[ACEDrawingView clear]
+-[ACEDrawingView prepareForSnapshot]
+-[ACEDrawingView hideTextToolHandles]
+-[ACEDrawingView canUndo]
+-[ACEDrawingView undoLatestStep]
+___32-[ACEDrawingView undoLatestStep]_block_invoke
+-[ACEDrawingView canRedo]
+-[ACEDrawingView redoLatestStep]
+-[ACEDrawingView lastStateForTool:inStateArray:]
+-[ACEDrawingView dealloc]
+-[ACEDrawingView labelViewDidClose:]
+-[ACEDrawingView labelViewDidBeginEditing:]
+-[ACEDrawingView labelViewWillShowEditingHandles:]
+-[ACEDrawingView labelViewDidShowEditingHandles:]
+-[ACEDrawingView labelViewDidHideEditingHandles:]
+-[ACEDrawingView draggableTextToolForLabel:]
+-[ACEDrawingView scaleImage:proportionallyToWidth:]
+-[ACEDrawingView scaleImage:proportionallyToHeight:]
+-[ACEDrawingView blendImage:topImage:]
+-[ACEDrawingView drawTool]
+-[ACEDrawingView setDrawTool:]
+-[ACEDrawingView customDrawTool]
+-[ACEDrawingView delegate]
+-[ACEDrawingView setDelegate:]
+-[ACEDrawingView lineColor]
+-[ACEDrawingView setLineColor:]
+-[ACEDrawingView lineWidth]
+-[ACEDrawingView setLineWidth:]
+-[ACEDrawingView lineAlpha]
+-[ACEDrawingView setLineAlpha:]
+-[ACEDrawingView edgeSnapThreshold]
+-[ACEDrawingView setEdgeSnapThreshold:]
+-[ACEDrawingView drawMode]
+-[ACEDrawingView setDrawMode:]
+-[ACEDrawingView draggableTextFontName]
+-[ACEDrawingView setDraggableTextFontName:]
+-[ACEDrawingView draggableTextCloseImage]
+-[ACEDrawingView setDraggableTextCloseImage:]
+-[ACEDrawingView draggableTextRotateImage]
+-[ACEDrawingView setDraggableTextRotateImage:]
+-[ACEDrawingView image]
+-[ACEDrawingView setImage:]
+-[ACEDrawingView backgroundImage]
+-[ACEDrawingView setBackgroundImage:]
+-[ACEDrawingView undoSteps]
+-[ACEDrawingView pathArray]
+-[ACEDrawingView setPathArray:]
+-[ACEDrawingView redoStates]
+-[ACEDrawingView setRedoStates:]
+-[ACEDrawingView undoStates]
+-[ACEDrawingView setUndoStates:]
+-[ACEDrawingView currentTool]
+-[ACEDrawingView setCurrentTool:]
+-[ACEDrawingView draggableTextView]
+-[ACEDrawingView setDraggableTextView:]
+-[ACEDrawingView .cxx_destruct]
+_OBJC_IVAR_$_ACEDrawingView._customDrawTool
+_OBJC_IVAR_$_ACEDrawingView.previousPoint1
+_OBJC_IVAR_$_ACEDrawingView.currentPoint
+_OBJC_IVAR_$_ACEDrawingView.previousPoint2
+_OBJC_IVAR_$_ACEDrawingView._drawTool
+_OBJC_IVAR_$_ACEDrawingView._delegate
+_OBJC_IVAR_$_ACEDrawingView._lineColor
+_OBJC_IVAR_$_ACEDrawingView._lineWidth
+_OBJC_IVAR_$_ACEDrawingView._lineAlpha
+_OBJC_IVAR_$_ACEDrawingView._edgeSnapThreshold
+_OBJC_IVAR_$_ACEDrawingView._drawMode
+_OBJC_IVAR_$_ACEDrawingView._draggableTextFontName
+_OBJC_IVAR_$_ACEDrawingView._draggableTextCloseImage
+_OBJC_IVAR_$_ACEDrawingView._draggableTextRotateImage
+_OBJC_IVAR_$_ACEDrawingView._image
+_OBJC_IVAR_$_ACEDrawingView._backgroundImage
+_OBJC_IVAR_$_ACEDrawingView._undoSteps
+_OBJC_IVAR_$_ACEDrawingView._pathArray
+_OBJC_IVAR_$_ACEDrawingView._redoStates
+_OBJC_IVAR_$_ACEDrawingView._undoStates
+_OBJC_IVAR_$_ACEDrawingView._currentTool
+_OBJC_IVAR_$_ACEDrawingView._draggableTextView
+l_OBJC_PROTOCOL_$_ACEDrawingLabelViewDelegate
+l_OBJC_LABEL_PROTOCOL_$_ACEDrawingLabelViewDelegate
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/ACEDrawingView/ACEDrawingView/ACEDrawingView.m
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/ACEDrawingView/ACEDrawingView/ACEDrawingView.h
+__32-[ACEDrawingView undoLatestStep]_block_invoke
+/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/ArchiveIntermediates/wizhwish/IntermediateBuildFilesPath/Pods.build/Release-iphoneos/ACEDrawingView.build/DerivedSources/ACEDrawingView_vers.c
+__ZL15__ARCLite__loadv
+__ZL58__arclite_NSMutableDictionary__setObject_forKeyedSubscriptP19NSMutableDictionaryP13objc_selectorP11objc_objectS4_
+__ZL22add_image_hook_swiftV1PK11mach_headerl
+__ZL42__arclite_NSUndoManagerProxy_isKindOfClassP11objc_objectP13objc_selectorP10objc_class
+__ZL13replaceMethodP10objc_classP13objc_selectorPFP11objc_objectS4_S2_zEPS6_
+__ZL30__arclite_NSManagedObject_initP11objc_objectP13objc_selector
+__ZL41__arclite_NSManagedObject_allocWithEntityP11objc_objectP13objc_selectorS0_
+__ZL36__arclite_NSManagedObject_allocBatchP11objc_objectP13objc_selectorPS0_S0_j
+__ZL37__arclite_NSKKMS_fastIndexForKnownKeyP11objc_objectP13objc_selectorS0_
+__ZL28__arclite_NSKKMS_indexForKeyP11objc_objectP13objc_selectorS0_
+__ZL29__arclite_NSKKsD_objectForKeyP11objc_objectP13objc_selectorS0_
+__ZL35__arclite_NSKKsD_removeObjectForKeyP11objc_objectP13objc_selectorS0_
+__ZL33__arclite_NSKKsD_setObject_forKeyP11objc_objectP13objc_selectorS0_S0_
+__ZL41__arclite_NSKKsD_addEntriesFromDictionaryP11objc_objectP13objc_selectorP12NSDictionary
+__ZL28__arclite_objc_readClassPairP10objc_classPK15objc_image_info
+__ZL32__arclite_objc_allocateClassPairP10objc_classPKcm
+__ZL32__arclite_object_getIndexedIvarsP11objc_object
+__ZL23__arclite_objc_getClassPKc
+__ZL27__arclite_objc_getMetaClassPKc
+__ZL31__arclite_objc_getRequiredClassPKc
+__ZL26__arclite_objc_lookUpClassPKc
+__ZL26__arclite_objc_getProtocolPKc
+__ZL23__arclite_class_getNameP10objc_class
+__ZL26__arclite_protocol_getNameP8Protocol
+__ZL37__arclite_objc_copyClassNamesForImagePKcPj
+__ZL17transcribeMethodsP10objc_classP15glue_class_ro_t
+__ZL19transcribeProtocolsP10objc_classP15glue_class_ro_t
+__ZL20transcribePropertiesP10objc_classP15glue_class_ro_t
+__ZL14initialize_impP11objc_objectP13objc_selector
+__ZL18allocateMaybeSwiftP18glue_swift_class_tm
+__ZL22copySwiftV1MangledNamePKcb
+__ZL13demangledNamePKcb
+__ZL16scanMangledFieldRPKcS0_S1_Ri
+__ZL30arclite_uninitialized_functionv
+__ZL12cxxConstructP11objc_object
+__ZL20fixStringForCoreDataP11objc_object
+_OBJC_METACLASS_$___ARCLite__
+__ZL24OBJC_CLASS_$___ARCLite__
+__ZL31OBJC_METACLASS_RO_$___ARCLite__
+__non_lazy_classes
+__ZL27OBJC_CLASS_RO_$___ARCLite__
+__ZL11_class_name
+__ZL32OBJC_$_CLASS_METHODS___ARCLite__
+__ZL17_load_method_name
+__ZL17_load_method_type
+l_OBJC_PROTOCOL_$___ARCLiteKeyedSubscripting__
+l_OBJC_LABEL_PROTOCOL_$___ARCLiteKeyedSubscripting__
+l_OBJC_PROTOCOL_REFERENCE_$___ARCLiteKeyedSubscripting__
+__ZL30NSUndoManagerProxy_targetClass
+__ZL29original_NSManagedObject_init
+__ZL40original_NSManagedObject_allocWithEntity
+__ZL35original_NSManagedObject_allocBatch
+__ZL25NSMutableDictionary_class
+__ZL22NSConstantString_class
+__ZL14NSString_class
+__ZL36original_NSKKMS_fastIndexForKnownKey
+__ZL27original_NSKKMS_indexForKey
+__ZL28original_NSKKsD_objectForKey
+__ZL34original_NSKKsD_removeObjectForKey
+__ZL32original_NSKKsD_setObject_forKey
+__ZL40original_NSKKsD_addEntriesFromDictionary
+__ZZL22add_image_hook_swiftV1PK11mach_headerlE7patches
+__ZGVZL22add_image_hook_swiftV1PK11mach_headerlE7patches
+__ZL31original_objc_allocateClassPair
+__ZL31original_object_getIndexedIvars
+__ZL22original_objc_getClass
+__ZL26original_objc_getMetaClass
+__ZL30original_objc_getRequiredClass
+__ZL25original_objc_lookUpClass
+__ZL25original_objc_getProtocol
+__ZL22original_class_getName
+__ZL25original_protocol_getName
+__ZL36original_objc_copyClassNamesForImage
+__ZL12demangleLock
+__ZL9Demangled
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x objective-c++ -arch arm64 -fmessage-length=0 -fdiagnostics-show-note-include-stack -fmacro-backtrace-limit=0 -std=c++11 -Wno-trigraphs -fno-exceptions -fno-rtti -mpascal-strings -Os -Wno-missing-field-initializers -Wmissing-prototypes -Wno-implicit-atomic-properties -Wno-arc-repeated-use-of-weak -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wunused-variable -Wunused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-constant-conversion -Wno-int-conversion -Wno-bool-conversion -Wno-enum-conversion -Wshorten-64-to-32 -Wno-newline-eof -Wno-selector -Wno-strict-selector-match -Wno-undeclared-selector -Wno-deprecated-implementations -Wno-c++11-extensions -D NDEBUG=1 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.Internal.sdk -fstrict-aliasing -Wprotocol -Wdeprecated-declarations -Winvalid-offsetof -miphoneos-version-min=4.3 -g -fno-threadsafe-statics -Wno-sign-conversion -Wno-infinite-recursion -Wno-move -fembed-bitcode=all -iquote /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-generated-files.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-own-target-headers.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-all-target-headers.hmap -iquote /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/TempContent/Objects/arclite.build/arclite_iOS.build/arclite_iphoneos-project-headers.hmap -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/Symbols/BuiltProducts/include -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/TempContent/Objects/arclite.build/arclite_iOS.build/DerivedSources/arm64 -I /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/TempContent/Objects/arclite.build/arclite_iOS.build/DerivedSources -F/Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/Symbols/BuiltProducts -F/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.Internal.sdk/System/Library/PrivateFrameworks -Wall -Wextra -Wno-gcc-compat -Wno-error=incomplete-umbrella -Wno-error=incomplete-umbrella -MMD -MT dependencies -MF /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/TempContent/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.d --serialize-diagnostics /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/TempContent/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.dia -c /Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-66/source/arclite.mm -o /Library/Caches/com.apple.xbs/Binaries/arclite_iOS/arclite_iOS-66~479/TempContent/Objects/arclite.build/arclite_iOS.build/Objects-normal/arm64/arclite.o -mlinker-version=278.4
+/Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-66/source/arclite.mm
+/Library/Caches/com.apple.xbs/Sources/arclite_iOS/arclite-66
+fixStringForCoreData
+cxxConstruct
+arclite_uninitialized_function
+scanMangledField
+isdigit
+/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.Internal.sdk/usr/include/ctype.h
+__isctype
+demangledName
+copySwiftV1DemangledName
+copySwiftV1MangledName
+allocateMaybeSwift
+word_align
+isSwift
+initialize_imp
+transcribeProperties
+property_list_nth
+transcribeProtocols
+transcribeMethods
+data
+method_list_nth
+__arclite_objc_copyClassNamesForImage
+__arclite_protocol_getName
+__arclite_class_getName
+__arclite_objc_getProtocol
+__arclite_objc_lookUpClass
+__arclite_objc_getRequiredClass
+__arclite_objc_getMetaClass
+__arclite_objc_getClass
+__arclite_object_getIndexedIvars
+__arclite_objc_allocateClassPair
+metaclass
+__arclite_objc_readClassPair
+transcribeIvars
+ivar_list_nth
+max
+alignment
+ro
+fastFlags
+__arclite_NSKKsD_addEntriesFromDictionary
+__arclite_NSKKsD_setObject_forKey
+__arclite_NSKKsD_removeObjectForKey
+__arclite_NSKKsD_objectForKey
+__arclite_NSKKMS_indexForKey
+__arclite_NSKKMS_fastIndexForKnownKey
+__arclite_NSManagedObject_allocBatch
+__arclite_NSManagedObject_allocWithEntity
+__arclite_NSManagedObject_init
+replaceMethod
+__arclite_NSUndoManagerProxy_isKindOfClass
+add_image_hook_swiftV1
+patch_lazy_pointers
+patch_t<const char **(const char *, unsigned int *)>
+patch_t<const char *(Protocol *)>
+patch_t<const char *(Class)>
+patch_t<Protocol *(const char *)>
+patch_t<Class (const char *)>
+patch_t<void *(id)>
+patch_t<Class (Class, const char *, unsigned long)>
+patch_t<Class (Class, const objc_image_info *)>
+__arclite_NSMutableDictionary__setObject_forKeyedSubscript
+__ARCLite__load
+install_swiftV1
+install_dict_nil_value
+addOrReplaceMethod
+keyedGetter

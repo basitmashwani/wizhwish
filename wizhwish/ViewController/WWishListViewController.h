@@ -10,4 +10,6 @@
 
 @interface WWishListViewController : UIViewController
 
+@property(nonatomic ,retain) IBOutlet UITextField *tagTextField;
+
 @end

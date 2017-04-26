@@ -201,6 +201,30 @@
     return [[NSAttributedString alloc]initWithString:@""];
 }
 
++(BOOL)isStringNull:(NSString*)string {
+    
+    if (![string isEqual:[NSNull null]]) {
+        
+        if (!string) {
+            return YES;
+        }
+        if ([string isEqualToString:@"(null)"]) {
+            
+            return YES;
+        }
+        if (string.length > 0) {
+            return NO;
+        }
+        else {
+            
+            return YES;
+        }
+    }
+    else {
+        return YES;
+    }
+}
+
 
 
 

@@ -11,7 +11,7 @@
 #define kOverlayHeight      15
 
 #import "KIImagePager.h"
-#import <UIImageView+AFNetworking.h>
+#import "UIImageView+AFNetworking.h"
 @interface KIImagePagerDefaultImageSource : NSObject <KIImagePagerImageSource>
 @end
 

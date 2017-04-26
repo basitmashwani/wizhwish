@@ -59,7 +59,7 @@
     self.labelTime.hidden = YES;
     self.labelImport.hidden = NO;
     self.buttonImport.hidden = NO;
-    self.imageConstraint.constant = 50;
+    self.imageConstraint.constant = 40;
     self.bottomView.hidden = NO;
     self.mainView.hidden = YES;
     self.isNextPressed = YES;
@@ -86,6 +86,12 @@
     self.isRecording = NO;
     self.isPause = NO;
 
+    [self.buttonPencil setImage:[UIImage imageNamed:@"Image_Pencil"] forState:UIControlStateNormal];
+    [self.buttonPencil setImage:[UIImage imageNamed:@"Image_Text_Disable"] forState:UIControlStateNormal];
+    
+    
+   // [self.buttonText setImage:nil forState:UIControlStateNormal];
+   // [self.buttonText setImage:nil forState:UIControlStateNormal];
     // Do any additional setup after loading the view.
 }
 
@@ -111,9 +117,11 @@
     
     WPhotoEditViewController *controller = [[WPhotoEditViewController alloc] init];
     controller.delegate = self;
-   // controller.selectedImage = self.mainImageView.image;
+    controller.selectedImage = self.mainImageView.image;
     controller.selectedIndex = 0;
     controller.isDrawing = YES;
+        
+    controller.titleName = @"Audio";
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
     [RUUtility setUpNavigationBar:navController];
     [self presentViewController:navController animated:YES completion:nil];
@@ -126,9 +134,10 @@
 
     WPhotoEditViewController *controller = [[WPhotoEditViewController alloc] init];
     controller.delegate = self;
-   // controller.selectedImage = self.mainImageView.image;
+    controller.selectedImage = self.mainImageView.image;
     controller.selectedIndex = 0;
     controller.isDrawing = NO;
+    controller.titleName = @"Audio";
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
     [RUUtility setUpNavigationBar:navController];
     [self presentViewController:navController animated:YES completion:nil];

@@ -27,6 +27,9 @@
 
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 
+@property(nonatomic ,retain) UIButton *buttonPencil;
+
+@property(nonatomic ,assign) UIButton *buttonText;
 
 - (IBAction)importPressed:(id)sender;
 

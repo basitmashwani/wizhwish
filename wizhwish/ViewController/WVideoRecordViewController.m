@@ -10,14 +10,15 @@
 #import "UIImage+FiltrrCompositions.h"
 #import "UIImage+Scale.h"
 #import <MobileCoreServices/MobileCoreServices.h>
-#import <SCVideoPlayerView.h>
-#import <SCAssetExportSession.h>
+#import "SCVideoPlayerView.h"
+#import "SCAssetExportSession.h"
 #import "NSURL+SCSaveToCameraRoll.h"
 
 
 @import AVKit;
+@import IGColorPicker;
 
-@interface WVideoRecordViewController ()<PBJVisionDelegate,UICollectionViewDelegate,UICollectionViewDataSource,ACEDrawingViewDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,SCPlayerDelegate>
+@interface WVideoRecordViewController ()<PBJVisionDelegate,UICollectionViewDelegate,UICollectionViewDataSource,ACEDrawingViewDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,SCPlayerDelegate,ColorPickerViewDelegate,ColorPickerViewDelegateFlowLayout,UITextViewDelegate>
 
 @property(nonatomic ,retain) UILongPressGestureRecognizer *longPressGestureRecognizer;
 
@@ -31,6 +32,8 @@
 
 @property(nonatomic) BOOL secondVideo;
 
+@property(nonatomic ,assign) NSInteger keyboardHeight;
+
 @property(nonatomic ,retain) NSString *firstVideoPath;
 
 @property(nonatomic ,retain) AVPlayerViewController *videoPlayer;
@@ -39,11 +42,14 @@
 
 @property(nonatomic ,retain) ACEDrawingView *drawingView;
 
+@property(nonatomic ,retain) ColorPickerView *textColorPickerView;
+
+
 @property(nonatomic ,retain) UIButton *eraseButton;
 
 @property(nonatomic ,retain) UIImage *imagePencilCapture;
 
-@property(nonatomic ,retain) HRColorMapView  *colorPicker;
+@property(nonatomic ,retain) ColorPickerView *colorPicker;
 
 @property(nonatomic) CGPoint  labelPoint;
 
@@ -57,13 +63,17 @@
 
 @property(nonatomic )  BOOL isUsingLibrary;
 
-@property(nonatomic ,retain) SCSwipeableFilterView *swipeFilterView;
+@property(nonatomic ,retain) SCFilterImageView *videoPlayerFilter;
 
-@property(nonatomic ,retain) SCSwipeableFilterView *miniSwipeFilterView;
+@property(nonatomic ,retain) SCFilterImageView *miniVideoPlayerFilter;
 
 @property(nonatomic ,retain) SCPlayer *scPlayer;
 
 @property(nonatomic ,retain) SCPlayer *scMiniPlayer;
+
+@property(nonatomic ,retain) UIButton *plusButton;
+
+@property(nonatomic ,retain) UIButton *minusButton;
 
 @property(nonatomic ,retain) UIImageView *playImageView;
 
@@ -72,6 +82,10 @@
 @property(nonatomic) BOOL isPause;
 
 @property(nonatomic) BOOL isnextPressed;
+
+@property(nonatomic ,retain) NSArray *filters;
+
+@property(nonatomic ,assign) NSInteger fontCount;
 
 
 
@@ -95,49 +109,13 @@
 }
 - (void)soundPressed:(id)sender {
     
-    self.soundButton.selected = YES;
-    self.pencilButton.selected = NO;
-    self.textPencil.selected = NO;
-    self.filterPencil.selected = NO;
-    [self.view sendSubviewToBack:self.drawingView];
-    self.colorPicker.hidden = YES;
-    
-    [self addPencilWorkToView];
-    self.collectionView.hidden = YES;
-    
+    [self updateViewFor:@"Sound"];
 }
 
 - (void)pencilPressed:(id)sender {
     
+    [self updateViewFor:@"Pencil"];
     
-    self.soundButton.selected = NO;
-    self.pencilButton.selected = YES;
-    self.textPencil.selected = NO;
-    self.filterPencil.selected = NO;
-    if (!self.drawingView) {
-        self.drawingView = [[ACEDrawingView alloc] initWithFrame:self.cameraView.frame];
-        [self.view addSubview:self.drawingView];
-
-    }
-    [self.view bringSubviewToFront:self.drawingView];
-    self.drawingView.delegate = self;
-    self.drawingView.lineWidth  = 3.0;
-    self.drawingView.lineColor = [UIColor whiteColor];
-    
-    if (!self.colorPicker) {
-    
-     self.colorPicker = [HRColorMapView colorMapWithFrame:self.viewContainer.frame saturationUpperLimit:0.95];
-                                 self.colorPicker.tileSize = [NSNumber numberWithInt:16];
-    [self.view addSubview:self.colorPicker];
-    }
-    [self.drawingView loadImage:self.imagePencilCapture];
-    self.colorPicker.hidden = NO;
-    [self.colorPicker setFrameHeight:80];
-    self.colorPicker.color = [UIColor whiteColor];
-    [self.colorPicker addTarget:self action:@selector(colorChanged:) forControlEvents:UIControlEventValueChanged];
-    
-    self.pencilImageView.hidden = YES;
-   
 }
 - (void)colorChanged:(id)sender {
     HRColorMapView *colorMap = (HRColorMapView*)sender;
@@ -146,48 +124,13 @@
 
 - (void)filterPressed:(id)sender {
     
-   
-    self.soundButton.selected = NO;
-    self.pencilButton.selected = NO;
-    self.textPencil.selected = NO;
-    self.filterPencil.selected = YES;
-    self.colorPicker.hidden = YES;
-    [self.textLabel setUserInteractionEnabled:NO];
-    [self.view sendSubviewToBack:self.drawingView];
-    self.collectionView.hidden = NO;
-    [self.collectionView reloadData];
-    [self addPencilWorkToView];
-}
+    [self updateViewFor:@"Filter"];
+   }
 
 - (void)textPressed:(id)sender {
  
+    [self updateViewFor:@"Text"];
     
-    self.soundButton.selected = NO;
-    self.pencilButton.selected = NO;
-    self.textPencil.selected = YES;
-    self.filterPencil.selected = NO;
-    //[self.drawingView removeFromSuperview];
-    
-    [self.view sendSubviewToBack:self.drawingView];
-    self.textField.placeholder = @"Enter Text";
-    self.textField.delegate = self;
-    self.textField.textColor = [UIColor whiteColor];
-    [self.textField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
-    self.textField.backgroundColor = [UIColor clearColor];
-    [self addPencilWorkToView];
-       self.textField.textAlignment = NSTextAlignmentCenter;
-    
-   self.overlayView  = [[UIView alloc] initWithFrame:self.cameraView.frame];
-    self.overlayView.backgroundColor = [UIColor grayColor];
-    self.overlayView.alpha = 0.3;
-    [self didTappedView:self.overlayView];
-
-    self.textField.hidden = NO;
-    [self.textField becomeFirstResponder];
-    [self.view addSubview:self.overlayView];
-    [self.view bringSubviewToFront:self.textField];
-    self.textLabel.hidden = YES;
-    [self.textLabel setUserInteractionEnabled:YES];
 }
 
 - (void)tempButtonPressed:(id)sender {
@@ -195,8 +138,25 @@
     self.timerView.hidden = YES;
     WTempVideoRecorderViewController *tempController = [[UIStoryboard getMediaStoryBoard] instantiateViewControllerWithIdentifier:K_SB_TEMP_VIDEO_VIEW_CONTROLLER];
     [self.navigationController pushViewController:tempController animated:YES];
-    }
+    
+}
 
+- (void)plusPressed {
+   
+    _fontCount = _fontCount + 2;
+    
+    [self.textField setFont:[UIFont fontWithName:@"MicrosoftPhagsPa" size:_fontCount]];
+    
+    [self.textLabel setFont:[UIFont fontWithName:@"MicrosoftPhagsPa" size:_fontCount]];
+}
+- (void)minusPressed {
+    
+    _fontCount = _fontCount - 2;
+  
+    [self.textField setFont:[UIFont fontWithName:@"MicrosoftPhagsPa" size:_fontCount]];
+    
+    [self.textLabel setFont:[UIFont fontWithName:@"MicrosoftPhagsPa" size:_fontCount]];
+}
 - (void)startTimer {
     
     if (!self.timer) {
@@ -245,108 +205,125 @@
         
         [self.collectionView reloadData];
     
-    // _videoPlayer = [[AVPlayerViewController alloc] init];
-        _scMiniPlayer = [SCPlayer playerWithURL:secondVideoURL];
-        _scMiniPlayer.delegate = self;
-        self.miniSwipeFilterView = [[SCSwipeableFilterView alloc] initWithFrame:self.buttonAddVideo.frame];
-     //   [self.swipeFilterView setFrameX:0.0];
-       // [self.swipeFilterView setFrameY:0.0];
-        [self.view addSubview:self.miniSwipeFilterView];
-        [self.view bringSubviewToFront:self.miniSwipeFilterView];
+        _scMiniPlayer = [SCPlayer player];
         
-            self.miniSwipeFilterView.contentMode = UIViewContentModeScaleAspectFill;
-            
-            SCFilter *emptyFilter = [SCFilter emptyFilter];
-            emptyFilter.name = @"#nofilter";
-            
-            self.miniSwipeFilterView.filters = [[NSArray alloc] init];
-            self.miniSwipeFilterView.filters = @[
-                                             emptyFilter,
-                                             [SCFilter filterWithCIFilterName:@"CIPhotoEffectNoir"],
-                                             [SCFilter filterWithCIFilterName:@"CIPhotoEffectChrome"],
-                                             [SCFilter filterWithCIFilterName:@"CIPhotoEffectInstant"],
-                                             [SCFilter filterWithCIFilterName:@"CIPhotoEffectTonal"],
-                                             [SCFilter filterWithCIFilterName:@"CIPhotoEffectFade"],
-                                             [self createAnimatedFilter]
-                                             // Adding a filter created using CoreImageShop
-                                             // [SCFilter filterWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"a_filter" withExtension:@"cisf"]],
-                                             ];
-            _scMiniPlayer.SCImageView = self.miniSwipeFilterView;
-            [self.miniSwipeFilterView addObserver:self forKeyPath:@"selectedFilter" options:NSKeyValueObservingOptionNew context:nil];
-            
+        AVAsset *asset = [AVAsset assetWithURL:secondVideoURL];
+        
+        _scMiniPlayer.shouldSuppressPlayerRendering = YES;
+        
+        [_scMiniPlayer  setItemByAsset:asset];
+        
+        _scMiniPlayer.delegate = self;
+        
+        
+        CGRect rect= CGRectMake(0, self.buttonAddVideo.frame.origin.y, self.buttonAddVideo.frame.size.width, self.buttonAddVideo.frame.size.height);
+        
+        SCVideoPlayerView *miniVideoPlayerView = [[SCVideoPlayerView alloc] initWithFrame:rect];
+     
+        [miniVideoPlayerView setFrameX:0.0];
+        
+        [miniVideoPlayerView setFrameY:0.0];
+        
+        [self.view addSubview:miniVideoPlayerView];
+        
+      //  [self.buttonAddVideo bringSubviewToFront:miniVideoPlayerView];
+        
+        miniVideoPlayerView.contentMode = UIViewContentModeScaleAspectFill;
+        
+        self.miniVideoPlayerFilter = [[SCFilterImageView alloc] initWithFrame:rect];
+        
+        self.miniVideoPlayerFilter.filter = [SCFilter emptyFilter];
+        
+        //
+        
+        _scMiniPlayer.SCImageView = self.miniVideoPlayerFilter;
+        
+        //
+        
+        [self.view addSubview:self.self.miniVideoPlayerFilter];
+
+        [self.view bringSubviewToFront:self.miniVideoPlayerFilter];
         
        }
     
+    else {
     
-    _scPlayer = [SCPlayer playerWithURL:videoURL];
+    _scPlayer = [SCPlayer player];
+   
+    AVAsset *asset = [AVAsset assetWithURL:videoURL];
+    
+    _scPlayer.shouldSuppressPlayerRendering = YES;
+    
+    [_scPlayer  setItemByAsset:asset];
+    
     _scPlayer.delegate = self;
-    //NSURL *url = [[NSBundle mainBundle] URLForResource:@"splash2" withExtension:@"mp4"];
     
-    self.swipeFilterView = [[SCSwipeableFilterView alloc] initWithFrame:self.cameraView.frame];
-    [self.swipeFilterView setFrameX:0.0];
-    [self.swipeFilterView setFrameY:0.0];
-    [self.cameraView addSubview:self.swipeFilterView];
+   SCVideoPlayerView *videoPlayerView = [[SCVideoPlayerView alloc] initWithFrame:self.cameraView.frame];
+    [videoPlayerView setFrameX:0.0];
+    [videoPlayerView setFrameY:0.0];
+    [self.cameraView addSubview:videoPlayerView];
+   
     
+    //Add play button
     _playImageView = [[UIImageView alloc] init];
     [_playImageView setFrameHeight:60];
     [_playImageView setFrameWidth:60];
-    _playImageView.center = CGPointMake(self.swipeFilterView.frame.size.width  / 2,
-                                     self.swipeFilterView.frame.size.height / 2);
+    _playImageView.center = CGPointMake(videoPlayerView.frame.size.width  / 2,
+                                     videoPlayerView.frame.size.height / 2.2);
 
     _playImageView.image = [UIImage imageNamed:@"Image_Play"];
     
     
-    [self.swipeFilterView addSubview:_playImageView];
+   // [self.videoPlayerView addSubview:_playImageView];
     
      _playButton  = [[UIButton alloc] initWithFrame:_playImageView.frame];
     [_playButton setFrameWidth:100];
     [_playButton setFrameHeight:100];
-    [self.swipeFilterView addSubview:_playButton];
+   // [self.videoPlayerView addSubview:_playButton];
     [_playButton addTarget:self action:@selector(playPressed:) forControlEvents:UIControlEventTouchUpInside];
 
-        self.swipeFilterView.contentMode = UIViewContentModeScaleAspectFill;
-        
-        SCFilter *emptyFilter = [SCFilter emptyFilter];
-        emptyFilter.name = @"#nofilter";
-        
-        self.swipeFilterView.filters = [[NSArray alloc] init];
-        self.swipeFilterView.filters = @[
-                                         emptyFilter,
-                                         [SCFilter filterWithCIFilterName:@"CIPhotoEffectNoir"],
-                                         [SCFilter filterWithCIFilterName:@"CIPhotoEffectChrome"],
-                                         [SCFilter filterWithCIFilterName:@"CIPhotoEffectInstant"],
-                                         [SCFilter filterWithCIFilterName:@"CIPhotoEffectTonal"],
-                                         [SCFilter filterWithCIFilterName:@"CIPhotoEffectFade"],
-                                         [self createAnimatedFilter]
-                                         // Adding a filter created using CoreImageShop
-                                        // [SCFilter filterWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"a_filter" withExtension:@"cisf"]],
-                                         ];
-        _scPlayer.SCImageView = self.swipeFilterView;
-        [self.swipeFilterView addObserver:self forKeyPath:@"selectedFilter" options:NSKeyValueObservingOptionNew context:nil];
+        videoPlayerView.contentMode = UIViewContentModeScaleAspectFill;
+    
+    
+     self.videoPlayerFilter = [[SCFilterImageView alloc] initWithFrame:self.cameraView.bounds];
+    
+    self.videoPlayerFilter.filter = [SCFilter emptyFilter];
+    
+    //
+    
+    _scPlayer.SCImageView = self.videoPlayerFilter;
+    
+    //
+    
+    [self.cameraView addSubview:self.videoPlayerFilter];
+    
+    [self.videoPlayerFilter addSubview:_playImageView];
+    [self.videoPlayerFilter addSubview:_playButton];
+    
+    
+    }
+    self.viewContainer.hidden = NO;
     
     if (!self.secondVideo) {
         
         self.buttonAddVideo.hidden = NO;
         [self.view bringSubviewToFront:self.buttonAddVideo];
-        self.sliderSmallScreen.hidden = YES;
-        self.labelSmall.hidden = YES;
-        self.sliderLargeScreen.center = CGPointMake(self.sliderLargeScreen.center.x, self.sliderLargeScreen.center.y+10);
+        self.sliderSmallScreen.hidden = NO;
+        self.labelSmall.hidden = NO;
+        self.sliderLargeScreen.center = CGPointMake(self.sliderLargeScreen.center.x, self.sliderLargeScreen.center.y);
         
-        self.labelLarge.center = CGPointMake(self.labelLarge.center.x, self.labelLarge.center.y+10);
+        self.labelLarge.center = CGPointMake(self.labelLarge.center.x, self.labelLarge.center.y);
+        
+        self.sliderSmallScreen.enabled = NO;
         
     }
     else {
         [self.view bringSubviewToFront:_videoPlayer.view];
         self.sliderSmallScreen.hidden = NO;
         self.labelSmall.hidden = NO;
-        
-        self.sliderLargeScreen.center = CGPointMake(self.sliderLargeScreen.center.x, self.sliderLargeScreen.center.y-10);
-        
-        self.labelLarge.center = CGPointMake(self.labelLarge.center.x, self.labelLarge.center.y-10);
-        
-
+        self.sliderSmallScreen.enabled = YES;
+                
     }
-    self.viewContainer.hidden = NO;
 
 
 
@@ -372,32 +349,42 @@
 }
 - (void)crossPressed {
  
-    [self.navigationController popViewControllerAnimated:YES];
+    if (self.isnextPressed) {
+        
+        _previewLayer.frame = self.cameraView.bounds;
+        _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+        [_previewLayer addSublayer:self.timerView.layer];
+        [self.cameraView.layer addSublayer:_previewLayer];
+        [self.view bringSubviewToFront:self.cameraView];
+        [self setup];
+        self.isUsingLibrary = NO;
+        self.secondVideo = NO;
+
+        
+    }
+    else {
+ 
+        [self.navigationController popViewControllerAnimated:YES];
+}
+    
 }
 
 - (void)nextPressed {
     
     if (self.isnextPressed) {
         
-        WWizhViewController *controller =  [[UIStoryboard getWhizStoryBoard] instantiateViewControllerWithIdentifier:K_SB_WIZH_VIEW_CONTROLLER];
+      //  WWizhViewController *controller =  [[UIStoryboard getWhizStoryBoard] instantiateViewControllerWithIdentifier:K_SB_WIZH_VIEW_CONTROLLER];
         
-        controller.showWhiz = YES;
+      //  controller.showWhiz = YES;
 //        
-        [self.navigationController pushViewController:controller animated:YES];
+      //  [self.navigationController pushViewController:controller animated:YES];
         
        // [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         //Save video
         
-//        NSString *firstFilePath = [[WSetting getSharedSetting] rearVideoUrlPath];
-//        NSString *firstOutputPath = [self getOutputPathfor:@"Rear"];
-//
-//        
-//            
-//        NSURL *url = [NSURL fileURLWithPath:firstFilePath];
-//        [self addTextToVideoWithVideoURL:url withText:self.textLabel.text];
-//        
-        //End
-        
+        NSString *originPath = [[WSetting getSharedSetting] rearVideoUrlPath];
+        [self exportVideoToRollwithUrlPath:originPath Filter:self.videoPlayerFilter.filter];
+
         
     }
     else {
@@ -433,7 +420,7 @@
     imagePicker.videoQuality = UIImagePickerControllerQualityType640x480;
     imagePicker.videoMaximumDuration = 60.0f; // 30 seconds
     //temporary duation of 30 seconds for testing
-    imagePicker.mediaTypes = [UIImagePickerController availableMediaTypesForSourceType:UIImagePickerControllerSourceTypeSavedPhotosAlbum];//[[NSArray alloc] initWithObjects:(NSString *)kUTTypeMovie, nil];
+    imagePicker.mediaTypes = [[NSArray alloc] initWithObjects:(NSString *)kUTTypeMovie, nil];
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 - (void)rightButtonCanShow:(BOOL)show {
@@ -458,7 +445,9 @@
     self.timerView.hidden = NO;
     [self.recordButton setRoundCornersAsCircle];
 //    [self.progressView setRoundCornersAsCircle];
+    self.fontCount = 23;
     
+    self.navigationItem.title = @"Video";
     self.soundButton.selected = YES;
     self.time = 0;
     self.collectionView.hidden = YES;
@@ -482,6 +471,8 @@
     _tapGesture.cancelsTouchesInView = NO;
     [self.textLabel addGestureRecognizer:_tapGesture];
     
+    //[self didTappedView:self.view];
+    
 
 }
 
@@ -491,7 +482,7 @@
     
     if (!CGPointEqualToPoint(self.labelPoint, CGPointZero)) {
         
-   // self.textLabel.center = self.labelPoint;
+         self.textLabel.center = self.labelPoint;
     }
 }
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
@@ -501,6 +492,10 @@
 //        
 //    }
     self.filterArray = [[NSMutableArray alloc] init];
+    
+    self.filters = [[NSArray alloc] initWithObjects:@"No Filter" ,@"CIPhotoEffectChrome", @"CIPhotoEffectFade", @"CIPhotoEffectInstant", @"CIPhotoEffectMono", @"CIPhotoEffectNoir", @"CIPhotoEffectProcess", @"CIPhotoEffectTonal", @"CIPhotoEffectTransfer" , nil];
+
+    
     
    // dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
    //     // do some task
@@ -676,6 +671,15 @@
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
+    CGPoint location = [[touches anyObject] locationInView:self.view];
+    UIView *view = [self.view hitTest:location withEvent:nil];
+    
+    NSLog(@"tag number %ld",(long)view.tag);
+    
+    if (view.alpha < 1 && [self.textField isFirstResponder]) {
+        
+        [self.textField resignFirstResponder];
+    }
     NSLog(@"touch ended");
 }
 
@@ -704,35 +708,286 @@
     return YES;
 }
 
+#pragma mark - Touch delegate methods
+#pragma Mark - UITExtview Delegate Methods
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    if([text isEqualToString:@"\n"]) {
+        //  [textView resignFirstResponder];
+        textView.text = [NSString stringWithFormat:@"%@\n",textView.text];
+        self.textField.frame = CGRectMake(self.textField.frame.origin.x, self.textField.frame.origin.y - 10, self.textField.frame.size.width, self.textField.frame.size.height);
+        
+        return NO;
+    }
+    
+    return YES;
+}
+
+- (void)textViewDidChange:(UITextView *)textView {
+    
+    textView.text = [textView.text stringByReplacingOccurrencesOfString:@"Enter Text" withString:@""];
+    
+}
+
+
 #pragma mark Private Methods
 
+
+- (void)updateViewFor:(NSString*)mode {
+    
+    if ([mode isEqualToString:@"Sound"]) {
+        
+        [self.plusButton removeFromSuperview];
+        
+        [self.minusButton removeFromSuperview];
+        
+        self.soundButton.selected = YES;
+       
+        self.pencilButton.selected = NO;
+        
+        self.textPencil.selected = NO;
+        
+        self.filterPencil.selected = NO;
+        
+        [self.view sendSubviewToBack:self.drawingView];
+        
+        self.colorPicker.hidden = YES;
+        
+        
+        [self addPencilWorkToView];
+        
+        self.collectionView.hidden = YES;
+        
+        [self.textColorPickerView removeFromSuperview];
+        
+        self.textColorPickerView = nil;
+        
+        self.labelLarge.hidden = NO;
+        
+        self.labelSmall.hidden = NO;
+        
+        self.sliderLargeScreen.hidden = NO;
+        
+        self.sliderSmallScreen.hidden = NO;
+        
+        self.collectionView.hidden = YES;
+        
+        
+        self.playButton.hidden = NO;
+        self.playImageView.hidden = NO;
+        
+        
+
+    }
+    else if ([mode isEqualToString:@"Filter"]) {
+     
+        [self.plusButton removeFromSuperview];
+        
+        [self.minusButton removeFromSuperview];
+        
+        self.soundButton.selected = NO;
+       
+        self.pencilButton.selected = NO;
+        
+        self.textPencil.selected = NO;
+        self.filterPencil.selected = YES;
+       
+        
+        self.colorPicker.hidden = YES;
+        
+        [self.textLabel setUserInteractionEnabled:NO];
+        
+        [self.view sendSubviewToBack:self.drawingView];
+        
+        self.collectionView.hidden = NO;
+        
+        [self.collectionView reloadData];
+        
+        [self addPencilWorkToView];
+        
+        [self.textColorPickerView removeFromSuperview];
+        
+        self.textColorPickerView = nil;
+        
+        
+        self.playButton.hidden = NO;
+        self.playImageView.hidden = NO;
+
+    }
+    else if ([mode isEqualToString:@"Pencil"]) {
+     
+        
+        self.soundButton.selected = NO;
+        self.pencilButton.selected = YES;
+        self.textPencil.selected = NO;
+        self.filterPencil.selected = NO;
+        if (!self.drawingView) {
+            self.drawingView = [[ACEDrawingView alloc] initWithFrame:self.cameraView.frame];
+            [self.view addSubview:self.drawingView];
+            
+        }
+        [self.view bringSubviewToFront:self.drawingView];
+        self.drawingView.delegate = self;
+        self.drawingView.lineWidth  = 3.0;
+        self.drawingView.lineColor = [UIColor whiteColor];
+        
+        if (!self.colorPicker) {
+            
+            self.colorPicker = [[ColorPickerView alloc] initWithFrame:self.viewContainer.frame];
+            [self.view addSubview:self.colorPicker];
+        }
+        [self.drawingView loadImage:self.imagePencilCapture];
+        self.colorPicker.hidden = NO;
+        [self.colorPicker setFrameHeight:80];
+        self.colorPicker.delegate = self;
+        
+        self.pencilImageView.hidden = YES;
+        
+        [self.plusButton removeFromSuperview];
+        
+        [self.minusButton removeFromSuperview];
+        
+        [self.textColorPickerView removeFromSuperview];
+        
+        self.textColorPickerView = nil;
+        
+        self.playButton.hidden = YES;
+        
+        self.playImageView.hidden = YES;
+        
+        
+        if (!self.eraseButton) {
+            self.eraseButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        }
+     //   self.eraseButton.hidden = NO;
+        
+        self.eraseButton.frame = CGRectMake(self.view.frame.size.width - 40, 80, 30, 30);
+        [self.eraseButton setImage:[UIImage imageNamed:@"Image_Eraser"] forState:UIControlStateNormal];
+        [self.eraseButton addTarget:self action:@selector(erasePressed:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:self.eraseButton];
+        self.eraseButton.hidden = YES;
+        
+       // [self.view bringSubviewToFront:self.eraseButton];
+    }
+    else if ([mode isEqualToString:@"Text"]) {
+        
+        
+        self.colorPicker.hidden = YES;
+        
+          self.sliderLargeScreen.hidden = YES;
+        
+         self.sliderSmallScreen.hidden = YES;
+        
+        self.labelSmall.hidden = YES;
+        
+        self.labelLarge.hidden = YES;
+        
+        self.cameraView.frame = self.view.frame;
+        
+        self.soundButton.selected = NO;
+        self.pencilButton.selected = NO;
+        self.textPencil.selected = YES;
+        self.filterPencil.selected = NO;
+        
+        self.collectionView.hidden = YES;
+        
+        [self.view sendSubviewToBack:self.drawingView];
+        
+        if (self.textLabel.text.length == 0) {
+            self.textField.text = @"Enter Text";
+        }
+        self.textField.textColor = self.textLabel.textColor;
+        [self.textField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
+        self.textField.backgroundColor = [UIColor clearColor];
+        [self addPencilWorkToView];
+        self.textField.textAlignment = NSTextAlignmentCenter;
+        // _textField.autocorrectionType = UITextAutocorrectionTypeNo;
+        
+        CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, self.textField.frame.origin.y+100);
+        self.overlayView  = [[UIView alloc] initWithFrame:rect];
+        self.overlayView.backgroundColor = [UIColor clearColor];
+        self.overlayView.alpha = 0.3;
+        //[self didTappedView:self.overlayView];
+        self.textField.hidden = NO;
+        [self.textField becomeFirstResponder];
+        [self.view addSubview:self.overlayView];
+        
+        [self.view bringSubviewToFront:self.textField];
+        self.textLabel.hidden = YES;
+        [self.textLabel setUserInteractionEnabled:YES];
+        
+        self.plusButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.plusButton.frame = CGRectMake(10, 75, 30, 30);
+        [self.plusButton setImage:[UIImage imageNamed:@"Image_Plus"] forState:UIControlStateNormal];
+        [self.view addSubview:self.plusButton];
+        [self.plusButton addTarget:self action:@selector(plusPressed) forControlEvents:UIControlEventTouchDown];
+        
+        
+        
+        self.minusButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.minusButton.frame = CGRectMake( 50, 75, 30, 30);
+        [self.minusButton setImage:[UIImage imageNamed:@"Image_Minus"] forState:UIControlStateNormal];
+        [self.view addSubview:self.minusButton];
+        [self.minusButton addTarget:self action:@selector(minusPressed) forControlEvents:UIControlEventTouchDown];
+        
+        self.playButton.hidden = YES;
+        self.playImageView.hidden = YES;
+
+        
+    }
+    
+}
 - (void)buttonPressed:(id)sender {
     
     UIButton *button = (UIButton*)sender;
+   
     NSInteger index = button.tag;
     
+    NSString *filterName = [self.filters objectAtIndex:index];
+   
+    self.videoPlayerFilter.filter = [SCFilter filterWithCIFilterName:filterName];
+  
+    self.scPlayer.SCImageView = self.videoPlayerFilter;
+
+    self.miniVideoPlayerFilter.filter = [SCFilter filterWithCIFilterName:filterName];
     
-    [self.swipeFilterView setSelectedFilter: [self.swipeFilterView.filters objectAtIndex:index]];
+    self.scMiniPlayer.SCImageView = self.miniVideoPlayerFilter;
     
-    [self.miniSwipeFilterView setSelectedFilter: [self.miniSwipeFilterView.filters objectAtIndex:index]];
+    
 }
-- (void)exportVideoToRollwithUrlPath:(NSString*)urlPath Filter:(SCFilter*)filter outPutPath:(NSString*)outputPath {
+- (void)exportVideoToRollwithUrlPath:(NSString*)urlPath Filter:(SCFilter*)filter  {
     
     
     NSURL *firstUrl = [NSURL fileURLWithPath:urlPath];
     AVURLAsset *asset = [AVURLAsset URLAssetWithURL:firstUrl options:nil];
     SCAssetExportSession *exportSession = [[SCAssetExportSession alloc] initWithAsset:asset];
+    
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd_HH-mm-ss"];
+    NSString *destinationPath = [documentsDirectory stringByAppendingFormat:@"/utput_%@.mov", [dateFormatter stringFromDate:[NSDate date]]];
     exportSession.videoConfiguration.filter = filter;
+    
     exportSession.videoConfiguration.preset = SCPresetHighestQuality;
+    
     exportSession.audioConfiguration.preset = SCPresetHighestQuality;
+    
     exportSession.videoConfiguration.maxFrameRate = 35;
-    exportSession.outputUrl = [NSURL fileURLWithPath:outputPath];
+    
+    exportSession.outputUrl = [NSURL fileURLWithPath:destinationPath];
+    
     exportSession.outputFileType = AVFileTypeMPEG4;
+    
     exportSession.delegate = self;
+    
     exportSession.contextType = SCContextTypeAuto;
     
     CFTimeInterval time = CACurrentMediaTime();
     __weak typeof(self) wSelf = self;
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    NSURL *fileURL = [NSURL fileURLWithPath:destinationPath];
     [exportSession exportAsynchronouslyWithCompletionHandler:^{
         
         if (!exportSession.cancelled) {
@@ -745,14 +1000,51 @@
             NSLog(@"Export was cancelled");
         } else if (error == nil) {
             
+            __weak typeof(self) weakSelf = self;
+            [[WSetting getSharedSetting] setFirstOutputUrl:destinationPath];
+        
             [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+            
             [exportSession.outputUrl saveToCameraRollWithCompletion:^(NSString * _Nullable path, NSError * _Nullable error) {
+              
                 [[UIApplication sharedApplication] endIgnoringInteractionEvents];
                 
                 if (error == nil) {
                     
                     
                     NSLog(@"Save to roll");
+                    if (self.textLabel.text.length > 0) {
+                        [RUUtility addTextToVideoWithVideoURL:fileURL withText:weakSelf.textLabel.text labelPoint:weakSelf.labelPoint label:weakSelf.textLabel  success:^{
+                            
+                            NSString *destinationPath = [[WSetting getSharedSetting] firstOutputUrl];
+                            
+                            if (self.pencilImageView != nil) {
+                                [RUUtility addImageToVideoWithVideoURL:[NSURL fileURLWithPath:destinationPath] withImage:weakSelf.drawingView.image success:^{
+                                    NSLog(@"image is ready");
+                                    NSString *destinationPath = [[WSetting getSharedSetting] firstOutputUrl];
+                                    
+                                    if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(destinationPath))
+                                        
+                                        UISaveVideoAtPathToSavedPhotosAlbum(destinationPath, weakSelf, @selector(video:didFinishSavingWithError:contextInfo:), nil);
+                                }];
+                            }
+
+                            
+                        }];
+                        //
+                    }
+                 else  if (self.pencilImageView != nil) {
+                        [RUUtility addImageToVideoWithVideoURL:fileURL withImage:weakSelf.drawingView.image success:^{
+                            NSLog(@"image is ready");
+                                NSString *destinationPath = [[WSetting getSharedSetting] firstOutputUrl];
+                            
+                        if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(destinationPath))
+                            
+                            UISaveVideoAtPathToSavedPhotosAlbum(destinationPath, weakSelf, @selector(video:didFinishSavingWithError:contextInfo:), nil);
+                        }];
+                    }
+                    //End
+
                     [MBProgressHUD hideHUDForView:self.view animated:YES];
                 } else {
                     
@@ -769,93 +1061,7 @@
 }
 
 
--(void)addTextToVideoWithVideoURL:(NSURL*)url withText:(NSString*)text
-{
-    AVURLAsset* videoAsset = [[AVURLAsset alloc]initWithURL:url options:nil];
-    
-    AVMutableComposition* mixComposition = [AVMutableComposition composition];
-    
-    AVMutableCompositionTrack *compositionVideoTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
-    
-    AVAssetTrack *clipVideoTrack = [[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
-    
-    AVMutableCompositionTrack *compositionAudioTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
-    
-    AVAssetTrack *clipAudioTrack = [[videoAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0];
-    //If you need audio as well add the Asset Track for audio here
-    
-    [compositionVideoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:clipVideoTrack atTime:kCMTimeZero error:nil];
-    
-    [compositionAudioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:clipAudioTrack atTime:kCMTimeZero error:nil];
-    
-    [compositionVideoTrack setPreferredTransform:[[[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0] preferredTransform]];
-    
-    CGSize sizeOfVideo = [videoAsset naturalSize];
-    //NSLog(@"sizeOfVideo.width is %f",sizeOfVideo.width);
-    //NSLog(@"sizeOfVideo.height is %f",sizeOfVideo.height);
-    //TextLayer defines the text they want to add in Video
-    
-    CATextLayer *textOfvideo = [[CATextLayer alloc] init];
-    textOfvideo.string=[NSString stringWithFormat:@"%@",text];//text is shows the text that you want add in video.
-    
-    [textOfvideo setFont:(__bridge CFTypeRef)([UIFont fontWithName:[NSString stringWithFormat:@"%s","MicrosoftPhagsPa"] size:23])];//fontUsed is the name of font
-    [textOfvideo setFrame:CGRectMake(self.labelPoint.x , self.labelPoint.y , sizeOfVideo.width, 60)];
-   // [textOfvideo setAlignmentMode:kCAAlignmentCenter];
-    [textOfvideo setForegroundColor:[[self.textLabel textColor] CGColor]];
-    
-    
-    CALayer *optionalLayer = [CALayer layer];
-    [optionalLayer addSublayer:textOfvideo];
-    optionalLayer.frame=CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height);
-    [optionalLayer setMasksToBounds:YES];
-    
-    CALayer *parentLayer=[CALayer layer];
-    CALayer *videoLayer=[CALayer layer];
-    parentLayer.frame=CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height);
-    videoLayer.frame=CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height);
-    [parentLayer addSublayer:videoLayer];
-    [parentLayer addSublayer:optionalLayer];
-    
-    AVMutableVideoComposition *videoComposition=[AVMutableVideoComposition videoComposition] ;
-    videoComposition.frameDuration=CMTimeMake(1, 10);
-    videoComposition.renderSize=sizeOfVideo;
-    videoComposition.animationTool=[AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:videoLayer inLayer:parentLayer];
-    
-    AVMutableVideoCompositionInstruction *instruction = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
-    instruction.timeRange = CMTimeRangeMake(kCMTimeZero, [mixComposition duration]);
-    AVAssetTrack *videoTrack = [[mixComposition tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
-    AVMutableVideoCompositionLayerInstruction* layerInstruction = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:videoTrack];
-    instruction.layerInstructions = [NSArray arrayWithObject:layerInstruction];
-    videoComposition.instructions = [NSArray arrayWithObject: instruction];
-    
-    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd_HH-mm-ss"];
-    NSString *destinationPath = [documentsDirectory stringByAppendingFormat:@"/utput_%@.mov", [dateFormatter stringFromDate:[NSDate date]]];
-    
-    AVAssetExportSession *exportSession = [[AVAssetExportSession alloc] initWithAsset:mixComposition presetName:AVAssetExportPresetMediumQuality];
-    exportSession.videoComposition=videoComposition;
-    
-    exportSession.outputURL = [NSURL fileURLWithPath:destinationPath];
-    exportSession.outputFileType = AVFileTypeQuickTimeMovie;
-    [exportSession exportAsynchronouslyWithCompletionHandler:^{
-        switch (exportSession.status)
-        {
-            case AVAssetExportSessionStatusCompleted:
-                NSLog(@"Export OK");
-                if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(destinationPath)) {
-                    UISaveVideoAtPathToSavedPhotosAlbum(destinationPath, self, @selector(video:didFinishSavingWithError:contextInfo:), nil);
-                }
-                break;
-            case AVAssetExportSessionStatusFailed:
-                NSLog (@"AVAssetExportSessionStatusFailed: %@", exportSession.error);
-                break;
-            case AVAssetExportSessionStatusCancelled:
-                NSLog(@"Export Cancelled");
-                break;
-        }
-    }];
-}
+
 
 
 -(void) video: (NSString *) videoPath didFinishSavingWithError: (NSError *) error contextInfo: (void *) contextInfo
@@ -895,20 +1101,13 @@
     
 }
 - (void)dealloc {
-    [self.swipeFilterView removeObserver:self forKeyPath:@"selectedFilter"];
-    self.swipeFilterView = nil;
+   // [self.swipeFilterView removeObserver:self forKeyPath:@"selectedFilter"];
+   // self.swipeFilterView = nil;
     [_scPlayer pause];
    // _scPlayer = nil;
     //[self cancelSaveToCameraRoll];
 }
 
-
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if (object == self.swipeFilterView) {
-     
-    }
-}
 
 
 - (SCFilter *)createAnimatedFilter {
@@ -967,8 +1166,7 @@
     self.textLabel.hidden = YES;
     self.textField.hidden = NO;
     [self.textField becomeFirstResponder];
-    
-    [self.view addSubview:self.overlayView];
+
 }
 - (void)labelChange:(id)sender {
   
@@ -1120,6 +1318,8 @@
   
     self.isUsingLibrary = YES;
 
+    self.isnextPressed = YES;
+    
     NSURL *videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
     
     
@@ -1150,8 +1350,9 @@
         
         [picker dismissViewControllerAnimated:YES completion:nil];
         
-        
-        [self updateViewForPlayerMode];
+       
+     
+         [self updateViewForPlayerMode];
 //
   }
 //    
@@ -1258,24 +1459,45 @@
 #pragma mark ACEDrawingView Delegate Methods
 - (void)drawingView:(ACEDrawingView *)view didEndDrawUsingTool:(id<ACEDrawingTool>)tool {
     
-    if (!self.eraseButton) {
-    self.eraseButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    }
-    self.eraseButton.hidden = NO;
-    self.eraseButton.frame = CGRectMake(self.drawingView.center.x+80, self.drawingView.center.y, 100, 100);
-    [self.eraseButton setImage:[UIImage imageNamed:@"Image_Eraser"] forState:UIControlStateNormal];
-    [self.eraseButton addTarget:self action:@selector(erasePressed:) forControlEvents:UIControlEventTouchUpInside];
-    [view addSubview:self.eraseButton];
    
-    [view bringSubviewToFront:self.eraseButton];
     
     self.imagePencilCapture = [view image];
+    
+    if (self.eraseButton.isHidden) {
+        self.eraseButton.hidden = NO;
+    }
 }
 
 - (void)drawingView:(ACEDrawingView *)view willBeginDrawUsingTool:(id<ACEDrawingTool>)tool {
     
 }
 
+
+#pragma Color Picker Layout Delegate Methods
+
+- (CGSize)colorPickerView:(ColorPickerView *)colorPickerView sizeForItemAt:(NSIndexPath *)indexPath {
+    
+    return  CGSizeMake(30, 30);
+}
+
+#pragma mark ColorPicker Delegate Methods
+
+- (void)colorPickerView:(ColorPickerView *)colorPickerView didSelectItemAt:(NSIndexPath *)indexPath {
+    
+    if (colorPickerView.tag == 100) {
+        //update text UI
+        self.textLabel.textColor = [colorPickerView.colors objectAtIndex:indexPath.row];
+        
+        self.textField.textColor = [colorPickerView.colors objectAtIndex:indexPath.row];
+        
+    }
+    else {
+    
+        self.drawingView.lineColor = [colorPickerView.colors objectAtIndex:indexPath.row];
+    }
+    
+    
+}
 
 #pragma mark SPlayer Delegate Methods
 
@@ -1305,21 +1527,57 @@
 
 
 #pragma KeyBoard Delegate Methods
-- (void)keyBoardDidShow:(id)sender {
+- (void)keyBoardDidShow:(NSNotification*)sender {
     
+    
+    CGSize keyboardSize = [[[sender userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    //Given size may not account for screen rotation
+    self.keyboardHeight = MIN(keyboardSize.height,keyboardSize.width);
     NSLog(@"Keyboard did show");
+    
+    if (!_textColorPickerView) {
+        self.textColorPickerView  = [[ColorPickerView alloc] init];
+    _textColorPickerView.delegate = self;
+    _textColorPickerView.layoutDelegate = self;
+    _textColorPickerView.scrollToPreselectedIndex = YES;
+    _textColorPickerView.tag = 100;
+        [self.view addSubview:_textColorPickerView];
+    
+    }
+    _textColorPickerView.frame = CGRectMake(0, self.keyboardHeight , self.view.frame.size.width, 60);
+    
+    [self.view addSubview:self.overlayView];
+
+  //  self.textField.inputView = _textColorPickerView;
+//
+    //[self.view bringSubviewToFront:_textColorPickerView];
+    
+   
 }
 - (void)keyBoardDidHide:(id)sender {
-    
-  //  NSLog(@"keyboard did hide");
+   //  NSLog(@"keyboard did hide");
    // [self.textLabel removeFromSuperview];
     self.textLabel.text = self.textField.text;
     [self.view bringSubviewToFront:self.textLabel];
     [self viewDidLayoutSubviews];
     self.textLabel.hidden = NO;
     [self.overlayView removeFromSuperview];
+   // self.overlayView = nil;
    // self.textLabel.center = CGPointMake(100, 100);
     self.textField.hidden = YES;
+   // [_textColorPickerView setFrameY:self.textColorPickerView.frame.origin.y - keyboardSize.height ];
+    self.labelSmall.hidden = YES;
+    self.labelLarge.hidden = YES;
+  
+    self.sliderSmallScreen.hidden = YES;
+   
+    self.sliderLargeScreen.hidden = YES;
+    
+    _textColorPickerView.frame = CGRectMake(0, self.viewContainer.frame.origin.y+10, self.view.frame.size.width, 60);
+    
+    
+   
 }
 /*
 #pragma mark - Navigation
@@ -1332,4 +1590,5 @@
 */
 
 @end
+
 

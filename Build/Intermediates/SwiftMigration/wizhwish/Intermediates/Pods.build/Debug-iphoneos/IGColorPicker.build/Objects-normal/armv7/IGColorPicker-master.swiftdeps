@@ -1,0 +1,9 @@
+version: "Apple Swift version 3.1 (swiftlang-802.0.51 clang-802.0.41)"
+options: "a0b0ede26d29b7ae2e05765525844f3b"
+build_time: [546358811, 605007000]
+inputs:
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/IGColorPicker/Classes/ColorPickerCell.swift": [544045238, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/IGColorPicker/Classes/ColorPickerView.swift": [546346002, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/IGColorPicker/Classes/ColorPickerViewDelegate.swift": [544045238, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/IGColorPicker/Classes/ColorPickerViewDelegateFlowLayout.swift": [544045238, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/IGColorPicker/Classes/UIColor+Extension.swift": [544045238, 0]

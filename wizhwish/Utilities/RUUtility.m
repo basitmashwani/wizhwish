@@ -201,5 +201,163 @@
 }
 
 
++ (void)addImageToVideoWithVideoURL:(NSURL*)url withImage:(UIImage*)image success:(void(^)(void))success
+
+
+ {
+   
+     AVURLAsset* videoAsset = [[AVURLAsset alloc]initWithURL:url options:nil];
+     
+         AVAssetTrack *clipVideoTrack = [[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
+     
+     CGSize sizeOfVideo = [clipVideoTrack naturalSize];
+     //NSLog(@"sizeOfVideo.width is %f",sizeOfVideo.width);
+     //NSLog(@"sizeOfVideo.height is %f",sizeOfVideo.height);
+     //TextLayer defines the text they want to add in Video
+     
+     CALayer *aLayer = [CALayer layer];
+     aLayer.contents = (id)image.CGImage;
+     
+     aLayer.frame = CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height);
+    // aLayer.backgroundColor = [[UIColor redColor] CGColor];
+     
+     CALayer *optionalLayer = [CALayer layer];
+     [optionalLayer addSublayer:aLayer];
+     optionalLayer.frame=CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height);
+     [optionalLayer setMasksToBounds:YES];
+     
+     [self addOverlayToVideo:optionalLayer sizeOfVideo:sizeOfVideo videoURL:url success:^{
+         success();
+     }];
+}
+
+
+
++ (void)addTextToVideoWithVideoURL:(NSURL*)url withText:(NSString*)text labelPoint:(CGPoint)labelPoint label:(UILabel*)textLabel success:(void(^)(void))success
+
+{
+    
+    AVURLAsset* videoAsset = [[AVURLAsset alloc]initWithURL:url options:nil];
+    
+    AVAssetTrack *clipVideoTrack = [[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
+    
+    CGSize sizeOfVideo = [clipVideoTrack naturalSize];
+    //NSLog(@"sizeOfVideo.width is %f",sizeOfVideo.width);
+    //NSLog(@"sizeOfVideo.height is %f",sizeOfVideo.height);
+    //TextLayer defines the text they want to add in Video
+    
+    CATextLayer *textOfvideo = [[CATextLayer alloc] init];
+    textOfvideo.string = [NSString stringWithFormat:@"%@",text];//text is shows the text that you want add in video.
+    
+    
+    CGFloat yAxis = 0;
+    labelPoint.y = labelPoint.y - 50;
+    CGFloat percent = labelPoint.y/textLabel.superview.frame.size.height*100;
+    CGFloat newPercent = sizeOfVideo.height/100;
+    yAxis = newPercent *percent;
+    yAxis = sizeOfVideo.height - yAxis;
+    
+    
+    
+    [textOfvideo setFont:(__bridge CFTypeRef)([UIFont fontWithName:[NSString stringWithFormat:@"%s","MicrosoftPhagsPa"] size:6])];//fontUsed is the name of font
+    [textOfvideo setFrame:CGRectMake(labelPoint.x , yAxis , sizeOfVideo.width, 60)];
+    // [textOfvideo setAlignmentMode:kCAAlignmentCenter];
+    [textOfvideo setForegroundColor:[[textLabel textColor] CGColor]];
+    
+    
+    CALayer *optionalLayer = [CALayer layer];
+    [optionalLayer addSublayer:textOfvideo];
+    optionalLayer.frame=CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height);
+    [optionalLayer setMasksToBounds:YES];
+    
+    [self addOverlayToVideo:optionalLayer sizeOfVideo:sizeOfVideo videoURL:url success:^{
+        success();
+    }];
+    
+   }
+
+
++ (void)addOverlayToVideo:(CALayer*)layer sizeOfVideo:(CGSize)size videoURL:(NSURL*)url success:(void(^)(void))success  {
+    
+    AVURLAsset* videoAsset = [[AVURLAsset alloc]initWithURL:url options:nil];
+    
+    AVMutableComposition* mixComposition = [AVMutableComposition composition];
+    
+    AVMutableCompositionTrack *compositionVideoTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeVideo preferredTrackID:kCMPersistentTrackID_Invalid];
+    
+    AVAssetTrack *clipVideoTrack = [[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
+    
+    AVMutableCompositionTrack *compositionAudioTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio preferredTrackID:kCMPersistentTrackID_Invalid];
+    
+    AVAssetTrack *clipAudioTrack = [[videoAsset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0];
+    //If you need audio as well add the Asset Track for audio here
+    
+    [compositionVideoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:clipVideoTrack atTime:kCMTimeZero error:nil];
+    
+    [compositionAudioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, videoAsset.duration) ofTrack:clipAudioTrack atTime:kCMTimeZero error:nil];
+    
+    [compositionVideoTrack setPreferredTransform:[[[videoAsset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0] preferredTransform]];
+    
+    CALayer *parentLayer=[CALayer layer];
+    CALayer *videoLayer=[CALayer layer];
+    parentLayer.frame=CGRectMake(0, 0, size.width, size.height);
+    videoLayer.frame=CGRectMake(0, 0, size.width, size.height);
+    [parentLayer addSublayer:videoLayer];
+    [parentLayer addSublayer:layer];
+    
+    AVMutableVideoComposition *videoComposition=[AVMutableVideoComposition videoComposition] ;
+    videoComposition.frameDuration = CMTimeMake(1, 10);
+    videoComposition.renderSize = size;
+    videoComposition.animationTool = [AVVideoCompositionCoreAnimationTool videoCompositionCoreAnimationToolWithPostProcessingAsVideoLayer:videoLayer inLayer:parentLayer];
+    
+    AVMutableVideoCompositionInstruction *instruction = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
+    instruction.timeRange = CMTimeRangeMake(kCMTimeZero, [mixComposition duration]);
+    AVAssetTrack *videoTrack = [[mixComposition tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
+    AVMutableVideoCompositionLayerInstruction* layerInstruction = [AVMutableVideoCompositionLayerInstruction videoCompositionLayerInstructionWithAssetTrack:videoTrack];
+    instruction.layerInstructions = [NSArray arrayWithObject:layerInstruction];
+    videoComposition.instructions = [NSArray arrayWithObject: instruction];
+    
+    NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd_HH-mm-ss"];
+    NSString *destinationPath = [documentsDirectory stringByAppendingFormat:@"/utput_%@.mov", [dateFormatter stringFromDate:[NSDate date]]];
+    
+    AVAssetExportSession *exportSession = [[AVAssetExportSession alloc] initWithAsset:mixComposition presetName:AVAssetExportPresetMediumQuality];
+    exportSession.videoComposition=videoComposition;
+    
+    exportSession.outputURL = [NSURL fileURLWithPath:destinationPath];
+    exportSession.outputFileType = AVFileTypeQuickTimeMovie;
+    [exportSession exportAsynchronouslyWithCompletionHandler:^{
+        switch (exportSession.status)
+        {
+            case AVAssetExportSessionStatusCompleted:
+                NSLog(@"Export OK");
+                [[WSetting getSharedSetting] setFirstOutputUrl:destinationPath];
+                success();
+                break;
+            case AVAssetExportSessionStatusFailed:
+                NSLog (@"AVAssetExportSessionStatusFailed: %@", exportSession.error);
+                break;
+            case AVAssetExportSessionStatusCancelled:
+                NSLog(@"Export Cancelled");
+                break;
+                
+             case AVAssetExportSessionStatusUnknown:
+                NSLog(@"Session unknow");
+                break;
+            
+            case AVAssetExportSessionStatusWaiting:
+                NSLog(@"wating session");
+                break;
+            
+            case AVAssetExportSessionStatusExporting:
+                NSLog(@"Exporting");
+                break;
+        }
+    }];
+
+}
+
+
 
 @end

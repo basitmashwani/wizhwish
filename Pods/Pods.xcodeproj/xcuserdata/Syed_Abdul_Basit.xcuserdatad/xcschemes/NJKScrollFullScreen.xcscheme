@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'B526EF7C9CF26F61CA9F56936B0051A8'
+               BlueprintIdentifier = 'EFDBC7A61758CF267FA5F8D82DFF542F'
                BlueprintName = 'NJKScrollFullScreen'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libNJKScrollFullScreen.a'>
+               BuildableName = 'NJKScrollFullScreen.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

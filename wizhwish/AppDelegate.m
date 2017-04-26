@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+@import Fabric;
+@import Crashlytics;
+@import HockeySDK;
 //#import <Kickf>
 
 @interface AppDelegate ()
@@ -19,6 +22,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    
+    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"bdbff04e48af43b5a0f2dbd010ab5f86"];
+    // Do some additional configuration if needed here
+    [[BITHockeyManager sharedHockeyManager] startManager];
+    [[BITHockeyManager sharedHockeyManager].authenticator authenticateInstallation]; // This line is obsolete in the crash only builds
+        [Fabric with:@[[Crashlytics class]]];
    // NSString *secret = @"bNT4?7:RJsJNrOEffRxFDQ:umBFl9@_B:X=1Mm!E_onDhDX1qqDaQDE:u@syWC;2mKtLu3q-GfN7JKm6R:Z1JXtMo2k3PaE3uFkcl-xcYotXDL_IXAcP1_i8xr0wdQ6i";
 
   //  [Kickflip setupWithAPIKey:k_KICKFLIP_API_KEY secret:secret];

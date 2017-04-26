@@ -120,9 +120,9 @@
         
         [OLGhostAlertView showAlertAtBottomWithTitle:@"Error" message:@"Please enter valid email address"];
     }
-    else if (self.textFieldUserName.text.length <6) {
+    else if (self.textFieldUserName.text.length <3) {
         
-        [OLGhostAlertView showAlertAtBottomWithTitle:@"Error" message:@"Username must be 6 characters long"];
+        [OLGhostAlertView showAlertAtBottomWithTitle:@"Error" message:@"Username must be 3 characters long"];
 
     }
     else if (self.textFieldPassword.text.length <8) {
@@ -149,9 +149,15 @@
                 
                 [[NSUserDefaults standardUserDefaults] setObject:response forKey:k_ACCESS_TOKEN];
                 [[NSUserDefaults standardUserDefaults] synchronize];
+              
                 WProfileViewController *profileViewController = [[UIStoryboard getProfileStoryBoard] instantiateViewControllerWithIdentifier:@"K_SB_PROFILE_VC"];
+                
                 profileViewController.isFromRegistration = YES;
+                
+                profileViewController.stringFullName = self.textFieldUserName.text;
+                
                 [RUUtility setMainRootController:profileViewController];
+            
             } failure:^(NSError *error) {
                 
             }];
@@ -163,7 +169,7 @@
        
         NSLog(@"Error %@",error.localizedDescription);
         [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
-        [OLGhostAlertView showAlertAtBottomWithTitle:@"Error" message:@"Unable to process request"];
+        [OLGhostAlertView showAlertAtBottomWithTitle:@"Error" message:error.localizedDescription];
 
         
         

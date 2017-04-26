@@ -77,14 +77,10 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "$PODS_CONFIGURATION_BUILD_DIR/ACEDrawingView/ACEDraggableText.bundle"
-  install_resource "PBJVision/Source/Shaders/Shader.fsh"
-  install_resource "PBJVision/Source/Shaders/Shader.vsh"
+  install_resource "$PODS_CONFIGURATION_BUILD_DIR/HockeySDK/HockeySDKResources.bundle"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "$PODS_CONFIGURATION_BUILD_DIR/ACEDrawingView/ACEDraggableText.bundle"
-  install_resource "PBJVision/Source/Shaders/Shader.fsh"
-  install_resource "PBJVision/Source/Shaders/Shader.vsh"
+  install_resource "$PODS_CONFIGURATION_BUILD_DIR/HockeySDK/HockeySDKResources.bundle"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"

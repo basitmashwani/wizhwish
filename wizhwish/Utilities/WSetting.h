@@ -18,8 +18,6 @@
 
 @property(nonatomic ,retain) NSString *firstOutputUrl;
 
-@property(nonatomic ,retain) NSString *secondOutputUrl;
-
 @property(nonatomic ,retain) NSString *postText;
 
 @property(nonatomic ,retain) NSMutableArray *imageArray;
@@ -29,6 +27,8 @@
 
 
 + (WSetting*)getSharedSetting;
+
++ (void)distroySetting;
 
 
 @end

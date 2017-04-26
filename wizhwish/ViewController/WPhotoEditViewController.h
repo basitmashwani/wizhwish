@@ -11,11 +11,13 @@
 
 @protocol WPhotoEditViewControllerDelegate;
 
-@interface WPhotoEditViewController : UIViewController
+@interface WPhotoEditViewController : UIViewController<ColorPickerViewDelegate>
 
 @property(nonatomic ,retain) UIImage *selectedImage;
 
 @property(nonatomic ,assign) NSInteger selectedIndex;
+
+@property(nonatomic ,retain) NSString *titleName;
 
 @property(nonatomic ,assign) BOOL isDrawing;
 

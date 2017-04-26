@@ -29,11 +29,11 @@
                         <viewControllerLayoutGuide type="bottom" id="cOV-59-stw"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NgC-gl-onU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1400"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="362" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HUT-bw-MWq">
-                                <rect key="frame" x="0.0" y="-24" width="375" height="984"/>
+                                <rect key="frame" x="0.0" y="-24" width="375" height="1384"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
@@ -512,7 +512,7 @@
                         </variation>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="1000"/>
+                    <size key="freeformSize" width="375" height="1400"/>
                     <connections>
                         <outlet property="buttonTopScroll" destination="sPf-ea-5PK" id="CIY-Oj-fDa"/>
                         <outlet property="tableView" destination="HUT-bw-MWq" id="r4e-cT-FoI"/>

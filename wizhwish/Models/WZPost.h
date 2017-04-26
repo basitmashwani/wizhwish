@@ -6,6 +6,7 @@
 //  Copyright © 2017 Syed Abdul Basit. All rights reserved.
 //
 
+
 #import <Foundation/Foundation.h>
 #import "WZComments.h"
 
@@ -27,6 +28,7 @@
 
 @property(nonatomic ,retain) NSString *commentCount;
 
+@property(nonatomic ,retain) NSString *postType;
 
 
 

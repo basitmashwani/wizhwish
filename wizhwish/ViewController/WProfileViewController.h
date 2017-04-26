@@ -27,7 +27,25 @@
 
 @property(nonatomic ,assign) BOOL isFromRegistration;
 
-@property(nonatomic ,retain) WProfile *profile;
+//@property(nonatomic ,retain) WProfile *profile;
+
+
+@property(nonatomic ,retain) NSString *stringFullName;
+
+@property(nonatomic ,retain) NSString *stringBio;
+
+@property(nonatomic ,retain) NSString *stringGender;
+
+@property(nonatomic ,retain) NSString *stringPhone;
+
+@property(nonatomic ,retain) NSString *profileThumbnailURL;
+
+@property(nonatomic ,retain) NSString *profileImageURL;
+
+@property(nonatomic ,retain) NSString *bannerThumbnailURL;
+
+@property(nonatomic ,retain) NSString *bannerImageURL;
+
 
 - (IBAction)bannerPressed:(id)sender;
 

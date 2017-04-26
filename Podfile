@@ -14,6 +14,13 @@ pod 'SCRecorder'
 pod 'AFNetworking', '~> 2.0'
 pod 'OLGhostAlertView', :git =>'https://github.com/ondalabs/OLGhostAlertView.git'
 pod 'AWSS3', '~> 2.4.1'
+pod "HockeySDK"
+
+use_frameworks!
+pod 'Fabric'
+pod 'Crashlytics'
+pod 'IGColorPicker', :path => './'
+
 
 
 

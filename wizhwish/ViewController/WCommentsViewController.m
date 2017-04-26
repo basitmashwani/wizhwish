@@ -159,10 +159,17 @@
     
     cell.timeLabel.text = post.createdDate;
     
+    if (![NSString isStringNull:post.userProfileURL]) {
+
     NSURL *url = [NSURL URLWithString:post.userProfileURL];
     
     [cell.imageViewProfile setImageWithURL:url placeholderImage:[UIImage imageNamed:@"Image_Profile-1"]];
     
+    }
+    else {
+        
+        cell.imageViewProfile.image = [UIImage imageNamed:@"Image_Profile-1"];
+    }
     
 
     return cell;

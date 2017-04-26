@@ -57,7 +57,7 @@
     
     [[WSetting getSharedSetting] setAudioUrlPath:nil];
     [[WSetting getSharedSetting] setFirstOutputUrl:nil];
-    [[WSetting getSharedSetting] setSecondOutputUrl:nil];
+   // [[WSetting getSharedSetting] setSecondOutputUrl:nil];
     [[WSetting getSharedSetting] setFrontVideoUrlPath:nil];
     [[WSetting getSharedSetting] setRearVideoUrlPath:nil];
     WVideoRecordViewController *controller = [[UIStoryboard getMediaStoryBoard] instantiateViewControllerWithIdentifier:K_SB_VIDEO_RECORD_VIEW_CONTROLLER];

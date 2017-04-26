@@ -46,7 +46,7 @@
 
 @property(nonatomic ,retain) IBOutlet UILabel *labelLarge;
 
-@property(nonatomic ,retain) IBOutlet UITextField *textField;
+@property(nonatomic ,retain) IBOutlet UITextView *textField;
 
 
 @property(nonatomic ,retain) IBOutlet UILabel *textLabel;

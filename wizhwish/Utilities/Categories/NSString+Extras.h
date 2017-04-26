@@ -42,6 +42,8 @@
 
 + (NSAttributedString *)getAttributedTextForString:(NSString *)string fontSize:(float)fontSize;
 
-        
+
++(BOOL)isStringNull:(NSString*)string;
+
 
 @end

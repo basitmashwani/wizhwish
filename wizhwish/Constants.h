@@ -81,6 +81,11 @@
 
 
 
+#define k_VIDEO_TYPE                                @"type_video"
+#define k_AUDIO_TYPE                                @"type_audio"
+#define k_TEXT_TYPE                                 @"type_text"
+#define k_IMAGE_TYPE                                @"type_image"
+
 //Segue
 
 #define  K_SEGUE_HOME                               @"K_SEGUE_HOME"

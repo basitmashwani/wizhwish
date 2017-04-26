@@ -31,7 +31,7 @@ static WZServiceParser *_sharedInstance = nil;
         success(@"success");
         }
         else {
-            failure([NSError createErrorWithDomain:@"Error" localizedDescription:@"Email already in use" ]);
+            failure([NSError createErrorWithDomain:@"Error" localizedDescription:@"Email already in use"]);
         }
     } failure:^(NSError *error) {
         
@@ -63,11 +63,17 @@ static WZServiceParser *_sharedInstance = nil;
                 failure:(void(^)(NSError *error))failure {
    // networks/createPost?j_text=mypost&j_images=image,image2&j_privacy=public
     
+    if (tags.length == 0) {
+        
     tags = @"";
-
-   // text = [text stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     
-    NSString *url = [NSString stringWithFormat:@"%@%@%@%@%@%@",k_BASE_SOCIAL_SERVER_URL,@"/networks/createPost?j_text=",@"",@"&j_tags=",@"AB",@"&j_privacy=public"];
+    }
+    
+    text = [text stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+
+    tags = [tags stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+
+    NSString *url = [NSString stringWithFormat:@"%@%@%@%@%@%@",k_BASE_SOCIAL_SERVER_URL,@"/networks/createPost?j_text=",text,@"&j_tags=",tags,@"&j_privacy=public"];
     
     NSString *header = [[NSUserDefaults standardUserDefaults] valueForKey:k_ACCESS_TOKEN];
 
@@ -273,6 +279,17 @@ static WZServiceParser *_sharedInstance = nil;
     NSDate *toDate = [NSDate getDateFromEpochValue:[[NSDate date] timeIntervalSince1970]];
     post.createdDate = [NSDate getMinutesDifferenceFromDate:fromDate toDate:toDate];
     post.postId = [dict valueForKey:@"id"];
+    
+    NSArray *imageArray = [post.mediaDictionary valueForKey:@"images"];
+    
+    if (![NSString isStringNull:post.postText]) {
+        
+        post.postType = k_TEXT_TYPE;
+    }
+    else if (imageArray.count > 0) {
+        
+        post.postType = k_IMAGE_TYPE;
+    }
     
     
     

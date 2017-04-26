@@ -8,7 +8,7 @@
 
 #import "WWishListViewController.h"
 
-@interface WWishListViewController ()
+@interface WWishListViewController ()<UITextFieldDelegate>
 
 @property(nonatomic ,retain) NSMutableArray *standardLinkArray;
 
@@ -29,10 +29,29 @@
   
     return self;
 }
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector (keyBoardDidShow:)
+                                                 name: UIKeyboardDidShowNotification
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector (keyBoardDidHide:)
+                                                 name: UIKeyboardDidHideNotification
+                                               object:nil];
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.navigationItem.rightBarButtonItem = [RUUtility getBarButtonWithImage:[UIImage imageNamed:@"Image_Next"] forViewController:self selector:@selector(nextPressed)];
+    
+    
     // Do any additional setup after loading the view.
 }
 
@@ -92,10 +111,11 @@
     
     NSLog(@"Uploaded");
     
-    [[WZServiceParser sharedParser] processPostText:text tags:nil imagesArray:self.standardLinkArray videoArray:nil audioArray:nil  success:^(NSString *accessToken) {
+    [[WZServiceParser sharedParser] processPostText:text tags:self.tagTextField.text imagesArray:self.standardLinkArray videoArray:nil audioArray:nil  success:^(NSString *accessToken) {
         
         [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
         [CSNotificationView showInViewController:weakSelf style:CSNotificationViewStyleSuccess message:@"Post publish successfully."];
+        [WSetting distroySetting];
         [weakSelf.navigationController popToRootViewControllerAnimated:YES];
 
         
@@ -109,54 +129,21 @@
     }];
 }
 
-//- (void)postImagesToServer {
-//   
-//    NSArray *array = [[WSetting getSharedSetting] imageArray];
-//    
-//    __weak typeof(self) weakSelf = self;
-//    for (UIImage *image in array) {
-//        
-//            [weakSelf uploadPhotos:image];
-//
-//    }
-//    
-//    [self.navigationController popToRootViewControllerAnimated:YES];
-//
-//    
-//}
 
-//- (void)uploadPhotos:(UIImage*)image {
-//    
-//    
-//    __weak typeof(self) weakSelf = self;
-//    
-//    NSInteger imageCount = [[[WSetting getSharedSetting] imageArray] count];
-//    
-//    NSString *fileName = [[[NSProcessInfo processInfo] globallyUniqueString] stringByAppendingString:@".png"];
-//    
-//    NSData * imageData = [UIImage getImageCompressedData:image];//UIImagePNGRepresentation(image);
-//        
-//        NSString  *filePath = [RUUtility getFileURLPathforFileName:fileName withData:imageData];
-//        
-//        [[WZServiceParser sharedParser] processUploadFileAWSWithfilePath:filePath fileName:fileName success:^(NSString *fileName) {
-//            
-//            
-//            
-//            NSString  *imageURL = [NSString stringWithFormat:@"%@%@%@%@",k_AMAZON_S3_SERVER_URL,k_BUCKET_NAME,@"/",fileName];
-//            
-//            
-//            [weakSelf.standardLinkArray addObject:imageURL];
-//            
-//            if (weakSelf.standardLinkArray.count == imageCount) {
-//                
-//                [weakSelf postToServer];
-//            }
-//
-//            
-//    }];
-//
-//    
-//}
+#pragma mark - UIKeyboard Delegate Methods
+
+- (void)keyBoardDidShow:(id)sender {
+    
+    CGRect textRect = self.tagTextField.frame;
+    self.tagTextField.frame = CGRectMake(textRect.origin.x, textRect.origin.y - 20, textRect.size.width, textRect.size.height);
+}
+
+- (void)keyBoardDidHide:(id)sender {
+   
+    
+    CGRect textRect = self.tagTextField.frame;
+    self.tagTextField.frame = CGRectMake(textRect.origin.x, textRect.origin.y + 20, textRect.size.width, textRect.size.height);
+}
 
 /*
 #pragma mark - Navigation

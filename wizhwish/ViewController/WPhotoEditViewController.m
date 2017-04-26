@@ -9,7 +9,7 @@
 #import "WPhotoEditViewController.h"
 #import "NEOColorPickerViewController.h"
 
-@interface WPhotoEditViewController ()<ACEDrawingViewDelegate,UITextViewDelegate,NEOColorPickerViewControllerDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
+@interface WPhotoEditViewController ()<ACEDrawingViewDelegate,UITextViewDelegate,UIPickerViewDelegate,UIPickerViewDataSource,ColorPickerViewDelegate,ColorPickerViewDelegateFlowLayout>
 
 @property(nonatomic ,retain) ACEDrawingView *drawingView;
 
@@ -31,6 +31,10 @@
 
 @property(nonatomic ,retain) UIButton *undoButton;
 
+@property(nonatomic ,retain) ColorPickerView *colorPickerView;
+
+@property(nonatomic ,retain) ColorPickerView *textColorPickerView;
+
 @property(nonatomic ,assign) NSInteger count;
 
 
@@ -51,17 +55,28 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = self.titleName;
+    
+   
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
     
     self.count = 15;
-
-    CGRect rect = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y +120, self.view.frame.size.width, self.view.frame.size.height);
     
+    CGRect rect = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height - 80);
+    
+    self.view.tag = 100;
     
     UIImageView *imageView = [[UIImageView alloc] initWithImage:_selectedImage];
     imageView.frame = rect;
+    imageView.tag = 100;
     [self.view addSubview:imageView];
     
-    [self didTappedView:imageView];
+   // [self didTappedView:imageView];
     
     
     
@@ -69,6 +84,10 @@
     
     
     if(self.isDrawing) {
+        
+        CGRect rect = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y +100, self.view.frame.size.width, self.view.frame.size.height - 180);
+        
+        
         _drawingView = [[ACEDrawingView alloc] initWithFrame:rect];
         
         [self.view addSubview:self.drawingView];
@@ -88,54 +107,45 @@
         [self.drawingView loadImage:[[UIImage alloc] init]];
         
         self.undoButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        self.undoButton.frame = CGRectMake(rect.size.width - 40, 80, 30, 30);
+        self.undoButton.frame = CGRectMake(rect.size.width - 40, 80, 50, 50);
         [self.undoButton setImage:[UIImage imageNamed:@"Image_Eraser"] forState:UIControlStateNormal];
         [self.view addSubview:self.undoButton];
         [self.undoButton setHidden:YES];
         [self.undoButton addTarget:self action:@selector(undoPressed) forControlEvents:UIControlEventTouchDown];
         
-        UIButton *colorPicker = [UIButton buttonWithType:UIButtonTypeCustom];
-        //colorPicker.frame = CGRectMake(10, rect.size.height + 40, 30, 30);
-        colorPicker.frame = CGRectMake(10, 80, 30, 30);
-        [colorPicker setImage:[UIImage imageNamed:@"Image_Pencil_Disable"] forState:UIControlStateNormal];
-        [self.view addSubview:colorPicker];
+        self.colorPickerView = [[ColorPickerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height -80, self.view.frame.size.width, 80)];
+        self.colorPickerView.delegate = self;
         
-        [colorPicker addTarget:self action:@selector(colorChanged) forControlEvents:UIControlEventTouchDown];
-        
-
+        [self.view addSubview:self.colorPickerView];
         
     }
     else {
         
-         CGRect rect = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y +120, self.view.frame.size.width, self.view.frame.size.height);
+        CGRect rect = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y , self.view.frame.size.width, self.view.frame.size.height);
         imageView.frame = rect;
         
         
-        UIButton *colorPicker = [UIButton buttonWithType:UIButtonTypeCustom];
-        colorPicker.frame = CGRectMake(10, 80, 30, 30);
-        [colorPicker setImage:[UIImage imageNamed:@"Image_Pencil_Disable"] forState:UIControlStateNormal];
-        [self.view addSubview:colorPicker];
         
         UIButton *plusButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        plusButton.frame = CGRectMake(self.view.frame.size.width/2-40, 80, 30, 30);
+        plusButton.frame = CGRectMake(self.view.frame.size.width-80, 80, 30, 30);
         [plusButton setImage:[UIImage imageNamed:@"Image_Plus"] forState:UIControlStateNormal];
         [self.view addSubview:plusButton];
         [plusButton addTarget:self action:@selector(plusPressed) forControlEvents:UIControlEventTouchDown];
-
-
+        
+        
         
         UIButton *minusButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        minusButton.frame = CGRectMake(self.view.frame.size.width/1.5-30, 80, 30, 30);
+        minusButton.frame = CGRectMake(self.view.frame.size.width-40, 80, 30, 30);
+
         [minusButton setImage:[UIImage imageNamed:@"Image_Minus"] forState:UIControlStateNormal];
         [self.view addSubview:minusButton];
         [minusButton addTarget:self action:@selector(minusPressed) forControlEvents:UIControlEventTouchDown];
-
-
         
         
         
-        [colorPicker addTarget:self action:@selector(colorChanged) forControlEvents:UIControlEventTouchDown];
-
+        
+        
+        
         
         self.textLabel = [[UILabel alloc] init];
         
@@ -158,11 +168,11 @@
         [self.textField setFrameHeight:100];
         self.textField.delegate = self;
         self.textField.text = @"Text";
-        [self.textField setFont:[UIFont fontWithName:@"MicrosoftPhagsPa" size:15]];
-
-      //  self.textField.placeholder = @"Text";
+        [self.textField setFont:[UIFont fontWithName:@"MicrosoftPhagsPa" size:23]];
+        
+        //  self.textField.placeholder = @"Text";
         self.textField.textAlignment = NSTextAlignmentCenter;
-        [self.textField setCenter:self.view.center];
+        [self.textField setCenter:CGPointMake(self.view.center.x, self.view.center.y - 30)];
         [self.textField setValue:[UIColor whiteColor] forKeyPath:@"_placeholderLabel.textColor"];
         self.textField.textColor = [UIColor whiteColor];
         self.textField.backgroundColor = [UIColor clearColor];
@@ -201,16 +211,20 @@
     
     self.navigationItem.rightBarButtonItem = [RUUtility getBarButtonWithTitle:@"Done" forViewController:self selector:@selector(savePressed)];
     
+    
+    
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    [super viewDidAppear:animated];
+    CGPoint location = [[touches anyObject] locationInView:self.view];
+    UIView *view = [self.view hitTest:location withEvent:nil];
     
-    
-    
-    
-    
+    if (view.tag == 100) {
+        
+        [self.textField resignFirstResponder];
+    }
+
 }
 
 - (void)plusPressed {
@@ -251,16 +265,18 @@
         }
     }
 }
-- (void)colorChanged {
- 
-    NEOColorPickerViewController *controller = [[NEOColorPickerViewController alloc] init];
-    controller.delegate = self;
-    controller.selectedColor =  [UIColor redColor];//self.currentColor;
-    controller.title = @"Example";
-    UINavigationController *navCon = [[UINavigationController alloc] initWithRootViewController:controller];
-    [RUUtility setUpNavigationBar:navCon];
-    [self presentViewController:navCon animated:YES completion:nil];
 
+- (CGSize)colorPickerView:(ColorPickerView *)colorPickerView sizeForItemAt:(NSIndexPath *)indexPath {
+    
+    return CGSizeMake(30, 30);
+}
+- (void)colorPickerView:(ColorPickerView *)colorPickerView didSelectItemAt:(NSIndexPath *)indexPath {
+    
+    NSLog(@"Did select");
+    
+    self.drawingView.lineColor = [colorPickerView.colors objectAtIndex:indexPath.row];
+    self.textLabel.textColor = [colorPickerView.colors objectAtIndex:indexPath.row];
+    self.textField.textColor = [colorPickerView.colors objectAtIndex:indexPath.row];
 }
 - (void)savePressed {
     
@@ -275,7 +291,7 @@
         }
         else {
             
-            image = [UIImage drawToImage:self.selectedImage withText:self.textLabel.text withFrame:self.textLabel.frame fontSize:_count textColor:self.textLabel.textColor];
+            image = [UIImage drawToImage:self.selectedImage withText:self.textField.text withFrame:self.textLabel.frame fontSize:_count textColor:self.textLabel.textColor];
         }
         [self.delegate PhotoEditViewController:self didSaveImage:image withIndex:self.selectedIndex];
         
@@ -341,28 +357,6 @@
 
 
 
-#pragma mark - Color Picker Delegate Methods
-- (void) colorPickerViewController:(NEOColorPickerBaseViewController *) controller didSelectColor:(UIColor *)color {
- 
-    NSLog(@"selected color");
-    [self dismissViewControllerAnimated:YES completion:nil];
-
-    
-    self.drawingView.lineColor = color;
-    self.colorView.backgroundColor = color;
-    self.textField.textColor = color;
-    self.textLabel.textColor = color;
-}
-- (void) colorPickerViewControllerDidCancel:(NEOColorPickerBaseViewController *)controller {
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void) colorPickerViewController:(NEOColorPickerBaseViewController *) controller didChangeColor:(UIColor *)color {
-    
-    NSLog(@"changed color");
-}
-
 
 #pragma Mark - UITExtview Delegate Methods
 
@@ -382,9 +376,28 @@
 - (void)keyBoardDidShow:(id)sender {
     
     NSLog(@"Keyboard did show");
+    
+    CGSize keyboardSize = [[[sender userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+
+    if (!_textColorPickerView) {
+        self.textColorPickerView  = [[ColorPickerView alloc] init];
+        
+        _textColorPickerView.delegate = self;
+        _textColorPickerView.layoutDelegate = self;
+        _textColorPickerView.scrollToPreselectedIndex = YES;
+        _textColorPickerView.tag = 120;
+        [self.view addSubview:_textColorPickerView];
+        
+    }
+    _textColorPickerView.frame = CGRectMake(0, keyboardSize.height, self.view.frame.size.width, 60);
 }
 - (void)keyBoardDidHide:(id)sender {
     
+    
+    
+    _textColorPickerView.frame = CGRectMake(0, self.view.frame.size.height - 70, self.view.frame.size.width, 60);
+
+    //Given size may not account for screen rotation
     //  NSLog(@"keyboard did hide");
     // [self.textLabel removeFromSuperview];
     self.textLabel.text = self.textField.text;
@@ -393,6 +406,8 @@
     self.textLabel.hidden = NO;
     [self.overlayView removeFromSuperview];
     self.textField.hidden = YES;
+    
+   
 }
 
 
@@ -421,6 +436,12 @@
     return YES;
 }
 
+
+- (void)textViewDidChange:(UITextView *)textView {
+    
+    textView.text = [textView.text stringByReplacingOccurrencesOfString:@"Text" withString:@""];
+    
+}
 
 
 
