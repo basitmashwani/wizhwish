@@ -9,7 +9,8 @@
 #import "AppDelegate.h"
 @import Fabric;
 @import Crashlytics;
-@import HockeySDK;
+@import AeroGearPush;
+
 //#import <Kickf>
 
 @interface AppDelegate ()
@@ -22,26 +23,23 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+        UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:
+                                                UIUserNotificationTypeAlert | UIUserNotificationTypeBadge |
+                                                UIUserNotificationTypeSound categories:nil];
+        [UIApplication.sharedApplication registerUserNotificationSettings:settings];
+       // [[UIApplication sharedApplication] registerForRemoteNotifications];
     
-    [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"bdbff04e48af43b5a0f2dbd010ab5f86"];
-    // Do some additional configuration if needed here
-    [[BITHockeyManager sharedHockeyManager] startManager];
-    [[BITHockeyManager sharedHockeyManager].authenticator authenticateInstallation]; // This line is obsolete in the crash only builds
         [Fabric with:@[[Crashlytics class]]];
-   // NSString *secret = @"bNT4?7:RJsJNrOEffRxFDQ:umBFl9@_B:X=1Mm!E_onDhDX1qqDaQDE:u@syWC;2mKtLu3q-GfN7JKm6R:Z1JXtMo2k3PaE3uFkcl-xcYotXDL_IXAcP1_i8xr0wdQ6i";
-
-  //  [Kickflip setupWithAPIKey:k_KICKFLIP_API_KEY secret:secret];
-  //  [Kickflip setMaxBitrate:2000*1000]; // 2 Mbps
+   
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:k_ACCESS_TOKEN];
+    [[NSUserDefaults standardUserDefaults] synchronize];
     if (accessToken) {
         
         WZHomeViewController *profileViewController = [[UIStoryboard getHomeStoryBoard] instantiateViewControllerWithIdentifier:K_SB_HOME_VIEW_CONTROLLER];
         [RUUtility setMainRootController:profileViewController];
     }
 
- //   [NSLog addLogger:[DDTTYLogger sharedInstance]];
-    
-
+ 
     return YES;
 }
 
@@ -67,4 +65,70 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo
+{
+    
+    UIApplicationState state = [application applicationState];
+    
+    
+    if (state == UIApplicationStateActive)
+    {
+        
+        NSLog(@"received a notification while active...");
+        
+    }
+    else if ( application.applicationState == UIApplicationStateInactive || application.applicationState == UIApplicationStateBackground  )
+    {
+        //opened from a push notification when the app was on background
+        NSLog(@"i received a notification...");
+       // NSLog(@"Message: %@",[[userInfo objectForKey:@"aps"] objectForKey:@"alert"]);
+       // NSLog(@"whole data: %@",userInfo);
+    }
+    
+}
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{   
+    DeviceRegistration *registration =
+        [[DeviceRegistration alloc] initWithServerURL:
+         [NSURL URLWithString:@"http://192.168.1.70:8080/ag-push/"]];
+    
+        [registration registerWithClientInfo:^(id clientInfo) {
+    
+            // apply the token, to identify this device
+            [clientInfo setDeviceToken:deviceToken];
+    
+            [clientInfo setVariantID:@"59264c58-87d7-40c5-be89-eda980763904"];
+            [clientInfo setVariantSecret:@"dc1eb020-c21e-48af-857d-a1f25b2fa69e"];
+    
+            // --optional config--
+            // set some 'useful' hardware information params
+            UIDevice *currentDevice = [UIDevice currentDevice];
+            [clientInfo setOperatingSystem:[currentDevice systemName]];
+            [clientInfo setOsVersion:[currentDevice systemVersion]];
+            [clientInfo setDeviceType: [currentDevice model]];
+    
+        } success:^() {
+            NSLog(@"UPS registration worked");
+    
+        } failure:^(NSError *error) {
+            NSLog(@"UPS registration Error: %@", error);
+        }];
+
+}
+- (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings{
+    NSLog(@"Registering device for push notifications..."); // iOS 8
+    [application registerForRemoteNotifications];
+}
+- (void)application:(UIApplication *)application handleActionWithIdentifier:(NSString *)identifier
+forRemoteNotification:(NSDictionary *)notification completionHandler:(void(^)())completionHandler
+{
+    NSLog(@"Received push notification: %@, identifier: %@", notification, identifier); // iOS 8 s
+    completionHandler();
+}
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
+{
+    // Respond to any push notification registration errors here.
+    NSLog(@"Failed to get token, error: %@", error);
+}
 @end

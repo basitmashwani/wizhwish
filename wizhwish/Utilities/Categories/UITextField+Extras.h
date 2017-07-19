@@ -12,4 +12,7 @@
 
 - (void)setTextFieldPlaceHolderColor:(UIColor*)color;
 
+- (void)setLeftImageView:(UIImage*)image;
+
+
 @end

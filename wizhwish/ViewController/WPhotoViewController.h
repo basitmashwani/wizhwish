@@ -7,10 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PhotoTweaksViewController.h"
 
-
-
-@interface WPhotoViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource,ACEDrawingViewDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,WPhotoEditViewControllerDelegate>
+@interface WPhotoViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource,ACEDrawingViewDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,WPhotoEditViewControllerDelegate,PhotoTweaksViewControllerDelegate>
 
 @property(nonatomic ,retain) IBOutlet UIView *cameraView;
 
@@ -58,6 +57,8 @@
 
 @property(nonatomic ,retain) IBOutlet UIButton *addButton;
 
+@property(nonatomic ,retain) IBOutlet UIButton *cropButton;
+
 
 
 
@@ -74,6 +75,8 @@
 - (IBAction)erasePressed:(id)sender;
 
 - (IBAction)capturePressed:(id)sender;
+
+- (IBAction)cropPressed:(id)sender;
 
 - (IBAction)flashPressed:(id)sender;
 

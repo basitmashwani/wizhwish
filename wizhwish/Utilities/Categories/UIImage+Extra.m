@@ -318,6 +318,7 @@
 
 + (UIImage *)resizeImage:(UIImage *)image toResolution:(int)resolution
 {
+    image = [image fixOrientation];
     NSData *imageData = UIImagePNGRepresentation(image);
     CGImageSourceRef src = CGImageSourceCreateWithData((__bridge    CFDataRef)imageData, NULL);
     CFDictionaryRef options = (__bridge CFDictionaryRef) @{

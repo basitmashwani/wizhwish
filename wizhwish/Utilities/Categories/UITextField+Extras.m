@@ -21,7 +21,20 @@
     
     [self setValue:[UIColor colorWithRed:red green:green blue:blue alpha:alpha] forKeyPath:@"_placeholderLabel.textColor"];
     
+
+}
+
+- (void)setLeftImageView:(UIImage*)image {
     
+    
+    UIImageView *leftView = [[UIImageView alloc] initWithFrame:CGRectMake(8, 0, 20, 20)];
+    leftView.image =  image;//[UIImage imageNamed:@"Image_Whiz_Website"];
+    leftView.contentMode = UIViewContentModeScaleAspectFit;
+    UIView *imageView = [[UIView alloc]initWithFrame:CGRectMake(8, 0, 20, 20)];
+    [imageView addSubview:leftView];
+    [self.leftView setFrame:leftView.frame];
+    self.leftView = leftView;
+    self.leftViewMode = UITextFieldViewModeAlways;
 
 }
 @end

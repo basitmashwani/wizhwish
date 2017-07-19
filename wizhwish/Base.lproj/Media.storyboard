@@ -14,6 +14,9 @@
         <array key="PHAGSPA.TTF">
             <string>MicrosoftPhagsPa</string>
         </array>
+        <array key="PHAGSPAB.TTF">
+            <string>MicrosoftPhagsPa-Bold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Photo View Controller-->
@@ -41,7 +44,7 @@
                                 </connections>
                             </textField>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCX-XL-eZT">
-                                <rect key="frame" x="160.5" y="319.5" width="54" height="29.5"/>
+                                <rect key="frame" x="161" y="319" width="54" height="29.5"/>
                                 <fontDescription key="fontDescription" name="MicrosoftPhagsPa" family="Microsoft PhagsPa" pointSize="23"/>
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -250,6 +253,19 @@
                                                     <action selector="textPressed:" destination="LTe-W8-sEP" eventType="touchUpInside" id="RJT-Gp-LQY"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGr-eZ-0zq">
+                                                <rect key="frame" x="97" y="10" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="MfG-37-ouM"/>
+                                                    <constraint firstAttribute="height" constant="30" id="wOK-wU-c17"/>
+                                                </constraints>
+                                                <state key="normal" image="Image_Crop_Disable"/>
+                                                <state key="selected" image="Image_Crop"/>
+                                                <connections>
+                                                    <action selector="cropPressed:" destination="LTe-W8-sEP" eventType="touchUpInside" id="3DC-Tz-6PW"/>
+                                                    <action selector="filterPressed:" destination="LTe-W8-sEP" eventType="touchUpInside" id="dij-hT-16z"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.13223031163215637" green="0.60789060592651367" blue="0.60785818099975586" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -259,8 +275,10 @@
                                             <constraint firstItem="0cX-dW-pCX" firstAttribute="top" secondItem="dbj-Ko-E97" secondAttribute="top" id="TW7-Gh-wm8"/>
                                             <constraint firstItem="dbj-Ko-E97" firstAttribute="centerX" secondItem="6V9-GM-0QA" secondAttribute="centerX" multiplier="0.6" id="TqD-7k-4TE"/>
                                             <constraint firstItem="V35-GS-cn0" firstAttribute="leading" secondItem="veU-WS-Rqp" secondAttribute="trailing" constant="20" id="cRk-uc-daQ"/>
+                                            <constraint firstItem="vGr-eZ-0zq" firstAttribute="top" secondItem="0cX-dW-pCX" secondAttribute="top" id="gSm-1H-xda"/>
                                             <constraint firstAttribute="bottom" secondItem="dbj-Ko-E97" secondAttribute="bottom" constant="10" id="jZJ-oL-z0E"/>
                                             <constraint firstItem="veU-WS-Rqp" firstAttribute="leading" secondItem="0cX-dW-pCX" secondAttribute="trailing" constant="20" id="q3F-f1-Gus"/>
+                                            <constraint firstItem="0cX-dW-pCX" firstAttribute="leading" secondItem="vGr-eZ-0zq" secondAttribute="trailing" constant="20" id="w06-yt-tOb"/>
                                             <constraint firstItem="0cX-dW-pCX" firstAttribute="leading" secondItem="dbj-Ko-E97" secondAttribute="trailing" constant="20" id="y4U-qA-BIN"/>
                                         </constraints>
                                     </view>
@@ -355,6 +373,7 @@
                         <outlet property="buttonFlash" destination="hQ8-yM-95S" id="Thf-x3-Df0"/>
                         <outlet property="cameraView" destination="2P5-QN-d3m" id="mgZ-nn-xKV"/>
                         <outlet property="collectionView" destination="pNd-kv-xc3" id="eej-w6-D83"/>
+                        <outlet property="cropButton" destination="vGr-eZ-0zq" id="DgV-MP-ADg"/>
                         <outlet property="fifthImage" destination="aPr-gi-mHs" id="Z7Q-P4-fna"/>
                         <outlet property="filterPencil" destination="0cX-dW-pCX" id="hNN-jf-4Cx"/>
                         <outlet property="firstImage" destination="YhC-C4-sI4" id="ljQ-1D-Q05"/>
@@ -521,13 +540,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter Text" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="c6k-0Y-Ard">
-                                <rect key="frame" x="10" y="167" width="355" height="200"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="Enter Text" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="c6k-0Y-Ard">
+                                <rect key="frame" x="50" y="183.5" width="275" height="200"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="hcU-8j-r6e"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="MicrosoftPhagsPa" family="Microsoft PhagsPa" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="MicrosoftPhagsPa-Bold" family="Microsoft PhagsPa" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="continue"/>
                                 <connections>
                                     <outlet property="delegate" destination="DBz-1d-BPY" id="4Pd-QV-1sg"/>
@@ -536,9 +555,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="c6k-0Y-Ard" firstAttribute="centerY" secondItem="i5U-77-ftf" secondAttribute="centerY" multiplier="0.8" id="3FN-YF-Mge"/>
-                            <constraint firstItem="c6k-0Y-Ard" firstAttribute="leading" secondItem="i5U-77-ftf" secondAttribute="leading" constant="10" id="mWY-Gx-FRE"/>
-                            <constraint firstAttribute="trailing" secondItem="c6k-0Y-Ard" secondAttribute="trailing" constant="10" id="vkI-6w-z06"/>
+                            <constraint firstItem="c6k-0Y-Ard" firstAttribute="centerY" secondItem="i5U-77-ftf" secondAttribute="centerY" multiplier="0.85" id="3FN-YF-Mge"/>
+                            <constraint firstItem="c6k-0Y-Ard" firstAttribute="leading" secondItem="i5U-77-ftf" secondAttribute="leading" constant="50" id="mWY-Gx-FRE"/>
+                            <constraint firstAttribute="trailing" secondItem="c6k-0Y-Ard" secondAttribute="trailing" constant="50" id="vkI-6w-z06"/>
                         </constraints>
                     </view>
                     <connections>
@@ -604,8 +623,8 @@
                                     <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LVE-gG-zUY">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRB-fy-p89">
-                                                <rect key="frame" x="173.5" y="10.5" width="29.5" height="20.5"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aRB-fy-p89">
+                                                <rect key="frame" x="188.5" y="20.5" width="0.0" height="0.0"/>
                                                 <fontDescription key="fontDescription" name="MicrosoftPhagsPa" family="Microsoft PhagsPa" pointSize="16"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
@@ -969,6 +988,8 @@
         <image name="Image_Add_Button" width="26" height="26"/>
         <image name="Image_Add_Pic" width="73" height="77"/>
         <image name="Image_Add_Video" width="96" height="96"/>
+        <image name="Image_Crop" width="26" height="26"/>
+        <image name="Image_Crop_Disable" width="26" height="26"/>
         <image name="Image_Filter" width="26" height="26"/>
         <image name="Image_Filter_Disable" width="26" height="26"/>
         <image name="Image_Flash_Off" width="26" height="26"/>

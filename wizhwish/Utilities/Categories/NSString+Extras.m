@@ -201,7 +201,37 @@
     return [[NSAttributedString alloc]initWithString:@""];
 }
 
-+(BOOL)isStringNull:(NSString*)string {
+- (NSInteger)getOccuranceCountOfSubString:(NSString*)subString {
+    
+    NSUInteger count = 0, length = [self length];
+    NSRange range = NSMakeRange(0, length);
+    while(range.location != NSNotFound)
+    {
+        range = [self rangeOfString: subString options:0 range:range];
+        if(range.location != NSNotFound)
+        {
+            range = NSMakeRange(range.location + range.length, length - (range.location + range.length));
+            count++; 
+        }
+    }
+    return count;
+}
+
+- (NSString*)stringByRemovingBlankLines
+{
+    NSScanner *scan = [NSScanner scannerWithString:self];
+    NSMutableString *string = NSMutableString.new;
+    while (!scan.isAtEnd) {
+        [scan scanCharactersFromSet:NSCharacterSet.newlineCharacterSet intoString:NULL];
+        NSString *line = nil;
+        [scan scanUpToCharactersFromSet:NSCharacterSet.newlineCharacterSet intoString:&line];
+        if (line) [string appendFormat:@"%@\n",line];
+    }
+    if (string.length) [string deleteCharactersInRange:(NSRange){string.length-1,1}]; // drop last '\n'
+    return string;
+}
+
++ (BOOL)isStringNull:(NSString*)string {
     
     if (![string isEqual:[NSNull null]]) {
         

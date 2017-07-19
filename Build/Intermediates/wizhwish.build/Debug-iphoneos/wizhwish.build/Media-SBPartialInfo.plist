@@ -5,6 +5,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>PHAGSPA.TTF</string>
+		<string>PHAGSPAB.TTF</string>
 	</array>
 </dict>
 </plist>

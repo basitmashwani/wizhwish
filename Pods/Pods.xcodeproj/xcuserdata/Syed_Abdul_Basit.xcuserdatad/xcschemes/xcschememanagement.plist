@@ -19,12 +19,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ASPVideoPlayer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>AWSCore.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>AWSS3.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>AeroGear-Push-Swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>CTPersistance.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -39,7 +54,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>HockeySDK-HockeySDKResources.xcscheme</key>
+		<key>HandyFrame.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -64,7 +79,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>PBJVideoPlayer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>PBJVision.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>PhotoTweaks.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -107,7 +132,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>23A023F25C712D8E8E534A6AE0FA6631</key>
+		<key>2439F70ED6449B4B693B20D7514F0E11</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>2E6DD95C6B466F60269D661133C7A6A9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -142,12 +172,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>546401F8A315518091BF2776FAEE3D04</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>5ACFCBB5C36270A9DF9A2D2D11708867</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>77067B4D2FE0093332E2CB7080D7484E</key>
+		<key>632FF4EF5D3DEB1D7492FB266032423D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>64E5A23A2B478B1D2EF6AFF4080218C4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -167,7 +207,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EB9AD825427F216B54E693242E671FA1</key>
+		<key>C499B22461C3CB46F7829D76B3C824D2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C9A2300ABC60108596099F143C036A6B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D69CAEAB092EB3F005A0B1AF4B0001A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

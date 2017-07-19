@@ -79,17 +79,37 @@ get UIBarButton Instance
 
 + (UIImagePickerController*)getImagePickerFor:(KMediaType)mediaType;
 
+/**
+ Write file to Directory
+ @param fileName :NSString Instance file name
+ @param directoryName :NSString Instance name of directory
+ @parm data :NSData of file
+ */
++ (NSString*)getFileURLPathforFileName:(NSString*)fileName directoryName:(NSString*)directoryName withData:(NSData*)data;
 
-+ (NSString*)getFileURLPathforFileName:(NSString*)fileName withData:(NSData*)data;
+
+/**
+ Remove Directory
+ @param folderName :NSString of directory name
+ */
++ (void)removeBaseDirectory:(NSString*)directoryName;
 
 
-+ (void)removeBaseDirectory;
-
-
+/**
+Add text ovelay to video
+ @param url :NSSURL Instance url of video
+ @param text :NSString Instance text write to video
+ @param labelPoint:CGPoint position of text Label
+ @param success:success block
+ */
 + (void)addTextToVideoWithVideoURL:(NSURL*)url withText:(NSString*)text labelPoint:(CGPoint)labelPoint label:(UILabel*)textLabel success:(void(^)(void))success;
 
 
 
 + (void)addImageToVideoWithVideoURL:(NSURL*)url withImage:(UIImage*)image success:(void(^)(void))success;
+
++ (void)generateVideoThumbnail:(NSURL*)url success:(void(^)(UIImage *image))success;
+
+
 
 @end

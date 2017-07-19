@@ -996,25 +996,8 @@ dependencies: \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Cells/WZFriendCollectionViewCell.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Cells/WZPostTableViewCell.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/KIImagePager/KIImagePager.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Cells/WZPostTopTableViewCell.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZMyProfileViewController.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZHomeViewController.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/NJKScrollFullScreen/NJKScrollFullScreen.framework/Modules/module.modulemap \
-  /Users/Syed_Abdul_Basit/Library/Developer/Xcode/DerivedData/ModuleCache/5FE9AJ0FNULI/NJKScrollFullScreen-26D14NFOWLFP5.pcm \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/NJKScrollFullScreen/NJKScrollFullScreen.framework/Headers/UIViewController+NJKFullScreenSupport.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/NJKScrollFullScreen/NJKScrollFullScreen.framework/Headers/NJKScrollFullScreen.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/NJKScrollFullScreen/NJKScrollFullScreen.framework/Headers/NJKScrollFullScreen-umbrella.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/Categories/UIStoryboard+Extras.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZFollowerViewController.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Custom\ Search/JKSearchBar/JKSearchBar.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Cells/WZProfileTableViewCell.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/Categories/UITextField+Extras.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/HMSegmentedControl/HMSegmentedControl.framework/Modules/module.modulemap \
-  /Users/Syed_Abdul_Basit/Library/Developer/Xcode/DerivedData/ModuleCache/5FE9AJ0FNULI/HMSegmentedControl-U39C9XQTQG9U.pcm \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/HMSegmentedControl/HMSegmentedControl.framework/Headers/HMSegmentedControl.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/HMSegmentedControl/HMSegmentedControl.framework/Headers/HMSegmentedControl-umbrella.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZMyWishesViewController.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Cells/WZMyWishesTableViewCell.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCVideoPlayerView.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCPlayer.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVFoundation.framework/Modules/module.modulemap \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreMedia.framework/Modules/module.modulemap \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreAudio.framework/Modules/module.modulemap \
@@ -1179,56 +1162,6 @@ dependencies: \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVTimedMetadataGroup.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVUtilities.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AVFoundation.framework/Headers/AVVideoSettings.h \
-  /Users/Syed_Abdul_Basit/Library/Developer/Xcode/DerivedData/ModuleCache/5FE9AJ0FNULI/AssetsLibrary-1YQ59ILDR3NYI.pcm \
-  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AssetsLibrary.framework/Headers/AssetsLibrary.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AssetsLibrary.framework/Headers/ALAsset.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AssetsLibrary.framework/Headers/ALAssetsLibrary.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AssetsLibrary.framework/Headers/ALAssetsFilter.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AssetsLibrary.framework/Headers/ALAssetsGroup.h \
-  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AssetsLibrary.framework/Headers/ALAssetRepresentation.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZPostsViewController.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZChatViewController.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/Segue/WZEmptySegue.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZChatListViewController.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZNewFriendViewController.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/Custom\ Views/WPostView.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WVideoRecordViewController.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVision/PBJVision.framework/Modules/module.modulemap \
-  /Users/Syed_Abdul_Basit/Library/Developer/Xcode/DerivedData/ModuleCache/5FE9AJ0FNULI/PBJVision-3LE8RSIMO6BF0.pcm \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVision/PBJVision.framework/Headers/PBJVisionUtilities.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVision/PBJVision.framework/Headers/PBJVision.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVision/PBJVision.framework/Headers/PBJMediaWriter.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVision/PBJVision.framework/Headers/PBJGLProgram.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVision/PBJVision.framework/Headers/PBJVision-umbrella.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/Custom\ Views/SCustomProgressView.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/WSetting.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/MBProgressHUD/MBProgressHUD.framework/Modules/module.modulemap \
-  /Users/Syed_Abdul_Basit/Library/Developer/Xcode/DerivedData/ModuleCache/5FE9AJ0FNULI/MBProgressHUD-1M3ICPU5HF0S4.pcm \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/MBProgressHUD/MBProgressHUD.framework/Headers/MBProgressHUD.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/MBProgressHUD/MBProgressHUD.framework/Headers/MBProgressHUD-umbrella.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ACEDrawingView/ACEDrawingView.framework/Modules/module.modulemap \
-  /Users/Syed_Abdul_Basit/Library/Developer/Xcode/DerivedData/ModuleCache/5FE9AJ0FNULI/ACEDrawingView-3C6L5G2N5Q3AY.pcm \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ACEDrawingView/ACEDrawingView.framework/Headers/ACEDrawingView.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ACEDrawingView/ACEDrawingView.framework/Headers/ACEDrawingToolState.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ACEDrawingView/ACEDrawingView.framework/Headers/ACEDrawingTools.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ACEDrawingView/ACEDrawingView.framework/Headers/ACEDrawingLabelView.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ACEDrawingView/ACEDrawingView.framework/Headers/ACEDrawingView-umbrella.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Modules/module.modulemap \
-  /Users/Syed_Abdul_Basit/Library/Developer/Xcode/DerivedData/ModuleCache/5FE9AJ0FNULI/Color_Picker_for_iOS-1X450HVSHLZAS.pcm \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Headers/UIImage+CoreGraphics.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Headers/HRColorPickerView.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Headers/HRColorMapView.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Headers/HRColorInfoView.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Headers/HRHSVColorUtil.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Headers/HRColorCursor.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Headers/HRBrightnessSlider.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Headers/HRBrightnessCursor.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Headers/Color-Picker-for-iOS-umbrella.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WPhotoEditViewController.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCFilter.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCFilterAnimation.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCSwipeableFilterView.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCPlayer.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCImageView.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/GLKit.framework/module.map \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/ModelIO.framework/Modules/module.modulemap \
@@ -1293,9 +1226,78 @@ dependencies: \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/GLKit.framework/Headers/GLKReflectionMapEffect.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/GLKit.framework/Headers/GLKSkyboxEffect.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/GLKit.framework/Headers/GLKTextureLoader.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCFilter.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCFilterAnimation.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCContext.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Cells/WZPostTopTableViewCell.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZMyProfileViewController.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZHomeViewController.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/NJKScrollFullScreen/NJKScrollFullScreen.framework/Modules/module.modulemap \
+  /Users/Syed_Abdul_Basit/Library/Developer/Xcode/DerivedData/ModuleCache/5FE9AJ0FNULI/NJKScrollFullScreen-26D14NFOWLFP5.pcm \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/NJKScrollFullScreen/NJKScrollFullScreen.framework/Headers/UIViewController+NJKFullScreenSupport.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/NJKScrollFullScreen/NJKScrollFullScreen.framework/Headers/NJKScrollFullScreen.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/NJKScrollFullScreen/NJKScrollFullScreen.framework/Headers/NJKScrollFullScreen-umbrella.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/Categories/UIStoryboard+Extras.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZFollowerViewController.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Custom\ Search/JKSearchBar/JKSearchBar.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Cells/WZProfileTableViewCell.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/Categories/UITextField+Extras.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/HMSegmentedControl/HMSegmentedControl.framework/Modules/module.modulemap \
+  /Users/Syed_Abdul_Basit/Library/Developer/Xcode/DerivedData/ModuleCache/5FE9AJ0FNULI/HMSegmentedControl-U39C9XQTQG9U.pcm \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/HMSegmentedControl/HMSegmentedControl.framework/Headers/HMSegmentedControl.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/HMSegmentedControl/HMSegmentedControl.framework/Headers/HMSegmentedControl-umbrella.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZMyWishesViewController.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Cells/WZMyWishesTableViewCell.h \
+  /Users/Syed_Abdul_Basit/Library/Developer/Xcode/DerivedData/ModuleCache/5FE9AJ0FNULI/AssetsLibrary-1YQ59ILDR3NYI.pcm \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AssetsLibrary.framework/Headers/AssetsLibrary.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AssetsLibrary.framework/Headers/ALAsset.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AssetsLibrary.framework/Headers/ALAssetsLibrary.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AssetsLibrary.framework/Headers/ALAssetsFilter.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AssetsLibrary.framework/Headers/ALAssetsGroup.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AssetsLibrary.framework/Headers/ALAssetRepresentation.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZPostsViewController.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZChatViewController.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/Segue/WZEmptySegue.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZChatListViewController.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZNewFriendViewController.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/Custom\ Views/WPostView.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WVideoRecordViewController.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVision/PBJVision.framework/Modules/module.modulemap \
+  /Users/Syed_Abdul_Basit/Library/Developer/Xcode/DerivedData/ModuleCache/5FE9AJ0FNULI/PBJVision-3LE8RSIMO6BF0.pcm \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVision/PBJVision.framework/Headers/PBJVisionUtilities.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVision/PBJVision.framework/Headers/PBJVision.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVision/PBJVision.framework/Headers/PBJMediaWriter.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVision/PBJVision.framework/Headers/PBJGLProgram.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVision/PBJVision.framework/Headers/PBJVision-umbrella.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/Custom\ Views/SCustomProgressView.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/WSetting.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/MBProgressHUD/MBProgressHUD.framework/Modules/module.modulemap \
+  /Users/Syed_Abdul_Basit/Library/Developer/Xcode/DerivedData/ModuleCache/5FE9AJ0FNULI/MBProgressHUD-1M3ICPU5HF0S4.pcm \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/MBProgressHUD/MBProgressHUD.framework/Headers/MBProgressHUD.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/MBProgressHUD/MBProgressHUD.framework/Headers/MBProgressHUD-umbrella.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ACEDrawingView/ACEDrawingView.framework/Modules/module.modulemap \
+  /Users/Syed_Abdul_Basit/Library/Developer/Xcode/DerivedData/ModuleCache/5FE9AJ0FNULI/ACEDrawingView-3C6L5G2N5Q3AY.pcm \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ACEDrawingView/ACEDrawingView.framework/Headers/ACEDrawingView.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ACEDrawingView/ACEDrawingView.framework/Headers/ACEDrawingToolState.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ACEDrawingView/ACEDrawingView.framework/Headers/ACEDrawingTools.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ACEDrawingView/ACEDrawingView.framework/Headers/ACEDrawingLabelView.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ACEDrawingView/ACEDrawingView.framework/Headers/ACEDrawingView-umbrella.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Modules/module.modulemap \
+  /Users/Syed_Abdul_Basit/Library/Developer/Xcode/DerivedData/ModuleCache/5FE9AJ0FNULI/Color_Picker_for_iOS-1X450HVSHLZAS.pcm \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Headers/UIImage+CoreGraphics.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Headers/HRColorPickerView.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Headers/HRColorMapView.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Headers/HRColorInfoView.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Headers/HRHSVColorUtil.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Headers/HRColorCursor.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Headers/HRBrightnessSlider.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Headers/HRBrightnessCursor.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Headers/Color-Picker-for-iOS-umbrella.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WPhotoEditViewController.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCSwipeableFilterView.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCFilterImageView.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WPhotoViewController.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/PhotoTweaks/PhotoTweaksViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WRecordAudioViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WTextViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WWizhViewController.h \

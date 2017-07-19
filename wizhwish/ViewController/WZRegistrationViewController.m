@@ -153,6 +153,7 @@
                 WProfileViewController *profileViewController = [[UIStoryboard getProfileStoryBoard] instantiateViewControllerWithIdentifier:@"K_SB_PROFILE_VC"];
                 
                 profileViewController.isFromRegistration = YES;
+                profileViewController.profileImg = [UIImage imageNamed:@"Image_Profile-1"];
                 
                 profileViewController.stringFullName = self.textFieldUserName.text;
                 

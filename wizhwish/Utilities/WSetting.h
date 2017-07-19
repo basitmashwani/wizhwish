@@ -18,11 +18,35 @@
 
 @property(nonatomic ,retain) NSString *firstOutputUrl;
 
+@property(nonatomic ,retain) NSString *firstVideoFileName;
+
+@property(nonatomic ,retain) NSString *secondVideoFileName;
+
+@property(nonatomic ,retain) NSString *secondOutputUrl;
+
 @property(nonatomic ,retain) NSString *postText;
 
 @property(nonatomic ,retain) NSMutableArray *imageArray;
 
-@property(nonatomic ,assign) NSString *uploadedCount;
+
+@property(nonatomic ,retain) UIImage *audioImage;
+
+@property(nonatomic ,retain) NSURL *audioURL;
+
+
+@property(nonatomic ,retain) NSString *isFirstVideoUploaded;
+
+@property(nonatomic ,retain) NSString *isSecondVideoUploaded;
+
+@property(nonatomic ,retain) NSString *isAudioImageUploaded;
+
+
+@property(nonatomic ,retain) NSString *audioImageURL;
+
+@property(nonatomic ,retain) NSString *postType;
+
+@property(nonatomic ,retain) NSString *uploadedCompleted;
+
 
 
 

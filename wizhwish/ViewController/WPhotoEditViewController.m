@@ -67,7 +67,7 @@
     
     self.count = 15;
     
-    CGRect rect = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height - 80);
+    CGRect rect = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height - 30);
     
     self.view.tag = 100;
     
@@ -85,7 +85,7 @@
     
     if(self.isDrawing) {
         
-        CGRect rect = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y +100, self.view.frame.size.width, self.view.frame.size.height - 180);
+        CGRect rect = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y +30, self.view.frame.size.width, self.view.frame.size.height - 30);
         
         
         _drawingView = [[ACEDrawingView alloc] initWithFrame:rect];
@@ -113,7 +113,7 @@
         [self.undoButton setHidden:YES];
         [self.undoButton addTarget:self action:@selector(undoPressed) forControlEvents:UIControlEventTouchDown];
         
-        self.colorPickerView = [[ColorPickerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height -80, self.view.frame.size.width, 80)];
+        self.colorPickerView = [[ColorPickerView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height -30, self.view.frame.size.width, 30)];
         self.colorPickerView.delegate = self;
         
         [self.view addSubview:self.colorPickerView];
@@ -389,13 +389,14 @@
         [self.view addSubview:_textColorPickerView];
         
     }
-    _textColorPickerView.frame = CGRectMake(0, keyboardSize.height, self.view.frame.size.width, 60);
+    _textColorPickerView.frame = CGRectMake(0, keyboardSize.height+30, self.view.frame.size.width, 30);
 }
 - (void)keyBoardDidHide:(id)sender {
     
     
-    
-    _textColorPickerView.frame = CGRectMake(0, self.view.frame.size.height - 70, self.view.frame.size.width, 60);
+    [_textColorPickerView removeFromSuperview];
+    _textColorPickerView = nil;
+    //_textColorPickerView.frame = CGRectMake(0, self.view.frame.size.height - 70, self.view.frame.size.width, 60);
 
     //Given size may not account for screen rotation
     //  NSLog(@"keyboard did hide");

@@ -19,6 +19,8 @@
 
 @property(nonatomic ,retain) IBOutlet UIButton *buttonPeople;
 
+@property(nonatomic ,retain) IBOutlet UIImageView *checked;
+
 
 
 

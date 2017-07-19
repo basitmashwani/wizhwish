@@ -1296,6 +1296,7 @@ dependencies: \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCContext.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCFilterImageView.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WPhotoViewController.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/PhotoTweaks/PhotoTweaksViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WRecordAudioViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WTextViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WWizhViewController.h \

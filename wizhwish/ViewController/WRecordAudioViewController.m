@@ -48,7 +48,7 @@
         WWizhViewController *controller =  [[UIStoryboard getWhizStoryBoard] instantiateViewControllerWithIdentifier:K_SB_WIZH_VIEW_CONTROLLER];
         
         controller.showWhiz = NO;
-        
+        [[WSetting getSharedSetting] setAudioImage:self.mainImageView.image];
         [self.navigationController pushViewController:controller animated:YES];
     }
   
@@ -63,6 +63,8 @@
     self.bottomView.hidden = NO;
     self.mainView.hidden = YES;
     self.isNextPressed = YES;
+        
+        self.navigationItem.rightBarButtonItem = [RUUtility getBarButtonWithTitle:@"Share" forViewController:self selector:@selector(nextPressed)];
   //  self.bottomViewHeight.constant = 50;
     }
     
@@ -208,6 +210,8 @@ default:
                                @"MyAudioMemo.m4a",
                                nil];
     NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
+    
+    [[WSetting getSharedSetting] setAudioURL:outputFileURL];
     
     // Setup audio session
     AVAudioSession *session = [AVAudioSession sharedInstance];

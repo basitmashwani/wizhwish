@@ -2,6 +2,9 @@ dependencies: \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/IGColorPicker/IGColorPicker.framework/Modules/module.modulemap \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/IGColorPicker/IGColorPicker.framework/Headers/IGColorPicker-Swift.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/IGColorPicker/IGColorPicker.framework/Headers/IGColorPicker-umbrella.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ASPVideoPlayer/ASPVideoPlayer.framework/Modules/module.modulemap \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ASPVideoPlayer/ASPVideoPlayer.framework/Headers/ASPVideoPlayer-Swift.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ASPVideoPlayer/ASPVideoPlayer.framework/Headers/ASPVideoPlayer-umbrella.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/NJKScrollFullScreen/NJKScrollFullScreen.framework/Modules/module.modulemap \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/NJKScrollFullScreen/NJKScrollFullScreen.framework/Headers/UIViewController+NJKFullScreenSupport.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/NJKScrollFullScreen/NJKScrollFullScreen.framework/Headers/NJKScrollFullScreen.h \
@@ -106,9 +109,6 @@ dependencies: \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/AWSS3/AWSS3.framework/Headers/AWSS3Model.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/AWSS3/AWSS3.framework/Headers/AWSS3Service.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/AWSS3/AWSS3.framework/Headers/AWSS3.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/RUReachability/RUNavigationActivityView.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/RUReachability/RUOverlayView.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/RUReachability/RUReachabilityManager.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/Categories/NSDate+Extras.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/OLGhostAlertView/OLGhostAlertView.framework/Headers/OLGhostAlertView.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/Categories/OLGhostAlertView+Extras.h \
@@ -124,14 +124,10 @@ dependencies: \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WWizhViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WTextViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WRecordAudioViewController.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/PhotoTweaks/PhotoTweaksViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WPhotoViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCFilterImageView.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCContext.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCImageView.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCPlayer.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCSwipeableFilterView.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCFilterAnimation.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCFilter.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WPhotoEditViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/WSetting.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/Custom\ Views/SCustomProgressView.h \
@@ -152,6 +148,18 @@ dependencies: \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZHomeViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZMyProfileViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Cells/WZPostTopTableViewCell.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/AWEasyVideoPlayer/AWEasyVideoPlayer.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ZOWVideoPlayer/ZOWVideoPlayer/Model/Protocol/ZOWVideoPlayerProtocol.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ZOWVideoPlayer/ZOWVideoPlayer/Model/ZOWVideoPlayer.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ZOWVideoPlayer/ZOWVideoPlayer/View/ZOWVideoView.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ZOWVideoPlayer/ZOWVideoPlayer/View/Custom/InstagramVideoView/InstagramVideoView.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/YMCAudioPlayer.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCContext.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCFilterAnimation.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCFilter.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCImageView.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCPlayer.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCVideoPlayerView.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/KIImagePager/KIImagePager.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Cells/WZPostTableViewCell.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Cells/WZFriendCollectionViewCell.h \
@@ -181,25 +189,6 @@ dependencies: \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSLogging.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/CLSAttributes.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/Crashlytics/iOS/Crashlytics.framework/Headers/Crashlytics.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Modules/module.modulemap \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/BITMetricsManager.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/BITStoreUpdateManagerDelegate.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/BITStoreUpdateManager.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/BITHockeyBaseViewController.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/BITUpdateViewController.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/BITUpdateManager.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/BITCrashMetaData.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/BITCrashDetails.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/BITCrashAttachment.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/BITCrashManager.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/BITHockeyAttachment.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/BITHockeyBaseManager.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/BITAuthenticator.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/BITUpdateManagerDelegate.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/BITCrashManagerDelegate.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/BITHockeyManagerDelegate.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/BITHockeyManager.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/HockeySDKNullability.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/HockeySDKEnums.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/HockeySDKFeatureConfig.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HockeySDK/HockeySDK-iOS/HockeySDK.embeddedframework/HockeySDK.framework/Headers/HockeySDK.h
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/AeroGear-Push-Swift/AeroGearPush.framework/Modules/module.modulemap \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/AeroGear-Push-Swift/AeroGearPush.framework/Headers/AeroGearPush-Swift.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/AeroGear-Push-Swift/AeroGearPush.framework/Headers/AeroGear-Push-Swift-umbrella.h

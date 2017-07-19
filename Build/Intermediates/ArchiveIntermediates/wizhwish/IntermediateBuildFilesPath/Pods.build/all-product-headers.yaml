@@ -178,6 +178,33 @@
     },
     {
       'type': 'directory',
+      'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/ArchiveIntermediates/wizhwish/BuildProductsPath/Release-iphoneos/ASPVideoPlayer/ASPVideoPlayer.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "ASPVideoPlayer-Swift.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/ArchiveIntermediates/wizhwish/BuildProductsPath/Release-iphoneos/ASPVideoPlayer/ASPVideoPlayer.framework/Headers/ASPVideoPlayer-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "ASPVideoPlayer-umbrella.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/Target Support Files/ASPVideoPlayer/ASPVideoPlayer-umbrella.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/ArchiveIntermediates/wizhwish/BuildProductsPath/Release-iphoneos/ASPVideoPlayer/ASPVideoPlayer.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/ArchiveIntermediates/wizhwish/IntermediateBuildFilesPath/Pods.build/Release-iphoneos/ASPVideoPlayer.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
       'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/ArchiveIntermediates/wizhwish/BuildProductsPath/Release-iphoneos/AWSCore/AWSCore.framework/Headers",
       'contents': [
         {
@@ -747,6 +774,33 @@
     },
     {
       'type': 'directory',
+      'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/ArchiveIntermediates/wizhwish/BuildProductsPath/Release-iphoneos/IGColorPicker/IGColorPicker.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "IGColorPicker-Swift.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/ArchiveIntermediates/wizhwish/BuildProductsPath/Release-iphoneos/IGColorPicker/IGColorPicker.framework/Headers/IGColorPicker-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "IGColorPicker-umbrella.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/Target Support Files/IGColorPicker/IGColorPicker-umbrella.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/ArchiveIntermediates/wizhwish/BuildProductsPath/Release-iphoneos/IGColorPicker/IGColorPicker.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/ArchiveIntermediates/wizhwish/IntermediateBuildFilesPath/Pods.build/Release-iphoneos/IGColorPicker.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
       'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/ArchiveIntermediates/wizhwish/BuildProductsPath/Release-iphoneos/MBProgressHUD/MBProgressHUD.framework/Headers",
       'contents': [
         {
@@ -890,6 +944,48 @@
           'type': 'file',
           'name': "module.modulemap",
           'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/ArchiveIntermediates/wizhwish/IntermediateBuildFilesPath/Pods.build/Release-iphoneos/PBJVision.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/ArchiveIntermediates/wizhwish/BuildProductsPath/Release-iphoneos/PhotoTweaks/PhotoTweaks.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "PhotoTweakView.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/PhotoTweaks/PhotoTweaks/PhotoTweaks/PhotoTweakView.h"
+        },
+        {
+          'type': 'file',
+          'name': "PhotoTweaks-Swift.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/ArchiveIntermediates/wizhwish/BuildProductsPath/Release-iphoneos/PhotoTweaks/PhotoTweaks.framework/Headers/PhotoTweaks-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "PhotoTweaks-umbrella.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/Target Support Files/PhotoTweaks/PhotoTweaks-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "PhotoTweaksViewController.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/PhotoTweaks/PhotoTweaks/PhotoTweaks/PhotoTweaksViewController.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIColor+Tweak.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/PhotoTweaks/PhotoTweaks/PhotoTweaks/UIColor+Tweak.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/ArchiveIntermediates/wizhwish/BuildProductsPath/Release-iphoneos/PhotoTweaks/PhotoTweaks.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/ArchiveIntermediates/wizhwish/IntermediateBuildFilesPath/Pods.build/Release-iphoneos/PhotoTweaks.build/module.modulemap"
         }
       ]
     },

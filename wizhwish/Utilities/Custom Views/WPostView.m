@@ -42,6 +42,8 @@
 
 - (IBAction)textPressed:(id)sender {
     
+    [WSetting distroySetting];
+    [[WSetting getSharedSetting] setPostType:@"TEXT"];
     WTextViewController *controller = [[UIStoryboard getMediaStoryBoard] instantiateViewControllerWithIdentifier:K_SB_TEXT_VIEW_CONTROLLER];
     
     [self.parentViewController.navigationController pushViewController:controller animated:YES];
@@ -51,16 +53,19 @@
     
     WRecordAudioViewController *controller = [[UIStoryboard getMediaStoryBoard] instantiateViewControllerWithIdentifier:K_SB_RECORD_VIEW_CONTROLLER];
     
+    [WSetting distroySetting];
+    
+    [[WSetting getSharedSetting] setPostType:@"AUDIO"];
+    
     [self.parentViewController.navigationController pushViewController:controller animated:YES];
 }
 - (IBAction)videoPressed:(id)sender {
     
-    [[WSetting getSharedSetting] setAudioUrlPath:nil];
-    [[WSetting getSharedSetting] setFirstOutputUrl:nil];
-   // [[WSetting getSharedSetting] setSecondOutputUrl:nil];
-    [[WSetting getSharedSetting] setFrontVideoUrlPath:nil];
-    [[WSetting getSharedSetting] setRearVideoUrlPath:nil];
     WVideoRecordViewController *controller = [[UIStoryboard getMediaStoryBoard] instantiateViewControllerWithIdentifier:K_SB_VIDEO_RECORD_VIEW_CONTROLLER];
+    
+    [WSetting distroySetting];
+    
+    [[WSetting getSharedSetting] setPostType:@"VIDEO"];
     
     [self.parentViewController.navigationController pushViewController:controller animated:YES];
     
@@ -71,6 +76,9 @@
 - (IBAction)photoPressed:(id)sender {
     
     WPhotoViewController *controller = [[UIStoryboard getMediaStoryBoard] instantiateViewControllerWithIdentifier:K_SB_PHOTO_VIEW_CONTROLLER];
+    
+    [WSetting distroySetting];
+    [[WSetting getSharedSetting] setPostType:@"PHOTO"];
     
     [self.parentViewController.navigationController pushViewController:controller animated:YES];
 }

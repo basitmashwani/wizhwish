@@ -2,6 +2,9 @@ dependencies: \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/IGColorPicker/IGColorPicker.framework/Modules/module.modulemap \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/IGColorPicker/IGColorPicker.framework/Headers/IGColorPicker-Swift.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/IGColorPicker/IGColorPicker.framework/Headers/IGColorPicker-umbrella.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ASPVideoPlayer/ASPVideoPlayer.framework/Modules/module.modulemap \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ASPVideoPlayer/ASPVideoPlayer.framework/Headers/ASPVideoPlayer-Swift.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ASPVideoPlayer/ASPVideoPlayer.framework/Headers/ASPVideoPlayer-umbrella.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/NJKScrollFullScreen/NJKScrollFullScreen.framework/Modules/module.modulemap \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/NJKScrollFullScreen/NJKScrollFullScreen.framework/Headers/UIViewController+NJKFullScreenSupport.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/NJKScrollFullScreen/NJKScrollFullScreen.framework/Headers/NJKScrollFullScreen.h \
@@ -106,9 +109,6 @@ dependencies: \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/AWSS3/AWSS3.framework/Headers/AWSS3Model.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/AWSS3/AWSS3.framework/Headers/AWSS3Service.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/AWSS3/AWSS3.framework/Headers/AWSS3.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/RUReachability/RUNavigationActivityView.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/RUReachability/RUOverlayView.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/RUReachability/RUReachabilityManager.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/Categories/NSDate+Extras.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/OLGhostAlertView/OLGhostAlertView.framework/Headers/OLGhostAlertView.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/Categories/OLGhostAlertView+Extras.h \
@@ -124,14 +124,10 @@ dependencies: \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WWizhViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WTextViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WRecordAudioViewController.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/PhotoTweaks/PhotoTweaksViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WPhotoViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCFilterImageView.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCContext.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCImageView.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCPlayer.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCSwipeableFilterView.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCFilterAnimation.h \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCFilter.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WPhotoEditViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/WSetting.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Utilities/Custom\ Views/SCustomProgressView.h \
@@ -152,6 +148,18 @@ dependencies: \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZHomeViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZMyProfileViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Cells/WZPostTopTableViewCell.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/AWEasyVideoPlayer/AWEasyVideoPlayer.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ZOWVideoPlayer/ZOWVideoPlayer/Model/Protocol/ZOWVideoPlayerProtocol.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ZOWVideoPlayer/ZOWVideoPlayer/Model/ZOWVideoPlayer.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ZOWVideoPlayer/ZOWVideoPlayer/View/ZOWVideoView.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ZOWVideoPlayer/ZOWVideoPlayer/View/Custom/InstagramVideoView/InstagramVideoView.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/YMCAudioPlayer.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCContext.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCFilterAnimation.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCFilter.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCImageView.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCPlayer.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/SCRecorder/SCRecorder.framework/Headers/SCVideoPlayerView.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/KIImagePager/KIImagePager.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Cells/WZPostTableViewCell.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Cells/WZFriendCollectionViewCell.h \
@@ -169,4 +177,17 @@ dependencies: \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/LoginViewController.h \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/Resources/WizWish.pch \
   /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WZHomeViewController.m \
-  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/RUReachability/RUReachability.h
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/JPVideoPlayer/UIView+WebVideoCache.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/JPVideoPlayer/JPVideoPlayerManager.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/JPVideoPlayer/JPVideoPlayerDownloader.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/JPVideoPlayer/JPVideoPlayerCompat.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/JPVideoPlayer/JPVideoPlayerCache.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/JPVideoPlayer/JPVideoPlayerOperation.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/JPVideoPlayer/UIView+PlayerStatusAndDownloadIndicator.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVideoPlayer/PBJVideoPlayer.framework/Modules/module.modulemap \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVideoPlayer/PBJVideoPlayer.framework/Headers/PBJVideoView.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVideoPlayer/PBJVideoPlayer.framework/Headers/PBJVideoPlayerController.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVideoPlayer/PBJVideoPlayer.framework/Headers/PBJVideoPlayer.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVideoPlayer/PBJVideoPlayer.framework/Headers/PBJVideoPlayer-umbrella.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/WTopViewController.h \
+  /Users/Syed_Abdul_Basit/Desktop/Wishhh/wizhwish/ViewController/WMyDailiesViewController.h

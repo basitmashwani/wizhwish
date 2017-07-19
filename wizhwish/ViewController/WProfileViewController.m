@@ -42,7 +42,7 @@
         NSData * imageData = [UIImage getImageCompressedData:thumbImage];
     //UIImagePNGRepresentation(thumbImage);
         
-        NSString  *filePath = [RUUtility getFileURLPathforFileName:thumbFileName withData:imageData];
+        NSString  *filePath = [RUUtility getFileURLPathforFileName:thumbFileName directoryName:@"WhizWish" withData:imageData];
         
         [[WZServiceParser sharedParser] processUploadFileAWSWithfilePath:filePath fileName:thumbFileName success:^(NSString *fileName) {
             
@@ -58,7 +58,7 @@
             NSString *fName = thumbFileName;
             NSData * imageData = UIImagePNGRepresentation(image);
             
-            NSString  *filePath = [RUUtility getFileURLPathforFileName:fName withData:imageData];
+            NSString  *filePath = [RUUtility getFileURLPathforFileName:fName directoryName:@"WhizWish" withData:imageData];
             
             [[WZServiceParser sharedParser] processUploadFileAWSWithfilePath:filePath fileName:fileName success:^(NSString *fileName) {
                 
@@ -114,7 +114,7 @@
    
     NSData * imageData = [UIImage getImageCompressedData:image]; //UIImagePNGRepresentation(image);
         
-        NSString  *filePath = [RUUtility getFileURLPathforFileName:standardFileName withData:imageData];
+        NSString  *filePath = [RUUtility getFileURLPathforFileName:standardFileName directoryName:@"WhizWish"withData:imageData];
     
         [[WZServiceParser sharedParser] processUploadFileAWSWithfilePath:filePath fileName:standardFileName success:^(NSString *fileName) {
             
@@ -241,7 +241,7 @@
             
             cell.textField.placeholder = @"Bio";
             cell.imageView.image = [UIImage imageNamed:@"Image_Bio"];
-            if ([self.stringBio isEqual:[NSNull null]]) {
+            if ([NSString isStringNull:self.stringBio]) {
                 
                 cell.textField.text = @"";
             }
@@ -485,16 +485,21 @@
         
         pickerController.delegate = weakSelf;
         
+        dispatch_async(dispatch_get_main_queue(), ^{
+
         [weakSelf presentViewController:pickerController animated:YES completion:nil];
+        });
         
     } libraryOption:^{
         
         pickerController = [RUUtility getImagePickerFor:KMediaLibrary];
         
         pickerController.delegate = weakSelf;
-        
+        dispatch_async(dispatch_get_main_queue(), ^{
+
         [weakSelf presentViewController:pickerController animated:YES completion:nil];
         
+        });
     }];
     
 }

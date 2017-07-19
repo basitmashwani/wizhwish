@@ -21,6 +21,10 @@
 - (BOOL)isValidPassword:(NSString*)value;
 - (BOOL)isValidPhoneNumber:(NSString*)number;
 - (BOOL)isValidVerificationNumber:(NSString*)code;
+- (NSString*)stringByRemovingBlankLines;
+- (NSInteger)getOccuranceCountOfSubString:(NSString*)subString;
+
+
 
 
 

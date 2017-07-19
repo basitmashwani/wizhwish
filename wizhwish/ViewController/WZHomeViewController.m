@@ -6,25 +6,40 @@
 //  Copyright © 2016 Syed Abdul Basit. All rights reserved.
 //
 
-#define k_TABLEVIEW_HEIGHT_TEXT                 170;
+#define k_TABLEVIEW_HEIGHT_TEXT                 200;
+
+#define k_TABLEVIEW_HEIGHT_TEXT_COMMENT         230;
 
 #define k_TABLEVIEW_HEIGHT_IMAGE                500;
 
-#define k_TABLEVIEW_HEIGHT_TEXT_COMMENT          200;
+#define k_TABLEVIEW_HEIGHT_IMAGE_COMMENT        550;
 
-#define k_TABLEVIEW_HEIGHT_IMAGE_COMMENT          550;
+#define k_TABLEVIEW_HEIGHT_VIDEO                430;
+
+#define k_TABLEVIEW_HEIGHT_VIDEO_COMMENT        480;
 
 #import "WZHomeViewController.h"
 #import "UIView+Extras.h"
-#import "RUReachability.h"
+//#import "RUReachability.h"
 #import "UIImageView+AFNetworking.h"
-
+#import "SCVideoPlayerView.h"
+#import "SCPlayer.h"
+#import <ASPVideoPlayer/ASPVideoPlayer-Swift.h>
+#import "UIView+WebVideoCache.h"
+//#import "InstagramVideoView.h"
+//#import "CommonVideoView.h"
+#import <PBJVideoPlayer/PBJVideoPlayer.h>
+#import "WTopViewController.h"
+#import "WMyDailiesViewController.h"
+@import AVFoundation;
+@import AVKit;
 
 @interface WZHomeViewController()
 
 @property(nonatomic ,retain) NJKScrollFullScreen *scrollProxy;
 
 @property(nonatomic ,retain) WPostView *myView;
+
 
 @property(nonatomic) NSInteger offSetValue;
 
@@ -40,20 +55,115 @@
 
 @property(nonatomic ,retain) NSArray *imagesArray;
 
+@property(nonatomic ,retain) AVPlayer *player;
+
 @property(nonatomic ,retain) AVAudioPlayer *audioPlayer;
+
+@property(nonatomic ,retain) WZPostTableViewCell *tempCell;
+
+@property(nonatomic ,retain) WMyDailiesViewController *myDailies;
+
 
 @end
 @implementation WZHomeViewController
 
 #pragma mark Private Methods
 
-
-- (void)fileUploaded:(id)sender {
+- (WMyDailiesViewController*)getDailiesView {
     
-  //  [CSNotificationView showInViewController:self
-       //                                style:CSNotificationViewStyleSuccess
-     //                                message:@"Post successfully published."];
+    if (!self.myDailies) {
+        
+        self.myDailies = [self.storyboard instantiateViewControllerWithIdentifier:k_SB_MYDAILIES_VC];
+   
+    }
+    return _myDailies;
 }
+- (void)setupSegmentControl {
+    
+    self.segmentControl.sectionTitles = @[@"Timeline",@"What's On"];
+    [self.segmentControl addTarget:self action:@selector(segmentedControlChangedValue:) forControlEvents:UIControlEventValueChanged];
+    self.segmentControl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+    self.segmentControl.selectionIndicatorHeight = 1.0;
+    self.segmentControl.selectionIndicatorColor = [UIColor lightGrayColor];
+    
+    __weak typeof(self) weakSelf = self;
+    self.segmentControl.indexChangeBlock = ^(NSInteger index) {
+        
+        WMyDailiesViewController *dailiesView = [weakSelf getDailiesView];
+
+        if (index == 0) {
+            
+            [dailiesView removeFromParentViewController];
+            [dailiesView.view removeFromSuperview];
+            weakSelf.tableView.alpha = 1.0;
+            
+        }
+        else {
+           
+            weakSelf.tableView.alpha = 0.0;
+           
+                [weakSelf addChildViewController:dailiesView];
+                [dailiesView.view setClipsToBounds:YES];
+                [dailiesView didMoveToParentViewController:weakSelf];
+            dailiesView.view.frame = weakSelf.tableView.frame;
+                [weakSelf.view addSubview:dailiesView.view];
+            [weakSelf.view bringSubviewToFront:weakSelf.myView];
+            //    //
+
+            
+            
+            
+            
+        }
+        
+    };
+}
+
+
+- (void)addAudioToCell:(WZPostTableViewCell *)cell audioURL:(NSString*)url imageURL:(NSString*)imageURL {
+    
+    [cell setupAudioPlayer:url];
+    [cell.audioImageView setImageWithURL:[NSURL URLWithString:imageURL] placeholderImage:[UIImage imageNamed:@"Image_Audio_Placeholder"]];
+}
+
+- (void)addVideoToCell:(WZPostTableViewCell *)cell videoURL:(NSString*)url secondVideoURL:(NSString*)secondURL {
+    NSLog(@"video adding");
+    
+    cell.postVideoView.backgroundColor = [UIColor blackColor];
+    [cell.postVideoView setURL:[NSURL URLWithString:url]];
+    [cell.postVideoView setMuted:YES];
+    [cell.postVideoView setEndAction:AWEasyVideoPlayerEndActionLoop];
+  //  [cell.postVideoView jp_playVideoMutedWithURL:[NSURL URLWithString:url]];
+    
+   // cell.postVideoView.backgroundColor = [UIColor lightGrayColor];
+    //[cell.postVideoView playVideoWithURL:[NSURL URLWithString:url] isSecondURL:NO];
+    //InstagramVideoView *videoView = [[InstagramVideoView alloc] initWithFrame:cell.postVideoView.frame];
+    //videoView.backgroundColor = [UIColor grayColor];
+   // [cell.postVideoView addSubview:videoView];
+  
+    
+  //  [videoView playVideoWithURL:[NSURL URLWithString:url]];
+ //   [cell.postVideoView jp_playVideoMutedWithURL:[NSURL URLWithString:url]];
+    // [cell.postVideoView.videoPlayerControls.videoPlayer stopVideo];
+  // cell.postVideoView.videoURLs = @[[NSURL URLWithString:url]];
+////
+ 
+    
+    if (secondURL) {
+        
+      //   self.player = [AVPlayer playerWithURL:[NSURL URLWithString:secondURL]];
+       // AVPlayerLayer *playerLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
+       // playerLayer.frame = CGRectMake(0, cell.postVideoView.frame.size.height - 150, 100, 100);
+       // [cell.postVideoView.layer addSublayer:playerLayer];
+        
+      //  [self.player play];
+      //  WZVideoView *videoView = [[WZVideoView alloc] initWithFrame:CGRectMake(0, cell.postVideoView.frame.size.height - 150, 100, 100)];
+      //  [cell.postVideoView.layer addSublayer:videoView.layer];
+      //  [videoView playVideoWithURL:[NSURL URLWithString:secondURL] isSecondURL:YES];
+    }
+    
+   }
+
 - (void)getPostWithLimit:(NSInteger)limit {
     
     __weak typeof(self) weakSelf = self;
@@ -65,11 +175,17 @@
         if (array.count > 0) {
             
             weakSelf.postArray =  [weakSelf.postArray arrayByAddingObjectsFromArray:array];
-       
-        }
-        [weakSelf.tableView reloadData];
+            weakSelf.canFetch = YES;
+            [weakSelf.tableView reloadData];
+          //  WZPost *post = [WZServiceParser getDataFromDictionary:dict haveComments:YES];
 
-        
+
+        }
+        else {
+            weakSelf.canFetch = NO;
+        }
+
+
     } failure:^(NSError *error) {
         
         // [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
@@ -134,12 +250,17 @@
         
      //   [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:1 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
        
-
+        
+        
+        
         [UIView animateKeyframesWithDuration:2 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
             
              weakSelf.myView.center = CGPointMake(weakSelf.myView.center.x, weakSelf.myView.center.y + weakSelf.myView.frame.size.height - self.viewHeight);
             
-            _tableView.contentInset = UIEdgeInsetsMake(-80, 0, 0, 0);
+            self.collectionView.center = CGPointMake(weakSelf.collectionView.center.x, weakSelf.collectionView.center.y-weakSelf.collectionView.frame.size.height);
+
+           // [weakSelf.collectionView setFrameY:-20];
+           // _tableView.contentInset = UIEdgeInsetsMake(-70, 0, 0, 0);
 
             
         } completion:^(BOOL finished) {
@@ -180,12 +301,14 @@
         [UIView animateKeyframesWithDuration:2 delay:0 options:UIViewKeyframeAnimationOptionCalculationModeLinear animations:^{
             
             weakSelf.myView.center = CGPointMake(weakSelf.myView.center.x, weakSelf.myView.center.y - weakSelf.myView.frame.size.height+self.viewHeight);
-            _tableView.contentInset = UIEdgeInsetsMake(_offSetValue, 0, 0, 0);
+          //  _tableView.contentInset = UIEdgeInsetsMake(_offSetValue, 0, 0, 0);
+            self.collectionView.center = CGPointMake(weakSelf.collectionView.center.x, weakSelf.collectionView.center.y+weakSelf.collectionView.frame.size.height);
+
             if(IS_IPHONE_5) {
                 
                 _offSetValue = _offSetValue+30;
                 
-                [self.tableView setContentOffset:CGPointMake(0, -30)];
+              //  [self.tableView setContentOffset:CGPointMake(0, -30)];
 
                 //[self.tableView setContentOffset:UIEdgeInsetsMake(_offSetValue, 0, 0, 0)]; // 108 is only example
                 self.automaticallyAdjustsScrollViewInsets = NO;
@@ -193,7 +316,7 @@
             }
             else {
                 
-                [self.tableView setContentOffset:CGPointMake(0, -30)];
+              //  [self.tableView setContentOffset:CGPointMake(0, -30)];
                 
             }
             
@@ -281,7 +404,7 @@
     
     // Do any additional setup after loading the view.
     
-    [self.tableView setContentInset:UIEdgeInsetsMake(_offSetValue, 0, 0, 0)]; // 108 is only example
+   // [self.tableView setContentInset:UIEdgeInsetsMake(_offSetValue, 0, 0, 0)]; // 108 is only example
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.myView = [WPostView getPostView];
     self.myView.parentViewController = self;
@@ -311,10 +434,7 @@
     
     [self.myView.buttonHidden addTarget:self action:@selector(hidePressed) forControlEvents:UIControlEventTouchUpInside];
     
-    
-    //   postView.backgroundColor = [UIColor redColor];
-    
-    [self.view addSubview:_myView];
+    [self.view addSubview:self.myView];
     
     [self.tableView setScrollEnabled:NO];
 
@@ -341,21 +461,47 @@
   //  [(ScrollingNavigationController *)self.navigationController followScrollView:self.tableView delay:50.0f];
    
     
-    [self getPostWithLimit:self.postArray.count];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(fileUploaded:) name:k_FILE_UPLOADED_NOTIFICATION object:nil];
+    
+    [self getPostWithLimit:self.postArray.count];
+
 }
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     
+    [self setupSegmentControl];
+//    [self addChildViewController:_videoView];
+//    [_videoView.view setClipsToBounds:YES];
+//    [_videoView didMoveToParentViewController:self];
+//    [self.view addSubview:_videoView.view];
+//    //
+//    
     
-    [[RUReachabilityManager sharedManager] addControllerToShowNetworkStatus:self];
+  
+   // self.segmentControl.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+   // self.segmentControl.selectionStyle = HMSegmentedControlSelectionStyleFullWidthStripe;
+
+
+    
+    
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 60, 320, 100) collectionViewLayout:layout];
+    [_collectionView setDataSource:self];
+    [_collectionView setDelegate:self];
+    _collectionView.backgroundColor = [UIColor whiteColor];
+    [_collectionView registerClass:[WZFriendCollectionViewCell class] forCellWithReuseIdentifier:K_PEOPLE_COLLECTION_CELL];
+    
+    [self.view addSubview:_collectionView];
+
+    
+   // [[RUReachabilityManager sharedManager] addControllerToShowNetworkStatus:self];
 
     [self intialSetup];
     
@@ -389,20 +535,46 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return self.postArray.count+1;
+    NSLog(@"number of post %ld",(unsigned long)_postArray.count);
+    return self.postArray.count;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row > 0) {
-    if(indexPath.row == self.postArray.count)
-    {
-      //  NSLog(@"last row %ld with post last index %ld",(long)indexPath.row,self.postArray.count-1);
-        [self getPostWithLimit:indexPath.row];
+        NSDictionary *postDict = [self.postArray objectAtIndex:indexPath.row];
+        WZPost *post = [WZServiceParser getDataFromDictionary:postDict haveComments:YES];
+
+        if ([post.postType isEqualToString:k_VIDEO_TYPE]) {
+    WZPostTableViewCell *postCell = (WZPostTableViewCell *)cell;
+    [postCell.postVideoView play];
+    }
+    }
+    
+    
+}
+
+- (void)tableView:(UITableView *)tableView didEndDisplayingCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (indexPath.row > 0) {
+    NSDictionary *postDict = [self.postArray objectAtIndex:indexPath.row];
+    WZPost *post = [WZServiceParser getDataFromDictionary:postDict haveComments:YES];
+    if ([post.postType isEqualToString:k_VIDEO_TYPE])  {
         
+//        WZPostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:k_POST_TABLEVIEW_CELL_VIDEO];
+//     //   [cell.postVideoView removeFromSuperview];
+       // [cell.postVideoView.videoPlayerControls.videoPlayer stopVideo];
+        
+    }
+    else if ([post.postType isEqualToString:k_AUDIO_TYPE]) {
+        WZPostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:k_POST_TABLEVIEW_CELL_AUDIO];
+        [cell.audioPlayer.audioPlayer stop];
+
         
     }
     }
+    
+    
     
     if (indexPath.row == 0) {
         [self.buttonTopScroll setHidden:YES];
@@ -412,21 +584,15 @@
         // [self.buttonTopScroll setHidden:NO];
         
     }
+
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == 0) {
-        
-        WZPostTopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:K_POST_TOP_CELL];
-        
-       
-        return cell;
-    }
-    else  {
    
-        WZPostTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:K_POST_TABLEVIEW_CELL];
+        WZPostTableViewCell *cell = nil;
         
-        NSUInteger index = indexPath.row-1;
+        
+        NSUInteger index = indexPath.row;
        NSDictionary *postDict = [self.postArray objectAtIndex:index];
         WZPost *post = [WZServiceParser getDataFromDictionary:postDict haveComments:YES];
         
@@ -448,10 +614,15 @@
             cell = [tableView dequeueReusableCellWithIdentifier:K_POST_TABLEVIEW_CELL_TEXT];
             cell.isText = YES;
             cell.labelPostText.text = post.postText;
+            cell.labelPostText.text =  [cell.labelPostText.text stringByReplacingOccurrencesOfString:@"~" withString:@"\n"];
         }
         else if ([post.postType isEqualToString:k_IMAGE_TYPE]) {
+        
+            cell = [tableView dequeueReusableCellWithIdentifier:K_POST_TABLEVIEW_CELL_IMAGE];
+            
             cell.imageViewPost.hidden = NO;
-           NSArray *imagesArray = [post.mediaDictionary valueForKey:@"images"];
+          
+            NSArray *imagesArray = [post.mediaDictionary valueForKey:@"images"];
            
             
             cell.imageArray = [[NSArray alloc] initWithArray:imagesArray];
@@ -464,6 +635,45 @@
             
             cell.isText = NO;
         }
+        else if ([post.postType isEqualToString:k_VIDEO_TYPE]) {
+           
+            cell = [tableView dequeueReusableCellWithIdentifier:k_POST_TABLEVIEW_CELL_VIDEO];
+          //  [cell.imageViewPost setHidden:YES];
+            NSString *videoURL = [post.mediaDictionary valueForKey:@"backendVideo"];
+            NSArray *array = [videoURL componentsSeparatedByString:@"_SECONDURL_"];
+            
+            NSString *secondURL = nil;
+            if (array.count > 1) {
+                
+                secondURL = array[1];
+                videoURL = array[0];
+            }
+
+            [self addVideoToCell:cell videoURL:videoURL secondVideoURL:secondURL];
+          //  [cell addSubview:view];
+           // cell.labelPostText.text = @"Syed";
+            
+ 
+        }
+        else if ([post.postType isEqualToString:k_AUDIO_TYPE]) {
+            
+            cell = [tableView dequeueReusableCellWithIdentifier:k_POST_TABLEVIEW_CELL_AUDIO];
+            //  [cell.imageViewPost setHidden:YES];
+            NSString *audioURL = [post.mediaDictionary valueForKey:@"audio"];
+            NSString *audioImage = [post.mediaDictionary valueForKey:@"audioImage"];
+            //cell.backgroundView = [UIColor redColor];
+            [self addAudioToCell:cell audioURL:audioURL imageURL:audioImage];
+            // cell.labelPostText.text = @"Syed";
+            
+            
+        }
+        else {
+            
+            cell = [tableView dequeueReusableCellWithIdentifier:K_POST_TABLEVIEW_CELL_TEXT];
+
+        }
+        self.tempCell = cell;
+
         cell.labelProfileName.text = post.displayName;
         cell.labelPostDate.text = post.createdDate;
         cell.labelPostTitle.text = @"Post";
@@ -504,8 +714,16 @@
         [cell.buttonComment addTarget:self action:@selector(commentPressed:) forControlEvents:UIControlEventTouchUpInside];
         
         
+            if(indexPath.row == self.postArray.count)
+            {
+                //  NSLog(@"last row %ld with post last index %ld",(long)indexPath.row,self.postArray.count-1);
+                [self getPostWithLimit:indexPath.row];
+                
+                
+            }
+        
         return cell;
-    }
+    
     
     
     
@@ -520,14 +738,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (indexPath.row == 0) {
+    
         
-          return 110;
-
-    }
-    else  {
-        
-        NSInteger index = indexPath.row-1;
+        NSInteger index = indexPath.row;
        NSDictionary *postDict = [self.postArray objectAtIndex:index];
         WZPost *post = [WZServiceParser getDataFromDictionary:postDict haveComments:YES];
         
@@ -537,6 +750,14 @@
             if (post.commentCount.integerValue > 1) {
                 
                 return k_TABLEVIEW_HEIGHT_TEXT;
+            }
+            
+            if ([post.postText getOccuranceCountOfSubString:@"~"] > 1) {
+                
+                NSInteger height = k_TABLEVIEW_HEIGHT_TEXT;
+                height = height+[post.postText getOccuranceCountOfSubString:@"~"] *5;
+
+                return  height;
             }
             return k_TABLEVIEW_HEIGHT_TEXT_COMMENT;
         }
@@ -550,10 +771,31 @@
             
             return  k_TABLEVIEW_HEIGHT_IMAGE;
     }
+        else if([post.postType isEqualToString:k_VIDEO_TYPE]) {
+         
+            if (post.commentCount.integerValue > 0) {
+                
+                return k_TABLEVIEW_HEIGHT_VIDEO_COMMENT;
+            }
+            
+            
+            return  k_TABLEVIEW_HEIGHT_VIDEO;
+        }
+        
+        else if([post.postType isEqualToString:k_AUDIO_TYPE]) {
+            
+            if (post.commentCount.integerValue > 0) {
+                
+                return k_TABLEVIEW_HEIGHT_VIDEO_COMMENT;
+            }
+            
+            
+            return  k_TABLEVIEW_HEIGHT_VIDEO;
+        }
         
         
         return tableView.estimatedRowHeight;
-    }
+    
 }
 
 
@@ -563,6 +805,7 @@
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
  
     self.canScrollTop = NO;
+    
 }
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
 {
@@ -581,29 +824,11 @@
 }
 
 
-#pragma mark UICollectionView Delegate Methods
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    WZFriendCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:K_PEOPLE_COLLECTION_CELL forIndexPath:indexPath];
-    return cell;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    
-    return 3;
-}
-
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    return CGSizeMake(collectionView.frame.size.width/4.5 , collectionView.frame.size.height);
-    
-}
-
 #pragma mark Public Methods
 
+- (void)segmentedControlChangedValue:(id)sender {
+    
+}
 - (void)commentPressed:(id)sender {
     
     NSInteger buttonTag = -1;
@@ -632,14 +857,14 @@
         
         _offSetValue = _offSetValue+30;
         
-        [self.tableView setContentOffset:CGPointMake(0, -30)];
+        //[self.tableView setContentOffset:CGPointMake(0, -30)];
         //[self.tableView setContentOffset:UIEdgeInsetsMake(_offSetValue, 0, 0, 0)]; // 108 is only example
         self.automaticallyAdjustsScrollViewInsets = NO;
         
     }
     else {
        
-        [self.tableView setContentOffset:CGPointMake(0, -30)];
+        //[self.tableView setContentOffset:CGPointMake(0, -30)];
 
     }
     
@@ -648,6 +873,37 @@
     
     
 
+}
+
+
+#pragma mark UICollectionView Delegate Methods
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    WZFriendCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:K_PEOPLE_COLLECTION_CELL forIndexPath:indexPath];
+    [cell.buttonPeople setUserInteractionEnabled:NO];
+    UIImageView *imgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Image_Search"]];
+    imgView.frame = CGRectMake(10, 10, 70 , 70);
+    [cell addSubview:imgView];
+    return cell;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
+    return 10;
+}
+
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return CGSizeMake(collectionView.frame.size.width/4.5 , collectionView.frame.size.height);
+    
+}
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    NSLog(@"Sedas");
 }
 
 

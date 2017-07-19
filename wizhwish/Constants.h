@@ -35,6 +35,7 @@
 #define K_SB_COMMENTS_VIEW_CONTROLLER               @"K_SB_COMMENTS_VC"
 #define K_SB_TEMP_VIDEO_VIEW_CONTROLLER             @"k_SB_TEMP_VIDEO_VC"
 #define k_SB_PROFILE_EDIT_VC                        @"K_SB_PROFILE_VC"
+#define k_SB_MYDAILIES_VC                           @"K_SB_MY_DAILIES_VC"
 
 #define k_KICKFLIP_API_KEY                          @"BBLr9ZEDw2cNHqRMLAU9VX5.UnU7Ttts3.HRYwH?"
 //#define  @"OLvlmYM:?pv2E_gwTwmZAMDt=dO:3gSmErzS43pI:oor6auYfcD5pwM0b@gtfRv-B9g@8PtUDyeh4yq:Ee_eTb!lZD-7jQ?!!JZoVKo_p@79k:uNW3g@XR.w2AKpfxn"
@@ -63,8 +64,10 @@
 #define K_PEOPLE_COLLECTION_CELL                    @"Friend_Cell"
 #define K_CELL_INVITE                               @"K_CELL_INVITE"
 #define K_CELL_POST                                 @"K_CELL_POST"
-#define K_POST_TABLEVIEW_CELL                       @"K_POST_CELL"
+#define K_POST_TABLEVIEW_CELL_IMAGE                 @"K_POST_CELL_IMAGE"
 #define K_POST_TABLEVIEW_CELL_TEXT                  @"K_POST_CELL_TEXT"
+#define k_POST_TABLEVIEW_CELL_VIDEO                 @"K_POST_CELL_VIDEO"
+#define k_POST_TABLEVIEW_CELL_AUDIO                 @"K_POST_CELL_AUDIO"
 
 #define K_POST_TOP_CELL                             @"K_POST_TOP_CELL"
 

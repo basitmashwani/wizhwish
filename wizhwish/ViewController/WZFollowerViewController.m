@@ -427,6 +427,7 @@
 
 - (void)cameraPressed:(id)sender {
     
+    [self.texFieldName resignFirstResponder];
     
     __weak typeof(self) weakSelf = self;
     
@@ -437,8 +438,11 @@
         pickerController = [RUUtility getImagePickerFor:KMediaCamera];
         
         pickerController.delegate = weakSelf;
+        dispatch_async(dispatch_get_main_queue(), ^{
+
         
         [weakSelf presentViewController:pickerController animated:YES completion:nil];
+        });
         
     } libraryOption:^{
         
@@ -446,7 +450,13 @@
         
         pickerController.delegate = weakSelf;
         
-        [weakSelf presentViewController:pickerController animated:YES completion:nil];
+    
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [weakSelf presentViewController:pickerController animated:YES completion:nil];
+
+        });
+        
         
     }];
     

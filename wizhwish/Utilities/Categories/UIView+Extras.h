@@ -40,6 +40,7 @@
 - (void)setRoundCornersAsCircle;
 - (void)setBorderWidth:(CGFloat)radius withColor:(UIColor*)color;
 - (UIImage *)getScreenshotImage;
+- (UIView *)getViewHexagonShape;
 /**
  Add shadow to the View bottom
  */

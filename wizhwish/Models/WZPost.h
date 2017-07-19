@@ -30,6 +30,10 @@
 
 @property(nonatomic ,retain) NSString *postType;
 
+@property(nonatomic ,retain) NSData *videoData;
+
+@property(nonatomic ,retain) NSData *audioData;
+
 
 
 

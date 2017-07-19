@@ -8,7 +8,7 @@
 
 #import "WPhotoViewController.h"
 #import "UIImage+Extra.h"
-
+#import "PhotoTweaksViewController.h"
 @interface WPhotoViewController ()
 
 @property(nonatomic ,retain) AVCaptureSession *session;
@@ -37,6 +37,8 @@
 
 @property(nonatomic ,retain) UIImageView *pencilImageView;
 
+@property(nonatomic ,retain) UIImage *filteredImage;
+
 @property(nonatomic ,retain)  UIPanGestureRecognizer *panGesture;
 
 @property(nonatomic ,retain)  UITapGestureRecognizer *tapGesture;
@@ -61,7 +63,12 @@
 
 @property(nonatomic) BOOL isPencilEdited;
 
+@property(nonatomic) BOOL isImageChange;
+
+@property(nonatomic) BOOL isImageCaptured;
+
 @property(nonatomic) CGRect viewFrame;
+
 
 
 
@@ -83,11 +90,21 @@
 
 - (void)updateCameraViewWithImage:(UIImage*)image {
  
-  //  image = [UIImage resizeImage:image toResolution:480];
+    self.isImageCaptured = YES;
+    self.filteredImage = [UIImage resizeImage:image toResolution:480];
+    if (!self.isImageChange) {
     [self.imagesArray addObject:image];
     [self.tempImagesArray addObject:image];
+        self.isImageChange = NO;
 
     self.selectedIndex = self.imagesArray.count-1;
+    }
+    else {
+   
+        [self.imagesArray replaceObjectAtIndex:self.selectedIndex withObject:image];
+        [self.tempImagesArray replaceObjectAtIndex:self.selectedIndex withObject:image];
+
+    }
     
     for(int i = 0;i<self.imagesArray.count;i++) {
         
@@ -129,15 +146,15 @@
         
     }
     
-     self.navigationItem.rightBarButtonItem =  [RUUtility getBarButtonWithImage:[UIImage imageNamed:@"Image_Next"] forViewController:self selector:@selector(nextPressed)];
+    self.navigationItem.rightBarButtonItem =  [RUUtility getBarButtonWithTitle:@"Share" forViewController:self selector:@selector(nextPressed)];
     self.viewContainer.hidden = NO;
     self.buttonFlash.hidden = YES;
     [self.mainImageView setHidden:NO];
     [self.mainImageView setImage:image];
     [self.cameraView bringSubviewToFront:self.mainImageView];
     [self.previewLayer removeFromSuperlayer];
-    [self.collectionView reloadData];
     self.collectionView.hidden = NO;
+    [self.collectionView reloadData];
     self.stackView.hidden = NO;
     [self.cameraView bringSubviewToFront:self.stackView];
     //[self addText:self.mainImageView.image text:@"Syed MAshwani"];
@@ -238,6 +255,8 @@
     self.navigationItem.leftBarButtonItem =  [RUUtility getBarButtonWithImage:[UIImage imageNamed:@"Image_Cross"] forViewController:self selector:@selector(backPressed:)];
     
     self.filterPencil.selected = YES;
+    
+    self.navigationItem.title = @"Photo";
     // Do any additional setup after loading the view.
 }
 
@@ -270,17 +289,41 @@
 
 #pragma mark Public Methods
 
+- (void)cropPressed:(id)sender {
+    
+    UIImage *selectedImage = [self.imagesArray objectAtIndex:self.selectedIndex];
+//    ImageCropViewController *cropViewController = [[ImageCropViewController alloc] initWithImage:selectedImage];
+//    cropViewController.delegate = self;
+//    cropViewController.blurredBackground = YES;
+//    [self.navigationController pushViewController:cropViewController animated:YES];
+    
+    PhotoTweaksViewController *photoTweaksViewController = [[PhotoTweaksViewController alloc] initWithImage:selectedImage];
+    photoTweaksViewController.delegate = self;
+    photoTweaksViewController.autoSaveToLibray = NO;
+    photoTweaksViewController.maxRotationAngle = M_PI_4;
+    photoTweaksViewController.saveButtonTitleColor = [UIColor whiteColor];
+    photoTweaksViewController.cancelButtonTitleColor = [UIColor whiteColor];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:photoTweaksViewController];
+    [RUUtility setUpNavigationBar:navController];
+    [self presentViewController:navController animated:YES completion:nil];
+
+   
+
+    
+}
 - (void)backPressed:(id)sender {
     
-    if (self.imagesArray.count > 0) {
+    if (self.isImageCaptured) {
         
         [self setUpCamera];
-        [self.imagesArray removeAllObjects];
-        [self.tempImagesArray removeAllObjects];
+        self.isImageChange = YES;
+        self.isImageCaptured = NO;
 
     }
     else {
     
+        self.isImageChange = NO;
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
@@ -350,7 +393,7 @@
          if (exifAttachments)
          {
              // Do something with the attachments.
-             NSLog(@"Attachments: %@", exifAttachments);
+             //NSLog(@"Attachments: %@", exifAttachments);
          }
          else
          {
@@ -359,7 +402,10 @@
          
          NSData *imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];
          UIImage *image = [[UIImage alloc] initWithData:imageData];
+        // image = [UIImage imageWithData:UIImageJPEGRepresentation(image, 0.1)];
+        //imageData = UIImagePNGRepresentation(image);
          self.capturedImage = image;
+        self.capturedImage = [self.capturedImage fixOrientation];
          [self updateCameraViewWithImage:image];
          // NSLog(@"Image %@",imageData);
         // [[self vImage] setImage:image];
@@ -504,7 +550,9 @@
     UIImage *image = [self.imagesArray objectAtIndex:self.selectedIndex];
     self.capturedImage = image;
     self.mainImageView.image = self.capturedImage;
-        [self.collectionView reloadData];
+    self.filteredImage = [UIImage resizeImage:image toResolution:480];
+
+    [self.collectionView reloadData];
     
     }
 }
@@ -518,6 +566,8 @@
     self.capturedImage = image;
 
     self.mainImageView.image = self.capturedImage;
+    self.filteredImage = [UIImage resizeImage:image toResolution:480];
+
         [self.collectionView reloadData];
 
 
@@ -532,7 +582,9 @@
     UIImage *image = [self.imagesArray objectAtIndex:self.selectedIndex];
     self.capturedImage = image;
     self.mainImageView.image = self.capturedImage;
-        [self.collectionView reloadData];
+    self.filteredImage = [UIImage resizeImage:image toResolution:480];
+
+    [self.collectionView reloadData];
 
 
     }
@@ -546,6 +598,8 @@
     UIImage *image = [self.imagesArray objectAtIndex:self.selectedIndex];
     self.capturedImage = image;
     self.mainImageView.image = self.capturedImage;
+    self.filteredImage = [UIImage resizeImage:image toResolution:480];
+    
         [self.collectionView reloadData];
 
 
@@ -559,6 +613,8 @@
     UIImage *image = [self.imagesArray objectAtIndex:self.selectedIndex];
     self.capturedImage = image;
     self.mainImageView.image = self.capturedImage;
+    self.filteredImage = [UIImage resizeImage:image toResolution:480];
+
         [self.collectionView reloadData];
 
 
@@ -572,6 +628,8 @@
     UIImage *image = [self.imagesArray objectAtIndex:self.selectedIndex];
     self.capturedImage = image;
     self.mainImageView.image = self.capturedImage;
+    self.filteredImage = [UIImage resizeImage:image toResolution:480];
+
         [self.collectionView reloadData];
 
 
@@ -579,6 +637,7 @@
 }
 - (IBAction)addImagePressed:(id)sender {
     
+    self.isImageChange = NO;
     [self setUpCamera];
 }
 
@@ -648,11 +707,31 @@
     
     self.capturedImage = [info objectForKey:UIImagePickerControllerOriginalImage];
     
+    self.capturedImage = [self.capturedImage fixOrientation];
     
     [self updateCameraViewWithImage:self.capturedImage];
 }
 
-#pragma mark UITextField Delegate Methods
+
+#pragma mark - Image Crop Delegate Methods
+
+- (void)photoTweaksControllerDidCancel:(PhotoTweaksViewController *)controller {
+
+    [self dismissViewControllerAnimated:YES completion:nil];
+   // [[self navigationController] popViewControllerAnimated:YES];
+
+}
+
+- (void)photoTweaksController:(PhotoTweaksViewController *)controller didFinishWithCroppedImage:(UIImage *)croppedImage {
+ 
+        [self.imagesArray replaceObjectAtIndex:self.selectedIndex withObject:croppedImage];
+        [self.tempImagesArray replaceObjectAtIndex:self.selectedIndex withObject:croppedImage];
+        self.mainImageView.image = croppedImage;
+        [self updateImageArrayWithImage:croppedImage atIndex:self.selectedIndex];
+    [self dismissViewControllerAnimated:YES completion:nil];
+
+}
+#pragma mark - UITextField Delegate Methods
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     
     [textField resignFirstResponder];
@@ -694,10 +773,22 @@
     WZFriendCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionViewFilter" forIndexPath:indexPath];
     
     if (self.imagesArray.count > 0) {
-       
-        UIImage *image = [self.imagesArray objectAtIndex:self.selectedIndex];
-        image  = [UIImage getFilterImageWithIndex:indexPath.row withImage:image];
-        [cell.buttonPeople setImage:image forState:UIControlStateNormal];
+        dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            // Add code here to do background processing
+            //
+            //
+            UIImage *image = self.filteredImage;// [self.imagesArray objectAtIndex:self.selectedIndex];
+            image  = [UIImage getFilterImageWithIndex:indexPath.row withImage:image];
+          //  [cell.buttonPeople setImage:image forState:UIControlStateNormal];
+
+            
+            dispatch_async( dispatch_get_main_queue(), ^{
+                // Add code here to update the UI/send notifications based on the
+                // results of the background processing
+                 [cell.buttonPeople setImage:image forState:UIControlStateNormal];
+
+            });
+        });
 
 
     }

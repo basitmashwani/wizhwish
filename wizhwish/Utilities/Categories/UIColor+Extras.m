@@ -29,9 +29,17 @@
     return [UIColor colorWithRed:235/255.0 green:235/255.0 blue:235/255.0 alpha:1];
 }
 
++ (UIColor*)getDarkGrayColor {
+    return [UIColor colorWithRed:151/255.0 green:149/255.0 blue:150/255.0 alpha:1];
+}
+
 
 + (UIColor*)getLightGrayButtonColor {
     return [UIColor colorWithRed:239/255.0 green:239/255.0 blue:239/255.0 alpha:1];
+}
+
++ (UIColor*)getLightGrayNavigationColor {
+    return [UIColor colorWithRed:242/255.0 green:242/255.0 blue:242/255.0 alpha:1];
 }
 
 

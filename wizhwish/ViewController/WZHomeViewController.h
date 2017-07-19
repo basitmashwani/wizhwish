@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <NJKScrollFullScreen/NJKScrollFullScreen.h>
+#import <HMSegmentedControl/HMSegmentedControl.h>
 
-
-@interface WZHomeViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,NJKScrollFullscreenDelegate >
+@interface WZHomeViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,NJKScrollFullscreenDelegate,UICollectionViewDelegate,UICollectionViewDataSource >
 
 @property(nonatomic ,retain) IBOutlet UICollectionView *collectionView;
 
@@ -19,6 +19,8 @@
 @property(nonatomic ,retain) IBOutlet UIButton *buttonTopScroll;
 
 @property(nonatomic ,retain) IBOutlet NSLayoutConstraint *topConstant;
+
+@property(nonatomic ,retain) IBOutlet HMSegmentedControl *segmentControl;
 
 
 

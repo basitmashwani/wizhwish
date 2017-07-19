@@ -25,9 +25,15 @@
     self.count = 15;
     [self.navigationItem setTitle:@"Text"];
     
+    self.textView.text = @"Text";
+    
      self.navigationItem.leftBarButtonItem =  [RUUtility getBarButtonWithImage:[UIImage imageNamed:@"Image_Cross"] forViewController:self selector:@selector(crossPressed)];
     
-     self.navigationItem.rightBarButtonItem =  [RUUtility getBarButtonWithImage:[UIImage imageNamed:@"Image_Next"] forViewController:self selector:@selector(nextPressed)];
+    self.navigationItem.rightBarButtonItem = [RUUtility getBarButtonWithTitle:@"Share" forViewController:self selector:@selector(nextPressed)];
+    self.textView.contentInset = UIEdgeInsetsMake(-63,0,0,0);
+
+    
+    // [RUUtility getBarButtonWithImage:[UIImage imageNamed:@"Image_Next"] forViewController:self selector:@selector(nextPressed)];
     
    // CGRect rect = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y +120, self.view.frame.size.width, self.view.frame.size.height);
     
@@ -107,14 +113,17 @@
         _textColorPickerView.layoutDelegate = self;
         _textColorPickerView.scrollToPreselectedIndex = YES;
         _textColorPickerView.tag = 120;
+      // _textColorPickerView = [_textColorPickerView getViewHexagonShape];
         [self.view addSubview:_textColorPickerView];
         
     }
-    _textColorPickerView.frame = CGRectMake(0, keyboardSize.height, self.view.frame.size.width, 60);
+    _textColorPickerView.frame = CGRectMake(0, keyboardSize.height + 30, self.view.frame.size.width, 30);
 }
 - (void)keyBoardDidHide:(id)sender {
 
-    _textColorPickerView.frame = CGRectMake(0, self.view.frame.size.height - 70, self.view.frame.size.width, 60);
+    [_textColorPickerView removeFromSuperview];
+    _textColorPickerView = nil;
+    //_textColorPickerView.frame = CGRectMake(0, self.view.frame.size.height - 70, self.view.frame.size.width, 60);
     }
 
 
@@ -156,7 +165,7 @@
 
 - (void)nextPressed {
     
-    if ([self.textView.text isEqualToString:@"Text"]) {
+    if ([self.textView.text isEqualToString:@"Enter Text"]) {
         [OLGhostAlertView showAlertAtBottomWithTitle:@"Message" message:@"Please enter text to post"];
     }
     else {
@@ -175,6 +184,7 @@
     textView.text = [textView.text stringByReplacingOccurrencesOfString:@"Text" withString:@""];
 
 }
+
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     

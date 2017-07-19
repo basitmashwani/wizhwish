@@ -86,11 +86,24 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (self.wishType == kWWishList && _isMyPost) {
+    if (self.wishType == kWWishList) {
         
+        if (!_isMyPost) {
+            
+            WZMyWishesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"K_TABLE_CELL_WISH_BOARD"];
+           // cell.isWishList = self.isWishList;
+            cell.collectionType = KWFollowerType;
+            [cell.collectionView reloadData];
+
+            return cell;
+        }
+        else {
+
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:K_CELL_MY_POST];
         return cell;
-    }
+        }
+           }
+    
     else {
     WZMyWishesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:K_TABLE_CELL_MY_WISHES];
         

@@ -79,7 +79,14 @@
 
 @property(nonatomic ,retain) UIButton *playButton;
 
+@property(nonatomic ,retain) UIImage *filteredImage;
+
 @property(nonatomic) BOOL isPause;
+
+@property(nonatomic) BOOL isVideoAdded;
+
+
+@property(nonatomic) BOOL isLayerAdded;
 
 @property(nonatomic) BOOL isnextPressed;
 
@@ -187,6 +194,7 @@
 - (void)updateViewForPlayerMode {
     
     
+    __weak typeof(self) weakSelf = self;
     self.time = 0;
     self.labelTime.text = @"0:00";
   //  [self rightButtonCanShow:NO];
@@ -194,14 +202,29 @@
     [self.previewLayer removeFromSuperlayer];
     self.cameraView.backgroundColor = [UIColor blackColor];
     
-    [self.cameraView.layer addSublayer:self.timerView.layer];
+  //  if (self.timerView.layer.superlayer != nil)
+   // [self.timerView.layer removeFromSuperlayer];
+   // [self.cameraView.layer addSublayer:self.timerView.layer];
    
     NSURL *videoURL   = [NSURL fileURLWithPath:[[WSetting getSharedSetting] rearVideoUrlPath]];
+    
+     [RUUtility generateVideoThumbnail:videoURL success:^(UIImage *image) {
+       
+         weakSelf.filteredImage = image;
+         [weakSelf.collectionView reloadData];
+        
+     }];
+
+    
     if (self.secondVideo) {
         
         self.buttonAddVideo.hidden = YES;
+        
+        [RUUtility getBarButtonWithTitle:@"Share" forViewController:self selector:@selector(nextPressed)];
+
 
         NSURL *secondVideoURL = [NSURL fileURLWithPath:[[WSetting getSharedSetting] frontVideoUrlPath]];
+        
         
         [self.collectionView reloadData];
     
@@ -340,7 +363,8 @@
    // [self.vkMediaPlayer removeFromParentViewController];
     _previewLayer.frame = self.cameraView.bounds;
     _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-    [_previewLayer addSublayer:self.timerView.layer];
+    //[_previewLayer addSublayer:self.timerView.layer];
+  //  [self.timerView.layer removeFromSuperlayer];
     [self.cameraView.layer addSublayer:_previewLayer];
     [self.view bringSubviewToFront:self.cameraView];
     [self setup];
@@ -349,21 +373,32 @@
 }
 - (void)crossPressed {
  
-    if (self.isnextPressed) {
-        
+    if (self.isVideoAdded) {
+        self.viewContainer.hidden = YES;
         _previewLayer.frame = self.cameraView.bounds;
         _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
-        [_previewLayer addSublayer:self.timerView.layer];
+       // [self.timerView.layer removeFromSuperlayer];
+      //  [_previewLayer addSublayer:self.timerView.layer];
         [self.cameraView.layer addSublayer:_previewLayer];
         [self.view bringSubviewToFront:self.cameraView];
         [self setup];
         self.isUsingLibrary = NO;
         self.secondVideo = NO;
+        self.isVideoAdded = NO;
+        self.labelTime.text = @"0:00";
+        self.time = 0;
+
+        
 
         
     }
     else {
  
+        if (self.isLayerAdded) {
+            self.isLayerAdded = NO;
+            [self.timerView.layer removeFromSuperlayer];
+        }
+        
         [self.navigationController popViewControllerAnimated:YES];
 }
     
@@ -373,18 +408,17 @@
     
     if (self.isnextPressed) {
         
-      //  WWizhViewController *controller =  [[UIStoryboard getWhizStoryBoard] instantiateViewControllerWithIdentifier:K_SB_WIZH_VIEW_CONTROLLER];
-        
-      //  controller.showWhiz = YES;
-//        
-      //  [self.navigationController pushViewController:controller animated:YES];
-        
-       // [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        //Save video
+            //Save video
         
         NSString *originPath = [[WSetting getSharedSetting] rearVideoUrlPath];
-        [self exportVideoToRollwithUrlPath:originPath Filter:self.videoPlayerFilter.filter];
-
+        [self exportVideoToRollwithUrlPath:originPath Filter:self.videoPlayerFilter.filter isFirstVideo:YES];
+        
+        NSString *videoPath = [[WSetting getSharedSetting] frontVideoUrlPath];
+        
+        
+        if (videoPath.length > 0) {
+        [self exportVideoToRollwithUrlPath:videoPath Filter:self.videoPlayerFilter.filter isFirstVideo:NO];
+        }
         
     }
     else {
@@ -395,6 +429,7 @@
         self.switchButton.enabled = YES;
        // [self updateViewForPlayerMode];
         self.isnextPressed = YES;
+       self.navigationItem.rightBarButtonItem = [RUUtility getBarButtonWithTitle:@"Share" forViewController:self selector:@selector(nextPressed)];
     }
     
 }
@@ -413,6 +448,10 @@
 
 - (void)libraryPressed:(id)sender {
  
+//    if (self.isLayerAdded) {
+//        self.isLayerAdded = NO;
+//        [self.timerView.layer removeFromSuperlayer];
+//    }
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.delegate = self;
     imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
@@ -622,7 +661,9 @@
     
     _previewLayer.frame = self.cameraView.bounds;
      _previewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
+       // [self.timerView.layer removeFromSuperlayer];
     [_previewLayer addSublayer:self.timerView.layer];
+        self.isLayerAdded = YES;
     [self.cameraView.layer addSublayer:_previewLayer];
     [self setup];
     [self.buttonAddVideo setHidden:YES];
@@ -658,12 +699,15 @@
 - (void)viewDidDisappear:(BOOL)animated {
     
     [super viewDidDisappear:animated];
+   // if (self.timerView != nil)
+    
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
     
     
 
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -733,6 +777,19 @@
 
 #pragma mark Private Methods
 
+- (void)videoReadyForPublish {
+    dispatch_async( dispatch_get_main_queue(), ^{
+
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    
+      WWizhViewController *controller =  [[UIStoryboard getWhizStoryBoard] instantiateViewControllerWithIdentifier:K_SB_WIZH_VIEW_CONTROLLER];
+    
+      controller.showWhiz = YES;
+    //
+     [self.navigationController pushViewController:controller animated:YES];
+    
+    });
+}
 
 - (void)updateViewFor:(NSString*)mode {
     
@@ -956,7 +1013,7 @@
     
     
 }
-- (void)exportVideoToRollwithUrlPath:(NSString*)urlPath Filter:(SCFilter*)filter  {
+- (void)exportVideoToRollwithUrlPath:(NSString*)urlPath Filter:(SCFilter*)filter isFirstVideo:(BOOL)firstVideo  {
     
     
     NSURL *firstUrl = [NSURL fileURLWithPath:urlPath];
@@ -964,29 +1021,35 @@
     SCAssetExportSession *exportSession = [[SCAssetExportSession alloc] initWithAsset:asset];
     
     NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)objectAtIndex:0];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd_HH-mm-ss"];
-    NSString *destinationPath = [documentsDirectory stringByAppendingFormat:@"/utput_%@.mov", [dateFormatter stringFromDate:[NSDate date]]];
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//    [dateFormatter setDateFormat:@"yyyy-MM-dd_HH-mm-ss"];
+//    
+    NSString *fileName = [[[NSProcessInfo processInfo] globallyUniqueString] stringByAppendingString:@".mp4"];
+ //[NSString stringWithFormat:@"video_%@.mp4", [dateFormatter stringFromDate:[NSDate date]]];
+    NSString *destinationPath = [documentsDirectory stringByAppendingFormat:@"/%@", fileName];
+    
+
     exportSession.videoConfiguration.filter = filter;
     
-    exportSession.videoConfiguration.preset = SCPresetHighestQuality;
+    exportSession.videoConfiguration.preset = SCPresetMediumQuality;
     
-    exportSession.audioConfiguration.preset = SCPresetHighestQuality;
+    exportSession.audioConfiguration.preset = SCPresetMediumQuality;
     
     exportSession.videoConfiguration.maxFrameRate = 35;
     
     exportSession.outputUrl = [NSURL fileURLWithPath:destinationPath];
     
     exportSession.outputFileType = AVFileTypeMPEG4;
+    exportSession.shouldOptimizeForNetworkUse = YES;
     
-    exportSession.delegate = self;
+   // exportSession.delegate = self;
     
     exportSession.contextType = SCContextTypeAuto;
     
     CFTimeInterval time = CACurrentMediaTime();
-    __weak typeof(self) wSelf = self;
+    //__weak typeof(self) wSelf = self;
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
+    __block BOOL isFirst = firstVideo;
     NSURL *fileURL = [NSURL fileURLWithPath:destinationPath];
     [exportSession exportAsynchronouslyWithCompletionHandler:^{
         
@@ -1001,62 +1064,77 @@
         } else if (error == nil) {
             
             __weak typeof(self) weakSelf = self;
-            [[WSetting getSharedSetting] setFirstOutputUrl:destinationPath];
-        
-            [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+            if (isFirst) {
+          
+                [[WSetting getSharedSetting] setFirstOutputUrl:destinationPath];
+           
+                [[WSetting getSharedSetting] setFirstVideoFileName:fileName];
             
-            [exportSession.outputUrl saveToCameraRollWithCompletion:^(NSString * _Nullable path, NSError * _Nullable error) {
-              
-                [[UIApplication sharedApplication] endIgnoringInteractionEvents];
-                
-                if (error == nil) {
+            }  else {
+            
+                [[WSetting getSharedSetting] setSecondOutputUrl:destinationPath];
+            
+                [[WSetting getSharedSetting] setSecondVideoFileName:fileName];
+            }
+            
+          //  NSURL *url = [NSURL fileURLWithPath:[WSetting getSharedSetting].firstOutputUrl];
+         //   NSData *newDataForUpload = [NSData dataWithContentsOfURL:url];
+         //   NSLog(@"Size of video is %ld",(long)newDataForUpload.length/1024);
+        
+         //   NSLog(@"Save to roll");
+            
                     
-                    
-                    NSLog(@"Save to roll");
+                    if (isFirst) {
                     if (self.textLabel.text.length > 0) {
                         [RUUtility addTextToVideoWithVideoURL:fileURL withText:weakSelf.textLabel.text labelPoint:weakSelf.labelPoint label:weakSelf.textLabel  success:^{
                             
-                            NSString *destinationPath = [[WSetting getSharedSetting] firstOutputUrl];
+                            NSString *videoPath = [[WSetting getSharedSetting] firstOutputUrl];
                             
-                            if (self.pencilImageView != nil) {
-                                [RUUtility addImageToVideoWithVideoURL:[NSURL fileURLWithPath:destinationPath] withImage:weakSelf.drawingView.image success:^{
+                            if (self.imagePencilCapture != nil) {
+                                [RUUtility addImageToVideoWithVideoURL:[NSURL fileURLWithPath:videoPath] withImage:weakSelf.drawingView.image success:^{
                                     NSLog(@"image is ready");
-                                    NSString *destinationPath = [[WSetting getSharedSetting] firstOutputUrl];
+                                //[[WSetting getSharedSetting] firstOutputUrl];
                                     
-                                    if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(destinationPath))
-                                        
-                                        UISaveVideoAtPathToSavedPhotosAlbum(destinationPath, weakSelf, @selector(video:didFinishSavingWithError:contextInfo:), nil);
-                                }];
-                            }
+                                    [weakSelf videoReadyForPublish];
+                                    
 
                             
                         }];
                         //
                     }
-                 else  if (self.pencilImageView != nil) {
-                        [RUUtility addImageToVideoWithVideoURL:fileURL withImage:weakSelf.drawingView.image success:^{
-                            NSLog(@"image is ready");
-                                NSString *destinationPath = [[WSetting getSharedSetting] firstOutputUrl];
-                            
-                        if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(destinationPath))
-                            
-                            UISaveVideoAtPathToSavedPhotosAlbum(destinationPath, weakSelf, @selector(video:didFinishSavingWithError:contextInfo:), nil);
+                            else {
+                                [weakSelf videoReadyForPublish];
+                            }
                         }];
                     }
-                    //End
+                   if (self.imagePencilCapture != nil) {
+                        [RUUtility addImageToVideoWithVideoURL:fileURL withImage:weakSelf.drawingView.image success:^{
+                            NSLog(@"image is ready");
+                            //NSString *destinationPath = [[WSetting getSharedSetting] firstOutputUrl];
+                            [weakSelf videoReadyForPublish];
+                            
+//                        if (UIVideoAtPathIsCompatibleWithSavedPhotosAlbum(destinationPath))
+//                            
+//                            UISaveVideoAtPathToSavedPhotosAlbum(destinationPath, weakSelf, @selector(video:didFinishSavingWithError:contextInfo:), nil);
+                        }];
+                    }
+                   else {
+                       [weakSelf videoReadyForPublish];
 
-                    [MBProgressHUD hideHUDForView:self.view animated:YES];
+                   }
+                    //End
+                    }
+                    else {
+                        //is small video;
+                        NSLog(@"Small video saved");
+                        
+                    }
                 } else {
                     
                     NSLog(@"Failed");
                 }
-            }];
-        } else {
-            if (!exportSession.cancelled) {
-                
-                NSLog(@"Failed");
-            }
-        }
+        
+        
     }];
 }
 
@@ -1100,13 +1178,13 @@
     _playImageView.hidden = YES;
     
 }
-- (void)dealloc {
-   // [self.swipeFilterView removeObserver:self forKeyPath:@"selectedFilter"];
-   // self.swipeFilterView = nil;
-    [_scPlayer pause];
-   // _scPlayer = nil;
-    //[self cancelSaveToCameraRoll];
-}
+//- (void)dealloc {
+//   // [self.swipeFilterView removeObserver:self forKeyPath:@"selectedFilter"];
+//   // self.swipeFilterView = nil;
+//    [_scPlayer pause];
+//   // _scPlayer = nil;
+//    //[self cancelSaveToCameraRoll];
+//}
 
 
 
@@ -1270,14 +1348,38 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
+    
+    
     WZFriendCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionViewFilter" forIndexPath:indexPath];
-    CIImage *filterImage = [self.filterArray objectAtIndex:indexPath.row];
-    UIImage *image = [[UIImage alloc] initWithCIImage:filterImage];
-
-    [cell.buttonPeople setImage:image forState:UIControlStateNormal];
-    [cell.buttonPeople setTag:indexPath.row];
-    [cell.buttonPeople addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
-  
+    
+    __block UIImage *image = nil;
+    dispatch_async( dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // Add code here to do background processing
+        if (!self.filteredImage) {
+            
+            CIImage *filterImage = [self.filterArray objectAtIndex:indexPath.row];
+            
+            image = [[UIImage alloc] initWithCIImage:filterImage];
+        }
+        else {
+            
+           
+            image = [UIImage getFilterImageWithIndex:indexPath.row withImage:self.filteredImage];
+            
+        }
+        
+        dispatch_async( dispatch_get_main_queue(), ^{
+            // Add code here to update the UI/send notifications based on the
+            // results of the background processing
+            [cell.buttonPeople setImage:image forState:UIControlStateNormal];
+            [cell.buttonPeople setImage:image forState:UIControlStateNormal];
+            [cell.buttonPeople setTag:indexPath.row];
+            [cell.buttonPeople addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+            
+        });
+    });
+   
+   
    
     return cell;
 }
@@ -1317,13 +1419,14 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
   
     self.isUsingLibrary = YES;
-
-    self.isnextPressed = YES;
+    self.isVideoAdded = YES;
     
     NSURL *videoURL = [info objectForKey:UIImagePickerControllerMediaURL];
     
     
     NSData *videoData = [NSData dataWithContentsOfURL:videoURL];
+    
+    NSLog(@"Original file size : %u",videoData.length/1024);
 
     NSString *outputFile = [NSString stringWithFormat:@"video_%@.mp4", @"Rear"];
 //
@@ -1339,6 +1442,8 @@
     
     if (self.secondVideo) {
         [[WSetting getSharedSetting] setFrontVideoUrlPath:outputPath];
+        self.isnextPressed = YES;
+
     }
     else {
         [[WSetting getSharedSetting] setRearVideoUrlPath:outputPath];
@@ -1445,6 +1550,7 @@
     self.switchButton.enabled = YES;
     [self updateViewForPlayerMode];
     self.isnextPressed = YES;
+    self.isVideoAdded = YES;
     
 
 //    [_assetLibrary writeVideoAtPathToSavedPhotosAlbum:[NSURL URLWithString:videoPath] completionBlock:^(NSURL *assetURL, NSError *error1) {

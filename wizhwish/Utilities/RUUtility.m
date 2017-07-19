@@ -39,11 +39,19 @@
     
     [navController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName]];
     navController.navigationBar.tintColor = [UIColor whiteColor];
-    navController.navigationBar.barTintColor = [UIColor navigationBarColor];
-    navController.navigationBar.barStyle = UIBarStyleBlack;
+    navController.navigationBar.barTintColor = [UIColor getLightGrayNavigationColor]; //background colour
+    navController.navigationBar.barStyle = UIBarStyleDefault;
 
     [navController.navigationItem setTitle:@"Wizh Wish"];
     
+    NSShadow *shadow = [NSShadow new];
+    [shadow setShadowColor: [UIColor clearColor]];
+    [shadow setShadowOffset: CGSizeMake(0.0f, 1.0f)];
+
+    [[UINavigationBar appearance] setTitleTextAttributes:
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      [UIFont fontWithName:@"Jazz LET" size:26],NSFontAttributeName,
+      nil]];
 }
 
 + (void)setBackButtonForController:(UIViewController*)Controller withSelector:(SEL)selector {
@@ -161,11 +169,11 @@
 }
 
 
-+ (void)removeBaseDirectory {
-   
++ (void)removeBaseDirectory:(NSString*)directoryName {
+
     NSFileManager *fm = [NSFileManager defaultManager];
     NSArray *appSupportDir = [fm URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
-    NSURL* dirPath = [[appSupportDir objectAtIndex:0] URLByAppendingPathComponent:@"WhizWish"];
+    NSURL* dirPath = [[appSupportDir objectAtIndex:0] URLByAppendingPathComponent:directoryName];
     
     NSError *error;
     BOOL isRemoved = [fm removeItemAtPath:dirPath.path error:&error];
@@ -175,11 +183,12 @@
     }
     
 }
-+ (NSString*)getFileURLPathforFileName:(NSString*)fileName withData:(NSData*)data {
-    
++ (NSString*)getFileURLPathforFileName:(NSString*)fileName directoryName:(NSString*)directoryName
+  withData:(NSData*)data {
+
     NSFileManager *fm = [NSFileManager defaultManager];
     NSArray *appSupportDir = [fm URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
-    NSURL* dirPath = [[appSupportDir objectAtIndex:0] URLByAppendingPathComponent:@"WhizWish"];
+    NSURL* dirPath = [[appSupportDir objectAtIndex:0] URLByAppendingPathComponent:directoryName];
     
     NSError*    theError = nil; //error setting
     if (![fm createDirectoryAtURL:dirPath withIntermediateDirectories:YES
@@ -226,7 +235,7 @@
      optionalLayer.frame=CGRectMake(0, 0, sizeOfVideo.width, sizeOfVideo.height);
      [optionalLayer setMasksToBounds:YES];
      
-     [self addOverlayToVideo:optionalLayer sizeOfVideo:sizeOfVideo videoURL:url success:^{
+     [self addOverlayToVideo:optionalLayer sizeOfVideo:sizeOfVideo videoURL:url  success:^{
          success();
      }];
 }
@@ -356,6 +365,31 @@
         }
     }];
 
+}
+
++ (void)generateVideoThumbnail:(NSURL*)url success:(void(^)(UIImage *image))success
+
+{
+    AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:url options:nil];
+    AVAssetImageGenerator *generator = [[AVAssetImageGenerator alloc] initWithAsset:asset];
+    generator.appliesPreferredTrackTransform=TRUE;
+    CMTime thumbTime = CMTimeMakeWithSeconds(0,30);
+    
+    AVAssetImageGeneratorCompletionHandler handler = ^(CMTime requestedTime, CGImageRef im, CMTime actualTime, AVAssetImageGeneratorResult result, NSError *error){
+        if (result != AVAssetImageGeneratorSucceeded) {
+            NSLog(@"couldn't generate thumbnail, error:%@", error);
+        }
+        UIImage *image = [UIImage imageWithCGImage:im];
+        image = [UIImage resizeImage:image toResolution:480];
+        success(image);
+       // [button setImage:[UIImage imageWithCGImage:im] forState:UIControlStateNormal];
+       // ..thumbImg=[[UIImage imageWithCGImage:im] ];
+    };
+    
+    CGSize maxSize = CGSizeMake(320, 180);
+    generator.maximumSize = maxSize;
+    [generator generateCGImagesAsynchronouslyForTimes:[NSArray arrayWithObject:[NSValue valueWithCMTime:thumbTime]] completionHandler:handler];
+    
 }
 
 

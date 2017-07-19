@@ -59,8 +59,8 @@ static WZServiceParser *_sharedInstance = nil;
     
 }
 
-- (void)processPostText:(NSString*)text tags:(NSString*)tags imagesArray:(NSArray*)imageArray videoArray:(NSArray*)videoArray audioArray:(NSArray*)audioArray success:(void(^)(NSString* accessToken))success
-                failure:(void(^)(NSError *error))failure {
+
+- (void)processPostText:(NSString*)text tags:(NSString*)tags imagesArray:(NSArray*)imageArray videoURL:(NSString*)videoURL secondURL:(NSString*)secondURL audioURL:(NSString*)audioURL audioImageURL:(NSString*)imageURL success:(void(^)(NSString* successStr))success failure:(void(^)(NSError *error))failure {
    // networks/createPost?j_text=mypost&j_images=image,image2&j_privacy=public
     
     if (tags.length == 0) {
@@ -72,6 +72,18 @@ static WZServiceParser *_sharedInstance = nil;
     text = [text stringByReplacingOccurrencesOfString:@" " withString:@"+"];
 
     tags = [tags stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    
+    text =  [text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+    tags = [tags stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+    text = [text stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    text = [text stringByReplacingOccurrencesOfString:@"\n" withString:@"~"];
+
+    
+  //  NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"\n+" options:0 error:NULL];
+    //text = [regex stringByReplacingMatchesInString:text options:0 range:NSMakeRange(0, [text length]) withTemplate:@"\n"];
+    //text = [text stringByRemovingBlankLines];
 
     NSString *url = [NSString stringWithFormat:@"%@%@%@%@%@%@",k_BASE_SOCIAL_SERVER_URL,@"/networks/createPost?j_text=",text,@"&j_tags=",tags,@"&j_privacy=public"];
     
@@ -79,11 +91,17 @@ static WZServiceParser *_sharedInstance = nil;
 
     header = [NSString stringWithFormat:@"%@%@",@"Bearer ",header];
     
+    NSString *combineURL = nil;
+    if (secondURL.length > 0) {
+        
+        combineURL = [NSString stringWithFormat:@"%@%@%@",videoURL,@"_SECONDURL_",secondURL];
+        videoURL = combineURL;
+    }
     NSDictionary *parameters = @{@"images":imageArray,
-                                 @"backendVideo":@"",
-                                 @"fronendVideo":@"",
-                                 @"audio":@"",
-                                 @"audioImage":@""
+                                 @"backendVideo":videoURL?videoURL:@"",
+                                 @"frontendVideo":secondURL?secondURL:@"",
+                                 @"audio":audioURL?audioURL:@"",
+                                 @"audioImage":imageURL?imageURL:@""
                                  };
     
     ;    [RUWebServiceParser postWebServiceWithURL:url parameter:parameters header:header success:^(NSDictionary *responseDict) {
@@ -282,6 +300,16 @@ static WZServiceParser *_sharedInstance = nil;
     
     NSArray *imageArray = [post.mediaDictionary valueForKey:@"images"];
     
+    NSString *videoURL = [post.mediaDictionary valueForKey:@"backendVideo"];
+
+    NSString *audioURL = [post.mediaDictionary valueForKey:@"audio"];
+    
+  //  post.audioData = [NSData dataWithContentsOfURL:[NSURL URLWithString:audioURL]];
+  
+  //  post.videoData = [NSData dataWithContentsOfURL:[NSURL URLWithString:videoURL]];
+    
+    
+
     if (![NSString isStringNull:post.postText]) {
         
         post.postType = k_TEXT_TYPE;
@@ -289,6 +317,14 @@ static WZServiceParser *_sharedInstance = nil;
     else if (imageArray.count > 0) {
         
         post.postType = k_IMAGE_TYPE;
+    }
+    else if (videoURL.length > 0) {
+        
+        post.postType = k_VIDEO_TYPE;
+    }
+    else if (audioURL.length > 0) {
+        
+        post.postType = k_AUDIO_TYPE;
     }
     
     

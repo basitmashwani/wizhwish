@@ -14,12 +14,23 @@ pod 'SCRecorder'
 pod 'AFNetworking', '~> 2.0'
 pod 'OLGhostAlertView', :git =>'https://github.com/ondalabs/OLGhostAlertView.git'
 pod 'AWSS3', '~> 2.4.1'
-pod "HockeySDK"
+pod 'PhotoTweaks'
+pod "CTPersistance"
+pod "HandyFrame"
 
+
+#pod 'VKVideoPlayer'
 use_frameworks!
 pod 'Fabric'
 pod 'Crashlytics'
+pod 'PBJVideoPlayer'
+pod 'AeroGear-Push-Swift'
+
 pod 'IGColorPicker', :path => './'
+pod "ASPVideoPlayer"
+#pod 'VKVideoPlayer'
+
+
 
 
 

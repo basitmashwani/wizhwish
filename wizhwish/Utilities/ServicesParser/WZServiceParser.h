@@ -22,8 +22,9 @@
 - (void)processLoginUserWithEmail:(NSString*)email password:(NSString*)password success:(void(^)(NSString* accessToken))success
                              failure:(void(^)(NSError *error))failure;
 
-- (void)processPostText:(NSString*)text tags:(NSString*)tags imagesArray:(NSArray*)imageArray videoArray:(NSArray*)videoArray audioArray:(NSArray*)audioArray success:(void(^)(NSString* accessToken))success
-                failure:(void(^)(NSError *error))failure;
+
+- (void)processPostText:(NSString*)text tags:(NSString*)tags imagesArray:(NSArray*)imageArray videoURL:(NSString*)videoURL secondURL:(NSString*)secondURL audioURL:(NSString*)audioURL audioImageURL:(NSString*)imageURL success:(void(^)(NSString* successStr))success failure:(void(^)(NSError *error))failure;
+
 
 - (void)processGetRecommendedFriendWithSuccess:(void(^)(NSDictionary* dict))success
                 failure:(void(^)(NSError *error))failure;

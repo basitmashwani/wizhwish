@@ -178,6 +178,33 @@
     },
     {
       'type': 'directory',
+      'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ASPVideoPlayer/ASPVideoPlayer.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "ASPVideoPlayer-Swift.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ASPVideoPlayer/ASPVideoPlayer.framework/Headers/ASPVideoPlayer-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "ASPVideoPlayer-umbrella.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/Target Support Files/ASPVideoPlayer/ASPVideoPlayer-umbrella.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/ASPVideoPlayer/ASPVideoPlayer.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/Pods.build/Debug-iphoneos/ASPVideoPlayer.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
       'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/AWSCore/AWSCore.framework/Headers",
       'contents': [
         {
@@ -648,6 +675,190 @@
     },
     {
       'type': 'directory',
+      'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/AeroGear-Push-Swift/AeroGearPush.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "AeroGear-Push-Swift-umbrella.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/Target Support Files/AeroGear-Push-Swift/AeroGear-Push-Swift-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "AeroGearPush-Swift.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/AeroGear-Push-Swift/AeroGearPush.framework/Headers/AeroGearPush-Swift.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/AeroGear-Push-Swift/AeroGearPush.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/Pods.build/Debug-iphoneos/AeroGear-Push-Swift.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/CTPersistance/CTPersistance.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "CTPersistance-Swift.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/CTPersistance/CTPersistance.framework/Headers/CTPersistance-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistance-umbrella.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/Target Support Files/CTPersistance/CTPersistance-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistance.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/CTPersistance.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceAsyncExecutor.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/Async/CTPersistanceAsyncExecutor.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceConfiguration.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/CTPersistanceConfiguration.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceCriteria.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/Criteria/CTPersistanceCriteria.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceDataBase.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/Database/CTPersistanceDataBase.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceDatabasePool.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/Database/CTPersistanceDatabasePool.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceMarcos.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/CTPersistanceMarcos.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceMigrator.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/Migration/CTPersistanceMigrator.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceQueryCommand+DataManipulations.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/QueryCommand/Categories/DataManipulations/CTPersistanceQueryCommand+DataManipulations.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceQueryCommand+ReadMethods.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/QueryCommand/Categories/ReadingMethods/CTPersistanceQueryCommand+ReadMethods.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceQueryCommand+SchemaManipulations.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/QueryCommand/Categories/SchemaManipulations/CTPersistanceQueryCommand+SchemaManipulations.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceQueryCommand+Status.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/QueryCommand/Categories/StatusMethods/CTPersistanceQueryCommand+Status.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceQueryCommand.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/QueryCommand/CTPersistanceQueryCommand.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceRecord.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/Record/CTPersistanceRecord.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceRecordProtocol.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/Record/CTPersistanceRecordProtocol.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceTable+Delete.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/Table/Categories/Delete/CTPersistanceTable+Delete.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceTable+Find.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/Table/Categories/Find/CTPersistanceTable+Find.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceTable+Insert.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/Table/Categories/Insert/CTPersistanceTable+Insert.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceTable+Update.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/Table/Categories/Update/CTPersistanceTable+Update.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceTable.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/Table/CTPersistanceTable.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceTransaction.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/Transaction/CTPersistanceTransaction.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceVersionRecord.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/Migration/MigrationVersionTable/Record/CTPersistanceVersionRecord.h"
+        },
+        {
+          'type': 'file',
+          'name': "CTPersistanceVersionTable.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/Migration/MigrationVersionTable/CTPersistanceVersionTable.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSArray+CTPersistanceRecordTransform.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/Categories/NSArray/CTPersistanceRecordTransform/NSArray+CTPersistanceRecordTransform.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSString+ReqularExpression.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/Categories/NSString/ReqularExpression/NSString+ReqularExpression.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSString+SQL.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/CTPersistance/CTPersistance/CTPersistance/Categories/NSString/SQL/NSString+SQL.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/CTPersistance/CTPersistance.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/Pods.build/Debug-iphoneos/CTPersistance.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
       'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/Color-Picker-for-iOS/Color_Picker_for_iOS.framework/Headers",
       'contents': [
         {
@@ -742,6 +953,38 @@
           'type': 'file',
           'name': "module.modulemap",
           'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/Pods.build/Debug-iphoneos/HMSegmentedControl.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/HandyFrame/HandyFrame.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "HandyFrame-Swift.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/HandyFrame/HandyFrame.framework/Headers/HandyFrame-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "HandyFrame-umbrella.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/Target Support Files/HandyFrame/HandyFrame-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIView+LayoutMethods.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/HandyFrame/UIView+LayoutMethods.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/HandyFrame/HandyFrame.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/Pods.build/Debug-iphoneos/HandyFrame.build/module.modulemap"
         }
       ]
     },
@@ -875,6 +1118,48 @@
     },
     {
       'type': 'directory',
+      'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVideoPlayer/PBJVideoPlayer.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "PBJVideoPlayer-Swift.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVideoPlayer/PBJVideoPlayer.framework/Headers/PBJVideoPlayer-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "PBJVideoPlayer-umbrella.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/Target Support Files/PBJVideoPlayer/PBJVideoPlayer-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "PBJVideoPlayer.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/PBJVideoPlayer/Source/PBJVideoPlayer.h"
+        },
+        {
+          'type': 'file',
+          'name': "PBJVideoPlayerController.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/PBJVideoPlayer/Source/PBJVideoPlayerController.h"
+        },
+        {
+          'type': 'file',
+          'name': "PBJVideoView.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/PBJVideoPlayer/Source/PBJVideoView.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVideoPlayer/PBJVideoPlayer.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/Pods.build/Debug-iphoneos/PBJVideoPlayer.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
       'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PBJVision/PBJVision.framework/Headers",
       'contents': [
         {
@@ -917,6 +1202,48 @@
           'type': 'file',
           'name': "module.modulemap",
           'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/Pods.build/Debug-iphoneos/PBJVision.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PhotoTweaks/PhotoTweaks.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "PhotoTweakView.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/PhotoTweaks/PhotoTweaks/PhotoTweaks/PhotoTweakView.h"
+        },
+        {
+          'type': 'file',
+          'name': "PhotoTweaks-Swift.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PhotoTweaks/PhotoTweaks.framework/Headers/PhotoTweaks-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "PhotoTweaks-umbrella.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/Target Support Files/PhotoTweaks/PhotoTweaks-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "PhotoTweaksViewController.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/PhotoTweaks/PhotoTweaks/PhotoTweaks/PhotoTweaksViewController.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIColor+Tweak.h",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/PhotoTweaks/PhotoTweaks/PhotoTweaks/UIColor+Tweak.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/PhotoTweaks/PhotoTweaks.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/Pods.build/Debug-iphoneos/PhotoTweaks.build/module.modulemap"
         }
       ]
     },

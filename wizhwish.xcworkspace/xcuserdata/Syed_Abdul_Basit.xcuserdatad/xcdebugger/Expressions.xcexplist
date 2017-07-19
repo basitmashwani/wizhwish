@@ -14,10 +14,10 @@
          contextName = "-[WPhotoViewController saveCurrentDrawingImageWithText:atIndex:]:WPhotoViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "[self.textLabel getScreenshotImage]">
+               value = "self.textLabel.text">
             </PersistentString>
             <PersistentString
-               value = "self.textLabel.text">
+               value = "[self.textLabel getScreenshotImage]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -30,7 +30,12 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "__82-[WZServiceParser processRegisterUserWithEmail:userName:password:success:failure:]_block_invoke:WZServiceParser.m">
+         contextName = "-[WPhotoViewController getFilterImageWithIndex:withImage:]:WPhotoViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[UIImage alloc ] initWithCIImage:filteredImageData]">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
       <ContextState
          contextName = "+[UIImage(Extra) getFilterImageWithIndex:withImage:]:UIImage+Extra.m">
@@ -41,27 +46,34 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[WPhotoViewController filterPressed:]:WPhotoViewController.m">
+         contextName = "-[WPhotoViewController saveCurrentDrawingImageAtIndex:]:WPhotoViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.imagesArray">
-            </PersistentString>
-            <PersistentString
-               value = "[self.imagesArray objectAtIndex:self.selectedIndex]">
-            </PersistentString>
-            <PersistentString
-               value = "self.mainImageView">
+               value = "self.imagePencilCapture">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[WPhotoViewController pencilPressed:]:WPhotoViewController.m">
+         contextName = "-[WPhotoViewController imagePickerController:didFinishPickingMediaWithInfo:]:WPhotoViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "[self.imagesArray objectAtIndex:self.selectedIndex]">
+               value = "self.capturedImage">
             </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WWizhViewController viewDidLoad]:WWizhViewController.m">
+         <PersistentStrings>
             <PersistentString
-               value = "self.mainImageView.image">
+               value = "[[UIImageView alloc] initWithImage:[UIImage imageNamed:@&quot;Image_Whiz_UserTag&quot;]]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[YMCAudioPlayer getAudioDuration]:YMCAudioPlayer.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.audioPlayer.currentItem.asset.duration">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -118,6 +130,14 @@
          <PersistentStrings>
             <PersistentString
                value = "self.wishType">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WVideoRecordViewController viewDidDisappear:]:WVideoRecordViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.timerView.layer.superlayer&#10;">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -192,28 +212,32 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[WPhotoViewController getFilterImageWithIndex:withImage:]:WPhotoViewController.m">
+         contextName = "-[WPhotoViewController pencilPressed:]:WPhotoViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "[[UIImage alloc ] initWithCIImage:filteredImageData]">
+               value = "[self.imagesArray objectAtIndex:self.selectedIndex]">
+            </PersistentString>
+            <PersistentString
+               value = "self.mainImageView.image">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[WPhotoViewController saveCurrentDrawingImageAtIndex:]:WPhotoViewController.m">
+         contextName = "-[WPhotoViewController filterPressed:]:WPhotoViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "self.imagePencilCapture">
+               value = "self.imagesArray">
+            </PersistentString>
+            <PersistentString
+               value = "[self.imagesArray objectAtIndex:self.selectedIndex]">
+            </PersistentString>
+            <PersistentString
+               value = "self.mainImageView">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[WPhotoViewController imagePickerController:didFinishPickingMediaWithInfo:]:WPhotoViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "self.capturedImage">
-            </PersistentString>
-         </PersistentStrings>
+         contextName = "__82-[WZServiceParser processRegisterUserWithEmail:userName:password:success:failure:]_block_invoke:WZServiceParser.m">
       </ContextState>
    </ContextStates>
 </VariablesViewState>
