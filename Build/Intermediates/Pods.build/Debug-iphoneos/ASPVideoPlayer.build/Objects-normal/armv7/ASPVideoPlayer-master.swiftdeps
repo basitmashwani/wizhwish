@@ -1,0 +1,13 @@
+version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
+options: "c636fac95573d55bd578e35a147c75ea"
+build_time: [553687157, 7692000]
+inputs:
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/ASPVideoPlayer/ASPVideoPlayer/Classes/AnimationForwarder.swift": [547037841, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/ASPVideoPlayer/ASPVideoPlayer/Classes/ASPVideoPlayer.swift": [547060672, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/ASPVideoPlayer/ASPVideoPlayer/Classes/ASPVideoPlayerControls.swift": [547109093, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/ASPVideoPlayer/ASPVideoPlayer/Classes/ASPVideoPlayerView.swift": [547037841, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/ASPVideoPlayer/ASPVideoPlayer/Classes/ControlButtons.swift": [547037841, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/ASPVideoPlayer/ASPVideoPlayer/Classes/Loader.swift": [547037841, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/ASPVideoPlayer/ASPVideoPlayer/Classes/Math.swift": [547037841, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/ASPVideoPlayer/ASPVideoPlayer/Classes/PlayPauseLayer.swift": [547037841, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/ASPVideoPlayer/ASPVideoPlayer/Classes/Scrubber.swift": [547037841, 0]

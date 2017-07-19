@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': '/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/IBDesignables/Products/Debug-iphonesimulator/IGColorPicker/IGColorPicker.framework/Modules'
+    'contents': [{
+      'type': 'file',
+      'name': 'module.modulemap',
+      'external-contents': '/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/IBDesignables/Intermediates/Pods.build/Debug-iphonesimulator/IGColorPicker.build/unextended-module.modulemap',
+    }]
+  }]
+}

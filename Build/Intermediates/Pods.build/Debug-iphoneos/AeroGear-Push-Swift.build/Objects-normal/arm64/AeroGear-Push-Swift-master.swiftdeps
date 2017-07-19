@@ -1,0 +1,8 @@
+version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
+options: "d61713ec43ad3bb4f2643dceb5ae38a5"
+build_time: [553692728, 376393000]
+inputs:
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/AeroGear-Push-Swift/push-sdk-swift/ClientDeviceInformation.swift": [553687045, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/AeroGear-Push-Swift/push-sdk-swift/ClientDeviceInformationImpl.swift": [553687045, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/AeroGear-Push-Swift/push-sdk-swift/DeviceRegistration.swift": [553687045, 0]
+  "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/AeroGear-Push-Swift/push-sdk-swift/PushAnalytics.swift": [553687045, 0]

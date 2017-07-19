@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': '/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Products/Debug-iphoneos/AeroGear-Push-Swift/AeroGearPush.framework/Modules'
+    'contents': [{
+      'type': 'file',
+      'name': 'module.modulemap',
+      'external-contents': '/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/Pods.build/Debug-iphoneos/AeroGear-Push-Swift.build/unextended-module.modulemap',
+    }]
+  }]
+}

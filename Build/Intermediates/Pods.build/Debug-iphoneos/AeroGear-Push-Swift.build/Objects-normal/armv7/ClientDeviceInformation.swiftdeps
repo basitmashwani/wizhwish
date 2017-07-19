@@ -1,0 +1,57 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "ClientDeviceInformation"
+provides-nominal:
+- "P12AeroGearPush23ClientDeviceInformation"
+provides-member:
+- ["P12AeroGearPush23ClientDeviceInformation", ""]
+provides-dynamic-lookup:
+- "alias"
+- "categories"
+- "deviceToken"
+- "deviceType"
+- "operatingSystem"
+- "osVersion"
+- "variantID"
+- "variantSecret"
+depends-top-level:
+- "Array"
+- "ClientDeviceInformation"
+- "Data"
+- "String"
+depends-member:
+- ["P12AeroGearPush23ClientDeviceInformation", "Array"]
+- ["P12AeroGearPush23ClientDeviceInformation", "Data"]
+- ["P12AeroGearPush23ClientDeviceInformation", "String"]
+- ["P12AeroGearPush23ClientDeviceInformation", "alias"]
+- ["P12AeroGearPush23ClientDeviceInformation", "categories"]
+- ["P12AeroGearPush23ClientDeviceInformation", "deviceToken"]
+- ["P12AeroGearPush23ClientDeviceInformation", "deviceType"]
+- ["P12AeroGearPush23ClientDeviceInformation", "operatingSystem"]
+- ["P12AeroGearPush23ClientDeviceInformation", "osVersion"]
+- ["P12AeroGearPush23ClientDeviceInformation", "variantID"]
+- ["P12AeroGearPush23ClientDeviceInformation", "variantSecret"]
+depends-nominal:
+- "P12AeroGearPush23ClientDeviceInformation"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Metal.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/UIKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreText.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/armv7/SwiftOnoneSupport.swiftmodule"
+- "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/Target Support Files/AeroGear-Push-Swift/AeroGear-Push-Swift-umbrella.h"
+- "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/Pods.build/Debug-iphoneos/AeroGear-Push-Swift.build/unextended-module.modulemap"
+interface-hash: "3ec509dd5c35219bd72dc0e2abd502f4"

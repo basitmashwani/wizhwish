@@ -1,0 +1,10 @@
+framework module ASPVideoPlayer {
+  umbrella header "ASPVideoPlayer-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module ASPVideoPlayer.__Swift {
+    exclude header "ASPVideoPlayer-Swift.h"
+}

@@ -1,0 +1,310 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "ColorPickerCell"
+provides-nominal:
+- "C13IGColorPicker15ColorPickerCell"
+provides-member:
+- ["C13IGColorPicker15ColorPickerCell", ""]
+provides-dynamic-lookup:
+- "cellIdentifier"
+- "commonInit"
+depends-top-level:
+- "CGRect"
+- "ColorPickerCell"
+- "NSCoder"
+- "String"
+- !private "StringLiteralType"
+- "UICollectionViewCell"
+- !private "fatalError"
+depends-member:
+- !private ["Ps9AnyObject", "CGRect"]
+- ["Ps9AnyObject", "ColorPickerCell"]
+- ["Ps9AnyObject", "String"]
+- !private ["Ps9AnyObject", "commonInit"]
+- !private ["Ps9AnyObject", "fatalError"]
+- !private ["Ps9AnyObject", "init"]
+- ["Ps9AnyObject", ""]
+- !private ["PSo15CALayerDelegate", "CGRect"]
+- ["PSo15CALayerDelegate", "ColorPickerCell"]
+- ["PSo15CALayerDelegate", "String"]
+- !private ["PSo15CALayerDelegate", "commonInit"]
+- !private ["PSo15CALayerDelegate", "fatalError"]
+- !private ["PSo15CALayerDelegate", "init"]
+- ["PSo15CALayerDelegate", ""]
+- !private ["VSC6CGRect", "zero"]
+- !private ["Ps7CVarArg", "CGRect"]
+- ["Ps7CVarArg", "ColorPickerCell"]
+- ["Ps7CVarArg", "String"]
+- !private ["Ps7CVarArg", "commonInit"]
+- !private ["Ps7CVarArg", "fatalError"]
+- ["Ps7CVarArg", "init"]
+- ["Ps7CVarArg", ""]
+- ["C13IGColorPicker15ColorPickerCell", "CGRect"]
+- ["C13IGColorPicker15ColorPickerCell", "ColorPickerCell"]
+- ["C13IGColorPicker15ColorPickerCell", "NSCoder"]
+- ["C13IGColorPicker15ColorPickerCell", "String"]
+- ["C13IGColorPicker15ColorPickerCell", "cellIdentifier"]
+- ["C13IGColorPicker15ColorPickerCell", "commonInit"]
+- ["C13IGColorPicker15ColorPickerCell", "deinit"]
+- !private ["C13IGColorPicker15ColorPickerCell", "fatalError"]
+- ["C13IGColorPicker15ColorPickerCell", "init"]
+- ["Ps10Comparable", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "CGRect"]
+- ["Ps28CustomDebugStringConvertible", "ColorPickerCell"]
+- ["Ps28CustomDebugStringConvertible", "String"]
+- !private ["Ps28CustomDebugStringConvertible", "commonInit"]
+- !private ["Ps28CustomDebugStringConvertible", "fatalError"]
+- ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "zero"]
+- ["Ps28CustomDebugStringConvertible", ""]
+- ["Ps29CustomPlaygroundQuickLookable", "init"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "zero"]
+- ["Ps17CustomReflectable", "init"]
+- !private ["Ps17CustomReflectable", "zero"]
+- !private ["Ps23CustomStringConvertible", "CGRect"]
+- ["Ps23CustomStringConvertible", "ColorPickerCell"]
+- ["Ps23CustomStringConvertible", "String"]
+- !private ["Ps23CustomStringConvertible", "commonInit"]
+- !private ["Ps23CustomStringConvertible", "fatalError"]
+- ["Ps23CustomStringConvertible", "init"]
+- ["Ps23CustomStringConvertible", ""]
+- !private ["Ps9Equatable", "CGRect"]
+- ["Ps9Equatable", "ColorPickerCell"]
+- ["Ps9Equatable", "String"]
+- !private ["Ps9Equatable", "commonInit"]
+- !private ["Ps9Equatable", "fatalError"]
+- ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "zero"]
+- ["Ps9Equatable", ""]
+- ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- ["Ps26ExpressibleByStringLiteral", "init"]
+- ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- !private ["Ps8Hashable", "CGRect"]
+- ["Ps8Hashable", "ColorPickerCell"]
+- ["Ps8Hashable", "String"]
+- !private ["Ps8Hashable", "commonInit"]
+- !private ["Ps8Hashable", "fatalError"]
+- ["Ps8Hashable", "init"]
+- ["Ps8Hashable", ""]
+- ["Ps25LosslessStringConvertible", "init"]
+- ["Ps10MirrorPath", "init"]
+- !private ["PSo8NSCoding", "CGRect"]
+- ["PSo8NSCoding", "ColorPickerCell"]
+- ["PSo8NSCoding", "String"]
+- !private ["PSo8NSCoding", "commonInit"]
+- !private ["PSo8NSCoding", "fatalError"]
+- !private ["PSo8NSCoding", "init"]
+- ["PSo8NSCoding", ""]
+- !private ["PSo9NSCopying", "init"]
+- !private ["PSo16NSMutableCopying", "init"]
+- ["CSo8NSObject", "CGRect"]
+- ["CSo8NSObject", "ColorPickerCell"]
+- ["CSo8NSObject", "NSCoder"]
+- ["CSo8NSObject", "String"]
+- ["CSo8NSObject", "cellIdentifier"]
+- ["CSo8NSObject", "commonInit"]
+- !private ["CSo8NSObject", "fatalError"]
+- ["CSo8NSObject", "init"]
+- !private ["PSo16NSObjectProtocol", "CGRect"]
+- ["PSo16NSObjectProtocol", "ColorPickerCell"]
+- ["PSo16NSObjectProtocol", "String"]
+- !private ["PSo16NSObjectProtocol", "commonInit"]
+- !private ["PSo16NSObjectProtocol", "fatalError"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- ["PSo16NSObjectProtocol", ""]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["CSo8NSString", "init"]
+- !private ["Vs12StaticString", "init"]
+- ["SS", "init"]
+- ["Ps16TextOutputStream", "init"]
+- ["Ps20TextOutputStreamable", "init"]
+- !private ["PSo29UIAccessibilityIdentification", "CGRect"]
+- ["PSo29UIAccessibilityIdentification", "ColorPickerCell"]
+- ["PSo29UIAccessibilityIdentification", "String"]
+- !private ["PSo29UIAccessibilityIdentification", "commonInit"]
+- !private ["PSo29UIAccessibilityIdentification", "fatalError"]
+- !private ["PSo29UIAccessibilityIdentification", "init"]
+- ["PSo29UIAccessibilityIdentification", ""]
+- !private ["PSo12UIAppearance", "CGRect"]
+- ["PSo12UIAppearance", "ColorPickerCell"]
+- ["PSo12UIAppearance", "String"]
+- !private ["PSo12UIAppearance", "commonInit"]
+- !private ["PSo12UIAppearance", "fatalError"]
+- !private ["PSo12UIAppearance", "init"]
+- ["PSo12UIAppearance", ""]
+- !private ["PSo21UIAppearanceContainer", "CGRect"]
+- ["PSo21UIAppearanceContainer", "ColorPickerCell"]
+- ["PSo21UIAppearanceContainer", "String"]
+- !private ["PSo21UIAppearanceContainer", "commonInit"]
+- !private ["PSo21UIAppearanceContainer", "fatalError"]
+- !private ["PSo21UIAppearanceContainer", "init"]
+- ["PSo21UIAppearanceContainer", ""]
+- ["CSo24UICollectionReusableView", "CGRect"]
+- ["CSo24UICollectionReusableView", "ColorPickerCell"]
+- ["CSo24UICollectionReusableView", "NSCoder"]
+- ["CSo24UICollectionReusableView", "String"]
+- ["CSo24UICollectionReusableView", "cellIdentifier"]
+- ["CSo24UICollectionReusableView", "commonInit"]
+- !private ["CSo24UICollectionReusableView", "fatalError"]
+- ["CSo24UICollectionReusableView", "init"]
+- ["CSo20UICollectionViewCell", "CGRect"]
+- ["CSo20UICollectionViewCell", "ColorPickerCell"]
+- ["CSo20UICollectionViewCell", "NSCoder"]
+- ["CSo20UICollectionViewCell", "String"]
+- ["CSo20UICollectionViewCell", "cellIdentifier"]
+- ["CSo20UICollectionViewCell", "commonInit"]
+- !private ["CSo20UICollectionViewCell", "fatalError"]
+- ["CSo20UICollectionViewCell", "init"]
+- ["CSo20UICollectionViewCell", ""]
+- !private ["PSo17UICoordinateSpace", "CGRect"]
+- ["PSo17UICoordinateSpace", "ColorPickerCell"]
+- ["PSo17UICoordinateSpace", "String"]
+- !private ["PSo17UICoordinateSpace", "commonInit"]
+- !private ["PSo17UICoordinateSpace", "fatalError"]
+- !private ["PSo17UICoordinateSpace", "init"]
+- ["PSo17UICoordinateSpace", ""]
+- !private ["PSo13UIDynamicItem", "CGRect"]
+- ["PSo13UIDynamicItem", "ColorPickerCell"]
+- ["PSo13UIDynamicItem", "String"]
+- !private ["PSo13UIDynamicItem", "commonInit"]
+- !private ["PSo13UIDynamicItem", "fatalError"]
+- !private ["PSo13UIDynamicItem", "init"]
+- ["PSo13UIDynamicItem", ""]
+- !private ["PSo18UIFocusEnvironment", "CGRect"]
+- ["PSo18UIFocusEnvironment", "ColorPickerCell"]
+- ["PSo18UIFocusEnvironment", "String"]
+- !private ["PSo18UIFocusEnvironment", "commonInit"]
+- !private ["PSo18UIFocusEnvironment", "fatalError"]
+- !private ["PSo18UIFocusEnvironment", "init"]
+- ["PSo18UIFocusEnvironment", ""]
+- !private ["PSo11UIFocusItem", "CGRect"]
+- ["PSo11UIFocusItem", "ColorPickerCell"]
+- ["PSo11UIFocusItem", "String"]
+- !private ["PSo11UIFocusItem", "commonInit"]
+- !private ["PSo11UIFocusItem", "fatalError"]
+- !private ["PSo11UIFocusItem", "init"]
+- ["PSo11UIFocusItem", ""]
+- ["CSo11UIResponder", "CGRect"]
+- ["CSo11UIResponder", "ColorPickerCell"]
+- ["CSo11UIResponder", "NSCoder"]
+- ["CSo11UIResponder", "String"]
+- ["CSo11UIResponder", "cellIdentifier"]
+- ["CSo11UIResponder", "commonInit"]
+- !private ["CSo11UIResponder", "fatalError"]
+- ["CSo11UIResponder", "init"]
+- !private ["PSo30UIResponderStandardEditActions", "CGRect"]
+- ["PSo30UIResponderStandardEditActions", "ColorPickerCell"]
+- ["PSo30UIResponderStandardEditActions", "String"]
+- !private ["PSo30UIResponderStandardEditActions", "commonInit"]
+- !private ["PSo30UIResponderStandardEditActions", "fatalError"]
+- !private ["PSo30UIResponderStandardEditActions", "init"]
+- ["PSo30UIResponderStandardEditActions", ""]
+- !private ["PSo18UITraitEnvironment", "CGRect"]
+- ["PSo18UITraitEnvironment", "ColorPickerCell"]
+- ["PSo18UITraitEnvironment", "String"]
+- !private ["PSo18UITraitEnvironment", "commonInit"]
+- !private ["PSo18UITraitEnvironment", "fatalError"]
+- !private ["PSo18UITraitEnvironment", "init"]
+- ["PSo18UITraitEnvironment", ""]
+- ["CSo6UIView", "CGRect"]
+- ["CSo6UIView", "ColorPickerCell"]
+- ["CSo6UIView", "NSCoder"]
+- ["CSo6UIView", "String"]
+- ["CSo6UIView", "cellIdentifier"]
+- ["CSo6UIView", "commonInit"]
+- !private ["CSo6UIView", "fatalError"]
+- ["CSo6UIView", "init"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "CGRect"]
+- ["Ps37_DefaultCustomPlaygroundQuickLookable", "ColorPickerCell"]
+- ["Ps37_DefaultCustomPlaygroundQuickLookable", "String"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "commonInit"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "fatalError"]
+- !private ["Ps37_DefaultCustomPlaygroundQuickLookable", "init"]
+- ["Ps37_DefaultCustomPlaygroundQuickLookable", ""]
+- ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- ["Ps33_ExpressibleByStringInterpolation", "init"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- !private ["Ps9_Hashable", "CGRect"]
+- ["Ps9_Hashable", "ColorPickerCell"]
+- ["Ps9_Hashable", "String"]
+- !private ["Ps9_Hashable", "commonInit"]
+- !private ["Ps9_Hashable", "fatalError"]
+- ["Ps9_Hashable", "init"]
+- ["Ps9_Hashable", ""]
+- ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "zero"]
+depends-nominal:
+- "Ps9AnyObject"
+- "PSo15CALayerDelegate"
+- !private "VSC6CGRect"
+- "Ps7CVarArg"
+- "C13IGColorPicker15ColorPickerCell"
+- "Ps10Comparable"
+- "Ps28CustomDebugStringConvertible"
+- "Ps29CustomPlaygroundQuickLookable"
+- "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- "Ps26ExpressibleByStringLiteral"
+- "Ps33ExpressibleByUnicodeScalarLiteral"
+- "Ps8Hashable"
+- "Ps25LosslessStringConvertible"
+- "Ps10MirrorPath"
+- "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "PSo16NSMutableCopying"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "CSo8NSString"
+- !private "Vs12StaticString"
+- "SS"
+- "Ps16TextOutputStream"
+- "Ps20TextOutputStreamable"
+- "PSo29UIAccessibilityIdentification"
+- "PSo12UIAppearance"
+- "PSo21UIAppearanceContainer"
+- "CSo24UICollectionReusableView"
+- "CSo20UICollectionViewCell"
+- "PSo17UICoordinateSpace"
+- "PSo13UIDynamicItem"
+- "PSo18UIFocusEnvironment"
+- "PSo11UIFocusItem"
+- "CSo11UIResponder"
+- "PSo30UIResponderStandardEditActions"
+- "PSo18UITraitEnvironment"
+- "CSo6UIView"
+- "Ps37_DefaultCustomPlaygroundQuickLookable"
+- "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- "Ps34_ExpressibleByBuiltinStringLiteral"
+- "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- "Ps33_ExpressibleByStringInterpolation"
+- !private "Ps35_HasCustomAnyHashableRepresentation"
+- "Ps9_Hashable"
+- "Ps21_ObjectiveCBridgeable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/ObjectiveC.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Dispatch.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Foundation.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/UIKit.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreText.apinotesc"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/i386/SwiftOnoneSupport.swiftmodule"
+- "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Pods/Target Support Files/IGColorPicker/IGColorPicker-umbrella.h"
+- "/Users/Syed_Abdul_Basit/Desktop/Wishhh/Build/Intermediates/Pods.build/Debug-iphonesimulator/IGColorPicker.build/unextended-module.modulemap"
+interface-hash: "bc622a9363ec4ccdee2438f8b8d498cc"
