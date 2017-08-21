@@ -50,7 +50,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController setNavigationBarHidden:YES];
-    [RUUtility setUpNavigationBar:self.navigationController];
+    [RUUtility setUpNavigationBar:self.navigationController withColor:[UIColor navigationBarColor]];
     [self didTappedView:self.view];
     [self.textFieldUsername setTextFieldPlaceHolderColor:[UIColor whiteColor]];
     [self.textFieldPassword setTextFieldPlaceHolderColor:[UIColor whiteColor]];

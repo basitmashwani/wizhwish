@@ -125,7 +125,7 @@
         
     controller.titleName = @"Audio";
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-    [RUUtility setUpNavigationBar:navController];
+    [RUUtility setUpNavigationBar:navController withColor:[UIColor navigationBarColor]];
     [self presentViewController:navController animated:YES completion:nil];
     }
 
@@ -141,7 +141,7 @@
     controller.isDrawing = NO;
     controller.titleName = @"Audio";
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-    [RUUtility setUpNavigationBar:navController];
+    [RUUtility setUpNavigationBar:navController withColor:[UIColor navigationBarColor]];
     [self presentViewController:navController animated:YES completion:nil];
     }
 }

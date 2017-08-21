@@ -22,6 +22,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[WWizhViewController viewDidLoad]:WWizhViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[UIImageView alloc] initWithImage:[UIImage imageNamed:@&quot;Image_Whiz_UserTag&quot;]]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[WVideoRecordViewController viewDidAppear:]:WVideoRecordViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -30,18 +38,18 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "-[WPhotoViewController getFilterImageWithIndex:withImage:]:WPhotoViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "[[UIImage alloc ] initWithCIImage:filteredImageData]">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
          contextName = "+[UIImage(Extra) getFilterImageWithIndex:withImage:]:UIImage+Extra.m">
          <PersistentStrings>
             <PersistentString
                value = "image.CGImage">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[WPhotoViewController getFilterImageWithIndex:withImage:]:WPhotoViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[[UIImage alloc ] initWithCIImage:filteredImageData]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -58,14 +66,6 @@
          <PersistentStrings>
             <PersistentString
                value = "self.capturedImage">
-            </PersistentString>
-         </PersistentStrings>
-      </ContextState>
-      <ContextState
-         contextName = "-[WWizhViewController viewDidLoad]:WWizhViewController.m">
-         <PersistentStrings>
-            <PersistentString
-               value = "[[UIImageView alloc] initWithImage:[UIImage imageNamed:@&quot;Image_Whiz_UserTag&quot;]]">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -169,6 +169,14 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "-[WWStickerViewController collectionView:cellForItemAtIndexPath:]:WWStickerViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[UIImage imageNamed:stickerName]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "-[WVideoRecordViewController collectionView:didSelectItemAtIndexPath:]:WVideoRecordViewController.m">
          <PersistentStrings>
             <PersistentString
@@ -204,12 +212,15 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "__70-[WZServiceParser processLoginUserWithEmail:password:success:failure:]_block_invoke:WZServiceParser.m">
+         contextName = "-[WWMediaDisplayViewController collectionView:cellForItemAtIndexPath:]:WWMediaDisplayViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "[responseDict valueForKey:@&quot;access_token&quot;]">
+               value = "self.filteredImage">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "__82-[WZServiceParser processRegisterUserWithEmail:userName:password:success:failure:]_block_invoke:WZServiceParser.m">
       </ContextState>
       <ContextState
          contextName = "-[WPhotoViewController pencilPressed:]:WPhotoViewController.m">
@@ -237,7 +248,12 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "__82-[WZServiceParser processRegisterUserWithEmail:userName:password:success:failure:]_block_invoke:WZServiceParser.m">
+         contextName = "__70-[WZServiceParser processLoginUserWithEmail:password:success:failure:]_block_invoke:WZServiceParser.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[responseDict valueForKey:@&quot;access_token&quot;]">
+            </PersistentString>
+         </PersistentStrings>
       </ContextState>
    </ContextStates>
 </VariablesViewState>

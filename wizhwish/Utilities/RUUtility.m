@@ -26,7 +26,7 @@
          BOOL oldState = [UIView areAnimationsEnabled];
          [UIView setAnimationsEnabled:NO];
         UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:rootController];
-         [self setUpNavigationBar:navController];
+         [self setUpNavigationBar:navController withColor:[UIColor getLightGrayNavigationColor]];
          [[[[UIApplication sharedApplication] delegate] window] setRootViewController:navController];
          [UIView setAnimationsEnabled:oldState];
      }
@@ -35,11 +35,11 @@
     
 }
 
-+ (void)setUpNavigationBar:(UINavigationController*)navController {
++ (void)setUpNavigationBar:(UINavigationController*)navController withColor:(UIColor*)color {
     
     [navController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName]];
     navController.navigationBar.tintColor = [UIColor whiteColor];
-    navController.navigationBar.barTintColor = [UIColor getLightGrayNavigationColor]; //background colour
+    navController.navigationBar.barTintColor = color;//[UIColor getLightGrayNavigationColor]; //background colour
     navController.navigationBar.barStyle = UIBarStyleDefault;
 
     [navController.navigationItem setTitle:@"Wizh Wish"];
@@ -372,7 +372,7 @@
 {
     AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:url options:nil];
     AVAssetImageGenerator *generator = [[AVAssetImageGenerator alloc] initWithAsset:asset];
-    generator.appliesPreferredTrackTransform=TRUE;
+    generator.appliesPreferredTrackTransform = TRUE;
     CMTime thumbTime = CMTimeMakeWithSeconds(0,30);
     
     AVAssetImageGeneratorCompletionHandler handler = ^(CMTime requestedTime, CGImageRef im, CMTime actualTime, AVAssetImageGeneratorResult result, NSError *error){
@@ -380,7 +380,7 @@
             NSLog(@"couldn't generate thumbnail, error:%@", error);
         }
         UIImage *image = [UIImage imageWithCGImage:im];
-        image = [UIImage resizeImage:image toResolution:480];
+        image = [UIImage resizeImage:image toResolution:200];
         success(image);
        // [button setImage:[UIImage imageWithCGImage:im] forState:UIControlStateNormal];
        // ..thumbImg=[[UIImage imageWithCGImage:im] ];

@@ -117,6 +117,37 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
        // }
     }
     
+    
+    open func roundView(view:UIView) {
+        
+        let maskLayer = CAShapeLayer() 
+        maskLayer.fillRule = kCAFillRuleEvenOdd
+        maskLayer.frame = view.bounds;
+        
+        let width = view.frame.size.width
+        let height = view.frame.size.height
+        let hPadding = width * 1 / 8 / 2;
+        
+        UIGraphicsBeginImageContext(view.frame.size);
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x:width/2,y:0))
+        path.addLine(to: CGPoint(x:width-hPadding,y:height/4))
+        path.addLine(to:CGPoint(x:width - hPadding,y: height / 4));
+        path.addLine(to:CGPoint(x:width - hPadding,y: height * 3 / 4));
+        path.addLine(to:CGPoint(x:width / 2, y:height));
+        path.addLine(to:CGPoint(x:hPadding, y:height * 3 / 4));
+        path.addLine(to:CGPoint(x:hPadding, y:height / 4))
+        path.close();
+        path.close()
+        path.fill()
+        path.stroke()
+        
+        maskLayer.path = path.cgPath;
+        UIGraphicsEndImageContext();
+        
+        view.layer.mask = maskLayer;
+        
+    }
     // MARK: - UICollectionViewDataSource
     
     open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -128,10 +159,14 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         
         cell.backgroundColor = colors[indexPath.item]
         
+        roundView(view: cell)
+        
         
         
        // if scrollToPreselectedIndex == true {
           //  cell.layer.cornerRadius = cell.bounds.width / 2
+        
+        
         //}
         
         return cell

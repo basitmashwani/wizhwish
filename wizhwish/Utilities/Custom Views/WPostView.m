@@ -61,13 +61,17 @@
 }
 - (IBAction)videoPressed:(id)sender {
     
-    WVideoRecordViewController *controller = [[UIStoryboard getMediaStoryBoard] instantiateViewControllerWithIdentifier:K_SB_VIDEO_RECORD_VIEW_CONTROLLER];
+   // WVideoRecordViewController *controller = [[UIStoryboard getMediaStoryBoard] instantiateViewControllerWithIdentifier:K_SB_VIDEO_RECORD_VIEW_CONTROLLER];
     
+    WWCameraViewController *cameraViewController = [[UIStoryboard getMediaStoryBoard] instantiateViewControllerWithIdentifier:k_SB_CAMERA_VC];
+
     [WSetting distroySetting];
+    
+    cameraViewController.cameraMode = kWVideoMode;
     
     [[WSetting getSharedSetting] setPostType:@"VIDEO"];
     
-    [self.parentViewController.navigationController pushViewController:controller animated:YES];
+    [self.parentViewController.navigationController pushViewController:cameraViewController animated:YES];
     
 }
 - (IBAction)goOnlinePressed:(id)sender {
@@ -75,9 +79,14 @@
 }
 - (IBAction)photoPressed:(id)sender {
     
-    WPhotoViewController *controller = [[UIStoryboard getMediaStoryBoard] instantiateViewControllerWithIdentifier:K_SB_PHOTO_VIEW_CONTROLLER];
+    WWCameraViewController *controller = [[UIStoryboard getMediaStoryBoard] instantiateViewControllerWithIdentifier:k_SB_CAMERA_VC];
+    
+    controller.cameraMode = kWPhotoMode;
+    
+    controller.isAddImage = YES;
     
     [WSetting distroySetting];
+    
     [[WSetting getSharedSetting] setPostType:@"PHOTO"];
     
     [self.parentViewController.navigationController pushViewController:controller animated:YES];

@@ -41,6 +41,7 @@ PODS:
   - PBJVision (0.5.1)
   - PhotoTweaks (1.0.3)
   - SCRecorder (2.7.0)
+  - TOCropViewController (2.0.12)
 
 DEPENDENCIES:
   - ACEDrawingView
@@ -62,6 +63,7 @@ DEPENDENCIES:
   - PBJVision
   - PhotoTweaks
   - SCRecorder
+  - TOCropViewController
 
 EXTERNAL SOURCES:
   IGColorPicker:
@@ -95,7 +97,8 @@ SPEC CHECKSUMS:
   PBJVision: 907b7281967e26b12610b80c3602f3a455911aa1
   PhotoTweaks: 17a448f451872fd9c3cc65ec5ca125ccd1b48d11
   SCRecorder: bbb521dbc222908876ec9cd9156bbc8a893bed44
+  TOCropViewController: e6e31b38d785a901e5651a1e7fff71bcda6c5214
 
-PODFILE CHECKSUM: 3323cffa47a08741bb0e390e98402a9ce92e6bc9
+PODFILE CHECKSUM: c8357ad1b04654ad4d62add8d69f97696ecc168c
 
 COCOAPODS: 1.2.0

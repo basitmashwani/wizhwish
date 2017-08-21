@@ -305,7 +305,7 @@
     photoTweaksViewController.cancelButtonTitleColor = [UIColor whiteColor];
     
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:photoTweaksViewController];
-    [RUUtility setUpNavigationBar:navController];
+   // [RUUtility setUpNavigationBar:navController];
     [self presentViewController:navController animated:YES completion:nil];
 
    
@@ -476,7 +476,7 @@
     controller.isDrawing = YES;
     controller.titleName = @"photo";
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-    [RUUtility setUpNavigationBar:navController];
+    //[RUUtility setUpNavigationBar:navController];
     [self presentViewController:navController animated:YES completion:nil];
 
 }
@@ -516,7 +516,7 @@
     controller.selectedImage = [self.imagesArray objectAtIndex:self.selectedIndex];
     controller.selectedIndex = self.selectedIndex;
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
-    [RUUtility setUpNavigationBar:navController];
+    //[RUUtility setUpNavigationBar:navController];
     [self presentViewController:navController animated:YES completion:nil];
 }
 

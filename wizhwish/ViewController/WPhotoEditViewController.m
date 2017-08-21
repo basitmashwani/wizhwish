@@ -268,7 +268,7 @@
 
 - (CGSize)colorPickerView:(ColorPickerView *)colorPickerView sizeForItemAt:(NSIndexPath *)indexPath {
     
-    return CGSizeMake(30, 30);
+    return CGSizeMake(self.view.frame.size.width/10, 30);
 }
 - (void)colorPickerView:(ColorPickerView *)colorPickerView didSelectItemAt:(NSIndexPath *)indexPath {
     
@@ -389,7 +389,7 @@
         [self.view addSubview:_textColorPickerView];
         
     }
-    _textColorPickerView.frame = CGRectMake(0, keyboardSize.height+30, self.view.frame.size.width, 30);
+    _textColorPickerView.frame = CGRectMake(0, keyboardSize.height+80, self.view.frame.size.width, 30);
 }
 - (void)keyBoardDidHide:(id)sender {
     

@@ -232,9 +232,9 @@
 
 
 - (void)addShadow {
-    [self.layer setShadowColor:[UIColor blackColor].CGColor];
-    [self.layer setShadowOffset:CGSizeMake(2, 4)];
-    [self.layer setShadowOpacity:0.3];
+    [self.layer setShadowColor:[UIColor darkGrayColor].CGColor];
+    //[self.layer setShadowOffset:CGSizeMake(20, 20)];
+    [self.layer setShadowOpacity:1];
 }
 
 

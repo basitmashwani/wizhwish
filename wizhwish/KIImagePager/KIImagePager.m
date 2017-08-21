@@ -189,7 +189,7 @@
                                                _scrollView.frame.size.height)];
 
         for (int i = 0; i < [aImageUrls count]; i++) {
-            CGRect imageFrame = CGRectMake(_scrollView.frame.size.width * i, 0,375, 375);
+            CGRect imageFrame = CGRectMake(_scrollView.frame.size.width * i, 0,self.frame.size.width, self.frame.size.height);
             UIImageView *imageView = [[UIImageView alloc] initWithFrame:imageFrame];
             [imageView setClipsToBounds:YES];
             [imageView setBackgroundColor:[UIColor clearColor]];

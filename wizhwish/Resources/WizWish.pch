@@ -83,6 +83,11 @@
 #import "WProfileViewController.h"
 #import "CSNotificationView.h"
 #import "UIImageView+AFNetworking.h"
+#import "WWCameraViewController.h"
+#import "WWMediaDisplayViewController.h"
+#import "TOCropViewController.h"
+#import "WWStickerViewController.h"
+
 
 
 

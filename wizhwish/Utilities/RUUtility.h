@@ -30,7 +30,7 @@ Set up Navigation Bar colour and titles
  @param navController: UINavigationViewController instance
  */
 
-+ (void)setUpNavigationBar:(UINavigationController*)navController;
++ (void)setUpNavigationBar:(UINavigationController*)navController withColor:(UIColor*)color;
 
 /**
 Set Back Button to Navigation Bar

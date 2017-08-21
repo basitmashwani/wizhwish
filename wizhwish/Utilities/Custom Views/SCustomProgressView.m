@@ -37,13 +37,13 @@
                                              cornerRadius:radius].CGPath;
     // Center the shape in self.view
    // int axis = radius+3;
-    _circle.position = CGPointMake(0.9, 0.8); //CGPointMake(CGRectGetMidX(self.frame)-axis,
+    //_circle.position = CGPointMake(0.8, 0.8); //CGPointMake(CGRectGetMidX(self.frame)-axis,
                       //           CGRectGetMidY(self.frame)-axis);
    // NSLog(@"position %@",NSStringFromCGPoint(circle.position));
     // Configure the apperence of the circle
     _circle.fillColor = [UIColor clearColor].CGColor;
-    _circle.strokeColor = [UIColor navigationBarColor].CGColor; //[UIColor blackColor].CGColor;
-    _circle.lineWidth = 2;
+    _circle.strokeColor = [UIColor lightGrayColor].CGColor; //[UIColor blackColor].CGColor;
+    _circle.lineWidth = 5;
     
     // Add to parent layer
     [self.layer addSublayer:_circle];
@@ -92,6 +92,10 @@
     _circle.beginTime = 0.0;
     CFTimeInterval timeSincePause = [_circle convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
     _circle.beginTime = timeSincePause;
+}
+- (void)removeAnimation {
+    
+    [self.circle removeFromSuperlayer];
 }
 
 

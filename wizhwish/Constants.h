@@ -36,6 +36,9 @@
 #define K_SB_TEMP_VIDEO_VIEW_CONTROLLER             @"k_SB_TEMP_VIDEO_VC"
 #define k_SB_PROFILE_EDIT_VC                        @"K_SB_PROFILE_VC"
 #define k_SB_MYDAILIES_VC                           @"K_SB_MY_DAILIES_VC"
+#define k_SB_CAMERA_VC                              @"k_SB_CAMERA_VC"
+#define k_SB_MEDIA_DISPLAY_VC                       @"k_SB_MEDIA_DISPLAY_VC"
+#define k_SB_STICKER_VC                             @"k_SB_STICKER_VC"
 
 #define k_KICKFLIP_API_KEY                          @"BBLr9ZEDw2cNHqRMLAU9VX5.UnU7Ttts3.HRYwH?"
 //#define  @"OLvlmYM:?pv2E_gwTwmZAMDt=dO:3gSmErzS43pI:oor6auYfcD5pwM0b@gtfRv-B9g@8PtUDyeh4yq:Ee_eTb!lZD-7jQ?!!JZoVKo_p@79k:uNW3g@XR.w2AKpfxn"

@@ -65,6 +65,9 @@
 		1E4FD22F1CFB311500612466 /* JKSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4FD22D1CFB311500612466 /* JKSearchBar.m */; };
 		1E4FD2331CFB318500612466 /* JKPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E4FD2321CFB318500612466 /* JKPickerView.m */; };
 		1E5A1A441E6C6FFD003226A8 /* WTempVideoRecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A1A431E6C6FFD003226A8 /* WTempVideoRecorderViewController.m */; };
+		1E5A92E41F2883ED00CD8175 /* WWCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5A92E31F2883ED00CD8175 /* WWCameraViewController.m */; };
+		1E6307D61F36EC9D000BA2E2 /* WWMediaDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E6307D51F36EC9D000BA2E2 /* WWMediaDisplayViewController.m */; };
+		1E704B1F1F46F4B100E4DC79 /* WWStickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E704B1E1F46F4B100E4DC79 /* WWStickerViewController.m */; };
 		1E7208C51CD920780017188F /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E7208C31CD920780017188F /* Profile.storyboard */; };
 		1E7208C81CD923740017188F /* WZProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7208C71CD923740017188F /* WZProfileTableViewCell.m */; };
 		1E7208CB1CD924420017188F /* WZFollowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E7208CA1CD924420017188F /* WZFollowerViewController.m */; };
@@ -138,6 +141,36 @@
 		1EC213151ED46F420061A729 /* UIView+WebVideoCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC213081ED46F420061A729 /* UIView+WebVideoCache.m */; };
 		1EC213161ED46F420061A729 /* UIView+WebVideoCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC2130A1ED46F420061A729 /* UIView+WebVideoCacheOperation.m */; };
 		1EC2131C1ED576BE0061A729 /* AWEasyVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EC2131B1ED576BE0061A729 /* AWEasyVideoPlayer.m */; };
+		1ECDB6691F49699A006AF8A3 /* stickers1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB64B1F49699A006AF8A3 /* stickers1.png */; };
+		1ECDB66A1F49699A006AF8A3 /* stickers10.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB64C1F49699A006AF8A3 /* stickers10.png */; };
+		1ECDB66B1F49699A006AF8A3 /* stickers11.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB64D1F49699A006AF8A3 /* stickers11.png */; };
+		1ECDB66C1F49699A006AF8A3 /* stickers12.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB64E1F49699A006AF8A3 /* stickers12.png */; };
+		1ECDB66D1F49699A006AF8A3 /* stickers13.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB64F1F49699A006AF8A3 /* stickers13.png */; };
+		1ECDB66E1F49699A006AF8A3 /* stickers14.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB6501F49699A006AF8A3 /* stickers14.png */; };
+		1ECDB66F1F49699A006AF8A3 /* stickers15.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB6511F49699A006AF8A3 /* stickers15.png */; };
+		1ECDB6701F49699A006AF8A3 /* stickers16.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB6521F49699A006AF8A3 /* stickers16.png */; };
+		1ECDB6711F49699A006AF8A3 /* stickers17.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB6531F49699A006AF8A3 /* stickers17.png */; };
+		1ECDB6721F49699A006AF8A3 /* stickers18.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB6541F49699A006AF8A3 /* stickers18.png */; };
+		1ECDB6731F49699A006AF8A3 /* stickers19.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB6551F49699A006AF8A3 /* stickers19.png */; };
+		1ECDB6741F49699A006AF8A3 /* stickers2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB6561F49699A006AF8A3 /* stickers2.png */; };
+		1ECDB6751F49699A006AF8A3 /* stickers20.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB6571F49699A006AF8A3 /* stickers20.png */; };
+		1ECDB6761F49699A006AF8A3 /* stickers21.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB6581F49699A006AF8A3 /* stickers21.png */; };
+		1ECDB6771F49699A006AF8A3 /* stickers22.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB6591F49699A006AF8A3 /* stickers22.png */; };
+		1ECDB6781F49699A006AF8A3 /* stickers23.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB65A1F49699A006AF8A3 /* stickers23.png */; };
+		1ECDB6791F49699A006AF8A3 /* stickers24.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB65B1F49699A006AF8A3 /* stickers24.png */; };
+		1ECDB67A1F49699A006AF8A3 /* stickers25.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB65C1F49699A006AF8A3 /* stickers25.png */; };
+		1ECDB67B1F49699A006AF8A3 /* stickers26.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB65D1F49699A006AF8A3 /* stickers26.png */; };
+		1ECDB67C1F49699A006AF8A3 /* stickers27.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB65E1F49699A006AF8A3 /* stickers27.png */; };
+		1ECDB67D1F49699A006AF8A3 /* stickers28.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB65F1F49699A006AF8A3 /* stickers28.png */; };
+		1ECDB67E1F49699A006AF8A3 /* stickers29.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB6601F49699A006AF8A3 /* stickers29.png */; };
+		1ECDB67F1F49699A006AF8A3 /* stickers3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB6611F49699A006AF8A3 /* stickers3.png */; };
+		1ECDB6801F49699A006AF8A3 /* stickers30.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB6621F49699A006AF8A3 /* stickers30.png */; };
+		1ECDB6811F49699A006AF8A3 /* stickers4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB6631F49699A006AF8A3 /* stickers4.png */; };
+		1ECDB6821F49699A006AF8A3 /* stickers5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB6641F49699A006AF8A3 /* stickers5.png */; };
+		1ECDB6831F49699A006AF8A3 /* stickers6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB6651F49699A006AF8A3 /* stickers6.png */; };
+		1ECDB6841F49699A006AF8A3 /* stickers7.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB6661F49699A006AF8A3 /* stickers7.png */; };
+		1ECDB6851F49699A006AF8A3 /* stickers8.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB6671F49699A006AF8A3 /* stickers8.png */; };
+		1ECDB6861F49699A006AF8A3 /* stickers9.png in Resources */ = {isa = PBXBuildFile; fileRef = 1ECDB6681F49699A006AF8A3 /* stickers9.png */; };
 		1ECE8A001EA4D6FE00C5567E /* IMG_0912.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 1ECE89FF1EA4D6FE00C5567E /* IMG_0912.MOV */; };
 		1ECF9F3F1E9910EE00EB38E9 /* colorPicker.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 1ECF9F2C1E9910EE00EB38E9 /* colorPicker.bundle */; };
 		1ECF9F401E9910EE00EB38E9 /* NEOColorPickerBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1ECF9F2E1E9910EE00EB38E9 /* NEOColorPickerBaseViewController.m */; };
@@ -300,6 +333,12 @@
 		1E4FD2321CFB318500612466 /* JKPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKPickerView.m; sourceTree = "<group>"; };
 		1E5A1A421E6C6FFD003226A8 /* WTempVideoRecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WTempVideoRecorderViewController.h; path = ViewController/WTempVideoRecorderViewController.h; sourceTree = "<group>"; };
 		1E5A1A431E6C6FFD003226A8 /* WTempVideoRecorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WTempVideoRecorderViewController.m; path = ViewController/WTempVideoRecorderViewController.m; sourceTree = "<group>"; };
+		1E5A92E21F2883ED00CD8175 /* WWCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WWCameraViewController.h; path = ViewController/WWCameraViewController.h; sourceTree = "<group>"; };
+		1E5A92E31F2883ED00CD8175 /* WWCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WWCameraViewController.m; path = ViewController/WWCameraViewController.m; sourceTree = "<group>"; };
+		1E6307D41F36EC9D000BA2E2 /* WWMediaDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WWMediaDisplayViewController.h; path = ViewController/WWMediaDisplayViewController.h; sourceTree = "<group>"; };
+		1E6307D51F36EC9D000BA2E2 /* WWMediaDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WWMediaDisplayViewController.m; path = ViewController/WWMediaDisplayViewController.m; sourceTree = "<group>"; };
+		1E704B1D1F46F4B100E4DC79 /* WWStickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WWStickerViewController.h; path = ViewController/WWStickerViewController.h; sourceTree = "<group>"; };
+		1E704B1E1F46F4B100E4DC79 /* WWStickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WWStickerViewController.m; path = ViewController/WWStickerViewController.m; sourceTree = "<group>"; };
 		1E7208C41CD920780017188F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
 		1E7208C61CD923740017188F /* WZProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WZProfileTableViewCell.h; path = Cells/WZProfileTableViewCell.h; sourceTree = "<group>"; };
 		1E7208C71CD923740017188F /* WZProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WZProfileTableViewCell.m; path = Cells/WZProfileTableViewCell.m; sourceTree = "<group>"; };
@@ -428,6 +467,36 @@
 		1EC2130A1ED46F420061A729 /* UIView+WebVideoCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebVideoCacheOperation.m"; sourceTree = "<group>"; };
 		1EC2131A1ED576BE0061A729 /* AWEasyVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWEasyVideoPlayer.h; sourceTree = "<group>"; };
 		1EC2131B1ED576BE0061A729 /* AWEasyVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWEasyVideoPlayer.m; sourceTree = "<group>"; };
+		1ECDB64B1F49699A006AF8A3 /* stickers1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers1.png; sourceTree = "<group>"; };
+		1ECDB64C1F49699A006AF8A3 /* stickers10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers10.png; sourceTree = "<group>"; };
+		1ECDB64D1F49699A006AF8A3 /* stickers11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers11.png; sourceTree = "<group>"; };
+		1ECDB64E1F49699A006AF8A3 /* stickers12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers12.png; sourceTree = "<group>"; };
+		1ECDB64F1F49699A006AF8A3 /* stickers13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers13.png; sourceTree = "<group>"; };
+		1ECDB6501F49699A006AF8A3 /* stickers14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers14.png; sourceTree = "<group>"; };
+		1ECDB6511F49699A006AF8A3 /* stickers15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers15.png; sourceTree = "<group>"; };
+		1ECDB6521F49699A006AF8A3 /* stickers16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers16.png; sourceTree = "<group>"; };
+		1ECDB6531F49699A006AF8A3 /* stickers17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers17.png; sourceTree = "<group>"; };
+		1ECDB6541F49699A006AF8A3 /* stickers18.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers18.png; sourceTree = "<group>"; };
+		1ECDB6551F49699A006AF8A3 /* stickers19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers19.png; sourceTree = "<group>"; };
+		1ECDB6561F49699A006AF8A3 /* stickers2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers2.png; sourceTree = "<group>"; };
+		1ECDB6571F49699A006AF8A3 /* stickers20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers20.png; sourceTree = "<group>"; };
+		1ECDB6581F49699A006AF8A3 /* stickers21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers21.png; sourceTree = "<group>"; };
+		1ECDB6591F49699A006AF8A3 /* stickers22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers22.png; sourceTree = "<group>"; };
+		1ECDB65A1F49699A006AF8A3 /* stickers23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers23.png; sourceTree = "<group>"; };
+		1ECDB65B1F49699A006AF8A3 /* stickers24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers24.png; sourceTree = "<group>"; };
+		1ECDB65C1F49699A006AF8A3 /* stickers25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers25.png; sourceTree = "<group>"; };
+		1ECDB65D1F49699A006AF8A3 /* stickers26.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers26.png; sourceTree = "<group>"; };
+		1ECDB65E1F49699A006AF8A3 /* stickers27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers27.png; sourceTree = "<group>"; };
+		1ECDB65F1F49699A006AF8A3 /* stickers28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers28.png; sourceTree = "<group>"; };
+		1ECDB6601F49699A006AF8A3 /* stickers29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers29.png; sourceTree = "<group>"; };
+		1ECDB6611F49699A006AF8A3 /* stickers3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers3.png; sourceTree = "<group>"; };
+		1ECDB6621F49699A006AF8A3 /* stickers30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers30.png; sourceTree = "<group>"; };
+		1ECDB6631F49699A006AF8A3 /* stickers4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers4.png; sourceTree = "<group>"; };
+		1ECDB6641F49699A006AF8A3 /* stickers5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers5.png; sourceTree = "<group>"; };
+		1ECDB6651F49699A006AF8A3 /* stickers6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers6.png; sourceTree = "<group>"; };
+		1ECDB6661F49699A006AF8A3 /* stickers7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers7.png; sourceTree = "<group>"; };
+		1ECDB6671F49699A006AF8A3 /* stickers8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers8.png; sourceTree = "<group>"; };
+		1ECDB6681F49699A006AF8A3 /* stickers9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stickers9.png; sourceTree = "<group>"; };
 		1ECE89FF1EA4D6FE00C5567E /* IMG_0912.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IMG_0912.MOV; sourceTree = "<group>"; };
 		1ECF9F2C1E9910EE00EB38E9 /* colorPicker.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = colorPicker.bundle; sourceTree = "<group>"; };
 		1ECF9F2D1E9910EE00EB38E9 /* NEOColorPickerBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NEOColorPickerBaseViewController.h; sourceTree = "<group>"; };
@@ -598,6 +667,7 @@
 		1E060B011CC4E311009E1BBC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1ECDB64A1F49699A006AF8A3 /* stickers */,
 				1E4FD2131CFAE32900612466 /* Fonts */,
 				1E42765C1CD917150004A0F8 /* WizWish.pch */,
 				1E4276591CD915C10004A0F8 /* Login.xcassets */,
@@ -633,6 +703,9 @@
 		1E060B341CC4F098009E1BBC /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				1E704B181F46D76D00E4DC79 /* StickerViewController */,
+				1E6307D21F36EC5C000BA2E2 /* MediaDisplayViewController */,
+				1E5A92E01F28839900CD8175 /* CameraViewController */,
 				1E00D5461E598B2800AC3E95 /* WishViewController */,
 				1E010B221E509258004AF3B9 /* WhizViewController */,
 				1EAE52421E4F70FB007DC15D /* TextViewController */,
@@ -864,6 +937,33 @@
 			);
 			name = JKSearchBar;
 			path = "Custom Search/JKSearchBar";
+			sourceTree = "<group>";
+		};
+		1E5A92E01F28839900CD8175 /* CameraViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E5A92E21F2883ED00CD8175 /* WWCameraViewController.h */,
+				1E5A92E31F2883ED00CD8175 /* WWCameraViewController.m */,
+			);
+			name = CameraViewController;
+			sourceTree = "<group>";
+		};
+		1E6307D21F36EC5C000BA2E2 /* MediaDisplayViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E6307D41F36EC9D000BA2E2 /* WWMediaDisplayViewController.h */,
+				1E6307D51F36EC9D000BA2E2 /* WWMediaDisplayViewController.m */,
+			);
+			name = MediaDisplayViewController;
+			sourceTree = "<group>";
+		};
+		1E704B181F46D76D00E4DC79 /* StickerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1E704B1D1F46F4B100E4DC79 /* WWStickerViewController.h */,
+				1E704B1E1F46F4B100E4DC79 /* WWStickerViewController.m */,
+			);
+			name = StickerViewController;
 			sourceTree = "<group>";
 		};
 		1E7BDAD51EBB215200DFEED6 /* AudioPlayer */ = {
@@ -1285,6 +1385,43 @@
 			path = AWEasyVideoPlayer;
 			sourceTree = "<group>";
 		};
+		1ECDB64A1F49699A006AF8A3 /* stickers */ = {
+			isa = PBXGroup;
+			children = (
+				1ECDB64B1F49699A006AF8A3 /* stickers1.png */,
+				1ECDB64C1F49699A006AF8A3 /* stickers10.png */,
+				1ECDB64D1F49699A006AF8A3 /* stickers11.png */,
+				1ECDB64E1F49699A006AF8A3 /* stickers12.png */,
+				1ECDB64F1F49699A006AF8A3 /* stickers13.png */,
+				1ECDB6501F49699A006AF8A3 /* stickers14.png */,
+				1ECDB6511F49699A006AF8A3 /* stickers15.png */,
+				1ECDB6521F49699A006AF8A3 /* stickers16.png */,
+				1ECDB6531F49699A006AF8A3 /* stickers17.png */,
+				1ECDB6541F49699A006AF8A3 /* stickers18.png */,
+				1ECDB6551F49699A006AF8A3 /* stickers19.png */,
+				1ECDB6561F49699A006AF8A3 /* stickers2.png */,
+				1ECDB6571F49699A006AF8A3 /* stickers20.png */,
+				1ECDB6581F49699A006AF8A3 /* stickers21.png */,
+				1ECDB6591F49699A006AF8A3 /* stickers22.png */,
+				1ECDB65A1F49699A006AF8A3 /* stickers23.png */,
+				1ECDB65B1F49699A006AF8A3 /* stickers24.png */,
+				1ECDB65C1F49699A006AF8A3 /* stickers25.png */,
+				1ECDB65D1F49699A006AF8A3 /* stickers26.png */,
+				1ECDB65E1F49699A006AF8A3 /* stickers27.png */,
+				1ECDB65F1F49699A006AF8A3 /* stickers28.png */,
+				1ECDB6601F49699A006AF8A3 /* stickers29.png */,
+				1ECDB6611F49699A006AF8A3 /* stickers3.png */,
+				1ECDB6621F49699A006AF8A3 /* stickers30.png */,
+				1ECDB6631F49699A006AF8A3 /* stickers4.png */,
+				1ECDB6641F49699A006AF8A3 /* stickers5.png */,
+				1ECDB6651F49699A006AF8A3 /* stickers6.png */,
+				1ECDB6661F49699A006AF8A3 /* stickers7.png */,
+				1ECDB6671F49699A006AF8A3 /* stickers8.png */,
+				1ECDB6681F49699A006AF8A3 /* stickers9.png */,
+			);
+			path = stickers;
+			sourceTree = "<group>";
+		};
 		1ECF9F2A1E9910D500EB38E9 /* Color Picker */ = {
 			isa = PBXGroup;
 			children = (
@@ -1541,6 +1678,7 @@
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 877ZNSB63X;
 						LastSwiftMigration = 0830;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -1598,47 +1736,77 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ECDB6851F49699A006AF8A3 /* stickers8.png in Resources */,
+				1ECDB6701F49699A006AF8A3 /* stickers16.png in Resources */,
 				1E7208C51CD920780017188F /* Profile.storyboard in Resources */,
+				1ECDB6721F49699A006AF8A3 /* stickers18.png in Resources */,
 				1EBFEAFE1E9F57D6000F739C /* checkmark@3x.png in Resources */,
+				1ECDB6761F49699A006AF8A3 /* stickers21.png in Resources */,
 				1ECE8A001EA4D6FE00C5567E /* IMG_0912.MOV in Resources */,
 				1EBFEAFF1E9F57D6000F739C /* exclamationMark.png in Resources */,
 				1EC212E01ED427AF0061A729 /* refresh@2x.png in Resources */,
 				1E8717E71CE8A19F0062EFE9 /* Chat.xcassets in Resources */,
+				1ECDB6811F49699A006AF8A3 /* stickers4.png in Resources */,
+				1ECDB6711F49699A006AF8A3 /* stickers17.png in Resources */,
 				1E22EBEE1E87A31400B983AC /* 2.wav in Resources */,
 				1ECF9F3F1E9910EE00EB38E9 /* colorPicker.bundle in Resources */,
+				1ECDB6731F49699A006AF8A3 /* stickers19.png in Resources */,
 				1EBFEB011E9F57D6000F739C /* exclamationMark@3x.png in Resources */,
 				1E1CCB1E1D85602E00423904 /* Media.xcassets in Resources */,
 				1E9728BC1D43A611003EA877 /* WPostView.xib in Resources */,
 				1EBFEB081E9F8380000F739C /* KICamera@2x.png in Resources */,
+				1ECDB6691F49699A006AF8A3 /* stickers1.png in Resources */,
 				1E4276561CD915A20004A0F8 /* home.storyboard in Resources */,
 				1EBFEAFD1E9F57D6000F739C /* checkmark@2x.png in Resources */,
+				1ECDB67E1F49699A006AF8A3 /* stickers29.png in Resources */,
 				1EBFEB001E9F57D6000F739C /* exclamationMark@2x.png in Resources */,
 				1EC212E71ED427AF0061A729 /* voice_on@3x.png in Resources */,
 				1E1CCB1C1D855EB600423904 /* Media.storyboard in Resources */,
+				1ECDB66A1F49699A006AF8A3 /* stickers10.png in Resources */,
 				1ECF9F471E9910EE00EB38E9 /* NEOColorPickerHueGridViewController.xib in Resources */,
 				1E010B211E508A07004AF3B9 /* whiz.storyboard in Resources */,
 				1E8032921CDE67FD0010D036 /* Profile.xcassets in Resources */,
 				1E060B111CC4E311009E1BBC /* LaunchScreen.storyboard in Resources */,
 				1EC212E61ED427AF0061A729 /* voice_on@2x.png in Resources */,
 				1E4FD21A1CFB183600612466 /* PHAGSPA.TTF in Resources */,
+				1ECDB67B1F49699A006AF8A3 /* stickers26.png in Resources */,
 				1E4276581CD915B90004A0F8 /* Home.xcassets in Resources */,
+				1ECDB6791F49699A006AF8A3 /* stickers24.png in Resources */,
 				1E22EBF01E87A33A00B983AC /* 1.wav in Resources */,
 				1EBFEB071E9F8380000F739C /* KICamera.png in Resources */,
 				1EBFEAFC1E9F57D6000F739C /* checkmark.png in Resources */,
+				1ECDB66F1F49699A006AF8A3 /* stickers15.png in Resources */,
 				1EC212E11ED427AF0061A729 /* refresh@3x.png in Resources */,
+				1ECDB6751F49699A006AF8A3 /* stickers20.png in Resources */,
+				1ECDB6771F49699A006AF8A3 /* stickers22.png in Resources */,
+				1ECDB67C1F49699A006AF8A3 /* stickers27.png in Resources */,
+				1ECDB6781F49699A006AF8A3 /* stickers23.png in Resources */,
+				1ECDB67A1F49699A006AF8A3 /* stickers25.png in Resources */,
 				1E4FD21B1CFB183B00612466 /* PHAGSPAB.TTF in Resources */,
 				1EC212E21ED427AF0061A729 /* video_loading@2x.png in Resources */,
+				1ECDB66C1F49699A006AF8A3 /* stickers12.png in Resources */,
+				1ECDB67D1F49699A006AF8A3 /* stickers28.png in Resources */,
 				1E42765B1CD915C10004A0F8 /* Login.xcassets in Resources */,
+				1ECDB67F1F49699A006AF8A3 /* stickers3.png in Resources */,
+				1ECDB6841F49699A006AF8A3 /* stickers7.png in Resources */,
 				1EC212E41ED427AF0061A729 /* voice_off@2x.png in Resources */,
 				1EC212E51ED427AF0061A729 /* voice_off@3x.png in Resources */,
+				1ECDB6831F49699A006AF8A3 /* stickers6.png in Resources */,
+				1ECDB6801F49699A006AF8A3 /* stickers30.png in Resources */,
 				1ECF9F451E9910EE00EB38E9 /* NEOColorPickerHSLViewController.xib in Resources */,
+				1ECDB66D1F49699A006AF8A3 /* stickers13.png in Resources */,
 				1EC212E31ED427AF0061A729 /* video_loading@3x.png in Resources */,
+				1ECDB6821F49699A006AF8A3 /* stickers5.png in Resources */,
+				1ECDB6741F49699A006AF8A3 /* stickers2.png in Resources */,
 				1E7B86641EF3E4A0000C8967 /* Jazz_LET_Plain1.ttf in Resources */,
 				1EC05A031E60A508007026C3 /* Background.mp4 in Resources */,
 				1E8717E51CE879410062EFE9 /* Chat.storyboard in Resources */,
+				1ECDB6861F49699A006AF8A3 /* stickers9.png in Resources */,
+				1ECDB66B1F49699A006AF8A3 /* stickers11.png in Resources */,
 				1E060B0C1CC4E311009E1BBC /* Login.storyboard in Resources */,
 				1E21A8651F176438004FBBA6 /* Whiz.xcassets in Resources */,
 				1ECF9F491E9910EE00EB38E9 /* NEOColorPickerViewController.xib in Resources */,
+				1ECDB66E1F49699A006AF8A3 /* stickers14.png in Resources */,
 				1ECF9F421E9910EE00EB38E9 /* NEOColorPickerFavoritesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1844,6 +2012,7 @@
 				1E18878B1CE1BF2C00B7F1D5 /* WZMyWishesTableViewCell.m in Sources */,
 				1EC212DA1ED427AF0061A729 /* ZOWSchemedURL.m in Sources */,
 				1EE266791E8538B000ECE867 /* NSDate+Extras.m in Sources */,
+				1E5A92E41F2883ED00CD8175 /* WWCameraViewController.m in Sources */,
 				1E2168041E9B979F00647B40 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				1EC213131ED46F420061A729 /* JPVideoPlayerResourceLoader.m in Sources */,
 				1EC213121ED46F420061A729 /* JPVideoPlayerPlayVideoTool.m in Sources */,
@@ -1882,6 +2051,7 @@
 				1EC2130C1ED46F420061A729 /* JPVideoPlayerCache.m in Sources */,
 				1EC212D81ED427AF0061A729 /* NSString+Md5.m in Sources */,
 				1ECF9F4A1E9910EE00EB38E9 /* UIColor+NEOColor.m in Sources */,
+				1E704B1F1F46F4B100E4DC79 /* WWStickerViewController.m in Sources */,
 				1EC212D51ED427AF0061A729 /* ZOWVideoCache.m in Sources */,
 				1E8032991CDF0BE30010D036 /* WZMyWishesViewController.m in Sources */,
 				1EEDCCB31DB507F300DBB363 /* UIImage+Scale.m in Sources */,
@@ -1906,6 +2076,7 @@
 				1E7B86671EF53D5A000C8967 /* WMyDailiesViewController.m in Sources */,
 				1E4276471CD915510004A0F8 /* NSError+Extras.m in Sources */,
 				1E7208CB1CD924420017188F /* WZFollowerViewController.m in Sources */,
+				1E6307D61F36EC9D000BA2E2 /* WWMediaDisplayViewController.m in Sources */,
 				1E4C578B1E791B0300687BF7 /* RUWebServiceParser.m in Sources */,
 				1E1CCB221D85629900423904 /* WVideoRecordViewController.m in Sources */,
 				1E42763B1CD9151A0004A0F8 /* UIImage+Extra.m in Sources */,
@@ -2130,6 +2301,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.wizhwish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "a37d41d6-577c-43ee-b4f7-480d7be5892f";
 				PROVISIONING_PROFILE_SPECIFIER = whiz_Dev;
 				SWIFT_OBJC_BRIDGING_HEADER = "wizhwish/wizhwish-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -2165,6 +2337,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.app.wizhwish;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "27cddcfa-075d-44ca-99b4-26b19ac7e2e3";
 				PROVISIONING_PROFILE_SPECIFIER = whiz;
 				SWIFT_OBJC_BRIDGING_HEADER = "wizhwish/wizhwish-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;

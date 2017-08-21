@@ -39,6 +39,8 @@
         [RUUtility setMainRootController:profileViewController];
     }
 
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+
  
     return YES;
 }
@@ -100,6 +102,7 @@
     
             [clientInfo setVariantID:@"59264c58-87d7-40c5-be89-eda980763904"];
             [clientInfo setVariantSecret:@"dc1eb020-c21e-48af-857d-a1f25b2fa69e"];
+            [clientInfo setAlias:@"basit@gmail.com"];
     
             // --optional config--
             // set some 'useful' hardware information params

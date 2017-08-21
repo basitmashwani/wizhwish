@@ -22,5 +22,7 @@
 - (void)didTappedView:(UIView*)view;
 
 - (void)backPressed;
+- (UIViewController *)backViewController;
+
 
 @end

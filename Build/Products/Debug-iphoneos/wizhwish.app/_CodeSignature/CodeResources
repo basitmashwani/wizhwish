@@ -226,7 +226,7 @@
 		</data>
 		<key>Base.lproj/whiz.storyboardc/Eib-kJ-X7x-view-FTv-Kg-aN9.nib</key>
 		<data>
-		3w33Juu17AYXeGuhvfRvjyulQ8U=
+		C5riaICHM3Yx8Ql121u4QROtPLQ=
 		</data>
 		<key>Base.lproj/whiz.storyboardc/Info.plist</key>
 		<data>
@@ -234,15 +234,15 @@
 		</data>
 		<key>Base.lproj/whiz.storyboardc/K_SB_WISHBOARD_VIEW_CONTROLLER.nib</key>
 		<data>
-		EEh2QhMhH5OBy6HTUhdX12vumOQ=
+		sTqnXUTqr8Z7D4MTSdsEuo2gqqk=
 		</data>
 		<key>Base.lproj/whiz.storyboardc/K_SB_WIZ_VIEW_CONTROLLER.nib</key>
 		<data>
-		JFWFzt35xzZGo+ZuqYceoqq5J18=
+		YZfHKqtdQYlTarXxCEA0oDS+8eg=
 		</data>
 		<key>Base.lproj/whiz.storyboardc/ziS-FX-lFT-view-uXL-QV-I6i.nib</key>
 		<data>
-		i6XIYmx9H6T3YoKJrFitPhkzBqc=
+		a+cCBI3dfvYzUEhCl1kJVk/noo0=
 		</data>
 		<key>Frameworks/ACEDrawingView.framework/ACEDraggableText.bundle/Info.plist</key>
 		<data>
@@ -274,7 +274,7 @@
 		</data>
 		<key>Frameworks/ACEDrawingView.framework/ACEDrawingView</key>
 		<data>
-		66j7xMG1EXpflO4gCi5pnQsebCQ=
+		4bIvSIVf723Ql2l3w/YzQMHJ4BI=
 		</data>
 		<key>Frameworks/ACEDrawingView.framework/Info.plist</key>
 		<data>
@@ -286,7 +286,7 @@
 		</data>
 		<key>Frameworks/AFNetworking.framework/AFNetworking</key>
 		<data>
-		79erKD3klvcgIX3+miPgh8vNRKU=
+		Xpot8w2wVS0TZDKx38XCdV837U8=
 		</data>
 		<key>Frameworks/AFNetworking.framework/Info.plist</key>
 		<data>
@@ -298,7 +298,7 @@
 		</data>
 		<key>Frameworks/ASPVideoPlayer.framework/ASPVideoPlayer</key>
 		<data>
-		OAyfKApkofEQwcBWvL3TwJNpwc0=
+		eo/lFxwZQHacbhocpV5NRUTbYYA=
 		</data>
 		<key>Frameworks/ASPVideoPlayer.framework/Info.plist</key>
 		<data>
@@ -310,7 +310,7 @@
 		</data>
 		<key>Frameworks/AWSCore.framework/AWSCore</key>
 		<data>
-		6Qus8tPUeeCIgKfKr92da6Zd1AI=
+		fd5hp9qZA348R3YKMsUVgclhlSA=
 		</data>
 		<key>Frameworks/AWSCore.framework/Info.plist</key>
 		<data>
@@ -322,7 +322,7 @@
 		</data>
 		<key>Frameworks/AWSS3.framework/AWSS3</key>
 		<data>
-		nHjHPOurLccP/nZspR8kfZcaXF4=
+		rRmREofwMIKnRDQzad7YBsMALMg=
 		</data>
 		<key>Frameworks/AWSS3.framework/Info.plist</key>
 		<data>
@@ -334,7 +334,7 @@
 		</data>
 		<key>Frameworks/AeroGearPush.framework/AeroGearPush</key>
 		<data>
-		jkFZEdDmtTE/OV4gdi9B0DJIzDA=
+		iZ4k/MUDXzmHpizDyzwrfxxMQM4=
 		</data>
 		<key>Frameworks/AeroGearPush.framework/Info.plist</key>
 		<data>
@@ -346,7 +346,7 @@
 		</data>
 		<key>Frameworks/CTPersistance.framework/CTPersistance</key>
 		<data>
-		d0a3Mss+kVm6IrfYnmm42r2I3+A=
+		gsaBy9KRDx+CxsCF4haCwJb9mFo=
 		</data>
 		<key>Frameworks/CTPersistance.framework/Info.plist</key>
 		<data>
@@ -358,7 +358,7 @@
 		</data>
 		<key>Frameworks/Color_Picker_for_iOS.framework/Color_Picker_for_iOS</key>
 		<data>
-		s/iXBqE9ie/OAehTXFufsgt/2eA=
+		w+MyfCQCuLhWDwcfm1/tjM6lKaE=
 		</data>
 		<key>Frameworks/Color_Picker_for_iOS.framework/Info.plist</key>
 		<data>
@@ -370,7 +370,7 @@
 		</data>
 		<key>Frameworks/HMSegmentedControl.framework/HMSegmentedControl</key>
 		<data>
-		Cipk8dydfmNdZUXU3bXhkl0oFnU=
+		Hrf7eLO0kBpxDdI6HklCyaH6J40=
 		</data>
 		<key>Frameworks/HMSegmentedControl.framework/Info.plist</key>
 		<data>
@@ -382,7 +382,7 @@
 		</data>
 		<key>Frameworks/HandyFrame.framework/HandyFrame</key>
 		<data>
-		svXdizWcLxs9/OYiria4wrJE7ZM=
+		QMc2xX0mno65JXlaNckcFGERa+0=
 		</data>
 		<key>Frameworks/HandyFrame.framework/Info.plist</key>
 		<data>
@@ -394,7 +394,7 @@
 		</data>
 		<key>Frameworks/IGColorPicker.framework/IGColorPicker</key>
 		<data>
-		3SSowgG1P8bwewLsINe3aTzlSfM=
+		5dB3GXI1GjwYRbBGhInmMsOXQGQ=
 		</data>
 		<key>Frameworks/IGColorPicker.framework/Info.plist</key>
 		<data>
@@ -410,7 +410,7 @@
 		</data>
 		<key>Frameworks/MBProgressHUD.framework/MBProgressHUD</key>
 		<data>
-		X1Jg5HibmP3fTMdMjem5l2cooCg=
+		JYzS0nG/zr08pAIUNcmbzNAaygg=
 		</data>
 		<key>Frameworks/MBProgressHUD.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -422,7 +422,7 @@
 		</data>
 		<key>Frameworks/NJKScrollFullScreen.framework/NJKScrollFullScreen</key>
 		<data>
-		7yHI8EkA6XjKi1zTPvXQnQTEv+g=
+		8lhp9fb/p2hbpCRoARG6N00UFiA=
 		</data>
 		<key>Frameworks/NJKScrollFullScreen.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -434,7 +434,7 @@
 		</data>
 		<key>Frameworks/OLGhostAlertView.framework/OLGhostAlertView</key>
 		<data>
-		axKzPX97QBmZp3S13g7ctMPE69w=
+		y3ES01Fi3InI8vKPzNHXtSITIqU=
 		</data>
 		<key>Frameworks/OLGhostAlertView.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -446,7 +446,7 @@
 		</data>
 		<key>Frameworks/PBJVideoPlayer.framework/PBJVideoPlayer</key>
 		<data>
-		YjyuuH8KGN/pOCQS7Qr5J4XLOHs=
+		zpl/jKJRF6uQHARcZ+dm0lHDSH0=
 		</data>
 		<key>Frameworks/PBJVideoPlayer.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -458,7 +458,7 @@
 		</data>
 		<key>Frameworks/PBJVision.framework/PBJVision</key>
 		<data>
-		xnNQUGhDJSuePBhsKrP7F/Si8mE=
+		LpVCZZNrCKgUpfDOdqd5ggZS9lk=
 		</data>
 		<key>Frameworks/PBJVision.framework/Shader.fsh</key>
 		<data>
@@ -478,7 +478,7 @@
 		</data>
 		<key>Frameworks/PhotoTweaks.framework/PhotoTweaks</key>
 		<data>
-		LLdtAhcXXUnfB23xgmD6mlUEJ0c=
+		X4Q0/FfmhqVgNMiFnjaFwaAbny4=
 		</data>
 		<key>Frameworks/PhotoTweaks.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -490,7 +490,7 @@
 		</data>
 		<key>Frameworks/SCRecorder.framework/SCRecorder</key>
 		<data>
-		gMwtTfreOwNZlG+jADWclw0OEAs=
+		3+x6i0VpYAXYBGeF6en3yOKy6A0=
 		</data>
 		<key>Frameworks/SCRecorder.framework/_CodeSignature/CodeResources</key>
 		<data>
@@ -1320,11 +1320,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3w33Juu17AYXeGuhvfRvjyulQ8U=
+			C5riaICHM3Yx8Ql121u4QROtPLQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			C6yD+oL+9hZXCaizxpy0HfZdRc1+CWDZ6ghlJsmNT/k=
+			MOTT8eH3m1jNjAZ96UEYO0MsvNaiUGMB7PfBQJkr63c=
 			</data>
 		</dict>
 		<key>Base.lproj/whiz.storyboardc/Info.plist</key>
@@ -1342,33 +1342,33 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			EEh2QhMhH5OBy6HTUhdX12vumOQ=
+			sTqnXUTqr8Z7D4MTSdsEuo2gqqk=
 			</data>
 			<key>hash2</key>
 			<data>
-			DNm3NjcOk48T/Gv4eIjUv+4BgcV8bnXyV3PnAU2PQR4=
+			xd6M0PEPly4Zlxnxa6unZG2Aj5XWiYhKiBibs8XYcfA=
 			</data>
 		</dict>
 		<key>Base.lproj/whiz.storyboardc/K_SB_WIZ_VIEW_CONTROLLER.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			JFWFzt35xzZGo+ZuqYceoqq5J18=
+			YZfHKqtdQYlTarXxCEA0oDS+8eg=
 			</data>
 			<key>hash2</key>
 			<data>
-			JnDIj8uaXE77LbWcjj+zzFVBrX5ZgspuSC6Bud3Czv8=
+			b5MqMof+Bf8fsp60LLPnEirESPQ0hh3m8R5hUr0mYpA=
 			</data>
 		</dict>
 		<key>Base.lproj/whiz.storyboardc/ziS-FX-lFT-view-uXL-QV-I6i.nib</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			i6XIYmx9H6T3YoKJrFitPhkzBqc=
+			a+cCBI3dfvYzUEhCl1kJVk/noo0=
 			</data>
 			<key>hash2</key>
 			<data>
-			Vo1QBcwfbp1Jge4FSU/yOjikK+9j8X9cKAG7EL/eKrU=
+			Ny5u+Y8Omkm6YsYE+I3pgCP/ru03OC2qz/ETNhdWxmQ=
 			</data>
 		</dict>
 		<key>Frameworks/ACEDrawingView.framework/ACEDraggableText.bundle/Info.plist</key>
@@ -1452,11 +1452,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			66j7xMG1EXpflO4gCi5pnQsebCQ=
+			4bIvSIVf723Ql2l3w/YzQMHJ4BI=
 			</data>
 			<key>hash2</key>
 			<data>
-			XejE8TDEZdnLs4GUwAD7dx928y6Afuo4T8Mw9lLXDJM=
+			cU/lS1T1cd3P7TZmBBh6SxlUxBswGazsKfjdwyOvGW0=
 			</data>
 		</dict>
 		<key>Frameworks/ACEDrawingView.framework/Info.plist</key>
@@ -1485,11 +1485,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			79erKD3klvcgIX3+miPgh8vNRKU=
+			Xpot8w2wVS0TZDKx38XCdV837U8=
 			</data>
 			<key>hash2</key>
 			<data>
-			p+gpAeSFjMXNrwIeGb388XIMWuzQxGyIWHc6m2xy6zQ=
+			XsOhUUYJAqna1ADarHAZkxkXqElbaocRjqs9L2w33YA=
 			</data>
 		</dict>
 		<key>Frameworks/AFNetworking.framework/Info.plist</key>
@@ -1518,11 +1518,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			OAyfKApkofEQwcBWvL3TwJNpwc0=
+			eo/lFxwZQHacbhocpV5NRUTbYYA=
 			</data>
 			<key>hash2</key>
 			<data>
-			NpWts5L3LQoUmBSbEM0fL1Lq5dgXRaxlDodsv2i9Nhk=
+			gLQnk0t9yf364EGksHKGpdqsBjPE25RofXOwcAVQ69o=
 			</data>
 		</dict>
 		<key>Frameworks/ASPVideoPlayer.framework/Info.plist</key>
@@ -1551,11 +1551,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			6Qus8tPUeeCIgKfKr92da6Zd1AI=
+			fd5hp9qZA348R3YKMsUVgclhlSA=
 			</data>
 			<key>hash2</key>
 			<data>
-			Jq2i1uTzAa8GMyt7WJFaqufV1zXXrh+u2JzO7pA8SJw=
+			wqhPjl9kqBVPcNs4Tkii7204A3WeVjKcD9QFSe0hWjA=
 			</data>
 		</dict>
 		<key>Frameworks/AWSCore.framework/Info.plist</key>
@@ -1584,11 +1584,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			nHjHPOurLccP/nZspR8kfZcaXF4=
+			rRmREofwMIKnRDQzad7YBsMALMg=
 			</data>
 			<key>hash2</key>
 			<data>
-			9NXR3hPeXHSVjHYv1Elmh5mIghmDlHduD4twEDO60ag=
+			ea0QANvgKlddBQ6XWUO0XVSH66GuI1bEvLAByL4UWMI=
 			</data>
 		</dict>
 		<key>Frameworks/AWSS3.framework/Info.plist</key>
@@ -1617,11 +1617,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			jkFZEdDmtTE/OV4gdi9B0DJIzDA=
+			iZ4k/MUDXzmHpizDyzwrfxxMQM4=
 			</data>
 			<key>hash2</key>
 			<data>
-			cEO9e1ZKg6t1XIFdp/cogky1EUiBnxFt50hRBsCS65g=
+			0XyooPJ23W7kA6M7oE5ownJ1VP3gy3MjBaU2904uD3w=
 			</data>
 		</dict>
 		<key>Frameworks/AeroGearPush.framework/Info.plist</key>
@@ -1650,11 +1650,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			d0a3Mss+kVm6IrfYnmm42r2I3+A=
+			gsaBy9KRDx+CxsCF4haCwJb9mFo=
 			</data>
 			<key>hash2</key>
 			<data>
-			GMsL2j8OlvPQNAQmMVnTxLccoeDFHJ7YLLsGIOunXOw=
+			4q4MfBHLU7bGawMiW+d4LB7bjwvp9q/rRIH5i7zBiQ4=
 			</data>
 		</dict>
 		<key>Frameworks/CTPersistance.framework/Info.plist</key>
@@ -1683,11 +1683,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			s/iXBqE9ie/OAehTXFufsgt/2eA=
+			w+MyfCQCuLhWDwcfm1/tjM6lKaE=
 			</data>
 			<key>hash2</key>
 			<data>
-			eqCftiKOvkth1QKKiJxcBebVdN37aCawzRQsH22cCNU=
+			/yB1Sd6yxIk1S33I5dbNCw+PWPxHFMyIhAg2ev6A2Zs=
 			</data>
 		</dict>
 		<key>Frameworks/Color_Picker_for_iOS.framework/Info.plist</key>
@@ -1716,11 +1716,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Cipk8dydfmNdZUXU3bXhkl0oFnU=
+			Hrf7eLO0kBpxDdI6HklCyaH6J40=
 			</data>
 			<key>hash2</key>
 			<data>
-			mqENYZk78h9NGqNmnqKOGpGsTyrB8itDQ3XueZtPw34=
+			+jAfAL3BXZ7O9/jpkQpsirO+6dAaIT+3KR/39JNGiLA=
 			</data>
 		</dict>
 		<key>Frameworks/HMSegmentedControl.framework/Info.plist</key>
@@ -1749,11 +1749,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			svXdizWcLxs9/OYiria4wrJE7ZM=
+			QMc2xX0mno65JXlaNckcFGERa+0=
 			</data>
 			<key>hash2</key>
 			<data>
-			sGEHZF5Rd9hmW4L29KYUTtBM+oL5lo+jB5iToB4lsrs=
+			nTARoqH54rINED3h6xmLaup8U1u8b1Uh73ZzoS55quo=
 			</data>
 		</dict>
 		<key>Frameworks/HandyFrame.framework/Info.plist</key>
@@ -1782,11 +1782,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3SSowgG1P8bwewLsINe3aTzlSfM=
+			5dB3GXI1GjwYRbBGhInmMsOXQGQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			JwhKrVbvbD3Lbpm8Q3cJ8T/HpUdcm33zRbatlnDeQsc=
+			/woo3TvbHxvQDmQPLy0raQL5ZZTNIkbFLhjVnAcJaUw=
 			</data>
 		</dict>
 		<key>Frameworks/IGColorPicker.framework/Info.plist</key>
@@ -1826,11 +1826,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			X1Jg5HibmP3fTMdMjem5l2cooCg=
+			JYzS0nG/zr08pAIUNcmbzNAaygg=
 			</data>
 			<key>hash2</key>
 			<data>
-			4qyU4nkioKisIy+uhaZeWUA6XUfUbElhXwbtei8XQBw=
+			iPFeraw3wEurMBYil9FJOlhXCsodYidYM2ZcR9oHf+E=
 			</data>
 		</dict>
 		<key>Frameworks/MBProgressHUD.framework/_CodeSignature/CodeResources</key>
@@ -1859,11 +1859,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7yHI8EkA6XjKi1zTPvXQnQTEv+g=
+			8lhp9fb/p2hbpCRoARG6N00UFiA=
 			</data>
 			<key>hash2</key>
 			<data>
-			socTppmmQX16RZrCnUQKg72CihrOhGQpCiifb4qtMiI=
+			Nv492kQhZrkT1NeV+faVUN0Xnh7lDRLz4wsD86iQX5c=
 			</data>
 		</dict>
 		<key>Frameworks/NJKScrollFullScreen.framework/_CodeSignature/CodeResources</key>
@@ -1892,11 +1892,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			axKzPX97QBmZp3S13g7ctMPE69w=
+			y3ES01Fi3InI8vKPzNHXtSITIqU=
 			</data>
 			<key>hash2</key>
 			<data>
-			JLyJwoNB7cRMFoz1hWY0Ez4ju7bkV4WByhXcbkAQrn0=
+			apk/w1JpY4EOQed/GfpFoTyASNl9ltqh19qU7tSC8Nk=
 			</data>
 		</dict>
 		<key>Frameworks/OLGhostAlertView.framework/_CodeSignature/CodeResources</key>
@@ -1925,11 +1925,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			YjyuuH8KGN/pOCQS7Qr5J4XLOHs=
+			zpl/jKJRF6uQHARcZ+dm0lHDSH0=
 			</data>
 			<key>hash2</key>
 			<data>
-			xo/Wr/+mio5hCqwQB+BiiVaQJ5uL5EeiNSNYPndMLTY=
+			QRlL25esJQiwH0LTrj0N969uIXfUhxRKGjBZgoZxkkw=
 			</data>
 		</dict>
 		<key>Frameworks/PBJVideoPlayer.framework/_CodeSignature/CodeResources</key>
@@ -1958,11 +1958,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xnNQUGhDJSuePBhsKrP7F/Si8mE=
+			LpVCZZNrCKgUpfDOdqd5ggZS9lk=
 			</data>
 			<key>hash2</key>
 			<data>
-			d2ik1JkebrxR8vhniul+l0YLdi+iara9kiQjjsbfSkE=
+			TA6SqqYZEZoqkWi2d/cA3ocNd8HIwqZdaEWyAaaZfPI=
 			</data>
 		</dict>
 		<key>Frameworks/PBJVision.framework/Shader.fsh</key>
@@ -2013,11 +2013,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			LLdtAhcXXUnfB23xgmD6mlUEJ0c=
+			X4Q0/FfmhqVgNMiFnjaFwaAbny4=
 			</data>
 			<key>hash2</key>
 			<data>
-			lTaNY8uHjEezKa89JA0WTkFFv1ThRbgUKNmHdGVBKTU=
+			MTdPsplQA4SuqEMANP6ZHGemUMIjP8BJ9q92lB5XfHo=
 			</data>
 		</dict>
 		<key>Frameworks/PhotoTweaks.framework/_CodeSignature/CodeResources</key>
@@ -2046,11 +2046,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			gMwtTfreOwNZlG+jADWclw0OEAs=
+			3+x6i0VpYAXYBGeF6en3yOKy6A0=
 			</data>
 			<key>hash2</key>
 			<data>
-			2hBjk2MhySiveUNyHZ3vxlDlLYy5iS46SC+/oV9Scu4=
+			xGXe613npf0BegI2YIbVtVxrhWtbZa7y7GA6Kmtgbws=
 			</data>
 		</dict>
 		<key>Frameworks/SCRecorder.framework/_CodeSignature/CodeResources</key>

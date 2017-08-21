@@ -107,6 +107,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/PBJVision/PBJVision.framework"
   install_framework "$BUILT_PRODUCTS_DIR/PhotoTweaks/PhotoTweaks.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SCRecorder/SCRecorder.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/TOCropViewController/TOCropViewController.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/ACEDrawingView/ACEDrawingView.framework"
@@ -127,6 +128,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/PBJVision/PBJVision.framework"
   install_framework "$BUILT_PRODUCTS_DIR/PhotoTweaks/PhotoTweaks.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SCRecorder/SCRecorder.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/TOCropViewController/TOCropViewController.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

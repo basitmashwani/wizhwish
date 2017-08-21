@@ -17,6 +17,7 @@ pod 'AWSS3', '~> 2.4.1'
 pod 'PhotoTweaks'
 pod "CTPersistance"
 pod "HandyFrame"
+pod 'TOCropViewController'
 
 
 #pod 'VKVideoPlayer'

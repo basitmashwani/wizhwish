@@ -15,6 +15,7 @@ static WSetting *_sharedInstance = nil;
     
     if (!_sharedInstance) {
         _sharedInstance = [[WSetting alloc] init];
+        _sharedInstance.imageArray = [[NSMutableArray alloc] init];
     }
     return _sharedInstance;
 }
